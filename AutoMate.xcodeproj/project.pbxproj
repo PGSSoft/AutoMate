@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
+		E4535A461CEDC4AB008965DD /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* Options.swift */; };
+		E4535A491CEDD259008965DD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
+		E4535A4B1CEDD281008965DD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
 		E425D5621CED928100A7CA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E425D5681CED934000A7CA03 /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
+		E4535A451CEDC4AB008965DD /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		E4535A481CEDD259008965DD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		E4535A4A1CEDD281008965DD /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +54,22 @@
 		E425D55F1CED928100A7CA03 /* AutoMate */ = {
 			isa = PBXGroup;
 			children = (
+				E4535A471CEDD24B008965DD /* Foundation extensions */,
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
 				E425D5621CED928100A7CA03 /* Info.plist */,
+				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
+				E4535A451CEDC4AB008965DD /* Options.swift */,
 			);
 			path = AutoMate;
+			sourceTree = "<group>";
+		};
+		E4535A471CEDD24B008965DD /* Foundation extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4535A481CEDD259008965DD /* Dictionary.swift */,
+				E4535A4A1CEDD281008965DD /* Array.swift */,
+			);
+			path = "Foundation extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +94,7 @@
 				E425D5591CED928100A7CA03 /* Frameworks */,
 				E425D55A1CED928100A7CA03 /* Headers */,
 				E425D55B1CED928100A7CA03 /* Resources */,
+				E4535A441CEDC3BD008965DD /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -125,11 +146,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E4535A441CEDC3BD008965DD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E425D5581CED928100A7CA03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4535A461CEDC4AB008965DD /* Options.swift in Sources */,
+				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
+				E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */,
+				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,26 +272,37 @@
 		E425D5661CED928100A7CA03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inharited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E425D5671CED928100A7CA03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inharited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -278,6 +331,7 @@
 				E425D5671CED928100A7CA03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
