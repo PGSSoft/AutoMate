@@ -37,6 +37,17 @@ extension LocaleArgument {
     }
 }
 
+public struct SystemLocaleArgument: SingleArgumentOption {
+    // MARK: ArgumetOption
+    public let argumentKey: String = "AppleLocale"
+
+    // MARK: SingleArgumentOption
+    public var value: LaunchArgumentValue
+    public init(_ value: LaunchArgumentValue) {
+        self.value = value
+    }
+}
+
 // MARK: - Keyboard
 /**
  Application keyboard.
@@ -48,6 +59,29 @@ public struct KeyboardArgument: CollectionArgumetOption {
     // MARK: CollectionArgumetOption
     public let values: [LaunchArgumentValue]
 
+    public init(_ values: [LaunchArgumentValue]) {
+        self.values = values
+    }
+}
+
+public struct SystemSoftwareKeyboardArgument: CollectionArgumetOption {
+    // MARK: ArgumetOption
+    public let argumentKey: String = "AppleKeyboards"
+
+    // MARK: CollectionArgumetOption
+    public var values: [LaunchArgumentValue]
+    public init(_ values: [LaunchArgumentValue]) {
+        self.values = values
+    }
+}
+
+public struct SystemHardwareKeyboardArgument: CollectionArgumetOption {
+    // MARK: ArgumetOption
+    public typealias Value = HardwareKeyboards
+    public let argumentKey: String = "AppleKeyboards"
+
+    // MARK: CollectionArgumetOption
+    public var values: [LaunchArgumentValue]
     public init(_ values: [LaunchArgumentValue]) {
         self.values = values
     }
