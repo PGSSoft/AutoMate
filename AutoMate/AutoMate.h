@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@import XCTest;
+
 //! Project version number for AutoMate.
 FOUNDATION_EXPORT double AutoMateVersionNumber;
 
