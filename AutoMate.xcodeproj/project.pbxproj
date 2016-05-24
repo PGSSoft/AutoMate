@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
 		E4535A461CEDC4AB008965DD /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* Options.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
 		E425D5621CED928100A7CA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				E425D5621CED928100A7CA03 /* Info.plist */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
 				E4535A451CEDC4AB008965DD /* Options.swift */,
+				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 			);
 			path = AutoMate;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				E4535A461CEDC4AB008965DD /* Options.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
 				E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */,
+				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

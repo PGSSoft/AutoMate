@@ -32,3 +32,48 @@ public extension LaunchArgumentValue where Self: RawRepresentable, Self.RawValue
         return "\"\(rawValue)\""
     }
 }
+
+// MARK: - ArgumetOption protocol
+public protocol ArgumetOption: Option, CustomStringConvertible {
+    associatedtype Value: LaunchArgumentValue
+    var argumentKey: String { get }
+}
+
+// MARK: - SingleArgumentOption protocol
+public protocol SingleArgumentOption: ArgumetOption {
+    var value: Value { get }
+    init(_ value: Value)
+}
+
+extension SingleArgumentOption {
+    // MARK: CustomStringConvertible
+    public var description: String {
+        return "<\(self.dynamicType): languages:\(self.value)>"
+    }
+
+    // MARK: Option
+    public var launchArguments: [String]? {
+        return ["-\(argumentKey)", value.launchArgument]
+    }
+}
+
+// MARK: - CollectionArgumetOption protocol
+public protocol CollectionArgumetOption: ArgumetOption, ArrayLiteralConvertible {
+    var values: [Value] { get }
+    init(_ values: [Value])
+
+    // MARK: ArrayLiteralConvertible
+    associatedtype Element = Value
+}
+
+extension CollectionArgumetOption {
+    // MARK: CustomStringConvertible
+    public var description: String {
+        return "<\(self.dynamicType): languages:\(self.values)>"
+    }
+
+    // MARK: Option
+    public var launchArguments: [String]? {
+        return ["-\(argumentKey)", values.launchArgument]
+    }
+}
