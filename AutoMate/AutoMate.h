@@ -6,8 +6,6 @@
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @import XCTest;
 
 //! Project version number for AutoMate.

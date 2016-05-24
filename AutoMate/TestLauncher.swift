@@ -12,7 +12,7 @@ public struct TestLauncher {
 
     // MARK: Initializers
     public init(options: [Option]) {
-        self.options = Set(options.flatMap(AnyOption.init))
+        self.options = Set(options.map(AnyOption.init))
     }
 
     // MARK: Public methods
