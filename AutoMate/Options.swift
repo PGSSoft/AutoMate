@@ -7,7 +7,7 @@
 //
 
 // MARK: - Option protocol
-public protocol Option {
+public protocol Option: Hashable, Equatable {
     var launchArguments: [String]? { get }
     var launchEnvironments: [String: String]? { get }
 }
@@ -20,6 +20,14 @@ extension Option {
     public var launchEnvironments: [String: String]? {
         return nil
     }
+
+    public var hashValue: Int {
+        return "\(self.dynamicType)".hashValue
+    }
+}
+
+public func == <T where T: Option>(lhs: T, rhs: T) -> Bool {
+    return lhs.hashValue == rhs.hashValue
 }
 
 // MARK: - LaunchArgumentValue protocol

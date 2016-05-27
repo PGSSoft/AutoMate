@@ -11,7 +11,7 @@ public struct TestLauncher {
     var options: Set<AnyOption>
 
     // MARK: Initializers
-    public init(options: [Option]) {
+    public init<T where T: Option>(options: [T]) {
         self.options = Set(options.map(AnyOption.init))
     }
 
@@ -43,26 +43,14 @@ public struct TestLauncher {
 }
 
 struct AnyOption: Option {
-    let option: Option
-    init(option: Option) {
-        self.option = option
-    }
 
-    var launchArguments: [String]? {
-        return option.launchArguments
-    }
+    let launchArguments: [String]?
+    let launchEnvironments: [String: String]?
+    let hashValue: Int
 
-    var launchEnvironments: [String: String]? {
-        return option.launchEnvironments
+    init<T where T: Option>(option: T) {
+        self.launchArguments = option.launchArguments
+        self.launchEnvironments = option.launchEnvironments
+        self.hashValue = option.hashValue
     }
-}
-
-extension AnyOption: Hashable {
-    var hashValue: Int {
-        return "\(self.option.dynamicType)".hashValue
-    }
-}
-
-func == (lhs: AnyOption, rhs: AnyOption) -> Bool {
-    return lhs.hashValue == rhs.hashValue
 }

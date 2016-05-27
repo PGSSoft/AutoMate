@@ -22,6 +22,7 @@
 		E4535A451CEDC4AB008965DD /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		E4535A481CEDD259008965DD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		E4535A4A1CEDD281008965DD /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		E47F2F421CF832780021A514 /* AutoMatePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AutoMatePlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			children = (
 				E425D55F1CED928100A7CA03 /* AutoMate */,
 				E425D55E1CED928100A7CA03 /* Products */,
+				E47F2F421CF832780021A514 /* AutoMatePlayground.playground */,
 			);
 			sourceTree = "<group>";
 		};
