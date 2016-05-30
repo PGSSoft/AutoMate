@@ -6,7 +6,7 @@
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
 
-// MARK: LaunchOption protocol
+// MARK: - LaunchOption protocol
 public protocol LaunchOption {
     var launchArguments: [String]? { get }
     var launchEnvironments: [String: String]? { get }
