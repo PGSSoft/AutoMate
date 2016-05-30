@@ -5,14 +5,15 @@
 //  Created by Joanna Bednarz on 19/05/16.
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
+
 public struct TestLauncher {
 
     // MARK: Properties
-    var options: Set<AnyOption>
+    var options: LaunchOptionsSet
 
     // MARK: Initializers
-    public init<T where T: Option>(options: [T]) {
-        self.options = Set(options.map(AnyOption.init))
+    public init(options: [LaunchOption]) {
+        self.options = LaunchOptionsSet(options)
     }
 
     // MARK: Public methods
@@ -39,18 +40,5 @@ public struct TestLauncher {
      */
     func buildLaunchEnvironment() -> [String: String] {
         return options.flatMap { $0.launchEnvironments }.reduce([:]) { $0.union($1) }
-    }
-}
-
-struct AnyOption: Option {
-
-    let launchArguments: [String]?
-    let launchEnvironments: [String: String]?
-    let hashValue: Int
-
-    init<T where T: Option>(option: T) {
-        self.launchArguments = option.launchArguments
-        self.launchEnvironments = option.launchEnvironments
-        self.hashValue = option.hashValue
     }
 }

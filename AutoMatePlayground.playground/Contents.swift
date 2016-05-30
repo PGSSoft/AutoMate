@@ -1,15 +1,20 @@
-//: Playground - noun: a place where people can play
+@testable import AutoMate
 
-import AutoMate
+public enum ApplicationLocale: String, LaunchArgumentValue {
 
-struct Language: Option {
-    
+    case German = "de_DE"
+    case US = "en_US"
 }
 
-struct LL: Option {
-    
+extension ApplicationLocale: ArgumentOption {
+    public var argumentKey: String {
+        return "AppleLocale"
+    }
+
+    public var launchArguments: [String]? {
+        return ["-\(argumentKey)", launchArgument]
+    }
 }
 
-//func == (lhs: Language, rhs: Language) -> Bool {
-//    return lhs.hashValue == rhs.hashValue
-//}
+let launcher = TestLauncher(options: [ApplicationLocale.US])
+launcher.buildLaunchArguments()
