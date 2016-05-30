@@ -4,4 +4,7 @@
    <FileRef
       location = "container:AutoMate.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:AutoMatePlayground.playground">
+   </FileRef>
 </Workspace>

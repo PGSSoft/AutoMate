@@ -6,13 +6,15 @@
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
 
-// MARK: - Option protocol
-public protocol Option {
+// MARK: - LaunchOption protocol
+public protocol LaunchOption {
     var launchArguments: [String]? { get }
     var launchEnvironments: [String: String]? { get }
+    var uniqueIdentifier: Int { get }
 }
 
-extension Option {
+public extension LaunchOption {
+
     public var launchArguments: [String]? {
         return nil
     }
@@ -20,6 +22,21 @@ extension Option {
     public var launchEnvironments: [String: String]? {
         return nil
     }
+
+    public var uniqueIdentifier: Int {
+        return "\(self.dynamicType)".hashValue
+    }
+}
+
+public extension LaunchOption where Self: Hashable {
+    public var uniqueIdentifier: Int {
+        return hashValue
+    }
+}
+
+// MARK: - ArgumentOption protocol
+public protocol ArgumentOption: LaunchOption {
+    var argumentKey: String { get }
 }
 
 // MARK: - LaunchArgumentValue protocol
