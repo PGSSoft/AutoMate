@@ -10,11 +10,24 @@
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
+		E43B229C1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */; };
 		E4535A461CEDC4AB008965DD /* LaunchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* LaunchOptions.swift */; };
 		E4535A491CEDD259008965DD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
 		E4535A4B1CEDD281008965DD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
 		E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
+		E4EE41C61CFD7246004F0FFE /* AutoMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E425D55D1CED928100A7CA03 /* AutoMate.framework */; };
+		E4EE41CD1CFD796A004F0FFE /* LaunchOptionsSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4EE41C71CFD7246004F0FFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E425D5541CED928100A7CA03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E425D55C1CED928100A7CA03;
+			remoteInfo = AutoMate;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
@@ -22,10 +35,14 @@
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
 		E425D5621CED928100A7CA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E425D5681CED934000A7CA03 /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
+		E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsFactory.swift; sourceTree = "<group>"; };
 		E4535A451CEDC4AB008965DD /* LaunchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptions.swift; sourceTree = "<group>"; };
 		E4535A481CEDD259008965DD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		E4535A4A1CEDD281008965DD /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSet.swift; sourceTree = "<group>"; };
+		E4EE41C11CFD7246004F0FFE /* AutoMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4EE41C51CFD7246004F0FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4EE41BE1CFD7246004F0FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4EE41C61CFD7246004F0FFE /* AutoMate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -43,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				E425D55F1CED928100A7CA03 /* AutoMate */,
+				E4EE41C21CFD7246004F0FFE /* AutoMateTests */,
 				E425D55E1CED928100A7CA03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				E425D55D1CED928100A7CA03 /* AutoMate.framework */,
+				E4EE41C11CFD7246004F0FFE /* AutoMateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,11 +89,19 @@
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
 				E425D5621CED928100A7CA03 /* Info.plist */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
-				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 				E4535A451CEDC4AB008965DD /* LaunchOptions.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
+				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 			);
 			path = AutoMate;
+			sourceTree = "<group>";
+		};
+		E43B229A1CFEC17A00AE6B40 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		E4535A471CEDD24B008965DD /* Foundation extensions */ = {
@@ -76,6 +111,16 @@
 				E4535A4A1CEDD281008965DD /* Array.swift */,
 			);
 			path = "Foundation extensions";
+			sourceTree = "<group>";
+		};
+		E4EE41C21CFD7246004F0FFE /* AutoMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				E43B229A1CFEC17A00AE6B40 /* Factories */,
+				E4EE41C51CFD7246004F0FFE /* Info.plist */,
+				E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */,
+			);
+			path = AutoMateTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,16 +156,38 @@
 			productReference = E425D55D1CED928100A7CA03 /* AutoMate.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E4EE41C01CFD7246004F0FFE /* AutoMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4EE41CB1CFD7246004F0FFE /* Build configuration list for PBXNativeTarget "AutoMateTests" */;
+			buildPhases = (
+				E4EE41BD1CFD7246004F0FFE /* Sources */,
+				E4EE41BE1CFD7246004F0FFE /* Frameworks */,
+				E4EE41BF1CFD7246004F0FFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EE41C81CFD7246004F0FFE /* PBXTargetDependency */,
+			);
+			name = AutoMateTests;
+			productName = AutoMateTests;
+			productReference = E4EE41C11CFD7246004F0FFE /* AutoMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E425D5541CED928100A7CA03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "PGS Software";
 				TargetAttributes = {
 					E425D55C1CED928100A7CA03 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E4EE41C01CFD7246004F0FFE = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -138,12 +205,20 @@
 			projectRoot = "";
 			targets = (
 				E425D55C1CED928100A7CA03 /* AutoMate */,
+				E4EE41C01CFD7246004F0FFE /* AutoMateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E425D55B1CED928100A7CA03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4EE41BF1CFD7246004F0FFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -183,7 +258,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4EE41BD1CFD7246004F0FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4EE41CD1CFD796A004F0FFE /* LaunchOptionsSetTests.swift in Sources */,
+				E43B229C1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EE41C81CFD7246004F0FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E425D55C1CED928100A7CA03 /* AutoMate */;
+			targetProxy = E4EE41C71CFD7246004F0FFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E425D5631CED928100A7CA03 /* Debug */ = {
@@ -320,6 +412,26 @@
 			};
 			name = Release;
 		};
+		E4EE41C91CFD7246004F0FFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AutoMateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4EE41CA1CFD7246004F0FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AutoMateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +449,15 @@
 			buildConfigurations = (
 				E425D5661CED928100A7CA03 /* Debug */,
 				E425D5671CED928100A7CA03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4EE41CB1CFD7246004F0FFE /* Build configuration list for PBXNativeTarget "AutoMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4EE41C91CFD7246004F0FFE /* Debug */,
+				E4EE41CA1CFD7246004F0FFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

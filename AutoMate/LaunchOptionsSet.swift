@@ -9,7 +9,7 @@
 import Foundation
 
 public struct LaunchOptionsSet {
-    private var options: [Element]
+    private var options: [LaunchOption]
 
     public init() {
         options = []
@@ -20,12 +20,14 @@ public struct LaunchOptionsSet {
 extension LaunchOptionsSet: SetAlgebraType {
     public typealias Element = LaunchOption
 
-    public func contains(member: Element) -> Bool {
+    public func contains(member: LaunchOption) -> Bool {
         return options.contains { $0.uniqueIdentifier == member.uniqueIdentifier }
     }
 
-    public mutating func insert(member: Element) {
-        if !contains(member) { options.append(member) }
+    public mutating func insert(member: LaunchOption) {
+        if !contains(member) {
+            options.append(member)
+        }
     }
 
     public func exclusiveOr(other: LaunchOptionsSet) -> LaunchOptionsSet {
@@ -40,7 +42,7 @@ extension LaunchOptionsSet: SetAlgebraType {
         options = diff
     }
 
-    public mutating func remove(member: Element) -> Element? {
+    public mutating func remove(member: LaunchOption) -> LaunchOption? {
         guard let index = options.indexOf({ member.uniqueIdentifier == $0.uniqueIdentifier }) else { return nil }
         return options.removeAtIndex(index)
     }
@@ -70,21 +72,14 @@ extension LaunchOptionsSet: SetAlgebraType {
 
 // MARK: SequenceType
 extension LaunchOptionsSet: SequenceType {
-    public typealias Generator = AnyGenerator<Element>
+    public typealias Generator = IndexingGenerator<[LaunchOption]>
 
     public func generate() -> Generator {
-        var index = 0
-        return AnyGenerator {
-            if index < self.options.count {
-                defer { index += 1 }
-                return self.options[index]
-            }
-            return nil
-        }
+        return options.generate()
     }
 }
 
 // MARK: Equatable
 public func == (lhs: LaunchOptionsSet, rhs: LaunchOptionsSet) -> Bool {
-    return lhs.exclusiveOr(rhs).isEmpty
+    return lhs.elementsEqual(rhs, isEquivalent: { $0.0.uniqueIdentifier == $0.1.uniqueIdentifier })
 }

@@ -11,29 +11,16 @@
  Application language.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/
  Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
-
- - German: German language: de-DE
  */
-public protocol Language: RawRepresentable, LaunchArgumentValue {
-}
-
-public struct LanguageArgument<T: Language>: CollectionArgumetOption {
+public struct LanguageArgument: CollectionArgumetOption {
     // MARK: ArgumetOption
-    public typealias Value = T
     public let argumentKey: String = "AppleLanguages"
 
     // MARK: CollectionArgumetOption
-    public let values: [T]
+    public let values: [LaunchArgumentValue]
 
-    public init(_ values: [T]) {
+    public init(_ values: [LaunchArgumentValue]) {
         self.values = values
-    }
-}
-
-// MARK: ArrayLiteralConvertible
-extension LanguageArgument {
-    public init(arrayLiteral elements: T ...) {
-        values = elements
     }
 }
 
@@ -42,53 +29,28 @@ extension LanguageArgument {
  Application locale.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/
  Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
-
- - German: German locale: de_DE
  */
+public protocol LocaleArgument: SingleArgumentOption { }
 
-public protocol Locale: RawRepresentable, LaunchArgumentValue {
-}
-
-public struct LocaleArgument <T: Locale>: SingleArgumentOption {
+extension LocaleArgument {
     // MARK: ArgumetOption
-    public typealias Value = T
-    public let argumentKey: String = "AppleLocale"
-
-    // MARK: SingleArgumentOption
-    public let value: T
-
-    public init(_ value: T) {
-        self.value = value
+    public var argumentKey: String {
+        return "AppleLocale"
     }
 }
 
 // MARK: - Keyboard
 /**
  Application keyboard.
-
- - German: German keyboard: de_DE@sw=QWERTZ-German
- - US:     US keyboard: en_US@hw=US;sw=QWERTY
- - Emoji:  Emoji keyboard: emoji@sw=Emoji
  */
-public protocol Keyboard: RawRepresentable, LaunchArgumentValue {
-}
-
-public struct KeyboardArgument<T: Keyboard>: CollectionArgumetOption {
+public struct KeyboardArgument: CollectionArgumetOption {
     // MARK: ArgumetOption
-    public typealias Value = T
     public let argumentKey: String = "AppleKeyboards"
 
     // MARK: CollectionArgumetOption
-    public let values: [T]
+    public let values: [LaunchArgumentValue]
 
-    public init(_ values: [Value]) {
+    public init(_ values: [LaunchArgumentValue]) {
         self.values = values
-    }
-}
-
-// MARK: ArrayLiteralConvertible
-extension KeyboardArgument {
-    public init(arrayLiteral elements: T ...) {
-        values = elements
     }
 }

@@ -7,6 +7,14 @@
 //
 
 // MARK: - LaunchOption protocol
+/**
+ Any type that implements this protocol can be used to configure application
+ with TestLauncher. Type conforming to this protocol should override default implementation
+ of *launchArguments* or *launchEnvironments*. Choice depends on which type of configuration
+ option it represents.
+ For more info about launch arguments and enviroment variables check:
+ [here](https://developer.apple.com/library/ios/recipes/xcode_help-scheme_editor/Articles/SchemeRun.html)
+ */
 public protocol LaunchOption {
     var launchArguments: [String]? { get }
     var launchEnvironments: [String: String]? { get }
@@ -28,18 +36,28 @@ public extension LaunchOption {
     }
 }
 
-public extension LaunchOption where Self: Hashable {
-    public var uniqueIdentifier: Int {
-        return hashValue
-    }
-}
-
 // MARK: - ArgumentOption protocol
-public protocol ArgumentOption: LaunchOption {
+/**
+ Any type that implements this protocol can be used to configure application
+ with TestLauncher. Specificly it represents launch argument option so it requires to provide argument key.
+ Type conforming to this protocol should override default implementation of *launchArguments*.
+ For more info about launch arguments variables check:
+ [here](https://developer.apple.com/library/ios/recipes/xcode_help-scheme_editor/Articles/SchemeRun.html)
+ */
+public protocol ArgumentOption: LaunchOption, CustomStringConvertible {
     var argumentKey: String { get }
 }
 
+public extension ArgumentOption {
+    public var uniqueIdentifier: Int {
+        return argumentKey.hashValue
+    }
+}
+
 // MARK: - LaunchArgumentValue protocol
+/**
+ Represents single portion of data to be passed through launch argument.
+ */
 public protocol LaunchArgumentValue {
     var launchArgument: String { get }
 }
@@ -49,23 +67,19 @@ public extension LaunchArgumentValue where Self: RawRepresentable, Self.RawValue
         return "\"\(rawValue)\""
     }
 }
-
-// MARK: - ArgumetOption protocol
-public protocol ArgumetOption: LaunchOption, CustomStringConvertible {
-    associatedtype Value: LaunchArgumentValue
-    var argumentKey: String { get }
-}
-
 // MARK: - SingleArgumentOption protocol
-public protocol SingleArgumentOption: ArgumetOption {
-    var value: Value { get }
-    init(_ value: Value)
+/**
+ Protocol that should be implemented by types representing launch argument that accepts single
+ argument value.
+ */
+public protocol SingleArgumentOption: ArgumentOption {
+    var value: LaunchArgumentValue { get }
 }
 
 extension SingleArgumentOption {
     // MARK: CustomStringConvertible
     public var description: String {
-        return "<\(self.dynamicType): languages:\(self.value)>"
+        return "<\(self.dynamicType): \(self.value)>"
     }
 
     // MARK: Option
@@ -74,23 +88,37 @@ extension SingleArgumentOption {
     }
 }
 
+extension SingleArgumentOption where Self: LaunchArgumentValue {
+    public var value: LaunchArgumentValue {
+        return self
+    }
+}
+
 // MARK: - CollectionArgumetOption protocol
-public protocol CollectionArgumetOption: ArgumetOption, ArrayLiteralConvertible {
-    var values: [Value] { get }
-    init(_ values: [Value])
+/**
+ Protocol that should be implemented by types representing launch argument that accepts collection
+ of values.
+ */
+public protocol CollectionArgumetOption: ArgumentOption, ArrayLiteralConvertible {
+    var values: [LaunchArgumentValue] { get }
+    init(_ values: [LaunchArgumentValue])
 
     // MARK: ArrayLiteralConvertible
-    associatedtype Element = Value
+    associatedtype Element = LaunchArgumentValue
 }
 
 extension CollectionArgumetOption {
     // MARK: CustomStringConvertible
     public var description: String {
-        return "<\(self.dynamicType): languages:\(self.values)>"
+        return "<\(self.dynamicType): \(self.values)>"
     }
 
     // MARK: Option
     public var launchArguments: [String]? {
-        return ["-\(argumentKey)", values.launchArgument]
+        return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joinWithSeparator(", ") + ")"]
+    }
+
+    public init(arrayLiteral elements: LaunchArgumentValue ...) {
+        self.init(elements)
     }
 }
