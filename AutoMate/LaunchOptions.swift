@@ -44,11 +44,11 @@ public extension LaunchOption {
  For more info about launch arguments variables check:
  [here](https://developer.apple.com/library/ios/recipes/xcode_help-scheme_editor/Articles/SchemeRun.html)
  */
-public protocol ArgumentOption: LaunchOption, CustomStringConvertible {
+public protocol LaunchArgumentOption: LaunchOption, CustomStringConvertible {
     var argumentKey: String { get }
 }
 
-public extension ArgumentOption {
+public extension LaunchArgumentOption {
     public var uniqueIdentifier: Int {
         return argumentKey.hashValue
     }
@@ -72,7 +72,7 @@ public extension LaunchArgumentValue where Self: RawRepresentable, Self.RawValue
  Protocol that should be implemented by types representing launch argument that accepts single
  argument value.
  */
-public protocol SingleArgumentOption: ArgumentOption {
+public protocol SingleArgumentOption: LaunchArgumentOption {
     var value: LaunchArgumentValue { get }
 }
 
@@ -99,7 +99,7 @@ extension SingleArgumentOption where Self: LaunchArgumentValue {
  Protocol that should be implemented by types representing launch argument that accepts collection
  of values.
  */
-public protocol CollectionArgumetOption: ArgumentOption, ArrayLiteralConvertible {
+public protocol CollectionArgumetOption: LaunchArgumentOption, ArrayLiteralConvertible {
     var values: [LaunchArgumentValue] { get }
     init(_ values: [LaunchArgumentValue])
 
