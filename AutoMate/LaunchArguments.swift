@@ -9,8 +9,7 @@
 // MARK: - Language
 /**
  Application language.
- More info: https://developer.apple.com/library/ios/documentation/MacOSX/
- Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
+ More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
 public struct LanguageArgument: CollectionArgumetOption {
     // MARK: ArgumetOption
@@ -27,8 +26,7 @@ public struct LanguageArgument: CollectionArgumetOption {
 // MARK: - Locale
 /**
  Application locale.
- More info: https://developer.apple.com/library/ios/documentation/MacOSX/
- Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
+ More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
 public protocol LocaleArgument: SingleArgumentOption { }
 
