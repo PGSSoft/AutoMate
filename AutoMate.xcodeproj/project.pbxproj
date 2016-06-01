@@ -10,9 +10,10 @@
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
-		E4535A461CEDC4AB008965DD /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* Options.swift */; };
+		E4535A461CEDC4AB008965DD /* LaunchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* LaunchOptions.swift */; };
 		E4535A491CEDD259008965DD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
 		E4535A4B1CEDD281008965DD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
+		E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +22,10 @@
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
 		E425D5621CED928100A7CA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E425D5681CED934000A7CA03 /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
-		E4535A451CEDC4AB008965DD /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		E4535A451CEDC4AB008965DD /* LaunchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptions.swift; sourceTree = "<group>"; };
 		E4535A481CEDD259008965DD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		E4535A4A1CEDD281008965DD /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
 				E425D5621CED928100A7CA03 /* Info.plist */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
-				E4535A451CEDC4AB008965DD /* Options.swift */,
 				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
+				E4535A451CEDC4AB008965DD /* LaunchOptions.swift */,
+				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
 			);
 			path = AutoMate;
 			sourceTree = "<group>";
@@ -171,8 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4535A461CEDC4AB008965DD /* Options.swift in Sources */,
+				E4535A461CEDC4AB008965DD /* LaunchOptions.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
+				E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */,
 				E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
