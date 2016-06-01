@@ -6,7 +6,7 @@ enum ApplicationLanguage: String, LaunchArgumentValue {
 }
 
 enum ApplicationLocales: String, LocaleArgument, LaunchArgumentValue {
-    case UnitedStates = "en-US"
+    case UnitedStates = "en_US"
 }
 
 var languages: LanguageArgument = [ApplicationLanguage.English, ApplicationLanguage.German]
