@@ -11,14 +11,14 @@
  Application language.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public struct LanguageArgument: CollectionArgumetOption {
+public struct LanguageArgument<T: LaunchArgumentValue>: CollectionArgumetOption {
     // MARK: ArgumetOption
     public let argumentKey: String = "AppleLanguages"
 
     // MARK: CollectionArgumetOption
-    public let values: [LaunchArgumentValue]
+    public let values: [T]
 
-    public init(_ values: [LaunchArgumentValue]) {
+    public init(_ values: [T]) {
         self.values = values
     }
 }
@@ -37,52 +37,18 @@ extension LocaleArgument {
     }
 }
 
-public struct SystemLocaleArgument: SingleArgumentOption {
-    // MARK: ArgumetOption
-    public let argumentKey: String = "AppleLocale"
-
-    // MARK: SingleArgumentOption
-    public var value: LaunchArgumentValue
-    public init(_ value: LaunchArgumentValue) {
-        self.value = value
-    }
-}
-
 // MARK: - Keyboard
 /**
  Application keyboard.
  */
-public struct KeyboardArgument: CollectionArgumetOption {
+public struct KeyboardArgument<T: LaunchArgumentValue>: CollectionArgumetOption {
     // MARK: ArgumetOption
     public let argumentKey: String = "AppleKeyboards"
 
     // MARK: CollectionArgumetOption
-    public let values: [LaunchArgumentValue]
+    public let values: [T]
 
-    public init(_ values: [LaunchArgumentValue]) {
-        self.values = values
-    }
-}
-
-public struct SystemSoftwareKeyboardArgument: CollectionArgumetOption {
-    // MARK: ArgumetOption
-    public let argumentKey: String = "AppleKeyboards"
-
-    // MARK: CollectionArgumetOption
-    public var values: [LaunchArgumentValue]
-    public init(_ values: [LaunchArgumentValue]) {
-        self.values = values
-    }
-}
-
-public struct SystemHardwareKeyboardArgument: CollectionArgumetOption {
-    // MARK: ArgumetOption
-    public typealias Value = HardwareKeyboards
-    public let argumentKey: String = "AppleKeyboards"
-
-    // MARK: CollectionArgumetOption
-    public var values: [LaunchArgumentValue]
-    public init(_ values: [LaunchArgumentValue]) {
+    public init(_ values: [T]) {
         self.values = values
     }
 }

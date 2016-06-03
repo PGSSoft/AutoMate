@@ -19,11 +19,11 @@ guard let expr = try? NSRegularExpression(pattern: regex, options: []) else {
 
 var softwareKeyboardsData = NSMutableData()
 softwareKeyboardsData.appendString("// swiftlint:disable:next type_body_length\n")
-softwareKeyboardsData.appendString("public enum SoftwareKeyboards: String, Keyboard {\n")
+softwareKeyboardsData.appendString("public enum SoftwareKeyboards: String, LaunchArgumentValue {\n")
 
 var hardwareKeyboardsData = NSMutableData()
 hardwareKeyboardsData.appendString("// swiftlint:disable:next type_body_length\n")
-hardwareKeyboardsData.appendString("public enum HardwareKeyboards: String, Keyboard {\n")
+hardwareKeyboardsData.appendString("public enum HardwareKeyboards: String, LaunchArgumentValue {\n")
 
 let fileManager = NSFileManager()
 

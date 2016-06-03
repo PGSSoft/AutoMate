@@ -100,11 +100,12 @@ extension SingleArgumentOption where Self: LaunchArgumentValue {
  of values.
  */
 public protocol CollectionArgumetOption: LaunchArgumentOption, ArrayLiteralConvertible {
-    var values: [LaunchArgumentValue] { get }
-    init(_ values: [LaunchArgumentValue])
+    associatedtype Value: LaunchArgumentValue
+    var values: [Value] { get }
+    init(_ values: [Value])
 
     // MARK: ArrayLiteralConvertible
-    associatedtype Element = LaunchArgumentValue
+    associatedtype Element = Value
 }
 
 extension CollectionArgumetOption {
@@ -118,7 +119,7 @@ extension CollectionArgumetOption {
         return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joinWithSeparator(", ") + ")"]
     }
 
-    public init(arrayLiteral elements: LaunchArgumentValue ...) {
+    public init(arrayLiteral elements: Value ...) {
         self.init(elements)
     }
 }

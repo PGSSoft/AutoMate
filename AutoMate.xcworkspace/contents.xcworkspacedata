@@ -8,6 +8,13 @@
       location = "group:scripts"
       name = "scripts">
       <Group
+         location = "group:Languages Generator"
+         name = "Languages Generator">
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+      </Group>
+      <Group
          location = "group:Keyboards Generator"
          name = "Keyboards Generator">
          <FileRef
@@ -15,8 +22,8 @@
          </FileRef>
       </Group>
       <Group
-         location = "group:Locales Generator"
-         name = "Locales Generator">
+         location = "group:Countries Generator"
+         name = "Countries Generator">
          <FileRef
             location = "group:main.swift">
          </FileRef>
