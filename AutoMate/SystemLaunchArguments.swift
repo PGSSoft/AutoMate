@@ -8,9 +8,7 @@
 
 import Foundation
 
-public struct SystemLanguageArgument: CollectionArgumetOption {
-    // MARK: ArgumetOption
-    public let argumentKey: String = "AppleLanguages"
+public struct SystemLanguageArgument: LanguageArgument {
 
     // MARK: CollectionArgumetOption
     public let values: [SystemLanguages]
@@ -20,12 +18,9 @@ public struct SystemLanguageArgument: CollectionArgumetOption {
     }
 }
 
-public struct SystemLocaleArgument: LocaleArgument, LaunchArgumentValue {
+public struct SystemLocaleArgument: LocaleArgument {
 
     private let localeIdentifier: String
-    public var launchArgument: String {
-        return "\"\(localeIdentifier)\""
-    }
 
     public init(localeIdentifier: String) {
         self.localeIdentifier = localeIdentifier
@@ -36,9 +31,15 @@ public struct SystemLocaleArgument: LocaleArgument, LaunchArgumentValue {
     }
 }
 
-public struct SystemSoftwareKeyboardArgument: CollectionArgumetOption {
-    // MARK: ArgumetOption
-    public let argumentKey: String = "AppleKeyboards"
+// MARK: LaunchArgumentValue
+extension SystemLocaleArgument: LaunchArgumentValue {
+
+    public var launchArgument: String {
+        return "\"\(localeIdentifier)\""
+    }
+}
+
+public struct SystemSoftwareKeyboardArgument: KeyboardArgument {
 
     // MARK: CollectionArgumetOption
     public var values: [SoftwareKeyboards]
@@ -48,9 +49,7 @@ public struct SystemSoftwareKeyboardArgument: CollectionArgumetOption {
     }
 }
 
-public struct SystemHardwareKeyboardArgument: CollectionArgumetOption {
-    // MARK: ArgumetOption
-    public let argumentKey: String = "AppleKeyboards"
+public struct SystemHardwareKeyboardArgument: KeyboardArgument {
 
     // MARK: CollectionArgumetOption
     public var values: [HardwareKeyboards]

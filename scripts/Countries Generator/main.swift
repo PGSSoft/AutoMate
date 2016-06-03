@@ -1,5 +1,7 @@
 #!/usr/bin/swift
 
+// NOTE: Should be run directly from containing directory.
+
 import Foundation
 
 extension NSMutableData {

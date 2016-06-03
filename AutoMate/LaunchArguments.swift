@@ -11,15 +11,12 @@
  Application language.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public struct LanguageArgument<T: LaunchArgumentValue>: CollectionArgumetOption {
+public protocol LanguageArgument: CollectionArgumetOption { }
+
+extension LanguageArgument {
     // MARK: ArgumetOption
-    public let argumentKey: String = "AppleLanguages"
-
-    // MARK: CollectionArgumetOption
-    public let values: [T]
-
-    public init(_ values: [T]) {
-        self.values = values
+    public var argumentKey: String {
+        return "AppleLanguages"
     }
 }
 
@@ -41,14 +38,11 @@ extension LocaleArgument {
 /**
  Application keyboard.
  */
-public struct KeyboardArgument<T: LaunchArgumentValue>: CollectionArgumetOption {
+public protocol KeyboardArgument: CollectionArgumetOption { }
+
+extension KeyboardArgument {
     // MARK: ArgumetOption
-    public let argumentKey: String = "AppleKeyboards"
-
-    // MARK: CollectionArgumetOption
-    public let values: [T]
-
-    public init(_ values: [T]) {
-        self.values = values
+    public var argumentKey: String {
+        return "AppleKeyboards"
     }
 }
