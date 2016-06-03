@@ -95,7 +95,7 @@ extension SingleArgumentOption where Self: LaunchArgumentValue {
  Protocol that should be implemented by types representing launch argument that accepts collection
  of values.
  */
-public protocol CollectionArgumetOption: LaunchArgumentOption, ArrayLiteralConvertible {
+public protocol CollectionArgumentOption: LaunchArgumentOption, ArrayLiteralConvertible {
     associatedtype Value: LaunchArgumentValue
     var values: [Value] { get }
     init(_ values: [Value])
@@ -104,7 +104,7 @@ public protocol CollectionArgumetOption: LaunchArgumentOption, ArrayLiteralConve
     associatedtype Element = Value
 }
 
-extension CollectionArgumetOption {
+extension CollectionArgumentOption {
 
     // MARK: Option
     public var launchArguments: [String]? {

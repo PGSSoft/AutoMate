@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct SystemLanguageArgument: LanguageArgument, CollectionArgumetOption {
+public struct SystemLanguageArgument: LanguageArgument, CollectionArgumentOption {
 
     // MARK: CollectionArgumetOption
     public let values: [SystemLanguages]
@@ -39,7 +39,7 @@ extension SystemLocaleArgument: LaunchArgumentValue {
     }
 }
 
-public struct SystemSoftwareKeyboardArgument: KeyboardArgument, CollectionArgumetOption {
+public struct SystemSoftwareKeyboardArgument: KeyboardArgument, CollectionArgumentOption {
 
     // MARK: CollectionArgumetOption
     public var values: [SoftwareKeyboards]
@@ -49,7 +49,7 @@ public struct SystemSoftwareKeyboardArgument: KeyboardArgument, CollectionArgume
     }
 }
 
-public struct SystemHardwareKeyboardArgument: KeyboardArgument, CollectionArgumetOption {
+public struct SystemHardwareKeyboardArgument: KeyboardArgument, CollectionArgumentOption {
 
     // MARK: CollectionArgumetOption
     public var values: [HardwareKeyboards]
