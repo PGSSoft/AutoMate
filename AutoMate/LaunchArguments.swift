@@ -11,7 +11,7 @@
  Application language.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public protocol LanguageArgument: CollectionArgumetOption { }
+public protocol LanguageArgument: LaunchArgumentOption { }
 
 extension LanguageArgument {
     // MARK: ArgumetOption
@@ -25,7 +25,7 @@ extension LanguageArgument {
  Application locale.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public protocol LocaleArgument: SingleArgumentOption { }
+public protocol LocaleArgument: LaunchArgumentOption { }
 
 extension LocaleArgument {
     // MARK: ArgumetOption
@@ -38,7 +38,7 @@ extension LocaleArgument {
 /**
  Application keyboard.
  */
-public protocol KeyboardArgument: CollectionArgumetOption { }
+public protocol KeyboardArgument: LaunchArgumentOption { }
 
 extension KeyboardArgument {
     // MARK: ArgumetOption
