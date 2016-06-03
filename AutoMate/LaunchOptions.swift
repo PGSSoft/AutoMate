@@ -44,7 +44,7 @@ public extension LaunchOption {
  For more info about launch arguments variables check:
  [here](https://developer.apple.com/library/ios/recipes/xcode_help-scheme_editor/Articles/SchemeRun.html)
  */
-public protocol LaunchArgumentOption: LaunchOption, CustomStringConvertible {
+public protocol LaunchArgumentOption: LaunchOption {
     var argumentKey: String { get }
 }
 
@@ -77,10 +77,6 @@ public protocol SingleArgumentOption: LaunchArgumentOption {
 }
 
 extension SingleArgumentOption {
-    // MARK: CustomStringConvertible
-    public var description: String {
-        return "<\(self.dynamicType): \(self.value)>"
-    }
 
     // MARK: Option
     public var launchArguments: [String]? {
@@ -109,14 +105,10 @@ public protocol CollectionArgumetOption: LaunchArgumentOption, ArrayLiteralConve
 }
 
 extension CollectionArgumetOption {
-    // MARK: CustomStringConvertible
-    public var description: String {
-        return "<\(self.dynamicType): \(self.values)>"
-    }
 
     // MARK: Option
     public var launchArguments: [String]? {
-        return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joinWithSeparator(", ") + ")"]
+        return ["-\(argumentKey)", values.launchArgument]
     }
 
     public init(arrayLiteral elements: Value ...) {

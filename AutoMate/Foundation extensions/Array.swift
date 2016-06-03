@@ -10,4 +10,11 @@ public extension Array where Element: LaunchArgumentValue {
     var launchArgument: String {
         return "(" + map({ $0.launchArgument }).joinWithSeparator(", ") + ")"
     }
+
+    func combineValues<T: LaunchArgumentValue>(other: [T]) -> [LaunchArgumentValue] {
+        var values = [LaunchArgumentValue]()
+        forEach { values.append($0) }
+        other.forEach { values.append($0) }
+        return values
+    }
 }

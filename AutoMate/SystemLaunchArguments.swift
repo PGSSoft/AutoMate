@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct SystemLanguageArgument: LanguageArgument {
+public struct SystemLanguageArgument: LanguageArgument, CollectionArgumetOption {
 
     // MARK: CollectionArgumetOption
     public let values: [SystemLanguages]
@@ -18,7 +18,7 @@ public struct SystemLanguageArgument: LanguageArgument {
     }
 }
 
-public struct SystemLocaleArgument: LocaleArgument {
+public struct SystemLocaleArgument: LocaleArgument, SingleArgumentOption {
 
     private let localeIdentifier: String
 
@@ -39,7 +39,7 @@ extension SystemLocaleArgument: LaunchArgumentValue {
     }
 }
 
-public struct SystemSoftwareKeyboardArgument: KeyboardArgument {
+public struct SystemSoftwareKeyboardArgument: KeyboardArgument, CollectionArgumetOption {
 
     // MARK: CollectionArgumetOption
     public var values: [SoftwareKeyboards]
@@ -49,12 +49,31 @@ public struct SystemSoftwareKeyboardArgument: KeyboardArgument {
     }
 }
 
-public struct SystemHardwareKeyboardArgument: KeyboardArgument {
+public struct SystemHardwareKeyboardArgument: KeyboardArgument, CollectionArgumetOption {
 
     // MARK: CollectionArgumetOption
     public var values: [HardwareKeyboards]
 
     public init(_ values: [HardwareKeyboards]) {
         self.values = values
+    }
+}
+
+public struct SystemKeyboardArgument: KeyboardArgument {
+
+    private let software: SystemSoftwareKeyboardArgument
+    private let hardware: SystemHardwareKeyboardArgument
+
+    public var values: [LaunchArgumentValue] {
+        return software.values.combineValues(hardware.values)
+    }
+
+    public init(software: SystemSoftwareKeyboardArgument = [], hardware: SystemHardwareKeyboardArgument = []) {
+        self.software = software
+        self.hardware = hardware
+    }
+
+    public var launchArguments: [String]? {
+        return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joinWithSeparator(", ") + ")"]
     }
 }
