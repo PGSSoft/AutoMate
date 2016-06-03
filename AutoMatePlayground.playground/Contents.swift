@@ -1,17 +1,11 @@
 import AutoMate
 
-enum ApplicationLanguage: String, LaunchArgumentValue {
-    case English = "en"
-    case German = "de-De"
-}
+var softwareKeyboards: SystemSoftwareKeyboardArgument = [.EnglishUnitedStates, .RussianRussia]
+var languages: SystemLanguageArgument = [.EnglishUnitedStates, .Romanian]
 
-enum ApplicationLocales: String, LocaleArgument, LaunchArgumentValue {
-    case UnitedStates = "en_US"
-}
+//let locale = SystemLocaleArgument(language: .English, country: .GreatBritain)
+TestLauncher(options: [softwareKeyboards, languages])
 
-var languages: LanguageArgument = [ApplicationLanguage.English, ApplicationLanguage.German]
-
-TestLauncher(options: [languages])
-// TestLauncher(options: [languages, ApplicationLocales.UnitedStates])
+// TestLauncher(options: [softwareKeyboards, languages, locale])
 // Commented out form should work but there is some issue on Playground with:
 // public var value: LaunchArgumentValue { return self }

@@ -4,6 +4,31 @@
    <FileRef
       location = "container:AutoMate.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:scripts"
+      name = "scripts">
+      <Group
+         location = "group:Languages Generator"
+         name = "Languages Generator">
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Keyboards Generator"
+         name = "Keyboards Generator">
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Countries Generator"
+         name = "Countries Generator">
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:AutoMatePlayground.playground">
    </FileRef>
