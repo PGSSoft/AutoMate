@@ -1,4 +1,4 @@
-import AutoMate
+@testable import AutoMate
 
 var softwareKeyboards: SystemSoftwareKeyboardArgument = [.EnglishUnitedStates, .RussianRussia]
 var hardwareKeyboards: SystemHardwareKeyboardArgument = [.EnglishUnitedStates, .RussianRussia]
@@ -8,9 +8,7 @@ keyboards.launchArguments
 
 var languages: SystemLanguageArgument = [.EnglishUnitedStates, .Romanian]
 
-//let locale = SystemLocaleArgument(language: .English, country: .GreatBritain)
-TestLauncher(options: [keyboards, languages])
+let locale = SystemLocaleArgument(language: .English, country: .GreatBritain)
 
-// TestLauncher(options: [softwareKeyboards, languages, locale])
-// Commented out form should work but there is some issue on Playground with:
-// public var value: LaunchArgumentValue { return self }
+let launcher = TestLauncher(options: [softwareKeyboards, languages, locale])
+launcher.buildLaunchArguments()

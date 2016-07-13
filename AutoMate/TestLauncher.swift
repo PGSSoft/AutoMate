@@ -6,6 +6,13 @@
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
 
+public protocol Application {
+    var launchArguments: [String] { get set }
+    var launchEnvironment: [String: String] { get set }
+}
+
+extension XCUIApplication: Application { }
+
 public struct TestLauncher {
 
     // MARK: Properties
@@ -17,7 +24,8 @@ public struct TestLauncher {
     }
 
     // MARK: Public methods
-    public func configure(application: XCUIApplication) -> XCUIApplication {
+    public func configure(application: Application) -> Application {
+        var application = application
         application.launchArguments += buildLaunchArguments()
         application.launchEnvironment.unionInPlace(buildLaunchEnvironment())
         return application
