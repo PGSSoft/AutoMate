@@ -5,6 +5,7 @@
 //  Created by Joanna Bednarz on 19/05/16.
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
+import XCTest
 
 public struct TestLauncher {
 
