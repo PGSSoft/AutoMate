@@ -4,9 +4,9 @@ Pod::Spec.new do |s|
   s.summary      = "TODO"
   s.homepage     = "http://TODO"
 
-  s.license      = "TODO"
+  s.license      = "MIT"
 
-  s.author    = "PGS Software"
+  s.authors    = { "Joanna Bednarz" => "jbednarz@pgs-soft.com", "Pawel Szot" => "pszot@pgs-soft.com" }
 
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
