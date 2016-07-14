@@ -18,7 +18,7 @@
 public protocol LaunchOption {
     var launchArguments: [String]? { get }
     var launchEnvironments: [String: String]? { get }
-    var uniqueIdentifier: Int { get }
+    var uniqueIdentifier: String { get }
 }
 
 public extension LaunchOption {
@@ -31,8 +31,8 @@ public extension LaunchOption {
         return nil
     }
 
-    public var uniqueIdentifier: Int {
-        return "\(self.dynamicType)".hashValue
+    public var uniqueIdentifier: String {
+        return "\(self.dynamicType)"
     }
 }
 
@@ -49,8 +49,8 @@ public protocol LaunchArgumentOption: LaunchOption {
 }
 
 public extension LaunchArgumentOption {
-    public var uniqueIdentifier: Int {
-        return argumentKey.hashValue
+    public var uniqueIdentifier: String {
+        return argumentKey
     }
 }
 
