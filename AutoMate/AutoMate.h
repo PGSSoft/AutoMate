@@ -6,7 +6,7 @@
 //  Copyright © 2016 PGS Software. All rights reserved.
 //
 
-@import XCTest;
+@import Foundation;
 
 //! Project version number for AutoMate.
 FOUNDATION_EXPORT double AutoMateVersionNumber;
