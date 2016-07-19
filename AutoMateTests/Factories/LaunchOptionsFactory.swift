@@ -8,17 +8,34 @@
 
 import AutoMate
 
-private enum TestLaunchArgumenValue: String, LaunchArgumentValue {
-    case Value1 = "value"
-}
-
 struct LaunchOptionsFactory {
 
-    static var keyboardArgument: KeyboardArgument {
-        return KeyboardArgument([TestLaunchArgumenValue.Value1])
+    static var singleSoftwareKeyboardArgument: KeyboardArgument {
+        return SystemSoftwareKeyboardArgument([.EnglishUnitedStates])
     }
 
-    static var languageArgument: LanguageArgument {
-        return LanguageArgument([TestLaunchArgumenValue.Value1])
+    static var multiSoftwareKeyboardArgument: KeyboardArgument {
+        return SystemSoftwareKeyboardArgument([.EnglishUnitedStates, .ChineseChina])
+    }
+
+    static var singleLanguageArgument: LanguageArgument {
+        return SystemLanguageArgument([.EnglishUnitedStates])
+    }
+
+    static var multiLanguageArgument: LanguageArgument {
+        return SystemLanguageArgument([.EnglishUnitedStates, .Hungarian])
+    }
+
+    static var testLaunchEnviromentOption: LaunchOption {
+        return TestLaunchEnviromentOption()
+    }
+}
+
+struct TestLaunchEnviromentOption: LaunchOption {
+
+    var launchEnvironments: [String: String]? {
+        return [
+            "TestKey": "TestConfiguration"
+        ]
     }
 }
