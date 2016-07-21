@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  AutoMateExample
+
+  Created by Paweł Szot on 21/07/16.
+  Copyright © 2016 PGS Software. All rights reserved.
+*/
+
+"title-label-text" = "Type something below";
