@@ -67,6 +67,7 @@ public extension LaunchArgumentValue where Self: RawRepresentable, Self.RawValue
         return "\"\(rawValue)\""
     }
 }
+
 // MARK: - SingleArgumentOption protocol
 /**
  Protocol that should be implemented by types representing launch argument that accepts single
