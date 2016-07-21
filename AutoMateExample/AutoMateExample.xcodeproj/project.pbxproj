@@ -39,6 +39,13 @@
 			remoteGlobalIDString = E4EE41C11CFD7246004F0FFE;
 			remoteInfo = AutoMateTests;
 		};
+		1FB99E751D40FC9F00B8E75B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E425D55C1CED928100A7CA03;
+			remoteInfo = AutoMate;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +150,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1FB99E761D40FC9F00B8E75B /* PBXTargetDependency */,
 			);
 			name = AutoMateExample;
 			productName = AutoMateExample;
@@ -292,6 +300,11 @@
 			isa = PBXTargetDependency;
 			target = 1F98919D1D409547007CD2B0 /* AutoMateExample */;
 			targetProxy = 1F9891B31D409547007CD2B0 /* PBXContainerItemProxy */;
+		};
+		1FB99E761D40FC9F00B8E75B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AutoMate;
+			targetProxy = 1FB99E751D40FC9F00B8E75B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -9,26 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController, UITextViewDelegate {
+
+    // MARK: - IBOutlets
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var counterLabel: UILabel!
     @IBOutlet var textView: UITextView!
 
-    func textViewDidChange(textView: UITextView) {
-        update()
-    }
-
-    func update() {
-        let count = textView.text.characters.count
-        counterLabel.text = "\(count)"
-    }
-
+    //MARK - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = NSLocalizedString("title-label-text", comment: "")
         textView.text = ""
         textView.accessibilityIdentifier = "input-text-view"
         counterLabel.accessibilityIdentifier = "counter-label"
-        update()
+        updateView()
     }
 
+    // MARK: - UITextViewDelegate
+    func textViewDidChange(textView: UITextView) {
+        updateView()
+    }
+
+
+    // MARK: - Helpers
+    func updateView() {
+        let count = textView.text.characters.count
+        counterLabel.text = "\(count)"
+    }
 }

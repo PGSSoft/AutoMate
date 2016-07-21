@@ -11,6 +11,7 @@ import AutoMate
 
 class WithAutomate: XCTestCase {
 
+    // MARK: - Setup
     override func setUp() {
         super.setUp()
 
@@ -28,18 +29,11 @@ class WithAutomate: XCTestCase {
         app.launch()
     }
 
-    override func tearDown() {
-        super.tearDown()
-    }
-
+    // MARK: - Tests
     func testViewController() {
-
-
         let app = XCUIApplication()
         let textView = app.textViews["input-text-view"]
         let counter = app.staticTexts["counter-label"]
-
-        print(counter)
 
         textView.tap()
 
