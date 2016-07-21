@@ -25,7 +25,7 @@ public struct TestLauncher {
     }
 
     // MARK: Public methods
-    public func configure(application: Application) -> Application {
+    public func configure<T: Application>(application: T) -> T {
         var application = application
         application.launchArguments += buildLaunchArguments()
         application.launchEnvironment.unionInPlace(buildLaunchEnvironment())
