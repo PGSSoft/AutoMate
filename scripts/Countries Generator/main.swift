@@ -4,6 +4,12 @@
 
 import Foundation
 
+func scriptDirectory() -> String {
+    let script = Process.arguments[0] as NSString
+    assert(script.hasSuffix(".swift"), "Unable to find directory of the script.")
+    return script.stringByDeletingLastPathComponent
+}
+
 extension NSMutableData {
     func appendString(string: String) {
         guard let dataFromString = string.dataUsingEncoding(NSUTF8StringEncoding) else {
@@ -45,7 +51,7 @@ for (key, value) in countriesDictionary {
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = "../../AutoMate/Models/SystemCountries.swift"
+let path = scriptDirectory()+"/../../AutoMate/Models/SystemCountries.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")

@@ -4,6 +4,12 @@
 
 import Foundation
 
+func scriptDirectory() -> String {
+    let script = Process.arguments[0] as NSString
+    assert(script.hasSuffix(".swift"), "Unable to find directory of the script.")
+    return script.stringByDeletingLastPathComponent
+}
+
 extension NSMutableData {
     func appendString(string: String) {
         guard let dataFromString = string.dataUsingEncoding(NSUTF8StringEncoding) else {
@@ -62,8 +68,8 @@ for bundleName in content where bundleName.containsString(".bundle") {
 softwareKeyboardsData.appendString("}\n")
 hardwareKeyboardsData.appendString("}\n")
 
-let swPath = "../../AutoMate/Models/SoftwareKeyboards.swift"
-let hwPath = "../../AutoMate/Models/HardwareKeyboards.swift"
+let swPath = scriptDirectory()+"/../../AutoMate/Models/SoftwareKeyboards.swift"
+let hwPath = scriptDirectory()+"/../../AutoMate/Models/HardwareKeyboards.swift"
 let swCreated = fileManager.createFileAtPath(swPath, contents: softwareKeyboardsData, attributes: nil)
 let hwCreated = fileManager.createFileAtPath(hwPath, contents: hardwareKeyboardsData, attributes: nil)
 
