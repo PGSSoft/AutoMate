@@ -68,4 +68,34 @@ class SystemLaunchArgumentsTests: XCTestCase {
         XCTAssertEqual(build([locale, keyboard, language]), ["-AppleLocale", "\"pl\"", "-AppleKeyboards", "(\"bn@hw=Bangla\")", "-AppleLanguages", "(\"pl\")"])
     }
 
+    func testCoreDataArguments() {
+        XCTAssertEqual(build([CoreDataArgument.SQLDebug(verbosityLevel: .Low)]), ["-com.apple.CoreData.SQLDebug", "\"1\""])
+        XCTAssertEqual(build([CoreDataArgument.SQLDebug(verbosityLevel: .Medium)]), ["-com.apple.CoreData.SQLDebug", "\"2\""])
+        XCTAssertEqual(build([CoreDataArgument.SQLDebug(verbosityLevel: .High)]), ["-com.apple.CoreData.SQLDebug", "\"3\""])
+
+        XCTAssertEqual(build([CoreDataArgument.SQLiteDebugSynchronous(syncing: .Disabled)]), ["-com.apple.CoreData.SQLiteDebugSynchronous", "\"1\""])
+
+        XCTAssertEqual(build([CoreDataArgument.SyntaxColoredLogging]), ["-com.apple.CoreData.SyntaxColoredLogging", "\"1\""])
+
+        XCTAssertEqual(build([CoreDataArgument.MigrationDebug]), ["-com.apple.CoreData.MigrationDebug", "\"1\""])
+
+        XCTAssertEqual(build([CoreDataArgument.ConcurrencyDebug]), ["-com.apple.CoreData.ConcurrencyDebug", "\"1\""])
+
+        XCTAssertEqual(build([CoreDataArgument.SQLiteIntegrityCheck]), ["-com.apple.CoreData.SQLiteIntegrityCheck", "\"1\""])
+
+        XCTAssertEqual(build([CoreDataArgument.ThreadingDebug(verbosityLevel: .Low)]), ["-com.apple.CoreData.ThreadingDebug", "\"1\""])
+
+        //test two equal keys
+        XCTAssertEqual(build([CoreDataArgument.ConcurrencyDebug, CoreDataArgument.ConcurrencyDebug]), ["-com.apple.CoreData.ConcurrencyDebug", "\"1\""])
+
+        //test two different keys
+        XCTAssertEqual(build([CoreDataArgument.ConcurrencyDebug, CoreDataArgument.SQLiteIntegrityCheck]),
+                       ["-com.apple.CoreData.ConcurrencyDebug", "\"1\"", "-com.apple.CoreData.SQLiteIntegrityCheck", "\"1\""])
+    }
+
+    func testLocalizedString() {
+        XCTAssertEqual(build([LocalizedStringsArgument.ShowNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"YES\""])
+        XCTAssertEqual(build([LocalizedStringsArgument.DoubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"YES\""])
+    }
+
 }

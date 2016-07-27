@@ -62,9 +62,15 @@ public protocol LaunchArgumentValue {
     var launchArgument: String { get }
 }
 
-public extension LaunchArgumentValue where Self: RawRepresentable, Self.RawValue == String {
+public extension LaunchArgumentValue where Self: RawRepresentable {
     var launchArgument: String {
         return "\"\(rawValue)\""
+    }
+}
+
+extension String : LaunchArgumentValue {
+    public var launchArgument: String {
+        return "\"\(self)\""
     }
 }
 
