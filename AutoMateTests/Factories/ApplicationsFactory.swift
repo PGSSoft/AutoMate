@@ -9,11 +9,11 @@
 import AutoMate
 
 struct ApplicationsFactory {
-    static var cleanApplication: Application {
+    static var cleanApplication: TestApplication {
         return TestApplication(launchArguments: [], launchEnvironment: [:])
     }
 
-    static var configuredApplication: Application {
+    static var configuredApplication: TestApplication {
         return TestApplication(launchArguments: ["-TestArgument", "Configuration"], launchEnvironment: ["TestRun": "true"])
     }
 }
