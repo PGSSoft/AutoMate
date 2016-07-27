@@ -19,7 +19,7 @@ class TestLauncherTests: XCTestCase {
         let application = ApplicationsFactory.cleanApplication
         let launcher = TestLauncher(options: [argument, enviroment])
 
-        var configApplication = launcher.configure(application)
+        let configApplication = launcher.configure(application)
         XCTAssertEqual(configApplication.launchArguments, argument.launchArguments!)
         XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
     }
@@ -28,25 +28,25 @@ class TestLauncherTests: XCTestCase {
         let application = ApplicationsFactory.cleanApplication
         let launcher = TestLauncher(options: [argument, argument, enviroment, enviroment])
 
-        var configApplication = launcher.configure(application)
+        let configApplication = launcher.configure(application)
         XCTAssertEqual(configApplication.launchArguments, argument.launchArguments!)
         XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
     }
 
     func testConfigureSetUpApplicationWithoutOptionsLaunch() {
-        var application = ApplicationsFactory.configuredApplication
+        let application = ApplicationsFactory.configuredApplication
         let launcher = TestLauncher(options: [])
 
-        var configApplication = launcher.configure(application)
+        let configApplication = launcher.configure(application)
         XCTAssertEqual(configApplication.launchArguments, application.launchArguments)
         XCTAssertEqual(configApplication.launchEnvironment, application.launchEnvironment)
     }
 
     func testConfigureSetUpApplicationWithOptionsLaunch() {
-        var application = ApplicationsFactory.configuredApplication
+        let application = ApplicationsFactory.configuredApplication
         let launcher = TestLauncher(options: [argument, enviroment])
 
-        var configApplication = launcher.configure(application)
+        let configApplication = launcher.configure(application)
         var argumentsSetUp = application.launchArguments
         argumentsSetUp += argument.launchArguments!
         var enviromentSetUp = application.launchEnvironment
