@@ -27,8 +27,8 @@ public struct TestLauncher {
     // MARK: Public methods
     public func configure<T: Application>(application: T) -> T {
         var application = application
-        application.launchArguments += buildLaunchArguments()
-        application.launchEnvironment.unionInPlace(buildLaunchEnvironment())
+        application.launchArguments += launchArguments
+        application.launchEnvironment.unionInPlace(launchEnvironments)
         return application
     }
 
@@ -38,7 +38,7 @@ public struct TestLauncher {
 
      - returns: List of launch arguments.
      */
-    func buildLaunchArguments() -> [String] {
+    var launchArguments: [String] {
         return options.flatMap { $0.launchArguments }.reduce([], combine: +)
     }
 
@@ -47,7 +47,7 @@ public struct TestLauncher {
 
      - returns: Dictionary of launch environments
      */
-    func buildLaunchEnvironment() -> [String: String] {
+    var launchEnvironments: [String: String] {
         return options.flatMap { $0.launchEnvironments }.reduce([:]) { $0.union($1) }
     }
 }

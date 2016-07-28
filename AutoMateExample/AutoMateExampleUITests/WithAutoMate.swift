@@ -18,11 +18,11 @@ class WithAutomate: XCTestCase {
         continueAfterFailure = false
         let app = XCUIApplication()
         let launcher = TestLauncher(options: [
-            SystemLanguageArgument([.Polish]),
-            SystemLocaleArgument(language: .Polish, country: .Poland),
-            SystemKeyboardArgument(
-                software: SystemSoftwareKeyboardArgument([.PolishPoland]),
-                hardware: SystemHardwareKeyboardArgument([.PolishPoland])
+            SystemLanguages([.Polish]),
+            SystemLocale(language: .Polish, country: .Poland),
+            SystemKeyboards(
+                software: SoftwareKeyboards([.PolishPoland]),
+                hardware: HardwareKeyboards([.PolishPoland])
             )
         ])
         launcher.configure(app)

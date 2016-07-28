@@ -1,5 +1,5 @@
 // swiftlint:disable:next type_body_length
-public enum SoftwareKeyboards: String, LaunchArgumentValue {
+public enum SoftwareKeyboard: String, LaunchArgumentValue {
 	case Arabic = "ar@sw=Arabic"
 	case BulgarianBulgaria = "bg_BG@sw=Bulgarian"
 	case Bengali = "bn@sw=Bengali"

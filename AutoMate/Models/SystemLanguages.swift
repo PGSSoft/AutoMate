@@ -1,5 +1,5 @@
 // swiftlint:disable:next type_body_length
-public enum SystemLanguages: String, LaunchArgumentValue {
+public enum SystemLanguage: String, LaunchArgumentValue {
 	case Cheyenne = "chy"
 	case EnglishIndia = "en-IN"
 	case EnglishUnitedStates = "en-US"

@@ -1,5 +1,5 @@
 // swiftlint:disable:next type_body_length
-public enum SystemCountries: String {
+public enum SystemCountry: String {
 	case Belarus = "BY"
 	case Singapore = "SG"
 	case Tajikistan = "TJ"

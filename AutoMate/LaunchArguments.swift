@@ -11,9 +11,9 @@
  Application language.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public protocol LanguageArgument: LaunchArgumentOption { }
+public protocol LanguageLaunchArgument: LaunchArgument { }
 
-extension LanguageArgument {
+extension LanguageLaunchArgument {
     // MARK: ArgumetOption
     public var argumentKey: String {
         return "AppleLanguages"
@@ -25,9 +25,9 @@ extension LanguageArgument {
  Application locale.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public protocol LocaleArgument: LaunchArgumentOption { }
+public protocol LocaleLaunchArgument: LaunchArgument { }
 
-extension LocaleArgument {
+extension LocaleLaunchArgument {
     // MARK: ArgumetOption
     public var argumentKey: String {
         return "AppleLocale"
@@ -38,9 +38,9 @@ extension LocaleArgument {
 /**
  Application keyboard.
  */
-public protocol KeyboardArgument: LaunchArgumentOption { }
+public protocol KeyboardLaunchArgument: LaunchArgument { }
 
-extension KeyboardArgument {
+extension KeyboardLaunchArgument {
     // MARK: ArgumetOption
     public var argumentKey: String {
         return "AppleKeyboards"

@@ -11,8 +11,8 @@ import XCTest
 
 class LaunchOptionsSetTests: XCTestCase {
 
-    let option = LaunchOptionsFactory.singleSoftwareKeyboardArgument
-    let option1 = LaunchOptionsFactory.singleLanguageArgument
+    let option = LaunchOptionsFactory.singleSoftwareKeyboardLaunchArgument
+    let option1 = LaunchOptionsFactory.singleLanguageLaunchArgument
 
     func testArrayLiteralInitialization() {
         let set: LaunchOptionsSet = [option]
