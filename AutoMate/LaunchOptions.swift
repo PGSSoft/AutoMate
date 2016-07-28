@@ -62,7 +62,7 @@ public protocol LaunchArgumentValue {
     var launchArgument: String { get }
 }
 
-public extension LaunchArgumentValue where Self: RawRepresentable, Self.RawValue == String {
+public extension LaunchArgumentValue where Self: RawRepresentable {
     var launchArgument: String {
         return "\"\(rawValue)\""
     }
@@ -114,5 +114,15 @@ extension CollectionArgumentOption {
 
     public init(arrayLiteral elements: Value ...) {
         self.init(elements)
+    }
+}
+
+// MARK: - Launch argument values
+public enum BooleanLaunchArgumentValue: Int, BooleanLiteralConvertible, LaunchArgumentValue {
+    case True = 1
+    case False = 0
+
+    public init(booleanLiteral value: BooleanLiteralType) {
+        self = value ? .True : .False
     }
 }
