@@ -14,7 +14,7 @@
 public protocol LanguageLaunchArgument: LaunchArgument { }
 
 extension LanguageLaunchArgument {
-    // MARK: ArgumetOption
+    // MARK: LaunchArgument
     public var argumentKey: String {
         return "AppleLanguages"
     }
@@ -28,7 +28,7 @@ extension LanguageLaunchArgument {
 public protocol LocaleLaunchArgument: LaunchArgument { }
 
 extension LocaleLaunchArgument {
-    // MARK: ArgumetOption
+    // MARK: LaunchArgument
     public var argumentKey: String {
         return "AppleLocale"
     }
@@ -41,7 +41,7 @@ extension LocaleLaunchArgument {
 public protocol KeyboardLaunchArgument: LaunchArgument { }
 
 extension KeyboardLaunchArgument {
-    // MARK: ArgumetOption
+    // MARK: LaunchArgument
     public var argumentKey: String {
         return "AppleKeyboards"
     }

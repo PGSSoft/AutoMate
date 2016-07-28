@@ -10,7 +10,7 @@ import Foundation
 
 public struct SystemLanguages: LanguageLaunchArgument, LaunchArgumentWithMultipleValues {
 
-    // MARK: CollectionArgumetOption
+    // MARK: LaunchArgumentWithMultipleValues
     public let values: [SystemLanguage]
 
     public init(_ values: [SystemLanguage]) {
@@ -41,7 +41,7 @@ extension SystemLocale: LaunchArgumentValue {
 
 public struct SoftwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMultipleValues {
 
-    // MARK: CollectionArgumetOption
+    // MARK: LaunchArgumentWithMultipleValues
     public var values: [SoftwareKeyboard]
 
     public init(_ values: [SoftwareKeyboard]) {
@@ -51,7 +51,7 @@ public struct SoftwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMulti
 
 public struct HardwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMultipleValues {
 
-    // MARK: CollectionArgumetOption
+    // MARK: LaunchArgumentWithMultipleValues
     public var values: [HardwareKeyboard]
 
     public init(_ values: [HardwareKeyboard]) {

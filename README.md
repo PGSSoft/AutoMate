@@ -41,9 +41,9 @@ github PGSSoft/AutoMate
     ```swift
     let app = XCUIApplication()
     TestLauncher(options: [
-        SystemLanguageArgument([.English, .German]),
-        SystemLocaleArgument(language: .English, country: .Canada),
-        SystemSoftwareKeyboardArgument([.EnglishCanada, .GermanGermany])
+        SystemLanguages([.English, .German]),
+        SystemLocale(language: .English, country: .Canada),
+        SoftwareKeyboards([.EnglishCanada, .GermanGermany])
     ]).configure(app).launch()
     ```
 
@@ -60,10 +60,10 @@ github PGSSoft/AutoMate
 
 ## Development
 
-If you want to provide your custom launch argument or launch environment you have to implement `LaunchOption` protocol or one of its extensions like `SingleArgumentOption`:
+If you want to provide your custom launch argument or launch environment you have to implement `LaunchOption` protocol or one of its extensions like `LaunchArgumentWithSingleValue`:
 
 ```swift
-enum CustomParameter: String, SingleArgumentOption, LaunchArgumentValue {
+enum CustomParameter: String, LaunchArgumentWithSingleValue, LaunchArgumentValue {
     var argumentKey: String {
         return "AppParameter"
     }

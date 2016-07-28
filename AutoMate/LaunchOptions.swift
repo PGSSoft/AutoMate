@@ -91,7 +91,7 @@ extension LaunchArgumentWithSingleValue where Self: LaunchArgumentValue {
     }
 }
 
-// MARK: - CollectionArgumetOption protocol
+// MARK: - LaunchArgumentWithMultipleValues protocol
 /**
  Protocol that should be implemented by types representing launch argument that accepts collection
  of values.
