@@ -48,7 +48,7 @@ for identifier in languagesDictionary.keys {
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = scriptDirectory()+"/../../AutoMate/Models/SystemLanguages.swift"
+let path = scriptDirectory()+"/../AutoMate/Models/SystemLanguages.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")

@@ -51,7 +51,7 @@ for (key, value) in countriesDictionary {
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = scriptDirectory()+"/../../AutoMate/Models/SystemCountries.swift"
+let path = scriptDirectory()+"/../AutoMate/Models/SystemCountries.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")
