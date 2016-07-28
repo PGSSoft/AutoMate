@@ -68,8 +68,8 @@ for bundleName in content where bundleName.containsString(".bundle") {
 softwareKeyboardsData.appendString("}\n")
 hardwareKeyboardsData.appendString("}\n")
 
-let swPath = scriptDirectory()+"/../../AutoMate/Models/SoftwareKeyboards.swift"
-let hwPath = scriptDirectory()+"/../../AutoMate/Models/HardwareKeyboards.swift"
+let swPath = scriptDirectory()+"/../AutoMate/Models/SoftwareKeyboards.swift"
+let hwPath = scriptDirectory()+"/../AutoMate/Models/HardwareKeyboards.swift"
 let swCreated = fileManager.createFileAtPath(swPath, contents: softwareKeyboardsData, attributes: nil)
 let hwCreated = fileManager.createFileAtPath(hwPath, contents: hardwareKeyboardsData, attributes: nil)
 
