@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import AutoMate
+import AutoMate
 
 class SystemLaunchArgumentsTests: XCTestCase {
     func build(input: [LaunchOption]) -> [String] {
@@ -94,8 +94,8 @@ class SystemLaunchArgumentsTests: XCTestCase {
     }
 
     func testLocalizedString() {
-        XCTAssertEqual(build([LocalizedStringsArgument.ShowNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"YES\""])
-        XCTAssertEqual(build([LocalizedStringsArgument.DoubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"YES\""])
+        XCTAssertEqual(build([LocalizedStringsArgument.ShowNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"1\""])
+        XCTAssertEqual(build([LocalizedStringsArgument.DoubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"1\""])
     }
 
 }

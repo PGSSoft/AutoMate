@@ -68,12 +68,6 @@ public extension LaunchArgumentValue where Self: RawRepresentable {
     }
 }
 
-extension String : LaunchArgumentValue {
-    public var launchArgument: String {
-        return "\"\(self)\""
-    }
-}
-
 // MARK: - SingleArgumentOption protocol
 /**
  Protocol that should be implemented by types representing launch argument that accepts single
@@ -120,5 +114,15 @@ extension CollectionArgumentOption {
 
     public init(arrayLiteral elements: Value ...) {
         self.init(elements)
+    }
+}
+
+// MARK: - Launch argument values
+public enum BooleanLaunchArgumentValue: Int, BooleanLiteralConvertible, LaunchArgumentValue {
+    case True = 1
+    case False = 0
+
+    public init(booleanLiteral value: BooleanLiteralType) {
+        self = value ? .True : .False
     }
 }

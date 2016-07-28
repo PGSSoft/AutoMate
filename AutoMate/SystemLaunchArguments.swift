@@ -129,34 +129,29 @@ extension CoreDataArgument: SingleArgumentOption {
         switch self {
         case let SQLDebug(value):
             return value
-        case SyntaxColoredLogging:
-            return "1"
-        case MigrationDebug:
-            return "1"
-        case ConcurrencyDebug:
-            return "1"
         case let SQLiteDebugSynchronous(value):
             return value
-        case SQLiteIntegrityCheck:
-            return "1"
         case let ThreadingDebug(value):
             return value
+        case SyntaxColoredLogging, MigrationDebug, ConcurrencyDebug, SQLiteIntegrityCheck:
+            return BooleanLaunchArgumentValue.True
         }
     }
 }
 
 
 // MARK: - LocalizedStringArgument
-enum LocalizedStringsArgument: String {
+public enum LocalizedStringsArgument: String {
     case DoubleLocalizedStrings = "NSDoubleLocalizedStrings"
     case ShowNonLocalizedStrings = "NSShowNonLocalizedStrings"
 }
 
 extension LocalizedStringsArgument: SingleArgumentOption {
-    var value: LaunchArgumentValue {
-        return "YES"
+    public var value: LaunchArgumentValue {
+        return BooleanLaunchArgumentValue.True
     }
-    var argumentKey: String {
+
+    public var argumentKey: String {
         return rawValue
     }
 }
