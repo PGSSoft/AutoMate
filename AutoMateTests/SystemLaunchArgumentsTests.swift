@@ -69,33 +69,33 @@ class SystemLaunchArgumentsTests: XCTestCase {
     }
 
     func testCoreDataArguments() {
-        XCTAssertEqual(build([CoreDataArgument.SQLDebug(verbosityLevel: .Low)]), ["-com.apple.CoreData.SQLDebug", "\"1\""])
-        XCTAssertEqual(build([CoreDataArgument.SQLDebug(verbosityLevel: .Medium)]), ["-com.apple.CoreData.SQLDebug", "\"2\""])
-        XCTAssertEqual(build([CoreDataArgument.SQLDebug(verbosityLevel: .High)]), ["-com.apple.CoreData.SQLDebug", "\"3\""])
+        XCTAssertEqual(build([CoreDataOption.SQLDebug(verbosityLevel: .Low)]), ["-com.apple.CoreData.SQLDebug", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.SQLDebug(verbosityLevel: .Medium)]), ["-com.apple.CoreData.SQLDebug", "\"2\""])
+        XCTAssertEqual(build([CoreDataOption.SQLDebug(verbosityLevel: .High)]), ["-com.apple.CoreData.SQLDebug", "\"3\""])
 
-        XCTAssertEqual(build([CoreDataArgument.SQLiteDebugSynchronous(syncing: .Disabled)]), ["-com.apple.CoreData.SQLiteDebugSynchronous", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.SQLiteDebugSynchronous(syncing: .Disabled)]), ["-com.apple.CoreData.SQLiteDebugSynchronous", "\"1\""])
 
-        XCTAssertEqual(build([CoreDataArgument.SyntaxColoredLogging]), ["-com.apple.CoreData.SyntaxColoredLogging", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.SyntaxColoredLogging]), ["-com.apple.CoreData.SyntaxColoredLogging", "\"1\""])
 
-        XCTAssertEqual(build([CoreDataArgument.MigrationDebug]), ["-com.apple.CoreData.MigrationDebug", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.MigrationDebug]), ["-com.apple.CoreData.MigrationDebug", "\"1\""])
 
-        XCTAssertEqual(build([CoreDataArgument.ConcurrencyDebug]), ["-com.apple.CoreData.ConcurrencyDebug", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.ConcurrencyDebug]), ["-com.apple.CoreData.ConcurrencyDebug", "\"1\""])
 
-        XCTAssertEqual(build([CoreDataArgument.SQLiteIntegrityCheck]), ["-com.apple.CoreData.SQLiteIntegrityCheck", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.SQLiteIntegrityCheck]), ["-com.apple.CoreData.SQLiteIntegrityCheck", "\"1\""])
 
-        XCTAssertEqual(build([CoreDataArgument.ThreadingDebug(verbosityLevel: .Low)]), ["-com.apple.CoreData.ThreadingDebug", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.ThreadingDebug(verbosityLevel: .Low)]), ["-com.apple.CoreData.ThreadingDebug", "\"1\""])
 
         //test two equal keys
-        XCTAssertEqual(build([CoreDataArgument.ConcurrencyDebug, CoreDataArgument.ConcurrencyDebug]), ["-com.apple.CoreData.ConcurrencyDebug", "\"1\""])
+        XCTAssertEqual(build([CoreDataOption.ConcurrencyDebug, CoreDataOption.ConcurrencyDebug]), ["-com.apple.CoreData.ConcurrencyDebug", "\"1\""])
 
         //test two different keys
-        XCTAssertEqual(build([CoreDataArgument.ConcurrencyDebug, CoreDataArgument.SQLiteIntegrityCheck]),
+        XCTAssertEqual(build([CoreDataOption.ConcurrencyDebug, CoreDataOption.SQLiteIntegrityCheck]),
                        ["-com.apple.CoreData.ConcurrencyDebug", "\"1\"", "-com.apple.CoreData.SQLiteIntegrityCheck", "\"1\""])
     }
 
     func testLocalizedString() {
-        XCTAssertEqual(build([LocalizedStringsArgument.ShowNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"1\""])
-        XCTAssertEqual(build([LocalizedStringsArgument.DoubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"1\""])
+        XCTAssertEqual(build([LocalizedStrings.ShowNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"1\""])
+        XCTAssertEqual(build([LocalizedStrings.DoubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"1\""])
     }
 
 }

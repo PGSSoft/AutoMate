@@ -79,7 +79,7 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
 }
 
 // MARK: - CoreDataArgument
-public enum CoreDataArgument {
+public enum CoreDataOption {
     case SQLDebug(verbosityLevel: VerbosityLevel)
     case SyntaxColoredLogging
     case MigrationDebug
@@ -101,11 +101,11 @@ public enum CoreDataArgument {
     }
 }
 
-extension CoreDataArgument.VerbosityLevel : LaunchArgumentValue {}
+extension CoreDataOption.VerbosityLevel : LaunchArgumentValue {}
 
-extension CoreDataArgument.DiskSyncing : LaunchArgumentValue {}
+extension CoreDataOption.DiskSyncing : LaunchArgumentValue {}
 
-extension CoreDataArgument: SingleArgumentOption {
+extension CoreDataOption: LaunchArgumentWithSingleValue {
     public var argumentKey: String {
         switch self {
         case SQLDebug:
@@ -141,12 +141,12 @@ extension CoreDataArgument: SingleArgumentOption {
 
 
 // MARK: - LocalizedStringArgument
-public enum LocalizedStringsArgument: String {
+public enum LocalizedStrings: String {
     case DoubleLocalizedStrings = "NSDoubleLocalizedStrings"
     case ShowNonLocalizedStrings = "NSShowNonLocalizedStrings"
 }
 
-extension LocalizedStringsArgument: SingleArgumentOption {
+extension LocalizedStrings: LaunchArgumentWithSingleValue {
     public var value: LaunchArgumentValue {
         return BooleanLaunchArgumentValue.True
     }
