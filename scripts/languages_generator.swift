@@ -34,7 +34,7 @@ guard let languagesDictionary = NSDictionary(contentsOfFile: simulatorLanguagesP
 
 var data = NSMutableData()
 data.appendString("// swiftlint:disable:next type_body_length\n")
-data.appendString("public enum SystemLanguages: String, LaunchArgumentValue {\n")
+data.appendString("public enum SystemLanguage: String, LaunchArgumentValue {\n")
 
 for identifier in languagesDictionary.keys {
     guard let displayName = locale.displayNameForKey(NSLocaleIdentifier, value: identifier) else {
@@ -48,7 +48,7 @@ for identifier in languagesDictionary.keys {
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = scriptDirectory()+"/../AutoMate/Models/SystemLanguages.swift"
+let path = scriptDirectory()+"/../AutoMate/Models/SystemLanguage.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")

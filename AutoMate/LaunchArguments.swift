@@ -11,10 +11,10 @@
  Application language.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public protocol LanguageArgument: LaunchArgumentOption { }
+public protocol LanguageLaunchArgument: LaunchArgument { }
 
-extension LanguageArgument {
-    // MARK: ArgumetOption
+extension LanguageLaunchArgument {
+    // MARK: LaunchArgument
     public var argumentKey: String {
         return "AppleLanguages"
     }
@@ -25,10 +25,10 @@ extension LanguageArgument {
  Application locale.
  More info: https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
  */
-public protocol LocaleArgument: LaunchArgumentOption { }
+public protocol LocaleLaunchArgument: LaunchArgument { }
 
-extension LocaleArgument {
-    // MARK: ArgumetOption
+extension LocaleLaunchArgument {
+    // MARK: LaunchArgument
     public var argumentKey: String {
         return "AppleLocale"
     }
@@ -38,10 +38,10 @@ extension LocaleArgument {
 /**
  Application keyboard.
  */
-public protocol KeyboardArgument: LaunchArgumentOption { }
+public protocol KeyboardLaunchArgument: LaunchArgument { }
 
-extension KeyboardArgument {
-    // MARK: ArgumetOption
+extension KeyboardLaunchArgument {
+    // MARK: LaunchArgument
     public var argumentKey: String {
         return "AppleKeyboards"
     }

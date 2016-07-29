@@ -38,7 +38,7 @@ countriesDictionary
 
 var data = NSMutableData()
 data.appendString("// swiftlint:disable:next type_body_length\n")
-data.appendString("public enum SystemCountries: String {\n")
+data.appendString("public enum SystemCountry: String {\n")
 
 for (key, value) in countriesDictionary {
     let countryCodeRange = NSRange(location: 0, length: key.characters.count)
@@ -51,7 +51,7 @@ for (key, value) in countriesDictionary {
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = scriptDirectory()+"/../AutoMate/Models/SystemCountries.swift"
+let path = scriptDirectory()+"/../AutoMate/Models/SystemCountry.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")

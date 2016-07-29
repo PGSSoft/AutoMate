@@ -8,17 +8,17 @@
 
 import Foundation
 
-public struct SystemLanguageArgument: LanguageArgument, CollectionArgumentOption {
+public struct SystemLanguages: LanguageLaunchArgument, LaunchArgumentWithMultipleValues {
 
-    // MARK: CollectionArgumetOption
-    public let values: [SystemLanguages]
+    // MARK: LaunchArgumentWithMultipleValues
+    public let values: [SystemLanguage]
 
-    public init(_ values: [SystemLanguages]) {
+    public init(_ values: [SystemLanguage]) {
         self.values = values
     }
 }
 
-public struct SystemLocaleArgument: LocaleArgument, SingleArgumentOption {
+public struct SystemLocale: LocaleLaunchArgument, LaunchArgumentWithSingleValue {
 
     private let localeIdentifier: String
 
@@ -26,49 +26,49 @@ public struct SystemLocaleArgument: LocaleArgument, SingleArgumentOption {
         self.localeIdentifier = localeIdentifier
     }
 
-    public init(language: SystemLanguages, country: SystemCountries) {
+    public init(language: SystemLanguage, country: SystemCountry) {
         self.localeIdentifier = "\(language.rawValue)_\(country.rawValue)"
     }
 }
 
 // MARK: LaunchArgumentValue
-extension SystemLocaleArgument: LaunchArgumentValue {
+extension SystemLocale: LaunchArgumentValue {
 
     public var launchArgument: String {
         return "\"\(localeIdentifier)\""
     }
 }
 
-public struct SystemSoftwareKeyboardArgument: KeyboardArgument, CollectionArgumentOption {
+public struct SoftwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMultipleValues {
 
-    // MARK: CollectionArgumetOption
-    public var values: [SoftwareKeyboards]
+    // MARK: LaunchArgumentWithMultipleValues
+    public var values: [SoftwareKeyboard]
 
-    public init(_ values: [SoftwareKeyboards]) {
+    public init(_ values: [SoftwareKeyboard]) {
         self.values = values
     }
 }
 
-public struct SystemHardwareKeyboardArgument: KeyboardArgument, CollectionArgumentOption {
+public struct HardwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMultipleValues {
 
-    // MARK: CollectionArgumetOption
-    public var values: [HardwareKeyboards]
+    // MARK: LaunchArgumentWithMultipleValues
+    public var values: [HardwareKeyboard]
 
-    public init(_ values: [HardwareKeyboards]) {
+    public init(_ values: [HardwareKeyboard]) {
         self.values = values
     }
 }
 
-public struct SystemKeyboardArgument: KeyboardArgument {
+public struct SystemKeyboards: KeyboardLaunchArgument {
 
-    private let software: SystemSoftwareKeyboardArgument
-    private let hardware: SystemHardwareKeyboardArgument
+    private let software: SoftwareKeyboards
+    private let hardware: HardwareKeyboards
 
     public var values: [LaunchArgumentValue] {
         return software.values.combineValues(hardware.values)
     }
 
-    public init(software: SystemSoftwareKeyboardArgument = [], hardware: SystemHardwareKeyboardArgument = []) {
+    public init(software: SoftwareKeyboards = [], hardware: HardwareKeyboards = []) {
         self.software = software
         self.hardware = hardware
     }

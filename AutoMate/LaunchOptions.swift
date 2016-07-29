@@ -44,11 +44,11 @@ public extension LaunchOption {
  For more info about launch arguments variables check:
  [here](https://developer.apple.com/library/ios/recipes/xcode_help-scheme_editor/Articles/SchemeRun.html)
  */
-public protocol LaunchArgumentOption: LaunchOption {
+public protocol LaunchArgument: LaunchOption {
     var argumentKey: String { get }
 }
 
-public extension LaunchArgumentOption {
+public extension LaunchArgument {
     public var uniqueIdentifier: String {
         return argumentKey
     }
@@ -68,16 +68,16 @@ public extension LaunchArgumentValue where Self: RawRepresentable {
     }
 }
 
-// MARK: - SingleArgumentOption protocol
+// MARK: - LaunchArgumentWithSingleValue protocol
 /**
  Protocol that should be implemented by types representing launch argument that accepts single
  argument value.
  */
-public protocol SingleArgumentOption: LaunchArgumentOption {
+public protocol LaunchArgumentWithSingleValue: LaunchArgument {
     var value: LaunchArgumentValue { get }
 }
 
-extension SingleArgumentOption {
+extension LaunchArgumentWithSingleValue {
 
     // MARK: Option
     public var launchArguments: [String]? {
@@ -85,18 +85,18 @@ extension SingleArgumentOption {
     }
 }
 
-extension SingleArgumentOption where Self: LaunchArgumentValue {
+extension LaunchArgumentWithSingleValue where Self: LaunchArgumentValue {
     public var value: LaunchArgumentValue {
         return self
     }
 }
 
-// MARK: - CollectionArgumetOption protocol
+// MARK: - LaunchArgumentWithMultipleValues protocol
 /**
  Protocol that should be implemented by types representing launch argument that accepts collection
  of values.
  */
-public protocol CollectionArgumentOption: LaunchArgumentOption, ArrayLiteralConvertible {
+public protocol LaunchArgumentWithMultipleValues: LaunchArgument, ArrayLiteralConvertible {
     associatedtype Value: LaunchArgumentValue
     var values: [Value] { get }
     init(_ values: [Value])
@@ -105,7 +105,7 @@ public protocol CollectionArgumentOption: LaunchArgumentOption, ArrayLiteralConv
     associatedtype Element = Value
 }
 
-extension CollectionArgumentOption {
+extension LaunchArgumentWithMultipleValues {
 
     // MARK: Option
     public var launchArguments: [String]? {

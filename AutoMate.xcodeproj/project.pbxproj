@@ -14,10 +14,10 @@
 		E4535A461CEDC4AB008965DD /* LaunchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* LaunchOptions.swift */; };
 		E4535A491CEDD259008965DD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
 		E4535A4B1CEDD281008965DD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
-		E46BE5D81CFEF665007531D2 /* SystemLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D71CFEF665007531D2 /* SystemLanguages.swift */; };
-		E46BE5DA1CFF0885007531D2 /* SystemCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D91CFF0885007531D2 /* SystemCountries.swift */; };
-		E47BB6F81CF310F200229D63 /* HardwareKeyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F51CF310F200229D63 /* HardwareKeyboards.swift */; };
-		E47BB6F91CF310F200229D63 /* SoftwareKeyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F61CF310F200229D63 /* SoftwareKeyboards.swift */; };
+		E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */; };
+		E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D91CFF0885007531D2 /* SystemCountry.swift */; };
+		E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */; };
+		E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */; };
 		E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
 		E487A11E1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */; };
 		E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */; };
@@ -47,10 +47,10 @@
 		E4535A451CEDC4AB008965DD /* LaunchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptions.swift; sourceTree = "<group>"; };
 		E4535A481CEDD259008965DD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		E4535A4A1CEDD281008965DD /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		E46BE5D71CFEF665007531D2 /* SystemLanguages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLanguages.swift; sourceTree = "<group>"; };
-		E46BE5D91CFF0885007531D2 /* SystemCountries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCountries.swift; sourceTree = "<group>"; };
-		E47BB6F51CF310F200229D63 /* HardwareKeyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareKeyboards.swift; sourceTree = "<group>"; };
-		E47BB6F61CF310F200229D63 /* SoftwareKeyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareKeyboards.swift; sourceTree = "<group>"; };
+		E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLanguage.swift; sourceTree = "<group>"; };
+		E46BE5D91CFF0885007531D2 /* SystemCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCountry.swift; sourceTree = "<group>"; };
+		E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareKeyboard.swift; sourceTree = "<group>"; };
+		E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareKeyboard.swift; sourceTree = "<group>"; };
 		E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSet.swift; sourceTree = "<group>"; };
 		E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchArgumentsTests.swift; sourceTree = "<group>"; };
 		E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchArguments.swift; sourceTree = "<group>"; };
@@ -135,10 +135,10 @@
 		E47BB6F41CF310F200229D63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E47BB6F51CF310F200229D63 /* HardwareKeyboards.swift */,
-				E47BB6F61CF310F200229D63 /* SoftwareKeyboards.swift */,
-				E46BE5D71CFEF665007531D2 /* SystemLanguages.swift */,
-				E46BE5D91CFF0885007531D2 /* SystemCountries.swift */,
+				E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */,
+				E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */,
+				E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */,
+				E46BE5D91CFF0885007531D2 /* SystemCountry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,12 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4535A461CEDC4AB008965DD /* LaunchOptions.swift in Sources */,
-				E47BB6F81CF310F200229D63 /* HardwareKeyboards.swift in Sources */,
-				E47BB6F91CF310F200229D63 /* SoftwareKeyboards.swift in Sources */,
+				E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */,
+				E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
-				E46BE5D81CFEF665007531D2 /* SystemLanguages.swift in Sources */,
+				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
 				E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */,
-				E46BE5DA1CFF0885007531D2 /* SystemCountries.swift in Sources */,
+				E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */,
 				E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */,
 				E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,

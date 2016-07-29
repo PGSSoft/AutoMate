@@ -19,24 +19,24 @@ class SystemLaunchArgumentsTests: XCTestCase {
         return app.launchArguments
     }
 
-    func testLanguageArgument() {
-        func buildLanguage(input: [SystemLanguages]) -> [String] {
-            let result = build([SystemLanguageArgument(input)])
+    func testLanguageLaunchArgument() {
+        func buildLanguage(input: [SystemLanguage]) -> [String] {
+            let result = build([SystemLanguages(input)])
             return result
         }
 
         XCTAssertEqual(buildLanguage([]), ["-AppleLanguages", "()"])
-        XCTAssertEqual(buildLanguage([SystemLanguages.Polish]), ["-AppleLanguages", "(\"pl\")"])
-        XCTAssertEqual(buildLanguage([SystemLanguages.Polish, SystemLanguages.Polish]), ["-AppleLanguages", "(\"pl\", \"pl\")"])
-        XCTAssertEqual(buildLanguage([SystemLanguages.Polish, SystemLanguages.English]), ["-AppleLanguages", "(\"pl\", \"en\")"])
+        XCTAssertEqual(buildLanguage([SystemLanguage.Polish]), ["-AppleLanguages", "(\"pl\")"])
+        XCTAssertEqual(buildLanguage([SystemLanguage.Polish, SystemLanguage.Polish]), ["-AppleLanguages", "(\"pl\", \"pl\")"])
+        XCTAssertEqual(buildLanguage([SystemLanguage.Polish, SystemLanguage.English]), ["-AppleLanguages", "(\"pl\", \"en\")"])
     }
 
-    func testLocaleArgument() {
-        let l1 = SystemLocaleArgument(localeIdentifier: "pl")
-        let l2 = SystemLocaleArgument(language: .Polish, country: .Afghanistan)
-        let l3 = SystemLocaleArgument(language: .English, country: .Afghanistan)
-        let l4 = SystemLocaleArgument(language: .English, country: .USA)
-        let l5 = SystemLocaleArgument(localeIdentifier: "garbage")
+    func testLocaleLaunchArgument() {
+        let l1 = SystemLocale(localeIdentifier: "pl")
+        let l2 = SystemLocale(language: .Polish, country: .Afghanistan)
+        let l3 = SystemLocale(language: .English, country: .Afghanistan)
+        let l4 = SystemLocale(language: .English, country: .USA)
+        let l5 = SystemLocale(localeIdentifier: "garbage")
 
         XCTAssertEqual(build([l1]), ["-AppleLocale", "\"pl\""])
         XCTAssertEqual(build([l2]), ["-AppleLocale", "\"pl_AF\""])
@@ -46,10 +46,10 @@ class SystemLaunchArgumentsTests: XCTestCase {
         XCTAssertEqual(build([l1, l2, l3, l4]), ["-AppleLocale", "\"pl\""])
     }
 
-    func testKeyboardArgument() {
-        let hardware = SystemHardwareKeyboardArgument([HardwareKeyboards.Bengali])
-        let software = SystemSoftwareKeyboardArgument(arrayLiteral: SoftwareKeyboards.Bengali)
-        let keyboard = SystemKeyboardArgument(software: software, hardware: hardware)
+    func testKeyboardLaunchArgument() {
+        let hardware = HardwareKeyboards([HardwareKeyboard.Bengali])
+        let software = SoftwareKeyboards(arrayLiteral: SoftwareKeyboard.Bengali)
+        let keyboard = SystemKeyboards(software: software, hardware: hardware)
 
         XCTAssertEqual(build([hardware]), ["-AppleKeyboards", "(\"bn@hw=Bangla\")"])
         XCTAssertEqual(build([software]), ["-AppleKeyboards", "(\"bn@sw=Bengali\")"])
@@ -57,9 +57,9 @@ class SystemLaunchArgumentsTests: XCTestCase {
     }
 
     func testCombined() {
-        let locale = SystemLocaleArgument(localeIdentifier: "pl")
-        let keyboard = SystemHardwareKeyboardArgument([HardwareKeyboards.Bengali])
-        let language = SystemLanguageArgument([.Polish])
+        let locale = SystemLocale(localeIdentifier: "pl")
+        let keyboard = HardwareKeyboards([HardwareKeyboard.Bengali])
+        let language = SystemLanguages([.Polish])
 
         XCTAssertEqual(build([]), [])
         XCTAssertEqual(build([locale, keyboard]), ["-AppleLocale", "\"pl\"", "-AppleKeyboards", "(\"bn@hw=Bangla\")"])

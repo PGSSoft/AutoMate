@@ -11,7 +11,7 @@ import XCTest
 
 class TestLauncherTests: XCTestCase {
 
-    let argument = LaunchOptionsFactory.multiLanguageArgument
+    let argument = LaunchOptionsFactory.multiLanguageLaunchArgument
     let enviroment = LaunchOptionsFactory.testLaunchEnviromentOption
 
     // configure
