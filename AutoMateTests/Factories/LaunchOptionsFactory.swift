@@ -10,20 +10,20 @@ import AutoMate
 
 struct LaunchOptionsFactory {
 
-    static var singleSoftwareKeyboardArgument: KeyboardArgument {
-        return SystemSoftwareKeyboardArgument([.EnglishUnitedStates])
+    static var singleSoftwareKeyboardLaunchArgument: KeyboardLaunchArgument {
+        return SoftwareKeyboards([.EnglishUnitedStates])
     }
 
-    static var multiSoftwareKeyboardArgument: KeyboardArgument {
-        return SystemSoftwareKeyboardArgument([.EnglishUnitedStates, .ChineseChina])
+    static var multiSoftwareKeyboardLaunchArgument: KeyboardLaunchArgument {
+        return SoftwareKeyboards([.EnglishUnitedStates, .ChineseChina])
     }
 
-    static var singleLanguageArgument: LanguageArgument {
-        return SystemLanguageArgument([.EnglishUnitedStates])
+    static var singleLanguageLaunchArgument: LanguageLaunchArgument {
+        return SystemLanguages([.EnglishUnitedStates])
     }
 
-    static var multiLanguageArgument: LanguageArgument {
-        return SystemLanguageArgument([.EnglishUnitedStates, .Hungarian])
+    static var multiLanguageLaunchArgument: LanguageLaunchArgument {
+        return SystemLanguages([.EnglishUnitedStates, .Hungarian])
     }
 
     static var testLaunchEnviromentOption: LaunchOption {

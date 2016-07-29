@@ -21,11 +21,11 @@ guard let expr = try? NSRegularExpression(pattern: regex, options: []) else {
 
 var softwareKeyboardsData = NSMutableData()
 softwareKeyboardsData.appendString("// swiftlint:disable:next type_body_length\n")
-softwareKeyboardsData.appendString("public enum SoftwareKeyboards: String, LaunchArgumentValue {\n")
+softwareKeyboardsData.appendString("public enum SoftwareKeyboard: String, LaunchArgumentValue {\n")
 
 var hardwareKeyboardsData = NSMutableData()
 hardwareKeyboardsData.appendString("// swiftlint:disable:next type_body_length\n")
-hardwareKeyboardsData.appendString("public enum HardwareKeyboards: String, LaunchArgumentValue {\n")
+hardwareKeyboardsData.appendString("public enum HardwareKeyboard: String, LaunchArgumentValue {\n")
 
 let fileManager = NSFileManager()
 
@@ -62,8 +62,8 @@ for bundleName in content where bundleName.containsString(".bundle") {
 softwareKeyboardsData.appendString("}\n")
 hardwareKeyboardsData.appendString("}\n")
 
-let swPath = "../../AutoMate/Models/SoftwareKeyboards.swift"
-let hwPath = "../../AutoMate/Models/HardwareKeyboards.swift"
+let swPath = "../../AutoMate/Models/SoftwareKeyboard.swift"
+let hwPath = "../../AutoMate/Models/HardwareKeyboard.swift"
 let swCreated = fileManager.createFileAtPath(swPath, contents: softwareKeyboardsData, attributes: nil)
 let hwCreated = fileManager.createFileAtPath(hwPath, contents: hardwareKeyboardsData, attributes: nil)
 
