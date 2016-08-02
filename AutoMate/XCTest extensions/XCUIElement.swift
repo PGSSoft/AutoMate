@@ -17,9 +17,7 @@ public extension XCUIElement {
      */
     public var isVisible: Bool {
         /**
-         The call bellow, does a rotation to unknown orientation - it has no effect in the app, but is enough to prevent a UIAutomation error.
-         This error is caused by the framework - checking for any property from XCUIElement does not (oppose to any action on element like tap()) trigger
-         wait for the end of any UI related operations. Thus in test an element might be expected but is not yet shown.
+         The statement below will force application to wait for animation or other pending to finish before calculating the result.
          */
         XCUIDevice.sharedDevice().orientation = .Unknown
         return exists && hittable
@@ -29,7 +27,7 @@ public extension XCUIElement {
     /**
      Perform swipe gesture on this view by swiping between provided points.
 
-     - parameter startVector: Relative point from which to start swipe
+     - parameter startVector: Relative point from which to start swipe.
      - parameter stopVector: Relative point to end swipe.
      */
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
@@ -39,12 +37,12 @@ public extension XCUIElement {
     }
 
     /**
-     Performs swipe gestures to scroll to descendant element that may be hidden under keyboard. If swiping doesn't change anything it stops.
-     This method assumes that the top portion of the self is currently visible.
+     Swipe scroll view to reveal given element.
 
-     - parameter element: descendant to scroll to.
-     - parameter avoidKeyboard: indicates if element should be swiped out of keyboard frame
-     - parameter app: application instance to use when searching for keyboard to avoid
+     - note: This method assumes that self is scrollable and at least partially visible on the screen.
+     - parameter element: Element to scroll to.
+     - parameter avoidKeyboard: Indicates if element should be swiped out of keyboard frame
+     - parameter app: Application instance to use when searching for keyboard to avoid
      */
     public func swipe(to element: XCUIElement, avoidKeyboard: Bool = true, from app: XCUIApplication = XCUIApplication()) {
         let swipeLength: CGFloat = 0.9
@@ -83,7 +81,7 @@ public extension XCUIElement {
     }
 
     /**
-     Clear the value inside text field. Works with "textFields" and "secureTextFields"
+     Remove text from textField or secureTextField.
      */
     public func clearTextField() {
         var previousValueLength = 0
@@ -95,9 +93,9 @@ public extension XCUIElement {
     }
 
     /**
-     Clear the value in text field and type new text inside.
+     Remove text from textField and enter new value.
 
-     - parameter text: text to enter in text field.
+     - parameter text: Text to type after clearing old value.
      */
     public func clearAndType(text: String) {
         tap()
@@ -117,12 +115,12 @@ public extension XCUIElement {
     }
 
     /**
-     For system alerts it is not possible to add accessibility identifier. Labels can be used but they might vary depends on system language.
-     Method tapLeftButtonOnSystemAlert handles different lables. As for 29.01.2016, english, german and polish versions are supported.
+     Dismiss system alert by tapping "Don't allow" (when possible).
 
-     "OK" is added to tabel of labels because as for Xcode 7.2 there is no chance to handle multiple alerts that are displayed ater each other.
-     In the app, when user disallow the access to location, a second alert is shown right away, before handler is removed. So this "hack" dismiss
-     second alert.
+     - note: This method exists because system alerts do not provide accessibility identifiers. Therefore to support different languages,
+     it's necessary to try all localized variants. Currently only English, German and Polish are supported.
+     - note: In Xcode 7 there is a bug preventing `addUIInterruptionMonitorWithDescription` from working when multiple system alerts appear.
+     It has been fixed in Xcode 8.
      */
     public func tapLeftButtonOnSystemAlert() {
         let labels = ["Don’t Allow", "Nein", "Nie pozwalaj", "OK"]
