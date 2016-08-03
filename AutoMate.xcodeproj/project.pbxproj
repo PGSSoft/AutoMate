@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F9AE7221D4B4A6C00027033 /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F9AE7201D4B4A4000027033 /* XCTest extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */,
+			);
+			path = "XCTest extensions";
+			sourceTree = "<group>";
+		};
 		E425D5531CED928100A7CA03 = {
 			isa = PBXGroup;
 			children = (
@@ -102,14 +112,15 @@
 			isa = PBXGroup;
 			children = (
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
-				E4535A471CEDD24B008965DD /* Foundation extensions */,
 				E425D5621CED928100A7CA03 /* Info.plist */,
 				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 				E4535A451CEDC4AB008965DD /* LaunchOptions.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
-				E47BB6F41CF310F200229D63 /* Models */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
+				E4535A471CEDD24B008965DD /* Foundation extensions */,
+				E47BB6F41CF310F200229D63 /* Models */,
+				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
 			);
 			path = AutoMate;
 			sourceTree = "<group>";
@@ -288,6 +299,7 @@
 				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
 				E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */,
 				E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */,
+				1F9AE7221D4B4A6C00027033 /* XCUIElement.swift in Sources */,
 				E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */,
 				E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
