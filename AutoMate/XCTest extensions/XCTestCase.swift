@@ -23,14 +23,14 @@ public extension XCTestCase {
     public func waitForElementToExist(element: XCUIElement, timeout: NSTimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
         expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
-        waitForExpectationsWithTimeout(timeout) {
-            (error) -> Void in
-            if error != nil {
-                let message = "Failed to find \(element) after \(timeout) seconds."
-                self.recordFailureWithDescription(message, inFile: file.stringValue, atLine: line, expected: true)
-            }
-        }
 
+        waitForExpectationsWithTimeout(timeout) { (error) -> Void in
+            guard error != nil else {
+                return
+            }
+            let message = "Failed to find \(element) after \(timeout) seconds."
+            self.recordFailureWithDescription(message, inFile: file.stringValue, atLine: line, expected: true)
+        }
     }
 
     /**
@@ -44,12 +44,13 @@ public extension XCTestCase {
     public func waitForVisibleElement(element: XCUIElement, timeout: NSTimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true && hittable == true")
         expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
-        waitForExpectationsWithTimeout(timeout) {
-            (error) -> Void in
-            if error != nil {
-                let message = "Failed to find hittable \(element) after \(timeout) seconds."
-                self.recordFailureWithDescription(message, inFile: file.stringValue, atLine: line, expected: true)
+
+        waitForExpectationsWithTimeout(timeout) { (error) -> Void in
+            guard error != nil else {
+                return
             }
+            let message = "Failed to find hittable \(element) after \(timeout) seconds."
+            self.recordFailureWithDescription(message, inFile: file.stringValue, atLine: line, expected: true)
         }
     }
 }
