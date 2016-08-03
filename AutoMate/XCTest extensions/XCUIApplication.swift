@@ -13,10 +13,10 @@ import XCTest
  Represents available types of devices.
  */
 public enum DeviceType {
-    case iPhone4
-    case iPhone5
-    case iPhone6
-    case iPhone6Plus
+    case iPhone35
+    case iPhone40
+    case iPhone47
+    case iPhone55
     case iPad
     case iPadPro
 }
@@ -30,19 +30,19 @@ public extension XCUIApplication {
      and iPhone6+ as iPhone 6.
      */
     public var deviceType: DeviceType {
-        let window = self.windows.elementBoundByIndex(0)
+        let window = windows.elementBoundByIndex(0)
         let size = window.frame.size
         let portraitSize = size.height > size.width ? size : CGSize(width: size.height, height: size.width)
 
         switch (round(portraitSize.width), round(portraitSize.height)) {
         case (320, 480):
-            return .iPhone4
+            return .iPhone35
         case (320, 568):
-            return .iPhone5
+            return .iPhone40
         case (375, 667):
-            return .iPhone6
+            return .iPhone47
         case (414, 736):
-            return .iPhone6Plus
+            return .iPhone55
         case (768, 1024):
             return .iPad
         case (1024, 1365..<1367):
@@ -59,8 +59,8 @@ public extension XCUIApplication {
         switch deviceType {
         case .iPad, .iPadPro:
             return true
-        case .iPhone4, .iPhone5, .iPhone6, .iPhone6Plus:
-            return true
+        case .iPhone35, .iPhone40, .iPhone47, .iPhone55:
+            return false
         }
     }
 
@@ -71,7 +71,7 @@ public extension XCUIApplication {
         switch deviceType {
         case .iPad, .iPadPro:
             return false
-        case .iPhone4, .iPhone5, .iPhone6, .iPhone6Plus:
+        case .iPhone35, .iPhone40, .iPhone47, .iPhone55:
             return true
         }
     }
@@ -113,15 +113,20 @@ public extension XCUIApplication {
         // determine device type by checking machineIdentifier directly
         switch machineIdentifier {
         case "iPhone7,1", "iPhone8,2":
-            return .iPhone6Plus
+            return .iPhone55
         case "iPhone7,2", "iPhone8,1":
-            return .iPhone6
+            return .iPhone47
         default:
             return deviceType
         }
     }
 
     // MARK: Methods
+    /**
+     Checks if current device is of provided type.
+     - parameter deviceType: type of device to check for.
+     - returns: Boolean value indicating whether current device is of the expected type.
+     */
     public func isRunningOn(deviceType: DeviceType) -> Bool {
         return self.deviceType == deviceType
     }
