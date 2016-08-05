@@ -4,6 +4,9 @@
    <FileRef
       location = "container:AutoMate.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:AutoMateExample/AutoMateExample.xcodeproj">
+   </FileRef>
    <Group
       location = "group:scripts"
       name = "scripts">
