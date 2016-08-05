@@ -1,4 +1,4 @@
-<img src="assets/pgssoftware-logo.svg" alt="Made by PGS Software" height="200" />
+<!-- <img src="assets/pgssoftware-logo.svg" alt="Made by PGS Software" height="200" /> -->
 
 
 # AutoMate
@@ -9,7 +9,7 @@
 <!-- List of other badges  -->
 
 <!-- One screenshot -->
-![Screenshot](assets/img.png)
+<!-- ![Screenshot](assets/img.png) -->
 
 ## Installation
 
@@ -89,8 +89,10 @@ Bug reports and pull requests are welcome on GitHub at [https://github.com/PGSSo
 The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## About
-The project maintained by [software development agency](https://pgs-soft.com) [PGS Software](https://pgs-soft.com)
+The project maintained by [software development agency](https://www.pgs-soft.com/) [PGS Software](https://www.pgs-soft.com/)
 See our other [open-source projects](https://github.com/PGSSoft) or [contact us](https://www.pgs-soft.com/contact-us/) to develop your product.
 
-[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://github.com/PGSSoft/AutoMate)
+## Follow us
+
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/PGSSoft/AutoMate)  
 [![Twitter Follow](https://img.shields.io/twitter/follow/pgssoftware.svg?style=social&label=Follow)](https://twitter.com/pgssoftware)
