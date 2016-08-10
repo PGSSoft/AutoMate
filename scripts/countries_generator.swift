@@ -37,7 +37,8 @@ guard let countriesDictionary = NSDictionary(contentsOfFile: simulatorCountriesP
 countriesDictionary
 
 var data = NSMutableData()
-data.appendString("// swiftlint:disable:next type_body_length\n")
+data.appendString("// swiftlint:disable type_body_length\n")
+data.appendString("\n///Enumeration describing available country codes in the system.\n")
 data.appendString("public enum SystemCountry: String {\n")
 
 for (key, value) in countriesDictionary {
@@ -45,13 +46,14 @@ for (key, value) in countriesDictionary {
     guard countryCodeExpr.numberOfMatchesInString(key, options: [], range: countryCodeRange) > 0 else { continue }
     let range = NSRange(location: 0, length: value.characters.count)
     var caseName = expr.stringByReplacingMatchesInString(value, options: [], range: range, withTemplate: "")
+    data.appendString("\n\t///Automatically generated value for country \(caseName).\n")
     data.appendString("\tcase \(caseName) = \"\(key)\"\n")
 }
 
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = scriptDirectory()+"/../AutoMate/Models/SystemCountry.swift"
+let path = scriptDirectory() + "/../AutoMate/Models/SystemCountry.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")

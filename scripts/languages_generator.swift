@@ -33,7 +33,8 @@ guard let languagesDictionary = NSDictionary(contentsOfFile: simulatorLanguagesP
 }
 
 var data = NSMutableData()
-data.appendString("// swiftlint:disable:next type_body_length\n")
+data.appendString("// swiftlint:disable type_body_length\n")
+data.appendString("\n///Enumeration describing available languages in the system.\n")
 data.appendString("public enum SystemLanguage: String, LaunchArgumentValue {\n")
 
 for identifier in languagesDictionary.keys {
@@ -42,13 +43,14 @@ for identifier in languagesDictionary.keys {
     }
     let range = NSRange(location: 0, length: displayName.characters.count)
     var caseName = expr.stringByReplacingMatchesInString(displayName, options: [], range: range, withTemplate: "")
+    data.appendString("\n\t///Automatically generated value for language \(caseName).\n")
     data.appendString("\tcase \(caseName) = \"\(identifier)\"\n")
 }
 
 data.appendString("}\n")
 
 let fileManager = NSFileManager()
-let path = scriptDirectory()+"/../AutoMate/Models/SystemLanguage.swift"
+let path = scriptDirectory() + "/../AutoMate/Models/SystemLanguage.swift"
 let created = fileManager.createFileAtPath(path, contents: data, attributes: nil)
 
 print("Created on path: \(path) - \(created)")

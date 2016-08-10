@@ -26,11 +26,13 @@ guard let expr = try? NSRegularExpression(pattern: regex, options: []) else {
 }
 
 var softwareKeyboardsData = NSMutableData()
-softwareKeyboardsData.appendString("// swiftlint:disable:next type_body_length\n")
+softwareKeyboardsData.appendString("// swiftlint:disable type_body_length\n")
+softwareKeyboardsData.appendString("\n///Enumeration describing available software keyboards in the system.\n")
 softwareKeyboardsData.appendString("public enum SoftwareKeyboard: String, LaunchArgumentValue {\n")
 
 var hardwareKeyboardsData = NSMutableData()
-hardwareKeyboardsData.appendString("// swiftlint:disable:next type_body_length\n")
+hardwareKeyboardsData.appendString("// swiftlint:disable type_body_length\n")
+hardwareKeyboardsData.appendString("\n///Enumeration describing available hardware keyboards in the system.\n")
 hardwareKeyboardsData.appendString("public enum HardwareKeyboard: String, LaunchArgumentValue {\n")
 
 let fileManager = NSFileManager()
@@ -56,10 +58,12 @@ for bundleName in content where bundleName.containsString(".bundle") {
         var caseName = expr.stringByReplacingMatchesInString(displayName, options: [], range: range, withTemplate: "")
 
         if let swLayouts = localeInfo["SWLayouts"] as? [String] {
+            softwareKeyboardsData.appendString("\n\t///Automatically generated value for software keyboard \(caseName).\n")
             softwareKeyboardsData.appendString("\tcase \(caseName) = \"\(locale)@sw=\(swLayouts.first!)\"\n")
         }
 
         if let hwLayouts = localeInfo["HWLayouts"] as? [String] {
+            hardwareKeyboardsData.appendString("\n\t///Automatically generated value for hardware keyboard \(caseName).\n")
             hardwareKeyboardsData.appendString("\tcase \(caseName) = \"\(locale)@hw=\(hwLayouts.first!)\"\n")
         }
     }
@@ -68,8 +72,8 @@ for bundleName in content where bundleName.containsString(".bundle") {
 softwareKeyboardsData.appendString("}\n")
 hardwareKeyboardsData.appendString("}\n")
 
-let swPath = scriptDirectory()+"/../AutoMate/Models/SoftwareKeyboard.swift"
-let hwPath = scriptDirectory()+"/../AutoMate/Models/HardwareKeyboard.swift"
+let swPath = scriptDirectory() + "/../AutoMate/Models/SoftwareKeyboard.swift"
+let hwPath = scriptDirectory() + "/../AutoMate/Models/HardwareKeyboard.swift"
 let swCreated = fileManager.createFileAtPath(swPath, contents: softwareKeyboardsData, attributes: nil)
 let hwCreated = fileManager.createFileAtPath(hwPath, contents: hardwareKeyboardsData, attributes: nil)
 
