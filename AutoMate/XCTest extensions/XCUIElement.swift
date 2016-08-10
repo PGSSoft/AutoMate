@@ -12,13 +12,9 @@ import XCTest
 public extension XCUIElement {
 
     // MARK: Properties
-    /**
-     Indicates if the element is currently visible on the screen.
-     */
+    /// Indicates if the element is currently visible on the screen.
     public var isVisible: Bool {
-        /**
-         The statement below will force application to wait for animation or other pending to finish before calculating the result.
-         */
+        // The statement below will force application to wait for animation or other pending to finish before calculating the result.
         XCUIDevice.sharedDevice().orientation = .Unknown
         return exists && hittable
     }
@@ -80,9 +76,7 @@ public extension XCUIElement {
         assert(scrollableArea.contains(element.frame), "Failed to reveal element.")
     }
 
-    /**
-     Remove text from textField or secureTextField.
-     */
+    /// Remove text from textField or secureTextField.
     public func clearTextField() {
         var previousValueLength = 0
         while let value = self.value as? NSString where value.length != previousValueLength {
