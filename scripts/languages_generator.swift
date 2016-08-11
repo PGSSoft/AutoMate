@@ -34,7 +34,7 @@ guard let languagesDictionary = NSDictionary(contentsOfFile: simulatorLanguagesP
 
 var data = NSMutableData()
 data.appendString("// swiftlint:disable type_body_length\n")
-data.appendString("\n///Enumeration describing available languages in the system.\n")
+data.appendString("\n/// Enumeration describing available languages in the system.\n")
 data.appendString("public enum SystemLanguage: String, LaunchArgumentValue {\n")
 
 for identifier in languagesDictionary.keys {
@@ -43,7 +43,7 @@ for identifier in languagesDictionary.keys {
     }
     let range = NSRange(location: 0, length: displayName.characters.count)
     var caseName = expr.stringByReplacingMatchesInString(displayName, options: [], range: range, withTemplate: "")
-    data.appendString("\n\t///Automatically generated value for language \(caseName).\n")
+    data.appendString("\n\t/// Automatically generated value for language \(caseName).\n")
     data.appendString("\tcase \(caseName) = \"\(identifier)\"\n")
 }
 

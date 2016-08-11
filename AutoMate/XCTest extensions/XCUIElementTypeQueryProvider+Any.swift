@@ -24,7 +24,7 @@ extension XCUIElementQuery: DescendantsMatching { }
 
 extension XCUIElementTypeQueryProvider where Self: DescendantsMatching {
 
-    /// Returns any element matching tahe query.
+    /// Returns any element matching the query.
     public var any: XCUIElementQuery {
         return descendantsMatchingType(.Any)
     }
