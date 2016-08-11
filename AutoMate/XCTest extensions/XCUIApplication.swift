@@ -9,16 +9,10 @@
 import Foundation
 import XCTest
 
-/**
- Represents available types of devices.
- */
+/// Represents available types of devices.
 public enum DeviceType {
-    case iPhone35
-    case iPhone40
-    case iPhone47
-    case iPhone55
-    case iPad
-    case iPadPro
+    /// Enum value corresponding to device screen size.
+    case iPhone35, iPhone40, iPhone47, iPhone55, iPad, iPadPro
 }
 
 public extension XCUIApplication {
@@ -52,9 +46,7 @@ public extension XCUIApplication {
         }
     }
 
-    /**
-     A Boolean value indicating whether app is currently running on iPad.
-     */
+    /// A Boolean value indicating whether app is currently running on iPad.
     public var isRunningOnIpad: Bool {
         switch deviceType {
         case .iPad, .iPadPro:
@@ -64,9 +56,7 @@ public extension XCUIApplication {
         }
     }
 
-    /**
-     A Boolean value indicating whether app is currently running on iPhone.
-     */
+    /// A Boolean value indicating whether app is currently running on iPhone.
     public var isRunningOnIphone: Bool {
         switch deviceType {
         case .iPad, .iPadPro:
@@ -76,9 +66,7 @@ public extension XCUIApplication {
         }
     }
 
-    /**
-     A Boolean value indicating whether app is currently running on simulator.
-     */
+    /// A Boolean value indicating whether app is currently running on simulator.
     public var isRunningOnSimulator: Bool {
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             return true
@@ -87,9 +75,7 @@ public extension XCUIApplication {
         #endif
     }
 
-    /**
-     Returns machine identifier string in a form of "name,major,minor", i.e. "iPhone,8,2".
-     */
+    /// Returns machine identifier string in a form of "name,major,minor", i.e. "iPhone,8,2".
     private var machineIdentifier: String {
         if isRunningOnSimulator {
             guard let value = NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] else {
@@ -106,9 +92,7 @@ public extension XCUIApplication {
         return value
     }
 
-    /**
-     Type of current device, ignoring "Zoom" feature.
-     */
+    /// Type of current device, ignoring "Zoom" feature.
     public var actualDeviceType: DeviceType {
         // determine device type by checking machineIdentifier directly
         switch machineIdentifier {

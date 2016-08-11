@@ -2,3 +2,6 @@ disabled_rules:
   - line_length
   - type_name
   - file_length
+
+opt_in_rules:
+  - missing_docs
