@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */; };
 		1F9AE7221D4B4A6C00027033 /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */; };
 		1FA6372F1D50692800D22156 /* XCUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6372E1D50692800D22156 /* XCUIApplication.swift */; };
 		1FC995561D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlertLabel.swift; sourceTree = "<group>"; };
 		1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		1FA6372E1D50692800D22156 /* XCUIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIApplication.swift; sourceTree = "<group>"; };
 		1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementTypeQueryProvider+Any.swift"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		E47BB6F41CF310F200229D63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */,
 				E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */,
 				E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */,
 				E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */,
@@ -320,6 +323,7 @@
 				1FA6372F1D50692800D22156 /* XCUIApplication.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
+				1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -117,7 +117,7 @@ public extension XCUIElement {
      It has been fixed in Xcode 8.
      */
     public func tapLeftButtonOnSystemAlert() {
-        let labels = ["Don’t Allow", "Nein", "Nie pozwalaj", "OK"]
+        let labels = SystemAlertLabel.DontAllow + SystemAlertLabel.OK
         for buttonLabel in labels {
             let button = buttons[buttonLabel]
             if button.exists {
