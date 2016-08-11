@@ -3,15 +3,17 @@
 import Foundation
 
 extension NSMutableData {
-    func appendString(string: String) {
-        guard let dataFromString = string.dataUsingEncoding(NSUTF8StringEncoding) else {
+    func append(line line: String, indent: Int) {
+        var indented = ""
+        for _ in 0..<indent {
+            indented += "\t"
+        }
+        indented += line + "\n"
+
+        guard let dataFromString = indented.dataUsingEncoding(NSUTF8StringEncoding) else {
             return
         }
         appendData(dataFromString)
-    }
-
-    func appendLine(line: String) {
-        appendString(line + "\n")
     }
 }
 
@@ -56,13 +58,13 @@ func findVariants(directory: String, fileName: String, key: String) -> [String] 
 }
 
 func appendVariants(name: String, variants: [String], to data: NSMutableData) {
-    data.appendLine("\t/// Automatically generated property for localized variants of \(name).")
-    data.appendLine("\tpublic static let \(name) = [")
+    data.append(line: "/// Automatically generated property for localized variants of \(name).", indent: 1)
+    data.append(line: "public static let \(name) = [", indent: 1)
     for variant in variants {
-        data.appendLine("\t\t\"\(variant)\",")
+        data.append(line: "\"\(variant)\",", indent: 2)
     }
-    data.appendLine("\t]")
-    data.appendLine("")
+    data.append(line: "]", indent: 1)
+    data.append(line: "", indent: 0)
 }
 
 //uncomment to check available strings
@@ -71,16 +73,16 @@ func appendVariants(name: String, variants: [String], to data: NSMutableData) {
 let coreLocation = sdkPath + "/System/Library/Frameworks/CoreLocation.framework/"
 
 var data = NSMutableData()
-data.appendLine("// swiftlint:disable variable_name")
-data.appendLine("/// Represents possible label values on alert buttons.")
-data.appendLine("public class SystemAlertLabel {")
-data.appendLine("\tprivate init() {}")
-data.appendLine("")
+data.append(line: "// swiftlint:disable variable_name", indent: 0)
+data.append(line: "/// Represents possible label values on alert buttons.", indent: 0)
+data.append(line: "public class SystemAlertLabel {", indent: 0)
+data.append(line: "private init() {}", indent: 1)
+data.append(line: "", indent: 0)
 appendVariants("DontAllow", variants: findVariants(coreLocation, fileName: "locationd.strings", key: "DONT_ALLOW"), to: data)
 appendVariants("Allow", variants: findVariants(coreLocation, fileName: "locationd.strings", key: "LOCATION_CLIENT_PERMISSION_OK"), to: data)
 appendVariants("OK", variants: findVariants(coreLocation, fileName: "locationd.strings", key: "OK"), to: data)
 appendVariants("Cancel", variants: findVariants(coreLocation, fileName: "locationd.strings", key: "LOCATION_DISABLED_CANCEL"), to: data)
-data.appendLine("}")
+data.append(line: "}", indent: 0)
 do {
     try data.writeToFile(scriptDirectory() + "/../AutoMate/Models/SystemAlertLabel.swift", options: [])
 } catch {

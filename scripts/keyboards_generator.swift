@@ -11,8 +11,14 @@ func scriptDirectory() -> String {
 }
 
 extension NSMutableData {
-    func appendString(string: String) {
-        guard let dataFromString = string.dataUsingEncoding(NSUTF8StringEncoding) else {
+    func append(line line: String, indent: Int) {
+        var indented = ""
+        for _ in 0..<indent {
+            indented += "\t"
+        }
+        indented += line + "\n"
+
+        guard let dataFromString = indented.dataUsingEncoding(NSUTF8StringEncoding) else {
             return
         }
         appendData(dataFromString)
@@ -26,14 +32,14 @@ guard let expr = try? NSRegularExpression(pattern: regex, options: []) else {
 }
 
 var softwareKeyboardsData = NSMutableData()
-softwareKeyboardsData.appendString("// swiftlint:disable type_body_length\n")
-softwareKeyboardsData.appendString("\n/// Enumeration describing available software keyboards in the system.\n")
-softwareKeyboardsData.appendString("public enum SoftwareKeyboard: String, LaunchArgumentValue {\n")
+softwareKeyboardsData.append(line: "// swiftlint:disable type_body_length", indent: 0)
+softwareKeyboardsData.append(line: "\n/// Enumeration describing available software keyboards in the system.", indent: 0)
+softwareKeyboardsData.append(line: "public enum SoftwareKeyboard: String, LaunchArgumentValue {", indent: 0)
 
 var hardwareKeyboardsData = NSMutableData()
-hardwareKeyboardsData.appendString("// swiftlint:disable type_body_length\n")
-hardwareKeyboardsData.appendString("\n/// Enumeration describing available hardware keyboards in the system.\n")
-hardwareKeyboardsData.appendString("public enum HardwareKeyboard: String, LaunchArgumentValue {\n")
+hardwareKeyboardsData.append(line: "// swiftlint:disable type_body_length", indent: 0)
+hardwareKeyboardsData.append(line: "\n/// Enumeration describing available hardware keyboards in the system.", indent: 0)
+hardwareKeyboardsData.append(line: "public enum HardwareKeyboard: String, LaunchArgumentValue {", indent: 0)
 
 let fileManager = NSFileManager()
 
@@ -58,19 +64,21 @@ for bundleName in content where bundleName.containsString(".bundle") {
         var caseName = expr.stringByReplacingMatchesInString(displayName, options: [], range: range, withTemplate: "")
 
         if let swLayouts = localeInfo["SWLayouts"] as? [String] {
-            softwareKeyboardsData.appendString("\n\t/// Automatically generated value for software keyboard \(caseName).\n")
-            softwareKeyboardsData.appendString("\tcase \(caseName) = \"\(locale)@sw=\(swLayouts.first!)\"\n")
+            softwareKeyboardsData.append(line: "", indent: 0)
+            softwareKeyboardsData.append(line: "/// Automatically generated value for software keyboard \(caseName).", indent: 1)
+            softwareKeyboardsData.append(line: "case \(caseName) = \"\(locale)@sw=\(swLayouts.first!)\"", indent: 1)
         }
 
         if let hwLayouts = localeInfo["HWLayouts"] as? [String] {
-            hardwareKeyboardsData.appendString("\n\t/// Automatically generated value for hardware keyboard \(caseName).\n")
-            hardwareKeyboardsData.appendString("\tcase \(caseName) = \"\(locale)@hw=\(hwLayouts.first!)\"\n")
+            hardwareKeyboardsData.append(line: "", indent: 0)
+            hardwareKeyboardsData.append(line: "/// Automatically generated value for hardware keyboard \(caseName).", indent: 1)
+            hardwareKeyboardsData.append(line: "case \(caseName) = \"\(locale)@hw=\(hwLayouts.first!)\"", indent: 1)
         }
     }
 }
 
-softwareKeyboardsData.appendString("}\n")
-hardwareKeyboardsData.appendString("}\n")
+softwareKeyboardsData.append(line: "}", indent: 0)
+hardwareKeyboardsData.append(line: "}", indent: 0)
 
 let swPath = scriptDirectory() + "/../AutoMate/Models/SoftwareKeyboard.swift"
 let hwPath = scriptDirectory() + "/../AutoMate/Models/HardwareKeyboard.swift"

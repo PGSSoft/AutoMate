@@ -11,8 +11,14 @@ func scriptDirectory() -> String {
 }
 
 extension NSMutableData {
-    func appendString(string: String) {
-        guard let dataFromString = string.dataUsingEncoding(NSUTF8StringEncoding) else {
+    func append(line line: String, indent: Int) {
+        var indented = ""
+        for _ in 0..<indent {
+            indented += "\t"
+        }
+        indented += line + "\n"
+
+        guard let dataFromString = indented.dataUsingEncoding(NSUTF8StringEncoding) else {
             return
         }
         appendData(dataFromString)
@@ -33,9 +39,9 @@ guard let languagesDictionary = NSDictionary(contentsOfFile: simulatorLanguagesP
 }
 
 var data = NSMutableData()
-data.appendString("// swiftlint:disable type_body_length\n")
-data.appendString("\n/// Enumeration describing available languages in the system.\n")
-data.appendString("public enum SystemLanguage: String, LaunchArgumentValue {\n")
+data.append(line: "// swiftlint:disable type_body_length", indent: 0)
+data.append(line: "\n/// Enumeration describing available languages in the system.", indent: 0)
+data.append(line: "public enum SystemLanguage: String, LaunchArgumentValue {", indent: 0)
 
 for identifier in languagesDictionary.keys {
     guard let displayName = locale.displayNameForKey(NSLocaleIdentifier, value: identifier) else {
@@ -43,11 +49,12 @@ for identifier in languagesDictionary.keys {
     }
     let range = NSRange(location: 0, length: displayName.characters.count)
     var caseName = expr.stringByReplacingMatchesInString(displayName, options: [], range: range, withTemplate: "")
-    data.appendString("\n\t/// Automatically generated value for language \(caseName).\n")
-    data.appendString("\tcase \(caseName) = \"\(identifier)\"\n")
+    data.append(line: "", indent: 0)
+    data.append(line: "/// Automatically generated value for language \(caseName).", indent: 1)
+    data.append(line: "case \(caseName) = \"\(identifier)\"", indent: 1)
 }
 
-data.appendString("}\n")
+data.append(line: "}", indent: 0)
 
 let fileManager = NSFileManager()
 let path = scriptDirectory() + "/../AutoMate/Models/SystemLanguage.swift"
