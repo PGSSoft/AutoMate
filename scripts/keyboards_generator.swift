@@ -14,7 +14,7 @@ extension NSMutableData {
     func append(line line: String, indent: Int) {
         var indented = ""
         for _ in 0..<indent {
-            indented += "\t"
+            indented += "    "
         }
         indented += line + "\n"
 

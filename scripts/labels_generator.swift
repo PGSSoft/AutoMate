@@ -6,7 +6,7 @@ extension NSMutableData {
     func append(line line: String, indent: Int) {
         var indented = ""
         for _ in 0..<indent {
-            indented += "\t"
+            indented += "    "
         }
         indented += line + "\n"
 
@@ -26,17 +26,10 @@ func readStrings(path: String) -> [String: String] {
 }
 
 func scriptDirectory() -> String {
-    #if DEBUG
-        return "/Users/pszot/Documents/Projekty/pgs-automate-ios/scripts/"
-    #else
-        let script = Process.arguments[0] as NSString
-        assert(script.hasSuffix(".swift"), "Unable to find directory of the script.")
-        return script.stringByDeletingLastPathComponent
-    #endif
+    let script = Process.arguments[0] as NSString
+    assert(script.hasSuffix(".swift"), "Unable to find directory of the script.")
+    return script.stringByDeletingLastPathComponent
 }
-
-let sdkPath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk"
-//let modelsPath = scriptDirectory() + "../AutoMate/Models/"
 
 func findVariants(directory: String, fileName: String, key: String) -> [String] {
     guard let enumerator = NSFileManager().enumeratorAtPath(directory) else {
@@ -70,6 +63,7 @@ func appendVariants(name: String, variants: [String], to data: NSMutableData) {
 //uncomment to check available strings
 //print(readStrings(sdkPath + "/System/Library/Frameworks/CoreLocation.framework/English.lproj/locationd.strings"))
 
+let sdkPath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk"
 let coreLocation = sdkPath + "/System/Library/Frameworks/CoreLocation.framework/"
 
 var data = NSMutableData()
