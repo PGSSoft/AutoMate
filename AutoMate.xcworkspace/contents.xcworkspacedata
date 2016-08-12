@@ -7,22 +7,9 @@
    <FileRef
       location = "group:AutoMateExample/AutoMateExample.xcodeproj">
    </FileRef>
-   <Group
-      location = "group:scripts"
-      name = "scripts">
-      <FileRef
-         location = "group:countries_generator.swift">
-      </FileRef>
-      <FileRef
-         location = "group:keyboards_generator.swift">
-      </FileRef>
-      <FileRef
-         location = "group:labels_generator.swift">
-      </FileRef>
-      <FileRef
-         location = "group:languages_generator.swift">
-      </FileRef>
-   </Group>
+   <FileRef
+      location = "group:ModelGenerator/ModelGenerator.xcodeproj">
+   </FileRef>
    <FileRef
       location = "group:AutoMatePlayground.playground">
    </FileRef>
