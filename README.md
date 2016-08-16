@@ -5,10 +5,13 @@
 
 `AutoMate` is a Swift framework containing a set of helpful `XCTest` extensions for writing UI automation tests. It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device.
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/PGSSoft/AutoMate/blob/master/LICENSE)
-<!-- List of other badges  -->
+[![Swift 2.2.1](https://img.shields.io/badge/Swift-2.2.1-orange.svg?style=flat)](https://swift.org/)
+[![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate/)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platform](https://img.shields.io/cocoapods/p/AutoMate.svg)](http://cocoadocs.org/docsets/AutoMate)
+[![License](https://img.shields.io/cocoapods/l/AutoMate.svg)](https://github.com/PGSSoft/AutoMate)
 
-<!-- One screenshot -->
 <!-- ![Screenshot](assets/img.png) -->
 
 ## Installation
