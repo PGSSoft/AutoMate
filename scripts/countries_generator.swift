@@ -11,8 +11,14 @@ func scriptDirectory() -> String {
 }
 
 extension NSMutableData {
-    func appendString(string: String) {
-        guard let dataFromString = string.dataUsingEncoding(NSUTF8StringEncoding) else {
+    func append(line line: String, indent: Int) {
+        var indented = ""
+        for _ in 0..<indent {
+            indented += "    "
+        }
+        indented += line + "\n"
+
+        guard let dataFromString = indented.dataUsingEncoding(NSUTF8StringEncoding) else {
             return
         }
         appendData(dataFromString)
@@ -37,20 +43,21 @@ guard let countriesDictionary = NSDictionary(contentsOfFile: simulatorCountriesP
 countriesDictionary
 
 var data = NSMutableData()
-data.appendString("// swiftlint:disable type_body_length\n")
-data.appendString("\n/// Enumeration describing available country codes in the system.\n")
-data.appendString("public enum SystemCountry: String {\n")
+data.append(line: "// swiftlint:disable type_body_length", indent: 0)
+data.append(line: "\n/// Enumeration describing available country codes in the system.", indent: 0)
+data.append(line: "public enum SystemCountry: String {", indent: 0)
 
 for (key, value) in countriesDictionary {
     let countryCodeRange = NSRange(location: 0, length: key.characters.count)
     guard countryCodeExpr.numberOfMatchesInString(key, options: [], range: countryCodeRange) > 0 else { continue }
     let range = NSRange(location: 0, length: value.characters.count)
     var caseName = expr.stringByReplacingMatchesInString(value, options: [], range: range, withTemplate: "")
-    data.appendString("\n\t/// Automatically generated value for country \(caseName).\n")
-    data.appendString("\tcase \(caseName) = \"\(key)\"\n")
+    data.append(line: "", indent: 0)
+    data.append(line: "/// Automatically generated value for country \(caseName).", indent: 1)
+    data.append(line: "case \(caseName) = \"\(key)\"", indent: 1)
 }
 
-data.appendString("}\n")
+data.append(line: "}", indent: 0)
 
 let fileManager = NSFileManager()
 let path = scriptDirectory() + "/../AutoMate/Models/SystemCountry.swift"

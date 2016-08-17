@@ -17,6 +17,9 @@
          location = "group:keyboards_generator.swift">
       </FileRef>
       <FileRef
+         location = "group:labels_generator.swift">
+      </FileRef>
+      <FileRef
          location = "group:languages_generator.swift">
       </FileRef>
    </Group>
