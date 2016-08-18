@@ -112,7 +112,7 @@ public extension XCUIElement {
      Dismiss system alert by tapping "Don't allow" (when possible).
 
      - note: This method exists because system alerts do not provide accessibility identifiers. Therefore to support different languages,
-     it's necessary to try all localized variants. Currently only English, German and Polish are supported.
+     it's necessary to try all localized variants.
      - note: In Xcode 7 there is a bug preventing `addUIInterruptionMonitorWithDescription` from working when multiple system alerts appear.
      It has been fixed in Xcode 8.
      */

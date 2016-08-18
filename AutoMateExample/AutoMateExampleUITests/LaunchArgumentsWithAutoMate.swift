@@ -9,7 +9,7 @@
 import XCTest
 import AutoMate
 
-class WithAutomate: XCTestCase {
+class LaunchArgumentsWithAutomate: XCTestCase {
 
     // MARK: - Setup
     override func setUp() {
@@ -30,20 +30,8 @@ class WithAutomate: XCTestCase {
     }
 
     // MARK: - Tests
-    func testViewController() {
-        let app = XCUIApplication()
-        let textView = app.textViews["input-text-view"]
-        let counter = app.staticTexts["counter-label"]
+    func testSomething() {
 
-        textView.tap()
-
-        XCTAssertEqual(counter.label, "0")
-
-        textView.typeText("a")
-        XCTAssertEqual(counter.label, "1")
-
-        textView.typeText("a")
-        XCTAssertEqual(counter.label, "2")
     }
 
 }
