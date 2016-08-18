@@ -9,10 +9,10 @@
 import UIKit
 
 class AppearingViewController: UIViewController {
-    // MARK: - IBOutlets
+    // MARK: IBOutlets
     @IBOutlet var button: UIButton!
 
-    // MARK: - View lifecycle
+    // MARK: View lifecycle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         button.hidden = true

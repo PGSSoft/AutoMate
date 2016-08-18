@@ -12,22 +12,19 @@ import AutoMate
 class XCUIElementExtensionTests: XCTestCase {
     let app = XCUIApplication()
 
-    // MARK: - Setup
+    // MARK: Setup
     override func setUp() {
         super.setUp()
         app.launch()
     }
 
-    // MARK: - Tests
+    // MARK: Tests
     func testIsVisible() {
-        app.staticTexts["Appearing view"].tap()
-        let button = app.buttons["Button"]
-        XCTAssert(!button.hittable)
-
-        NSThread.sleepForTimeInterval(1.0)
-
+        app.staticTexts["Scroll view"].tap()
+        let button = app.buttons["ButtonBottom"]
+        XCTAssertFalse(button.isVisible)
+        button.tap()
         XCTAssert(button.isVisible)
-        XCTAssert(button.hittable)
     }
 
     func testSimpleSwipe() {
@@ -38,7 +35,7 @@ class XCUIElementExtensionTests: XCTestCase {
 
         scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
 
-        XCTAssert(!button.hittable)
+        XCTAssertFalse(button.hittable)
     }
 
     func testComplexSwipe() {
@@ -49,7 +46,7 @@ class XCUIElementExtensionTests: XCTestCase {
         XCTAssert(button1.hittable && !button2.hittable)
 
         scrollView.swipe(to: button2)
-        XCTAssert(!button1.hittable && button2.hittable)
+        XCTAssertFalse(button1.hittable && button2.hittable)
 
         scrollView.swipe(to: button1)
         XCTAssert(button1.hittable && !button2.hittable)
@@ -107,14 +104,13 @@ class XCUIElementExtensionTests: XCTestCase {
         // tap cell by using offset only
         app.tapWithOffset(CGVector(dx: 0.5, dy: 0.3))
         // cell pushed view controller, title no longer visible
-        XCTAssert(!title.exists)
+        XCTAssertFalse(title.exists)
     }
 
     /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
     func testSystemAlertButton() {
         addUIInterruptionMonitorWithDescription("Location") { (element) -> Bool in
             element.tapLeftButtonOnSystemAlert()
-
             return true
         }
         app.staticTexts["Location"].tap()

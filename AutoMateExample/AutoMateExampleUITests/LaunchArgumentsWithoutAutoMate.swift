@@ -10,7 +10,7 @@ import XCTest
 
 class LaunchArgumentsWithoutAutoMate: XCTestCase {
 
-    // MARK: - Setup
+    // MARK: Setup
     override func setUp() {
         super.setUp()
 
@@ -24,7 +24,7 @@ class LaunchArgumentsWithoutAutoMate: XCTestCase {
         app.launch()
     }
 
-    // MARK: - Tests
+    // MARK: Tests
     func testSomething() {
 
     }

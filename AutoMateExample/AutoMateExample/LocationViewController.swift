@@ -10,11 +10,11 @@ import UIKit
 import CoreLocation
 
 class LocationViewController: UIViewController, CLLocationManagerDelegate {
-    // MARK: - IBOutlets
+    // MARK: IBOutlets
     @IBOutlet var label: UILabel!
     let manager = CLLocationManager()
 
-    // MARK: - View lifecycle
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,12 +26,12 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         updateStatus()
     }
 
-    // MARK: - CLLocationManagerDelegate
+    // MARK: CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         updateStatus()
     }
 
-    // MARK: - Helpers
+    // MARK: Helpers
     func updateStatus() {
         let status = CLLocationManager.authorizationStatus()
         label.text = status == .Denied ? "Denied" : "X"

@@ -14,7 +14,7 @@ public extension XCUIElement {
     // MARK: Properties
     /// Indicates if the element is currently visible on the screen.
     public var isVisible: Bool {
-        // The statement below will force application to wait for animation or other pending to finish before calculating the result.
+        // Workaround for some situations.
         XCUIDevice.sharedDevice().orientation = .Unknown
         return exists && hittable
     }
