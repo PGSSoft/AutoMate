@@ -20,105 +20,91 @@ class XCUIElementExtensionTests: XCTestCase {
 
     // MARK: Tests
     func testIsVisible() {
-        app.staticTexts["Scroll view"].tap()
-        let button = app.buttons["ButtonBottom"]
-        XCTAssertFalse(button.isVisible)
-        button.tap()
-        XCTAssert(button.isVisible)
+        let screen = ScrollViewScreen.open(inside: app)
+
+        XCTAssertFalse(screen.buttonBottom.isVisible)
+        screen.buttonBottom.tap()
+        XCTAssertTrue(screen.buttonBottom.isVisible)
     }
 
     func testSimpleSwipe() {
-        app.staticTexts["Scroll view"].tap()
-        let button = app.buttons["ButtonTop"]
-        let scrollView = app.scrollViews.element
-        XCTAssert(button.hittable)
+        let screen = ScrollViewScreen.open(inside: app)
 
-        scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
-
-        XCTAssertFalse(button.hittable)
+        XCTAssertTrue(screen.buttonTop.hittable)
+        screen.scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
+        XCTAssertFalse(screen.buttonTop.hittable)
     }
 
     func testComplexSwipe() {
-        app.staticTexts["Scroll view"].tap()
-        let button1 = app.buttons["ButtonTop"]
-        let button2 = app.buttons["ButtonBottom"]
-        let scrollView = app.scrollViews.element
-        XCTAssert(button1.hittable && !button2.hittable)
+        let screen = ScrollViewScreen.open(inside: app)
 
-        scrollView.swipe(to: button2)
-        XCTAssertFalse(button1.hittable && button2.hittable)
-
-        scrollView.swipe(to: button1)
-        XCTAssert(button1.hittable && !button2.hittable)
+        XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonBottom.hittable)
+        screen.scrollView.swipe(to: screen.buttonBottom)
+        XCTAssertFalse(screen.buttonTop.hittable && screen.buttonBottom.hittable)
+        screen.scrollView.swipe(to: screen.buttonTop)
+        XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonBottom.hittable)
     }
 
     func testComplexSwipeWithKeyboard() {
-        app.staticTexts["Scroll view"].tap()
-        app.textFields.element.tap()
-        app.textFields.element.typeText("x")
+        let screen = ScrollViewScreen.open(inside: app)
+        screen.textField.tap()
+        screen.textField.typeText("x")
 
-        let buttonTop = app.buttons["ButtonTop"]
-        let buttonMiddle1 = app.buttons["ButtonMiddle1"]
-        let buttonMiddle2 = app.buttons["ButtonMiddle2"]
-        let scrollView = app.scrollViews.element
+        XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonMiddle1.hittable && !screen.buttonMiddle2.hittable)
 
-        XCTAssert(buttonTop.hittable && !buttonMiddle1.hittable && !buttonMiddle2.hittable)
+        screen.scrollView.swipe(to: screen.buttonMiddle1)
+        XCTAssertTrue(screen.buttonMiddle1.hittable)
 
-        scrollView.swipe(to: buttonMiddle1)
-        XCTAssert(buttonMiddle1.hittable)
+        screen.scrollView.swipe(to: screen.buttonMiddle2)
+        XCTAssertTrue(screen.buttonMiddle2.hittable)
 
-        scrollView.swipe(to: buttonMiddle2)
-        XCTAssert(buttonMiddle2.hittable)
-
-        scrollView.swipe(to: buttonMiddle1)
-        XCTAssert(buttonMiddle1.hittable)
+        screen.scrollView.swipe(to: screen.buttonMiddle1)
+        XCTAssertTrue(screen.buttonMiddle1.hittable)
     }
 
     func testClearTextField() {
-        app.cells["Text input"].tap()
+        let screen = TextInputScreen.open(inside: app)
 
-        let textField = app.textFields.element
-        textField.tap()
-        textField.typeText("x")
-        XCTAssertEqual(textField.value as? String, "x")
-        textField.clearTextField()
-        XCTAssertEqual(textField.value as? String, "")
+        screen.textField.tap()
+        screen.textField.typeText("x")
+        XCTAssertEqual(screen.textField.value as? String, "x")
+        screen.textField.clearTextField()
+        XCTAssertEqual(screen.textField.value as? String, "")
     }
 
     func testClearAndType() {
-        app.cells["Text input"].tap()
+        let screen = TextInputScreen.open(inside: app)
 
-        let textField = app.textFields.element
-        textField.tap()
-        textField.typeText("x")
-        XCTAssertEqual(textField.value as? String, "x")
-        textField.clearAndType("d")
-        XCTAssertEqual(textField.value as? String, "d")
+        screen.textField.tap()
+        screen.textField.typeText("x")
+        XCTAssertEqual(screen.textField.value as? String, "x")
+        screen.textField.clearAndType("d")
+        XCTAssertEqual(screen.textField.value as? String, "d")
     }
 
     func testTapWithOffset() {
-        XCTAssert(app.tables.element.exists)
-        let title = app.staticTexts["Scroll view"]
-        XCTAssert(title.exists)
+        let screen = MiddleButtonScreen.open(inside: app)
+        XCTAssertFalse(screen.label.exists)
 
         // tap cell by using offset only
-        app.tapWithOffset(CGVector(dx: 0.5, dy: 0.3))
+        app.tapWithOffset(CGVector(dx: 0.5, dy: 0.5))
         // cell pushed view controller, title no longer visible
-        XCTAssertFalse(title.exists)
+
+        XCTAssertTrue(screen.label.exists)
     }
 
-    /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
+/// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
     func testSystemAlertButton() {
+        let screen = LocationScreen.open(inside: app)
         addUIInterruptionMonitorWithDescription("Location") { (element) -> Bool in
             element.tapLeftButtonOnSystemAlert()
             return true
         }
-        app.staticTexts["Location"].tap()
 
         // interruption won't happen without some kind of action
         app.tap()
 
-        waitForElementToExist(app.staticTexts["Denied"])
+        waitForElementToExist(screen.deniedLabel)
     }
 
 }
