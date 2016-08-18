@@ -16,7 +16,16 @@ protocol TableElement {
 extension TableElement {
     static func open(inside app: XCUIApplication) -> Self {
         let element = Self(app: app)
-        app.staticTexts[element.title].tap()
+
+        let cell = app.staticTexts[element.title]
+        cell.tap()
+
+        // workaround for problem with tap directly after launch
+        if cell.exists {
+            cell.tap()
+            assert(!cell.exists)
+        }
+
         return element
     }
 }
@@ -66,5 +75,22 @@ struct MiddleButtonScreen: TableElement {
     init(app: XCUIApplication) {
         label = app.staticTexts["Pressed"]
         button = app.buttons.element
+    }
+}
+
+struct AppearingScreen: TableElement {
+    let title = "Appearing view"
+    let buttonAppearing: XCUIElement
+    let buttonNotExisting: XCUIElement
+
+    init(app: XCUIApplication) {
+        buttonAppearing = app.buttons["Button"]
+        buttonNotExisting = app.buttons["Button1"]
+    }
+}
+
+struct TableScreen: TableElement {
+    let title = "Table view"
+    init(app: XCUIApplication) {
     }
 }
