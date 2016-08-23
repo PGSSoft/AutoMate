@@ -27,8 +27,10 @@ func generateCountries() {
         for (key, value) in countriesDictionary {
             let countryCodeRange = NSRange(location: 0, length: key.characters.count)
             guard countryCodeExpr.numberOfMatchesInString(key, options: [], range: countryCodeRange) > 0 else { continue }
+
             let range = NSRange(location: 0, length: value.characters.count)
             let caseName = expr.stringByReplacingMatchesInString(value, options: [], range: range, withTemplate: "")
+
             writer.append(line: "")
             writer.append(line: "/// Automatically generated value for country \(caseName).")
             writer.append(line: "case \(caseName) = \"\(key)\"")
