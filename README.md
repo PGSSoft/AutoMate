@@ -82,6 +82,15 @@ github PGSSoft/AutoMate
 - [x] `XCTest` extensions
 - [x] Added CoreData launch arguments
 - [ ] Disable UIView animations
+- [ ] Strong-typed helpers: localizers, view object templates
+- [ ] Base XCTestCase template
+- [ ] Improve handling of system alerts
+- [ ] Companion library for the app
+- [ ] Stubbing network requests
+- [ ] Stubbing contacts, events and reminders
+- [ ] Making screenshots
+- [ ] Clearing application data
+- [ ] Stubbing notifications
 
 ## Example application
 
