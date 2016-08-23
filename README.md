@@ -50,6 +50,28 @@ github PGSSoft/AutoMate
     ]).configure(app).launch()
     ```
 
+4. Use AutoMate's extensions in your tests. For example:
+
+    ```swift
+    func testSomething() {
+        let app = XCUIApplication()
+        let button = app.button.element
+
+        addUIInterruptionMonitorWithDescription("System alert") { (element) -> Bool in
+            // helper for finding "Don't allow" tapping on system alert
+            element.tapLeftButtonOnSystemAlert() 
+            return true
+        }
+
+        // helper for waiting until element is visible
+        waitForVisibleElement(button, timeout: 20) 
+        button.tap()
+        
+        // isVisible - helper to check that element both exists and is hittable
+        XCTAssertFalse(button.isVisible) 
+    }
+    ```
+
 ## Features (or ToDo)
 
 - [x] Set keyboards
@@ -57,9 +79,22 @@ github PGSSoft/AutoMate
 - [x] Set languages
 - [x] Custom arguments
 - [x] Custom keyboards, locales and languages
-- [ ] `XCTest` extensions
-- [ ] Added CoreData launch arguments
+- [x] `XCTest` extensions
+- [x] Added CoreData launch arguments
 - [ ] Disable UIView animations
+- [ ] Strong-typed helpers: localizers, view object templates
+- [ ] Base XCTestCase template
+- [ ] Improve handling of system alerts
+- [ ] Companion library for the app
+- [ ] Stubbing network requests
+- [ ] Stubbing contacts, events and reminders
+- [ ] Making screenshots
+- [ ] Clearing application data
+- [ ] Stubbing notifications
+
+## Example application
+
+Repository contains example application under `./AutoMateExample/` directory. Structure of the app is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library. 
 
 ## Development
 
