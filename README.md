@@ -1,5 +1,9 @@
-<!-- <img src="assets/pgssoftware-logo.svg" alt="Made by PGS Software" height="200" /> -->
-
+<div style="margin-bottom: -80px; vertical-align: bottom">
+    <div style="display: table; margin-left: auto">
+        <img src="assets/logo.svg" alt="AutoMate, made by PGS Software" height="200" />
+        <img src="assets/pgssoftware-logo.svg" height="50" style="margin-left: -25px; margin-bottom: -10px" />
+    </div>
+</div>
 
 # AutoMate
 
@@ -59,16 +63,16 @@ github PGSSoft/AutoMate
 
         addUIInterruptionMonitorWithDescription("System alert") { (element) -> Bool in
             // helper for finding "Don't allow" tapping on system alert
-            element.tapLeftButtonOnSystemAlert() 
+            element.tapLeftButtonOnSystemAlert()
             return true
         }
 
         // helper for waiting until element is visible
-        waitForVisibleElement(button, timeout: 20) 
+        waitForVisibleElement(button, timeout: 20)
         button.tap()
-        
+
         // isVisible - helper to check that element both exists and is hittable
-        XCTAssertFalse(button.isVisible) 
+        XCTAssertFalse(button.isVisible)
     }
     ```
 
@@ -94,7 +98,7 @@ github PGSSoft/AutoMate
 
 ## Example application
 
-Repository contains example application under `./AutoMateExample/` directory. Structure of the app is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library. 
+Repository contains example application under `./AutoMateExample/` directory. Structure of the app is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
 
 ## Development
 
