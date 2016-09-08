@@ -1,7 +1,7 @@
 # Changelog
 
-## [0.2](https://github.com/PGSSoft/AutoMate/releases/tag/0.2)
-Released on 2016-08-xx.
+## [1.0](https://github.com/PGSSoft/AutoMate/releases/tag/0.2)
+Released on 2016-09-xx.
 
 #### Added
 - CoreData debug launch options.
