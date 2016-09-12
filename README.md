@@ -25,7 +25,7 @@ pod 'AutoMate'
 or using [Carthage](https://github.com/Carthage/Carthage) and add a line to `Cartfile.private`:
 
 ```
-github PGSSoft/AutoMate
+github "PGSSoft/AutoMate"
 ```
 
 `Cartfile.private` should be used because AutoMate framework will be used by UI Tests target only not by the tested application.
