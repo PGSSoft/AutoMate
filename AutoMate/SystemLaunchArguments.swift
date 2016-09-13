@@ -27,7 +27,7 @@ public struct SystemLanguages: LanguageLaunchArgument, LaunchArgumentWithMultipl
 /// Launch option to replace locale selected in the system.
 public struct SystemLocale: LocaleLaunchArgument, LaunchArgumentWithSingleValue {
 
-    private let localeIdentifier: String
+    fileprivate let localeIdentifier: String
 
     /**
      Initalizes `self` with custom string representation of the locale.
@@ -111,7 +111,7 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
 
     /// Hardware keyboards to set on device. First element is the most preffered one.
     public var launchArguments: [String]? {
-        return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joinWithSeparator(", ") + ")"]
+        return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joined(separator: ", ") + ")"]
     }
 }
 
@@ -120,50 +120,50 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
 public enum CoreDataOption {
 
     /// Enables SQLDebug logging with given verbosity level.
-    case SQLDebug(verbosityLevel: VerbosityLevel)
+    case sqlDebug(verbosityLevel: VerbosityLevel)
 
     /// Turns on SQL syntax coloring.
-    case SyntaxColoredLogging
+    case syntaxColoredLogging
 
     /// Logs exceptions during data migrations.
-    case MigrationDebug
+    case migrationDebug
 
     /// Enables extra assertions related to concurrency.
-    case ConcurrencyDebug
+    case concurrencyDebug
 
     /// Controls behaviour of SQLite disk syncing.
-    case SQLiteDebugSynchronous(syncing: DiskSyncing)
+    case sqLiteDebugSynchronous(syncing: DiskSyncing)
 
     /// Enables extra integrity checking.
-    case SQLiteIntegrityCheck
+    case sqLiteIntegrityCheck
 
     /// Enables assertions for Core Data's multi-threading policy.
-    case ThreadingDebug(verbosityLevel: VerbosityLevel)
+    case threadingDebug(verbosityLevel: VerbosityLevel)
 
     /// Describes verbosity level of log output.
     public enum VerbosityLevel: Int {
 
         /// Low level of logging verbosity.
-        case Low = 1
+        case low = 1
 
         /// Medium level of logging verbosity.
-        case Medium = 2
+        case medium = 2
 
         /// Maximum level of logging verbosity.
-        case High = 3
+        case high = 3
     }
 
     /// Describes how database updates should be performed.
     public enum DiskSyncing: Int {
 
         /// Completely disables disk syncing. Fast, but increases chance of data corruption.
-        case Disabled = 1
+        case disabled = 1
 
         /// Disk syncing is performed without `fctl FULL_FSYNC` command.
-        case Normal = 2
+        case normal = 2
 
         /// Enforces that data is physically written to disk during save operation.
-        case Full = 3
+        case full = 3
     }
 }
 
@@ -175,19 +175,19 @@ extension CoreDataOption: LaunchArgumentWithSingleValue {
     /// String representation of the launch argument key.
     public var argumentKey: String {
         switch self {
-        case SQLDebug:
+        case .sqlDebug:
             return "com.apple.CoreData.SQLDebug"
-        case SyntaxColoredLogging:
+        case .syntaxColoredLogging:
             return "com.apple.CoreData.SyntaxColoredLogging"
-        case MigrationDebug:
+        case .migrationDebug:
             return "com.apple.CoreData.MigrationDebug"
-        case ConcurrencyDebug:
+        case .concurrencyDebug:
             return "com.apple.CoreData.ConcurrencyDebug"
-        case SQLiteDebugSynchronous:
+        case .sqLiteDebugSynchronous:
             return "com.apple.CoreData.SQLiteDebugSynchronous"
-        case SQLiteIntegrityCheck:
+        case .sqLiteIntegrityCheck:
             return "com.apple.CoreData.SQLiteIntegrityCheck"
-        case ThreadingDebug:
+        case .threadingDebug:
             return "com.apple.CoreData.ThreadingDebug"
         }
     }
@@ -195,14 +195,14 @@ extension CoreDataOption: LaunchArgumentWithSingleValue {
     /// Launch argument value to use during serialization.
     public var value: LaunchArgumentValue {
         switch self {
-        case let SQLDebug(value):
+        case let .sqlDebug(value):
             return value
-        case let SQLiteDebugSynchronous(value):
+        case let .sqLiteDebugSynchronous(value):
             return value
-        case let ThreadingDebug(value):
+        case let .threadingDebug(value):
             return value
-        case SyntaxColoredLogging, MigrationDebug, ConcurrencyDebug, SQLiteIntegrityCheck:
-            return BooleanLaunchArgumentValue.True
+        case .syntaxColoredLogging, .migrationDebug, .concurrencyDebug, .sqLiteIntegrityCheck:
+            return BooleanLaunchArgumentValue.true
         }
     }
 }
@@ -222,7 +222,7 @@ public enum LocalizedStrings: String {
 extension LocalizedStrings: LaunchArgumentWithSingleValue {
     /// Launch argument value to use during serialization.
     public var value: LaunchArgumentValue {
-        return BooleanLaunchArgumentValue.True
+        return BooleanLaunchArgumentValue.true
     }
 
     /// String representation of the launch argument key.

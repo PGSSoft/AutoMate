@@ -12,21 +12,21 @@ import XCTest
 ///Represents available string comparision operations to perform with NSPredicate API.
 public enum StringComparisonOperator: RawRepresentable {
     /// Enum value describing NSPredicate string comparision operator.
-    case Equals, BeginsWith, Contains, EndsWith, Like, Matches
+    case equals, beginsWith, contains, endsWith, like, matches
 
     /// Custom string operator.
-    case Other(comparisonOperator: String)
+    case other(comparisonOperator: String)
 
     /// String representation of the `self`.
     public var rawValue: String {
         switch self {
-        case .Equals: return "=="
-        case .BeginsWith: return "BEGINSWITH"
-        case .Contains: return "CONTAINS"
-        case .EndsWith: return "ENDSWITH"
-        case .Like: return "LIKE"
-        case .Matches: return "MATCHES"
-        case .Other(let comparisonOperator): return comparisonOperator
+        case .equals: return "=="
+        case .beginsWith: return "BEGINSWITH"
+        case .contains: return "CONTAINS"
+        case .endsWith: return "ENDSWITH"
+        case .like: return "LIKE"
+        case .matches: return "MATCHES"
+        case .other(let comparisonOperator): return comparisonOperator
         }
     }
 
@@ -36,13 +36,13 @@ public enum StringComparisonOperator: RawRepresentable {
      */
     public init(rawValue: String) {
         switch rawValue {
-        case "==": self = .Equals
-        case "BEGINSWITH": self = .BeginsWith
-        case "CONTAINS": self = .Contains
-        case "ENDSWITH": self = .EndsWith
-        case "LIKE": self = .Like
-        case "MATCHES": self = .Matches
-        default: self = .Other(comparisonOperator: rawValue)
+        case "==": self = .equals
+        case "BEGINSWITH": self = .beginsWith
+        case "CONTAINS": self = .contains
+        case "ENDSWITH": self = .endsWith
+        case "LIKE": self = .like
+        case "MATCHES": self = .matches
+        default: self = .other(comparisonOperator: rawValue)
         }
     }
 }
@@ -57,8 +57,8 @@ public extension XCUIElementQuery {
      - parameter comparisonOperator: Operation to use when performing comparison.
      - returns: XCUIElement that matches the type and label that begins with given text.
      */
-    public func element(withLabelMatching text: String, comparisonOperator: StringComparisonOperator = .Equals) -> XCUIElement {
-        return elementMatchingPredicate(NSPredicate(format: "label \(comparisonOperator.rawValue) '\(text)'"))
+    public func element(withLabelMatching text: String, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return self.element(matching: NSPredicate(format: "label \(comparisonOperator.rawValue) '\(text)'"))
     }
 
     /**
@@ -69,9 +69,9 @@ public extension XCUIElementQuery {
      - parameter labelComparisonOperator: Operation to use when performing comparison.
      - returns: XCUIElement that matches the type and label that begins with given text.
      */
-    public func element(withIdentifier identifier: String, label: String, labelComparisonOperator: StringComparisonOperator = .Equals) -> XCUIElement {
+    public func element(withIdentifier identifier: String, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let predicate = NSPredicate(format: "identifier == '\(identifier)' AND label \(labelComparisonOperator.rawValue) '\(label)'")
-        return elementMatchingPredicate(predicate)
+        return self.element(matching: predicate)
     }
 
     /**
@@ -82,12 +82,12 @@ public extension XCUIElementQuery {
      - parameter labelsComparisonOperator: StringComparisonOperator that will be used to compare XCUIElement label with searched one, .Equals/'==' by default.
      - returns: first XCUIElement containing all given labels.
      */
-    public func element(containingLabels dictionary: [String: String], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .Equals) -> XCUIElement {
+    public func element(containingLabels dictionary: [String: String], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let predicateString = "identifier == %@ AND label \(comparisonOperator.rawValue) %@"
         var query = self
         for (identifier, label) in dictionary {
             let predicate = NSPredicate(format: predicateString, argumentArray: [identifier, label])
-            query = query.containingPredicate(predicate)
+            query = query.containing(predicate)
         }
 
         return query.element

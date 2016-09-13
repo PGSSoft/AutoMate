@@ -13,7 +13,7 @@ extension Dictionary {
 
      - parameter dictionary: dictionary to copy values from.
      */
-    mutating func unionInPlace(dictionary: [Key: Value]) {
+    mutating func unionInPlace(_ dictionary: [Key: Value]) {
         for (key, value) in dictionary {
             self[key] = value
         }
@@ -25,7 +25,7 @@ extension Dictionary {
      - parameter dictionary: dictionary to copy elements from.
      - returns: Dictionary with merged elements.
      */
-    func union(dictionary: [Key: Value]) -> [Key: Value] {
+    func union(_ dictionary: [Key: Value]) -> [Key: Value] {
         var copy = self
         copy.unionInPlace(dictionary)
         return copy

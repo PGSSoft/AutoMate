@@ -20,16 +20,16 @@ public extension XCTestCase {
      - parameter file: current source file
      - parameter line: current source line
      */
-    public func waitForElementToExist(element: XCUIElement, timeout: NSTimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
+    public func wait(forElementToExist element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
-        expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
+        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
-        waitForExpectationsWithTimeout(timeout) { (error) -> Void in
+        waitForExpectations(timeout: timeout) { (error) -> Void in
             guard error != nil else {
                 return
             }
             let message = "Failed to find \(element) after \(timeout) seconds."
-            self.recordFailureWithDescription(message, inFile: file.stringValue, atLine: line, expected: true)
+            self.recordFailure(withDescription: message, inFile: String(describing: file), atLine: line, expected: true)
         }
     }
 
@@ -41,16 +41,16 @@ public extension XCTestCase {
      - parameter file: current source file
      - parameter line: current source line
      */
-    public func waitForVisibleElement(element: XCUIElement, timeout: NSTimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
+    public func wait(forVisibleElement element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true && hittable == true")
-        expectationForPredicate(existsPredicate, evaluatedWithObject: element, handler: nil)
+        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
-        waitForExpectationsWithTimeout(timeout) { (error) -> Void in
+        waitForExpectations(timeout: timeout) { (error) -> Void in
             guard error != nil else {
                 return
             }
             let message = "Failed to find hittable \(element) after \(timeout) seconds."
-            self.recordFailureWithDescription(message, inFile: file.stringValue, atLine: line, expected: true)
+            self.recordFailure(withDescription: message, inFile: String(describing: file), atLine: line, expected: true)
         }
     }
 }

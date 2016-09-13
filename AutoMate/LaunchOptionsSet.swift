@@ -10,7 +10,7 @@ import Foundation
 
 /// Set for LaunchOption objects, using `uniqueIdentifier` property for hashing and comparision.
 public struct LaunchOptionsSet {
-    private var options: [LaunchOption]
+    fileprivate var options: [LaunchOption]
 
     /// Create empty option set.
     public init() {
@@ -18,8 +18,8 @@ public struct LaunchOptionsSet {
     }
 }
 
-// MARK: SetAlgebraType
-extension LaunchOptionsSet: SetAlgebraType {
+// MARK: SetAlgebra
+extension LaunchOptionsSet: SetAlgebra {
     public typealias Element = LaunchOption
 
     /**
@@ -27,18 +27,44 @@ extension LaunchOptionsSet: SetAlgebraType {
      - parameter member: Element to search for
      - returns: Boolean value indicating whether set contains given element.
      */
-    public func contains(member: LaunchOption) -> Bool {
+    public func contains(_ member: LaunchOption) -> Bool {
         return options.contains { $0.uniqueIdentifier == member.uniqueIdentifier }
     }
 
     /**
-     Inserts given element (only if it isn't already in set).
-     - parameter member: Element to insert.
+     Checks if set contains given element and returns it.
+     - parameter member: Element to search for
+     - returns: Matching elements or nil if it doesn't exists in set.
      */
-    public mutating func insert(member: LaunchOption) {
-        if !contains(member) {
-            options.append(member)
+    public func contains(andReturns member: LaunchOption) -> LaunchOption? {
+        guard let index = options.index(where: { $0.uniqueIdentifier == member.uniqueIdentifier }) else {
+            return nil
         }
+        return options[index]
+    }
+
+    /**
+     Inserts the given element in the set if it is not already present.
+     - parameter newMember: An element to insert into the set.
+     - returns: `(true, newMember)` if `newMember` was not contained in the set.
+     */
+    public mutating func insert(_ newMember: LaunchOption) -> (inserted: Bool, memberAfterInsert: LaunchOption) {
+        if let oldMember = contains(andReturns: newMember) {
+            return (false, oldMember)
+        }
+        options.append(newMember)
+        return (true, newMember)
+    }
+
+    /**
+     Inserts the given element into the set unconditionally.
+     - parameter newMember: An element to insert into the set.
+     - returns: For ordinary sets, an element equal to `newMember` if the set already contained such a member; otherwise, `nil`.
+     */
+    public mutating func update(with newMember: LaunchOption) -> LaunchOption? {
+        let old = remove(newMember)
+        options.append(newMember)
+        return old
     }
 
     /**
@@ -46,9 +72,9 @@ extension LaunchOptionsSet: SetAlgebraType {
      - parameter other: Set to combine with.
      - returns: Result of the operation.
      */
-    public func exclusiveOr(other: LaunchOptionsSet) -> LaunchOptionsSet {
+    public func symmetricDifference(_ other: LaunchOptionsSet) -> LaunchOptionsSet {
         var copy = self
-        copy.exclusiveOrInPlace(other)
+        copy.formSymmetricDifference(other)
         return copy
     }
 
@@ -56,7 +82,7 @@ extension LaunchOptionsSet: SetAlgebraType {
      Performs XOR operation.
      - parameter other: Set to combine with.
      */
-    public mutating func exclusiveOrInPlace(other: LaunchOptionsSet) {
+    public mutating func formSymmetricDifference(_ other: LaunchOptionsSet) {
         var diff = options.filter { return !other.contains($0) }
         diff += other.filter { return !contains($0) }
         options = diff
@@ -67,9 +93,9 @@ extension LaunchOptionsSet: SetAlgebraType {
      - parameter member: Element to remove.
      - returns: Removed element (or nil if it didn't exist).
      */
-    public mutating func remove(member: LaunchOption) -> LaunchOption? {
-        guard let index = options.indexOf({ member.uniqueIdentifier == $0.uniqueIdentifier }) else { return nil }
-        return options.removeAtIndex(index)
+    public mutating func remove(_ member: LaunchOption) -> LaunchOption? {
+        guard let index = options.index(where: { member.uniqueIdentifier == $0.uniqueIdentifier }) else { return nil }
+        return options.remove(at: index)
     }
 
     /**
@@ -77,9 +103,9 @@ extension LaunchOptionsSet: SetAlgebraType {
      - parameter other: Set to combine with.
      - returns: Result of the operation.
      */
-    public func intersect(other: LaunchOptionsSet) -> LaunchOptionsSet {
+    public func intersection(_ other: LaunchOptionsSet) -> LaunchOptionsSet {
         var copy = self
-        copy.intersectInPlace(other)
+        copy.formIntersection(other)
         return copy
     }
 
@@ -87,7 +113,7 @@ extension LaunchOptionsSet: SetAlgebraType {
      Performs AND operation.
      - parameter other: Set to combine with.
      */
-    public mutating func intersectInPlace(other: LaunchOptionsSet) {
+    public mutating func formIntersection(_ other: LaunchOptionsSet) {
         options = options.filter { return other.contains($0) }
     }
 
@@ -96,9 +122,9 @@ extension LaunchOptionsSet: SetAlgebraType {
      - parameter other: Set to combine with.
      - returns: Result of the operation.
      */
-    public func union(other: LaunchOptionsSet) -> LaunchOptionsSet {
+    public func union(_ other: LaunchOptionsSet) -> LaunchOptionsSet {
         var copy = self
-        copy.unionInPlace(other)
+        copy.formUnion(other)
         return copy
     }
 
@@ -106,23 +132,23 @@ extension LaunchOptionsSet: SetAlgebraType {
      Performs OR operation.
      - parameter other: Set to combine with.
      */
-    public mutating func unionInPlace(other: LaunchOptionsSet) {
+    public mutating func formUnion(_ other: LaunchOptionsSet) {
         other.forEach({
-            insert($0)
+            _ = insert($0)
         })
     }
 }
 
-// MARK: SequenceType
-extension LaunchOptionsSet: SequenceType {
-    public typealias Generator = IndexingGenerator<[LaunchOption]>
+// MARK: Sequence
+extension LaunchOptionsSet: Sequence {
+    public typealias Iterator = IndexingIterator<[LaunchOption]>
 
     /**
      Creates generator for collection.
      - returns: Generator to walk over elements of the set.
      */
-    public func generate() -> Generator {
-        return options.generate()
+    public func makeIterator() -> Iterator {
+        return options.makeIterator()
     }
 }
 
@@ -134,5 +160,5 @@ extension LaunchOptionsSet: SequenceType {
  - returns: Result of the operation.
  */
 public func == (lhs: LaunchOptionsSet, rhs: LaunchOptionsSet) -> Bool {
-    return lhs.elementsEqual(rhs, isEquivalent: { $0.0.uniqueIdentifier == $0.1.uniqueIdentifier })
+    return lhs.elementsEqual(rhs, by: { $0.0.uniqueIdentifier == $0.1.uniqueIdentifier })
 }

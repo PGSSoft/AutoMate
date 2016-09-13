@@ -40,7 +40,7 @@ public extension LaunchOption {
 
     /// Unique value to use when comparing with other launch options.
     public var uniqueIdentifier: String {
-        return "\(self.dynamicType)"
+        return "\(type(of: self))"
     }
 }
 
@@ -112,7 +112,7 @@ extension LaunchArgumentWithSingleValue where Self: LaunchArgumentValue {
  Protocol that should be implemented by types representing launch argument that accepts collection
  of values.
  */
-public protocol LaunchArgumentWithMultipleValues: LaunchArgument, ArrayLiteralConvertible {
+public protocol LaunchArgumentWithMultipleValues: LaunchArgument, ExpressibleByArrayLiteral {
     associatedtype Value: LaunchArgumentValue
 
     /// Array of values associated to the launch argument.
@@ -145,11 +145,11 @@ extension LaunchArgumentWithMultipleValues {
 // MARK: - Launch argument values
 
 ///Represents launch argument value of type Bool.
-public enum BooleanLaunchArgumentValue: Int, BooleanLiteralConvertible, LaunchArgumentValue {
+public enum BooleanLaunchArgumentValue: Int, ExpressibleByBooleanLiteral, LaunchArgumentValue {
     /// Value of true, or 1.
-    case True = 1
+    case `true` = 1
     /// Value of false, or 0.
-    case False = 0
+    case `false` = 0
 
     // MARK: BooleanLiteralConvertible
     /**
@@ -157,6 +157,6 @@ public enum BooleanLaunchArgumentValue: Int, BooleanLiteralConvertible, LaunchAr
      - parameter value: Literal to use during initialization.
      */
     public init(booleanLiteral value: BooleanLiteralType) {
-        self = value ? .True : .False
+        self = value ? .true : .false
     }
 }

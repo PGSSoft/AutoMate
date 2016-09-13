@@ -57,7 +57,7 @@ public struct TestLauncher {
      - returns: List of launch arguments.
      */
     var launchArguments: [String] {
-        return options.flatMap { $0.launchArguments }.reduce([], combine: +)
+        return options.flatMap { $0.launchArguments }.reduce([], +)
     }
 
     /**

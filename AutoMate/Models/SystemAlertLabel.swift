@@ -1,10 +1,10 @@
 // swiftlint:disable variable_name
 /// Represents possible label values on alert buttons.
-public class SystemAlertLabel {
+open class SystemAlertLabel {
     private init() {}
 
     /// Automatically generated property for localized variants of DontAllow.
-    public static let DontAllow = [
+    open static let dontAllow = [
         "No permetre",
         "Não permitir",
         "Tidak Boleh",
@@ -42,7 +42,7 @@ public class SystemAlertLabel {
     ]
 
     /// Automatically generated property for localized variants of Allow.
-    public static let Allow = [
+    open static let allow = [
         "Engedélyezés",
         "允许",
         "Autoriser",
@@ -78,7 +78,7 @@ public class SystemAlertLabel {
     ]
 
     /// Automatically generated property for localized variants of OK.
-    public static let OK = [
+    open static let ok = [
         "ОК",
         "ΟΚ",
         "OKE",
@@ -93,7 +93,7 @@ public class SystemAlertLabel {
     ]
 
     /// Automatically generated property for localized variants of Cancel.
-    public static let Cancel = [
+    open static let cancel = [
         "Zrušit",
         "Batal",
         "Hủy",

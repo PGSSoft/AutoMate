@@ -14,16 +14,16 @@ class AppearingViewController: UIViewController {
     @IBOutlet var notExistingButton: UIButton!
 
     // MARK: View lifecycle
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        button.hidden = true
+        button.isHidden = true
 
         notExistingButton.removeFromSuperview()
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animateWithDuration(5.0, animations: { self.view.backgroundColor = UIColor.yellowColor() }, completion: { _ in
-            self.button.hidden = false
+        UIView.animate(withDuration: 5.0, animations: { self.view.backgroundColor = UIColor.yellow }, completion: { _ in
+            self.button.isHidden = false
             self.view.addSubview(self.notExistingButton)
         })
     }
