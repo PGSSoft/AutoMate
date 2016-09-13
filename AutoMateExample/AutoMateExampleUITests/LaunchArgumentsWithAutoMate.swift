@@ -25,8 +25,7 @@ class LaunchArgumentsWithAutomate: XCTestCase {
                 hardware: HardwareKeyboards([.PolishPoland])
             )
         ])
-        launcher.configure(app)
-        app.launch()
+        launcher.configure(app).launch()
     }
 
     // MARK: Tests

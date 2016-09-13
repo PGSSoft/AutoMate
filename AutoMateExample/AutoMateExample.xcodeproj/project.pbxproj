@@ -207,6 +207,7 @@
 					};
 					1F9891B11D409547007CD2B0 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1F98919D1D409547007CD2B0;
 					};
 				};
@@ -300,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/xcrun simctl uninstall booted test.AutoMateExample";
+			shellScript = "# /usr/bin/xcrun simctl uninstall booted test.AutoMateExample";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -477,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AutoMateExample;
 			};
 			name = Debug;
@@ -488,6 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AutoMateExample;
 			};
 			name = Release;

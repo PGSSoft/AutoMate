@@ -30,19 +30,19 @@ class XCUIElementExtensionTests: XCTestCase {
     func testSimpleSwipe() {
         let screen = ScrollViewScreen.open(inside: app)
 
-        XCTAssertTrue(screen.buttonTop.hittable)
+        XCTAssertTrue(screen.buttonTop.isHittable)
         screen.scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
-        XCTAssertFalse(screen.buttonTop.hittable)
+        XCTAssertFalse(screen.buttonTop.isHittable)
     }
 
     func testComplexSwipe() {
         let screen = ScrollViewScreen.open(inside: app)
 
-        XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonBottom.hittable)
+        XCTAssertTrue(screen.buttonTop.isHittable && !screen.buttonBottom.isHittable)
         screen.scrollView.swipe(to: screen.buttonBottom)
-        XCTAssertFalse(screen.buttonTop.hittable && screen.buttonBottom.hittable)
+        XCTAssertFalse(screen.buttonTop.isHittable && screen.buttonBottom.isHittable)
         screen.scrollView.swipe(to: screen.buttonTop)
-        XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonBottom.hittable)
+        XCTAssertTrue(screen.buttonTop.isHittable && !screen.buttonBottom.isHittable)
     }
 
     func testComplexSwipeWithKeyboard() {
@@ -50,16 +50,16 @@ class XCUIElementExtensionTests: XCTestCase {
         screen.textField.tap()
         screen.textField.typeText("x")
 
-        XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonMiddle1.hittable && !screen.buttonMiddle2.hittable)
+        XCTAssertTrue(screen.buttonTop.isHittable && !screen.buttonMiddle1.isHittable && !screen.buttonMiddle2.isHittable)
 
         screen.scrollView.swipe(to: screen.buttonMiddle1)
-        XCTAssertTrue(screen.buttonMiddle1.hittable)
+        XCTAssertTrue(screen.buttonMiddle1.isHittable)
 
         screen.scrollView.swipe(to: screen.buttonMiddle2)
-        XCTAssertTrue(screen.buttonMiddle2.hittable)
+        XCTAssertTrue(screen.buttonMiddle2.isHittable)
 
         screen.scrollView.swipe(to: screen.buttonMiddle1)
-        XCTAssertTrue(screen.buttonMiddle1.hittable)
+        XCTAssertTrue(screen.buttonMiddle1.isHittable)
     }
 
     func testClearTextField() {
@@ -78,7 +78,7 @@ class XCUIElementExtensionTests: XCTestCase {
         screen.textField.tap()
         screen.textField.typeText("x")
         XCTAssertEqual(screen.textField.value as? String, "x")
-        screen.textField.clearAndType("d")
+        screen.textField.clear(andType: "d")
         XCTAssertEqual(screen.textField.value as? String, "d")
     }
 
@@ -87,7 +87,7 @@ class XCUIElementExtensionTests: XCTestCase {
         XCTAssertFalse(screen.label.exists)
 
         // tap cell by using offset only
-        app.tapWithOffset(CGVector(dx: 0.5, dy: 0.5))
+        app.tap(withOffset: CGVector(dx: 0.5, dy: 0.5))
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(screen.label.exists)
@@ -96,7 +96,7 @@ class XCUIElementExtensionTests: XCTestCase {
 /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
     func testSystemAlertButton() {
         let screen = LocationScreen.open(inside: app)
-        addUIInterruptionMonitorWithDescription("Location") { (element) -> Bool in
+        addUIInterruptionMonitor(withDescription: "Location") { (element) -> Bool in
             element.tapLeftButtonOnSystemAlert()
             return true
         }
@@ -104,7 +104,7 @@ class XCUIElementExtensionTests: XCTestCase {
         // interruption won't happen without some kind of action
         app.tap()
 
-        waitForElementToExist(screen.deniedLabel)
+        wait(forElementToExist: screen.deniedLabel)
     }
 
 }
