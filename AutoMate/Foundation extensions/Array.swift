@@ -20,9 +20,9 @@ public extension Array where Element: LaunchArgumentValue {
      - returns: Array of combined elements.
      */
     func combine<T: LaunchArgumentValue>(values: [T]) -> [LaunchArgumentValue] {
-        var values = [LaunchArgumentValue]()
-        forEach { values.append($0) }
-        values.forEach { values.append($0) }
-        return values
+        var combinedValues = [LaunchArgumentValue]()
+        forEach { combinedValues.append($0) }
+        values.forEach { combinedValues.append($0) }
+        return combinedValues
     }
 }
