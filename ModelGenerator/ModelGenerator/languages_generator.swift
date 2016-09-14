@@ -14,7 +14,7 @@ func generateLanguages() {
         preconditionFailure("Couldn't load languages from Simulator")
     }
 
-    write("SystemLanguage") { (writer) in
+    write(toFile: "SystemLanguage") { (writer) in
         writer.append(line: "// swiftlint:disable type_body_length")
         writer.append(line: "")
         writer.append(line: "/// Enumeration describing available languages in the system.")
@@ -22,11 +22,11 @@ func generateLanguages() {
 
         writer.beginIndent()
         for identifier in languagesDictionary.keys {
-            guard let displayName = locale.displayNameForKey(NSLocaleIdentifier, value: identifier) else {
+            guard let displayName = locale.displayName(forKey: .identifier, value: identifier) else {
                 continue
             }
             let range = NSRange(location: 0, length: displayName.characters.count)
-            let caseName = expr.stringByReplacingMatchesInString(displayName, options: [], range: range, withTemplate: "")
+            let caseName = expr.stringByReplacingMatches(in: displayName, options: [], range: range, withTemplate: "")
             writer.append(line: "")
             writer.append(line: "/// Automatically generated value for language \(caseName).")
             writer.append(line: "case \(caseName) = \"\(identifier)\"")
