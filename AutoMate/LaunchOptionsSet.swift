@@ -32,18 +32,6 @@ extension LaunchOptionsSet: SetAlgebra {
     }
 
     /**
-     Checks if set contains given element and returns it.
-     - parameter member: Element to search for
-     - returns: Matching elements or nil if it doesn't exists in set.
-     */
-    public func contains(andReturns member: LaunchOption) -> LaunchOption? {
-        guard let index = options.index(where: { $0.uniqueIdentifier == member.uniqueIdentifier }) else {
-            return nil
-        }
-        return options[index]
-    }
-
-    /**
      Inserts the given element in the set if it is not already present.
      - parameter newMember: An element to insert into the set.
      - returns: `(true, newMember)` if `newMember` was not contained in the set.
@@ -149,6 +137,21 @@ extension LaunchOptionsSet: Sequence {
      */
     public func makeIterator() -> Iterator {
         return options.makeIterator()
+    }
+}
+
+// MARK: Helpers
+extension LaunchOptionsSet {
+    /**
+     Checks if set contains given element and returns it.
+     - parameter member: Element to search for
+     - returns: Matching elements or nil if it doesn't exists in set.
+     */
+    fileprivate func contains(andReturns member: LaunchOption) -> LaunchOption? {
+        guard let index = options.index(where: { $0.uniqueIdentifier == member.uniqueIdentifier }) else {
+            return nil
+        }
+        return options[index]
     }
 }
 

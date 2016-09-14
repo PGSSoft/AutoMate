@@ -43,7 +43,7 @@ public struct SystemLocale: LocaleLaunchArgument, LaunchArgumentWithSingleValue 
      - parameter country: Predefined country value.
      */
     public init(language: SystemLanguage, country: SystemCountry) {
-        self.localeIdentifier = "\(language.rawValue)_\(country.rawValue)"
+        localeIdentifier = "\(language.rawValue)_\(country.rawValue)"
     }
 }
 
@@ -96,7 +96,7 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
 
     /// Keyboards to set on device.
     public var values: [LaunchArgumentValue] {
-        return software.values.combineValues(hardware.values)
+        return software.values.combine(values: hardware.values)
     }
 
     /**

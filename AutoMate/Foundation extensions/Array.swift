@@ -19,10 +19,10 @@ public extension Array where Element: LaunchArgumentValue {
      - parameter other: Other array to use in join.
      - returns: Array of combined elements.
      */
-    func combineValues<T: LaunchArgumentValue>(_ other: [T]) -> [LaunchArgumentValue] {
+    func combine<T: LaunchArgumentValue>(values: [T]) -> [LaunchArgumentValue] {
         var values = [LaunchArgumentValue]()
         forEach { values.append($0) }
-        other.forEach { values.append($0) }
+        values.forEach { values.append($0) }
         return values
     }
 }

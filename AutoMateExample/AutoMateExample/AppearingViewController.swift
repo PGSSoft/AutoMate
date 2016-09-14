@@ -22,7 +22,7 @@ class AppearingViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 5.0, animations: { self.view.backgroundColor = UIColor.yellow }, completion: { _ in
+        UIView.animate(withDuration: 5.0, animations: { self.view.backgroundColor = .yellow }, completion: { _ in
             self.button.isHidden = false
             self.view.addSubview(self.notExistingButton)
         })

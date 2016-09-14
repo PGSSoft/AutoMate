@@ -58,7 +58,7 @@ public extension XCUIElementQuery {
      - returns: XCUIElement that matches the type and label that begins with given text.
      */
     public func element(withLabelMatching text: String, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        return self.element(matching: NSPredicate(format: "label \(comparisonOperator.rawValue) '\(text)'"))
+        return element(matching: NSPredicate(format: "label \(comparisonOperator.rawValue) '\(text)'"))
     }
 
     /**
@@ -71,7 +71,7 @@ public extension XCUIElementQuery {
      */
     public func element(withIdentifier identifier: String, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let predicate = NSPredicate(format: "identifier == '\(identifier)' AND label \(labelComparisonOperator.rawValue) '\(label)'")
-        return self.element(matching: predicate)
+        return element(matching: predicate)
     }
 
     /**
