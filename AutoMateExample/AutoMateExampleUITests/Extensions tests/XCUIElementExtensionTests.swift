@@ -39,10 +39,14 @@ class XCUIElementExtensionTests: XCTestCase {
         let screen = ScrollViewScreen.open(inside: app)
 
         XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonBottom.hittable)
+
         screen.scrollView.swipe(to: screen.buttonBottom)
         XCTAssertFalse(screen.buttonTop.hittable && screen.buttonBottom.hittable)
+        screen.buttonBottom.tap()
+
         screen.scrollView.swipe(to: screen.buttonTop)
         XCTAssertTrue(screen.buttonTop.hittable && !screen.buttonBottom.hittable)
+        screen.buttonTop.tap()
     }
 
     func testComplexSwipeWithKeyboard() {
@@ -93,7 +97,7 @@ class XCUIElementExtensionTests: XCTestCase {
         XCTAssertTrue(screen.label.exists)
     }
 
-/// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
+    /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
     func testSystemAlertButton() {
         let screen = LocationScreen.open(inside: app)
         addUIInterruptionMonitorWithDescription("Location") { (element) -> Bool in
