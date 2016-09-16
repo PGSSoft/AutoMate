@@ -23,7 +23,7 @@ class AdditionalExtensionsTests: XCTestCase {
         let screen = AppearingScreen.open(inside: app)
         XCTAssertFalse(screen.buttonNotExisting.exists)
 
-        waitForElementToExist(screen.buttonNotExisting)
+        wait(forElementToExist: screen.buttonNotExisting)
         XCTAssertTrue(screen.buttonNotExisting.exists)
     }
 
@@ -31,7 +31,7 @@ class AdditionalExtensionsTests: XCTestCase {
         let screen = AppearingScreen.open(inside: app)
         XCTAssertFalse(screen.buttonAppearing.isVisible)
 
-        waitForVisibleElement(screen.buttonAppearing)
+        wait(forVisibleElement: screen.buttonAppearing)
         XCTAssertTrue(screen.buttonAppearing.isVisible)
     }
 
@@ -49,33 +49,33 @@ class AdditionalExtensionsTests: XCTestCase {
 
     // MARK: XCUIElementTypeQueryProvider tests
     func testAny() {
-        XCTAssertTrue(app.any.elementBoundByIndex(0).exists)
+        XCTAssertTrue(app.any.element(boundBy: 0).exists)
     }
 
     // MARK: XCTElementQuery extension tests
     func testElementMatchingLabel() {
-        TableScreen.open(inside: app)
-        XCTAssertTrue(app.any.element(withLabelMatching: "UniqueName").hittable)
-        XCTAssertTrue(app.any.element(withLabelMatching: "UniqueName", comparisonOperator: .Equals).hittable)
-        XCTAssertTrue(app.any.element(withLabelMatching: "Unique*", comparisonOperator: .Like).hittable)
-        XCTAssertTrue(app.any.element(withLabelMatching: "Unique.*", comparisonOperator: .Matches).hittable)
-        XCTAssertTrue(app.any.element(withLabelMatching: "Unique", comparisonOperator: .BeginsWith).hittable)
-        XCTAssertTrue(app.any.element(withLabelMatching: "Name", comparisonOperator: .EndsWith).hittable)
-        XCTAssertTrue(app.any.element(withLabelMatching: "nique", comparisonOperator: .Contains).hittable)
+        _ = TableScreen.open(inside: app)
+        XCTAssertTrue(app.any.element(withLabelMatching: "UniqueName").isHittable)
+        XCTAssertTrue(app.any.element(withLabelMatching: "UniqueName", comparisonOperator: .equals).isHittable)
+        XCTAssertTrue(app.any.element(withLabelMatching: "Unique*", comparisonOperator: .like).isHittable)
+        XCTAssertTrue(app.any.element(withLabelMatching: "Unique.*", comparisonOperator: .matches).isHittable)
+        XCTAssertTrue(app.any.element(withLabelMatching: "Unique", comparisonOperator: .beginsWith).isHittable)
+        XCTAssertTrue(app.any.element(withLabelMatching: "Name", comparisonOperator: .endsWith).isHittable)
+        XCTAssertTrue(app.any.element(withLabelMatching: "nique", comparisonOperator: .contains).isHittable)
     }
 
     func testElementMatchingIdentifier() {
-        TableScreen.open(inside: app)
+        _ = TableScreen.open(inside: app)
 
-        XCTAssertTrue(app.any.element(withIdentifier: "unique-name", label: "UniqueName").hittable)
+        XCTAssertTrue(app.any.element(withIdentifier: "unique-name", label: "UniqueName").isHittable)
         XCTAssertFalse(app.any.element(withIdentifier: "unique-name", label: "").exists)
     }
 
     func testCellMatching() {
-        TableScreen.open(inside: app)
+        _ = TableScreen.open(inside: app)
 
-        XCTAssertTrue(app.cells.element(containingLabels: ["a": "KindA", "b": "Name1"]).hittable)
-        XCTAssertTrue(app.cells.element(containingLabels: ["a": "*A", "b": "*1"], labelsComparisonOperator: .Like).hittable)
+        XCTAssertTrue(app.cells.element(containingLabels: ["a": "KindA", "b": "Name1"]).isHittable)
+        XCTAssertTrue(app.cells.element(containingLabels: ["a": "*A", "b": "*1"], labelsComparisonOperator: .like).isHittable)
         XCTAssertFalse(app.cells.element(containingLabels: ["aa": "KindA", "bb": "Name1"]).exists)
         XCTAssertFalse(app.cells.element(containingLabels: ["a": "KindAA", "b": "Name11"]).exists)
     }

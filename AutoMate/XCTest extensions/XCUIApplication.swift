@@ -24,7 +24,7 @@ public extension XCUIApplication {
      and iPhone6+ as iPhone 6.
      */
     public var deviceType: DeviceType {
-        let window = windows.elementBoundByIndex(0)
+        let window = windows.element(boundBy: 0)
         let size = window.frame.size
         let portraitSize = size.height > size.width ? size : CGSize(width: size.height, height: size.width)
 
@@ -78,7 +78,7 @@ public extension XCUIApplication {
     /// Returns machine identifier string in a form of "name,major,minor", i.e. "iPhone,8,2".
     private var machineIdentifier: String {
         if isRunningOnSimulator {
-            guard let value = NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] else {
+            guard let value = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] else {
                 fatalError("Failed to determine simulator type.")
             }
             return value
@@ -86,8 +86,8 @@ public extension XCUIApplication {
 
         var systemInfo = utsname()
         uname(&systemInfo)
-        let value = withUnsafePointer(&systemInfo.machine) {
-            String.fromCString(UnsafePointer($0))!
+        let value = withUnsafePointer(to: &systemInfo.machine) {
+            String(cString: UnsafeRawPointer($0).assumingMemoryBound(to: CChar.self))
         }
         return value
     }
@@ -111,7 +111,7 @@ public extension XCUIApplication {
      - parameter deviceType: type of device to check for.
      - returns: Boolean value indicating whether current device is of the expected type.
      */
-    public func isRunningOn(deviceType: DeviceType) -> Bool {
+    public func isRunningOn(_ deviceType: DeviceType) -> Bool {
         return self.deviceType == deviceType
     }
 }

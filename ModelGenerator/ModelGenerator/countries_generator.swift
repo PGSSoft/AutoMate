@@ -17,7 +17,7 @@ func generateCountries() {
         preconditionFailure("Couldn't load countries from Simulator")
     }
 
-    write("SystemCountry") { (writer) in
+    write(toFile: "SystemCountry") { (writer) in
         writer.append(line: "// swiftlint:disable type_body_length")
         writer.append(line: "")
         writer.append(line: "/// Enumeration describing available country codes in the system.")
@@ -26,10 +26,10 @@ func generateCountries() {
         writer.beginIndent()
         for (key, value) in countriesDictionary {
             let countryCodeRange = NSRange(location: 0, length: key.characters.count)
-            guard countryCodeExpr.numberOfMatchesInString(key, options: [], range: countryCodeRange) > 0 else { continue }
+            guard countryCodeExpr.numberOfMatches(in: key, options: [], range: countryCodeRange) > 0 else { continue }
 
             let range = NSRange(location: 0, length: value.characters.count)
-            let caseName = expr.stringByReplacingMatchesInString(value, options: [], range: range, withTemplate: "")
+            let caseName = expr.stringByReplacingMatches(in: value, options: [], range: range, withTemplate: "")
 
             writer.append(line: "")
             writer.append(line: "/// Automatically generated value for country \(caseName).")

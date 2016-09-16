@@ -16,7 +16,7 @@ public protocol DescendantsMatching {
      - parameter type: Type of descendands to find.
      - returns: query searching elements of given type.
      */
-    func descendantsMatchingType(type: XCUIElementType) -> XCUIElementQuery
+    func descendantsMatchingType(_ type: XCUIElementType) -> XCUIElementQuery
 }
 
 extension XCUIElement: DescendantsMatching { }
@@ -26,6 +26,6 @@ extension XCUIElementTypeQueryProvider where Self: DescendantsMatching {
 
     /// Returns any element matching the query.
     public var any: XCUIElementQuery {
-        return descendantsMatchingType(.Any)
+        return descendantsMatchingType(.any)
     }
 }

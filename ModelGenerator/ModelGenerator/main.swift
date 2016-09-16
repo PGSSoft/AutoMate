@@ -11,4 +11,4 @@ import Foundation
 generateCountries()
 generateKeyboards()
 generateLabels()
-generateLanguages()
+//generateLanguages() // Doesn't work with Xcode 8

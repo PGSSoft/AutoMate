@@ -9,7 +9,7 @@
 public extension Array where Element: LaunchArgumentValue {
     /// Elements of the array formatter as a launch argument.
     var launchArgument: String {
-        return "(" + map({ $0.launchArgument }).joinWithSeparator(", ") + ")"
+        return "(" + map { $0.launchArgument }.joined(separator: ", ") + ")"
     }
 
     /**
@@ -19,10 +19,10 @@ public extension Array where Element: LaunchArgumentValue {
      - parameter other: Other array to use in join.
      - returns: Array of combined elements.
      */
-    func combineValues<T: LaunchArgumentValue>(other: [T]) -> [LaunchArgumentValue] {
-        var values = [LaunchArgumentValue]()
-        forEach { values.append($0) }
-        other.forEach { values.append($0) }
-        return values
+    func combine<T: LaunchArgumentValue>(values: [T]) -> [LaunchArgumentValue] {
+        var combinedValues = [LaunchArgumentValue]()
+        forEach { combinedValues.append($0) }
+        values.forEach { combinedValues.append($0) }
+        return combinedValues
     }
 }

@@ -16,14 +16,14 @@ private let identifierRegex: NSRegularExpression = {
     return expr
 }()
 
-func asIdentifier(input: String) -> String {
+func asIdentifier(_ input: String) -> String {
     let range = NSRange(location: 0, length: input.characters.count)
-    return identifierRegex.stringByReplacingMatchesInString(input, options: [], range: range, withTemplate: "")
+    return identifierRegex.stringByReplacingMatches(in: input, options: [], range: range, withTemplate: "")
 }
 
-func write(name: String, @noescape block: (writer: Writer) -> ()) {
+func write(toFile name: String, block: (_ writer: Writer) -> ()) {
     func sourceDirectory() -> String {
-        guard let directory = NSProcessInfo.processInfo().environment["SRCROOT"] else {
+        guard let directory = ProcessInfo.processInfo.environment["SRCROOT"] else {
             fatalError("Failed to determine source directory.")
         }
 
@@ -31,8 +31,8 @@ func write(name: String, @noescape block: (writer: Writer) -> ()) {
     }
 
     let writer = Writer()
-    block(writer: writer)
-    writer.write(sourceDirectory() + "/../AutoMate/Models/\(name).swift")
+    block(writer)
+    writer.write(to: sourceDirectory() + "/../AutoMate/Models/\(name).swift")
 }
 
 /// Helper for generating source code.
@@ -48,9 +48,9 @@ class Writer: CustomDebugStringConvertible {
         indentation -= 1
     }
 
-    func write(path: String) {
+    func write(to path: String) {
         do {
-            try data.writeToFile(path, options: [])
+            try data.write(toFile: path, options: [])
         } catch {
             fatalError("Failed to write:" + path)
         }
@@ -58,8 +58,8 @@ class Writer: CustomDebugStringConvertible {
         print("Saved to " + path)
     }
 
-    func append(line line: String) {
-        assert(!line.containsString("\n"))
+    func append(line: String) {
+        assert(!line.contains("\n"))
 
         var indented = ""
         // ignore indentation for empty lines
@@ -70,14 +70,14 @@ class Writer: CustomDebugStringConvertible {
         }
         indented += line + "\n"
 
-        guard let dataFromString = indented.dataUsingEncoding(NSUTF8StringEncoding) else {
+        guard let dataFromString = indented.data(using: String.Encoding.utf8) else {
             return
         }
-        data.appendData(dataFromString)
+        data.append(dataFromString)
     }
 
     var debugDescription: String {
-        guard let content = NSString(data: data, encoding: NSUTF8StringEncoding) as? String else {
+        guard let content = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) as? String else {
             fatalError()
         }
         return "Writer content:\n" + content

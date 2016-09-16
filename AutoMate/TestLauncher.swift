@@ -43,7 +43,7 @@ public struct TestLauncher {
      - parameter application: Object implementing Application protocol that will receive the settings.
      - returns: Application with passed settings.
      */
-    public func configure<T: Application>(application: T) -> T {
+    public func configure<T: Application>(_ application: T) -> T {
         var application = application
         application.launchArguments += launchArguments
         application.launchEnvironment.unionInPlace(launchEnvironments)
@@ -57,7 +57,7 @@ public struct TestLauncher {
      - returns: List of launch arguments.
      */
     var launchArguments: [String] {
-        return options.flatMap { $0.launchArguments }.reduce([], combine: +)
+        return options.flatMap { $0.launchArguments }.reduce([], +)
     }
 
     /**

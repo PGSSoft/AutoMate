@@ -13,7 +13,7 @@ class MiddleButtonViewController: UIViewController {
     @IBOutlet var label: UILabel!
 
     // MARK: IBActions
-    @IBAction func buttonPressed(sender: AnyObject) {
+    @IBAction func buttonPressed(_ sender: AnyObject) {
         label.text = "Pressed"
     }
 

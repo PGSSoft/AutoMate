@@ -6,26 +6,26 @@ typealias NameAndValue = (String, String)
 func getKeyboards() -> [KeyboardData] {
     var result = [KeyboardData]()
 
-    let fileManager = NSFileManager()
+    let fileManager = FileManager()
 
     let enUSLocale = NSLocale(localeIdentifier: "en_US")
 
     let simulatorKeyboardsPath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/TextInput/"
 
-    guard let content = try? fileManager.contentsOfDirectoryAtPath(simulatorKeyboardsPath) else {
+    guard let content = try? fileManager.contentsOfDirectory(atPath: simulatorKeyboardsPath) else {
         preconditionFailure("Couldn't find directory")
     }
 
-    for bundleName in content where bundleName.containsString(".bundle") {
+    for bundleName in content where bundleName.contains(".bundle") {
 
-        guard let bundle = NSBundle(path: simulatorKeyboardsPath + bundleName),
-            infoPlist = bundle.infoDictionary,
-            inputModes = infoPlist["UIKeyboardSupportedInputModes"] as? [String: AnyObject] else {
+        guard let bundle = Bundle(path: simulatorKeyboardsPath + bundleName),
+            let infoPlist = bundle.infoDictionary,
+            let inputModes = infoPlist["UIKeyboardSupportedInputModes"] as? [String: AnyObject] else {
                 preconditionFailure("Couldn't initialize \(bundleName), find Info.plist or UIKeyboardSupportedInputModes entry.")
         }
 
         for (locale, localeInfo) in inputModes {
-            guard let displayName = enUSLocale.displayNameForKey(NSLocaleIdentifier, value: locale) else { continue }
+            guard let displayName = enUSLocale.displayName(forKey: .identifier, value: locale) else { continue }
             var item = KeyboardData(displayName, nil, nil)
 
             if let swLayouts = localeInfo["SWLayouts"] as? [String] {
@@ -43,8 +43,8 @@ func getKeyboards() -> [KeyboardData] {
     return result
 }
 
-func writeKeyboardEnum(name: String, variant: String, cases: [NameAndValue]) {
-    write(name) { (writer) in
+func writeKeyboardEnum(to name: String, variant: String, cases: [NameAndValue]) {
+    write(toFile: name) { (writer) in
         writer.append(line: "// swiftlint:disable type_body_length")
         writer.append(line: "")
         writer.append(line: "/// Enumeration describing available \(variant) keyboards in the system.")
@@ -76,6 +76,6 @@ func generateKeyboards() {
         }
     }
 
-    writeKeyboardEnum("HardwareKeyboard", variant: "hardware", cases: hardwareKeyboards)
-    writeKeyboardEnum("SoftwareKeyboard", variant: "software", cases: softwareKeyboards)
+    writeKeyboardEnum(to: "HardwareKeyboard", variant: "hardware", cases: hardwareKeyboards)
+    writeKeyboardEnum(to: "SoftwareKeyboard", variant: "software", cases: softwareKeyboards)
 }
