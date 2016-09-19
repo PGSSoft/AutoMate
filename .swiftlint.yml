@@ -3,5 +3,5 @@ disabled_rules:
   - type_name
   - file_length
 
-opt_in_rules:
-  - missing_docs
+# opt_in_rules:
+  # - missing_docs # Dosabled due problems on Xcode 8: https://github.com/realm/SwiftLint/issues/811

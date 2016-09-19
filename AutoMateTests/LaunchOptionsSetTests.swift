@@ -31,26 +31,26 @@ class LaunchOptionsSetTests: XCTestCase {
 
     func testInsertWithNotStoredValue() {
         var set: LaunchOptionsSet = []
-        set.insert(option)
+        _ = set.insert(option)
         XCTAssertTrue(set.contains(option))
     }
 
     func testInsertWithAlreadyStoredValue() {
         var set1: LaunchOptionsSet = [option]
         let set2 = set1
-        set1.insert(option)
+        _ = set1.insert(option)
         XCTAssertTrue(set1 == set2)
     }
 
     func testExlusiveOrToReturnEmptySetForEqualSets() {
         let set1: LaunchOptionsSet = [option]
-        XCTAssertTrue(set1.exclusiveOr(set1).isEmpty)
+        XCTAssertTrue(set1.symmetricDifference(set1).isEmpty)
     }
 
     func testExlusiveOrToReturnNotEmptySetForDisjointSets() {
         let set1: LaunchOptionsSet = [option]
         let set2: LaunchOptionsSet = [option1]
-        let resultSet = set1.exclusiveOr(set2)
+        let resultSet = set1.symmetricDifference(set2)
         XCTAssertTrue(resultSet.contains(option1))
         XCTAssertTrue(resultSet.contains(option))
     }
@@ -74,13 +74,13 @@ class LaunchOptionsSetTests: XCTestCase {
     func testDisjointSetsIntersectionToBeEmpty() {
         let set1: LaunchOptionsSet = [option]
         let set2: LaunchOptionsSet = [option1]
-        XCTAssertTrue(set1.intersect(set2).isEmpty)
+        XCTAssertTrue(set1.intersection(set2).isEmpty)
     }
 
     func testIntersectionOfSetsWithCommonElement() {
         let set1: LaunchOptionsSet = [option]
         let set2: LaunchOptionsSet = [option, option1]
-        let resultSet = set1.intersect(set2)
+        let resultSet = set1.intersection(set2)
         XCTAssertTrue(resultSet.contains(option))
         XCTAssertFalse(resultSet.contains(option1))
     }

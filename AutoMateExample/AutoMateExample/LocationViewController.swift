@@ -19,7 +19,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
@@ -27,13 +27,13 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     // MARK: CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         updateStatus()
     }
 
     // MARK: Helpers
     func updateStatus() {
         let status = CLLocationManager.authorizationStatus()
-        label.text = status == .Denied ? "Denied" : "X"
+        label.text = status == .denied ? "Denied" : "X"
     }
 }

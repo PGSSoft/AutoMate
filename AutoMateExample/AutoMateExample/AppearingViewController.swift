@@ -16,24 +16,35 @@ class AppearingViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
 
     // MARK: View lifecycle
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        button.hidden = true
-        stackView.removeArrangedSubview(madeWithLoveView)
+        button.isHidden = true
+        madeWithLoveView.removeFromSuperview()
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator.startAnimating()
-        dispatch_after(
-            dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC))),
-            dispatch_get_main_queue()) {
-                self.button.hidden = false
-                self.stackView.layoutIfNeeded()
+        performAsync(after: 5) {
+            self.button.isHidden = false
+            self.stackView.layoutIfNeeded()
         }
     }
 
-    @IBAction func loadingDoneButtonTouched(sender: UIButton) {
-        stackView.addArrangedSubview(madeWithLoveView)
-        stackView.layoutIfNeeded()
+    @IBAction func loadingDoneButtonTouched(_ sender: UIButton) {
+        performAsync(after: 5) {
+            self.stackView.addArrangedSubview(self.madeWithLoveView)
+            self.stackView.layoutIfNeeded()
+        }
+        button.isHidden = true
+    }
+
+    // MARK: Helpers
+    private func performAsync(after delay: Int, closure: @escaping () -> Void) {
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(delay)) { [unowned self] in
+            closure()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
     }
 }

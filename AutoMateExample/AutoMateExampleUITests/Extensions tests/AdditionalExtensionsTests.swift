@@ -21,20 +21,18 @@ class AdditionalExtensionsTests: XCTestCase {
     // MARK: XCTestCase extension tests
     func testWaitForElementToExist() {
         let screen = AppearingScreen.open(inside: app)
-        waitForVisibleElement(screen.appearingButton)
 
+        wait(forVisibleElement: screen.appearingButton)
         XCTAssertFalse(screen.madeWithLoveView.exists)
-        waitForElementToExist(screen.madeWithLoveView)
         screen.appearingButton.tap()
-
-        XCTAssertTrue(screen.madeWithLoveView.exists)
+        wait(forElementToExist: screen.madeWithLoveView)
     }
 
     func testWaitForVisibleElement() {
         let screen = AppearingScreen.open(inside: app)
         XCTAssertFalse(screen.appearingButton.isVisible)
 
-        waitForVisibleElement(screen.appearingButton)
+        wait(forVisibleElement: screen.appearingButton)
         XCTAssertTrue(screen.appearingButton.isVisible)
         screen.appearingButton.tap()
     }
@@ -53,6 +51,6 @@ class AdditionalExtensionsTests: XCTestCase {
 
     // MARK: XCUIElementTypeQueryProvider tests
     func testAny() {
-        XCTAssertTrue(app.any.elementBoundByIndex(0).exists)
+        XCTAssertTrue(app.any.element(boundBy: 0).exists)
     }
 }

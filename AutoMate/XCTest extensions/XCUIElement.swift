@@ -15,8 +15,8 @@ public extension XCUIElement {
     /// Indicates if the element is currently visible on the screen.
     public var isVisible: Bool {
         // Workaround for some situations.
-        XCUIDevice.sharedDevice().orientation = .Unknown
-        return exists && hittable
+        XCUIDevice.shared().orientation = .unknown
+        return exists && isHittable
     }
 
     // MARK: Methods
@@ -27,9 +27,9 @@ public extension XCUIElement {
      - parameter stopVector: Relative point to end swipe.
      */
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
-        let p1 = coordinateWithNormalizedOffset(startVector)
-        let p2 = coordinateWithNormalizedOffset(stopVector)
-        p1.pressForDuration(0.1, thenDragToCoordinate: p2)
+        let p1 = coordinate(withNormalizedOffset: startVector)
+        let p2 = coordinate(withNormalizedOffset: stopVector)
+        p1.press(forDuration: 0.1, thenDragTo: p2)
     }
 
     /**
@@ -50,12 +50,12 @@ public extension XCUIElement {
             if keyboard.exists {
                 let keyboardTop = keyboard.frame.minY
                 let overlap = max(frame.maxY - keyboardTop, 0)
-                scrollableArea = frame.divide(overlap, fromEdge: .MaxYEdge).remainder
+                scrollableArea = frame.divided(atDistance: overlap, from: .maxYEdge).remainder
                 assert(frame.minY < keyboardTop, "Scrollable view is completely hidden behind keyboard.")
             }
         }
 
-        func scroll(deltaY deltaY: CGFloat, @noescape condition: () -> (Bool)) {
+        func scroll(deltaY: CGFloat, condition: () -> (Bool)) {
             var oldElementFrame = element.frame
             while condition() {
                 // calculate swipe points so that they fit into scrollabel area
@@ -79,7 +79,7 @@ public extension XCUIElement {
     /// Remove text from textField or secureTextField.
     public func clearTextField() {
         var previousValueLength = 0
-        while let value = self.value as? NSString where value.length != previousValueLength {
+        while let value = self.value as? NSString, value.length != previousValueLength {
             // keep removing characters until text is empty, or removing them is not allowed
             previousValueLength = value.length
             typeText("\u{8}")
@@ -91,7 +91,7 @@ public extension XCUIElement {
 
      - parameter text: Text to type after clearing old value.
      */
-    public func clearAndType(text: String) {
+    public func clear(andType text: String) {
         tap()
         clearTextField()
         typeText(text)
@@ -104,8 +104,8 @@ public extension XCUIElement {
 
      - parameter offset: Tap offset. Default (0, 0).
      */
-    public func tapWithOffset(offset: CGVector = CGVector.zero) {
-        coordinateWithNormalizedOffset(offset).tap()
+    public func tap(withOffset offset: CGVector = CGVector.zero) {
+        coordinate(withNormalizedOffset: offset).tap()
     }
 
     /**
@@ -117,7 +117,7 @@ public extension XCUIElement {
      It has been fixed in Xcode 8.
      */
     public func tapLeftButtonOnSystemAlert() {
-        let labels = SystemAlertLabel.DontAllow + SystemAlertLabel.OK
+        let labels = SystemAlertLabel.dontAllow + SystemAlertLabel.ok
         for buttonLabel in labels {
             let button = buttons[buttonLabel]
             if button.exists {

@@ -30,32 +30,29 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard DanishDenmark.
     case DanishDenmark = "da_DK@sw=QWERTY-Danish"
 
+    /// Automatically generated value for software keyboard GermanSwitzerland.
+    case GermanSwitzerland = "de_CH@sw=QWERTZ-German"
+
     /// Automatically generated value for software keyboard GermanAustria.
     case GermanAustria = "de_AT@sw=QWERTZ-German"
 
     /// Automatically generated value for software keyboard GermanGermany.
     case GermanGermany = "de_DE@sw=QWERTZ-German"
 
-    /// Automatically generated value for software keyboard GermanSwitzerland.
-    case GermanSwitzerland = "de_CH@sw=QWERTZ-German"
-
     /// Automatically generated value for software keyboard GreekGreece.
     case GreekGreece = "el_GR@sw=Greek"
-
-    /// Automatically generated value for software keyboard EnglishCanada.
-    case EnglishCanada = "en_CA@sw=QWERTY"
-
-    /// Automatically generated value for software keyboard EnglishAustralia.
-    case EnglishAustralia = "en_AU@sw=QWERTY"
-
-    /// Automatically generated value for software keyboard EnglishSingapore.
-    case EnglishSingapore = "en_SG@sw=QWERTY"
 
     /// Automatically generated value for software keyboard EnglishUnitedStates.
     case EnglishUnitedStates = "en_US@sw=QWERTY"
 
+    /// Automatically generated value for software keyboard EnglishCanada.
+    case EnglishCanada = "en_CA@sw=QWERTY"
+
     /// Automatically generated value for software keyboard EnglishUnitedKingdom.
     case EnglishUnitedKingdom = "en_GB@sw=QWERTY"
+
+    /// Automatically generated value for software keyboard EnglishSingapore.
+    case EnglishSingapore = "en_SG@sw=QWERTY"
 
     /// Automatically generated value for software keyboard EnglishJapan.
     case EnglishJapan = "en_JP@sw=QWERTY"
@@ -63,11 +60,17 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard EnglishIndia.
     case EnglishIndia = "en_IN@sw=QWERTY"
 
-    /// Automatically generated value for software keyboard SpanishSpain.
-    case SpanishSpain = "es_ES@sw=QWERTY-Spanish"
+    /// Automatically generated value for software keyboard EnglishAustralia.
+    case EnglishAustralia = "en_AU@sw=QWERTY"
 
     /// Automatically generated value for software keyboard SpanishMexico.
     case SpanishMexico = "es_MX@sw=QWERTY-Spanish"
+
+    /// Automatically generated value for software keyboard SpanishSpain.
+    case SpanishSpain = "es_ES@sw=QWERTY-Spanish"
+
+    /// Automatically generated value for software keyboard SpanishLatinAmerica.
+    case SpanishLatinAmerica = "es_419@sw=QWERTY-Spanish"
 
     /// Automatically generated value for software keyboard EstonianEstonia.
     case EstonianEstonia = "et_EE@sw=QWERTY"
@@ -78,17 +81,17 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard FinnishFinland.
     case FinnishFinland = "fi_FI@sw=QWERTY-Swedish-Finnish"
 
-    /// Automatically generated value for software keyboard FrenchBelgium.
-    case FrenchBelgium = "fr_BE@sw=AZERTY-French"
-
-    /// Automatically generated value for software keyboard FrenchFrance.
-    case FrenchFrance = "fr_FR@sw=AZERTY-French"
-
     /// Automatically generated value for software keyboard FrenchCanada.
     case FrenchCanada = "fr_CA@sw=QWERTY-Accents"
 
     /// Automatically generated value for software keyboard FrenchSwitzerland.
     case FrenchSwitzerland = "fr_CH@sw=QWERTZ-Accents"
+
+    /// Automatically generated value for software keyboard FrenchBelgium.
+    case FrenchBelgium = "fr_BE@sw=AZERTY-French"
+
+    /// Automatically generated value for software keyboard FrenchFrance.
+    case FrenchFrance = "fr_FR@sw=AZERTY-French"
 
     /// Automatically generated value for software keyboard IrishIreland.
     case IrishIreland = "ga_IE@sw=QWERTY"
@@ -126,14 +129,14 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard ItalianItaly.
     case ItalianItaly = "it_IT@sw=QWERTY"
 
+    /// Automatically generated value for software keyboard JapaneseJapan.
+    case JapaneseJapan = "ja_JP@sw=Kana"
+
     /// Automatically generated value for software keyboard JapaneseJapanKANA.
     case JapaneseJapanKANA = "ja_JP-Kana@sw=Kana"
 
     /// Automatically generated value for software keyboard JapaneseJapanROMAJI.
     case JapaneseJapanROMAJI = "ja_JP-Romaji@sw=QWERTY-Japanese"
-
-    /// Automatically generated value for software keyboard JapaneseJapan.
-    case JapaneseJapan = "ja_JP@sw=Kana"
 
     /// Automatically generated value for software keyboard Georgian.
     case Georgian = "ka@sw=Georgian-Phonetic"
@@ -171,11 +174,11 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard PolishPoland.
     case PolishPoland = "pl_PL@sw=QWERTY"
 
-    /// Automatically generated value for software keyboard PortugueseBrazil.
-    case PortugueseBrazil = "pt_BR@sw=QWERTY"
-
     /// Automatically generated value for software keyboard PortuguesePortugal.
     case PortuguesePortugal = "pt_PT@sw=QWERTY"
+
+    /// Automatically generated value for software keyboard PortugueseBrazil.
+    case PortugueseBrazil = "pt_BR@sw=QWERTY"
 
     /// Automatically generated value for software keyboard RomanianRomania.
     case RomanianRomania = "ro_RO@sw=QWERTY"
@@ -189,11 +192,11 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard SlovenianSlovenia.
     case SlovenianSlovenia = "sl_SI@sw=QWERTZ"
 
-    /// Automatically generated value for software keyboard SerbianCyrillic.
-    case SerbianCyrillic = "sr_Cyrl@sw=Serbian-Cyrillic"
-
     /// Automatically generated value for software keyboard SerbianLatin.
     case SerbianLatin = "sr_Latn@sw=QWERTY"
+
+    /// Automatically generated value for software keyboard SerbianCyrillic.
+    case SerbianCyrillic = "sr_Cyrl@sw=Serbian-Cyrillic"
 
     /// Automatically generated value for software keyboard SwedishSweden.
     case SwedishSweden = "sv_SE@sw=QWERTY-Swedish-Finnish"
@@ -222,17 +225,11 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard VietnameseVietnam.
     case VietnameseVietnam = "vi_VN@sw=QWERTY"
 
-    /// Automatically generated value for software keyboard ChineseSimplifiedPinyinRomanization.
-    case ChineseSimplifiedPinyinRomanization = "zh_Hans-Pinyin@sw=Pinyin-Simplified"
-
-    /// Automatically generated value for software keyboard ChineseTraditionalZHUYIN.
-    case ChineseTraditionalZHUYIN = "zh_Hant-Zhuyin@sw=Zhuyin"
-
     /// Automatically generated value for software keyboard ChineseSimplifiedWUBIHUA.
     case ChineseSimplifiedWUBIHUA = "zh_Hans-Wubihua@sw=Wubihua-Simplified"
 
-    /// Automatically generated value for software keyboard ChineseTraditionalHWR.
-    case ChineseTraditionalHWR = "zh_Hant-HWR@sw=HWR-Traditional"
+    /// Automatically generated value for software keyboard ChineseChina.
+    case ChineseChina = "zh_CN@sw=Pinyin-Simplified"
 
     /// Automatically generated value for software keyboard ChineseTaiwan.
     case ChineseTaiwan = "zh_TW@sw=Zhuyin"
@@ -240,18 +237,24 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard ChineseTraditionalCANGJIE.
     case ChineseTraditionalCANGJIE = "zh_Hant-Cangjie@sw=Cangjie"
 
+    /// Automatically generated value for software keyboard ChineseSimplifiedPinyinRomanization.
+    case ChineseSimplifiedPinyinRomanization = "zh_Hans-Pinyin@sw=Pinyin-Simplified"
+
     /// Automatically generated value for software keyboard ChineseTraditionalWUBIHUA.
     case ChineseTraditionalWUBIHUA = "zh_Hant-Wubihua@sw=Wubihua-Traditional"
-
-    /// Automatically generated value for software keyboard ChineseTraditionalPinyinRomanization.
-    case ChineseTraditionalPinyinRomanization = "zh_Hant-Pinyin@sw=Pinyin-Traditional"
 
     /// Automatically generated value for software keyboard ChineseSimplifiedHWR.
     case ChineseSimplifiedHWR = "zh_Hans-HWR@sw=HWR-Simplified"
 
+    /// Automatically generated value for software keyboard ChineseTraditionalZHUYIN.
+    case ChineseTraditionalZHUYIN = "zh_Hant-Zhuyin@sw=Zhuyin"
+
     /// Automatically generated value for software keyboard ChineseTraditionalSUCHENG.
     case ChineseTraditionalSUCHENG = "zh_Hant-Sucheng@sw=Sucheng"
 
-    /// Automatically generated value for software keyboard ChineseChina.
-    case ChineseChina = "zh_CN@sw=Pinyin-Simplified"
+    /// Automatically generated value for software keyboard ChineseTraditionalHWR.
+    case ChineseTraditionalHWR = "zh_Hant-HWR@sw=HWR-Traditional"
+
+    /// Automatically generated value for software keyboard ChineseTraditionalPinyinRomanization.
+    case ChineseTraditionalPinyinRomanization = "zh_Hant-Pinyin@sw=Pinyin-Traditional"
 }

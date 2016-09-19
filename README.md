@@ -1,11 +1,15 @@
-<!-- <img src="assets/pgssoftware-logo.svg" alt="Made by PGS Software" height="200" /> -->
-
+<div style="margin-bottom: -80px; vertical-align: bottom">
+    <div style="display: table; margin-left: auto">
+        <img src="assets/logo.svg" alt="AutoMate, made by PGS Software" height="200" />
+        <img src="assets/pgssoftware-logo.svg" height="50" style="margin-left: -25px; margin-bottom: -10px" />
+    </div>
+</div>
 
 # AutoMate
 
 `AutoMate` is a Swift framework containing a set of helpful `XCTest` extensions for writing UI automation tests. It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device.
 
-[![Swift 2.2.1](https://img.shields.io/badge/Swift-2.2.1-orange.svg?style=flat)](https://swift.org/)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org/)
 [![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate/)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -25,7 +29,7 @@ pod 'AutoMate'
 or using [Carthage](https://github.com/Carthage/Carthage) and add a line to `Cartfile.private`:
 
 ```
-github PGSSoft/AutoMate
+github "PGSSoft/AutoMate"
 ```
 
 `Cartfile.private` should be used because AutoMate framework will be used by UI Tests target only not by the tested application.
@@ -59,16 +63,16 @@ github PGSSoft/AutoMate
 
         addUIInterruptionMonitorWithDescription("System alert") { (element) -> Bool in
             // helper for finding "Don't allow" tapping on system alert
-            element.tapLeftButtonOnSystemAlert() 
+            element.tapLeftButtonOnSystemAlert()
             return true
         }
 
         // helper for waiting until element is visible
-        waitForVisibleElement(button, timeout: 20) 
+        waitForVisibleElement(button, timeout: 20)
         button.tap()
-        
+
         // isVisible - helper to check that element both exists and is hittable
-        XCTAssertFalse(button.isVisible) 
+        XCTAssertFalse(button.isVisible)
     }
     ```
 
@@ -94,7 +98,7 @@ github PGSSoft/AutoMate
 
 ## Example application
 
-Repository contains example application under `./AutoMateExample/` directory. Structure of the app is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library. 
+Repository contains example application under `./AutoMateExample/` directory. Structure of the app is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
 
 ## Development
 

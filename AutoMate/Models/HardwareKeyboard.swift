@@ -30,32 +30,29 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard DanishDenmark.
     case DanishDenmark = "da_DK@hw=Danish"
 
+    /// Automatically generated value for hardware keyboard GermanSwitzerland.
+    case GermanSwitzerland = "de_CH@hw=Swiss German"
+
     /// Automatically generated value for hardware keyboard GermanAustria.
     case GermanAustria = "de_AT@hw=German"
 
     /// Automatically generated value for hardware keyboard GermanGermany.
     case GermanGermany = "de_DE@hw=German"
 
-    /// Automatically generated value for hardware keyboard GermanSwitzerland.
-    case GermanSwitzerland = "de_CH@hw=Swiss German"
-
     /// Automatically generated value for hardware keyboard GreekGreece.
     case GreekGreece = "el_GR@hw=Greek"
-
-    /// Automatically generated value for hardware keyboard EnglishCanada.
-    case EnglishCanada = "en_CA@hw=Canadian"
-
-    /// Automatically generated value for hardware keyboard EnglishAustralia.
-    case EnglishAustralia = "en_AU@hw=Australian"
-
-    /// Automatically generated value for hardware keyboard EnglishSingapore.
-    case EnglishSingapore = "en_SG@hw=US"
 
     /// Automatically generated value for hardware keyboard EnglishUnitedStates.
     case EnglishUnitedStates = "en_US@hw=US"
 
+    /// Automatically generated value for hardware keyboard EnglishCanada.
+    case EnglishCanada = "en_CA@hw=Canadian"
+
     /// Automatically generated value for hardware keyboard EnglishUnitedKingdom.
     case EnglishUnitedKingdom = "en_GB@hw=British"
+
+    /// Automatically generated value for hardware keyboard EnglishSingapore.
+    case EnglishSingapore = "en_SG@hw=US"
 
     /// Automatically generated value for hardware keyboard EnglishJapan.
     case EnglishJapan = "en_JP@hw=US"
@@ -63,11 +60,17 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard EnglishIndia.
     case EnglishIndia = "en_IN@hw=US"
 
-    /// Automatically generated value for hardware keyboard SpanishSpain.
-    case SpanishSpain = "es_ES@hw=Spanish - ISO"
+    /// Automatically generated value for hardware keyboard EnglishAustralia.
+    case EnglishAustralia = "en_AU@hw=Australian"
 
     /// Automatically generated value for hardware keyboard SpanishMexico.
     case SpanishMexico = "es_MX@hw=Spanish - ISO"
+
+    /// Automatically generated value for hardware keyboard SpanishSpain.
+    case SpanishSpain = "es_ES@hw=Spanish - ISO"
+
+    /// Automatically generated value for hardware keyboard SpanishLatinAmerica.
+    case SpanishLatinAmerica = "es_419@hw=Spanish - ISO"
 
     /// Automatically generated value for hardware keyboard EstonianEstonia.
     case EstonianEstonia = "et_EE@hw=Estonian"
@@ -78,17 +81,17 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard FinnishFinland.
     case FinnishFinland = "fi_FI@hw=Finnish"
 
-    /// Automatically generated value for hardware keyboard FrenchBelgium.
-    case FrenchBelgium = "fr_BE@hw=French"
-
-    /// Automatically generated value for hardware keyboard FrenchFrance.
-    case FrenchFrance = "fr_FR@hw=French"
-
     /// Automatically generated value for hardware keyboard FrenchCanada.
     case FrenchCanada = "fr_CA@hw=Canadian - CSA"
 
     /// Automatically generated value for hardware keyboard FrenchSwitzerland.
     case FrenchSwitzerland = "fr_CH@hw=Swiss French"
+
+    /// Automatically generated value for hardware keyboard FrenchBelgium.
+    case FrenchBelgium = "fr_BE@hw=French"
+
+    /// Automatically generated value for hardware keyboard FrenchFrance.
+    case FrenchFrance = "fr_FR@hw=French"
 
     /// Automatically generated value for hardware keyboard IrishIreland.
     case IrishIreland = "ga_IE@hw=British"
@@ -168,11 +171,11 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard PolishPoland.
     case PolishPoland = "pl_PL@hw=Polish Pro"
 
-    /// Automatically generated value for hardware keyboard PortugueseBrazil.
-    case PortugueseBrazil = "pt_BR@hw=Brazilian - Pro"
-
     /// Automatically generated value for hardware keyboard PortuguesePortugal.
     case PortuguesePortugal = "pt_PT@hw=Portuguese"
+
+    /// Automatically generated value for hardware keyboard PortugueseBrazil.
+    case PortugueseBrazil = "pt_BR@hw=Brazilian - Pro"
 
     /// Automatically generated value for hardware keyboard RomanianRomania.
     case RomanianRomania = "ro_RO@hw=Romanian"
@@ -186,11 +189,11 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard SlovenianSlovenia.
     case SlovenianSlovenia = "sl_SI@hw=Slovenian"
 
-    /// Automatically generated value for hardware keyboard SerbianCyrillic.
-    case SerbianCyrillic = "sr_Cyrl@hw=Serbian"
-
     /// Automatically generated value for hardware keyboard SerbianLatin.
     case SerbianLatin = "sr_Latn@hw=Serbian-Latin"
+
+    /// Automatically generated value for hardware keyboard SerbianCyrillic.
+    case SerbianCyrillic = "sr_Cyrl@hw=Serbian"
 
     /// Automatically generated value for hardware keyboard SwedishSweden.
     case SwedishSweden = "sv_SE@hw=Swedish - Pro"
@@ -216,14 +219,11 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard VietnameseVietnam.
     case VietnameseVietnam = "vi_VN@hw=US"
 
-    /// Automatically generated value for hardware keyboard ChineseSimplifiedPinyinRomanization.
-    case ChineseSimplifiedPinyinRomanization = "zh_Hans-Pinyin@hw=US"
-
-    /// Automatically generated value for hardware keyboard ChineseTraditionalZHUYIN.
-    case ChineseTraditionalZHUYIN = "zh_Hant-Zhuyin@hw=Zhuyin Bopomofo"
-
     /// Automatically generated value for hardware keyboard ChineseSimplifiedWUBIHUA.
     case ChineseSimplifiedWUBIHUA = "zh_Hans-Wubihua@hw=US"
+
+    /// Automatically generated value for hardware keyboard ChineseChina.
+    case ChineseChina = "zh_CN@hw=US"
 
     /// Automatically generated value for hardware keyboard ChineseTaiwan.
     case ChineseTaiwan = "zh_TW@hw=Zhuyin Bopomofo"
@@ -231,15 +231,18 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard ChineseTraditionalCANGJIE.
     case ChineseTraditionalCANGJIE = "zh_Hant-Cangjie@hw=CangjieKeyboard"
 
+    /// Automatically generated value for hardware keyboard ChineseSimplifiedPinyinRomanization.
+    case ChineseSimplifiedPinyinRomanization = "zh_Hans-Pinyin@hw=US"
+
     /// Automatically generated value for hardware keyboard ChineseTraditionalWUBIHUA.
     case ChineseTraditionalWUBIHUA = "zh_Hant-Wubihua@hw=US"
 
-    /// Automatically generated value for hardware keyboard ChineseTraditionalPinyinRomanization.
-    case ChineseTraditionalPinyinRomanization = "zh_Hant-Pinyin@hw=US"
+    /// Automatically generated value for hardware keyboard ChineseTraditionalZHUYIN.
+    case ChineseTraditionalZHUYIN = "zh_Hant-Zhuyin@hw=Zhuyin Bopomofo"
 
     /// Automatically generated value for hardware keyboard ChineseTraditionalSUCHENG.
     case ChineseTraditionalSUCHENG = "zh_Hant-Sucheng@hw=CangjieKeyboard"
 
-    /// Automatically generated value for hardware keyboard ChineseChina.
-    case ChineseChina = "zh_CN@hw=US"
+    /// Automatically generated value for hardware keyboard ChineseTraditionalPinyinRomanization.
+    case ChineseTraditionalPinyinRomanization = "zh_Hant-Pinyin@hw=US"
 }
