@@ -40,11 +40,9 @@ class AppearingViewController: UIViewController {
     // MARK: Helpers
     private func performAsync(after delay: Int, closure: @escaping () -> Void) {
         activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(delay)) { [unowned self] in
             closure()
             self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
         }
     }
 }
