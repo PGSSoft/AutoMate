@@ -39,10 +39,14 @@ class XCUIElementExtensionTests: XCTestCase {
         let screen = ScrollViewScreen.open(inside: app)
 
         XCTAssertTrue(screen.buttonTop.isHittable && !screen.buttonBottom.isHittable)
+
         screen.scrollView.swipe(to: screen.buttonBottom)
         XCTAssertFalse(screen.buttonTop.isHittable && screen.buttonBottom.isHittable)
+        screen.buttonBottom.tap()
+
         screen.scrollView.swipe(to: screen.buttonTop)
         XCTAssertTrue(screen.buttonTop.isHittable && !screen.buttonBottom.isHittable)
+        screen.buttonTop.tap()
     }
 
     func testComplexSwipeWithKeyboard() {
@@ -66,8 +70,8 @@ class XCUIElementExtensionTests: XCTestCase {
         let screen = TextInputScreen.open(inside: app)
 
         screen.textField.tap()
-        screen.textField.typeText("x")
-        XCTAssertEqual(screen.textField.value as? String, "x")
+        screen.textField.typeText("Made with love by PGS")
+        XCTAssertEqual(screen.textField.value as? String, "Made with love by PGS")
         screen.textField.clearTextField()
         XCTAssertEqual(screen.textField.value as? String, "")
     }
@@ -76,10 +80,10 @@ class XCUIElementExtensionTests: XCTestCase {
         let screen = TextInputScreen.open(inside: app)
 
         screen.textField.tap()
-        screen.textField.typeText("x")
-        XCTAssertEqual(screen.textField.value as? String, "x")
-        screen.textField.clear(andType: "d")
-        XCTAssertEqual(screen.textField.value as? String, "d")
+        screen.textField.typeText("Made with love")
+        XCTAssertEqual(screen.textField.value as? String, "Made with love")
+        screen.textField.clear(andType: "by PGS")
+        XCTAssertEqual(screen.textField.value as? String, "by PGS")
     }
 
     func testTapWithOffset() {
@@ -93,7 +97,7 @@ class XCUIElementExtensionTests: XCTestCase {
         XCTAssertTrue(screen.label.exists)
     }
 
-/// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
+    /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
     func testSystemAlertButton() {
         let screen = LocationScreen.open(inside: app)
         addUIInterruptionMonitor(withDescription: "Location") { (element) -> Bool in

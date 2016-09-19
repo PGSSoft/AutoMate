@@ -11,20 +11,40 @@ import UIKit
 class AppearingViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var button: UIButton!
-    @IBOutlet var notExistingButton: UIButton!
+    @IBOutlet var madeWithLoveView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var stackView: UIStackView!
 
     // MARK: View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         button.isHidden = true
-
-        notExistingButton.removeFromSuperview()
+        madeWithLoveView.removeFromSuperview()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 5.0, animations: { self.view.backgroundColor = .yellow }, completion: { _ in
+        performAsync(after: 5) {
             self.button.isHidden = false
-            self.view.addSubview(self.notExistingButton)
-        })
+            self.stackView.layoutIfNeeded()
+        }
+    }
+
+    @IBAction func loadingDoneButtonTouched(_ sender: UIButton) {
+        performAsync(after: 5) {
+            self.stackView.addArrangedSubview(self.madeWithLoveView)
+            self.stackView.layoutIfNeeded()
+        }
+        button.isHidden = true
+    }
+
+    // MARK: Helpers
+    private func performAsync(after delay: Int, closure: @escaping () -> Void) {
+        activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(delay)) { [weak self] in
+            guard let strongSelf = self else { return }
+
+            closure()
+            strongSelf.activityIndicator.stopAnimating()
+        }
     }
 }

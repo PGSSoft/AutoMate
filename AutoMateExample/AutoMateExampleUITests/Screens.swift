@@ -80,12 +80,12 @@ struct MiddleButtonScreen: TableElement {
 
 struct AppearingScreen: TableElement {
     let title = "Appearing view"
-    let buttonAppearing: XCUIElement
-    let buttonNotExisting: XCUIElement
+    let appearingButton: XCUIElement
+    let madeWithLoveView: XCUIElement
 
     init(app: XCUIApplication) {
-        buttonAppearing = app.buttons["Button"]
-        buttonNotExisting = app.buttons["Button1"]
+        appearingButton = app.buttons["appearingButton"]
+        madeWithLoveView = app.any["madeWithLove"]
     }
 }
 
