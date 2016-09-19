@@ -42,7 +42,7 @@ class AppearingViewController: UIViewController {
         activityIndicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(delay)) { [weak self] in
             guard let strongSelf = self else { return }
-            
+
             closure()
             strongSelf.activityIndicator.stopAnimating()
         }
