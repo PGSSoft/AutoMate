@@ -16,7 +16,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/AutoMate.svg)](http://cocoadocs.org/docsets/AutoMate)
 [![License](https://img.shields.io/cocoapods/l/AutoMate.svg)](https://github.com/PGSSoft/AutoMate/blob/master/LICENSE)
 
-<!-- ![Screenshot](assets/img.png) -->
+![AutoMate](assets/AutoMate.gif)
 
 ## Installation
 
