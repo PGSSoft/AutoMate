@@ -48,6 +48,20 @@
                BlueprintName = "AutoMateExampleUITests"
                ReferencedContainer = "container:AutoMateExample/AutoMateExample.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AdditionalExtensionsTests/testForMovie()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testForMovie()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testSystemAlertButton()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementQueryTests/testForMovie()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

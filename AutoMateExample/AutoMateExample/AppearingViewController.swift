@@ -23,14 +23,14 @@ class AppearingViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        performAsync(after: 5) {
+        performAsync(after: 2) {
             self.button.isHidden = false
             self.stackView.layoutIfNeeded()
         }
     }
 
     @IBAction func loadingDoneButtonTouched(_ sender: UIButton) {
-        performAsync(after: 5) {
+        performAsync(after: 2) {
             self.stackView.addArrangedSubview(self.madeWithLoveView)
             self.stackView.layoutIfNeeded()
         }

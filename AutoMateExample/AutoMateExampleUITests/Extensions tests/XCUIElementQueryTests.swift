@@ -83,6 +83,13 @@ class XCUIElementQueryTests: XCTestCase {
         XCTAssertFalse(wrongRightDetailCell.exists)
         XCTAssertFalse(wrongIdentifierCell.exists)
     }
+
+    // MARK: Test for movie
+    func testForMovie() {
+        testElementMatchingIdentifier()
+        TableScreen.closeView(in: app)
+        testCellMatching()
+    }
 }
 
 private enum Identifiers {

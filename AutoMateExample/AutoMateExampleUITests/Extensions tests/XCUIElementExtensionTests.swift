@@ -52,7 +52,7 @@ class XCUIElementExtensionTests: XCTestCase {
     func testComplexSwipeWithKeyboard() {
         let screen = ScrollViewScreen.open(inside: app)
         screen.textField.tap()
-        screen.textField.typeText("x")
+        screen.textField.typeText("AutoMate")
 
         XCTAssertTrue(screen.buttonTop.isHittable && !screen.buttonMiddle1.isHittable && !screen.buttonMiddle2.isHittable)
 
@@ -111,4 +111,30 @@ class XCUIElementExtensionTests: XCTestCase {
         wait(forElementToExist: screen.deniedLabel)
     }
 
+    // MARK: Test for movie
+    func testForMovie() {
+        testIsVisible()
+        ScrollViewScreen.closeView(in: app)
+
+        testSimpleSwipe()
+        ScrollViewScreen.closeView(in: app)
+
+        testComplexSwipe()
+        ScrollViewScreen.closeView(in: app)
+
+        testComplexSwipeWithKeyboard()
+        ScrollViewScreen.closeView(in: app)
+
+        testClearTextField()
+        TextInputScreen.closeView(in: app)
+
+        testClearAndType()
+        TextInputScreen.closeView(in: app)
+
+        testTapWithOffset()
+        MiddleButtonScreen.closeView(in: app)
+
+//        testSystemAlertButton()
+//        LocationScreen.closeView(in: app)
+    }
 }

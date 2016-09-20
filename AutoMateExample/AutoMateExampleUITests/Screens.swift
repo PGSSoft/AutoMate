@@ -28,6 +28,10 @@ extension TableElement {
 
         return element
     }
+
+    static func closeView(in app: XCUIApplication) {
+        app.buttons["Back"].tap()
+    }
 }
 
 struct ScrollViewScreen: TableElement {
