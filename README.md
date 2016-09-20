@@ -1,7 +1,7 @@
 <div style="margin-bottom: -80px; vertical-align: bottom">
     <div style="display: table; margin-left: auto">
-        <img src="assets/logo.svg" alt="AutoMate, made by PGS Software" height="200" />
-        <img src="assets/pgssoftware-logo.svg" height="50" style="margin-left: -25px; margin-bottom: -10px" />
+        <img src="assets/logo.png" alt="AutoMate, made by PGS Software" />
+        <img src="assets/pgssoftware-logo.png" style="margin-left: -25px; margin-bottom: -10px" />
     </div>
 </div>
 
