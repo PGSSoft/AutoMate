@@ -245,6 +245,7 @@
 					E425D55C1CED928100A7CA03 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					E4EE41C01CFD7246004F0FFE = {
 						CreatedOnToolsVersion = 7.3.1;

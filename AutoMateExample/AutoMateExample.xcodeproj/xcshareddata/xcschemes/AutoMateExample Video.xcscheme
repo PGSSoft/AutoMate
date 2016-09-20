@@ -39,16 +39,55 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "AdditionalExtensionsTests/testForMovie()">
+                  Identifier = "AdditionalExtensionsTests/testAny()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testForMovie()">
+                  Identifier = "AdditionalExtensionsTests/testDeviceType()">
+               </Test>
+               <Test
+                  Identifier = "AdditionalExtensionsTests/testWaitForElementToExist()">
+               </Test>
+               <Test
+                  Identifier = "AdditionalExtensionsTests/testWaitForVisibleElement()">
+               </Test>
+               <Test
+                  Identifier = "LaunchArgumentsWithAutomate/testSomething()">
+               </Test>
+               <Test
+                  Identifier = "LaunchArgumentsWithoutAutoMate/testSomething()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testClearAndType()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testClearTextField()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testComplexSwipe()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboard()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testIsVisible()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testSimpleSwipe()">
                </Test>
                <Test
                   Identifier = "XCUIElementExtensionTests/testSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "XCUIElementQueryTests/testForMovie()">
+                  Identifier = "XCUIElementExtensionTests/testTapWithOffset()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementQueryTests/testCellMatching()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementQueryTests/testElementMatchingIdentifier()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementQueryTests/testElementMatchingLabel()">
                </Test>
             </SkippedTests>
          </TestableReference>

@@ -282,7 +282,7 @@
         <!--Scrolling to elements-->
         <scene sceneID="QwU-G9-Vq4">
             <objects>
-                <viewController title="Scrolling to elements" automaticallyAdjustsScrollViewInsets="NO" id="MwV-vG-QDP" sceneMemberID="viewController">
+                <viewController title="Scrolling to elements" automaticallyAdjustsScrollViewInsets="NO" id="MwV-vG-QDP" customClass="ScrollingViewController" customModule="AutoMateExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m0H-PD-b5P"/>
                         <viewControllerLayoutGuide type="bottom" id="7nJ-fW-VMp"/>
@@ -297,7 +297,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuS-wZ-uaf">
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <state key="normal" title="ButtonTop">
+                                                <state key="normal" title="Top Button">
                                                     <color key="titleColor" red="1" green="0.46274509800000002" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <state key="selected">
@@ -317,7 +317,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-bZ-jbO">
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <state key="normal" title="ButtonMiddle1">
+                                                <state key="normal" title="Middle Button 1">
                                                     <color key="titleColor" red="1" green="0.46274509800000002" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <state key="highlighted">
@@ -330,7 +330,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-4w-iJo">
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <state key="normal" title="ButtonMiddle2">
+                                                <state key="normal" title="Middle Button 2">
                                                     <color key="titleColor" red="1" green="0.46274509800000002" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <state key="highlighted">
@@ -343,7 +343,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQK-3V-c8k">
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <state key="normal" title="ButtonBottom">
+                                                <state key="normal" title="Bottom Button">
                                                     <color key="titleColor" red="1" green="0.46274509800000002" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <state key="highlighted">
@@ -376,6 +376,9 @@
                             <constraint firstItem="HEC-D1-puV" firstAttribute="top" secondItem="m0H-PD-b5P" secondAttribute="bottom" id="ocv-rl-CyZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="HEC-D1-puV" id="ljD-1D-IB4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1W-7e-JCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,19 +405,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="qNG-TE-BzG" secondAttribute="trailing" id="XnZ-c1-1Z4"/>
-                            <constraint firstItem="qNG-TE-BzG" firstAttribute="top" secondItem="oMu-SV-Gw5" secondAttribute="bottom" id="c6H-4X-85R"/>
                             <constraint firstItem="qNG-TE-BzG" firstAttribute="leading" secondItem="CjD-qI-aXY" secondAttribute="leadingMargin" id="cts-4h-ev0"/>
                             <constraint firstItem="qNG-TE-BzG" firstAttribute="top" secondItem="oMu-SV-Gw5" secondAttribute="bottom" constant="25" id="gMv-1I-JzU"/>
-                            <constraint firstItem="BqF-BD-ikx" firstAttribute="top" secondItem="qNG-TE-BzG" secondAttribute="bottom" id="sp0-St-baP"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="XnZ-c1-1Z4"/>
-                                <exclude reference="c6H-4X-85R"/>
-                                <exclude reference="sp0-St-baP"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="label" destination="qNG-TE-BzG" id="Bvg-eh-KVe"/>
@@ -707,13 +700,7 @@
                                                 <constraint firstAttribute="topMargin" secondItem="HFw-di-MVz" secondAttribute="top" id="K4W-yn-oRc"/>
                                                 <constraint firstItem="1OE-jO-u7t" firstAttribute="leading" secondItem="tk5-JO-UdP" secondAttribute="leading" constant="15" id="b6S-2z-owf"/>
                                                 <constraint firstItem="HFw-di-MVz" firstAttribute="leading" secondItem="1OE-jO-u7t" secondAttribute="trailing" id="qqE-a0-uzT"/>
-                                                <constraint firstItem="1OE-jO-u7t" firstAttribute="leading" secondItem="HFw-di-MVz" secondAttribute="trailing" constant="8" symbolic="YES" id="qxc-0D-XDm"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="qxc-0D-XDm"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
