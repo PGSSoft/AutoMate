@@ -113,21 +113,6 @@ class XCUIElementExtensionTests: XCTestCase {
 
     // MARK: Test for movie
     func testForMovie() {
-        testIsVisible()
-        ScrollViewScreen.closeView(in: app)
-
-        testSimpleSwipe()
-        ScrollViewScreen.closeView(in: app)
-
-        testComplexSwipe()
-        ScrollViewScreen.closeView(in: app)
-
-        testComplexSwipeWithKeyboard()
-        ScrollViewScreen.closeView(in: app)
-
-        testClearTextField()
-        TextInputScreen.closeView(in: app)
-
         testClearAndType()
         TextInputScreen.closeView(in: app)
 

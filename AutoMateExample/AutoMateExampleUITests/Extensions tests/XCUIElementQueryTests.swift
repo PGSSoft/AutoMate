@@ -86,9 +86,8 @@ class XCUIElementQueryTests: XCTestCase {
 
     // MARK: Test for movie
     func testForMovie() {
-        testElementMatchingIdentifier()
-        TableScreen.closeView(in: app)
         testCellMatching()
+        TableScreen.closeView(in: app)
     }
 }
 

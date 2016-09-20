@@ -30,7 +30,7 @@ extension TableElement {
     }
 
     static func closeView(in app: XCUIApplication) {
-        app.buttons["Back"].tap()
+        app.buttons["Test views"].tap()
     }
 }
 
@@ -44,10 +44,10 @@ struct ScrollViewScreen: TableElement {
     let scrollView: XCUIElement
 
     init(app: XCUIApplication) {
-        buttonTop = app.buttons["ButtonTop"]
-        buttonMiddle1 = app.buttons["ButtonMiddle1"]
-        buttonMiddle2 = app.buttons["ButtonMiddle2"]
-        buttonBottom = app.buttons["ButtonBottom"]
+        buttonTop = app.buttons["Top Button"]
+        buttonMiddle1 = app.buttons["Middle Button 1"]
+        buttonMiddle2 = app.buttons["Middle Button 2"]
+        buttonBottom = app.buttons["Bottom Button"]
         textField = app.textFields.element
         scrollView = app.scrollViews.element
     }

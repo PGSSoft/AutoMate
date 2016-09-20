@@ -58,8 +58,5 @@ class AdditionalExtensionsTests: XCTestCase {
     func testForMovie() {
         testWaitForElementToExist()
         AppearingScreen.closeView(in: app)
-
-        testWaitForVisibleElement()
-        AppearingScreen.closeView(in: app)
     }
 }
