@@ -1,6 +1,9 @@
 language: objective-c
 osx_image: xcode8
 
+before_install:
+- gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+
 script:
-- set -o pipefail && xcodebuild -workspace AutoMate.xcworkspace -scheme AutoMate -destination "platform=iOS Simulator,name=iPhone 7,OS=10.0" test | xcpretty -c
-- pod spec lint
+- set -o pipefail && xcodebuild -workspace AutoMate.xcworkspace -scheme AutoMate -destination "platform=iOS Simulator,name=iPhone SE,OS=10.0" test | xcpretty -c
+- pod --version && pod spec lint
