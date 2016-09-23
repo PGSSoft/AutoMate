@@ -60,12 +60,6 @@ github "PGSSoft/AutoMate"
         let app = XCUIApplication()
         let button = app.button.element
 
-        addUIInterruptionMonitorWithDescription("System alert") { (element) -> Bool in
-            // helper for finding "Don't allow" tapping on system alert
-            element.tapLeftButtonOnSystemAlert()
-            return true
-        }
-
         // helper for waiting until element is visible
         waitForVisibleElement(button, timeout: 20)
         button.tap()
