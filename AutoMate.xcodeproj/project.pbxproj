@@ -128,15 +128,15 @@
 			isa = PBXGroup;
 			children = (
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
+				E4535A471CEDD24B008965DD /* Foundation extensions */,
 				E425D5621CED928100A7CA03 /* Info.plist */,
 				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 				E4535A451CEDC4AB008965DD /* LaunchOptions.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
+				C9371A471E2F542100808AFC /* Locator.swift */,
+				E47BB6F41CF310F200229D63 /* Models */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
-				C9371A471E2F542100808AFC /* Locator.swift */,
-				E4535A471CEDD24B008965DD /* Foundation extensions */,
-				E47BB6F41CF310F200229D63 /* Models */,
 				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
 			);
 			path = AutoMate;
