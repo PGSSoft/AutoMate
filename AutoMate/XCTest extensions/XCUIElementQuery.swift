@@ -92,4 +92,94 @@ public extension XCUIElementQuery {
 
         return query.element
     }
+
+    /**
+     - parameter text: String searched prefix
+     - returns: XCUIElement that matches the type and label that begins with given text.
+     */
+    public func labelBeginsWith(_ text: String) -> XCUIElement {
+        return element(matching: NSPredicate(format: "label BEGINSWITH '\(text)'"))
+    }
+
+    /**
+     - parameter text: String searched text
+     - returns: XCUIElement that matches the type and label that contains given text.
+     */
+    public func labelContains(_ text: String) -> XCUIElement {
+        return element(matching: NSPredicate(format: "label CONTAINS '\(text)'"))
+    }
 }
+
+// MARK: - Locators
+public extension XCUIElementQuery {
+    /**
+     Returns XCUIElement that matches the type and locator.
+     */
+    public subscript(locator: Locator) -> XCUIElement {
+        return self[locator.identifier]
+    }
+
+    /**
+     - parameter locator: Object conforming to Locator.
+     - returns: XCUIElement that matches the type and label that begins with locator.
+     */
+    public func labelBeginsWith(_ locator: Locator) -> XCUIElement {
+        return labelBeginsWith(locator.identifier)
+    }
+
+    /**
+     - parameter locator: Object conforming to Locator.
+     - returns: XCUIElement that matches the type and label that contains locator.
+     */
+    public func labelContains(_ locator: Locator) -> XCUIElement {
+        return labelContains(locator.identifier)
+    }
+
+    /**
+     - parameter locator: Object conforming to Locator.
+     - parameter comparisonOperator: StringComparisonOperator used to compare XCUIElement label with searched one, .equals/'==' by default.
+     - returns: XCUIElement containing the label
+     */
+    public func label(with locator: Locator,
+                      labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        let predicate = NSPredicate(format: "label \(comparisonOperator.rawValue) '\(locator.identifier)'")
+        return element(matching: predicate)
+    }
+
+    public func element(withLocator locator: Locator,
+                        label: Locator,
+                        comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withLocator: locator, label: label.identifier, comparisonOperator: comparisonOperator)
+    }
+
+    public func element(withLocator locator: Locator,
+                        label: String,
+                        comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        let predicate = NSPredicate(format: "identifier == '\(locator.identifier)' AND label \(comparisonOperator.rawValue) '\(label)'")
+        return element(matching: predicate)
+    }
+
+    // MARK: - Class methods
+    /**
+     Filters given query with given key-value pairs to return one containing all labels given.
+
+     - parameter elementQuery: XCUIElementQuery to filter.
+     - parameter containingLabels: [Locator : String] dictionary of keys and values desired.
+     - parameter labelsComparisonOperator: StringComparisonOperator that will be used to compare XCUIElement label with searched one, .Equals/'==' by default.
+
+     - returns: first XCUIElement containing all given labels.
+     */
+    public static func element < LocatorItem: Locator> (_ elementQuery: XCUIElementQuery,
+                                 containingLabels dictionary: [LocatorItem: String],
+                                 labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        let predicateString = "identifier == %@ AND label \(comparisonOperator.rawValue) %@"
+        var query = elementQuery
+        for (key, value) in dictionary {
+            let predicate = NSPredicate(format: predicateString, argumentArray: [key.identifier, value])
+            debugPrint("\(predicate)")
+            query = query.containing(predicate)
+        }
+        return Int(query.count) < 2 ? query.element : query.element(boundBy: 0)
+    }
+}
+
