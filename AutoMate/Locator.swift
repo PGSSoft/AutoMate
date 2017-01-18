@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Protocol for localizers to enforce string representation.
+ Protocol for locators to enforce string representation.
  */
 public protocol Locator {
     var identifier: String { get }
