@@ -1,17 +1,18 @@
 Pod::Spec.new do |s|
   s.name         = "AutoMate"
-  s.version      = "1.0"
+  s.version      = "1.0.0"
   s.summary      = "Swift framework containing set of helpful XCTest extensions for writing UI automation tests."
   s.homepage     = "https://github.com/PGSSoft/AutoMate"
 
   s.license      = "MIT"
 
   s.authors      = {
-    "Joanna Bednarz" => "jbednarz@pgs-soft.com",
-    "Paweł Szot" => "pszot@pgs-soft.com",
-    "Bartosz Janda" => "bjanda@pgs-soft.com",
-    "Paweł Kania" => "pkania@pgs-soft.com",
-    "Michał Myśliwiec" => "mmysliwiec@pgs-soft.com"
+    "Joanna Bednarz"   => "jbednarz@pgs-soft.com",
+    "Paweł Szot"       => "pszot@pgs-soft.com",
+    "Bartosz Janda"    => "bjanda@pgs-soft.com",
+    "Paweł Kania"      => "pkania@pgs-soft.com",
+    "Michał Myśliwiec" => "mmysliwiec@pgs-soft.com",
+    "Ewelina Cyło"     => "ecylo@pgs-soft.com"
   }
 
   s.ios.deployment_target = '9.0'
