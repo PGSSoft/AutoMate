@@ -21,7 +21,7 @@ func asIdentifier(_ input: String) -> String {
     return identifierRegex.stringByReplacingMatches(in: input, options: [], range: range, withTemplate: "")
 }
 
-func write(toFile name: String, block: (_ writer: Writer) -> ()) {
+func write(toFile name: String, block: (_ writer: Writer) -> Void) {
     func sourceDirectory() -> String {
         guard let directory = ProcessInfo.processInfo.environment["SRCROOT"] else {
             fatalError("Failed to determine source directory.")

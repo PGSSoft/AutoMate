@@ -10,11 +10,13 @@ import XCTest
 
 class XCUIElementQueryTests: XCTestCase {
     let app = XCUIApplication()
+    lazy var mainScreen: MainScreen = MainScreen(app: self.app)
 
     // MARK: Setup
     override func setUp() {
         super.setUp()
         app.launch()
+        wait(forElementToExist: mainScreen.tableView, timeout: 30)
     }
 
     func testElementMatchingLabel() {

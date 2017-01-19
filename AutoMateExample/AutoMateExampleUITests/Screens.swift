@@ -35,6 +35,23 @@ extension TableElement {
     }
 }
 
+struct MainScreen {
+    let app: XCUIApplication
+
+    var titleElement: XCUIElement {
+        return app.staticTexts[ScreenLocator.title]
+    }
+
+    var tableView: XCUIElement {
+        return app.tables[ScreenLocator.table]
+    }
+
+    enum ScreenLocator: String, Locator {
+        case title = "AutoMate"
+        case table = "tableView"
+    }
+}
+
 struct ScrollViewScreen: TableElement {
     let title = "Scroll view"
     let buttonTop: XCUIElement
