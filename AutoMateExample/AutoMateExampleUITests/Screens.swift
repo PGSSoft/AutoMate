@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import AutoMate
 
 protocol TableElement {
     var title: String { get }
@@ -43,11 +44,18 @@ struct ScrollViewScreen: TableElement {
     let textField: XCUIElement
     let scrollView: XCUIElement
 
+    enum ScreenLocator: String, Locator {
+        case topButton = "Top Button"
+        case middleButton1 = "Middle Button 1"
+        case middleButton2 = "Middle Button 2"
+        case bottomButton = "Bottom Button"
+    }
+
     init(app: XCUIApplication) {
-        buttonTop = app.buttons["Top Button"]
-        buttonMiddle1 = app.buttons["Middle Button 1"]
-        buttonMiddle2 = app.buttons["Middle Button 2"]
-        buttonBottom = app.buttons["Bottom Button"]
+        buttonTop = app.buttons[ScreenLocator.topButton]
+        buttonMiddle1 = app.buttons[ScreenLocator.middleButton1]
+        buttonMiddle2 = app.buttons[ScreenLocator.middleButton2]
+        buttonBottom = app.buttons[ScreenLocator.bottomButton]
         textField = app.textFields.element
         scrollView = app.scrollViews.element
     }
@@ -87,9 +95,14 @@ struct AppearingScreen: TableElement {
     let appearingButton: XCUIElement
     let madeWithLoveView: XCUIElement
 
+    enum ScreenLocator: String, Locator {
+        case appearingButton = "appearingButton"
+        case madeWithLoveView = "madeWithLove"
+    }
+
     init(app: XCUIApplication) {
-        appearingButton = app.buttons["appearingButton"]
-        madeWithLoveView = app.any["madeWithLove"]
+        appearingButton = app.buttons[ScreenLocator.appearingButton]
+        madeWithLoveView = app.any[ScreenLocator.madeWithLoveView]
     }
 }
 

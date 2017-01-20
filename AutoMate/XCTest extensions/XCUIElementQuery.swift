@@ -92,4 +92,94 @@ public extension XCUIElementQuery {
 
         return query.element
     }
+
+    /**
+     - parameter text: String searched prefix
+     - returns: XCUIElement that matches the type and label that begins with given text.
+     */
+    public func element(withLabelPrefixed text: String) -> XCUIElement {
+        return element(withLabelMatching: text, comparisonOperator: .beginsWith)
+    }
+
+    /**
+     - parameter text: String searched text
+     - returns: XCUIElement that matches the type and label that contains given text.
+     */
+    public func element(withLabelContaining text: String) -> XCUIElement {
+        return element(withLabelMatching: text, comparisonOperator: .contains)
+    }
+}
+
+// MARK: - Locators
+public extension XCUIElementQuery {
+    /**
+     Returns XCUIElement that matches the type and locator.
+     */
+    public subscript(locator: Locator) -> XCUIElement {
+        return self[locator.identifier]
+    }
+
+    /**
+     - parameter locator: Object conforming to Locator.
+     - returns: XCUIElement that matches the type and label that begins with locator.
+     */
+    public func element(withLabelPrefixed locator: Locator) -> XCUIElement {
+        return element(withLabelPrefixed: locator.identifier)
+    }
+
+    /**
+     - parameter locator: Object conforming to Locator.
+     - returns: XCUIElement that matches the type and label that contains locator.
+     */
+    public func element(withLabelContaining locator: Locator) -> XCUIElement {
+        return element(withLabelContaining: locator.identifier)
+    }
+
+    /**
+     Returns element with label maching provided Locator.
+
+     - parameter locator: Locator to search for.
+     - parameter comparisonOperator: Operation to use when performing comparison.
+     - returns: XCUIElement that matches the type and label that begins with given locator.
+     */
+    public func element(withLabelMatchingLocator locator: Locator, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withLabelMatching: locator.identifier, comparisonOperator: comparisonOperator)
+    }
+
+    /**
+     Returns element with identifier and label matching provided values.
+
+     - parameter locator: Identifier of element to search for.
+     - parameter label: Label of element to search for.
+     - parameter labelComparisonOperator: Operation to use when performing comparison.
+     - returns: XCUIElement that matches the type and label that begins with given text.
+     */
+    public func element(withLocator locator: Locator, label: Locator, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withLocator: locator, label: label.identifier, labelComparisonOperator: labelComparisonOperator)
+    }
+
+    /**
+     Returns element with identifier and label matching provided values.
+
+     - parameter identifier: Identifier of element to search for.
+     - parameter label: Label of element to search for.
+     - parameter labelComparisonOperator: Operation to use when performing comparison.
+     - returns: XCUIElement that matches the type and label that begins with given text.
+     */
+    public func element(withLocator locator: Locator, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withIdentifier: locator.identifier, label: label, labelComparisonOperator: labelComparisonOperator)
+    }
+
+    /**
+     Returns element that contains children matching provided identifier-label dictionary.
+
+     - note: This method is intended to be used with table and collection views, where cells have to be identified by their contents.
+     - parameter containingLabels: [String : String] dictionary of identifiers and values to search for.
+     - parameter labelsComparisonOperator: StringComparisonOperator that will be used to compare XCUIElement label with searched one, .Equals/'==' by default.
+     - returns: first XCUIElement containing all given labels.
+     */
+    public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
+        return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
+    }
 }
