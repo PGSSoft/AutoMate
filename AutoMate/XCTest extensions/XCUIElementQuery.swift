@@ -178,7 +178,7 @@ public extension XCUIElementQuery {
      - parameter labelsComparisonOperator: StringComparisonOperator that will be used to compare XCUIElement label with searched one, .Equals/'==' by default.
      - returns: first XCUIElement containing all given labels.
      */
-    public func element < LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
         return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
     }
