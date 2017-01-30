@@ -1,4 +1,4 @@
-// swiftlint:disable variable_name
+// swiftlint:disable variable_name trailing_comma
 /// Represents possible label values on alert buttons.
 open class SystemAlertLabel {
     private init() {}
@@ -38,7 +38,7 @@ open class SystemAlertLabel {
         "Não Permitir",
         "Запретить",
         "Refuser",
-        "Nein"
+        "Nein",
     ]
 
     /// Automatically generated property for localized variants of allow.
@@ -74,7 +74,7 @@ open class SystemAlertLabel {
         "Povolit",
         "אפשר",
         "Consenti",
-        "Να επιτρέπεται"
+        "Να επιτρέπεται",
     ]
 
     /// Automatically generated property for localized variants of ok.
@@ -89,7 +89,7 @@ open class SystemAlertLabel {
         "ตกลง",
         "موافق",
         "好",
-        "ठीक"
+        "ठीक",
     ]
 
     /// Automatically generated property for localized variants of cancel.
@@ -123,7 +123,7 @@ open class SystemAlertLabel {
         "Cancelar",
         "Zrušiť",
         "Abbrechen",
-        "Annulla"
+        "Annulla",
     ]
 
 }

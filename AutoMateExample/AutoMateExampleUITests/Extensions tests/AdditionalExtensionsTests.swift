@@ -17,24 +17,24 @@ class AdditionalExtensionsTests: XCTestCase {
     override func setUp() {
         super.setUp()
         app.launch()
-        wait(forElementToExist: mainScreen.tableView, timeout: 30)
+        wait(forExistOf: mainScreen.tableView, timeout: 30)
     }
 
     // MARK: XCTestCase extension tests
     func testWaitForElementToExist() {
         let screen = AppearingScreen.open(inside: app)
 
-        wait(forVisibleElement: screen.appearingButton)
+        wait(forVisabilityOf: screen.appearingButton)
         XCTAssertFalse(screen.madeWithLoveView.exists)
         screen.appearingButton.tap()
-        wait(forElementToExist: screen.madeWithLoveView)
+        wait(forExistOf: screen.madeWithLoveView)
     }
 
     func testWaitForVisibleElement() {
         let screen = AppearingScreen.open(inside: app)
         XCTAssertFalse(screen.appearingButton.isVisible)
 
-        wait(forVisibleElement: screen.appearingButton)
+        wait(forVisabilityOf: screen.appearingButton)
         XCTAssertTrue(screen.appearingButton.isVisible)
         screen.appearingButton.tap()
     }

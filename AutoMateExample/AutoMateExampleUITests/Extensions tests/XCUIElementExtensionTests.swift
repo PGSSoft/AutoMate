@@ -17,7 +17,7 @@ class XCUIElementExtensionTests: XCTestCase {
     override func setUp() {
         super.setUp()
         app.launch()
-        wait(forElementToExist: mainScreen.tableView, timeout: 30)
+        wait(forExistOf: mainScreen.tableView, timeout: 30)
     }
 
     // MARK: Tests
@@ -110,7 +110,7 @@ class XCUIElementExtensionTests: XCTestCase {
         // interruption won't happen without some kind of action
         app.tap()
 
-        wait(forElementToExist: screen.deniedLabel)
+        wait(forExistOf: screen.deniedLabel)
     }
 
     // MARK: Test for movie

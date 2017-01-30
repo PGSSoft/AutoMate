@@ -20,7 +20,7 @@ public extension XCTestCase {
      - parameter file: current source file
      - parameter line: current source line
      */
-    public func wait(forElementToExist element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
+    public func wait(forExistOf element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
@@ -34,14 +34,14 @@ public extension XCTestCase {
     }
 
     /**
-     Wait for an UI hittable element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.
+     Wait for an UI visible element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.
 
      - parameter element: XCUIElement to wait for.
      - parameter timeout: waiting time (default: 10 seconds)
      - parameter file: current source file
      - parameter line: current source line
      */
-    public func wait(forVisibleElement element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
+    public func wait(forVisabilityOf element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true && hittable == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
@@ -49,7 +49,7 @@ public extension XCTestCase {
             guard error != nil else {
                 return
             }
-            let message = "Failed to find hittable \(element) after \(timeout) seconds."
+            let message = "Failed to find visible \(element) after \(timeout) seconds."
             self.recordFailure(withDescription: message, inFile: String(describing: file), atLine: line, expected: true)
         }
     }

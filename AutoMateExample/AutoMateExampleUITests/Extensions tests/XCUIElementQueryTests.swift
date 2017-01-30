@@ -16,7 +16,7 @@ class XCUIElementQueryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         app.launch()
-        wait(forElementToExist: mainScreen.tableView, timeout: 30)
+        wait(forExistOf: mainScreen.tableView, timeout: 30)
     }
 
     func testElementMatchingLabel() {

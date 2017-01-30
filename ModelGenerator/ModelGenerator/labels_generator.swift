@@ -49,7 +49,7 @@ func generateLabels() {
     let coreLocation = sdkPath + "/System/Library/Frameworks/CoreLocation.framework/"
 
     write(toFile: "SystemAlertLabel") { (writer) in
-        writer.append(line: "// swiftlint:disable variable_name")
+        writer.append(line: "// swiftlint:disable variable_name trailing_comma")
         writer.append(line: "/// Represents possible label values on alert buttons.")
         writer.append(line: "open class SystemAlertLabel {")
 
