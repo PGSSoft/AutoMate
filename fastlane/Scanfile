@@ -15,3 +15,5 @@ device "iPhone 7 (10.2)"
 # open_report true
 
 # clean true
+
+formatter "xcpretty-json-formatter"
