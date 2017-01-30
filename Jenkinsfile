@@ -37,7 +37,6 @@ node("ios_ui") {
               eval "$(rbenv init -)"
 
               bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
-              mv "output/report.html" "output/report_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
             '''
           }
           finally {
@@ -46,8 +45,11 @@ node("ios_ui") {
                 # RBENV
                 eval "$(rbenv init -)"
 
+                bundle exec danger
+
                 bundle exec golden_rose generate "output/AutoMate.test_result"
                 mv "index.html" "output/index_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
+                mv "output/report.html" "output/report_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
               '''
             } finally {}
             archiveArtifacts allowEmptyArchive: true, artifacts: 'output/*.html,derivedData/Logs/Test/**/*.log'
@@ -106,6 +108,9 @@ node("ios_ui") {
 
           # Reset simulators
           bundle exec fastlane snapshot reset_simulators --force --ios 10.2
+
+          # Danger
+          bundle exec danger
         '''
       }
 

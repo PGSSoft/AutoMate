@@ -5,9 +5,14 @@
 source "https://rubygems.org"
 
 gem 'cocoapods'
+gem 'danger'
+gem 'danger-swiftlint'
+gem 'danger-xcode_summary'
+gem 'danger-xcodebuild'
 gem 'fastlane'
 gem 'golden_rose'
 gem 'simctl'
+gem 'xcpretty-json-formatter'
 
 plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
 eval(File.read(plugins_path), binding) if File.exist?(plugins_path)
