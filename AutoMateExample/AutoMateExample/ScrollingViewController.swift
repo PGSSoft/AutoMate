@@ -17,6 +17,7 @@ class ScrollingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        scrollView.accessibilityIdentifier = "scrollView"
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
     }

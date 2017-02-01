@@ -2,25 +2,29 @@
 //  XCUIElementQueryTests.swift
 //  AutoMateExample
 //
-//  Created by Joanna Bednarz on 07/09/16.
-//  Copyright © 2016 PGS Software. All rights reserved.
+//  Created by Bartosz Janda on 01.02.2017.
+//  Copyright © 2017 PGS Software. All rights reserved.
 //
 
 import XCTest
+import AutoMate
 
-class XCUIElementQueryTests: XCTestCase {
-    let app = XCUIApplication()
-    lazy var mainScreen: MainScreen = MainScreen(app: self.app)
+class XCUIElementQueryTests: AppUITestCase {
 
-    // MARK: Setup
+    // MARK: Arrange View Objects
+    lazy var mainView: MainView = MainView(in: self.app)
+    lazy var tableView: TableView = TableView(in: self.app)
+
+    // MARK: Set up
     override func setUp() {
         super.setUp()
-        app.launch()
-        wait(forExistOf: mainScreen.tableView, timeout: 30)
+        TestLauncher.configure(app).launch()
+        wait(forVisibilityOf: mainView)
     }
 
+    // MARK: Tests
     func testElementMatchingLabel() {
-        _ = TableScreen.open(inside: app)
+        mainView.goToTableViewMenu()
 
         let creditCellLabelDefault = app.any.element(withLabelMatching: "Made with love by")
         let creditCellLabelEquals = app.any.element(withLabelMatching: "Made with love by", comparisonOperator: .equals)
@@ -53,10 +57,10 @@ class XCUIElementQueryTests: XCTestCase {
     }
 
     func testElementMatchingIdentifier() {
-        _ = TableScreen.open(inside: app)
+        mainView.goToTableViewMenu()
 
-        let creditCell = app.any.element(withIdentifier: Identifiers.credit, label: "Made with love by")
-        let wrongLabelCell = app.any.element(withIdentifier: Identifiers.credit, label: "")
+        let creditCell = app.any.element(withLocator: Locators.credit, label: "Made with love by")
+        let wrongLabelCell = app.any.element(withLocator: Locators.credit, label: "")
 
         XCTAssertTrue(creditCell.isHittable)
         creditCell.tap()
@@ -65,13 +69,13 @@ class XCUIElementQueryTests: XCTestCase {
     }
 
     func testCellMatching() {
-        _ = TableScreen.open(inside: app)
+        mainView.goToTableViewMenu()
 
-        let firstCellOfAKind = app.cells.element(containingLabels: [Identifiers.title: "Kind A", Identifiers.subtitle: "1st cell"])
-        let secondCellOfBKind = app.cells.element(containingLabels: [Identifiers.title: "*B", Identifiers.rightDetail: "2*"], labelsComparisonOperator: .like)
-        let creditCell = app.cells.element(containingLabels: [Identifiers.credit: "with love"], labelsComparisonOperator: .contains)
-        let wrongRightDetailCell = app.cells.element(containingLabels: [Identifiers.title: "Kind B", Identifiers.rightDetail: "3rd"])
-        let wrongIdentifierCell = app.cells.element(containingLabels: [Identifiers.title: "Kind A", Identifiers.rightDetail: "3rd cell"])
+        let firstCellOfAKind = app.cells.element(containingLabels: [Locators.title: "Kind A", Locators.subtitle: "1st cell"])
+        let secondCellOfBKind = app.cells.element(containingLabels: [Locators.title: "*B", Locators.rightDetail: "2*"], labelsComparisonOperator: .like)
+        let creditCell = app.cells.element(containingLabels: [Locators.credit: "with love"], labelsComparisonOperator: .contains)
+        let wrongRightDetailCell = app.cells.element(containingLabels: [Locators.title: "Kind B", Locators.rightDetail: "3rd"])
+        let wrongIdentifierCell = app.cells.element(containingLabels: [Locators.title: "Kind A", Locators.rightDetail: "3rd cell"])
 
         XCTAssertTrue(firstCellOfAKind.isHittable)
         firstCellOfAKind.tap()
@@ -89,13 +93,16 @@ class XCUIElementQueryTests: XCTestCase {
     // MARK: Test for movie
     func testForMovie() {
         testCellMatching()
-        TableScreen.closeView(in: app)
+        tableView.goBack()
     }
 }
 
-private enum Identifiers {
-    static let title = "title"
-    static let subtitle = "subtitle"
-    static let rightDetail = "rightDetail"
-    static let credit = "credit"
+// MARK: - Locators
+private extension XCUIElementQueryTests {
+    enum Locators: String, Locator {
+        case title
+        case subtitle
+        case rightDetail
+        case credit
+    }
 }

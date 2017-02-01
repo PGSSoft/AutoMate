@@ -13,6 +13,11 @@
 		1FC995561D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */; };
 		1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995571D51CBFA0037CD1F /* XCTestCase.swift */; };
 		1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
+		9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */; };
+		966B92361E40D470006E6A18 /* BaseAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92351E40D470006E6A18 /* BaseAppView.swift */; };
+		966B92381E40D69A006E6A18 /* AppUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92371E40D69A006E6A18 /* AppUITestCase.swift */; };
+		966B923A1E40D9D4006E6A18 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalView.swift */; };
+		966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedView.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +64,11 @@
 		1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementTypeQueryProvider+Any.swift"; sourceTree = "<group>"; };
 		1FC995571D51CBFA0037CD1F /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQuery.swift; sourceTree = "<group>"; };
+		9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Identifiable.swift"; sourceTree = "<group>"; };
+		966B92351E40D470006E6A18 /* BaseAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAppView.swift; sourceTree = "<group>"; };
+		966B92371E40D69A006E6A18 /* AppUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUITestCase.swift; sourceTree = "<group>"; };
+		966B92391E40D9D4006E6A18 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		966B923D1E40DA24006E6A18 /* PushedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedView.swift; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,12 +124,23 @@
 			isa = PBXGroup;
 			children = (
 				1FC995571D51CBFA0037CD1F /* XCTestCase.swift */,
+				9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */,
 				1FA6372E1D50692800D22156 /* XCUIApplication.swift */,
 				1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */,
 				1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */,
 				1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */,
 			);
 			path = "XCTest extensions";
+			sourceTree = "<group>";
+		};
+		966B92321E40D15B006E6A18 /* ViewObject */ = {
+			isa = PBXGroup;
+			children = (
+				966B92351E40D470006E6A18 /* BaseAppView.swift */,
+				966B92391E40D9D4006E6A18 /* ModalView.swift */,
+				966B923D1E40DA24006E6A18 /* PushedView.swift */,
+			);
+			path = ViewObject;
 			sourceTree = "<group>";
 		};
 		E425D5531CED928100A7CA03 = {
@@ -144,13 +165,16 @@
 			isa = PBXGroup;
 			children = (
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
-				E431922C1E2E194800B019C1 /* Basic structures */,
-				E4535A471CEDD24B008965DD /* Foundation extensions */,
 				E425D5621CED928100A7CA03 /* Info.plist */,
+				966B92371E40D69A006E6A18 /* AppUITestCase.swift */,
 				C9371A471E2F542100808AFC /* Locator.swift */,
-				E47BB6F41CF310F200229D63 /* Models */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
 				E4C20FE71E39DBBE00052F11 /* SystemLaunchEnviroments.swift */,
+				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
+				E431922C1E2E194800B019C1 /* Basic structures */,
+				E4535A471CEDD24B008965DD /* Foundation extensions */,
+				E47BB6F41CF310F200229D63 /* Models */,
+				966B92321E40D15B006E6A18 /* ViewObject */,
 				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
 			);
 			path = AutoMate;
@@ -159,11 +183,10 @@
 		E431922C1E2E194800B019C1 /* Basic structures */ = {
 			isa = PBXGroup;
 			children = (
-				E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */,
-				E4DDEDAB1E3A353400C2F2A1 /* Launch Enviroment */,
 				E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
-				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
+				E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */,
+				E4DDEDAB1E3A353400C2F2A1 /* Launch Enviroment */,
 			);
 			name = "Basic structures";
 			sourceTree = "<group>";
@@ -171,8 +194,8 @@
 		E43B229A1CFEC17A00AE6B40 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */,
 				E4D637CE1D01B42F00405514 /* ApplicationsFactory.swift */,
+				E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -202,8 +225,8 @@
 		E4DDEDAB1E3A353400C2F2A1 /* Launch Enviroment */ = {
 			isa = PBXGroup;
 			children = (
-				E4B2C9701E31F5D600737688 /* LaunchEnviroments.swift */,
 				E4DDEDA71E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift */,
+				E4B2C9701E31F5D600737688 /* LaunchEnviroments.swift */,
 				E4DDEDA91E3A351300C2F2A1 /* LaunchEnviromentValue.swift */,
 			);
 			name = "Launch Enviroment";
@@ -212,8 +235,8 @@
 		E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */ = {
 			isa = PBXGroup;
 			children = (
-				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 				E431922E1E2E199400B019C1 /* LaunchArgumentProtocols.swift */,
+				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 				E43192301E2E19C700B019C1 /* LaunchArgumentValue.swift */,
 			);
 			name = "Launch Argument";
@@ -222,12 +245,12 @@
 		E4EE41C21CFD7246004F0FFE /* AutoMateTests */ = {
 			isa = PBXGroup;
 			children = (
-				E43B229A1CFEC17A00AE6B40 /* Factories */,
 				E4EE41C51CFD7246004F0FFE /* Info.plist */,
 				E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */,
-				E4D637D01D01B80200405514 /* TestLauncherTests.swift */,
 				E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */,
 				E481AD441E40CF5700049427 /* SystemLaunchEnviromentsTests.swift */,
+				E4D637D01D01B80200405514 /* TestLauncherTests.swift */,
+				E43B229A1CFEC17A00AE6B40 /* Factories */,
 			);
 			path = AutoMateTests;
 			sourceTree = "<group>";
@@ -362,11 +385,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4535A461CEDC4AB008965DD /* LaunchOptionProtocol.swift in Sources */,
+				966B923A1E40D9D4006E6A18 /* ModalView.swift in Sources */,
 				E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */,
 				E43192311E2E19C700B019C1 /* LaunchArgumentValue.swift in Sources */,
 				E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */,
 				E4DDEDA81E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift in Sources */,
 				E4DDEDAA1E3A351300C2F2A1 /* LaunchEnviromentValue.swift in Sources */,
+				966B92361E40D470006E6A18 /* BaseAppView.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
 				1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */,
 				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
@@ -379,10 +404,13 @@
 				1FC995561D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift in Sources */,
 				E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */,
 				1FA6372F1D50692800D22156 /* XCUIApplication.swift in Sources */,
+				9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */,
 				C9371A481E2F542100808AFC /* Locator.swift in Sources */,
+				966B92381E40D69A006E6A18 /* AppUITestCase.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
 				E431922F1E2E199400B019C1 /* LaunchArgumentProtocols.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
+				966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */,
 				1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */,
 				E4C20FE81E39DBBE00052F11 /* SystemLaunchEnviroments.swift in Sources */,
 				E4B2C9711E31F5D600737688 /* LaunchEnviroments.swift in Sources */,

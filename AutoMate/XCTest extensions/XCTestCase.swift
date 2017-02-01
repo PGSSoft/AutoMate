@@ -11,16 +11,20 @@ import XCTest
 
 public extension XCTestCase {
 
-    // MARK: Methods
-    /**
-     Wait for an UI element to exist in a view hierarchy. After given interval, if element is not found, test fails.
+    // MARK: Properties
+    /// Default timeout used in `wait` methods.
+    /// By default set to 10 seconds.
+    class var defaultTimeOut: TimeInterval { return 10 }
 
-     - parameter element: XCUIElement to wait for.
-     - parameter timeout: waiting time (default: 10 seconds)
-     - parameter file: current source file
-     - parameter line: current source line
-     */
-    public func wait(forExistOf element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
+    // MARK: Methods
+    /// Wait for an UI element to exist in a view hierarchy. After given interval, if element is not found, test fails.
+    ///
+    /// - Parameters:
+    ///   - element: XCUIElement to wait for.
+    ///   - timeout: Waiting time (default: 10 seconds).
+    ///   - file: Current source file.
+    ///   - line:
+    public func wait(forExistOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
@@ -33,15 +37,14 @@ public extension XCTestCase {
         }
     }
 
-    /**
-     Wait for an UI visible element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.
-
-     - parameter element: XCUIElement to wait for.
-     - parameter timeout: waiting time (default: 10 seconds)
-     - parameter file: current source file
-     - parameter line: current source line
-     */
-    public func wait(forVisabilityOf element: XCUIElement, timeout: TimeInterval = 10, file: StaticString = #file, line: UInt = #line) {
+    /// Wait for an UI element to be visible in a view hierarchy. After given interval seconds, if element is not found, test fails.
+    ///
+    /// - Parameters:
+    ///   - element: XCUIElement to wait for.
+    ///   - timeout: Waiting time (default: 10 seconds).
+    ///   - file: Current source file.
+    ///   - line: Current source line.
+    public func wait(forVisibilityOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true && hittable == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 

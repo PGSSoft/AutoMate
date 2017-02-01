@@ -11,11 +11,12 @@ import XCTest
 
 class TestLauncherTests: XCTestCase {
 
+    // MARK: Properties
     let argument = LaunchOptionsFactory.multiLanguageLaunchArgument
     let enviroment = LaunchOptionsFactory.futureEventsLaunchEnviroment
 
-    // configure
-    func testConfigureCleanApplicationWithOptionsLaunch() {
+    // MARK: Tests
+    func testConfigureCleanApplicationWithLaunchOptions() {
         let application = ApplicationsFactory.cleanApplication
         let launcher = TestLauncher(options: [argument, enviroment])
 
@@ -24,7 +25,7 @@ class TestLauncherTests: XCTestCase {
         XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
     }
 
-    func testConfigureCleanApplicationWithDoubledOptionsLaunch() {
+    func testConfigureCleanApplicationWithDoubledLaunchOptions() {
         let application = ApplicationsFactory.cleanApplication
         let launcher = TestLauncher(options: [argument, argument, enviroment, enviroment])
 
@@ -33,16 +34,16 @@ class TestLauncherTests: XCTestCase {
         XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
     }
 
-    func testConfigureSetUpApplicationWithoutOptionsLaunch() {
+    func testConfigureSetUpApplicationWithoutLaunchOptions() {
         let application = ApplicationsFactory.configuredApplication
-        let launcher = TestLauncher(options: [])
+        let launcher = TestLauncher()
 
         let configApplication = launcher.configure(application)
         XCTAssertEqual(configApplication.launchArguments, application.launchArguments)
         XCTAssertEqual(configApplication.launchEnvironment, application.launchEnvironment)
     }
 
-    func testConfigureSetUpApplicationWithOptionsLaunch() {
+    func testConfigureSetUpApplicationWithLaunchOptions() {
         let application = ApplicationsFactory.configuredApplication
         let launcher = TestLauncher(options: [argument, enviroment])
 
@@ -54,5 +55,13 @@ class TestLauncherTests: XCTestCase {
 
         XCTAssertEqual(configApplication.launchArguments, argumentsSetUp)
         XCTAssertEqual(configApplication.launchEnvironment, enviromentSetUp)
+    }
+
+    func testConfigureLauncherHelperMethod() {
+        let application = ApplicationsFactory.cleanApplication
+        let configApplication = TestLauncher.configure(application, withOptions: [argument, enviroment])
+
+        XCTAssertEqual(configApplication.launchArguments, argument.launchArguments!)
+        XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
     }
 }

@@ -14,7 +14,7 @@ class MiddleButtonViewController: UIViewController {
 
     // MARK: IBActions
     @IBAction func buttonPressed(_ sender: AnyObject) {
-        label.text = "Pressed"
+        label.isHidden = false
     }
 
 }

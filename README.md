@@ -1,7 +1,11 @@
-<div>
+<div style="text-align: center;">
     <img src="assets/logo.png" alt="AutoMate, made by PGS Software" />
     <br />
     <img src="assets/made-with-love-by-PGS.png" />
+    <p>
+      <b>AutoMate</b> &bull;
+      <a href="https://github.com/PGSSoft/...">Templates</a>
+    </p>
 </div>
 
 # AutoMate
@@ -125,7 +129,7 @@ Bug reports and pull requests are welcome on GitHub at [https://github.com/PGSSo
 The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## About
-The project maintained by [software development agency](https://www.pgs-soft.com/) [PGS Software](https://www.pgs-soft.com/).
+The project maintained by software development agency [PGS Software](https://www.pgs-soft.com/).
 See our other [open-source projects](https://github.com/PGSSoft) or [contact us](https://www.pgs-soft.com/contact-us/) to develop your product.
 
 ## Follow us
