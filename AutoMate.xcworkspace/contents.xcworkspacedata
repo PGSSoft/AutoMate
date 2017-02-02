@@ -10,7 +10,4 @@
    <FileRef
       location = "group:ModelGenerator/ModelGenerator.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:AutoMatePlayground.playground">
-   </FileRef>
 </Workspace>

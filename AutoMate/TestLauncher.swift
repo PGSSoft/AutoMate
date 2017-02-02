@@ -57,7 +57,7 @@ public struct TestLauncher {
      - returns: List of launch arguments.
      */
     var launchArguments: [String] {
-        return options.flatMap { $0.launchArguments }.reduce([], +)
+        return options.flatMap({ $0.launchArguments }).reduce([], +)
     }
 
     /**
@@ -66,6 +66,6 @@ public struct TestLauncher {
      - returns: Dictionary of launch environments
      */
     var launchEnvironments: [String: String] {
-        return options.flatMap { $0.launchEnvironments }.reduce([:]) { $0.union($1) }
+        return options.flatMap({ $0.launchEnvironments }).reduce([:]) { $0.union($1) }
     }
 }

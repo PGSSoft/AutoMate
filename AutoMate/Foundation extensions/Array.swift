@@ -7,9 +7,10 @@
 //
 
 public extension Array where Element: LaunchArgumentValue {
+
     /// Elements of the array formatter as a launch argument.
     var launchArgument: String {
-        return "(" + map { $0.launchArgument }.joined(separator: ", ") + ")"
+        return "(\(map({ $0.value }).joined(separator: ", ")))"
     }
 
     /**
@@ -24,5 +25,24 @@ public extension Array where Element: LaunchArgumentValue {
         forEach { combinedValues.append($0) }
         values.forEach { combinedValues.append($0) }
         return combinedValues
+    }
+}
+
+public extension Array where Element: LaunchEnviromentValue {
+
+    /// Elements of the array formatted as a launch enviroment value.
+    var launchEnviroment: String {
+        return map({ $0.value }).joined(separator: ", ")
+    }
+}
+
+public extension Array {
+
+    /// Reduce array of tuples `(Any: Hashable, Any)` to dictionary.
+    func reduceToDictionary<Key: Hashable, Value>(mapToTuple: (Element) -> (Key, Value)) -> [Key: Value] {
+        return reduce([:]) {
+            let tuple = mapToTuple($1)
+            return $0.union([tuple.0: tuple.1])
+        }
     }
 }

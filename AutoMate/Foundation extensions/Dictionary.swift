@@ -31,3 +31,22 @@ extension Dictionary {
         return copy
     }
 }
+
+extension Dictionary {
+
+    /// Creates new `Dictionary` from array of `Dictionary.Element`s.
+    ///
+    /// - Parameter elements: `[Dictionary.Element]` array.
+    public init(elements: [Element]) {
+        self = elements.reduceToDictionary { $0 }
+    }
+
+    /// Creates new `Dictionary` by transforming values of passed `Dictionary` with given closure.
+    ///
+    /// - Parameters:
+    ///   - original: `[OriginalKey: OriginalValue]` dictionary to transform.
+    ///   - transformation: closure mapping original `Dictionary.Element` into new one.
+    public init<OriginalKey, OriginalValue>(original: [OriginalKey: OriginalValue], transformation: (OriginalKey, OriginalValue) -> (Element)) {
+        self.init(elements: original.map(transformation))
+    }
+}

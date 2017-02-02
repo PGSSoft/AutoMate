@@ -12,7 +12,7 @@ import XCTest
 class TestLauncherTests: XCTestCase {
 
     let argument = LaunchOptionsFactory.multiLanguageLaunchArgument
-    let enviroment = LaunchOptionsFactory.testLaunchEnviromentOption
+    let enviroment = LaunchOptionsFactory.futureEventsLaunchEnviroment
 
     // configure
     func testConfigureCleanApplicationWithOptionsLaunch() {

@@ -81,8 +81,9 @@ github "PGSSoft/AutoMate"
 - [ ] Disable UIView animations
 - [ ] Strong-typed helpers: localizers, view object templates
 - [ ] Base XCTestCase template
+- [ ] Improve launch options type safety
 - [ ] Improve handling of system alerts
-- [ ] Companion library for the app
+- [x] Companion library for the app // I would add link to repo when there will be one
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders
 - [ ] Making screenshots
