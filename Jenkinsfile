@@ -11,6 +11,9 @@ node("ios_ui") {
       if (env.pullRequestId && env.pullRequestId != "null") {
         refspec = "+refs/pull-requests/*:refs/remotes/origin/pr/*"
         branch = "origin/pr/${env.pullRequestId}/from"
+        env.DANGER_BITBUCKETSERVER_HOST = "bitbucket.pgs-soft.com"
+        env.CHANGE_ID = env.pullRequestId
+        env.GIT_URL = "ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-ios.git"
       }
 
       //
@@ -86,81 +89,84 @@ node("ios_ui") {
         }
       }
 
-      //
-      // Stages
-      // Prepare node
-      // - clean workspace
-      stage("Prepare node") {
-        deleteDir()
-      }
+      // Unlock Bitbucket Server credentials
+      withCredentials([usernamePassword(credentialsId: '7d49eb1e-a210-4bdc-95c8-c707500332e9', passwordVariable: 'DANGER_BITBUCKETSERVER_PASSWORD', usernameVariable: 'DANGER_BITBUCKETSERVER_USERNAME')]) {
+        //
+        // Stages
+        // Prepare node
+        // - clean workspace
+        stage("Prepare node") {
+          deleteDir()
+        }
 
-      // Clone
-      stage("Clone") {
-        checkout([
-          $class: 'GitSCM',
-          branches: [[name: branch]],
-          browser: [
-            $class: 'Stash',
-            repoUrl: 'https://bitbucket.pgs-soft.com/projects/MOSP/repos/pgs-automate-ios'
-          ],
-          doGenerateSubmoduleConfigurations: false,
-          extensions: [],
-          submoduleCfg: [],
-          userRemoteConfigs: [[
-            credentialsId: '8d8413bb-4bda-4d07-94a1-b2e56e88a2d2',
-            refspec: refspec,
-            url: 'ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-ios.git'
-          ]]
-        ])
-      }
+        // Clone
+        stage("Clone") {
+          checkout([
+            $class: 'GitSCM',
+            branches: [[name: branch]],
+            browser: [
+              $class: 'Stash',
+              repoUrl: 'https://bitbucket.pgs-soft.com/projects/MOSP/repos/pgs-automate-ios'
+            ],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [],
+            submoduleCfg: [],
+            userRemoteConfigs: [[
+              credentialsId: '8d8413bb-4bda-4d07-94a1-b2e56e88a2d2',
+              refspec: refspec,
+              url: 'ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-ios.git'
+            ]]
+          ])
+        }
 
-      // Prepare build
-      // - kill simulator
-      // - update bundle
-      // - reset simulators
-      stage("Prepare build") {
-        killSimulator()
+        // Prepare build
+        // - kill simulator
+        // - update bundle
+        // - reset simulators
+        stage("Prepare build") {
+          killSimulator()
 
-        sh '''
-          # RBENV
-          eval "$(rbenv init -)"
+          sh '''
+            # RBENV
+            eval "$(rbenv init -)"
 
-          # Bundler
-          bundle install
-          bundle exec fastlane install_plugins
+            # Bundler
+            bundle install
+            bundle exec fastlane install_plugins
 
-          # Reset simulators
-          bundle exec fastlane snapshot reset_simulators --force --ios 10.2
+            # Reset simulators
+            bundle exec fastlane snapshot reset_simulators --force --ios 10.2
 
-          # Danger
-          bundle exec danger
-        '''
-      }
+            # Danger
+            bundle exec danger
+          '''
+        }
 
-      // Tests
-      stage("iPhone SE, 10.2") {
-        test("iPhone SE", "10.2")
-      }
+        // Tests
+        stage("iPhone SE, 10.2") {
+          test("iPhone SE", "10.2")
+        }
 
-      stage("iPhone 7, 10.2") {
-        test("iPhone 7", "10.2")
-      }
+        stage("iPhone 7, 10.2") {
+          test("iPhone 7", "10.2")
+        }
 
-      stage("iPhone 7 Plus, 10.2") {
-        test("iPhone 7 Plus", "10.2")
-      }
+        stage("iPhone 7 Plus, 10.2") {
+          test("iPhone 7 Plus", "10.2")
+        }
 
-      stage("Cocoapods lint") {
-        sh '''
-          # RBENV
-          eval "$(rbenv init -)"
+        stage("Cocoapods lint") {
+          sh '''
+            # RBENV
+            eval "$(rbenv init -)"
 
-          bundle exec pod spec lint
-        '''
-      }
+            bundle exec pod spec lint
+          '''
+        }
 
-      stage("Clean") {
-        deleteDir()
+        stage("Clean") {
+          deleteDir()
+        }
       }
     }
   }
