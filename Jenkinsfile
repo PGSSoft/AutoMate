@@ -5,6 +5,14 @@ node("ios_ui") {
       env.RBENV_VERSION = env.RBENV_2_3
       env.NSUnbufferedIO = "YES"
 
+      // Define branch to checkout
+      def refspec = null
+      def branch = env.BRANCH_NAME ?: "develop"
+      if (env.pullRequestId && env.pullRequestId != "null") {
+        refspec = "+refs/pull-requests/*:refs/remotes/origin/pr/*"
+        branch = "origin/pr/${env.pullRequestId}/from"
+      }
+
       //
       // Helper methods
       // Clean output and derivedData folders
@@ -88,7 +96,22 @@ node("ios_ui") {
 
       // Clone
       stage("Clone") {
-        git branch: "${env.BRANCH_NAME}", credentialsId: '8d8413bb-4bda-4d07-94a1-b2e56e88a2d2', url: 'ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-ios.git'
+        checkout([
+          $class: 'GitSCM',
+          branches: [[name: branch]],
+          browser: [
+            $class: 'Stash',
+            repoUrl: 'https://bitbucket.pgs-soft.com/projects/MOSP/repos/pgs-automate-ios'
+          ],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [],
+          submoduleCfg: [],
+          userRemoteConfigs: [[
+            credentialsId: '8d8413bb-4bda-4d07-94a1-b2e56e88a2d2',
+            refspec: refspec,
+            url: 'ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-ios.git'
+          ]]
+        ])
       }
 
       // Prepare build
