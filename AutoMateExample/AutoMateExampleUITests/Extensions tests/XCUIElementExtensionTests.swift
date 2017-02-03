@@ -25,6 +25,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         wait(forVisibilityOf: mainView)
     }
 
+    
     // MARK: Tests
     func testIsVisible() {
         mainView.goToScrollViewMenu()
