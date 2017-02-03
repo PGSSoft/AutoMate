@@ -90,7 +90,7 @@ node("ios_ui") {
       }
 
       // Unlock Bitbucket Server credentials
-      withCredentials([usernamePassword(credentialsId: '7d49eb1e-a210-4bdc-95c8-c707500332e9', passwordVariable: 'DANGER_BITBUCKETSERVER_PASSWORD', usernameVariable: 'DANGER_BITBUCKETSERVER_USERNAME')]) {
+      withCredentials([usernamePassword(credentialsId: 'b46fbd85-2c4a-491e-8a56-b6cc1dd1bf59', passwordVariable: 'DANGER_BITBUCKETSERVER_PASSWORD', usernameVariable: 'DANGER_BITBUCKETSERVER_USERNAME')]) {
         //
         // Stages
         // Prepare node
