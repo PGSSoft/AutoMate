@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div align="center">
     <img src="assets/logo.png" alt="AutoMate, made by PGS Software" />
     <br />
     <img src="assets/made-with-love-by-PGS.png" />
