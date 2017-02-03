@@ -59,3 +59,26 @@ public struct EventLaunchEnviroment: LaunchEnviromentWithMultipleValues {
         self.valuesCollection = resources.map(LaunchEnviromentResourceValue.init)
     }
 }
+
+// MARK: - Turn off animation launch environment
+public struct AnimationLaunchEnvironment: LaunchEnviromentProtocol {
+
+    // MARK: Typealiases
+    public typealias Value = BooleanLaunchEnviromentValue
+
+    // MARK: Properties
+    private static let KEY = "AM_ANIMATION_KEY"
+    public let key = AnimationLaunchEnvironment.KEY
+    public let uniqueIdentifier = AnimationLaunchEnvironment.KEY
+    public var value: Value
+
+    // MARK: Initialization
+    public init(animation: Value = false) {
+        value = animation
+    }
+
+    // MARK: LaunchOption
+    public var launchEnvironments: [String : String]? {
+        return [key: value.value]
+    }
+}

@@ -37,6 +37,13 @@ class SystemLaunchEnviromentsTests: XCTestCase {
                        ["AM_EVENTS_KEY": "Resources:next_week, nil:recurring_monthly"])
     }
 
+    func testAnimationLaunchEnvironment() {
+
+        XCTAssertEqual(build(with: []), [:])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.turnOffAnimationLaunchEnvironment]), ["AM_ANIMATION_KEY": "false"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.turnOnAnimationLaunchEnvironment]), ["AM_ANIMATION_KEY": "true"])
+    }
+
     func testCombinedLaunchEnviroment() {
 
         XCTAssertEqual(build(with: []), [:])

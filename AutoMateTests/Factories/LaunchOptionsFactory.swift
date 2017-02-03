@@ -24,4 +24,6 @@ enum LaunchOptionsFactory {
     static let thisWeekEventsLaunchEnviroment: EventLaunchEnviroment = [ LaunchEnviromentResourceValue(fileName: "this_week", bundleName: nil)]
     static let futureEventsLaunchEnviroment = EventLaunchEnviroment(resources: ("next_week", "Resources"), ("recurring_monthly", nil))
 
+    static let turnOffAnimationLaunchEnvironment = AnimationLaunchEnvironment()
+    static let turnOnAnimationLaunchEnvironment = AnimationLaunchEnvironment(animation: true)
 }
