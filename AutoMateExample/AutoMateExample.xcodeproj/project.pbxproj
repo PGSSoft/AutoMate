@@ -31,6 +31,7 @@
 		969CC2871E421D2500995A49 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2861E421D2500995A49 /* LocationView.swift */; };
 		969CC2891E421FE500995A49 /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingView.swift */; };
 		969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */; };
+		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		969CC2861E421D2500995A49 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		969CC2881E421FE500995A49 /* AppearingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
 		969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalExtensionsTests.swift; sourceTree = "<group>"; };
+		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				1F9891B81D409547007CD2B0 /* Info.plist */,
 				1F9891B61D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift */,
 				1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift */,
+				96AB73F11E44C35300FA811A /* TestLauncher.swift */,
 				E42132551D7FF56900481842 /* Extensions tests */,
 				964118241E41EDF90011C776 /* ViewObjects */,
 			);
@@ -351,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -376,6 +379,7 @@
 				969CC2891E421FE500995A49 /* AppearingView.swift in Sources */,
 				9641182B1E41EF7A0011C776 /* MainView.swift in Sources */,
 				9621BBD21E420E25001A9C2C /* ScrollView.swift in Sources */,
+				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,
 				969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */,
 				969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */,
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
