@@ -33,6 +33,41 @@ public protocol LaunchEnviromentProtocol: LaunchOption {
     associatedtype Value: LaunchEnviromentValue
 }
 
+// MARK: - LaunchEnviromentWithSingleValue
+/// Protocol defining minimal requirements for launch enviroment option with single values.
+/// Provides default implementation for handling singe launch environment by providing `key` and `value`.
+/// Usage example:
+///
+/// ```swift
+/// public struct SimpleLaunchEnviroment: LaunchEnviromentWithSingleValue {
+/// 
+///     public typealias Value = String
+///     public let key = "LAUNCH_KEY"
+///     public var value: String
+/// }
+/// ```
+public protocol LaunchEnviromentWithSingleValue: LaunchEnviromentProtocol {
+
+    /// String representation of the environment key.
+    var key: String { get }
+
+    /// Value of the launch argument.
+    var value: Value { get }
+}
+
+// MARK: Default implementation
+public extension LaunchEnviromentWithSingleValue {
+
+    /// Unique value to use when comparing with other launch options.
+    public var uniqueIdentifier: String {
+        return key
+    }
+
+    public var launchEnvironments: [String : String]? {
+        return [key: value.value]
+    }
+}
+
 // MARK: - Launch Enviroment With Multiple Values
 /// Protocol defining minimal requirements for launch enviroment option with multiple values.
 /// Provides default implementation for ```ExpressibleByArrayLiteral``` protocol.

@@ -62,15 +62,13 @@ public struct EventLaunchEnviroment: LaunchEnviromentWithMultipleValues {
 
 // MARK: - Turn off animation launch environment
 /// Launch environment disabling UIKit animation.
-public struct AnimationLaunchEnvironment: LaunchEnviromentProtocol {
+public struct AnimationLaunchEnvironment: LaunchEnviromentWithSingleValue {
 
     // MARK: Typealiases
     public typealias Value = BooleanLaunchEnviromentValue
 
     // MARK: Properties
-    private static let KEY = "AM_ANIMATION_KEY"
-    public let key = AnimationLaunchEnvironment.KEY
-    public let uniqueIdentifier = AnimationLaunchEnvironment.KEY
+    public let key = "AM_ANIMATION_KEY"
     public var value: Value
 
     // MARK: Initialization
@@ -79,10 +77,5 @@ public struct AnimationLaunchEnvironment: LaunchEnviromentProtocol {
     /// - Parameter animation: `false` (default) if animation should be disabled.
     public init(animation: Value = false) {
         value = animation
-    }
-
-    // MARK: LaunchOption
-    public var launchEnvironments: [String : String]? {
-        return [key: value.value]
     }
 }
