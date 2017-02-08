@@ -19,6 +19,17 @@ public extension XCUIElement {
         return exists && isHittable
     }
 
+    /// Returns `value` as a String
+    ///
+    /// - note:
+    /// It will fail if `value` is not a `String` type.
+    public var text: String {
+        guard let text = value as? String else {
+            preconditionFailure("Value: \(value) is not a String")
+        }
+        return text
+    }
+
     // MARK: Methods
     /**
      Perform swipe gesture on this view by swiping between provided points.

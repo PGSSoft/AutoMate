@@ -8,6 +8,6 @@
       location = "group:AutoMateExample/AutoMateExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:AutoMatePlayground.playground">
+      location = "group:ModelGenerator/ModelGenerator.xcodeproj">
    </FileRef>
 </Workspace>

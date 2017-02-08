@@ -1,40 +1,45 @@
 //
-//  XCUIElementExtensionTests.swift
+//  AdditionalExtensionsTests.swift
 //  AutoMateExample
 //
-//  Created by Pawel Szot on 17/08/16.
-//  Copyright © 2016 PGS Software. All rights reserved.
+//  Created by Bartosz Janda on 01.02.2017.
+//  Copyright © 2017 PGS Software. All rights reserved.
 //
 
 import XCTest
 import AutoMate
 
-class AdditionalExtensionsTests: XCTestCase {
-    let app = XCUIApplication()
+class AdditionalExtensionsTests: AppUITestCase {
 
-    // MARK: Setup
+    // MARK: Arrange View Objects
+    lazy var mainView: MainView = MainView(in: self.app)
+    lazy var appearingView: AppearingView = AppearingView(in: self.app)
+
+    // MARK: Set up
     override func setUp() {
         super.setUp()
-        app.launch()
+        TestLauncher.configure(app).launch()
+        wait(forVisibilityOf: mainView)
     }
 
     // MARK: XCTestCase extension tests
     func testWaitForElementToExist() {
-        let screen = AppearingScreen.open(inside: app)
+        mainView.goToAppearingMenu()
 
-        wait(forVisibleElement: screen.appearingButton)
-        XCTAssertFalse(screen.madeWithLoveView.exists)
-        screen.appearingButton.tap()
-        wait(forElementToExist: screen.madeWithLoveView)
+        wait(forVisibilityOf: appearingView.button)
+        XCTAssertFalse(appearingView.isMadeWithLoveViewDisplayed())
+        appearingView.tapOnButton()
+        wait(forExistOf: appearingView.madeWithLoveView)
     }
 
     func testWaitForVisibleElement() {
-        let screen = AppearingScreen.open(inside: app)
-        XCTAssertFalse(screen.appearingButton.isVisible)
+        mainView.goToAppearingMenu()
 
-        wait(forVisibleElement: screen.appearingButton)
-        XCTAssertTrue(screen.appearingButton.isVisible)
-        screen.appearingButton.tap()
+        XCTAssertFalse(appearingView.isButtonDisplayed())
+
+        wait(forVisibilityOf: appearingView.button)
+        XCTAssertTrue(appearingView.isButtonDisplayed())
+        appearingView.tapOnButton()
     }
 
     // MARK: XCUIApplication extension tests
@@ -57,6 +62,6 @@ class AdditionalExtensionsTests: XCTestCase {
     // MARK: Test for movie
     func testForMovie() {
         testWaitForElementToExist()
-        AppearingScreen.closeView(in: app)
+        appearingView.goBack()
     }
 }

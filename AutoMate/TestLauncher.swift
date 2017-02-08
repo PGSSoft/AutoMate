@@ -7,9 +7,11 @@
 //
 import XCTest
 
+// MARK: - Application
 /// Types implementing this protocol can be configured with launch options and variables by the `TestLauncher`.
 public protocol Application {
 
+    // MARK: Properties
     /// Array where generated arguments will be appended.
     var launchArguments: [String] { get set }
 
@@ -17,8 +19,10 @@ public protocol Application {
     var launchEnvironment: [String: String] { get set }
 }
 
+// MARK: - XCUIApplication Application extension
 extension XCUIApplication: Application { }
 
+// MARK: - TestLauncher
 /// Configures given application with provided launch options and variables.
 public struct TestLauncher {
 
@@ -32,7 +36,7 @@ public struct TestLauncher {
 
      - parameter options: Options to initialize with.
      */
-    public init(options: [LaunchOption]) {
+    public init(options: [LaunchOption] = []) {
         self.options = LaunchOptionsSet(options)
     }
 
@@ -50,6 +54,17 @@ public struct TestLauncher {
         return application
     }
 
+    // MARK: Public static methods
+    /// Initializes `TestLauncher` with given options and configure application object with launch arguments and launch environments.
+    ///
+    /// - Parameters:
+    ///   - application: Object implementing Application protocol that will receive the settings.
+    ///   - options: Options to initialize `TestLauncher` and application.
+    /// - Returns: Application with passed settings.
+    public static func configure<T: Application>(_ application: T, withOptions options: [LaunchOption] = []) -> T {
+        return TestLauncher(options: options).configure(application)
+    }
+
     // MARK: Build methods
     /**
      Builds launch arguments.
@@ -57,7 +72,7 @@ public struct TestLauncher {
      - returns: List of launch arguments.
      */
     var launchArguments: [String] {
-        return options.flatMap { $0.launchArguments }.reduce([], +)
+        return options.flatMap({ $0.launchArguments }).reduce([], +)
     }
 
     /**
@@ -66,6 +81,6 @@ public struct TestLauncher {
      - returns: Dictionary of launch environments
      */
     var launchEnvironments: [String: String] {
-        return options.flatMap { $0.launchEnvironments }.reduce([:]) { $0.union($1) }
+        return options.flatMap({ $0.launchEnvironments }).reduce([:]) { $0.union($1) }
     }
 }

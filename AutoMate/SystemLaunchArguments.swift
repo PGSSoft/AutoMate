@@ -51,7 +51,7 @@ public struct SystemLocale: LocaleLaunchArgument, LaunchArgumentWithSingleValue 
 extension SystemLocale: LaunchArgumentValue {
 
     /// String representation of the launch value.
-    public var launchArgument: String {
+    public var value: String {
         return "\"\(localeIdentifier)\""
     }
 }
@@ -111,7 +111,7 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
 
     /// Hardware keyboards to set on device. First element is the most preffered one.
     public var launchArguments: [String]? {
-        return ["-\(argumentKey)", "(" + values.map({ $0.launchArgument }).joined(separator: ", ") + ")"]
+        return ["-\(key)", "(" + values.map({ $0.value }).joined(separator: ", ") + ")"]
     }
 }
 
@@ -173,7 +173,7 @@ extension CoreDataOption.DiskSyncing: LaunchArgumentValue { }
 
 extension CoreDataOption: LaunchArgumentWithSingleValue {
     /// String representation of the launch argument key.
-    public var argumentKey: String {
+    public var key: String {
         switch self {
         case .sqlDebug:
             return "com.apple.CoreData.SQLDebug"
@@ -226,7 +226,7 @@ extension LocalizedStrings: LaunchArgumentWithSingleValue {
     }
 
     /// String representation of the launch argument key.
-    public var argumentKey: String {
+    public var key: String {
         return rawValue
     }
 }

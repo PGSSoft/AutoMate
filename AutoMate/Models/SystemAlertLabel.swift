@@ -1,4 +1,4 @@
-// swiftlint:disable variable_name
+// swiftlint:disable variable_name trailing_comma
 /// Represents possible label values on alert buttons.
 open class SystemAlertLabel {
     private init() {}

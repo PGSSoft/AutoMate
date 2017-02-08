@@ -2,11 +2,23 @@ language: objective-c
 osx_image: xcode8.2
 
 env:
-  - NSUnbufferedIO=YES
+  global:
+    - NSUnbufferedIO=YES
+  matrix:
+    - DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.2"
+    - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.2"
+    - DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.2"
 
-before_install:
-  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+after_install:
+  - bundle exec pod --version
+  - bundle exec fastlane --version
+
+before_script:
+  - killall -9 -u $(id -un) "Simulator" || true
+  - killall -9 -u $(id -un) "launchd_sim" || true
+  - killall -9 -u $(id -un) "com.apple.CoreSimulator.CoreSimulatorService" || true
+  - bundle exec fastlane snapshot reset_simulators --force --ios ${DESTINATION_OS}
 
 script:
-  - set -o pipefail && xcodebuild -workspace AutoMate.xcworkspace -scheme AutoMate -destination "platform=iOS Simulator,id=DB794781-65A7-4884-8D00-AAC3CBD39A44" test | xcpretty -c
-  - pod --version && pod spec lint
+  - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
+  - pod spec lint

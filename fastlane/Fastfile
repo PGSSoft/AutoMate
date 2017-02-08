@@ -1,0 +1,92 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.9.0"
+
+default_platform :ios
+
+require "fileutils"
+require "simctl"
+
+platform :ios do
+  before_all do
+    # Setup CI (Jenkins / Travis)
+    setup_jenkins
+    
+    # Options
+    DERIVED_DATA_PATH = ENV['GYM_DERIVED_DATA_PATH']
+    OUTPUT_PATH = ENV['GYM_OUTPUT_DIRECTORY']
+
+    # Remove output folder
+    if OUTPUT_PATH && File.exist?(OUTPUT_PATH)
+      FileUtils.rm_rf(OUTPUT_PATH)
+    end
+
+    # Remove DerivedData folder
+    if DERIVED_DATA_PATH && File.exist?(DERIVED_DATA_PATH)
+      FileUtils.rm_rf(DERIVED_DATA_PATH)
+    end
+  end
+
+  desc "Runs all the tests"
+  lane :test do |options|
+    # Options
+    device = options[:device]
+    destination = options[:destination]
+    disable_keyboard = options[:disable_keyboard]
+
+    # Normalize parameters
+    if device.nil? && destination.nil?
+      device = "iPhone 7 (10.2)"  # Default value.
+    elsif not destination.nil?
+      device = nil                # Remove `device` if `destination` is set.
+    end
+
+    # Disable keyboard on Simulators
+    if disable_keyboard
+      SimCtl.list_devices.each do |d| 
+        d.settings.disable_keyboard_helpers
+      end
+    end
+
+    # Scan
+    scan(
+      device: device,
+      destination: destination
+    )
+  end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer
