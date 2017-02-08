@@ -14,6 +14,7 @@
 		1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995571D51CBFA0037CD1F /* XCTestCase.swift */; };
 		1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
+		C9989A3C1E3236AD00260E5C /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9989A3B1E3236AD00260E5C /* SystemAlert.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
@@ -52,6 +53,7 @@
 		1FC995571D51CBFA0037CD1F /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQuery.swift; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		C9989A3B1E3236AD00260E5C /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
 				C9371A471E2F542100808AFC /* Locator.swift */,
 				E47BB6F41CF310F200229D63 /* Models */,
+				C9989A3B1E3236AD00260E5C /* SystemAlert.swift */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
 				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4535A461CEDC4AB008965DD /* LaunchOptions.swift in Sources */,
+				C9989A3C1E3236AD00260E5C /* SystemAlert.swift in Sources */,
 				E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */,
 				E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
