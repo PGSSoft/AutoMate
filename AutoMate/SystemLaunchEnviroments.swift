@@ -62,6 +62,11 @@ public struct EventLaunchEnviroment: LaunchEnviromentWithMultipleValues {
 
 // MARK: - Turn off animation launch environment
 /// Launch environment disabling UIKit animation.
+/// Usage example:
+///
+/// ```swift
+/// let disableAnimation = AnimationLaunchEnvironment()
+/// ```
 public struct AnimationLaunchEnvironment: LaunchEnviromentWithSingleValue {
 
     // MARK: Typealiases
