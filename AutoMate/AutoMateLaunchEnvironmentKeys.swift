@@ -1,5 +1,5 @@
 //
-//  AutoMateLaunchEnviromentKeys.swift
+//  AutoMateLaunchEnvironmentKeys.swift
 //  AutoMate
 //
 //  Created by Joanna Bednarz on 10/02/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Set of LaunchEnviroment keys for predefined options implemented by AutoMate.
+/// Set of LaunchEnvironment keys for predefined options implemented by AutoMate.
 ///
 /// - event: Key to pass with EventLaunchEnvironment.
 /// - reminder: Key to pass with ReminderLaunchEnvironment.

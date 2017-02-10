@@ -21,7 +21,7 @@
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
-		E40B0D851E4DABDD00929631 /* AutoMateLaunchEnviromentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0D841E4DABDD00929631 /* AutoMateLaunchEnviromentKeys.swift */; };
+		E40B0D851E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
 		E431922F1E2E199400B019C1 /* LaunchArgumentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431922E1E2E199400B019C1 /* LaunchArgumentProtocols.swift */; };
@@ -74,7 +74,7 @@
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
-		E40B0D841E4DABDD00929631 /* AutoMateLaunchEnviromentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMateLaunchEnviromentKeys.swift; sourceTree = "<group>"; };
+		E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMateLaunchEnvironmentKeys.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
 		E425D5621CED928100A7CA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			children = (
 				966B92371E40D69A006E6A18 /* AppUITestCase.swift */,
 				E425D5601CED928100A7CA03 /* AutoMate.h */,
-				E40B0D841E4DABDD00929631 /* AutoMateLaunchEnviromentKeys.swift */,
+				E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */,
 				E4C20FE71E39DBBE00052F11 /* AutoMateLaunchEnvironments.swift */,
 				E431922C1E2E194800B019C1 /* Basic structures */,
 				E4535A471CEDD24B008965DD /* Foundation extensions */,
@@ -396,7 +396,7 @@
 				E43192311E2E19C700B019C1 /* LaunchArgumentValue.swift in Sources */,
 				E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */,
 				966B92361E40D470006E6A18 /* BaseAppView.swift in Sources */,
-				E40B0D851E4DABDD00929631 /* AutoMateLaunchEnviromentKeys.swift in Sources */,
+				E40B0D851E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift in Sources */,
 				E4DDEDA81E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift in Sources */,
 				E4DDEDAA1E3A351300C2F2A1 /* LaunchEnvironmentValue.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
