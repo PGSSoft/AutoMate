@@ -39,7 +39,7 @@ public protocol SystemAlert {
 extension SystemAlertAllow where Self: SystemAlert {
     public var allowElement: XCUIElement {
         guard let button = alert.any.elements(containingLabels: type(of: self).allow).first else {
-            preconditionFailure()
+            preconditionFailure("Cannot find allow button.")
         }
 
         return  button
@@ -49,7 +49,7 @@ extension SystemAlertAllow where Self: SystemAlert {
 extension SystemAlertDeny where Self: SystemAlert {
     public var denyElement: XCUIElement {
         guard let button = alert.any.elements(containingLabels: type(of: self).deny).first else {
-            preconditionFailure()
+            preconditionFailure("Cannot find deny button.")
         }
 
         return  button

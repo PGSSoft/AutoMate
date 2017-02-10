@@ -106,7 +106,8 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertTrue(middleButtonView.isLabelDisplayed())
     }
 
-    /// This test relies on permission being cleared before starting the test. This is currently done done by ModelGenerator.
+    /// This test relies on permission being cleared before starting the test. This is currently done by ModelGenerator.
+    /// Because elements(containingLabels:) is not fully implemented, this test is excluded.
     func testLocationSystemAlertButton() {
         let token = addUIInterruptionMonitor(withDescription: "Location") { (alert) -> Bool in
             let services: [SystemAlert.Type] = [AddressBookAlert.self,
@@ -127,8 +128,9 @@ class XCUIElementExtensionTests: AppUITestCase {
                 XCTAssertNil(service.init(element: alert), "Should not be able to create \(service) object.")
             })
 
-            let locationAlert = LocationAlert(element: alert)!
-            locationAlert.denyElement.tap()
+            let locationAlert = LocationAlert(element: alert)
+            XCTAssertNotNil(locationAlert, "Unable to create AddressBookAlert object")
+            locationAlert!.denyElement.tap()
 
             return true
         }
@@ -141,13 +143,15 @@ class XCUIElementExtensionTests: AppUITestCase {
     }
 
     /// This test relies on permission being cleared before starting the test. This is currently done by ModelGenerator.
+    /// Because elements(containingLabels:) is not fully implemented, this test is excluded.
     func testContactsSystemAlertButton() {
         let token = addUIInterruptionMonitor(withDescription: "Contacts") { (alert) -> Bool in
             XCTAssertNil(LocationAlert(element: alert))
             XCTAssertNil(MediaLibraryAlert(element: alert))
 
-            let contactsAlert = AddressBookAlert(element: alert)!
-            contactsAlert.denyElement.tap()
+            let contactsAlert = AddressBookAlert(element: alert)
+            XCTAssertNotNil(contactsAlert, "Unable to create AddressBookAlert object")
+            contactsAlert!.denyElement.tap()
 
             return true
         }
