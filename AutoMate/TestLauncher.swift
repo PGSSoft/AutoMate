@@ -44,7 +44,7 @@ public struct TestLauncher {
     /**
      Passes stored settings to the provided application.
 
-     - parameter application: Object implementing Application protocol that will receive the settings.
+     - parameter application: Object implementing Application protocol that will receive the settings, eg. `XCUIApplication`.
      - returns: Application with passed settings.
      */
     public func configure<T: Application>(_ application: T) -> T {
@@ -58,7 +58,7 @@ public struct TestLauncher {
     /// Initializes `TestLauncher` with given options and configure application object with launch arguments and launch environments.
     ///
     /// - Parameters:
-    ///   - application: Object implementing Application protocol that will receive the settings.
+    ///   - application: Object implementing Application protocol that will receive the settings, eg. `XCUIApplication`.
     ///   - options: Options to initialize `TestLauncher` and application.
     /// - Returns: Application with passed settings.
     public static func configure<T: Application>(_ application: T, withOptions options: [LaunchOption] = []) -> T {

@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.1.0)
+Released on ???.
+
+#### Added
+- View Objects: `BaseAppViewProtocol`, `BaseAppView`, `ModalView`, `PushedView`
+- `IdentifiableByElement` protocol
+- `Locator` protocol
+- `AppUITestCase` as base `XCTestCase` template
+
+#### Updated
+- Documentation
+
 ## [1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.0)
 Released on 2016-09-23.
 
