@@ -26,4 +26,7 @@ enum LaunchOptionsFactory {
 
     static let turnOffAnimationLaunchEnvironment = AnimationLaunchEnvironment()
     static let turnOnAnimationLaunchEnvironment = AnimationLaunchEnvironment(animation: true)
+
+    static let recurringReminderLaunchEnvironment: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "johnys_birthday_reminder", bundleName: "Data")]
+    static let highPriorityReminderLaunchEnvironment = ReminderLaunchEnvironment(resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
 }

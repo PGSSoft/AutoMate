@@ -44,17 +44,52 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
         XCTAssertEqual(build(with: [LaunchOptionsFactory.turnOnAnimationLaunchEnvironment]), ["AM_ANIMATION_KEY": "true"])
     }
 
+    func testReminderLaunchEnvironment() {
+
+        XCTAssertEqual(build(with: []), [:])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Data:johnys_birthday_reminder"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.highPriorityReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Test data:automate_release_reminders, nil:wwdc_reminders"])
+    }
+
     func testCombinedLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
-                       ["AM_EVENTS_KEY": "nil:this_week", "MADE_WITH_LOVE_BY": "PGS"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
-                       ["SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
-                       ["AM_EVENTS_KEY": "nil:this_week", "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment, LaunchOptionsFactory.turnOffAnimationLaunchEnvironment]),
-                       ["AM_EVENTS_KEY": "nil:this_week", "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS", "AM_ANIMATION_KEY": "false"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
+                                 LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
+                       ["AM_EVENTS_KEY": "nil:this_week",
+                           "MADE_WITH_LOVE_BY": "PGS"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnvironments,
+                                 LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
+                       ["SIMPLIFY": "testing_iOS_app_ui",
+                           "FIX_BUGS": "for_those_who_cant_wait_for_fall",
+                           "MADE_WITH_LOVE_BY": "PGS"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
+                                 LaunchOptionsFactory.goalsLaunchEnvironments,
+                                 LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
+                       ["AM_EVENTS_KEY": "nil:this_week",
+                           "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS":
+                               "for_those_who_cant_wait_for_fall",
+                           "MADE_WITH_LOVE_BY": "PGS"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
+                                 LaunchOptionsFactory.goalsLaunchEnvironments,
+                                 LaunchOptionsFactory.pgsWithLoveLaunchEnvironment,
+                                 LaunchOptionsFactory.turnOffAnimationLaunchEnvironment]),
+                       ["AM_EVENTS_KEY": "nil:this_week",
+                           "SIMPLIFY": "testing_iOS_app_ui",
+                           "FIX_BUGS": "for_those_who_cant_wait_for_fall",
+                           "MADE_WITH_LOVE_BY": "PGS",
+                           "AM_ANIMATION_KEY": "false"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
+                                 LaunchOptionsFactory.goalsLaunchEnvironments,
+                                 LaunchOptionsFactory.pgsWithLoveLaunchEnvironment,
+                                 LaunchOptionsFactory.turnOffAnimationLaunchEnvironment,
+                                 LaunchOptionsFactory.highPriorityReminderLaunchEnvironment]),
+                       ["AM_EVENTS_KEY": "nil:this_week",
+                           "SIMPLIFY": "testing_iOS_app_ui",
+                           "FIX_BUGS": "for_those_who_cant_wait_for_fall",
+                           "MADE_WITH_LOVE_BY": "PGS",
+                           "AM_ANIMATION_KEY": "false",
+                           "AM_REMINDERS_KEY": "Test data:automate_release_reminders, nil:wwdc_reminders"])
     }
 
     // MARK: Helpers

@@ -1,7 +1,7 @@
 // swiftlint:disable variable_name trailing_comma
 /// Represents possible label values on alert buttons.
 open class SystemAlertLabel {
-    private init() {}
+    private init() { }
 
     /// Automatically generated property for localized variants of dontAllow.
     open static let dontAllow = [

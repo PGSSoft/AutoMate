@@ -24,10 +24,10 @@ class ScrollingViewController: UIViewController {
 
     // MARK: Notifications
     func keyboardWillShow(notification: NSNotification) {
-        guard  let userInfo = notification.userInfo,
+        guard let userInfo = notification.userInfo,
             let keyboardEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
             let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else {
-            return
+                return
         }
 
         let keyboardFrame = view.convert(keyboardEndFrame, from: nil)
@@ -38,9 +38,9 @@ class ScrollingViewController: UIViewController {
     }
 
     func keyboardWillHide(notification: NSNotification) {
-        guard  let userInfo = notification.userInfo,
+        guard let userInfo = notification.userInfo,
             let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else {
-            return
+                return
         }
 
         UIView.animate(withDuration: animationDuration) {

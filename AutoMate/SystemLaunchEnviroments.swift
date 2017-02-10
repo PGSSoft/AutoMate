@@ -31,7 +31,7 @@ public struct LaunchEnviromentResourceValue: LaunchEnviromentValue {
 }
 
 // MARK: - Event Launch Enviroment
-/// Launch enviroment supporting EventKit events. Expects bundle and file name for every file containing data of events to be added into calendar at test launch. Structure is defined in example project's file _events.json_. 
+/// Launch enviroment supporting EventKit events. Expects bundle and file name for every file containing data of events to be added into calendar at test launch. Structure is defined in example project's file _events.json_.
 /// Usage example:
 ///
 /// ```swift

@@ -52,3 +52,24 @@ public enum BooleanLaunchEnvironmentValue: String, ExpressibleByBooleanLiteral, 
         self = value ? .true : .false
     }
 }
+// MARK: - Launch Environment Resource Value
+/// Launch environment resource model containing informations required to point proper file containing resource data. Expects bundle and file name. If bundle name is `nil` main bundle will be searched.
+///
+/// ```swift
+/// let resource = LaunchEnvironmentResourceValue(fileName: "monthly_events", bundleName: "Data")
+public struct LaunchEnvironmentResourceValue: LaunchEnvironmentValue {
+
+    // MARK: Properties
+    public let file: String
+    public let bundle: String?
+
+    public var value: String {
+        return "\(bundle ?? "nil"):\(file)"
+    }
+
+    // MARK: Initialization
+    public init(fileName file: String, bundleName bundle: String? = nil) {
+        self.file = file
+        self.bundle = bundle
+    }
+}

@@ -40,7 +40,7 @@ public protocol LaunchEnvironmentProtocol: LaunchOption {
 ///
 /// ```swift
 /// public struct SimpleLaunchEnvironment: LaunchEnvironmentWithSingleValue {
-/// 
+///
 ///     public typealias Value = String
 ///     public let key = "LAUNCH_KEY"
 ///     public var value: String
@@ -63,7 +63,7 @@ public extension LaunchEnvironmentWithSingleValue {
         return key
     }
 
-    public var launchEnvironments: [String : String]? {
+    public var launchEnvironments: [String: String]? {
         return [key: value.value]
     }
 }
