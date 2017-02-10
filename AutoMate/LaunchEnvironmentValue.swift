@@ -1,5 +1,5 @@
 //
-//  LaunchEnviromentValue.swift
+//  LaunchEnvironmentValue.swift
 //  AutoMate
 //
 //  Created by Joanna Bednarz on 26/01/2017.
@@ -8,23 +8,23 @@
 
 import Foundation
 
-// MARK: - Launch Enviroment Value
-/// Contains basic requirements for type that will be used as value for launch enviroment.
+// MARK: - Launch Environment Value
+/// Contains basic requirements for type that will be used as value for launch environment.
 /// Usage example:
 ///
 /// ```swift
-/// public enum DataSource: String, LaunchEnviromentValue {
+/// public enum DataSource: String, LaunchEnvironmentValue {
 ///     case valid = "mock_valid"
 ///     case error = "mock_error"
 /// }
-public protocol LaunchEnviromentValue {
+public protocol LaunchEnvironmentValue {
 
     // MARK: Properties
     var value: String { get }
 }
 
 /// Default implementation for `RawRepresentable<String>`
-extension LaunchEnviromentValue where Self: RawRepresentable, Self.RawValue == String {
+extension LaunchEnvironmentValue where Self: RawRepresentable, Self.RawValue == String {
 
     // MARK: Properties
     public var value: String {

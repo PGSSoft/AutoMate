@@ -13,25 +13,25 @@ class TestLauncherTests: XCTestCase {
 
     // MARK: Properties
     let argument = LaunchOptionsFactory.multiLanguageLaunchArgument
-    let enviroment = LaunchOptionsFactory.futureEventsLaunchEnviroment
+    let environment = LaunchOptionsFactory.futureEventsLaunchEnvironment
 
     // MARK: Tests
     func testConfigureCleanApplicationWithLaunchOptions() {
         let application = ApplicationsFactory.cleanApplication
-        let launcher = TestLauncher(options: [argument, enviroment])
+        let launcher = TestLauncher(options: [argument, environment])
 
         let configApplication = launcher.configure(application)
         XCTAssertEqual(configApplication.launchArguments, argument.launchArguments!)
-        XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
+        XCTAssertEqual(configApplication.launchEnvironment, environment.launchEnvironments!)
     }
 
     func testConfigureCleanApplicationWithDoubledLaunchOptions() {
         let application = ApplicationsFactory.cleanApplication
-        let launcher = TestLauncher(options: [argument, argument, enviroment, enviroment])
+        let launcher = TestLauncher(options: [argument, argument, environment, environment])
 
         let configApplication = launcher.configure(application)
         XCTAssertEqual(configApplication.launchArguments, argument.launchArguments!)
-        XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
+        XCTAssertEqual(configApplication.launchEnvironment, environment.launchEnvironments!)
     }
 
     func testConfigureSetUpApplicationWithoutLaunchOptions() {
@@ -45,23 +45,23 @@ class TestLauncherTests: XCTestCase {
 
     func testConfigureSetUpApplicationWithLaunchOptions() {
         let application = ApplicationsFactory.configuredApplication
-        let launcher = TestLauncher(options: [argument, enviroment])
+        let launcher = TestLauncher(options: [argument, environment])
 
         let configApplication = launcher.configure(application)
         var argumentsSetUp = application.launchArguments
         argumentsSetUp += argument.launchArguments!
-        var enviromentSetUp = application.launchEnvironment
-        enviromentSetUp.unionInPlace(enviroment.launchEnvironments!)
+        var environmentSetUp = application.launchEnvironment
+        environmentSetUp.unionInPlace(environment.launchEnvironments!)
 
         XCTAssertEqual(configApplication.launchArguments, argumentsSetUp)
-        XCTAssertEqual(configApplication.launchEnvironment, enviromentSetUp)
+        XCTAssertEqual(configApplication.launchEnvironment, environmentSetUp)
     }
 
     func testConfigureLauncherHelperMethod() {
         let application = ApplicationsFactory.cleanApplication
-        let configApplication = TestLauncher.configure(application, withOptions: [argument, enviroment])
+        let configApplication = TestLauncher.configure(application, withOptions: [argument, environment])
 
         XCTAssertEqual(configApplication.launchArguments, argument.launchArguments!)
-        XCTAssertEqual(configApplication.launchEnvironment, enviroment.launchEnvironments!)
+        XCTAssertEqual(configApplication.launchEnvironment, environment.launchEnvironments!)
     }
 }

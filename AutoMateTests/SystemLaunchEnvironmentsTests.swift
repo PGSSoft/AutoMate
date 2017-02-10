@@ -1,5 +1,5 @@
 //
-//  SystemLaunchEnviromentsTests.swift
+//  SystemLaunchEnvironmentsTests.swift
 //  AutoMate
 //
 //  Created by Joanna Bednarz on 31/01/2017.
@@ -9,42 +9,42 @@
 import XCTest
 import AutoMate
 
-class SystemLaunchEnviromentsTests: XCTestCase {
+class SystemLaunchEnvironmentsTests: XCTestCase {
 
     // MARK: Tests
-    func testKeyValueLaunchEnviroment() {
+    func testKeyValueLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.pgsWithLoveLaunchEnviroment]), ["MADE_WITH_LOVE_BY": "PGS"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.pgsWithLoveLaunchEnviroment, LaunchOptionsFactory.frameworkLaunchEnviroment]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]), ["MADE_WITH_LOVE_BY": "PGS"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.pgsWithLoveLaunchEnvironment, LaunchOptionsFactory.frameworkLaunchEnvironment]),
                        ["MADE_WITH_LOVE_BY": "PGS", "FRAMEWORK": "Automate"])
     }
 
-    func testMultipleKeyValueLaunchEnviroment() {
+    func testMultipleKeyValueLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnviroments]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnvironments]),
                        ["SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnviroments, LaunchOptionsFactory.accomplishedLaunchEnviroments]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.accomplishedLaunchEnvironments]),
                        ["SAVED_TIME": "of_developers_for_coffee", "MADE_SMILE": "qa_specialists", "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall"])
     }
 
-    func testEventLaunchEnviroment() {
+    func testEventLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnviroment]), ["AM_EVENTS_KEY": "nil:this_week"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.futureEventsLaunchEnviroment, LaunchOptionsFactory.thisWeekEventsLaunchEnviroment]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]), ["AM_EVENTS_KEY": "nil:this_week"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.futureEventsLaunchEnvironment, LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]),
                        ["AM_EVENTS_KEY": "Resources:next_week, nil:recurring_monthly"])
     }
 
-    func testCombinedLaunchEnviroment() {
+    func testCombinedLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnviroment, LaunchOptionsFactory.pgsWithLoveLaunchEnviroment]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
                        ["AM_EVENTS_KEY": "nil:this_week", "MADE_WITH_LOVE_BY": "PGS"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnviroments, LaunchOptionsFactory.pgsWithLoveLaunchEnviroment]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
                        ["SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnviroment, LaunchOptionsFactory.goalsLaunchEnviroments, LaunchOptionsFactory.pgsWithLoveLaunchEnviroment]),
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
                        ["AM_EVENTS_KEY": "nil:this_week", "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS"])
     }
 

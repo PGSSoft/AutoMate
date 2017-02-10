@@ -28,10 +28,10 @@ public extension Array where Element: LaunchArgumentValue {
     }
 }
 
-public extension Array where Element: LaunchEnviromentValue {
+public extension Array where Element: LaunchEnvironmentValue {
 
-    /// Elements of the array formatted as a launch enviroment value.
-    var launchEnviroment: String {
+    /// Elements of the array formatted as a launch environment value.
+    var launchEnvironment: String {
         return map({ $0.value }).joined(separator: ", ")
     }
 }

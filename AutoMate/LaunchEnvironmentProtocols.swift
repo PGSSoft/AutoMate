@@ -1,5 +1,5 @@
 //
-//  LaunchEnviromentProtocols.swift
+//  LaunchEnvironmentProtocols.swift
 //  AutoMate
 //
 //  Created by Joanna Bednarz on 26/01/2017.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-// MARK: - Launch Enviroment Protocol
-/// Protocol defining minimal requirements of launch enviroment option to be handled by framework.
+// MARK: - Launch Environment Protocol
+/// Protocol defining minimal requirements of launch environment option to be handled by framework.
 /// Usage example:
 ///
 /// ```swift
-/// public struct SimpleLaunchEnviroment: LaunchEnviromentProtocol {
+/// public struct SimpleLaunchEnvironment: LaunchEnvironmentProtocol {
 ///
 ///     public typealias Value = String
 ///     public let value: String
@@ -27,19 +27,19 @@ import Foundation
 /// ```
 /// - note:
 /// `internal` initializer would be generated automatically but it would not fulfill requirement of `public` protocol.
-public protocol LaunchEnviromentProtocol: LaunchOption {
+public protocol LaunchEnvironmentProtocol: LaunchOption {
 
     // MARK: Associated types
-    associatedtype Value: LaunchEnviromentValue
+    associatedtype Value: LaunchEnvironmentValue
 }
 
-// MARK: - Launch Enviroment With Multiple Values
-/// Protocol defining minimal requirements for launch enviroment option with multiple values.
+// MARK: - Launch Environment With Multiple Values
+/// Protocol defining minimal requirements for launch environment option with multiple values.
 /// Provides default implementation for ```ExpressibleByArrayLiteral``` protocol.
 /// Usage example:
 ///
 /// ```swift
-/// public struct ArrayLaunchEnviroment: LaunchEnviromentWithMultipleValues {
+/// public struct ArrayLaunchEnvironment: LaunchEnvironmentWithMultipleValues {
 ///
 ///     public typealias Value = String
 ///     public let valuesCollection: [String]
@@ -51,7 +51,7 @@ public protocol LaunchEnviromentProtocol: LaunchOption {
 /// ```
 /// - note:
 /// `internal` initializer would be generated automatically but it would not fulfill requirement of `public` protocol.
-public protocol LaunchEnviromentWithMultipleValues: LaunchEnviromentProtocol, ExpressibleByArrayLiteral {
+public protocol LaunchEnvironmentWithMultipleValues: LaunchEnvironmentProtocol, ExpressibleByArrayLiteral {
 
     // MARK: Properties
     var valuesCollection: [Value] { get }
@@ -61,11 +61,11 @@ public protocol LaunchEnviromentWithMultipleValues: LaunchEnviromentProtocol, Ex
 }
 
 // MARK: Default implementation
-extension LaunchEnviromentWithMultipleValues {
+extension LaunchEnvironmentWithMultipleValues {
 
     // MARK: Properties
     public var launchEnvironments: [String: String]? {
-        return [uniqueIdentifier: valuesCollection.launchEnviroment]
+        return [uniqueIdentifier: valuesCollection.launchEnvironment]
     }
 
     // MARK: Initialization

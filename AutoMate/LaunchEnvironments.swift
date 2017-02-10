@@ -1,5 +1,5 @@
 //
-//  LaunchEnviroments.swift
+//  LaunchEnvironments.swift
 //  AutoMate
 //
 //  Created by Joanna Bednarz on 20/01/2017.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-// MARK: - Launch Enviroments
+// MARK: - Launch Environments
 /// Most basic and generic structure to pass (key: value) pairs through `TestLauncher`.
 /// Usage example:
 ///
 /// ```swift
-/// let launchEnviromentDictionary: LaunchEnviroments = ["CORPORATION_KEY": "PGS", "PROJECT_KEY": "AutoMate"]
-public struct LaunchEnviroments: LaunchEnviromentProtocol, ExpressibleByDictionaryLiteral {
+/// let launchEnvironmentDictionary: LaunchEnvironments = ["CORPORATION_KEY": "PGS", "PROJECT_KEY": "AutoMate"]
+public struct LaunchEnvironments: LaunchEnvironmentProtocol, ExpressibleByDictionaryLiteral {
 
     // MARK: Typealiases
     public typealias Key = String
@@ -37,13 +37,13 @@ public struct LaunchEnviroments: LaunchEnviromentProtocol, ExpressibleByDictiona
     }
 }
 
-// MARK: - Launch Enviroment
-/// Simple implementation of `LaunchEnviroment` that wraps single (key: value) pair for `TestLauncher`.
+// MARK: - Launch Environment
+/// Simple implementation of `LaunchEnvironment` that wraps single (key: value) pair for `TestLauncher`.
 /// Usage example:
 ///
 /// ```swift
-/// let launchEnviromentOption = LaunchEnviroment(key: "MADE_WITH_LOVE_BY", value: "PGS")
-public struct LaunchEnviroment: LaunchEnviromentProtocol {
+/// let launchEnvironmentOption = LaunchEnvironment(key: "MADE_WITH_LOVE_BY", value: "PGS")
+public struct LaunchEnvironment: LaunchEnvironmentProtocol {
 
     // MARK: Typealiases
     public typealias Value = String

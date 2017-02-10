@@ -15,13 +15,13 @@ enum LaunchOptionsFactory {
     static let singleLanguageLaunchArgument = SystemLanguages([.EnglishUnitedStates])
     static let multiLanguageLaunchArgument = SystemLanguages([.EnglishUnitedStates, .Hungarian])
 
-    static let pgsWithLoveLaunchEnviroment = LaunchEnviroment(key: "MADE_WITH_LOVE_BY", value: "PGS")
-    static let frameworkLaunchEnviroment = LaunchEnviroment(key: "FRAMEWORK", value: "Automate")
+    static let pgsWithLoveLaunchEnvironment = LaunchEnvironment(key: "MADE_WITH_LOVE_BY", value: "PGS")
+    static let frameworkLaunchEnvironment = LaunchEnvironment(key: "FRAMEWORK", value: "Automate")
 
-    static let goalsLaunchEnviroments: LaunchEnviroments = ["SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall"]
-    static let accomplishedLaunchEnviroments: LaunchEnviroments = ["SAVED_TIME": "of_developers_for_coffee", "MADE_SMILE": "qa_specialists"]
+    static let goalsLaunchEnvironments: LaunchEnvironments = ["SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall"]
+    static let accomplishedLaunchEnvironments: LaunchEnvironments = ["SAVED_TIME": "of_developers_for_coffee", "MADE_SMILE": "qa_specialists"]
 
-    static let thisWeekEventsLaunchEnviroment: EventLaunchEnviroment = [ LaunchEnviromentResourceValue(fileName: "this_week", bundleName: nil)]
-    static let futureEventsLaunchEnviroment = EventLaunchEnviroment(resources: ("next_week", "Resources"), ("recurring_monthly", nil))
+    static let thisWeekEventsLaunchEnvironment: EventLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "this_week", bundleName: nil)]
+    static let futureEventsLaunchEnvironment = EventLaunchEnvironment(resources: ("next_week", "Resources"), ("recurring_monthly", nil))
 
 }

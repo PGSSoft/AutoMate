@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// Default implementation LaunchEnviromentValue for string.
+/// Default implementation LaunchEnvironmentValue for string.
 /// Usage example:
 ///
 /// ```swift
-/// public struct StringLaunchEnviroment: LaunchEnviromentProtocol {
+/// public struct StringLaunchEnvironment: LaunchEnvironmentProtocol {
 ///
 ///     public typealias Value = String
 ///     public let value: Value
@@ -26,7 +26,7 @@ import Foundation
 /// ```
 /// - note:
 /// `internal` initializer would be generated automatically but it would not fulfill requirement of `public` protocol.
-extension String: LaunchEnviromentValue {
+extension String: LaunchEnvironmentValue {
 
     // MARK: Properties
     public var value: String {

@@ -32,17 +32,17 @@
 		E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D91CFF0885007531D2 /* SystemCountry.swift */; };
 		E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */; };
 		E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */; };
-		E481AD451E40CF5700049427 /* SystemLaunchEnviromentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481AD441E40CF5700049427 /* SystemLaunchEnviromentsTests.swift */; };
+		E481AD451E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481AD441E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift */; };
 		E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
 		E487A11E1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */; };
-		E4B2C9711E31F5D600737688 /* LaunchEnviroments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C9701E31F5D600737688 /* LaunchEnviroments.swift */; };
-		E4C20FE81E39DBBE00052F11 /* SystemLaunchEnviroments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE71E39DBBE00052F11 /* SystemLaunchEnviroments.swift */; };
+		E4B2C9711E31F5D600737688 /* LaunchEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C9701E31F5D600737688 /* LaunchEnvironments.swift */; };
+		E4C20FE81E39DBBE00052F11 /* SystemLaunchEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE71E39DBBE00052F11 /* SystemLaunchEnvironments.swift */; };
 		E4C20FEA1E39E73100052F11 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE91E39E73100052F11 /* String.swift */; };
 		E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */; };
 		E4D637CF1D01B42F00405514 /* ApplicationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D637CE1D01B42F00405514 /* ApplicationsFactory.swift */; };
 		E4D637D11D01B80200405514 /* TestLauncherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D637D01D01B80200405514 /* TestLauncherTests.swift */; };
-		E4DDEDA81E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA71E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift */; };
-		E4DDEDAA1E3A351300C2F2A1 /* LaunchEnviromentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA91E3A351300C2F2A1 /* LaunchEnviromentValue.swift */; };
+		E4DDEDA81E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA71E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift */; };
+		E4DDEDAA1E3A351300C2F2A1 /* LaunchEnvironmentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */; };
 		E4EE41C61CFD7246004F0FFE /* AutoMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E425D55D1CED928100A7CA03 /* AutoMate.framework */; };
 		E4EE41CD1CFD796A004F0FFE /* LaunchOptionsSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */; };
 /* End PBXBuildFile section */
@@ -85,17 +85,17 @@
 		E46BE5D91CFF0885007531D2 /* SystemCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCountry.swift; sourceTree = "<group>"; };
 		E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareKeyboard.swift; sourceTree = "<group>"; };
 		E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareKeyboard.swift; sourceTree = "<group>"; };
-		E481AD441E40CF5700049427 /* SystemLaunchEnviromentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchEnviromentsTests.swift; sourceTree = "<group>"; };
+		E481AD441E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchEnvironmentsTests.swift; sourceTree = "<group>"; };
 		E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSet.swift; sourceTree = "<group>"; };
 		E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchArgumentsTests.swift; sourceTree = "<group>"; };
-		E4B2C9701E31F5D600737688 /* LaunchEnviroments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnviroments.swift; sourceTree = "<group>"; };
-		E4C20FE71E39DBBE00052F11 /* SystemLaunchEnviroments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchEnviroments.swift; sourceTree = "<group>"; };
+		E4B2C9701E31F5D600737688 /* LaunchEnvironments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironments.swift; sourceTree = "<group>"; };
+		E4C20FE71E39DBBE00052F11 /* SystemLaunchEnvironments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchEnvironments.swift; sourceTree = "<group>"; };
 		E4C20FE91E39E73100052F11 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchArguments.swift; sourceTree = "<group>"; };
 		E4D637CE1D01B42F00405514 /* ApplicationsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsFactory.swift; sourceTree = "<group>"; };
 		E4D637D01D01B80200405514 /* TestLauncherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncherTests.swift; sourceTree = "<group>"; };
-		E4DDEDA71E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnviromentProtocols.swift; sourceTree = "<group>"; };
-		E4DDEDA91E3A351300C2F2A1 /* LaunchEnviromentValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnviromentValue.swift; sourceTree = "<group>"; };
+		E4DDEDA71E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentProtocols.swift; sourceTree = "<group>"; };
+		E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentValue.swift; sourceTree = "<group>"; };
 		E4EE41C11CFD7246004F0FFE /* AutoMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EE41C51CFD7246004F0FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSetTests.swift; sourceTree = "<group>"; };
@@ -169,12 +169,12 @@
 				966B92371E40D69A006E6A18 /* AppUITestCase.swift */,
 				C9371A471E2F542100808AFC /* Locator.swift */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
-				E4C20FE71E39DBBE00052F11 /* SystemLaunchEnviroments.swift */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
 				E431922C1E2E194800B019C1 /* Basic structures */,
 				E4535A471CEDD24B008965DD /* Foundation extensions */,
 				E47BB6F41CF310F200229D63 /* Models */,
 				966B92321E40D15B006E6A18 /* ViewObject */,
+				E4C20FE71E39DBBE00052F11 /* SystemLaunchEnvironments.swift */,
 				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
 			);
 			path = AutoMate;
@@ -183,10 +183,10 @@
 		E431922C1E2E194800B019C1 /* Basic structures */ = {
 			isa = PBXGroup;
 			children = (
+				E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */,
+				E4DDEDAB1E3A353400C2F2A1 /* Launch Environment */,
 				E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
-				E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */,
-				E4DDEDAB1E3A353400C2F2A1 /* Launch Enviroment */,
 			);
 			name = "Basic structures";
 			sourceTree = "<group>";
@@ -222,14 +222,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E4DDEDAB1E3A353400C2F2A1 /* Launch Enviroment */ = {
+		E4DDEDAB1E3A353400C2F2A1 /* Launch Environment */ = {
 			isa = PBXGroup;
 			children = (
-				E4DDEDA71E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift */,
-				E4B2C9701E31F5D600737688 /* LaunchEnviroments.swift */,
-				E4DDEDA91E3A351300C2F2A1 /* LaunchEnviromentValue.swift */,
+				E4B2C9701E31F5D600737688 /* LaunchEnvironments.swift */,
+				E4DDEDA71E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift */,
+				E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */,
 			);
-			name = "Launch Enviroment";
+			name = "Launch Environment";
 			sourceTree = "<group>";
 		};
 		E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */ = {
@@ -248,9 +248,9 @@
 				E4EE41C51CFD7246004F0FFE /* Info.plist */,
 				E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */,
 				E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */,
-				E481AD441E40CF5700049427 /* SystemLaunchEnviromentsTests.swift */,
 				E4D637D01D01B80200405514 /* TestLauncherTests.swift */,
 				E43B229A1CFEC17A00AE6B40 /* Factories */,
+				E481AD441E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift */,
 			);
 			path = AutoMateTests;
 			sourceTree = "<group>";
@@ -389,9 +389,9 @@
 				E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */,
 				E43192311E2E19C700B019C1 /* LaunchArgumentValue.swift in Sources */,
 				E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */,
-				E4DDEDA81E3A34B800C2F2A1 /* LaunchEnviromentProtocols.swift in Sources */,
-				E4DDEDAA1E3A351300C2F2A1 /* LaunchEnviromentValue.swift in Sources */,
 				966B92361E40D470006E6A18 /* BaseAppView.swift in Sources */,
+				E4DDEDA81E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift in Sources */,
+				E4DDEDAA1E3A351300C2F2A1 /* LaunchEnvironmentValue.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
 				1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */,
 				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
@@ -412,8 +412,8 @@
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
 				966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */,
 				1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */,
-				E4C20FE81E39DBBE00052F11 /* SystemLaunchEnviroments.swift in Sources */,
-				E4B2C9711E31F5D600737688 /* LaunchEnviroments.swift in Sources */,
+				E4C20FE81E39DBBE00052F11 /* SystemLaunchEnvironments.swift in Sources */,
+				E4B2C9711E31F5D600737688 /* LaunchEnvironments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +425,7 @@
 				E487A11E1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift in Sources */,
 				E4D637CF1D01B42F00405514 /* ApplicationsFactory.swift in Sources */,
 				E43B229C1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift in Sources */,
-				E481AD451E40CF5700049427 /* SystemLaunchEnviromentsTests.swift in Sources */,
+				E481AD451E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift in Sources */,
 				E4D637D11D01B80200405514 /* TestLauncherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ public protocol Application {
     /// Array where generated arguments will be appended.
     var launchArguments: [String] { get set }
 
-    /// Dictionary where launch enviroment variables will be appended.
+    /// Dictionary where launch environment variables will be appended.
     var launchEnvironment: [String: String] { get set }
 }
 
