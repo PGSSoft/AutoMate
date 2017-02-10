@@ -41,6 +41,10 @@ open class MainView: BaseAppView {
         return menu(withTitle: Locators.tableViewMenu)
     }
 
+    open var contactsView: XCUIElement {
+        return menu(withTitle: Locators.contactsView)
+    }
+
     // MARK: Actions
     open func goToTextInputMenu() {
         textInputMenu.tap()
@@ -64,6 +68,10 @@ open class MainView: BaseAppView {
 
     open func goToTableViewMenu() {
         tableViewMenu.tap()
+    }
+
+    open func goToContactsMenu() {
+        contactsView.tap()
     }
 
     // MARK: Helpers
@@ -93,5 +101,6 @@ private extension MainView {
         case locationMenu = "Location"
         case middleButtonMenu = "Middle button"
         case tableViewMenu = "Table view"
+        case contactsView = "Contacts view"
     }
 }

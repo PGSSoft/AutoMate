@@ -10,19 +10,4 @@ import XCTest
 import AutoMate
 
 // MARK: - LocationView
-open class LocationView: BaseAppView, PushedView {
-
-    // MARK: Elements
-    open var deniedPermissionLabel: XCUIElement {
-        return view.staticTexts[Locators.denied]
-    }
-}
-
-// MARK: - Locators
-private extension LocationView {
-
-    enum Locators: String, Locator {
-        case permissionLabel
-        case denied = "Denied"
-    }
-}
+open class LocationView: BaseAppView, PushedView {}

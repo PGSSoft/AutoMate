@@ -182,4 +182,17 @@ public extension XCUIElementQuery {
         let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
         return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
     }
+
+    /**
+     Returns array of existing elements matching given label.
+
+     - parameter containingLabels: List of messages.
+     - returns: Array of XCUIElement elements.
+    */
+    public func elements(containingLabels array: [String]) -> [XCUIElement] {
+        // TODO: Provide regex to match exact string.
+        return array
+            .flatMap {element(withLabelContaining: $0)}
+            .filter {$0.exists}
+    }
 }

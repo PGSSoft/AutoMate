@@ -38,14 +38,20 @@ public protocol SystemAlert {
 
 extension SystemAlertAllow where Self: SystemAlert {
     public var allowElement: XCUIElement {
-        // TODO: Provide implementation
-        return XCUIElement()
+        guard let button = alert.any.elements(containingLabels: type(of: self).allow).first else {
+            preconditionFailure()
+        }
+
+        return  button
     }
 }
 
 extension SystemAlertDeny where Self: SystemAlert {
     public var denyElement: XCUIElement {
-        // TODO: Provide implementation
-        return XCUIElement()
+        guard let button = alert.any.elements(containingLabels: type(of: self).deny).first else {
+            preconditionFailure()
+        }
+
+        return  button
     }
 }

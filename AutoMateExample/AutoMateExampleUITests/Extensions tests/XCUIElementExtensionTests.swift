@@ -17,6 +17,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     lazy var scrollView: ScrollView = ScrollView(in: self.app)
     lazy var middleButtonView: MiddleButtonView = MiddleButtonView(in: self.app)
     lazy var locationView: LocationView = LocationView(in: self.app)
+    lazy var contactsView: ContactsView = ContactsView(in: self.app)
 
     // MARK: Set up
     override func setUp() {
@@ -105,19 +106,57 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertTrue(middleButtonView.isLabelDisplayed())
     }
 
-    /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
-    func testSystemAlertButton() {
-        mainView.goToLocationMenu()
+    /// This test relies on permission being cleared before starting the test. This is currently done done by ModelGenerator.
+    func testLocationSystemAlertButton() {
+        let token = addUIInterruptionMonitor(withDescription: "Location") { (alert) -> Bool in
+            let services: [SystemAlert.Type] = [AddressBookAlert.self,
+                                                MediaLibraryAlert.self,
+                                                SpeechRecognitionAlert.self,
+                                                SiriAlert.self,
+                                                RemindersAlert.self,
+                                                PhotosAlert.self,
+                                                CameraAlert.self,
+                                                BluetoothPeripheralAlert.self,
+                                                MicrophoneAlert.self,
+                                                CallsAlert.self,
+                                                CalendarAlert.self,
+                                                MotionAlert.self,
+                                                WillowAlert.self]
 
-        addUIInterruptionMonitor(withDescription: "Location") { (element) -> Bool in
-            element.tapLeftButtonOnSystemAlert()
+            services.forEach({ (service) in
+                XCTAssertNil(service.init(element: alert), "Should not be able to create \(service) object.")
+            })
+
+            let locationAlert = LocationAlert(element: alert)!
+            locationAlert.denyElement.tap()
+
             return true
         }
 
+        mainView.goToLocationMenu()
         // interruption won't happen without some kind of action
         app.tap()
+        locationView.goBack()
+        removeUIInterruptionMonitor(token)
+    }
 
-        wait(forExistOf: locationView.deniedPermissionLabel)
+    /// This test relies on permission being cleared before starting the test. This is currently done by ModelGenerator.
+    func testContactsSystemAlertButton() {
+        let token = addUIInterruptionMonitor(withDescription: "Contacts") { (alert) -> Bool in
+            XCTAssertNil(LocationAlert(element: alert))
+            XCTAssertNil(MediaLibraryAlert(element: alert))
+
+            let contactsAlert = AddressBookAlert(element: alert)!
+            contactsAlert.denyElement.tap()
+
+            return true
+        }
+
+        mainView.goToContactsMenu()
+        // interruption won't happen without some kind of action
+        app.tap()
+        contactsView.goBack()
+        removeUIInterruptionMonitor(token)
     }
 
     // MARK: Test for movie

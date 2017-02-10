@@ -20,6 +20,7 @@
 		966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedView.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
+		C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
@@ -72,6 +73,7 @@
 		966B923D1E40DA24006E6A18 /* PushedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedView.swift; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
+		C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestAlerts.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		E47BB6F41CF310F200229D63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */,
 				1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */,
 				E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */,
 				E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */,
@@ -413,6 +416,7 @@
 				966B92381E40D69A006E6A18 /* AppUITestCase.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
 				E431922F1E2E199400B019C1 /* LaunchArgumentProtocols.swift in Sources */,
+				C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
 				966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */,
 				1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */,

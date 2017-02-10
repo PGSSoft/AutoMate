@@ -42,7 +42,13 @@
                   Identifier = "AdditionalExtensionsTests/testForMovie()">
                </Test>
                <Test
+                  Identifier = "XCUIElementExtensionTests/testContactsSystemAlertButton()">
+               </Test>
+               <Test
                   Identifier = "XCUIElementExtensionTests/testForMovie()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testLocationSystemAlertButton()">
                </Test>
                <Test
                   Identifier = "XCUIElementExtensionTests/testSystemAlertButton()">
