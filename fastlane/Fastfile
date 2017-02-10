@@ -26,6 +26,7 @@ platform :ios do
     # Options
     DERIVED_DATA_PATH = ENV['GYM_DERIVED_DATA_PATH']
     OUTPUT_PATH = ENV['GYM_OUTPUT_DIRECTORY']
+    ENV['XCPRETTY_JSON_FILE_OUTPUT'] = File.join(OUTPUT_PATH, "result.json")
 
     # Remove output folder
     if OUTPUT_PATH && File.exist?(OUTPUT_PATH)

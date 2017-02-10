@@ -37,6 +37,13 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
                        ["AM_EVENTS_KEY": "Resources:next_week, nil:recurring_monthly"])
     }
 
+    func testAnimationLaunchEnvironment() {
+
+        XCTAssertEqual(build(with: []), [:])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.turnOffAnimationLaunchEnvironment]), ["AM_ANIMATION_KEY": "false"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.turnOnAnimationLaunchEnvironment]), ["AM_ANIMATION_KEY": "true"])
+    }
+
     func testCombinedLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
@@ -46,6 +53,8 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
                        ["SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment]),
                        ["AM_EVENTS_KEY": "nil:this_week", "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment, LaunchOptionsFactory.goalsLaunchEnvironments, LaunchOptionsFactory.pgsWithLoveLaunchEnvironment, LaunchOptionsFactory.turnOffAnimationLaunchEnvironment]),
+                       ["AM_EVENTS_KEY": "nil:this_week", "SIMPLIFY": "testing_iOS_app_ui", "FIX_BUGS": "for_those_who_cant_wait_for_fall", "MADE_WITH_LOVE_BY": "PGS", "AM_ANIMATION_KEY": "false"])
     }
 
     // MARK: Helpers

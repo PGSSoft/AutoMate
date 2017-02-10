@@ -31,3 +31,24 @@ extension LaunchEnvironmentValue where Self: RawRepresentable, Self.RawValue == 
         return rawValue
     }
 }
+
+// MARK: - Launch enviroment values
+/// Represents launch environment value of type Bool.
+///
+/// - `true`: `true` value
+/// - `false`: `false` value
+public enum BooleanLaunchEnvironmentValue: String, ExpressibleByBooleanLiteral, LaunchEnvironmentValue {
+
+    /// Value of true, or 1.
+    case `true`
+    /// Value of false, or 0.
+    case `false`
+
+    // MARK: BooleanLiteralConvertible
+    /// Initializes boolean launch environment with boolean literal type.
+    ///
+    /// - Parameter value: Literal to use during initialization.
+    public init(booleanLiteral value: BooleanLiteralType) {
+        self = value ? .true : .false
+    }
+}

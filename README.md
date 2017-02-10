@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div align="center">
     <img src="assets/logo.png" alt="AutoMate, made by PGS Software" />
     <br />
     <img src="assets/made-with-love-by-PGS.png" />
@@ -83,8 +83,8 @@ github "PGSSoft/AutoMate"
 - [x] `XCTest` extensions
 - [x] Added CoreData launch arguments
 - [ ] Disable UIView animations
-- [ ] Strong-typed helpers: localizers, view object templates
-- [ ] Base XCTestCase template
+- [x] Strong-typed helpers: localizers, view object templates
+- [x] Base XCTestCase template
 - [ ] Improve launch options type safety
 - [ ] Improve handling of system alerts
 - [x] Companion library for the app // I would add link to repo when there will be one

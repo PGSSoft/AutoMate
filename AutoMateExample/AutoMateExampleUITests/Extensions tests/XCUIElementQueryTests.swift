@@ -18,7 +18,7 @@ class XCUIElementQueryTests: AppUITestCase {
     // MARK: Set up
     override func setUp() {
         super.setUp()
-        TestLauncher.configure(app).launch()
+        TestLauncher.configureWithDefaultOptions(app).launch()
         wait(forVisibilityOf: mainView)
     }
 
