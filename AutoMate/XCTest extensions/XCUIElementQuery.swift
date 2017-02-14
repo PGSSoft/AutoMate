@@ -58,7 +58,17 @@ public extension XCUIElementQuery {
      - returns: XCUIElement that matches the type and label that begins with given text.
      */
     public func element(withLabelMatching text: String, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        return element(matching: NSPredicate(format: "label \(comparisonOperator.rawValue) '\(text)'"))
+        return element(matching: NSPredicate(format: "label \(comparisonOperator.rawValue) %@", text))
+    }
+
+    /// Returns array of existing elements matching given labels.
+    ///
+    /// - Parameter texts: List of labels.
+    /// - Returns: Array of XCUIElement elements.
+    public func elements(withLabelsMatching texts: [String], comparisonOperator: StringComparisonOperator = .equals) -> [XCUIElement] {
+        return texts
+            .flatMap({ element(withLabelMatching: $0, comparisonOperator: comparisonOperator) })
+            .filter {$0.exists}
     }
 
     /**
@@ -70,7 +80,7 @@ public extension XCUIElementQuery {
      - returns: XCUIElement that matches the type and label that begins with given text.
      */
     public func element(withIdentifier identifier: String, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        let predicate = NSPredicate(format: "identifier == '\(identifier)' AND label \(labelComparisonOperator.rawValue) '\(label)'")
+        let predicate = NSPredicate(format: "identifier == %@ AND label \(labelComparisonOperator.rawValue) %@", identifier, label)
         return element(matching: predicate)
     }
 
@@ -92,7 +102,10 @@ public extension XCUIElementQuery {
 
         return query.element
     }
+}
 
+// MARK: - Shorted
+public extension XCUIElementQuery {
     /**
      - parameter text: String searched prefix
      - returns: XCUIElement that matches the type and label that begins with given text.
@@ -108,6 +121,22 @@ public extension XCUIElementQuery {
     public func element(withLabelContaining text: String) -> XCUIElement {
         return element(withLabelMatching: text, comparisonOperator: .contains)
     }
+
+    /// Returns array of existing elements containing given labels.
+    ///
+    /// - Parameter texts: List of labels.
+    /// - Returns: Array of XCUIElement elements.
+    public func elements(withLabelsContaining texts: [String]) -> [XCUIElement] {
+        return elements(withLabelsMatching: texts, comparisonOperator: .contains)
+    }
+
+    /// Returns array of existing elements matching expression given labels.
+    ///
+    /// - Parameter texts: List of labels.
+    /// - Returns: Array of XCUIElement elements.
+    public func elements(withLabelsMatchingExpressions texts: [String]) -> [XCUIElement] {
+        return elements(withLabelsMatching: texts, comparisonOperator: .matches)
+    }
 }
 
 // MARK: - Locators
@@ -117,6 +146,17 @@ public extension XCUIElementQuery {
      */
     public subscript(locator: Locator) -> XCUIElement {
         return self[locator.identifier]
+    }
+
+    /**
+     Returns element with label maching provided Locator.
+
+     - parameter locator: Locator to search for.
+     - parameter comparisonOperator: Operation to use when performing comparison.
+     - returns: XCUIElement that matches the type and label that begins with given locator.
+     */
+    public func element(withLabelMatchingLocator locator: Locator, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withLabelMatching: locator.identifier, comparisonOperator: comparisonOperator)
     }
 
     /**
@@ -133,17 +173,6 @@ public extension XCUIElementQuery {
      */
     public func element(withLabelContaining locator: Locator) -> XCUIElement {
         return element(withLabelContaining: locator.identifier)
-    }
-
-    /**
-     Returns element with label maching provided Locator.
-
-     - parameter locator: Locator to search for.
-     - parameter comparisonOperator: Operation to use when performing comparison.
-     - returns: XCUIElement that matches the type and label that begins with given locator.
-     */
-    public func element(withLabelMatchingLocator locator: Locator, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        return element(withLabelMatching: locator.identifier, comparisonOperator: comparisonOperator)
     }
 
     /**
@@ -181,18 +210,5 @@ public extension XCUIElementQuery {
     public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
         return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
-    }
-
-    /**
-     Returns array of existing elements matching given label.
-
-     - parameter containingLabels: List of messages.
-     - returns: Array of XCUIElement elements.
-    */
-    public func elements(containingLabels array: [String]) -> [XCUIElement] {
-        // TODO: Provide regex to match exact string.
-        return array
-            .flatMap {element(withLabelContaining: $0)}
-            .filter {$0.exists}
     }
 }
