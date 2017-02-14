@@ -140,7 +140,7 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -225,7 +225,7 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -274,7 +274,7 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -323,7 +323,7 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -372,7 +372,7 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -421,7 +421,7 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -472,7 +472,7 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -522,7 +522,7 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -571,7 +571,7 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -620,7 +620,7 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -669,7 +669,7 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -719,7 +719,7 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
@@ -769,7 +769,7 @@ public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     public var alert: XCUIElement
 
     public init?(element: XCUIElement) {
-        guard let _ = element.any.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
+        guard let _ = element.staticTexts.elements(withLabelsMatchingExpressions: type(of: self).messages).first else {
             return nil
         }
 
