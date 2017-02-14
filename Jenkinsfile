@@ -87,16 +87,14 @@ node("ios_ui") {
         // Stages
         // Prepare node
         // - clean workspace
-        // - clone repository
         // - kill simulator
+        // - clone repository
         // - update bundle
         // - reset simulators
         stage("Prepare & clone") {
           deleteDir()
-
-          checkout scm
-
           killSimulator()
+          checkout scm
 
           sh '''
             # RBENV

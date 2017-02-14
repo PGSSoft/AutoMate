@@ -69,13 +69,16 @@
                   Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboard()">
                </Test>
                <Test
+                  Identifier = "XCUIElementExtensionTests/testContactsSystemAlertButton()">
+               </Test>
+               <Test
                   Identifier = "XCUIElementExtensionTests/testIsVisible()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testSimpleSwipe()">
+                  Identifier = "XCUIElementExtensionTests/testLocationSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testSystemAlertButton()">
+                  Identifier = "XCUIElementExtensionTests/testSimpleSwipe()">
                </Test>
                <Test
                   Identifier = "XCUIElementExtensionTests/testTapWithOffset()">
