@@ -124,7 +124,7 @@ class XCUIElementExtensionTests: AppUITestCase {
                                                 MotionAlert.self,
                                                 WillowAlert.self]
 
-            services.forEach({ (service) in
+            services.forEach({ service in
                 XCTAssertNil(service.init(element: alert), "Should not be able to create \(service) object.")
             })
 
