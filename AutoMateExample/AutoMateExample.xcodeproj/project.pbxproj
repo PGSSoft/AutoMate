@@ -32,6 +32,9 @@
 		969CC2891E421FE500995A49 /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingView.swift */; };
 		969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */; };
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
+		96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */; };
+		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
+		96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */; };
 		C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */; };
 		C9F559731E4DC1C90090BBD9 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F559721E4DC1C90090BBD9 /* ContactsView.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +115,9 @@
 		969CC2881E421FE500995A49 /* AppearingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
 		969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalExtensionsTests.swift; sourceTree = "<group>"; };
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
+		96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
+		96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTableViewCell.swift; sourceTree = "<group>"; };
+		96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitViewController.swift; sourceTree = "<group>"; };
 		C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		C9F559721E4DC1C90090BBD9 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,9 +168,12 @@
 				1F9891A11D409547007CD2B0 /* AppDelegate.swift */,
 				1F8646151D64905E0033749B /* AppearingViewController.swift */,
 				C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */,
+				96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */,
 				1F287A4A1D65845C0062F45F /* LocationViewController.swift */,
 				965D56AC1E35F4C20056EE05 /* MainViewController.swift */,
 				1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */,
+				96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */,
+				96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */,
 				962FAAC31D9144F6000592EF /* ScrollingViewController.swift */,
 				1F9891A81D409547007CD2B0 /* Assets.xcassets */,
 				1FFFC1D51D477CFD00EBB70D /* Localizable.strings */,
@@ -372,9 +381,12 @@
 				1F8646161D64905E0033749B /* AppearingViewController.swift in Sources */,
 				C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */,
 				1F287A4B1D65845C0062F45F /* LocationViewController.swift in Sources */,
+				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
 				962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */,
 				965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */,
+				96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */,
 				1F39828C1D65C2D900AC089C /* MiddleButtonViewController.swift in Sources */,
+				96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */,
 				1F9891A21D409547007CD2B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
