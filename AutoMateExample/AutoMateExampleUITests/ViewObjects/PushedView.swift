@@ -25,5 +25,5 @@ public extension PushedView {
 
 // MARK: - Locators
 private enum Locators: String, Locator {
-    case backButton = "Test views"
+    case backButton = "Back"
 }

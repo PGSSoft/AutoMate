@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHomeKitUsageDescription</key>
-	<string>Test for home kit request</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Test for contacts request</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Tap Don&apos;t Allow</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +22,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>Test for Contacts request</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Test for HealthKit share request</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Test for HealthKit update request</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>Test for HomeKit request</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Test for Location request</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -35,6 +39,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>healthkit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

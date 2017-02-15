@@ -26,6 +26,8 @@
 		9641182B1E41EF7A0011C776 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182A1E41EF7A0011C776 /* MainView.swift */; };
 		9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */; };
 		965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D56AC1E35F4C20056EE05 /* MainViewController.swift */; };
+		966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A111E5488300026AE29 /* HealthKitViewController.swift */; };
+		966A7A171E548D7F0026AE29 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966A7A161E548D7F0026AE29 /* HealthKit.framework */; };
 		969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2811E4216AE00995A49 /* TextInputView.swift */; };
 		969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2841E421AE700995A49 /* MiddleButtonView.swift */; };
 		969CC2871E421D2500995A49 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2861E421D2500995A49 /* LocationView.swift */; };
@@ -109,6 +111,9 @@
 		9641182A1E41EF7A0011C776 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQueryTests.swift; sourceTree = "<group>"; };
 		965D56AC1E35F4C20056EE05 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		966A7A111E5488300026AE29 /* HealthKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
+		966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoMateExample.entitlements; sourceTree = "<group>"; };
+		966A7A161E548D7F0026AE29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		969CC2811E4216AE00995A49 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		969CC2841E421AE700995A49 /* MiddleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonView.swift; sourceTree = "<group>"; };
 		969CC2861E421D2500995A49 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966A7A171E548D7F0026AE29 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,7 @@
 				1F9891A01D409547007CD2B0 /* AutoMateExample */,
 				1F9891B51D409547007CD2B0 /* AutoMateExampleUITests */,
 				1F98919F1D409547007CD2B0 /* Products */,
+				966A7A151E548D7F0026AE29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,12 +169,14 @@
 		1F9891A01D409547007CD2B0 /* AutoMateExample */ = {
 			isa = PBXGroup;
 			children = (
+				966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */,
 				1F9891AD1D409547007CD2B0 /* Info.plist */,
 				1F9892391D409B16007CD2B0 /* LaunchScreen.storyboard */,
 				1F9892381D409B16007CD2B0 /* Main.storyboard */,
 				1F9891A11D409547007CD2B0 /* AppDelegate.swift */,
 				1F8646151D64905E0033749B /* AppearingViewController.swift */,
 				C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */,
+				966A7A111E5488300026AE29 /* HealthKitViewController.swift */,
 				96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */,
 				1F287A4A1D65845C0062F45F /* LocationViewController.swift */,
 				965D56AC1E35F4C20056EE05 /* MainViewController.swift */,
@@ -217,6 +226,14 @@
 				C9F559721E4DC1C90090BBD9 /* ContactsView.swift */,
 			);
 			path = ViewObjects;
+			sourceTree = "<group>";
+		};
+		966A7A151E548D7F0026AE29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				966A7A161E548D7F0026AE29 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E42132551D7FF56900481842 /* Extensions tests */ = {
@@ -284,6 +301,11 @@
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					1F9891B11D409547007CD2B0 = {
 						CreatedOnToolsVersion = 7.3;
@@ -381,6 +403,7 @@
 				1F8646161D64905E0033749B /* AppearingViewController.swift in Sources */,
 				C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */,
 				1F287A4B1D65845C0062F45F /* LocationViewController.swift in Sources */,
+				966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */,
 				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
 				962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */,
 				965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */,
@@ -535,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutoMateExample/AutoMateExample.entitlements;
 				INFOPLIST_FILE = AutoMateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExample;
@@ -547,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutoMateExample/AutoMateExample.entitlements;
 				INFOPLIST_FILE = AutoMateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExample;

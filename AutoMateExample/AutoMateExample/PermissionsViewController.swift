@@ -23,7 +23,8 @@ class PermissionsViewController: UIViewController {
         return [
             CellStruct(name: "Location", action: "Location"),
             CellStruct(name: "Contacts", action: "Contacts"),
-            CellStruct(name: "HomeKit", action: "HomeKit")
+            CellStruct(name: "HomeKit", action: "HomeKit"),
+            CellStruct(name: "HealthKit", action: "HealthKit")
         ]
     }()
 
@@ -31,10 +32,7 @@ class PermissionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.accessibilityIdentifier = "tableView"
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
 }
 

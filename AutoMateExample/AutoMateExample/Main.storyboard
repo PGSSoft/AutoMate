@@ -496,6 +496,7 @@
                         <segue destination="GCP-Gl-tdb" kind="show" identifier="Location" id="kE7-KN-7hp"/>
                         <segue destination="ATm-Qe-kZ5" kind="show" identifier="Contacts" id="TMX-uT-QEs"/>
                         <segue destination="zhk-Nl-eyO" kind="show" identifier="HomeKit" id="zud-rJ-mN6"/>
+                        <segue destination="Chb-s5-CHy" kind="show" identifier="HealthKit" id="jbj-Um-gLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-ay-oii" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -825,6 +826,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNm-yK-3vE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2289" y="2738"/>
+        </scene>
+        <!--HealthKit-->
+        <scene sceneID="3oa-Za-QBp">
+            <objects>
+                <viewController title="HealthKit" id="Chb-s5-CHy" customClass="HealthKitViewController" customModule="AutoMateExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fts-DP-FHR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xu4-9Y-Cl2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B6G-Nb-wMg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKF-Al-jdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3473" y="2738"/>
         </scene>
         <!--HomeKit-->
         <scene sceneID="87e-TC-SzH">
