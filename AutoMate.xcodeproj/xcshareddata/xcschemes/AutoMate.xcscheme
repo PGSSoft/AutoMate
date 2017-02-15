@@ -56,9 +56,6 @@
                   Identifier = "XCUIElementExtensionTests/testForMovie()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testLocationSystemAlertButton()">
-               </Test>
-               <Test
                   Identifier = "XCUIElementQueryTests/testForMovie()">
                </Test>
             </SkippedTests>

@@ -130,12 +130,12 @@ public extension XCUIElementQuery {
         return elements(withLabelsMatching: texts, comparisonOperator: .contains)
     }
 
-    /// Returns array of existing elements matching expression given labels.
+    /// Returns array of existing elements `like` given labels.
     ///
     /// - Parameter texts: List of labels.
     /// - Returns: Array of XCUIElement elements.
-    public func elements(withLabelsMatchingExpressions texts: [String]) -> [XCUIElement] {
-        return elements(withLabelsMatching: texts, comparisonOperator: .matches)
+    public func elements(withLabelsLike texts: [String]) -> [XCUIElement] {
+        return elements(withLabelsMatching: texts, comparisonOperator: .like)
     }
 }
 

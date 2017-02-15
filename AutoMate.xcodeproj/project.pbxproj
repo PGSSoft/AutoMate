@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */; };
 		1F9AE7221D4B4A6C00027033 /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */; };
 		1FA6372F1D50692800D22156 /* XCUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6372E1D50692800D22156 /* XCUIApplication.swift */; };
 		1FC995561D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */; };
@@ -18,7 +17,7 @@
 		966B92381E40D69A006E6A18 /* AppUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92371E40D69A006E6A18 /* AppUITestCase.swift */; };
 		966B923A1E40D9D4006E6A18 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalView.swift */; };
 		966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedView.swift */; };
-		96BB6F441E52F6B900A74DA1 /* LocationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F431E52F6B900A74DA1 /* LocationAlert.swift */; };
+		96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
 		C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
@@ -61,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlertLabel.swift; sourceTree = "<group>"; };
 		1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
 		1FA6372E1D50692800D22156 /* XCUIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIApplication.swift; sourceTree = "<group>"; };
 		1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementTypeQueryProvider+Any.swift"; sourceTree = "<group>"; };
@@ -72,7 +70,7 @@
 		966B92371E40D69A006E6A18 /* AppUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUITestCase.swift; sourceTree = "<group>"; };
 		966B92391E40D9D4006E6A18 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		966B923D1E40DA24006E6A18 /* PushedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedView.swift; sourceTree = "<group>"; };
-		96BB6F431E52F6B900A74DA1 /* LocationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlert.swift; sourceTree = "<group>"; };
+		96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestAlerts.swift; sourceTree = "<group>"; };
@@ -221,10 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */,
-				96BB6F431E52F6B900A74DA1 /* LocationAlert.swift */,
+				96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */,
 				C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */,
 				E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */,
-				1F66483A1D5C8CD400307AAB /* SystemAlertLabel.swift */,
 				E46BE5D91CFF0885007531D2 /* SystemCountry.swift */,
 				E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */,
 			);
@@ -421,9 +418,8 @@
 				E431922F1E2E199400B019C1 /* LaunchArgumentProtocols.swift in Sources */,
 				C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
+				96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */,
 				966B923E1E40DA24006E6A18 /* PushedView.swift in Sources */,
-				96BB6F441E52F6B900A74DA1 /* LocationAlert.swift in Sources */,
-				1F66483B1D5C8CD400307AAB /* SystemAlertLabel.swift in Sources */,
 				E4C20FE81E39DBBE00052F11 /* SystemLaunchEnviroments.swift in Sources */,
 				E4B2C9711E31F5D600737688 /* LaunchEnviroments.swift in Sources */,
 			);
