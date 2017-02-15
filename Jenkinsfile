@@ -6,7 +6,6 @@ node("ios_ui") {
       env.NSUnbufferedIO = "YES"
       env.DEVELOPER_DIR = "/Applications/Xcode.app"
       env.DANGER_BITBUCKETSERVER_HOST = "bitbucket.pgs-soft.com"
-      env.GIT_URL_1 = "ssh://git@bitbucket.pgs-soft.com:7999/MOSP/pgs-automate-ios.git"
 
       //
       // Helper methods

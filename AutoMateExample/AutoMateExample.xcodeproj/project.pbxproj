@@ -36,6 +36,7 @@
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
 		96B131DA1E54BEB6007E3A04 /* AlertsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D91E54BEB6007E3A04 /* AlertsFactory.swift */; };
 		96B131DC1E54C161007E3A04 /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DB1E54C161007E3A04 /* PermissionsView.swift */; };
+		96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */; };
 		96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */; };
 		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
 		96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */; };
@@ -124,6 +125,7 @@
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
 		96B131D91E54BEB6007E3A04 /* AlertsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsFactory.swift; sourceTree = "<group>"; };
 		96B131DB1E54C161007E3A04 /* PermissionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTests.swift; sourceTree = "<group>"; };
 		96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTableViewCell.swift; sourceTree = "<group>"; };
 		96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				1F9891B81D409547007CD2B0 /* Info.plist */,
 				1F9891B61D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift */,
 				1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift */,
+				96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */,
 				96AB73F11E44C35300FA811A /* TestLauncher.swift */,
 				E42132551D7FF56900481842 /* Extensions tests */,
 				96B131D71E54BEA6007E3A04 /* Factories */,
@@ -442,6 +445,7 @@
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
 				96B131DC1E54C161007E3A04 /* PermissionsView.swift in Sources */,
+				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,
 				9621BBCE1E42090C001A9C2C /* PushedView.swift in Sources */,
 				9621BBD01E420D98001A9C2C /* XCUIElementExtensionTests.swift in Sources */,
 				9621BBCB1E4206C6001A9C2C /* TableView.swift in Sources */,

@@ -13,12 +13,9 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     // MARK: Arrange View Objects
     lazy var mainView: MainView = MainView(in: self.app)
-    lazy var permissionsView: PermissionsView = PermissionsView(in: self.app)
     lazy var textInputView: TextInputView = TextInputView(in: self.app)
     lazy var scrollView: ScrollView = ScrollView(in: self.app)
     lazy var middleButtonView: MiddleButtonView = MiddleButtonView(in: self.app)
-    lazy var locationView: LocationView = LocationView(in: self.app)
-    lazy var contactsView: ContactsView = ContactsView(in: self.app)
 
     // MARK: Set up
     override func setUp() {
@@ -105,64 +102,6 @@ class XCUIElementExtensionTests: AppUITestCase {
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(middleButtonView.isLabelDisplayed())
-    }
-
-    func testLocationSystemAlertButton() {
-        let token = addUIInterruptionMonitor(withDescription: "Location") { (alert) -> Bool in
-            let services: [SystemAlert.Type] = [AddressBookAlert.self,
-                                                MediaLibraryAlert.self,
-                                                SpeechRecognitionAlert.self,
-                                                SiriAlert.self,
-                                                RemindersAlert.self,
-                                                PhotosAlert.self,
-                                                CameraAlert.self,
-                                                BluetoothPeripheralAlert.self,
-                                                MicrophoneAlert.self,
-                                                CallsAlert.self,
-                                                CalendarAlert.self,
-                                                MotionAlert.self,
-                                                WillowAlert.self]
-
-            services.forEach({ service in
-                XCTAssertNil(service.init(element: alert), "Should not be able to create \(service) object.")
-            })
-
-            let locationAlert = LocationWhenInUseAlert(element: alert)
-            XCTAssertNotNil(locationAlert, "Unable to create LocationWhenInUseAlert object")
-            locationAlert!.denyElement.tap()
-
-            return true
-        }
-
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToLocation()
-
-        // Interruption won't happen without some kind of action
-        app.tap()
-        locationView.goBack()
-        permissionsView.goBack()
-        removeUIInterruptionMonitor(token)
-    }
-
-    func testContactsSystemAlertButton() {
-        let token = addUIInterruptionMonitor(withDescription: "Contacts") { (alert) -> Bool in
-            XCTAssertNil(LocationWhenInUseAlert(element: alert))
-            XCTAssertNil(MediaLibraryAlert(element: alert))
-
-            let contactsAlert = AddressBookAlert(element: alert)
-            XCTAssertNotNil(contactsAlert, "Unable to create AddressBookAlert object")
-            contactsAlert!.denyElement.tap()
-
-            return true
-        }
-
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToContacts()
-        // Interruption won't happen without some kind of action
-        app.tap()
-        contactsView.goBack()
-        permissionsView.goBack()
-        removeUIInterruptionMonitor(token)
     }
 
     // MARK: Test for movie
