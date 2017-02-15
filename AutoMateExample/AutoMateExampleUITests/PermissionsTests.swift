@@ -16,6 +16,9 @@ class PermissionsTests: AppUITestCase {
     lazy var permissionsView: PermissionsView = PermissionsView(in: self.app)
     lazy var locationView: LocationView = LocationView(in: self.app)
     lazy var contactsView: ContactsView = ContactsView(in: self.app)
+    lazy var homeKitView: HomeKitView = HomeKitView(in: self.app)
+    lazy var healthKitView: HealthKitView = HealthKitView(in: self.app)
+    lazy var healthPermissionView: HealthPermissionView = HealthPermissionView(in: self.app)
 
     // MARK: Set up
     override func setUp() {
@@ -103,6 +106,68 @@ class PermissionsTests: AppUITestCase {
         // Interruption won't happen without some kind of action.
         app.tap()
         contactsView.goBack()
+        permissionsView.goBack()
+        removeUIInterruptionMonitor(token)
+        XCTAssertTrue(handled)
+    }
+
+    func testHomeKitAlert() {
+        var handled = false
+        let token = addUIInterruptionMonitor(withDescription: "HomeKit") { (alert) -> Bool in
+            guard let homeKitAlert = WillowAlert(element: alert) else {
+                XCTFail("Cannot create WillowAlert object")
+                return false
+            }
+
+            XCTAssertTrue(homeKitAlert.denyElement.exists)
+            XCTAssertTrue(homeKitAlert.allowElement.exists)
+
+            homeKitAlert.denyElement.tap()
+            handled = true
+            return true
+        }
+
+        mainView.goToPermissionsViewMenu()
+        permissionsView.goToHomeKit()
+        // Interruption won't happen without some kind of action.
+        app.tap()
+        homeKitView.goBack()
+        permissionsView.goBack()
+        removeUIInterruptionMonitor(token)
+        XCTAssertTrue(handled)
+    }
+
+    func testHealthKitAlert() {
+        var handled = false
+        let token = addUIInterruptionMonitor(withDescription: "HomeKit") { (alert) -> Bool in
+            guard let homeKitAlert = HealthAuthorizationDontAllowAlert(element: alert) else {
+                XCTFail("Cannot create HealthAuthorizationDontAllowAlert object")
+                return false
+            }
+
+            XCTAssertTrue(homeKitAlert.okElement.exists)
+
+            homeKitAlert.okElement.tap()
+            handled = true
+            return true
+        }
+
+        mainView.goToPermissionsViewMenu()
+        permissionsView.goToHealthKit()
+
+        wait(forVisibilityOf: healthPermissionView)
+        XCTAssertTrue(healthPermissionView.allowElement.exists)
+        XCTAssertTrue(healthPermissionView.denyElement.exists)
+        XCTAssertTrue(healthPermissionView.turnOnAllElement.exists)
+
+        healthPermissionView.turnOnAllElement.tap()
+
+        XCTAssertTrue(healthPermissionView.turnOffAllElement.exists)
+
+        healthPermissionView.denyElement.tap()
+        app.tap()
+
+        healthKitView.goBack()
         permissionsView.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)

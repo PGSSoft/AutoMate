@@ -85,6 +85,24 @@ extension HealthAlertTurnOffAll {
     }
 }
 
+extension HealthAlertOk {
+    public static var ok: [String] {
+        return [
+            "ОК",
+            "Tamam",
+            "ΟΚ",
+            "확인",
+            "אישור",
+            "OKE",
+            "OK",
+            "ตกลง",
+            "موافق",
+            "好",
+            "ठीक",
+        ]
+    }
+}
+
 extension HealthAlertAllow {
     public static var allow: [String] {
         return [
@@ -165,7 +183,7 @@ extension HealthAlertDeny {
     }
 }
 
-public struct HealthAlert: SystemAlert, HealthAlertAllow, HealthAlertDeny, HealthAlertTurnOnAll, HealthAlertTurnOffAll {
+public extension HealthPermissionView {
     public static let messages = [
         "„*“ möchte auf deine Gesundheitsdaten in den folgenden Kategorien zugreifen und sie aktualisieren.",
         "“*” ingin mengakses dan memperbarui data Kesehatan Anda di kategori di bawah.",
@@ -203,6 +221,47 @@ public struct HealthAlert: SystemAlert, HealthAlertAllow, HealthAlertDeny, Healt
         "“*”, aşağıdaki kategorilerde bulunan Sağlık verilerinize erişmek ve bunları güncellemek istiyor.",
         "“*” desidera accedere ai tuoi dati sanitari e aggiornarli per le seguenti categorie.",
         "* quiere acceder a tus datos de salud y actualizarlos en las siguientes categorías.",
+    ]
+}
+
+public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
+    public static let messages = [
+        "Hälsoåtkomst",
+        "健康資料取用",
+        "「健康」存取",
+        "Acesso de Saúde",
+        "Přístup ke Zdraví",
+        "Accés a Salut",
+        "การเข้าถึงสุขภาพ",
+        "Helsetilgang",
+        "الوصول لصحتي",
+        "Accesso dati Salute",
+        "Dostęp do danych Zdrowia",
+        "Akses Kesehatan",
+        "גישה רפואית",
+        "Truy cập sức khỏe",
+        "Datenzugriff",
+        "Terveystietojen käyttö",
+        "Adgang til Sundhed",
+        "Accès à Santé",
+        "건강 접근",
+        "Доступ (Здоровье)",
+        "访问健康数据",
+        "Acesso a Saúde",
+        "Πρόσβαση σε Υγεία",
+        "Acces Sănătate",
+        "Akses Kesihatan",
+        "Sağlık Erişimi",
+        "Acceso a Salud",
+        "स्वास्थ्य पहुँच",
+        "Health Access",
+        "Accès médical",
+        "ヘルスケアデータのアクセス",
+        "Доступ до «Здоров’я»",
+        "Egészségügyi hozzáférés",
+        "Toegang gezondheid",
+        "Pristup Zdravlju",
+        "Prístup ku zdravotným dátam",
     ]
     public var alert: XCUIElement
 

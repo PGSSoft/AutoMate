@@ -29,13 +29,14 @@
 		965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D56AC1E35F4C20056EE05 /* MainViewController.swift */; };
 		966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A111E5488300026AE29 /* HealthKitViewController.swift */; };
 		966A7A171E548D7F0026AE29 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966A7A161E548D7F0026AE29 /* HealthKit.framework */; };
+		968C0A521E54E596001793D9 /* HomeKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C0A511E54E596001793D9 /* HomeKitView.swift */; };
+		968C0A551E54E662001793D9 /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C0A541E54E662001793D9 /* HealthKitView.swift */; };
 		969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2811E4216AE00995A49 /* TextInputView.swift */; };
 		969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2841E421AE700995A49 /* MiddleButtonView.swift */; };
 		969CC2871E421D2500995A49 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2861E421D2500995A49 /* LocationView.swift */; };
 		969CC2891E421FE500995A49 /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingView.swift */; };
 		969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */; };
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
-		96B131DA1E54BEB6007E3A04 /* AlertsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D91E54BEB6007E3A04 /* AlertsFactory.swift */; };
 		96B131DC1E54C161007E3A04 /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DB1E54C161007E3A04 /* PermissionsView.swift */; };
 		96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */; };
 		96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */; };
@@ -119,13 +120,14 @@
 		966A7A111E5488300026AE29 /* HealthKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
 		966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoMateExample.entitlements; sourceTree = "<group>"; };
 		966A7A161E548D7F0026AE29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		968C0A511E54E596001793D9 /* HomeKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitView.swift; sourceTree = "<group>"; };
+		968C0A541E54E662001793D9 /* HealthKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
 		969CC2811E4216AE00995A49 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		969CC2841E421AE700995A49 /* MiddleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonView.swift; sourceTree = "<group>"; };
 		969CC2861E421D2500995A49 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		969CC2881E421FE500995A49 /* AppearingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
 		969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalExtensionsTests.swift; sourceTree = "<group>"; };
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
-		96B131D91E54BEB6007E3A04 /* AlertsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsFactory.swift; sourceTree = "<group>"; };
 		96B131DB1E54C161007E3A04 /* PermissionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTests.swift; sourceTree = "<group>"; };
 		96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +210,6 @@
 				96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */,
 				96AB73F11E44C35300FA811A /* TestLauncher.swift */,
 				E42132551D7FF56900481842 /* Extensions tests */,
-				96B131D71E54BEA6007E3A04 /* Factories */,
 				964118241E41EDF90011C776 /* ViewObjects */,
 			);
 			path = AutoMateExampleUITests;
@@ -228,6 +229,8 @@
 			children = (
 				969CC2881E421FE500995A49 /* AppearingView.swift */,
 				C9F559721E4DC1C90090BBD9 /* ContactsView.swift */,
+				968C0A541E54E662001793D9 /* HealthKitView.swift */,
+				968C0A511E54E596001793D9 /* HomeKitView.swift */,
 				969CC2861E421D2500995A49 /* LocationView.swift */,
 				9641182A1E41EF7A0011C776 /* MainView.swift */,
 				969CC2841E421AE700995A49 /* MiddleButtonView.swift */,
@@ -246,14 +249,6 @@
 				966A7A161E548D7F0026AE29 /* HealthKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		96B131D71E54BEA6007E3A04 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				96B131D91E54BEB6007E3A04 /* AlertsFactory.swift */,
-			);
-			path = Factories;
 			sourceTree = "<group>";
 		};
 		E42132551D7FF56900481842 /* Extensions tests */ = {
@@ -440,11 +435,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				969CC2891E421FE500995A49 /* AppearingView.swift in Sources */,
-				96B131DA1E54BEB6007E3A04 /* AlertsFactory.swift in Sources */,
+				968C0A521E54E596001793D9 /* HomeKitView.swift in Sources */,
 				9641182B1E41EF7A0011C776 /* MainView.swift in Sources */,
 				9621BBD21E420E25001A9C2C /* ScrollView.swift in Sources */,
 				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,
 				969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */,
+				968C0A551E54E662001793D9 /* HealthKitView.swift in Sources */,
 				969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */,
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
