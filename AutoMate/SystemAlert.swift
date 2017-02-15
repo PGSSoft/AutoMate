@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-// MARK: - Protocols
+// MARK: - System alert protocols
 /// System alert allow element.
 public protocol SystemAlertAllow {
     /// Allow messages
@@ -53,12 +53,6 @@ public protocol SystemAlert {
     // MARK: Initializers
     init?(element: XCUIElement)
 }
-
-// MARK: - Extended protocols
-public protocol LocationAlertAllow: SystemAlertAllow { }
-public protocol LocationAlertDeny: SystemAlertDeny { }
-public protocol LocationAlertOk: SystemAlertOk { }
-public protocol LocationAlertCancel: SystemAlertCancel { }
 
 // MARK: - Default implementation
 extension SystemAlertAllow where Self: SystemAlert {

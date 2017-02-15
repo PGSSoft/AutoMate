@@ -13,6 +13,7 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     // MARK: Arrange View Objects
     lazy var mainView: MainView = MainView(in: self.app)
+    lazy var permissionsView: PermissionsView = PermissionsView(in: self.app)
     lazy var textInputView: TextInputView = TextInputView(in: self.app)
     lazy var scrollView: ScrollView = ScrollView(in: self.app)
     lazy var middleButtonView: MiddleButtonView = MiddleButtonView(in: self.app)
@@ -133,10 +134,13 @@ class XCUIElementExtensionTests: AppUITestCase {
             return true
         }
 
-        mainView.goToLocationMenu()
-        // interruption won't happen without some kind of action
+        mainView.goToPermissionsViewMenu()
+        permissionsView.goToLocation()
+
+        // Interruption won't happen without some kind of action
         app.tap()
         locationView.goBack()
+        permissionsView.goBack()
         removeUIInterruptionMonitor(token)
     }
 
@@ -152,10 +156,12 @@ class XCUIElementExtensionTests: AppUITestCase {
             return true
         }
 
-        mainView.goToContactsMenu()
-        // interruption won't happen without some kind of action
+        mainView.goToPermissionsViewMenu()
+        permissionsView.goToContacts()
+        // Interruption won't happen without some kind of action
         app.tap()
         contactsView.goBack()
+        permissionsView.goBack()
         removeUIInterruptionMonitor(token)
     }
 

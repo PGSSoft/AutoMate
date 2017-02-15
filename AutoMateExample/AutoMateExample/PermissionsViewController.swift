@@ -14,6 +14,7 @@ class PermissionsViewController: UIViewController {
     fileprivate struct CellStruct {
         let name: String
         let action: String
+        let identifier: String
     }
 
     // Properties
@@ -21,10 +22,10 @@ class PermissionsViewController: UIViewController {
     let cellIdentifier = "PermissionTableViewCell"
     fileprivate let cells = {
         return [
-            CellStruct(name: "Location", action: "Location"),
-            CellStruct(name: "Contacts", action: "Contacts"),
-            CellStruct(name: "HomeKit", action: "HomeKit"),
-            CellStruct(name: "HealthKit", action: "HealthKit")
+            CellStruct(name: "Location", action: "Location", identifier: "location"),
+            CellStruct(name: "Contacts", action: "Contacts", identifier: "contacts"),
+            CellStruct(name: "HomeKit", action: "HomeKit", identifier: "homeKit"),
+            CellStruct(name: "HealthKit", action: "HealthKit", identifier: "healthKit")
         ]
     }()
 
@@ -32,7 +33,6 @@ class PermissionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.accessibilityIdentifier = "tableView"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
 }
 
@@ -53,6 +53,7 @@ extension PermissionsViewController: UITableViewDataSource {
 
         let cellData = cells[indexPath.row]
         cell.nameLabel.text = cellData.name
+        cell.accessibilityIdentifier = cellData.identifier
         return cell
     }
 }
