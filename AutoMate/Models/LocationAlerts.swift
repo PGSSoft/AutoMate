@@ -138,7 +138,7 @@ extension LocationAlertAllow {
     }
 }
 
-public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
+public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
     public static let messages = [
         "Vill du tillåta att ”*” även ser din platsinfo när du inte använder appen?",
         "Udostępniać programowi „*” Twoje położenie także, gdy go nie używasz?",

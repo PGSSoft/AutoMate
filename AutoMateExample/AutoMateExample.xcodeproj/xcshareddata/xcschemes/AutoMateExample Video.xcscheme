@@ -60,7 +60,7 @@
                   Identifier = "PermissionsTests/testContactsSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "PermissionsTests/testLocationSystemAlertButton()">
+                  Identifier = "PermissionsTests/testLocationWhenInUseSystemAlertButton()">
                </Test>
                <Test
                   Identifier = "XCUIElementExtensionTests/testClearAndType()">

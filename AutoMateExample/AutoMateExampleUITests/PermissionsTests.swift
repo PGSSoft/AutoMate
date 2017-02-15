@@ -25,9 +25,10 @@ class PermissionsTests: AppUITestCase {
     }
 
     // MARK: Tests
-    func testLocationSystemAlertButton() {
+    func locationWhenInUse() {
+        var handled = false
         let token = addUIInterruptionMonitor(withDescription: "Location") { (alert) -> Bool in
-            guard let locationAlert = self.matchAlert(to: alert, withType: LocationWhenInUseAlert.self) else {
+            guard let locationAlert = LocationWhenInUseAlert(element: alert) else {
                 XCTFail("Cannot create LocationWhenInUseAlert object")
                 return false
             }
@@ -35,22 +36,56 @@ class PermissionsTests: AppUITestCase {
             XCTAssertTrue(locationAlert.denyElement.exists)
             XCTAssertTrue(locationAlert.allowElement.exists)
 
-            locationAlert.denyElement.tap()
+            locationAlert.allowElement.tap()
+            handled = true
             return true
         }
 
         mainView.goToPermissionsViewMenu()
-        permissionsView.goToLocation()
+        permissionsView.goToLocationWhenInUse()
         // Interruption won't happen without some kind of action.
         app.tap()
         locationView.goBack()
         permissionsView.goBack()
         removeUIInterruptionMonitor(token)
+        XCTAssertTrue(handled)
+    }
+
+    func locationUpgradeToAlways() {
+        var handled = false
+        let token = addUIInterruptionMonitor(withDescription: "Location") { (alert) -> Bool in
+            guard let locationAlert = LocationUpgradeWhenInUseAlwaysAlert(element: alert) else {
+                XCTFail("Cannot create LocationUpgradeWhenInUseAlwaysAlert object")
+                return false
+            }
+
+            XCTAssertTrue(locationAlert.cancelElement.exists)
+            XCTAssertTrue(locationAlert.allowElement.exists)
+
+            locationAlert.cancelElement.tap()
+            handled = true
+            return true
+        }
+
+        mainView.goToPermissionsViewMenu()
+        permissionsView.goToLocationAlways()
+        // Interruption won't happen without some kind of action.
+        app.tap()
+        locationView.goBack()
+        permissionsView.goBack()
+        removeUIInterruptionMonitor(token)
+        XCTAssertTrue(handled)
+    }
+
+    func testLocationSystemAlertButton() {
+        locationWhenInUse()
+        locationUpgradeToAlways()
     }
 
     func testContactsSystemAlertButton() {
+        var handled = false
         let token = addUIInterruptionMonitor(withDescription: "Contacts") { (alert) -> Bool in
-            guard let contactsAlert = self.matchAlert(to: alert, withType: AddressBookAlert.self) else {
+            guard let contactsAlert = AddressBookAlert(element: alert) else {
                 XCTFail("Cannot create AddressBookAlert object")
                 return false
             }
@@ -59,6 +94,7 @@ class PermissionsTests: AppUITestCase {
             XCTAssertTrue(contactsAlert.allowElement.exists)
 
             contactsAlert.denyElement.tap()
+            handled = true
             return true
         }
 
@@ -69,20 +105,6 @@ class PermissionsTests: AppUITestCase {
         contactsView.goBack()
         permissionsView.goBack()
         removeUIInterruptionMonitor(token)
-    }
-
-    // MARK: Helpers
-    func matchedAlerts(for element: XCUIElement, in alerts: [SystemAlert.Type] = AlertsFactory.allAlerts) -> [SystemAlert] {
-        return alerts.flatMap { $0.init(element: element) }
-    }
-
-    func matchAlert<T: SystemAlert>(to element: XCUIElement, withType: T.Type) -> T? {
-        let alerts = self.matchedAlerts(for: element)
-        XCTAssertEqual(alerts.count, 1, "Ony one alert should match, currently matched \(alerts.count)")
-        guard let matchedAlert = alerts.first as? T else {
-            XCTFail("Cannot create \(T.self) object")
-            return nil
-        }
-        return matchedAlert
+        XCTAssertTrue(handled)
     }
 }

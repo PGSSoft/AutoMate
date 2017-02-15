@@ -493,20 +493,21 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="TgS-pS-Eh8" id="PTj-sq-KaN"/>
-                        <segue destination="GCP-Gl-tdb" kind="show" identifier="Location" id="kE7-KN-7hp"/>
+                        <segue destination="GCP-Gl-tdb" kind="show" identifier="LocationWhenInUse" id="kE7-KN-7hp"/>
                         <segue destination="ATm-Qe-kZ5" kind="show" identifier="Contacts" id="TMX-uT-QEs"/>
                         <segue destination="zhk-Nl-eyO" kind="show" identifier="HomeKit" id="zud-rJ-mN6"/>
                         <segue destination="Chb-s5-CHy" kind="show" identifier="HealthKit" id="jbj-Um-gLS"/>
+                        <segue destination="WKu-Yh-DG4" kind="show" identifier="LocationAlways" id="PPC-rU-Grs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-ay-oii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2289" y="1371"/>
         </scene>
-        <!--Location-->
+        <!--Location when in use-->
         <scene sceneID="Unv-MQ-ywk">
             <objects>
-                <viewController title="Location" id="GCP-Gl-tdb" customClass="LocationViewController" customModule="AutoMateExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Location when in use" id="GCP-Gl-tdb" customClass="LocationWhenInUseViewController" customModule="AutoMateExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oMu-SV-Gw5"/>
                         <viewControllerLayoutGuide type="bottom" id="BqF-BD-ikx"/>
@@ -885,6 +886,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wim-Ch-FN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="289" y="383"/>
+        </scene>
+        <!--Location always-->
+        <scene sceneID="6sI-Yy-g8Z">
+            <objects>
+                <viewController title="Location always" id="WKu-Yh-DG4" customClass="LocationAlwaysViewController" customModule="AutoMateExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m6x-Mc-j6B"/>
+                        <viewControllerLayoutGuide type="bottom" id="GW3-qc-Lgf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YHh-iz-lcR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFA-aA-RuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3473" y="28"/>
         </scene>
     </scenes>
     <resources>

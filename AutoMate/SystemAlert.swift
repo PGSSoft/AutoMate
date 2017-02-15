@@ -86,7 +86,7 @@ extension SystemAlertOk where Self: SystemAlert {
 }
 
 extension SystemAlertCancel where Self: SystemAlert {
-    public var okElement: XCUIElement {
+    public var cancelElement: XCUIElement {
         guard let button = alert.buttons.elements(withLabelsMatching: type(of: self).cancel).first else {
             preconditionFailure("Cannot find cancel button.")
         }

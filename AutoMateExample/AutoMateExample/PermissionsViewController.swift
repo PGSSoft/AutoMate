@@ -22,7 +22,8 @@ class PermissionsViewController: UIViewController {
     let cellIdentifier = "PermissionTableViewCell"
     fileprivate let cells = {
         return [
-            CellStruct(name: "Location", action: "Location", identifier: "location"),
+            CellStruct(name: "Location always", action: "LocationAlways", identifier: "locationAlways"),
+            CellStruct(name: "Location when in use", action: "LocationWhenInUse", identifier: "locationWhenInUse"),
             CellStruct(name: "Contacts", action: "Contacts", identifier: "contacts"),
             CellStruct(name: "HomeKit", action: "HomeKit", identifier: "homeKit"),
             CellStruct(name: "HealthKit", action: "HealthKit", identifier: "healthKit")

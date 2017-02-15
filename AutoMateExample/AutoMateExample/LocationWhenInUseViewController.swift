@@ -9,7 +9,8 @@
 import UIKit
 import CoreLocation
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate {
+class LocationWhenInUseViewController: UIViewController {
+
     // MARK: Properties
     let manager = CLLocationManager()
 

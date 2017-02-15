@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F287A4B1D65845C0062F45F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F287A4A1D65845C0062F45F /* LocationViewController.swift */; };
+		1F287A4B1D65845C0062F45F /* LocationWhenInUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F287A4A1D65845C0062F45F /* LocationWhenInUseViewController.swift */; };
 		1F39828C1D65C2D900AC089C /* MiddleButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */; };
 		1F8646161D64905E0033749B /* AppearingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8646151D64905E0033749B /* AppearingViewController.swift */; };
 		1F9891A21D409547007CD2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9891A11D409547007CD2B0 /* AppDelegate.swift */; };
@@ -25,6 +25,7 @@
 		962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FAAC31D9144F6000592EF /* ScrollingViewController.swift */; };
 		9641182B1E41EF7A0011C776 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182A1E41EF7A0011C776 /* MainView.swift */; };
 		9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */; };
+		964F74CA1E54DE90004B9400 /* LocationAlwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F74C91E54DE90004B9400 /* LocationAlwaysViewController.swift */; };
 		965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D56AC1E35F4C20056EE05 /* MainViewController.swift */; };
 		966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A111E5488300026AE29 /* HealthKitViewController.swift */; };
 		966A7A171E548D7F0026AE29 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966A7A161E548D7F0026AE29 /* HealthKit.framework */; };
@@ -90,7 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F287A4A1D65845C0062F45F /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		1F287A4A1D65845C0062F45F /* LocationWhenInUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationWhenInUseViewController.swift; sourceTree = "<group>"; };
 		1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonViewController.swift; sourceTree = "<group>"; };
 		1F8646151D64905E0033749B /* AppearingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingViewController.swift; sourceTree = "<group>"; };
 		1F98919E1D409547007CD2B0 /* AutoMateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoMateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +114,7 @@
 		962FAAC31D9144F6000592EF /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
 		9641182A1E41EF7A0011C776 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQueryTests.swift; sourceTree = "<group>"; };
+		964F74C91E54DE90004B9400 /* LocationAlwaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlwaysViewController.swift; sourceTree = "<group>"; };
 		965D56AC1E35F4C20056EE05 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		966A7A111E5488300026AE29 /* HealthKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
 		966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoMateExample.entitlements; sourceTree = "<group>"; };
@@ -184,7 +186,8 @@
 				C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */,
 				966A7A111E5488300026AE29 /* HealthKitViewController.swift */,
 				96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */,
-				1F287A4A1D65845C0062F45F /* LocationViewController.swift */,
+				964F74C91E54DE90004B9400 /* LocationAlwaysViewController.swift */,
+				1F287A4A1D65845C0062F45F /* LocationWhenInUseViewController.swift */,
 				965D56AC1E35F4C20056EE05 /* MainViewController.swift */,
 				1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */,
 				96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */,
@@ -419,7 +422,7 @@
 			files = (
 				1F8646161D64905E0033749B /* AppearingViewController.swift in Sources */,
 				C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */,
-				1F287A4B1D65845C0062F45F /* LocationViewController.swift in Sources */,
+				1F287A4B1D65845C0062F45F /* LocationWhenInUseViewController.swift in Sources */,
 				966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */,
 				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
 				962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */,
@@ -427,6 +430,7 @@
 				96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */,
 				1F39828C1D65C2D900AC089C /* MiddleButtonViewController.swift in Sources */,
 				96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */,
+				964F74CA1E54DE90004B9400 /* LocationAlwaysViewController.swift in Sources */,
 				1F9891A21D409547007CD2B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

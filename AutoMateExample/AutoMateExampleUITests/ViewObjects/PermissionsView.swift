@@ -17,8 +17,12 @@ open class PermissionsView: BaseAppView, PushedView {
         return view.tables[Locators.tableView]
     }
 
-    open var location: XCUIElement {
-        return tableView.cells[Locators.location]
+    open var locationAlways: XCUIElement {
+        return tableView.cells[Locators.locationAlways]
+    }
+
+    open var locationWhenInUse: XCUIElement {
+        return tableView.cells[Locators.locationWhenInUse]
     }
 
     open var contacts: XCUIElement {
@@ -34,8 +38,12 @@ open class PermissionsView: BaseAppView, PushedView {
     }
 
     // MARK: Actions
-    open func goToLocation() {
-        location.tap()
+    open func goToLocationAlways() {
+        locationAlways.tap()
+    }
+
+    open func goToLocationWhenInUse() {
+        locationWhenInUse.tap()
     }
 
     open func goToContacts() {
@@ -58,7 +66,8 @@ private extension PermissionsView {
         case tableView
         case menuItemName
 
-        case location
+        case locationAlways
+        case locationWhenInUse
         case contacts
         case homeKit
         case healthKit
