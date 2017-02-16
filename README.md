@@ -4,7 +4,9 @@
     <img src="assets/made-with-love-by-PGS.png" />
     <p>
       <b>AutoMate</b> &bull;
+      <a href="https://github.com/PGSSoft/...">App Companion</a>
       <a href="https://github.com/PGSSoft/...">Templates</a>
+      <a href="https://github.com/PGSSoft/...">ModelGenerator</a>
     </p>
 </div>
 
@@ -86,7 +88,7 @@ github "PGSSoft/AutoMate"
 - [x] Strong-typed helpers: localizers, view object templates
 - [x] Base XCTestCase template
 - [ ] Improve launch options type safety
-- [ ] Improve handling of system alerts
+- [x] Improve handling of system alerts
 - [x] Companion library for the app // I would add link to repo when there will be one
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders

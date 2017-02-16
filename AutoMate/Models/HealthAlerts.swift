@@ -3,106 +3,6 @@
 
 import XCTest
 
-extension HealthAlertTurnOnAll {
-    public static var turnOnAll: [String] {
-        return [
-            "Activați toate categoriile",
-            "सभी श्रेणियाँ चालू करें",
-            "모든 카테고리 켜기",
-            "Slå alle kategorier til",
-            "Schakel alle categorieën in",
-            "Nyalakan Semua Kategori",
-            "Activar todas las categorías",
-            "הפעל את כל הקטגוריות",
-            "Ativar todas as categorias",
-            "開啟所有類別",
-            "Aktifkan Semua Kategori",
-            "Bật Tất cả Danh mục",
-            "Activer toutes les catégories",
-            "すべてのカテゴリをオン",
-            "Zapnout všechny kategorie",
-            "Slå på alle kategorier",
-            "Activar totes les categories",
-            "Ενεργοποίηση όλων των κατηγοριών",
-            "Увімкнути всі категорії",
-            "Tüm Kategorileri Aç",
-            "تشغيل كل الفئات",
-            "Laita kaikki kategoriat päälle",
-            "Ativar Todas as Categorias",
-            "เปิดหมวดหมู่ทั้งหมด",
-            "Slå på alla kategorier",
-            "Uključi sve kategorije",
-            "打开所有类别",
-            "Minden kategória bekapcsolása",
-            "Włącz wszystkie kategorie",
-            "Alle Kategorien aktivieren",
-            "Attiva tutte le categorie",
-            "Включить все категории",
-            "Turn All Categories On",
-            "Zapnúť všetky kategórie",
-        ]
-    }
-}
-
-extension HealthAlertTurnOffAll {
-    public static var turnOffAll: [String] {
-        return [
-            "Slå av alle kategorier",
-            "Turn All Categories Off",
-            "Desactivar todas las categorías",
-            "Vypnúť všetky kategórie",
-            "Isključi sve kategorije",
-            "בטל את כל הקטגוריות",
-            "Dezactivați toate categoriile",
-            "모든 카테고리 끄기",
-            "Wyłącz wszystkie kategorie",
-            "關閉所有類別",
-            "Slå alle kategorier fra",
-            "Desativar Todas as Categorias",
-            "Schakel alle categorieën uit",
-            "Vypnout všechny kategorie",
-            "Desativar todas as categorias",
-            "Stäng av alla kategorier",
-            "ปิดหมวดหมู่ทั้งหมด",
-            "关闭所有类别",
-            "Απενεργοποίηση των κατηγοριών",
-            "Désactiver toutes les catégories",
-            "Alle Kategorien deaktivieren",
-            "Minden kategória kikapcsolása",
-            "Laita kaikki kategoriat pois",
-            "إيقاف كل الفئات",
-            "Tắt Tất cả Danh mục",
-            "すべてのカテゴリをオフ",
-            "Nyahaktifkan Semua Kategori",
-            "Отключить все категории",
-            "Tüm Kategorileri Kapat",
-            "Вимкнути всі категорії",
-            "Desactivar totes les categories",
-            "सभी श्रेणियाँ बंद करें",
-            "Disattiva tutte le categorie",
-            "Matikan Semua Kategori",
-        ]
-    }
-}
-
-extension HealthAlertOk {
-    public static var ok: [String] {
-        return [
-            "ОК",
-            "Tamam",
-            "ΟΚ",
-            "확인",
-            "אישור",
-            "OKE",
-            "OK",
-            "ตกลง",
-            "موافق",
-            "好",
-            "ठीक",
-        ]
-    }
-}
-
 extension HealthAlertAllow {
     public static var allow: [String] {
         return [
@@ -179,6 +79,106 @@ extension HealthAlertDeny {
             "Nicht erlauben",
             "Refuser",
             "Não Permitir",
+        ]
+    }
+}
+
+extension HealthAlertOk {
+    public static var ok: [String] {
+        return [
+            "ОК",
+            "Tamam",
+            "ΟΚ",
+            "확인",
+            "אישור",
+            "OKE",
+            "OK",
+            "ตกลง",
+            "موافق",
+            "好",
+            "ठीक",
+        ]
+    }
+}
+
+extension HealthAlertTurnOffAll {
+    public static var turnOffAll: [String] {
+        return [
+            "Slå av alle kategorier",
+            "Turn All Categories Off",
+            "Desactivar todas las categorías",
+            "Vypnúť všetky kategórie",
+            "Isključi sve kategorije",
+            "בטל את כל הקטגוריות",
+            "Dezactivați toate categoriile",
+            "모든 카테고리 끄기",
+            "Wyłącz wszystkie kategorie",
+            "關閉所有類別",
+            "Slå alle kategorier fra",
+            "Desativar Todas as Categorias",
+            "Schakel alle categorieën uit",
+            "Vypnout všechny kategorie",
+            "Desativar todas as categorias",
+            "Stäng av alla kategorier",
+            "ปิดหมวดหมู่ทั้งหมด",
+            "关闭所有类别",
+            "Απενεργοποίηση των κατηγοριών",
+            "Désactiver toutes les catégories",
+            "Alle Kategorien deaktivieren",
+            "Minden kategória kikapcsolása",
+            "Laita kaikki kategoriat pois",
+            "إيقاف كل الفئات",
+            "Tắt Tất cả Danh mục",
+            "すべてのカテゴリをオフ",
+            "Nyahaktifkan Semua Kategori",
+            "Отключить все категории",
+            "Tüm Kategorileri Kapat",
+            "Вимкнути всі категорії",
+            "Desactivar totes les categories",
+            "सभी श्रेणियाँ बंद करें",
+            "Disattiva tutte le categorie",
+            "Matikan Semua Kategori",
+        ]
+    }
+}
+
+extension HealthAlertTurnOnAll {
+    public static var turnOnAll: [String] {
+        return [
+            "Activați toate categoriile",
+            "सभी श्रेणियाँ चालू करें",
+            "모든 카테고리 켜기",
+            "Slå alle kategorier til",
+            "Schakel alle categorieën in",
+            "Nyalakan Semua Kategori",
+            "Activar todas las categorías",
+            "הפעל את כל הקטגוריות",
+            "Ativar todas as categorias",
+            "開啟所有類別",
+            "Aktifkan Semua Kategori",
+            "Bật Tất cả Danh mục",
+            "Activer toutes les catégories",
+            "すべてのカテゴリをオン",
+            "Zapnout všechny kategorie",
+            "Slå på alle kategorier",
+            "Activar totes les categories",
+            "Ενεργοποίηση όλων των κατηγοριών",
+            "Увімкнути всі категорії",
+            "Tüm Kategorileri Aç",
+            "تشغيل كل الفئات",
+            "Laita kaikki kategoriat päälle",
+            "Ativar Todas as Categorias",
+            "เปิดหมวดหมู่ทั้งหมด",
+            "Slå på alla kategorier",
+            "Uključi sve kategorije",
+            "打开所有类别",
+            "Minden kategória bekapcsolása",
+            "Włącz wszystkie kategorie",
+            "Alle Kategorien aktivieren",
+            "Attiva tutte le categorie",
+            "Включить все категории",
+            "Turn All Categories On",
+            "Zapnúť všetky kategórie",
         ]
     }
 }

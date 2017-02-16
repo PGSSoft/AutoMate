@@ -4,10 +4,11 @@
 Released on ???.
 
 #### Added
-- View Objects: `BaseAppViewProtocol`, `BaseAppView`, `ModalView`, `PushedView`
+- View Objects: `BaseAppViewProtocol`, `BaseAppView`, `ModalView`, `PushedView`, `HealthPermissionView`
 - `IdentifiableByElement` protocol
 - `Locator` protocol
 - `AppUITestCase` as base `XCTestCase` template
+- Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`)
 
 #### Updated
 - Documentation

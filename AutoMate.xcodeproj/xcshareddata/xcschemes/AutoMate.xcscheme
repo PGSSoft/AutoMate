@@ -53,6 +53,18 @@
                   Identifier = "AdditionalExtensionsTests/testForMovie()">
                </Test>
                <Test
+                  Identifier = "PermissionsTests/testBluetoothPeripheralAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testCallsAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testMicrophoneAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testSiriAlert()">
+               </Test>
+               <Test
                   Identifier = "XCUIElementExtensionTests/testForMovie()">
                </Test>
                <Test

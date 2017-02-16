@@ -3,6 +3,45 @@
 
 import XCTest
 
+extension LocationAlertAllow {
+    public static var allow: [String] {
+        return [
+            "Salli",
+            "허용",
+            "允许",
+            "Tillåt",
+            "Permetre",
+            "Izinkan",
+            "السماح",
+            "Povoliť",
+            "Cho phép",
+            "Allow",
+            "Permiteți",
+            "Autoriser",
+            "Benarkan",
+            "Permitir",
+            "允許",
+            "Sta toe",
+            "Erlauben",
+            "Pozwalaj",
+            "अनुमति दें",
+            "Tillat",
+            "許可",
+            "Дозволити",
+            "Разрешить",
+            "Tillad",
+            "Engedélyezés",
+            "İzin Ver",
+            "อนุญาต",
+            "Dozvoli",
+            "Povolit",
+            "אפשר",
+            "Consenti",
+            "Να επιτρέπεται",
+        ]
+    }
+}
+
 extension LocationAlertCancel {
     public static var cancel: [String] {
         return [
@@ -36,24 +75,6 @@ extension LocationAlertCancel {
             "Zrušiť",
             "Abbrechen",
             "Annulla",
-        ]
-    }
-}
-
-extension LocationAlertOk {
-    public static var ok: [String] {
-        return [
-            "ОК",
-            "Tamam",
-            "ΟΚ",
-            "확인",
-            "אישור",
-            "OKE",
-            "OK",
-            "ตกลง",
-            "موافق",
-            "好",
-            "ठीक",
         ]
     }
 }
@@ -99,92 +120,21 @@ extension LocationAlertDeny {
     }
 }
 
-extension LocationAlertAllow {
-    public static var allow: [String] {
+extension LocationAlertOk {
+    public static var ok: [String] {
         return [
-            "Salli",
-            "허용",
-            "允许",
-            "Tillåt",
-            "Permetre",
-            "Izinkan",
-            "السماح",
-            "Povoliť",
-            "Cho phép",
-            "Allow",
-            "Permiteți",
-            "Autoriser",
-            "Benarkan",
-            "Permitir",
-            "允許",
-            "Sta toe",
-            "Erlauben",
-            "Pozwalaj",
-            "अनुमति दें",
-            "Tillat",
-            "許可",
-            "Дозволити",
-            "Разрешить",
-            "Tillad",
-            "Engedélyezés",
-            "İzin Ver",
-            "อนุญาต",
-            "Dozvoli",
-            "Povolit",
-            "אפשר",
-            "Consenti",
-            "Να επιτρέπεται",
+            "ОК",
+            "Tamam",
+            "ΟΚ",
+            "확인",
+            "אישור",
+            "OKE",
+            "OK",
+            "ตกลง",
+            "موافق",
+            "好",
+            "ठीक",
         ]
-    }
-}
-
-public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
-    public static let messages = [
-        "Vill du tillåta att ”*” även ser din platsinfo när du inte använder appen?",
-        "Udostępniać programowi „*” Twoje położenie także, gdy go nie używasz?",
-        "Permitir que “*” também aceda à sua localização quando não está a usar a aplicação?",
-        "‘*’을(를) 사용하지 않을 때에도 해당 앱이 사용자의 위치에 접근하도록 허용하곘습니까?",
-        "允许“*”在您并未使用该应用时访问您的位置吗？",
-        "Engedélyezi, hogy a(z) „*” hozzáférjen az Ön helyzetéhez akkor is, ha nem használja az alkalmazást?",
-        "Chcete aplikaci * povolit přístup k polohovým údajům i v čase, kdy ji nepoužíváte?",
-        "Cũng cho phép “*” truy cập vị trí của bạn ngay cả khi bạn không dùng ứng dụng?",
-        "Dozvoliti aplikaciji “*” da pristupa vašoj lokaciji čak i kad ne koristite aplikaciju?",
-        "Benarkan “*” turut mengakses lokasi anda walaupun anda tidak menggunakan aplikasi?",
-        "Izinkan juga “*” untuk mengakses lokasi Anda bahkan saat Anda tidak menggunakan app?",
-        "¿Permitir a * acceder también a tu ubicación aunque no estés utilizando la aplicación?",
-        "อนุญาตให้ “*” เข้าถึงตำแหน่งที่ตั้งของคุณด้วยแม้ว่าคุณจะไม่ได้ใช้แอพอยู่หรือไม่",
-        "Autoriser « * » à accéder aussi à vos données de localisation même si vous n’utilisez pas l’app?",
-        "Дозволити «*» також отримувати ваше місце, навіть коли програма не використовуєтьcя?",
-        "Sallitko, että * käyttää sijaintiasi myös silloin, kun et käytä appia?",
-        "Permitir que “*” também tenha acesso à sua localização mesmo quando você não estiver usando o aplicativo?",
-        "Autoriser « * » à accéder aussi à vos données de localisation lorsque vous n’utilisez pas l’app ?",
-        "לאפשר גם ל-״*״ לגשת לפרטי מיקומך אפילו כשאינך משתמש/ת ביישום?",
-        "ऐप के उपयोग में न होने के दौरान भी “*” को अपने स्थान का उपयोग करने की अनुमति दें?",
-        "Consenti a “*” di accedere anche ai dati relativi alla tua posizione quando l'app non è in uso?",
-        "Vil du også gi «*» tilgang til plasseringen din selv når du ikke bruker appen?",
-        "Wil je * zelfs toegang tot je locatie toestaan als je de app niet gebruikt?",
-        "Permiteți ca aplicația “*” să acceseze, de asemenea, localizarea dvs. chiar și atunci când nu o utilizați?",
-        "Allow “*” to also access your location even when you are not using the app?",
-        "Chcete povoliť aplikácii „*“ pristupovať k vašej polohe aj v čase, keď ju nepoužívate?",
-        "السماح لـ \"*\" أيضًا بالوصول إلى الموقع الخاص بك حتى عند عدم استخدامك للتطبيق؟",
-        "Permets que “*” també accedeixi a la teva ubicació encara que no estiguis utilitzant l’aplicació?",
-        "“*”, uygulamayı kullanmıyorken bile konumunuza da erişebilsin mi?",
-        "Να επιτρέπεται επίσης στην εφαρμογή «*» η πρόσβαση στην τοποθεσία σας ακόμη κι όταν δεν χρησιμοποιείτε την εφαρμογή;",
-        "Må “*” også få adgang til din lokalitet, når du ikke bruger appen?",
-        "Darf „*“ auch auf deinen Standort zugreifen, wenn du die App nicht benutzt?",
-        "要允許「*」在你並非使用 App 時也能取用你的位置嗎？",
-        "Разрешить программе «*» доступ к Вашей геопозиции, даже когда Вы не работаете с этой программой?",
-        "要允許「*」在您未使用 App 時也可取用您的位置嗎？",
-        "“*”を使用していないときでも位置情報の利用を許可しますか?",
-    ]
-    public var alert: XCUIElement
-
-    public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
-            return nil
-        }
-
-        self.alert = element
     }
 }
 
@@ -225,6 +175,56 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
         "Autoriser « * » à accéder à vos données de localisation même lorsque vous n’utilisez pas l’app ?",
         "Consenti a “*” di accedere ai dati relativi alla tua posizione anche quando non stai usando l'app?",
         "อนุญาตให้ “*” เข้าถึงตำแหน่งที่ตั้งของคุณแม้ว่าคุณจะไม่ได้ใช้แอพอยู่หรือไม่",
+        "“*”を使用していないときでも位置情報の利用を許可しますか?",
+    ]
+    public var alert: XCUIElement
+
+    public init?(element: XCUIElement) {
+        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+            return nil
+        }
+
+        self.alert = element
+    }
+}
+
+public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
+    public static let messages = [
+        "Vill du tillåta att ”*” även ser din platsinfo när du inte använder appen?",
+        "Udostępniać programowi „*” Twoje położenie także, gdy go nie używasz?",
+        "Permitir que “*” também aceda à sua localização quando não está a usar a aplicação?",
+        "‘*’을(를) 사용하지 않을 때에도 해당 앱이 사용자의 위치에 접근하도록 허용하곘습니까?",
+        "允许“*”在您并未使用该应用时访问您的位置吗？",
+        "Engedélyezi, hogy a(z) „*” hozzáférjen az Ön helyzetéhez akkor is, ha nem használja az alkalmazást?",
+        "Chcete aplikaci * povolit přístup k polohovým údajům i v čase, kdy ji nepoužíváte?",
+        "Cũng cho phép “*” truy cập vị trí của bạn ngay cả khi bạn không dùng ứng dụng?",
+        "Dozvoliti aplikaciji “*” da pristupa vašoj lokaciji čak i kad ne koristite aplikaciju?",
+        "Benarkan “*” turut mengakses lokasi anda walaupun anda tidak menggunakan aplikasi?",
+        "Izinkan juga “*” untuk mengakses lokasi Anda bahkan saat Anda tidak menggunakan app?",
+        "¿Permitir a * acceder también a tu ubicación aunque no estés utilizando la aplicación?",
+        "อนุญาตให้ “*” เข้าถึงตำแหน่งที่ตั้งของคุณด้วยแม้ว่าคุณจะไม่ได้ใช้แอพอยู่หรือไม่",
+        "Autoriser « * » à accéder aussi à vos données de localisation même si vous n’utilisez pas l’app?",
+        "Дозволити «*» також отримувати ваше місце, навіть коли програма не використовуєтьcя?",
+        "Sallitko, että * käyttää sijaintiasi myös silloin, kun et käytä appia?",
+        "Permitir que “*” também tenha acesso à sua localização mesmo quando você não estiver usando o aplicativo?",
+        "Autoriser « * » à accéder aussi à vos données de localisation lorsque vous n’utilisez pas l’app ?",
+        "לאפשר גם ל-״*״ לגשת לפרטי מיקומך אפילו כשאינך משתמש/ת ביישום?",
+        "ऐप के उपयोग में न होने के दौरान भी “*” को अपने स्थान का उपयोग करने की अनुमति दें?",
+        "Consenti a “*” di accedere anche ai dati relativi alla tua posizione quando l'app non è in uso?",
+        "Vil du også gi «*» tilgang til plasseringen din selv når du ikke bruker appen?",
+        "Wil je * zelfs toegang tot je locatie toestaan als je de app niet gebruikt?",
+        "Permiteți ca aplicația “*” să acceseze, de asemenea, localizarea dvs. chiar și atunci când nu o utilizați?",
+        "Allow “*” to also access your location even when you are not using the app?",
+        "Chcete povoliť aplikácii „*“ pristupovať k vašej polohe aj v čase, keď ju nepoužívate?",
+        "السماح لـ \"*\" أيضًا بالوصول إلى الموقع الخاص بك حتى عند عدم استخدامك للتطبيق؟",
+        "Permets que “*” també accedeixi a la teva ubicació encara que no estiguis utilitzant l’aplicació?",
+        "“*”, uygulamayı kullanmıyorken bile konumunuza da erişebilsin mi?",
+        "Να επιτρέπεται επίσης στην εφαρμογή «*» η πρόσβαση στην τοποθεσία σας ακόμη κι όταν δεν χρησιμοποιείτε την εφαρμογή;",
+        "Må “*” også få adgang til din lokalitet, når du ikke bruger appen?",
+        "Darf „*“ auch auf deinen Standort zugreifen, wenn du die App nicht benutzt?",
+        "要允許「*」在你並非使用 App 時也能取用你的位置嗎？",
+        "Разрешить программе «*» доступ к Вашей геопозиции, даже когда Вы не работаете с этой программой?",
+        "要允許「*」在您未使用 App 時也可取用您的位置嗎？",
         "“*”を使用していないときでも位置情報の利用を許可しますか?",
     ]
     public var alert: XCUIElement

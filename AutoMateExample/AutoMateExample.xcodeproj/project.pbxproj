@@ -40,11 +40,9 @@
 		967448271E55973D000B42BB /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967448261E55973D000B42BB /* CallsViewController.swift */; };
 		967448291E559A8B000B42BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967448281E559A8B000B42BB /* CalendarViewController.swift */; };
 		9674482B1E559CF9000B42BB /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482A1E559CF9000B42BB /* MotionViewController.swift */; };
-		968C0A521E54E596001793D9 /* HomeKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C0A511E54E596001793D9 /* HomeKitView.swift */; };
-		968C0A551E54E662001793D9 /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C0A541E54E662001793D9 /* HealthKitView.swift */; };
+		9674482D1E55A61D000B42BB /* PermissionsSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482C1E55A61D000B42BB /* PermissionsSubViews.swift */; };
 		969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2811E4216AE00995A49 /* TextInputView.swift */; };
 		969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2841E421AE700995A49 /* MiddleButtonView.swift */; };
-		969CC2871E421D2500995A49 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2861E421D2500995A49 /* LocationView.swift */; };
 		969CC2891E421FE500995A49 /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingView.swift */; };
 		969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */; };
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
@@ -54,7 +52,6 @@
 		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
 		96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */; };
 		C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */; };
-		C9F559731E4DC1C90090BBD9 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F559721E4DC1C90090BBD9 /* ContactsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,11 +139,9 @@
 		967448261E55973D000B42BB /* CallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
 		967448281E559A8B000B42BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9674482A1E559CF9000B42BB /* MotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionViewController.swift; sourceTree = "<group>"; };
-		968C0A511E54E596001793D9 /* HomeKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitView.swift; sourceTree = "<group>"; };
-		968C0A541E54E662001793D9 /* HealthKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
+		9674482C1E55A61D000B42BB /* PermissionsSubViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsSubViews.swift; sourceTree = "<group>"; };
 		969CC2811E4216AE00995A49 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		969CC2841E421AE700995A49 /* MiddleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonView.swift; sourceTree = "<group>"; };
-		969CC2861E421D2500995A49 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		969CC2881E421FE500995A49 /* AppearingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
 		969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalExtensionsTests.swift; sourceTree = "<group>"; };
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
@@ -156,7 +151,6 @@
 		96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTableViewCell.swift; sourceTree = "<group>"; };
 		96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitViewController.swift; sourceTree = "<group>"; };
 		C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		C9F559721E4DC1C90090BBD9 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,12 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				969CC2881E421FE500995A49 /* AppearingView.swift */,
-				C9F559721E4DC1C90090BBD9 /* ContactsView.swift */,
-				968C0A541E54E662001793D9 /* HealthKitView.swift */,
-				968C0A511E54E596001793D9 /* HomeKitView.swift */,
-				969CC2861E421D2500995A49 /* LocationView.swift */,
 				9641182A1E41EF7A0011C776 /* MainView.swift */,
 				969CC2841E421AE700995A49 /* MiddleButtonView.swift */,
+				9674482C1E55A61D000B42BB /* PermissionsSubViews.swift */,
 				96B131DB1E54C161007E3A04 /* PermissionsView.swift */,
 				9621BBCD1E42090C001A9C2C /* PushedView.swift */,
 				9621BBD11E420E25001A9C2C /* ScrollView.swift */,
@@ -487,24 +478,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				969CC2891E421FE500995A49 /* AppearingView.swift in Sources */,
-				968C0A521E54E596001793D9 /* HomeKitView.swift in Sources */,
 				9641182B1E41EF7A0011C776 /* MainView.swift in Sources */,
 				9621BBD21E420E25001A9C2C /* ScrollView.swift in Sources */,
 				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,
 				969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */,
-				968C0A551E54E662001793D9 /* HealthKitView.swift in Sources */,
 				969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */,
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
 				96B131DC1E54C161007E3A04 /* PermissionsView.swift in Sources */,
 				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,
+				9674482D1E55A61D000B42BB /* PermissionsSubViews.swift in Sources */,
 				9621BBCE1E42090C001A9C2C /* PushedView.swift in Sources */,
 				9621BBD01E420D98001A9C2C /* XCUIElementExtensionTests.swift in Sources */,
 				9621BBCB1E4206C6001A9C2C /* TableView.swift in Sources */,
 				1F98923D1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift in Sources */,
 				1F9891B71D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift in Sources */,
-				969CC2871E421D2500995A49 /* LocationView.swift in Sources */,
-				C9F559731E4DC1C90090BBD9 /* ContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
