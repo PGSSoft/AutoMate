@@ -37,6 +37,50 @@ open class PermissionsView: BaseAppView, PushedView {
         return tableView.cells[Locators.healthKit]
     }
 
+    open var speechRecognition: XCUIElement {
+        return tableView.cells[Locators.speechRecognition]
+    }
+
+    open var siri: XCUIElement {
+        return tableView.cells[Locators.siri]
+    }
+
+    open var reminders: XCUIElement {
+        return tableView.cells[Locators.reminders]
+    }
+
+    open var photos: XCUIElement {
+        return tableView.cells[Locators.photos]
+    }
+
+    open var camera: XCUIElement {
+        return tableView.cells[Locators.camera]
+    }
+
+    open var mediaLibrary: XCUIElement {
+        return tableView.cells[Locators.mediaLibrary]
+    }
+
+    open var bluetooth: XCUIElement {
+        return tableView.cells[Locators.bluetooth]
+    }
+
+    open var microphone: XCUIElement {
+        return tableView.cells[Locators.microphone]
+    }
+
+    open var calls: XCUIElement {
+        return tableView.cells[Locators.calls]
+    }
+
+    open var calendar: XCUIElement {
+        return tableView.cells[Locators.calendar]
+    }
+
+    open var motion: XCUIElement {
+        return tableView.cells[Locators.motion]
+    }
+
     // MARK: Actions
     open func goToLocationAlways() {
         locationAlways.tap()
@@ -57,6 +101,50 @@ open class PermissionsView: BaseAppView, PushedView {
     open func goToHealthKit() {
         healthKit.tap()
     }
+
+    open func goToSpeechRecognition() {
+        speechRecognition.tap()
+    }
+
+    open func goToSiri() {
+        siri.tap()
+    }
+
+    open func goToReminders() {
+        reminders.tap()
+    }
+
+    open func goToPhotos() {
+        photos.tap()
+    }
+
+    open func goToCamera() {
+        camera.tap()
+    }
+
+    open func goToMediaLibrary() {
+        mediaLibrary.tap()
+    }
+
+    open func goToBluetooth() {
+        bluetooth.tap()
+    }
+
+    open func goToMicrophone() {
+        microphone.tap()
+    }
+
+    open func goToCalls() {
+        calls.tap()
+    }
+
+    open func goToCalendar() {
+        calendar.tap()
+    }
+
+    open func goToMotion() {
+        motion.tap()
+    }
 }
 
 // MARK: - Locators
@@ -71,5 +159,17 @@ private extension PermissionsView {
         case contacts
         case homeKit
         case healthKit
+
+        case speechRecognition
+        case siri
+        case reminders
+        case photos
+        case camera
+        case mediaLibrary
+        case bluetooth
+        case microphone
+        case calls
+        case calendar
+        case motion
     }
 }

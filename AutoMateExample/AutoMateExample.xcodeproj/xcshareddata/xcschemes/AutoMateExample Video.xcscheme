@@ -57,7 +57,16 @@
                   Identifier = "LaunchArgumentsWithoutAutoMate/testSomething()">
                </Test>
                <Test
-                  Identifier = "PermissionsTests/testContactsSystemAlertButton()">
+                  Identifier = "PermissionsTests/testContactsSystemAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testHealthKitAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testHomeKitAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testLocationSystemAlert()">
                </Test>
                <Test
                   Identifier = "PermissionsTests/testLocationWhenInUseSystemAlertButton()">

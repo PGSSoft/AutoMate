@@ -80,12 +80,12 @@ class PermissionsTests: AppUITestCase {
         XCTAssertTrue(handled)
     }
 
-    func testLocationSystemAlertButton() {
+    func testLocationSystemAlert() {
         locationWhenInUse()
         locationUpgradeToAlways()
     }
 
-    func testContactsSystemAlertButton() {
+    func testContactsSystemAlert() {
         var handled = false
         let token = addUIInterruptionMonitor(withDescription: "Contacts") { (alert) -> Bool in
             guard let contactsAlert = AddressBookAlert(element: alert) else {

@@ -26,7 +26,18 @@ class PermissionsViewController: UIViewController {
             CellStruct(name: "Location when in use", action: "LocationWhenInUse", identifier: "locationWhenInUse"),
             CellStruct(name: "Contacts", action: "Contacts", identifier: "contacts"),
             CellStruct(name: "HomeKit", action: "HomeKit", identifier: "homeKit"),
-            CellStruct(name: "HealthKit", action: "HealthKit", identifier: "healthKit")
+            CellStruct(name: "HealthKit", action: "HealthKit", identifier: "healthKit"),
+            CellStruct(name: "Speech Recognition", action: "SpeechRecognition", identifier: "speechRecognition"),
+            CellStruct(name: "Siri", action: "Siri", identifier: "siri"),
+            CellStruct(name: "Reminders", action: "Reminders", identifier: "reminders"),
+            CellStruct(name: "Photos", action: "Photos", identifier: "photos"),
+            CellStruct(name: "Camera", action: "Camera", identifier: "camera"),
+            CellStruct(name: "Media Library", action: "MediaLibrary", identifier: "mediaLibrary"),
+            CellStruct(name: "Bluetooth", action: "Bluetooth", identifier: "bluetooth"),
+            CellStruct(name: "Microphone", action: "Microphone", identifier: "microphone"),
+            CellStruct(name: "Calls", action: "Calls", identifier: "calls"),
+            CellStruct(name: "Calendar", action: "Calendar", identifier: "calendar"),
+            CellStruct(name: "Motion", action: "Motion", identifier: "motion")
         ]
     }()
 

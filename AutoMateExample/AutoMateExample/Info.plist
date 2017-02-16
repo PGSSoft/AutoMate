@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Test for Location always request</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -32,8 +30,16 @@
 	<string>Test for HealthKit update request</string>
 	<key>NSHomeKitUsageDescription</key>
 	<string>Test for HomeKit request</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Test for Location always request</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Test for Location when in use request</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Test for Reminders request</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Test for Siri request</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Test for Speech Recognition request</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
