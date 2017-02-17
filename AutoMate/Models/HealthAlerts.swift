@@ -1,4 +1,4 @@
-// swiftlint:disable variable_name trailing_comma file_length line_length
+// swiftlint:disable variable_name type_body_length trailing_comma file_length line_length
 /// Represents possible health service messages and label values on buttons.
 
 import XCTest
