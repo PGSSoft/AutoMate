@@ -1,4 +1,4 @@
-// swiftlint:disable type_body_length
+// swiftlint:disable type_body_length file_length line_length
 
 /// Enumeration describing available languages in the system.
 public enum SystemLanguage: String, LaunchArgumentValue {

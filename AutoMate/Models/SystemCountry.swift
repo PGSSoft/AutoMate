@@ -1,4 +1,4 @@
-// swiftlint:disable type_body_length
+// swiftlint:disable type_body_length file_length line_length
 
 /// Enumeration describing available country codes in the system.
 public enum SystemCountry: String {
