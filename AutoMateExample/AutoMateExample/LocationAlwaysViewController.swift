@@ -15,10 +15,6 @@ class LocationAlwaysViewController: UIViewController {
     let manager = CLLocationManager()
 
     // MARK: View lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         manager.requestAlwaysAuthorization()
