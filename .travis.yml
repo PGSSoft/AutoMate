@@ -20,7 +20,6 @@ before_script:
   - bundle exec fastlane snapshot reset_simulators --force --ios ${DESTINATION_OS}
 
 script:
-  - bundle exec danger
   - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
   - bundle exec danger
   - pod spec lint

@@ -10,5 +10,4 @@ import XCTest
 import AutoMate
 
 // MARK: - TableView
-open class TableView: BaseAppView, PushedView {
-}
+open class TableView: BaseAppView, PushedView { }

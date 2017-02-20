@@ -118,23 +118,4 @@ public extension XCUIElement {
     public func tap(withOffset offset: CGVector = CGVector.zero) {
         coordinate(withNormalizedOffset: offset).tap()
     }
-
-    /**
-     Dismiss system alert by tapping "Don't allow" (when possible).
-
-     - note: This method exists because system alerts do not provide accessibility identifiers. Therefore to support different languages,
-     it's necessary to try all localized variants.
-     - note: In Xcode 7 there is a bug preventing `addUIInterruptionMonitorWithDescription` from working when multiple system alerts appear.
-     It has been fixed in Xcode 8.
-     */
-    public func tapLeftButtonOnSystemAlert() {
-        let labels = SystemAlertLabel.dontAllow + SystemAlertLabel.ok
-        for buttonLabel in labels {
-            let button = buttons[buttonLabel]
-            if button.exists {
-                button.tap()
-                return
-            }
-        }
-    }
 }

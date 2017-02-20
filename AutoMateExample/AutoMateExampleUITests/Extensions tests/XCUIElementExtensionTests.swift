@@ -16,7 +16,6 @@ class XCUIElementExtensionTests: AppUITestCase {
     lazy var textInputView: TextInputView = TextInputView(in: self.app)
     lazy var scrollView: ScrollView = ScrollView(in: self.app)
     lazy var middleButtonView: MiddleButtonView = MiddleButtonView(in: self.app)
-    lazy var locationView: LocationView = LocationView(in: self.app)
 
     // MARK: Set up
     override func setUp() {
@@ -103,21 +102,6 @@ class XCUIElementExtensionTests: AppUITestCase {
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(middleButtonView.isLabelDisplayed())
-    }
-
-    /// This test relies on permission being cleared before starting the test. This is currently done in "Run script" build phase.
-    func testSystemAlertButton() {
-        mainView.goToLocationMenu()
-
-        addUIInterruptionMonitor(withDescription: "Location") { (element) -> Bool in
-            element.tapLeftButtonOnSystemAlert()
-            return true
-        }
-
-        // interruption won't happen without some kind of action
-        app.tap()
-
-        wait(forExistOf: locationView.deniedPermissionLabel)
     }
 
     // MARK: Test for movie

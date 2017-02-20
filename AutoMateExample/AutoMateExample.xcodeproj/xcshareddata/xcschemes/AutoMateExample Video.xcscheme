@@ -57,6 +57,21 @@
                   Identifier = "LaunchArgumentsWithoutAutoMate/testSomething()">
                </Test>
                <Test
+                  Identifier = "PermissionsTests/testContactsSystemAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testHealthKitAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testHomeKitAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testLocationSystemAlert()">
+               </Test>
+               <Test
+                  Identifier = "PermissionsTests/testLocationWhenInUseSystemAlertButton()">
+               </Test>
+               <Test
                   Identifier = "XCUIElementExtensionTests/testClearAndType()">
                </Test>
                <Test
@@ -69,13 +84,16 @@
                   Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboard()">
                </Test>
                <Test
+                  Identifier = "XCUIElementExtensionTests/testContactsSystemAlertButton()">
+               </Test>
+               <Test
                   Identifier = "XCUIElementExtensionTests/testIsVisible()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testSimpleSwipe()">
+                  Identifier = "XCUIElementExtensionTests/testLocationSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testSystemAlertButton()">
+                  Identifier = "XCUIElementExtensionTests/testSimpleSwipe()">
                </Test>
                <Test
                   Identifier = "XCUIElementExtensionTests/testTapWithOffset()">

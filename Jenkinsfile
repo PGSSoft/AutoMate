@@ -6,7 +6,6 @@ node("ios_ui") {
       env.NSUnbufferedIO = "YES"
       env.DEVELOPER_DIR = "/Applications/Xcode.app"
       env.DANGER_BITBUCKETSERVER_HOST = "bitbucket.pgs-soft.com"
-      env.GIT_URL_1 = "ssh://git@bitbucket.pgs-soft.com:7999/MOSP/pgs-automate-ios.git"
 
       //
       // Helper methods
@@ -48,7 +47,7 @@ node("ios_ui") {
                 # RBENV
                 eval "$(rbenv init -)"
 
-                bundle exec danger
+                # bundle exec danger
 
                 bundle exec golden_rose generate "output/AutoMate.test_result"
                 mv "index.html" "output/index_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
@@ -87,21 +86,14 @@ node("ios_ui") {
         // Stages
         // Prepare node
         // - clean workspace
-        stage("Prepare node") {
-          deleteDir()
-        }
-
-        // Clone
-        stage("Clone") {
-          checkout scm
-        }
-
-        // Prepare build
         // - kill simulator
+        // - clone repository
         // - update bundle
         // - reset simulators
-        stage("Prepare build") {
+        stage("Prepare & clone") {
+          deleteDir()
           killSimulator()
+          checkout scm
 
           sh '''
             # RBENV
@@ -113,36 +105,46 @@ node("ios_ui") {
 
             # Reset simulators
             bundle exec fastlane snapshot reset_simulators --force --ios 10.2
-
-            # Danger
-            bundle exec danger
           '''
         }
 
         // Tests
-        stage("iPhone SE, 10.2") {
-          test("iPhone SE", "10.2")
+        try {
+          stage("iPhone SE, 10.2") {
+            test("iPhone SE", "10.2")
+          }
+
+          stage("iPhone 7, 10.2") {
+            test("iPhone 7", "10.2")
+          }
+
+          stage("iPhone 7 Plus, 10.2") {
+            test("iPhone 7 Plus", "10.2")
+          }
+
+          stage("Cocoapods lint") {
+            sh '''
+              # RBENV
+              eval "$(rbenv init -)"
+
+              bundle exec pod spec lint
+            '''
+          }
         }
+        finally {
+          stage("Danger") {
+            sh '''
+              # RBENV
+              eval "$(rbenv init -)"
 
-        stage("iPhone 7, 10.2") {
-          test("iPhone 7", "10.2")
-        }
+              # Danger
+              bundle exec danger
+            '''
+          }
 
-        stage("iPhone 7 Plus, 10.2") {
-          test("iPhone 7 Plus", "10.2")
-        }
-
-        stage("Cocoapods lint") {
-          sh '''
-            # RBENV
-            eval "$(rbenv init -)"
-
-            bundle exec pod spec lint
-          '''
-        }
-
-        stage("Clean") {
-          deleteDir()
+          stage("Clean") {
+            deleteDir()
+          }
         }
       }
     }

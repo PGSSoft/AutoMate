@@ -29,8 +29,8 @@ open class MainView: BaseAppView {
         return menu(withTitle: Locators.scrollViewMenu)
     }
 
-    open var locationMenu: XCUIElement {
-        return menu(withTitle: Locators.locationMenu)
+    open var permissionsViewMenu: XCUIElement {
+        return menu(withTitle: Locators.permissionsViewMenu)
     }
 
     open var middleButtonMenu: XCUIElement {
@@ -54,8 +54,8 @@ open class MainView: BaseAppView {
         scrollViewMenu.tap()
     }
 
-    open func goToLocationMenu() {
-        locationMenu.tap()
+    open func goToPermissionsViewMenu() {
+        permissionsViewMenu.tap()
     }
 
     open func goToMiddleButtonMenu() {
@@ -90,7 +90,7 @@ private extension MainView {
         case textInputMenu = "Text input"
         case appearingViewMenu = "Appearing view"
         case scrollViewMenu = "Scroll view"
-        case locationMenu = "Location"
+        case permissionsViewMenu = "Permissions"
         case middleButtonMenu = "Middle button"
         case tableViewMenu = "Table view"
     }
