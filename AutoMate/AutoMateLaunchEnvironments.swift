@@ -60,7 +60,7 @@ public struct EventLaunchEnvironment: LaunchEnvironmentWithMultipleValues, AutoM
     }
 }
 
-// MARK: - Event Launch Environment
+// MARK: - Reminder Launch Environment
 /// Launch environment supporting EventKit reminders. Expects bundle and file name for every file containing data of reminders to be added into calendar at test launch. Structure is defined in example project's file _reminders.json_.
 /// Usage example:
 ///
