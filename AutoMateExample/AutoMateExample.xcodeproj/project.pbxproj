@@ -52,6 +52,12 @@
 		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
 		96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */; };
 		C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */; };
+		E457E9001E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457E8FF1E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift */; };
+		E4BA7C7A1E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */; };
+		E4BA7C7C1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */; };
+		E4BA7C7E1E5B2EF600593B52 /* EventKitDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7D1E5B2EF600593B52 /* EventKitDataStore.swift */; };
+		E4BA7C811E5C578D00593B52 /* EventKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */; };
+		E4BA7C821E5C578D00593B52 /* EventKitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +157,12 @@
 		96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTableViewCell.swift; sourceTree = "<group>"; };
 		96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitViewController.swift; sourceTree = "<group>"; };
 		C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		E457E8FF1E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnviromentsTableViewController.swift; sourceTree = "<group>"; };
+		E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentsDataViewController.swift; sourceTree = "<group>"; };
+		E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentTableDataSource.swift; sourceTree = "<group>"; };
+		E4BA7C7D1E5B2EF600593B52 /* EventKitDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitDataStore.swift; sourceTree = "<group>"; };
+		E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitTableViewCell.swift; sourceTree = "<group>"; };
+		E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventKitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +207,7 @@
 		1F9891A01D409547007CD2B0 /* AutoMateExample */ = {
 			isa = PBXGroup;
 			children = (
+				E437D7F11E5B1B96001C6477 /* AutoMateLaunchEnviroments */,
 				966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */,
 				1F9891AD1D409547007CD2B0 /* Info.plist */,
 				1F9892391D409B16007CD2B0 /* LaunchScreen.storyboard */,
@@ -291,6 +304,19 @@
 				9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */,
 			);
 			path = "Extensions tests";
+			sourceTree = "<group>";
+		};
+		E437D7F11E5B1B96001C6477 /* AutoMateLaunchEnviroments */ = {
+			isa = PBXGroup;
+			children = (
+				E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */,
+				E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */,
+				E4BA7C7D1E5B2EF600593B52 /* EventKitDataStore.swift */,
+				E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */,
+				E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */,
+				E457E8FF1E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift */,
+			);
+			name = AutoMateLaunchEnviroments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFFC1D31D477CFD00EBB70D /* Localizable.strings in Resources */,
+				E4BA7C821E5C578D00593B52 /* EventKitTableViewCell.xib in Resources */,
 				1F98923A1D409B16007CD2B0 /* Main.storyboard in Resources */,
 				1F98923B1D409B16007CD2B0 /* LaunchScreen.storyboard in Resources */,
 				1F9891A91D409547007CD2B0 /* Assets.xcassets in Resources */,
@@ -456,6 +483,7 @@
 				96470BD51E55873F00D40CB9 /* SiriViewController.swift in Sources */,
 				967448231E5593AE000B42BB /* BluetoothViewController.swift in Sources */,
 				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
+				E457E9001E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift in Sources */,
 				962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */,
 				965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */,
 				96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */,
@@ -463,13 +491,17 @@
 				1F39828C1D65C2D900AC089C /* MiddleButtonViewController.swift in Sources */,
 				967448291E559A8B000B42BB /* CalendarViewController.swift in Sources */,
 				96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */,
+				E4BA7C7E1E5B2EF600593B52 /* EventKitDataStore.swift in Sources */,
 				964F74CA1E54DE90004B9400 /* LocationAlwaysViewController.swift in Sources */,
 				967448271E55973D000B42BB /* CallsViewController.swift in Sources */,
+				E4BA7C7A1E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift in Sources */,
 				9674481C1E55917B000B42BB /* PhotoViewController.swift in Sources */,
+				E4BA7C7C1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift in Sources */,
 				1F9891A21D409547007CD2B0 /* AppDelegate.swift in Sources */,
 				967448211E5592BA000B42BB /* MediaLibraryViewController.swift in Sources */,
 				9674482B1E559CF9000B42BB /* MotionViewController.swift in Sources */,
 				961CB2041E558F7000148CAE /* RemindersViewController.swift in Sources */,
+				E4BA7C811E5C578D00593B52 /* EventKitTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
