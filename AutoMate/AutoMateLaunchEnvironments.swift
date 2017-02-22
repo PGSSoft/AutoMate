@@ -51,7 +51,7 @@ public struct EventLaunchEnvironment: LaunchEnvironmentWithMultipleValues, AutoM
     public typealias Value = LaunchEnvironmentResourceValue
 
     // MARK: Properties
-    public static let key: AutoMateKey = .event
+    public static let key: AutoMateKey = .events
     public let valuesCollection: [Value]
 
     // MARK: Initialization
@@ -73,7 +73,30 @@ public struct ReminderLaunchEnvironment: LaunchEnvironmentWithMultipleValues, Au
     public typealias Value = LaunchEnvironmentResourceValue
 
     // MARK: Properties
-    public static let key: AutoMateKey = .reminder
+    public static let key: AutoMateKey = .reminders
+    public let valuesCollection: [LaunchEnvironmentResourceValue]
+
+    // MARK: Initialization
+    public init(valuesCollection: [LaunchEnvironmentResourceValue]) {
+        self.valuesCollection = valuesCollection
+    }
+}
+
+// MARK: - Contacts Launch Environment
+/// Launch environment supporting Contacts. Expects bundle and file name for every file containing data of contacts to be added into address book at test launch.
+/// Structure is defined in example project's file _contacts.json_.
+/// Usage example:
+///
+/// ```swift
+/// let johnContacts: ContactLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "john", bundleName: "Data") ]
+/// let severalContacts = ContactLaunchEnvironment(resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
+public struct ContactLaunchEnvironment: LaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
+
+    // MARK: Typealiases
+    public typealias Value = LaunchEnvironmentResourceValue
+
+    // MARK: Properties
+    public static let key: AutoMateKey = .contacts
     public let valuesCollection: [LaunchEnvironmentResourceValue]
 
     // MARK: Initialization

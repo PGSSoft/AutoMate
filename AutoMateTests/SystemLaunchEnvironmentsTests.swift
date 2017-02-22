@@ -34,7 +34,7 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]), ["AM_EVENTS_KEY": "nil:this_week"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.futureEventsLaunchEnvironment, LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]),
-                       ["AM_EVENTS_KEY": "Resources:next_week, nil:recurring_monthly"])
+                       ["AM_EVENTS_KEY": "Resources:next_week,nil:recurring_monthly"])
     }
 
     func testAnimationLaunchEnvironment() {
@@ -48,9 +48,16 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
 
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Data:johnys_birthday_reminder"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.highPriorityReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Test data:automate_release_reminders, nil:wwdc_reminders"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.highPriorityReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Test data:automate_release_reminders,nil:wwdc_reminders"])
     }
 
+    func testContactLaunchEnvironment() {
+        XCTAssertEqual(build(with: []), [:])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "Data:john"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.severalContacts, LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "Test data:michael,nil:emma"])
+    }
+
+    // swiftlint:disable function_body_length
     func testCombinedLaunchEnvironment() {
 
         XCTAssertEqual(build(with: []), [:])
@@ -89,7 +96,20 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
                            "FIX_BUGS": "for_those_who_cant_wait_for_fall",
                            "MADE_WITH_LOVE_BY": "PGS",
                            "AM_ANIMATION_KEY": "false",
-                           "AM_REMINDERS_KEY": "Test data:automate_release_reminders, nil:wwdc_reminders"])
+                           "AM_REMINDERS_KEY": "Test data:automate_release_reminders,nil:wwdc_reminders"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
+                                    LaunchOptionsFactory.goalsLaunchEnvironments,
+                                    LaunchOptionsFactory.pgsWithLoveLaunchEnvironment,
+                                    LaunchOptionsFactory.turnOffAnimationLaunchEnvironment,
+                                    LaunchOptionsFactory.highPriorityReminderLaunchEnvironment,
+                                    LaunchOptionsFactory.severalContacts]),
+                       ["AM_EVENTS_KEY": "nil:this_week",
+                        "SIMPLIFY": "testing_iOS_app_ui",
+                        "FIX_BUGS": "for_those_who_cant_wait_for_fall",
+                        "MADE_WITH_LOVE_BY": "PGS",
+                        "AM_ANIMATION_KEY": "false",
+                        "AM_REMINDERS_KEY": "Test data:automate_release_reminders,nil:wwdc_reminders",
+                        "AM_CONTACTS_KEY": "Test data:michael,nil:emma"])
     }
 
     // MARK: Helpers

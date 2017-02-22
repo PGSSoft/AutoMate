@@ -29,4 +29,7 @@ enum LaunchOptionsFactory {
 
     static let recurringReminderLaunchEnvironment: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "johnys_birthday_reminder", bundleName: "Data")]
     static let highPriorityReminderLaunchEnvironment = ReminderLaunchEnvironment(resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
+
+    static let johnContacts: ContactLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "john", bundleName: "Data") ]
+    static let severalContacts = ContactLaunchEnvironment(resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
 }
