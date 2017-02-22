@@ -58,6 +58,7 @@
 		E4BA7C7E1E5B2EF600593B52 /* EventKitDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7D1E5B2EF600593B52 /* EventKitDataStore.swift */; };
 		E4BA7C811E5C578D00593B52 /* EventKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */; };
 		E4BA7C821E5C578D00593B52 /* EventKitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */; };
+		E4C7AF3F1E5DD63000B79BB0 /* ContactsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7AF3E1E5DD63000B79BB0 /* ContactsDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		E4BA7C7D1E5B2EF600593B52 /* EventKitDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitDataStore.swift; sourceTree = "<group>"; };
 		E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitTableViewCell.swift; sourceTree = "<group>"; };
 		E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventKitTableViewCell.xib; sourceTree = "<group>"; };
+		E4C7AF3E1E5DD63000B79BB0 /* ContactsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */,
 				E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */,
 				E457E8FF1E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift */,
+				E4C7AF3E1E5DD63000B79BB0 /* ContactsDataStore.swift */,
 			);
 			name = AutoMateLaunchEnviroments;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				96470BD31E5585E200D40CB9 /* SpeechRecognitionViewController.swift in Sources */,
 				966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */,
 				96470BD51E55873F00D40CB9 /* SiriViewController.swift in Sources */,
+				E4C7AF3F1E5DD63000B79BB0 /* ContactsDataStore.swift in Sources */,
 				967448231E5593AE000B42BB /* BluetoothViewController.swift in Sources */,
 				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
 				E457E9001E5C96A4006B08B5 /* LaunchEnviromentsTableViewController.swift in Sources */,
