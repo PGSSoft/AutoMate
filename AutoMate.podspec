@@ -3,8 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "Swift framework containing set of helpful XCTest extensions for writing UI automation tests."
   s.homepage     = "https://github.com/PGSSoft/AutoMate"
-
-  s.license      = "MIT"
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
   s.authors      = {
     "Joanna Bednarz"   => "jbednarz@pgs-soft.com",
@@ -15,7 +14,7 @@ Pod::Spec.new do |s|
     "Ewelina Cyło"     => "ecylo@pgs-soft.com"
   }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '9.2'
 
   s.source        = { :git => "https://github.com/PGSSoft/AutoMate.git", :tag => "#{s.version}" }
 
