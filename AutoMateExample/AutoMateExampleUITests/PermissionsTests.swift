@@ -60,6 +60,7 @@ class PermissionsTests: AppUITestCase {
         permissionsView.goToLocationWhenInUse()
         // Interruption won't happen without some kind of action.
         app.tap()
+        wait(forVisibilityOf: locationView.requestLabel)
         locationView.goBack()
         permissionsView.goBack()
         removeUIInterruptionMonitor(token)

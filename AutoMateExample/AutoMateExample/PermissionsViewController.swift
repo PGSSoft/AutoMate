@@ -44,7 +44,7 @@ class PermissionsViewController: UIViewController {
     // View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.accessibilityIdentifier = "tableView"
+        tableView.accessibilityIdentifier = "permissionTableView"
     }
 }
 

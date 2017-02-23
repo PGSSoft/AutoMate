@@ -19,7 +19,17 @@ open class HealthKitView: BaseAppView, PushedView { }
 open class HomeKitView: BaseAppView, PushedView { }
 
 // MARK: - LocationView
-open class LocationView: BaseAppView, PushedView {}
+open class LocationView: BaseAppView, PushedView {
+    // MARK: Elements
+    open var requestLabel: XCUIElement {
+        return view.staticTexts[Locators.requestLabel]
+    }
+
+    // MARK: Locators
+    private enum Locators: String, Locator {
+        case requestLabel
+    }
+}
 
 // MARK: - SpeechRecognitionView
 open class SpeechRecognitionView: BaseAppView, PushedView {}

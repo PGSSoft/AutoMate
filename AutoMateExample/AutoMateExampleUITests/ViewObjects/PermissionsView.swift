@@ -147,11 +147,19 @@ open class PermissionsView: BaseAppView, PushedView {
     }
 }
 
+// MARK: - IdentifiableByElement
+extension PermissionsView: IdentifiableByElement {
+
+    public var identifingElement: XCUIElement {
+        return tableView
+    }
+}
+
 // MARK: - Locators
 private extension PermissionsView {
 
     enum Locators: String, Locator {
-        case tableView
+        case tableView = "permissionTableView"
         case menuItemName
 
         case locationAlways
