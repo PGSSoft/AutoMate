@@ -1,0 +1,13 @@
+platform :ios, '9.2'
+
+target 'AutoMateExample' do
+  use_frameworks!
+
+  pod 'AutoMate-AppBuddy', :git => 'ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-appbuddy-ios.git', :branch => 'develop'
+
+  target 'AutoMateExampleUITests' do
+    inherit! :search_paths
+
+  end
+
+end

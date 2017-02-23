@@ -9,26 +9,52 @@
 import Contacts
 
 class ContactsDataStore: DataStore {
-    // MARK: Typealias
+
+    // MARK: DataStore - Typealias
     typealias T = CNContact
-    // MARK: Properties
-    weak var delegate: DataStoreDelegate?
+    
+    // MARK: DataStore - Properties
     private(set) var data = [[T]()]
 
+    // MARK: Private - Properties
     private let store = CNContactStore()
     private let fetchRequest: CNContactFetchRequest = {
         return CNContactFetchRequest(keysToFetch: [
                                          CNContactEmailAddressesKey,
-                                         CNContactFormatter.descriptorForRequiredKeys(for: .fullName)
+                                         CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+                                         CNContactPhoneNumbersKey,
+                                         CNContactUrlAddressesKey,
+                                         CNContactSocialProfilesKey,
+                                         CNContactThumbnailImageDataKey,
+                                         CNContactNicknameKey
                                      ].flatMap { $0 as? CNKeyDescriptor })
     }()
 
-    // MARK: Methods
+    // MARK: DataStore - Methods
     func title(for section: Int) -> String? {
         return nil
     }
 
-    func reloadData() {
-        try? store.enumerateContacts(with: fetchRequest) { self.data[0].append($0.0) }
+    func reloadData(completion: @escaping () -> Void) {
+        requestPermission { [weak self] authenticated in
+            guard let strongSelf = self else {
+                completion()
+                return
+            }
+            try? strongSelf.store.enumerateContacts(with: strongSelf.fetchRequest) { strongSelf.data[0].append($0.0) }
+            completion()
+        }
+    }
+    
+    // MARK: Private - Methods
+    private func requestPermission(with completion: @escaping (Bool) -> Void) {
+        guard CNContactStore.authorizationStatus(for: .contacts) != .authorized else {
+            completion(true)
+            return
+        }
+        
+        store.requestAccess(for: .contacts) { access, _ in
+            completion(access)
+        }
     }
 }

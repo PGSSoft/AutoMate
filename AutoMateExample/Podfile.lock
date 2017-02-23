@@ -1,0 +1,22 @@
+PODS:
+  - AutoMate-AppBuddy (1.0.0)
+
+DEPENDENCIES:
+  - AutoMate-AppBuddy (from `ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-appbuddy-ios.git`, branch `develop`)
+
+EXTERNAL SOURCES:
+  AutoMate-AppBuddy:
+    :branch: develop
+    :git: ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-appbuddy-ios.git
+
+CHECKOUT OPTIONS:
+  AutoMate-AppBuddy:
+    :commit: 1a16ba900858c897bce83db7f167c1c915455fc7
+    :git: ssh://git@bitbucket.pgs-soft.com:7999/mosp/pgs-automate-appbuddy-ios.git
+
+SPEC CHECKSUMS:
+  AutoMate-AppBuddy: 3396a08c2587602655b9b6806d4c1645c67512a7
+
+PODFILE CHECKSUM: c04b29cdb1bb38c0ad1fb467ddb72ce9dc67158d
+
+COCOAPODS: 1.1.1

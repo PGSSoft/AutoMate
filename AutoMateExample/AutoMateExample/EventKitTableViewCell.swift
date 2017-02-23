@@ -12,19 +12,23 @@ import EventKit
 class EventKitTableViewCell: UITableViewCell, ConfigurableCell {
 
     typealias T = EKCalendarItem
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var creationDateLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var calendarLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
 
     func configure(with data: T) {
-
+        titleLabel.text = data.title
+        locationLabel.text = data.location
+        calendarLabel.text = data.calendar.title
+        notesLabel.text = data.notes
+        
+        if let creationDate = data.creationDate {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MM-yyyy"
+            formatter.string(from: creationDate)
+        }
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
