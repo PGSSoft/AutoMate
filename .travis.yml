@@ -9,17 +9,12 @@ env:
     - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.2"
     - DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.2"
 
-after_install:
+before_script:
   - bundle exec pod --version
   - bundle exec fastlane --version
-
-before_script:
-  - killall -9 -u $(id -un) "Simulator" || true
-  - killall -9 -u $(id -un) "launchd_sim" || true
-  - killall -9 -u $(id -un) "com.apple.CoreSimulator.CoreSimulatorService" || true
   - bundle exec fastlane snapshot reset_simulators --force --ios ${DESTINATION_OS}
 
 script:
   - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
   - bundle exec danger
-  - pod spec lint
+  - bundle exec pod lib lint

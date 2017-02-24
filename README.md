@@ -4,28 +4,28 @@
     <img src="assets/made-with-love-by-PGS.png" />
     <p>
       <b>AutoMate</b> &bull;
-      <a href="https://github.com/PGSSoft/...">App Companion</a>
-      <a href="https://github.com/PGSSoft/...">Templates</a>
-      <a href="https://github.com/PGSSoft/...">ModelGenerator</a>
+      <a href="https://github.com/PGSSoft/AutoMate-AppBuddy">AppBuddy</a> &bull;
+      <a href="https://github.com/PGSSoft/AutoMate-Templates">Templates</a> &bull;
+      <a href="https://github.com/PGSSoft/AutoMate-ModelGenerator">ModelGenerator</a>
     </p>
 </div>
 
 # AutoMate
 
-`AutoMate` is a Swift framework containing a set of helpful `XCTest` extensions for writing UI automation tests. It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device.
+`AutoMate` is a Swift framework containing a set of helpful `XCTest` extensions for writing UI automation tests. It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device. With the [`AutoMate-AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) it can also disable animations in the application and manage events, reminders and contacts.
 
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org/)
-[![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate/)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
+[![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/AutoMate.svg)](http://cocoadocs.org/docsets/AutoMate)
-[![License](https://img.shields.io/cocoapods/l/AutoMate.svg)](https://github.com/PGSSoft/AutoMate/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/PGSSoft/AutoMate.svg)](https://github.com/PGSSoft/AutoMate/blob/master/LICENSE)
 
 ![AutoMate](assets/AutoMate.gif)
 
 ## Installation
 
-The most convenient way to install it is by using [Cocoapods](https://cocoapods.org/) with Podfile:
+The most convenient way to install it is by using [CocoaPods](https://cocoapods.org) with Podfile:
 
 ```ruby
 pod 'AutoMate'
@@ -84,12 +84,13 @@ github "PGSSoft/AutoMate"
 - [x] Custom keyboards, locales and languages
 - [x] `XCTest` extensions
 - [x] Added CoreData launch arguments
-- [ ] Disable UIView animations
-- [x] Strong-typed helpers: localizers, view object templates
-- [x] Base XCTestCase template
+- [x] Disable UIView animations (with `AutoMate-AppBuddy`)
+- [x] Strong-typed helpers: locators, view object templates (with `AutoMate-Templates`)
+- [x] Base XCTestCase template (with `AutoMate-Templates`)
+- [x] Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`) (with `AutoMate-ModelGenerator`)
+- [x] Managing events, reminders and contacts (with `AutoMate-AppBuddy`)
+- [x] Companion library for the application (`AutoMate-AppBuddy`)
 - [ ] Improve launch options type safety
-- [x] Improve handling of system alerts
-- [x] Companion library for the app // I would add link to repo when there will be one
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders
 - [ ] Making screenshots
@@ -98,7 +99,7 @@ github "PGSSoft/AutoMate"
 
 ## Example application
 
-Repository contains example application under `./AutoMateExample/` directory. Structure of the app is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
+Repository contains example application under `AutoMateExample` directory. Structure of the application is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
 
 ## Development
 
@@ -131,8 +132,8 @@ Bug reports and pull requests are welcome on GitHub at [https://github.com/PGSSo
 The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## About
-The project maintained by software development agency [PGS Software](https://www.pgs-soft.com/).
-See our other [open-source projects](https://github.com/PGSSoft) or [contact us](https://www.pgs-soft.com/contact-us/) to develop your product.
+The project maintained by software development agency [PGS Software](https://www.pgs-soft.com).
+See our other [open-source projects](https://github.com/PGSSoft) or [contact us](https://www.pgs-soft.com/contact-us) to develop your product.
 
 ## Follow us
 

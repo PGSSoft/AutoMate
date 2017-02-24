@@ -2,7 +2,7 @@ node("ios_ui") {
   timeout(45) {
     ansiColor('xterm') {
       env.LANG = "en_US.UTF-8"
-      env.RBENV_VERSION = env.RBENV_2_3
+      env.RBENV_VERSION = env.RBENV_2_4
       env.NSUnbufferedIO = "YES"
       env.DEVELOPER_DIR = "/Applications/Xcode.app"
       env.DANGER_BITBUCKETSERVER_HOST = "bitbucket.pgs-soft.com"
@@ -122,12 +122,12 @@ node("ios_ui") {
             test("iPhone 7 Plus", "10.2")
           }
 
-          stage("Cocoapods lint") {
+          stage("CocoaPods lint") {
             sh '''
               # RBENV
               eval "$(rbenv init -)"
 
-              bundle exec pod spec lint
+              bundle exec pod lib lint
             '''
           }
         }

@@ -8,7 +8,10 @@ Released on ???.
 - `IdentifiableByElement` protocol
 - `Locator` protocol
 - `AppUITestCase` as base `XCTestCase` template
-- Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`)
+- Disable UIView animations (with `AutoMate-AppBuddy`)
+- Improve handling of system alerts (with `AutoMate-ModelGenerator`)
+- Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`) (with `AutoMate-Templates`)
+- Managing events, reminders and contacts (with `AutoMate-AppBuddy`)
 
 #### Updated
 - Documentation
