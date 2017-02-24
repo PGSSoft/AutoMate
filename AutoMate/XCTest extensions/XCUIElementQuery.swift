@@ -68,7 +68,7 @@ public extension XCUIElementQuery {
     public func elements(withLabelsMatching texts: [String], comparisonOperator: StringComparisonOperator = .equals) -> [XCUIElement] {
         return texts
             .flatMap({ element(withLabelMatching: $0, comparisonOperator: comparisonOperator) })
-            .filter {$0.exists}
+            .filter { $0.exists }
     }
 
     /**

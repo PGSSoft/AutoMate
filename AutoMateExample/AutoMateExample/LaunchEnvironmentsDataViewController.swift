@@ -28,6 +28,7 @@ class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentT
             eventsDataSource.delegate = self
             tableView.dataSource = eventsDataSource
             dataSource = eventsDataSource
+
         case .contact:
             tableView.register(nibFor: ContactTableViewCell.self)
             let contactsDataSource = ContactsTableViewDataSource()
@@ -36,28 +37,32 @@ class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentT
             dataSource = contactsDataSource
         }
     }
-    
+
     func didFinishReloadData<DataSource: LaunchEnvironmentTableDataSourceProtocol>(store: DataSource) {
         tableView.reloadData()
     }
 }
 
 class EventKitTableViewDataSource: LaunchEnvironmentTableDataSource<EventKitTableViewCell, EventKitDataStore> {
-    
+
     init() {
         super.init(store: EventKitDataStore())
         dataStore.reloadData { [weak self] in
-            self?.delegate?.didFinishReloadData(store: self!)
+            DispatchQueue.main.async {
+                self?.delegate?.didFinishReloadData(store: self!)
+            }
         }
     }
 }
 
 class ContactsTableViewDataSource: LaunchEnvironmentTableDataSource<ContactTableViewCell, ContactsDataStore> {
-    
+
     init() {
         super.init(store: ContactsDataStore())
         dataStore.reloadData { [weak self] in
-            self?.delegate?.didFinishReloadData(store: self!)
+            DispatchQueue.main.async {
+                self?.delegate?.didFinishReloadData(store: self!)
+            }
         }
     }
 }

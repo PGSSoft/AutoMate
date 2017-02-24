@@ -10,10 +10,11 @@ import UIKit
 import Contacts
 
 class ContactTableViewCell: UITableViewCell, ConfigurableCell {
-    
+
     typealias T = CNContact
-    
+
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var socialLabel: UILabel!
     @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -23,54 +24,55 @@ class ContactTableViewCell: UITableViewCell, ConfigurableCell {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailAddressLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    
+    @IBOutlet var informationStackViews: [UIStackView]!
+    @IBOutlet weak var socialProfileStackView: UIStackView!
+    @IBOutlet weak var phoneNumberStackView: UIStackView!
+    @IBOutlet weak var urlStackView: UIStackView!
+    @IBOutlet weak var emailStackView: UIStackView!
+
     func configure(with data: T) {
-        nameLabel.text = "\(data.givenName) \(data.familyName) (\(data.nickname))"
-        
+        nameLabel.text = "\(data.givenName) \(data.familyName)"
+
+        if !data.nickname.isEmpty {
+            nicknameLabel.text = data.nickname
+        } else {
+            nicknameLabel.isHidden = true
+        }
+
         if let socialProfile = data.socialProfiles.first {
-            socialLabel.text = "\(socialProfile.label) (\(socialProfile.value.service))"
+            socialLabel.text = "\(socialProfile.label ?? "") (\(socialProfile.value.service))"
             profileLabel.text = socialProfile.value.username
         } else {
-            socialLabel.isHidden = true
-            profileLabel.isHidden = true
+            socialProfileStackView.isHidden = true
         }
-        
+
         if let phoneNumber = data.phoneNumbers.first {
             phoneLabel.text = phoneNumber.label
             numberLabel.text = phoneNumber.value.stringValue
         } else {
-            phoneLabel.isHidden = true
-            numberLabel.isHidden = true
+            phoneNumberStackView.isHidden = true
         }
-        
+
         if let urlAddress = data.urlAddresses.first {
             urlLabel.text = urlAddress.label
             urlAddressLabel.text = urlAddress.value as String
         } else {
-            urlLabel.isHidden = true
-            urlAddressLabel.isHidden = true
+            urlStackView.isHidden = true
         }
-        
+
         if let emailAddress = data.emailAddresses.first {
             emailLabel.text = emailAddress.label
             emailAddressLabel.text = emailAddress.value as String
         } else {
-            emailLabel.isHidden = true
-            emailAddressLabel.isHidden = true
+            emailStackView.isHidden = true
         }
-        
+
         thumbnailImageView.image = data.thumbnailImageData.flatMap(UIImage.init(data:)) ?? #imageLiteral(resourceName: "automate_logo")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        socialLabel.isHidden = false
-        profileLabel.isHidden = false
-        phoneLabel.isHidden = false
-        numberLabel.isHidden = false
-        urlLabel.isHidden = false
-        urlAddressLabel.isHidden = false
-        emailLabel.isHidden = false
-        emailAddressLabel.isHidden = false
+        informationStackViews.forEach { $0.isHidden = false }
+        nicknameLabel.isHidden = false
     }
 }

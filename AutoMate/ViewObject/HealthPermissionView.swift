@@ -74,7 +74,7 @@ extension HealthAlertAllow where Self: BaseAppView {
             preconditionFailure("Cannot find allow button.")
         }
 
-        return  button
+        return button
     }
 }
 
@@ -84,7 +84,7 @@ extension HealthAlertDeny where Self: BaseAppView {
             preconditionFailure("Cannot find deny button.")
         }
 
-        return  button
+        return button
     }
 }
 
@@ -94,7 +94,7 @@ extension HealthAlertTurnOnAll where Self: BaseAppView {
             preconditionFailure("Cannot find turn on all button.")
         }
 
-        return  button
+        return button
     }
 }
 
@@ -104,6 +104,6 @@ extension HealthAlertTurnOffAll where Self: BaseAppView {
             preconditionFailure("Cannot find turn off all button.")
         }
 
-        return  button
+        return button
     }
 }

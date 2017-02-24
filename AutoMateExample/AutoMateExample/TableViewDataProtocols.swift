@@ -46,7 +46,7 @@ extension ConfigurableCell where Self: UITableViewCell {
     static var reusableIdentifier: String {
         return String(describing: self)
     }
-    
+
     static var nibName: String {
         return String(describing: self)
     }

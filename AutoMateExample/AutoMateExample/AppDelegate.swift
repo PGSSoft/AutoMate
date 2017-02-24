@@ -12,9 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var launchOptionsHandler: LaunchOptionsHandler!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        launchOptionsHandler = LaunchOptionsHandler()
+        launchOptionsHandler.setup()
         return true
     }
 }

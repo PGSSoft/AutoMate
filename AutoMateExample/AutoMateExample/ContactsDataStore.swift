@@ -12,7 +12,7 @@ class ContactsDataStore: DataStore {
 
     // MARK: DataStore - Typealias
     typealias T = CNContact
-    
+
     // MARK: DataStore - Properties
     private(set) var data = [[T]()]
 
@@ -37,7 +37,7 @@ class ContactsDataStore: DataStore {
 
     func reloadData(completion: @escaping () -> Void) {
         requestPermission { [weak self] authenticated in
-            guard let strongSelf = self else {
+            guard let strongSelf = self, authenticated else {
                 completion()
                 return
             }
@@ -45,16 +45,16 @@ class ContactsDataStore: DataStore {
             completion()
         }
     }
-    
+
     // MARK: Private - Methods
     private func requestPermission(with completion: @escaping (Bool) -> Void) {
         guard CNContactStore.authorizationStatus(for: .contacts) != .authorized else {
             completion(true)
             return
         }
-        
-        store.requestAccess(for: .contacts) { access, _ in
-            completion(access)
+
+        store.requestAccess(for: .contacts) { authenticated, _ in
+            completion(authenticated)
         }
     }
 }

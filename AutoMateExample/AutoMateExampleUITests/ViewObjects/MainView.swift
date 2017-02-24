@@ -41,6 +41,10 @@ open class MainView: BaseAppView {
         return menu(withTitle: Locators.tableViewMenu)
     }
 
+    open var autoMateLaunchEnvironments: XCUIElement {
+        return menu(withTitle: Locators.autoMateLaunchEnvironments)
+    }
+
     // MARK: Actions
     open func goToTextInputMenu() {
         textInputMenu.tap()
@@ -64,6 +68,10 @@ open class MainView: BaseAppView {
 
     open func goToTableViewMenu() {
         tableViewMenu.tap()
+    }
+
+    open func goToAutoMateLaunchEnvironments() {
+        autoMateLaunchEnvironments.tap()
     }
 
     // MARK: Helpers
@@ -93,5 +101,6 @@ private extension MainView {
         case permissionsViewMenu = "Permissions"
         case middleButtonMenu = "Middle button"
         case tableViewMenu = "Table view"
+        case autoMateLaunchEnvironments = "AutoMate Launch Environments"
     }
 }

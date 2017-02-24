@@ -22,11 +22,11 @@ extension UITableView {
         cell.configure(with: data)
         return cell
     }
-    
+
     func register<Cell: UITableViewCell>(_ cellClass: Cell.Type) where Cell: ConfigurableCell {
         register(cellClass, forCellReuseIdentifier: cellClass.reusableIdentifier)
     }
-    
+
     func register<Cell: UITableViewCell>(nibFor cellClass: Cell.Type, in bundle: Bundle? = nil) where Cell: ConfigurableCell {
         register(UINib(nibName: cellClass.nibName, bundle: bundle), forCellReuseIdentifier: cellClass.reusableIdentifier)
     }

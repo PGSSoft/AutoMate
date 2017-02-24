@@ -14,6 +14,6 @@ class ContactsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        CNContactStore().requestAccess(for: .contacts) {_ in }
+        CNContactStore().requestAccess(for: .contacts) { _ in }
     }
 }

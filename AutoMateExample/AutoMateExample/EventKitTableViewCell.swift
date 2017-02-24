@@ -12,7 +12,7 @@ import EventKit
 class EventKitTableViewCell: UITableViewCell, ConfigurableCell {
 
     typealias T = EKCalendarItem
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var creationDateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -24,7 +24,7 @@ class EventKitTableViewCell: UITableViewCell, ConfigurableCell {
         locationLabel.text = data.location
         calendarLabel.text = data.calendar.title
         notesLabel.text = data.notes
-        
+
         if let creationDate = data.creationDate {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd-MM-yyyy"

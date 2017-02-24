@@ -20,7 +20,7 @@ class EventKitDataStore: DataStore {
     // MARK: Private - Properties
     private let store = EKEventStore()
     private lazy var eventsPredicate: NSPredicate = {
-        self.store.predicateForEvents(withStart: Date(timeIntervalSince1970: 0), end: Date(timeIntervalSinceNow: 60 * 60 * 24 * 30 * 365), calendars: nil)
+        self.store.predicateForEvents(withStart: Date(timeIntervalSinceNow: -60 * 60 * 24 * 60), end: Date(timeIntervalSinceNow: 60 * 60 * 24 * 365), calendars: nil)
     }()
     private lazy var remindersPredicate: NSPredicate = {
         self.store.predicateForReminders(in: nil)
@@ -63,22 +63,22 @@ class EventKitDataStore: DataStore {
             }
         }
     }
-    
+
     private func requestPermission(with completion: @escaping (Bool) -> Void) {
         guard EKEventStore.authorizationStatus(for: .event) != .authorized,
             EKEventStore.authorizationStatus(for: .reminder) != .authorized else {
                 completion(true)
                 return
         }
-        
-        store.requestAccess(to: .event) { [weak self] eventsAccess, _ in
-            guard eventsAccess else {
+
+        store.requestAccess(to: .event) { [weak self] eventsAuthorized, _ in
+            guard eventsAuthorized else {
                 completion(false)
                 return
             }
-            
-            self?.store.requestAccess(to: .reminder) { remindersAccess, _ in
-                completion(remindersAccess)
+
+            self?.store.requestAccess(to: .reminder) { remindersAuthorized, _ in
+                completion(remindersAuthorized)
             }
         }
     }

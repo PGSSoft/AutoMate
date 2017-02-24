@@ -61,7 +61,7 @@ extension SystemAlertAllow where Self: SystemAlert {
             preconditionFailure("Cannot find allow button.")
         }
 
-        return  button
+        return button
     }
 }
 
@@ -71,7 +71,7 @@ extension SystemAlertDeny where Self: SystemAlert {
             preconditionFailure("Cannot find deny button.")
         }
 
-        return  button
+        return button
     }
 }
 
@@ -81,7 +81,7 @@ extension SystemAlertOk where Self: SystemAlert {
             preconditionFailure("Cannot find ok button.")
         }
 
-        return  button
+        return button
     }
 }
 
@@ -91,6 +91,6 @@ extension SystemAlertCancel where Self: SystemAlert {
             preconditionFailure("Cannot find cancel button.")
         }
 
-        return  button
+        return button
     }
 }
