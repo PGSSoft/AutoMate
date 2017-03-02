@@ -17,6 +17,7 @@
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
 [![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/AutoMate.svg)](http://cocoadocs.org/docsets/AutoMate)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/AutoMate.svg)](http://cocoadocs.org/docsets/AutoMate)
 [![License](https://img.shields.io/github/license/PGSSoft/AutoMate.svg)](https://github.com/PGSSoft/AutoMate/blob/master/LICENSE)
@@ -40,6 +41,8 @@ github "PGSSoft/AutoMate"
 `Cartfile.private` should be used because AutoMate framework will be used by UI Tests target only not by the tested application.
 
 ## Usage
+
+Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate).
 
 1. Create a new UI test case class.
 2. Import `AutoMate` framework to UI tests files:
@@ -103,11 +106,13 @@ Repository contains example application under `AutoMateExample` directory. Struc
 
 ## Development
 
+Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate).
+
 If you want to provide your custom launch argument or launch environment you have to implement `LaunchOption` protocol or one of its extensions, such as `LaunchArgumentWithSingleValue`:
 
 ```swift
 enum CustomParameter: String, LaunchArgumentWithSingleValue, LaunchArgumentValue {
-    var argumentKey: String {
+    var key: String {
         return "AppParameter"
     }
     case value1

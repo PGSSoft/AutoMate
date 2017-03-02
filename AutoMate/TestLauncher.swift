@@ -24,6 +24,22 @@ extension XCUIApplication: Application { }
 
 // MARK: - TestLauncher
 /// Configures given application with provided launch options and variables.
+/// `TestLauncher` is a wrapper around `XCUIApplication.launchArguments` and `XCUIApplication.launchEnvironment`.
+/// By using abstract type, `LaunchOption`, it is possible to pass parameters to the testing application.
+///
+/// `AutoMate` provides set of options which can set system locale, language, keyboard languages,
+/// or advanced options like CoreData SQL debug verbosity level.
+///
+/// **Example:**
+///
+/// ```swift
+/// let app = XCUIApplication()
+/// TestLauncher(options: [
+///     SystemLanguages([.English, .German]),
+///     SystemLocale(language: .English, country: .Canada),
+///     SoftwareKeyboards([.EnglishCanada, .GermanGermany])
+///     ]).configure(app).launch()
+/// ```
 public struct TestLauncher {
 
     // MARK: Properties
@@ -44,7 +60,7 @@ public struct TestLauncher {
     /**
      Passes stored settings to the provided application.
 
-     - parameter application: Object implementing Application protocol that will receive the settings, eg. `XCUIApplication`.
+     - parameter application: Object implementing `Application` protocol that will receive the settings, eg. `XCUIApplication`.
      - returns: Application with passed settings.
      */
     public func configure<T: Application>(_ application: T) -> T {

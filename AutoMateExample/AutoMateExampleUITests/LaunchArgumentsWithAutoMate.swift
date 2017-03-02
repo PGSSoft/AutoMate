@@ -18,13 +18,13 @@ class LaunchArgumentsWithAutomate: XCTestCase {
         continueAfterFailure = false
         let app = XCUIApplication()
         let launcher = TestLauncher(options: [
-                                        SystemLanguages([.Polish]),
-                                        SystemLocale(language: .Polish, country: .Poland),
-                                        SystemKeyboards(
-                                                        software: SoftwareKeyboards([.PolishPoland]),
-                                                        hardware: HardwareKeyboards([.PolishPoland])
-                                        )
-                                    ])
+            SystemLanguages([.Polish]),
+            SystemLocale(language: .Polish, country: .Poland),
+            SystemKeyboards(
+                software: SoftwareKeyboards([.PolishPoland]),
+                hardware: HardwareKeyboards([.PolishPoland])
+            )
+        ])
         launcher.configure(app).launch()
     }
 

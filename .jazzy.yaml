@@ -1,0 +1,32 @@
+documentation: Documentation/*.md
+custom_categories:
+  - name: Guides
+    children:
+      - TestLauncher
+      - System arguments
+      - Custom arguments
+      - Launch environments
+  - name: Launch arguments
+    children:
+      - SystemLanguages
+      - SystemLocale
+      - SoftwareKeyboards
+      - HardwareKeyboards
+      - SystemKeyboards
+      - CoreDataOption
+      - LocalizedStrings
+
+      - LaunchArgument
+      - LaunchArgumentWithSingleValue
+      - LaunchArgumentWithMultipleValues
+      - LaunchArgumentValue
+  # - name: XCTest
+  #   children:
+  #     - XCTestCase
+  #     - XCUIApplication
+  #     - XCUIElement
+  #     - XCUIElementQuery
+  #     - XCTestCase extensions
+  #     - XCUIApplication extensions
+  #     - XCUIElement extensions
+  #     - XCUIElementQuery extensions

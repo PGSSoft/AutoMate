@@ -94,8 +94,8 @@ class SystemLaunchArgumentsTests: XCTestCase {
     }
 
     func testLocalizedString() {
-        XCTAssertEqual(build([LocalizedStrings.ShowNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"1\""])
-        XCTAssertEqual(build([LocalizedStrings.DoubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"1\""])
+        XCTAssertEqual(build([LocalizedStrings.showNonLocalizedStrings]), ["-NSShowNonLocalizedStrings", "\"1\""])
+        XCTAssertEqual(build([LocalizedStrings.doubleLocalizedStrings]), ["-NSDoubleLocalizedStrings", "\"1\""])
     }
 
 }
