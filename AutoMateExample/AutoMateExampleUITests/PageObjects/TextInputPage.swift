@@ -1,5 +1,5 @@
 //
-//  TextInputView.swift
+//  TextInputPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,8 +9,8 @@
 import XCTest
 import AutoMate
 
-// MARK: - TextInputView
-open class TextInputView: BaseAppView, PushedView {
+// MARK: - TextInputPage
+open class TextInputPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
     open var textField: XCUIElement {
@@ -24,7 +24,7 @@ open class TextInputView: BaseAppView, PushedView {
 }
 
 // MARK: - Locators
-private extension TextInputView {
+private extension TextInputPage {
 
     enum Locators: String, Locator {
         case textField

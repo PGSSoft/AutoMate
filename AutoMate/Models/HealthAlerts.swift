@@ -183,7 +183,7 @@ extension HealthAlertTurnOnAll {
     }
 }
 
-public extension HealthPermissionView {
+public extension HealthPermissionPage {
     public static let messages = [
         "'*' wil toegang tot je gegevens en toestemming om deze te bewerken voor de onderstaande categorieën.",
         "* haluaa käyttää ja päivittää terveystietojasi alla olevissa kategorioissa.",

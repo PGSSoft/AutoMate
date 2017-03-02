@@ -11,35 +11,35 @@ import AutoMate
 
 class AdditionalExtensionsTests: AppUITestCase {
 
-    // MARK: Arrange View Objects
-    lazy var mainView: MainView = MainView(in: self.app)
-    lazy var appearingView: AppearingView = AppearingView(in: self.app)
+    // MARK: Arrange Page Objects
+    lazy var mainPage: MainPage = MainPage(in: self.app)
+    lazy var appearingPage: AppearingPage = AppearingPage(in: self.app)
 
     // MARK: Set up
     override func setUp() {
         super.setUp()
         TestLauncher.configureWithDefaultOptions(app).launch()
-        wait(forVisibilityOf: mainView)
+        wait(forVisibilityOf: mainPage)
     }
 
     // MARK: XCTestCase extension tests
     func testWaitForElementToExist() {
-        mainView.goToAppearingMenu()
+        mainPage.goToAppearingMenu()
 
-        wait(forVisibilityOf: appearingView.button)
-        XCTAssertFalse(appearingView.isMadeWithLoveViewDisplayed())
-        appearingView.tapOnButton()
-        wait(forExistOf: appearingView.madeWithLoveView)
+        wait(forVisibilityOf: appearingPage.button)
+        XCTAssertFalse(appearingPage.isMadeWithLoveViewDisplayed())
+        appearingPage.tapOnButton()
+        wait(forExistOf: appearingPage.madeWithLoveView)
     }
 
     func testWaitForVisibleElement() {
-        mainView.goToAppearingMenu()
+        mainPage.goToAppearingMenu()
 
-        XCTAssertFalse(appearingView.isButtonDisplayed())
+        XCTAssertFalse(appearingPage.isButtonDisplayed())
 
-        wait(forVisibilityOf: appearingView.button)
-        XCTAssertTrue(appearingView.isButtonDisplayed())
-        appearingView.tapOnButton()
+        wait(forVisibilityOf: appearingPage.button)
+        XCTAssertTrue(appearingPage.isButtonDisplayed())
+        appearingPage.tapOnButton()
     }
 
     // MARK: XCUIApplication extension tests
@@ -62,6 +62,6 @@ class AdditionalExtensionsTests: AppUITestCase {
     // MARK: Test for movie
     func testForMovie() {
         testWaitForElementToExist()
-        appearingView.goBack()
+        appearingPage.goBack()
     }
 }

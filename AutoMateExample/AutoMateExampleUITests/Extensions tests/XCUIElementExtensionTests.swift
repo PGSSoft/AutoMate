@@ -11,106 +11,106 @@ import AutoMate
 
 class XCUIElementExtensionTests: AppUITestCase {
 
-    // MARK: Arrange View Objects
-    lazy var mainView: MainView = MainView(in: self.app)
-    lazy var textInputView: TextInputView = TextInputView(in: self.app)
-    lazy var scrollView: ScrollView = ScrollView(in: self.app)
-    lazy var middleButtonView: MiddleButtonView = MiddleButtonView(in: self.app)
+    // MARK: Arrange Page Objects
+    lazy var mainPage: MainPage = MainPage(in: self.app)
+    lazy var textInputPage: TextInputPage = TextInputPage(in: self.app)
+    lazy var scrollPage: ScrollPage = ScrollPage(in: self.app)
+    lazy var middleButtonPage: MiddleButtonPage = MiddleButtonPage(in: self.app)
 
     // MARK: Set up
     override func setUp() {
         super.setUp()
         TestLauncher.configureWithDefaultOptions(app).launch()
-        wait(forVisibilityOf: mainView)
+        wait(forVisibilityOf: mainPage)
     }
 
     // MARK: Tests
     func testIsVisible() {
-        mainView.goToScrollViewMenu()
+        mainPage.goToScrollPageMenu()
 
-        XCTAssertFalse(scrollView.bottomButton.isVisible)
-        scrollView.bottomButton.tap()
-        XCTAssertTrue(scrollView.bottomButton.isVisible)
+        XCTAssertFalse(scrollPage.bottomButton.isVisible)
+        scrollPage.bottomButton.tap()
+        XCTAssertTrue(scrollPage.bottomButton.isVisible)
     }
 
     func testSimpleSwipe() {
-        mainView.goToScrollViewMenu()
+        mainPage.goToScrollPageMenu()
 
-        XCTAssertTrue(scrollView.isTopButtonDisplayed())
-        scrollView.scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
-        XCTAssertFalse(scrollView.isTopButtonDisplayed())
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed())
+        scrollPage.scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
+        XCTAssertFalse(scrollPage.isTopButtonDisplayed())
     }
 
     func testComplexSwipe() {
-        mainView.goToScrollViewMenu()
+        mainPage.goToScrollPageMenu()
 
-        XCTAssertTrue(scrollView.isTopButtonDisplayed() && !scrollView.isBottomButtonDisplayed())
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed() && !scrollPage.isBottomButtonDisplayed())
 
-        scrollView.scrollView.swipe(to: scrollView.bottomButton)
-        XCTAssertFalse(scrollView.isTopButtonDisplayed() && scrollView.isBottomButtonDisplayed())
-        scrollView.bottomButton.tap()
+        scrollPage.scrollView.swipe(to: scrollPage.bottomButton)
+        XCTAssertFalse(scrollPage.isTopButtonDisplayed() && scrollPage.isBottomButtonDisplayed())
+        scrollPage.bottomButton.tap()
 
-        scrollView.scrollView.swipe(to: scrollView.topButton)
-        XCTAssertTrue(scrollView.isTopButtonDisplayed() && !scrollView.isBottomButtonDisplayed())
-        scrollView.topButton.tap()
+        scrollPage.scrollView.swipe(to: scrollPage.topButton)
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed() && !scrollPage.isBottomButtonDisplayed())
+        scrollPage.topButton.tap()
     }
 
     func testComplexSwipeWithKeyboard() {
-        mainView.goToScrollViewMenu()
+        mainPage.goToScrollPageMenu()
 
-        scrollView.textField.tap()
-        scrollView.textField.typeText("AutoMate")
+        scrollPage.textField.tap()
+        scrollPage.textField.typeText("AutoMate")
 
-        XCTAssertTrue(scrollView.isTopButtonDisplayed() && !scrollView.isMiddleButton1Displayed() && !scrollView.isMiddleButton2Displayed())
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed() && !scrollPage.isMiddleButton1Displayed() && !scrollPage.isMiddleButton2Displayed())
 
-        scrollView.scrollView.swipe(to: scrollView.middleButton1)
-        XCTAssertTrue(scrollView.isMiddleButton1Displayed())
+        scrollPage.scrollView.swipe(to: scrollPage.middleButton1)
+        XCTAssertTrue(scrollPage.isMiddleButton1Displayed())
 
-        scrollView.scrollView.swipe(to: scrollView.middleButton2)
-        XCTAssertTrue(scrollView.isMiddleButton2Displayed())
+        scrollPage.scrollView.swipe(to: scrollPage.middleButton2)
+        XCTAssertTrue(scrollPage.isMiddleButton2Displayed())
 
-        scrollView.scrollView.swipe(to: scrollView.middleButton1)
-        XCTAssertTrue(scrollView.isMiddleButton1Displayed())
+        scrollPage.scrollView.swipe(to: scrollPage.middleButton1)
+        XCTAssertTrue(scrollPage.isMiddleButton1Displayed())
     }
 
     func testClearTextField() {
-        mainView.goToTextInputMenu()
+        mainPage.goToTextInputMenu()
 
-        textInputView.textField.tap()
-        textInputView.textField.typeText("Made with love by PGS")
-        XCTAssertEqual(textInputView.textFieldValue(), "Made with love by PGS")
-        textInputView.textField.clearTextField()
-        XCTAssertEqual(textInputView.textFieldValue(), "")
+        textInputPage.textField.tap()
+        textInputPage.textField.typeText("Made with love by PGS")
+        XCTAssertEqual(textInputPage.textFieldValue(), "Made with love by PGS")
+        textInputPage.textField.clearTextField()
+        XCTAssertEqual(textInputPage.textFieldValue(), "")
     }
 
     func testClearAndType() {
-        mainView.goToTextInputMenu()
+        mainPage.goToTextInputMenu()
 
-        textInputView.textField.tap()
-        textInputView.textField.typeText("Made with love")
-        XCTAssertEqual(textInputView.textFieldValue(), "Made with love")
-        textInputView.textField.clear(andType: "by PGS")
-        XCTAssertEqual(textInputView.textFieldValue(), "by PGS")
+        textInputPage.textField.tap()
+        textInputPage.textField.typeText("Made with love")
+        XCTAssertEqual(textInputPage.textFieldValue(), "Made with love")
+        textInputPage.textField.clear(andType: "by PGS")
+        XCTAssertEqual(textInputPage.textFieldValue(), "by PGS")
     }
 
     func testTapWithOffset() {
-        mainView.goToMiddleButtonMenu()
-        XCTAssertFalse(middleButtonView.isLabelDisplayed())
+        mainPage.goToMiddleButtonMenu()
+        XCTAssertFalse(middleButtonPage.isLabelDisplayed())
 
         // tap cell by using offset only
         app.tap(withOffset: CGVector(dx: 0.5, dy: 0.5))
         // cell pushed view controller, title no longer visible
 
-        XCTAssertTrue(middleButtonView.isLabelDisplayed())
+        XCTAssertTrue(middleButtonPage.isLabelDisplayed())
     }
 
     // MARK: Test for movie
     func testForMovie() {
         testClearAndType()
-        textInputView.goBack()
+        textInputPage.goBack()
 
         testTapWithOffset()
-        middleButtonView.goBack()
+        middleButtonPage.goBack()
 
 //        testSystemAlertButton()
 //        locationView.goBack()

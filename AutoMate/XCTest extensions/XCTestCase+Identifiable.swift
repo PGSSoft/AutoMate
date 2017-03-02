@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 
 // MARK: - IdentifiableByElement
-/// Protocol used to identify object, eg. ViewObject, in the view hierarchy.
+/// Protocol used to identify object, eg. PageObject, in the view hierarchy.
 public protocol IdentifiableByElement {
 
     /// Identifing `XCUIElement`.

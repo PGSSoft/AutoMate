@@ -1,5 +1,5 @@
 //
-//  AppearingView.swift
+//  AppearingPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,8 +9,8 @@
 import XCTest
 import AutoMate
 
-// MARK: - AppearingView
-open class AppearingView: BaseAppView, PushedView {
+// MARK: - AppearingPage
+open class AppearingPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
     open var button: XCUIElement {
@@ -37,7 +37,7 @@ open class AppearingView: BaseAppView, PushedView {
 }
 
 // MARK: - Locators
-private extension AppearingView {
+private extension AppearingPage {
 
     enum Locators: String, Locator {
         case appearingButton

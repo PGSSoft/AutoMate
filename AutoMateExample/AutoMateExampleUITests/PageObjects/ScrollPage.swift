@@ -1,5 +1,5 @@
 //
-//  ScrollView.swift
+//  ScrollPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,8 +9,8 @@
 import XCTest
 import AutoMate
 
-// MARK: - ScrollView
-open class ScrollView: BaseAppView, PushedView {
+// MARK: - ScrollPage
+open class ScrollPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
     open var topButton: XCUIElement {
@@ -56,7 +56,7 @@ open class ScrollView: BaseAppView, PushedView {
 }
 
 // MARK: - Locators
-private extension ScrollView {
+private extension ScrollPage {
 
     enum Locators: String, Locator {
         case scrollView

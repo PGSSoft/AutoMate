@@ -20,12 +20,12 @@
 		961915291D9123AD009367C6 /* AutoMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9892281D4097C3007CD2B0 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		961CB2011E558CC000148CAE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961CB2001E558CC000148CAE /* HealthKit.framework */; };
 		961CB2041E558F7000148CAE /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CB2031E558F7000148CAE /* RemindersViewController.swift */; };
-		9621BBCB1E4206C6001A9C2C /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCA1E4206C6001A9C2C /* TableView.swift */; };
-		9621BBCE1E42090C001A9C2C /* PushedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCD1E42090C001A9C2C /* PushedView.swift */; };
+		9621BBCB1E4206C6001A9C2C /* TablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCA1E4206C6001A9C2C /* TablePage.swift */; };
+		9621BBCE1E42090C001A9C2C /* PushedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCD1E42090C001A9C2C /* PushedPage.swift */; };
 		9621BBD01E420D98001A9C2C /* XCUIElementExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCF1E420D98001A9C2C /* XCUIElementExtensionTests.swift */; };
-		9621BBD21E420E25001A9C2C /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBD11E420E25001A9C2C /* ScrollView.swift */; };
+		9621BBD21E420E25001A9C2C /* ScrollPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBD11E420E25001A9C2C /* ScrollPage.swift */; };
 		962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FAAC31D9144F6000592EF /* ScrollingViewController.swift */; };
-		9641182B1E41EF7A0011C776 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182A1E41EF7A0011C776 /* MainView.swift */; };
+		9641182B1E41EF7A0011C776 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182A1E41EF7A0011C776 /* MainPage.swift */; };
 		9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */; };
 		96470BD31E5585E200D40CB9 /* SpeechRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96470BD21E5585E200D40CB9 /* SpeechRecognitionViewController.swift */; };
 		96470BD51E55873F00D40CB9 /* SiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96470BD41E55873F00D40CB9 /* SiriViewController.swift */; };
@@ -40,13 +40,13 @@
 		967448271E55973D000B42BB /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967448261E55973D000B42BB /* CallsViewController.swift */; };
 		967448291E559A8B000B42BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967448281E559A8B000B42BB /* CalendarViewController.swift */; };
 		9674482B1E559CF9000B42BB /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482A1E559CF9000B42BB /* MotionViewController.swift */; };
-		9674482D1E55A61D000B42BB /* PermissionsSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482C1E55A61D000B42BB /* PermissionsSubViews.swift */; };
-		969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2811E4216AE00995A49 /* TextInputView.swift */; };
-		969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2841E421AE700995A49 /* MiddleButtonView.swift */; };
-		969CC2891E421FE500995A49 /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingView.swift */; };
+		9674482D1E55A61D000B42BB /* PermissionsSubPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */; };
+		969CC2821E4216AE00995A49 /* TextInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2811E4216AE00995A49 /* TextInputPage.swift */; };
+		969CC2851E421AE700995A49 /* MiddleButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2841E421AE700995A49 /* MiddleButtonPage.swift */; };
+		969CC2891E421FE500995A49 /* AppearingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingPage.swift */; };
 		969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */; };
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
-		96B131DC1E54C161007E3A04 /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DB1E54C161007E3A04 /* PermissionsView.swift */; };
+		96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DB1E54C161007E3A04 /* PermissionsPage.swift */; };
 		96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */; };
 		96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */; };
 		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
@@ -118,12 +118,12 @@
 		1FFFC1D61D477CFF00EBB70D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		961CB2001E558CC000148CAE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		961CB2031E558F7000148CAE /* RemindersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
-		9621BBCA1E4206C6001A9C2C /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		9621BBCD1E42090C001A9C2C /* PushedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedView.swift; sourceTree = "<group>"; };
+		9621BBCA1E4206C6001A9C2C /* TablePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePage.swift; sourceTree = "<group>"; };
+		9621BBCD1E42090C001A9C2C /* PushedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedPage.swift; sourceTree = "<group>"; };
 		9621BBCF1E420D98001A9C2C /* XCUIElementExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementExtensionTests.swift; sourceTree = "<group>"; };
-		9621BBD11E420E25001A9C2C /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		9621BBD11E420E25001A9C2C /* ScrollPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPage.swift; sourceTree = "<group>"; };
 		962FAAC31D9144F6000592EF /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
-		9641182A1E41EF7A0011C776 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9641182A1E41EF7A0011C776 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		9641182C1E41F8E90011C776 /* XCUIElementQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQueryTests.swift; sourceTree = "<group>"; };
 		96470BD21E5585E200D40CB9 /* SpeechRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionViewController.swift; sourceTree = "<group>"; };
 		96470BD41E55873F00D40CB9 /* SiriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
@@ -139,13 +139,13 @@
 		967448261E55973D000B42BB /* CallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
 		967448281E559A8B000B42BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9674482A1E559CF9000B42BB /* MotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionViewController.swift; sourceTree = "<group>"; };
-		9674482C1E55A61D000B42BB /* PermissionsSubViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsSubViews.swift; sourceTree = "<group>"; };
-		969CC2811E4216AE00995A49 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
-		969CC2841E421AE700995A49 /* MiddleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonView.swift; sourceTree = "<group>"; };
-		969CC2881E421FE500995A49 /* AppearingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
+		9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsSubPages.swift; sourceTree = "<group>"; };
+		969CC2811E4216AE00995A49 /* TextInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputPage.swift; sourceTree = "<group>"; };
+		969CC2841E421AE700995A49 /* MiddleButtonPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonPage.swift; sourceTree = "<group>"; };
+		969CC2881E421FE500995A49 /* AppearingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingPage.swift; sourceTree = "<group>"; };
 		969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalExtensionsTests.swift; sourceTree = "<group>"; };
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
-		96B131DB1E54C161007E3A04 /* PermissionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		96B131DB1E54C161007E3A04 /* PermissionsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPage.swift; sourceTree = "<group>"; };
 		96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTests.swift; sourceTree = "<group>"; };
 		96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTableViewCell.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */,
 				96AB73F11E44C35300FA811A /* TestLauncher.swift */,
 				E42132551D7FF56900481842 /* Extensions tests */,
-				964118241E41EDF90011C776 /* ViewObjects */,
+				964118241E41EDF90011C776 /* PageObjects */,
 			);
 			path = AutoMateExampleUITests;
 			sourceTree = "<group>";
@@ -236,20 +236,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		964118241E41EDF90011C776 /* ViewObjects */ = {
+		964118241E41EDF90011C776 /* PageObjects */ = {
 			isa = PBXGroup;
 			children = (
-				969CC2881E421FE500995A49 /* AppearingView.swift */,
-				9641182A1E41EF7A0011C776 /* MainView.swift */,
-				969CC2841E421AE700995A49 /* MiddleButtonView.swift */,
-				9674482C1E55A61D000B42BB /* PermissionsSubViews.swift */,
-				96B131DB1E54C161007E3A04 /* PermissionsView.swift */,
-				9621BBCD1E42090C001A9C2C /* PushedView.swift */,
-				9621BBD11E420E25001A9C2C /* ScrollView.swift */,
-				9621BBCA1E4206C6001A9C2C /* TableView.swift */,
-				969CC2811E4216AE00995A49 /* TextInputView.swift */,
+				969CC2881E421FE500995A49 /* AppearingPage.swift */,
+				9641182A1E41EF7A0011C776 /* MainPage.swift */,
+				969CC2841E421AE700995A49 /* MiddleButtonPage.swift */,
+				9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */,
+				96B131DB1E54C161007E3A04 /* PermissionsPage.swift */,
+				9621BBCD1E42090C001A9C2C /* PushedPage.swift */,
+				9621BBD11E420E25001A9C2C /* ScrollPage.swift */,
+				9621BBCA1E4206C6001A9C2C /* TablePage.swift */,
+				969CC2811E4216AE00995A49 /* TextInputPage.swift */,
 			);
-			path = ViewObjects;
+			path = PageObjects;
 			sourceTree = "<group>";
 		};
 		96470BD01E5585A400D40CB9 /* Permissions */ = {
@@ -477,20 +477,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				969CC2891E421FE500995A49 /* AppearingView.swift in Sources */,
-				9641182B1E41EF7A0011C776 /* MainView.swift in Sources */,
-				9621BBD21E420E25001A9C2C /* ScrollView.swift in Sources */,
+				969CC2891E421FE500995A49 /* AppearingPage.swift in Sources */,
+				9641182B1E41EF7A0011C776 /* MainPage.swift in Sources */,
+				9621BBD21E420E25001A9C2C /* ScrollPage.swift in Sources */,
 				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,
-				969CC2821E4216AE00995A49 /* TextInputView.swift in Sources */,
-				969CC2851E421AE700995A49 /* MiddleButtonView.swift in Sources */,
+				969CC2821E4216AE00995A49 /* TextInputPage.swift in Sources */,
+				969CC2851E421AE700995A49 /* MiddleButtonPage.swift in Sources */,
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
-				96B131DC1E54C161007E3A04 /* PermissionsView.swift in Sources */,
+				96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */,
 				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,
-				9674482D1E55A61D000B42BB /* PermissionsSubViews.swift in Sources */,
-				9621BBCE1E42090C001A9C2C /* PushedView.swift in Sources */,
+				9674482D1E55A61D000B42BB /* PermissionsSubPages.swift in Sources */,
+				9621BBCE1E42090C001A9C2C /* PushedPage.swift in Sources */,
 				9621BBD01E420D98001A9C2C /* XCUIElementExtensionTests.swift in Sources */,
-				9621BBCB1E4206C6001A9C2C /* TableView.swift in Sources */,
+				9621BBCB1E4206C6001A9C2C /* TablePage.swift in Sources */,
 				1F98923D1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift in Sources */,
 				1F9891B71D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift in Sources */,
 			);

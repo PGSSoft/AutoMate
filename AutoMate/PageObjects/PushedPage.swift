@@ -1,5 +1,5 @@
 //
-//  PushedView.swift
+//  PushedPage.swift
 //  AutoMate
 //
 //  Created by Bartosz Janda on 31.01.2017.
@@ -9,13 +9,13 @@
 import Foundation
 import XCTest
 
-// MARK: - PushedView protocol
-/// View object protocol describing behaviour of pushed.
+// MARK: - PushedPage protocol
+/// Page object protocol describing behaviour of pushed.
 /// Default implementation use "back" `accessibilityIdentifier`.
 ///
 /// Example usage:
 /// ```swift
-/// class AboutTheAppView: BaseAppView, PushedView {}
+/// class AboutTheAppView: BaseAppPage, PushedPage {}
 ///
 /// let aboutTheAppView = AboutTheAppView(view: containerView)
 /// aboutTheAppView.goBack()
@@ -23,7 +23,7 @@ import XCTest
 ///
 /// - requires:
 /// It is required to use "back" as `accessibilityIdentifier` in custom back button in the application to work with default implementation of this protocol.
-public protocol PushedView: BaseAppViewProtocol {
+public protocol PushedPage: BaseAppPageProtocol {
 
     // MARK: Elements
     /// Back button element.
@@ -35,8 +35,8 @@ public protocol PushedView: BaseAppViewProtocol {
 }
 
 // MARK: Default implementation
-/// Default implementation of the `PushedView` protocol.
-public extension PushedView {
+/// Default implementation of the `PushedPage` protocol.
+public extension PushedPage {
 
     // MARK: Elements
     public var backButton: XCUIElement {

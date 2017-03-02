@@ -11,20 +11,20 @@ import AutoMate
 
 class XCUIElementQueryTests: AppUITestCase {
 
-    // MARK: Arrange View Objects
-    lazy var mainView: MainView = MainView(in: self.app)
-    lazy var tableView: TableView = TableView(in: self.app)
+    // MARK: Arrange Page Objects
+    lazy var mainPage: MainPage = MainPage(in: self.app)
+    lazy var tablePage: TablePage = TablePage(in: self.app)
 
     // MARK: Set up
     override func setUp() {
         super.setUp()
         TestLauncher.configureWithDefaultOptions(app).launch()
-        wait(forVisibilityOf: mainView)
+        wait(forVisibilityOf: mainPage)
     }
 
     // MARK: Tests
     func testElementMatchingLabel() {
-        mainView.goToTableViewMenu()
+        mainPage.goToTablePageMenu()
 
         let creditCellLabelDefault = app.any.element(withLabelMatching: "Made with love by")
         let creditCellLabelEquals = app.any.element(withLabelMatching: "Made with love by", comparisonOperator: .equals)
@@ -57,7 +57,7 @@ class XCUIElementQueryTests: AppUITestCase {
     }
 
     func testElementMatchingIdentifier() {
-        mainView.goToTableViewMenu()
+        mainPage.goToTablePageMenu()
 
         let creditCell = app.any.element(withLocator: Locators.credit, label: "Made with love by")
         let wrongLabelCell = app.any.element(withLocator: Locators.credit, label: "")
@@ -69,7 +69,7 @@ class XCUIElementQueryTests: AppUITestCase {
     }
 
     func testCellMatching() {
-        mainView.goToTableViewMenu()
+        mainPage.goToTablePageMenu()
 
         let firstCellOfAKind = app.cells.element(containingLabels: [Locators.title: "Kind A", Locators.subtitle: "1st cell"])
         let secondCellOfBKind = app.cells.element(containingLabels: [Locators.title: "*B", Locators.rightDetail: "2*"], labelsComparisonOperator: .like)
@@ -93,7 +93,7 @@ class XCUIElementQueryTests: AppUITestCase {
     // MARK: Test for movie
     func testForMovie() {
         testCellMatching()
-        tableView.goBack()
+        tablePage.goBack()
     }
 }
 

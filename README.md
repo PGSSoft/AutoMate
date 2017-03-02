@@ -6,7 +6,7 @@
       <b>AutoMate</b> &bull;
       <a href="https://github.com/PGSSoft/AutoMate-AppBuddy">AppBuddy</a> &bull;
       <a href="https://github.com/PGSSoft/AutoMate-Templates">Templates</a> &bull;
-      <a href="https://github.com/PGSSoft/AutoMate-ModelGenerator">ModelGenerator</a>
+      <a href="https://github.com/PGSSoft/AutoMate-ModelGenie">ModelGenie</a>
     </p>
 </div>
 
@@ -90,7 +90,7 @@ Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/
 - [x] Disable UIView animations (with `AutoMate-AppBuddy`)
 - [x] Strong-typed helpers: locators, view object templates (with `AutoMate-Templates`)
 - [x] Base XCTestCase template (with `AutoMate-Templates`)
-- [x] Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`) (with `AutoMate-ModelGenerator`)
+- [x] Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`) (with `AutoMate-ModelGenie`)
 - [x] Managing events, reminders and contacts (with `AutoMate-AppBuddy`)
 - [x] Companion library for the application (`AutoMate-AppBuddy`)
 - [ ] Improve launch options type safety
