@@ -30,3 +30,7 @@ custom_categories:
   #     - XCUIApplication extensions
   #     - XCUIElement extensions
   #     - XCUIElementQuery extensions
+  - name: Locators
+    children:
+      - Locator
+      - KeyboardLocator

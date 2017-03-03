@@ -16,6 +16,7 @@
 		9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */; };
 		966A7A1B1E54AA920026AE29 /* LocationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1A1E54AA920026AE29 /* LocationAlert.swift */; };
 		966A7A1D1E54AAAE0026AE29 /* HealthAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */; };
+		966A7FA61E6967630009122E /* KeyboardLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7FA51E6967630009122E /* KeyboardLocator.swift */; };
 		966B92361E40D470006E6A18 /* BaseAppPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92351E40D470006E6A18 /* BaseAppPage.swift */; };
 		966B92381E40D69A006E6A18 /* AppUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92371E40D69A006E6A18 /* AppUITestCase.swift */; };
 		966B923A1E40D9D4006E6A18 /* ModalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalPage.swift */; };
@@ -74,6 +75,7 @@
 		9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Identifiable.swift"; sourceTree = "<group>"; };
 		966A7A1A1E54AA920026AE29 /* LocationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlert.swift; sourceTree = "<group>"; };
 		966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlert.swift; sourceTree = "<group>"; };
+		966A7FA51E6967630009122E /* KeyboardLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLocator.swift; sourceTree = "<group>"; };
 		966B92351E40D470006E6A18 /* BaseAppPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAppPage.swift; sourceTree = "<group>"; };
 		966B92371E40D69A006E6A18 /* AppUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUITestCase.swift; sourceTree = "<group>"; };
 		966B92391E40D9D4006E6A18 /* ModalPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPage.swift; sourceTree = "<group>"; };
@@ -147,6 +149,15 @@
 			path = "XCTest extensions";
 			sourceTree = "<group>";
 		};
+		966A7FA71E6967670009122E /* Locators */ = {
+			isa = PBXGroup;
+			children = (
+				966A7FA51E6967630009122E /* KeyboardLocator.swift */,
+				C9371A471E2F542100808AFC /* Locator.swift */,
+			);
+			name = Locators;
+			sourceTree = "<group>";
+		};
 		966B92321E40D15B006E6A18 /* PageObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,12 +197,12 @@
 				E4C20FE71E39DBBE00052F11 /* AutoMateLaunchEnvironments.swift */,
 				966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */,
 				966A7A1A1E54AA920026AE29 /* LocationAlert.swift */,
-				C9371A471E2F542100808AFC /* Locator.swift */,
 				C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
-				E431922C1E2E194800B019C1 /* Basic structures */,
 				E4535A471CEDD24B008965DD /* Foundation extensions */,
+				E431922C1E2E194800B019C1 /* Launch Option */,
+				966A7FA71E6967670009122E /* Locators */,
 				E47BB6F41CF310F200229D63 /* Models */,
 				966B92321E40D15B006E6A18 /* PageObjects */,
 				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
@@ -199,7 +210,7 @@
 			path = AutoMate;
 			sourceTree = "<group>";
 		};
-		E431922C1E2E194800B019C1 /* Basic structures */ = {
+		E431922C1E2E194800B019C1 /* Launch Option */ = {
 			isa = PBXGroup;
 			children = (
 				E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */,
@@ -207,7 +218,7 @@
 				E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
 			);
-			name = "Basic structures";
+			name = "Launch Option";
 			sourceTree = "<group>";
 		};
 		E43B229A1CFEC17A00AE6B40 /* Factories */ = {
@@ -428,6 +439,7 @@
 				E4C20FEA1E39E73100052F11 /* String.swift in Sources */,
 				1FC995561D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift in Sources */,
 				E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */,
+				966A7FA61E6967630009122E /* KeyboardLocator.swift in Sources */,
 				1FA6372F1D50692800D22156 /* XCUIApplication.swift in Sources */,
 				9602D0921E54F53B001EC313 /* HealthPermissionPage.swift in Sources */,
 				9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */,
