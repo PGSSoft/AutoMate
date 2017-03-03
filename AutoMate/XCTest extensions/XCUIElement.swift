@@ -89,7 +89,7 @@ public extension XCUIElement {
 
     /// Remove text from textField or secureTextField.
     public func clearTextField() {
-        // Since iOS 9.1 the keyboard identifier are available.
+        // Since iOS 9.1 the keyboard identifiers are available.
         // On iOS 9.0 the special character `\u{8}` (backspace) is used.
         if #available(iOS 9.1, *) {
             let app = XCUIApplication()
