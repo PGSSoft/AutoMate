@@ -28,8 +28,8 @@ public extension XCTestCase {
     ///   - timeout: Waiting time (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait<T: IdentifiableByElement>(forExistOf element: T, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
-        wait(forExistOf: element.identifingElement, timeout: timeout, file: file, line: line)
+    public func wait<T: IdentifiableByElement>(forExistanceOf element: T, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+        wait(forExistanceOf: element.identifingElement, timeout: timeout, file: file, line: line)
     }
 
     /// Wait for an identifiable element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.

@@ -29,7 +29,7 @@ class AdditionalExtensionsTests: AppUITestCase {
         wait(forVisibilityOf: appearingPage.button)
         XCTAssertFalse(appearingPage.isMadeWithLoveViewDisplayed())
         appearingPage.tapOnButton()
-        wait(forExistOf: appearingPage.madeWithLoveView)
+        wait(forExistanceOf: appearingPage.madeWithLoveView)
     }
 
     func testWaitForVisibleElement() {
