@@ -33,7 +33,7 @@ would be set on the `XCUIApplication` instance.
 `SystemLanguages` allows to replace order of preferred languages which will be used
 by the application do display localized content.
 
-Swift expression
+Swift expression:
 
 ```swift
 SystemLanguages([.English, .Polish])
@@ -41,7 +41,7 @@ SystemLanguages([.English, .Polish])
 [.English, .Polish] as SystemLanguages
 ```
 
-Generated strings
+Generated strings:
 
 ```swift
 -AppleLanguages ("en", "pl")
@@ -51,14 +51,14 @@ Generated strings
 
 `SystemLocale` allows to replace users locale.
 
-Swift expression
+Swift expression:
 
 ```swift
 SystemLocale(localeIdentifier: "pl")
 SystemLocale(language: .Polish, country: .Poland)
 ```
 
-Generated strings
+Generated strings:
 
 ```swift
 -AppleLocale "pl"
@@ -70,14 +70,14 @@ Generated strings
 `SoftwareKeyboards` and `HardwareKeyboards` allows to set keyboards used in the application.
 It is possible to provide only software keyboards, or only hardware keyboards.
 
-Swift expression
+Swift expression:
 
 ```swift
 [.Bengali] as SoftwareKeyboards
 [.Bengali] as HardwareKeyboards
 ```
 
-Generated strings
+Generated strings:
 
 ```swift
 -AppleKeyboards ("bn@sw=Bengali")
@@ -93,7 +93,7 @@ var hardwareKeyboards: HardwareKeyboards = [.Bengali]
 SystemKeyboards(software: softwareKeyboards, hardware: hardwareKeyboards)
 ```
 
-Generated strings
+Generated strings:
 
 ```swift
 -AppleKeyboards ("bn@sw=Bengali", "bn@hw=Bangla")

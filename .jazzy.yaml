@@ -1,4 +1,5 @@
 documentation: Documentation/*.md
+abstract: Documentation/Sections/*.md
 custom_categories:
   - name: Guides
     children:
@@ -20,14 +21,12 @@ custom_categories:
       - LaunchArgumentWithSingleValue
       - LaunchArgumentWithMultipleValues
       - LaunchArgumentValue
-  # - name: XCTest
-  #   children:
-  #     - XCTestCase
-  #     - XCUIApplication
+  - name: XCTest
+    children:
+      - XCTestCase
+      - XCUIApplication
   #     - XCUIElement
   #     - XCUIElementQuery
-  #     - XCTestCase extensions
-  #     - XCUIApplication extensions
   #     - XCUIElement extensions
   #     - XCUIElementQuery extensions
   - name: Locators

@@ -1,3 +1,5 @@
+
+
 Overview of extensions to `XCUIApplication` provided by AutoMate.
 #### Table of contents
 * [`var deviceType: DeviceType`](#var-devicetype-devicetype)

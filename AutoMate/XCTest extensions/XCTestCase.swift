@@ -19,11 +19,18 @@ public extension XCTestCase {
     // MARK: Methods
     /// Wait for an UI element to exist in a view hierarchy. After given interval, if element is not found, test fails.
     ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let button = view.buttons["appearingButton"]
+    /// wait(forExistanceOf: button)
+    /// ```
+    ///
     /// - Parameters:
     ///   - element: XCUIElement to wait for.
     ///   - timeout: Waiting time (default: 10 seconds).
     ///   - file: Current source file.
-    ///   - line:
+    ///   - line: Current source line.
     public func wait(forExistanceOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         let existancePredicate = NSPredicate(format: "exists == true")
         expectation(for: existancePredicate, evaluatedWith: element, handler: nil)
@@ -38,6 +45,13 @@ public extension XCTestCase {
     }
 
     /// Wait for an UI element to be visible in a view hierarchy. After given interval seconds, if element is not found, test fails.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let button = view.buttons["appearingButton"]
+    /// wait(forVisibilityOf: button)
+    /// ```
     ///
     /// - Parameters:
     ///   - element: XCUIElement to wait for.

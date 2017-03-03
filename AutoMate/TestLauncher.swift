@@ -38,7 +38,7 @@ extension XCUIApplication: Application { }
 ///     SystemLanguages([.English, .German]),
 ///     SystemLocale(language: .English, country: .Canada),
 ///     SoftwareKeyboards([.EnglishCanada, .GermanGermany])
-///     ]).configure(app).launch()
+/// ]).configure(app).launch()
 /// ```
 public struct TestLauncher {
 

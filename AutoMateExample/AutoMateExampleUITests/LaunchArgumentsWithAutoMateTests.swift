@@ -1,6 +1,6 @@
 //
-//  AutoMateExampleUITests.swift
-//  AutoMateExampleUITests
+//  LaunchArgumentsWithAutoMateTests.swift
+//  LaunchArgumentsWithAutoMateTests
 //
 //  Created by Paweł Szot on 21/07/16.
 //  Copyright © 2016 PGS Software. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 import AutoMate
 
-class LaunchArgumentsWithAutomate: XCTestCase {
+class LaunchArgumentsWithAutoMateTests: XCTestCase {
 
     // MARK: Setup
     override func setUp() {
@@ -32,5 +32,4 @@ class LaunchArgumentsWithAutomate: XCTestCase {
     func testSomething() {
 
     }
-
 }
