@@ -13,6 +13,14 @@ public extension XCUIElement {
 
     // MARK: Properties
     /// Indicates if the element is currently visible on the screen.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let button = app.buttons.element
+    /// button.tap()
+    /// XCTAssertTrue(button.isVisible)
+    /// ```
     public var isVisible: Bool {
         // When accessing properties of XCUIElement, XCTest works differently than in a case of actions on elements
         // - there is no waiting for the app to idle and to finish all animations.
@@ -22,6 +30,13 @@ public extension XCUIElement {
     }
 
     /// Returns `value` as a String
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let textField = app.textFields.element
+    /// let text = textField.text
+    /// ```
     ///
     /// - note:
     /// It will fail if `value` is not a `String` type.
@@ -33,26 +48,46 @@ public extension XCUIElement {
     }
 
     // MARK: Methods
-    /**
-     Perform swipe gesture on this view by swiping between provided points.
-
-     - parameter startVector: Relative point from which to start swipe.
-     - parameter stopVector: Relative point to end swipe.
-     */
+    /// Perform swipe gesture on this view by swiping between provided points.
+    ///
+    /// It is an alternative to `swipeUp`, `swipeDown`, `swipeLeft` and `swipeBottom` methods provided by `XCTest`.
+    /// It lets you specify coordinates on the screen (relative to the view on which the method is called).
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let scroll = app.scrollViews.element
+    /// scroll.swipe(from: CGVector(dx: 0, dy: 0), to: CGVector(dx: 1, dy: 1))
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - startVector: Relative point from which to start swipe.
+    ///   - stopVector: Relative point to end swipe.
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
         let p1 = coordinate(withNormalizedOffset: startVector)
         let p2 = coordinate(withNormalizedOffset: stopVector)
         p1.press(forDuration: 0.1, thenDragTo: p2)
     }
 
-    /**
-     Swipe scroll view to reveal given element.
-
-     - note: This method assumes that self is scrollable and at least partially visible on the screen.
-     - parameter element: Element to scroll to.
-     - parameter avoidKeyboard: Indicates if element should be swiped out of keyboard frame
-     - parameter app: Application instance to use when searching for keyboard to avoid
-     */
+    /// Swipe scroll view to reveal given element.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let scroll = app.scrollViews.element
+    /// let button = scroll.buttons.element
+    /// scroll.swipe(to: button)
+    /// ```
+    ///
+    /// - note:
+    ///   `XCTest` automatically does the scrolling during `tap()`, but the method is still useful in some situations, for example to reveal element from behind keyboard.
+    /// - note:
+    ///   This method assumes that element is scrollable and at least partially visible on the screen.
+    ///
+    /// - Parameters:
+    ///   - element: Element to scroll to.
+    ///   - avoidKeyboard: Indicates if element should be swiped out of keyboard frame
+    ///   - app: Application instance to use when searching for keyboard to avoid
     public func swipe(to element: XCUIElement, avoidKeyboard: Bool = true, from app: XCUIApplication = XCUIApplication()) {
         let swipeLength: CGFloat = 0.9
         var scrollableArea = frame
@@ -90,6 +125,13 @@ public extension XCUIElement {
     }
 
     /// Remove text from textField or secureTextField.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let textField = app.textFields.element
+    /// textField.clearTextField()
+    /// ```
     public func clearTextField() {
         // Since iOS 9.1 the keyboard identifiers are available.
         // On iOS 9.0 the special character `\u{8}` (backspace) is used.
@@ -112,24 +154,37 @@ public extension XCUIElement {
         }
     }
 
-    /**
-     Remove text from textField and enter new value.
-
-     - parameter text: Text to type after clearing old value.
-     */
+    /// Remove text from textField and enter new value.
+    ///
+    /// Useful if there is chance that the element contains text already.
+    /// This helper method will execute `clearTextField` and then type the provided string.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let textField = app.textFields.element
+    /// textField.clear(andType: "text")
+    /// ```
+    ///
+    /// - Parameter text: Text to type after clearing old value.
     public func clear(andType text: String) {
         tap()
         clearTextField()
         typeText(text)
     }
 
-    /**
-     Tap element with given offset. By default taps in the upper left corner (dx=0, dy=0).
-     Tap point is calculated by adding the offset multiplied by the size of the element’s frame to the origin of the element’s frame.
-     So the correct values are from range: <0, 1>.
-
-     - parameter offset: Tap offset. Default (0, 0).
-     */
+    /// Tap element with given offset. By default taps in the upper left corner (dx=0, dy=0).
+    /// Tap point is calculated by adding the offset multiplied by the size of the element’s frame to the origin of the element’s frame.
+    /// So the correct values are from range: <0, 1>.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let element = app.tableViews.element
+    /// element.tap(withOffset: CGVector(dx: 0.5, dy: 0.5))
+    /// ```
+    ///
+    /// - Parameter offset: Tap offset. Default (0, 0).
     public func tap(withOffset offset: CGVector = CGVector.zero) {
         coordinate(withNormalizedOffset: offset).tap()
     }

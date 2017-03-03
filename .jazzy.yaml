@@ -25,9 +25,8 @@ custom_categories:
     children:
       - XCTestCase
       - XCUIApplication
-  #     - XCUIElement
+      - XCUIElement
   #     - XCUIElementQuery
-  #     - XCUIElement extensions
   #     - XCUIElementQuery extensions
   - name: Locators
     children:
