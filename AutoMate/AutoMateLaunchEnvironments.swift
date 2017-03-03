@@ -37,35 +37,6 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithSing
     }
 }
 
-/// Protocol adapted by all LaunchEnviroment options with multiple values predefined in AutoMate
-/// that also give ability to clean present data before saving new.
-/// It also assures that default handling is provided by [AutoMate - AppBuddy](https://github.com/PGSSoft/AutoMate-AppBuddy)
-public protocol CleanableAutoMateLaunchEnvironmentWithMultipleValues: AutoMateLaunchEnvironment, CleanableLaunchEnvironment, LaunchEnvironmentWithMultipleValues {
-
-    // MARK: Initialization
-    init(shouldCleanBefore: Bool, valuesCollection: [Value])
-}
-
-public extension CleanableAutoMateLaunchEnvironmentWithMultipleValues {
-
-    // MARK: Initialization
-    public init(valuesCollection: [Value]) {
-        self.init(shouldCleanBefore: false, valuesCollection: valuesCollection)
-    }
-
-    public init(arrayLiteral elements: Value...) {
-        self.init(shouldCleanBefore: false, valuesCollection: elements)
-    }
-}
-
-public extension CleanableAutoMateLaunchEnvironmentWithMultipleValues where Self.Value == LaunchEnvironmentResourceValue {
-
-    // MARK: Initialization
-    public init(shouldCleanBefore: Bool, resources: (fileName: String, bundleName: String?)...) {
-        self.init(shouldCleanBefore: shouldCleanBefore, valuesCollection: resources.map(Value.init))
-    }
-}
-
 // MARK: - Event Launch Environment
 /// Launch environment supporting EventKit events. Expects bundle and file name for every file containing data of events to be added into calendar at test launch. Structure is defined in example project's file _events.json_.
 /// Usage example:
@@ -74,7 +45,7 @@ public extension CleanableAutoMateLaunchEnvironmentWithMultipleValues where Self
 /// let recurringEvents: EventLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "monthly_events", bundleName: "Data") ]
 /// let nearEvents = EventLaunchEnvironment(resources: (fileName: "todays_events", bundleName: "Test data"), (fileName: "this_week_events", bundleName: nil))
 /// let nearEvents = EventLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "todays_events", bundleName: "Test data"), (fileName: "this_week_events", bundleName: nil))
-public struct EventLaunchEnvironment: CleanableAutoMateLaunchEnvironmentWithMultipleValues {
+public struct EventLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
     public typealias Value = LaunchEnvironmentResourceValue
@@ -99,7 +70,7 @@ public struct EventLaunchEnvironment: CleanableAutoMateLaunchEnvironmentWithMult
 /// let recurringReminders: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "johnys_birthday_reminder", bundleName: "Data") ]
 /// let highPriorityReminders = ReminderLaunchEnvironment(resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
 /// let highPriorityReminders = ReminderLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
-public struct ReminderLaunchEnvironment: CleanableAutoMateLaunchEnvironmentWithMultipleValues {
+public struct ReminderLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
     public typealias Value = LaunchEnvironmentResourceValue
@@ -125,7 +96,7 @@ public struct ReminderLaunchEnvironment: CleanableAutoMateLaunchEnvironmentWithM
 /// let johnContacts: ContactLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "john", bundleName: "Data") ]
 /// let severalContacts = ContactLaunchEnvironment(resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
 /// let severalContacts = ContactLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
-public struct ContactLaunchEnvironment: CleanableAutoMateLaunchEnvironmentWithMultipleValues {
+public struct ContactLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
     public typealias Value = LaunchEnvironmentResourceValue
