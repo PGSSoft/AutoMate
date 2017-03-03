@@ -108,3 +108,30 @@ extension LaunchEnvironmentWithMultipleValues {
         self.init(valuesCollection: elements)
     }
 }
+
+public protocol CleanableLaunchEnvironment: LaunchEnvironmentProtocol {
+
+    // MARK: Properties
+    var shouldCleanBefore: Bool { get }
+}
+
+public extension CleanableLaunchEnvironment {
+
+    public static var CleanFlag: String {
+        return "AM_CLEAN_DATA_FLAG"
+    }
+}
+
+public extension LaunchEnvironmentWithSingleValue where Self: CleanableLaunchEnvironment {
+
+    public var launchEnvironments: [String: String]? {
+        return shouldCleanBefore ? [key: "\(type(of: self).CleanFlag)," + value.value] : [key: value.value]
+    }
+}
+
+public extension LaunchEnvironmentWithMultipleValues where Self: CleanableLaunchEnvironment {
+
+    public var launchEnvironments: [String: String]? {
+        return shouldCleanBefore ? [uniqueIdentifier: "\(type(of: self).CleanFlag)," + valuesCollection.launchEnvironment] : [uniqueIdentifier: valuesCollection.launchEnvironment]
+    }
+}
