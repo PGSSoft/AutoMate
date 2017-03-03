@@ -14,7 +14,9 @@ public extension XCUIElement {
     // MARK: Properties
     /// Indicates if the element is currently visible on the screen.
     public var isVisible: Bool {
-        // Workaround for some situations.
+        // When accessing properties of XCUIElement, XCTest works differently than in a case of actions on elements
+        // - there is no waiting for the app to idle and to finish all animations.
+        // This can lead to problems and test flakiness as the test will evaluate a query before e.g. view transition has been completed.
         XCUIDevice.shared().orientation = .unknown
         return exists && isHittable
     }
