@@ -4,6 +4,8 @@
 import XCTest
 
 extension HealthAlertAllow {
+
+    /// Represents all possible "allow" buttons in health service messages.
     public static var allow: [String] {
         return [
             "Allow",
@@ -43,6 +45,8 @@ extension HealthAlertAllow {
 }
 
 extension HealthAlertDeny {
+
+    /// Represents all possible "deny" buttons in health service messages.
     public static var deny: [String] {
         return [
             "Älä salli",
@@ -84,6 +88,8 @@ extension HealthAlertDeny {
 }
 
 extension HealthAlertOk {
+
+    /// Represents all possible "ok" buttons in health service messages.
     public static var ok: [String] {
         return [
             "OK",
@@ -102,6 +108,8 @@ extension HealthAlertOk {
 }
 
 extension HealthAlertTurnOffAll {
+
+    /// Represents all possible "turnOffAll" buttons in health service messages.
     public static var turnOffAll: [String] {
         return [
             "Alle Kategorien deaktivieren",
@@ -143,6 +151,8 @@ extension HealthAlertTurnOffAll {
 }
 
 extension HealthAlertTurnOnAll {
+
+    /// Represents all possible "turnOnAll" buttons in health service messages.
     public static var turnOnAll: [String] {
         return [
             "Activar todas las categorías",
@@ -184,6 +194,8 @@ extension HealthAlertTurnOnAll {
 }
 
 public extension HealthPermissionPage {
+
+    /// Represents all possible messages in health service messages.
     public static let messages = [
         "'*' wil toegang tot je gegevens en toestemming om deze te bewerken voor de onderstaande categorieën.",
         "* haluaa käyttää ja päivittää terveystietojasi alla olevissa kategorioissa.",
@@ -224,7 +236,10 @@ public extension HealthPermissionPage {
     ]
 }
 
+/// Represents HealthAuthorizationDontAllowAlert service alert.
 public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
+
+    /// Represents all possible messages in HealthAuthorizationDontAllowAlert service alert.
     public static let messages = [
         "Acces Sănătate",
         "Acceso a Salud",
@@ -263,8 +278,13 @@ public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
         "健康資料取用",
         "访问健康数据",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize HealthAuthorizationDontAllowAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
