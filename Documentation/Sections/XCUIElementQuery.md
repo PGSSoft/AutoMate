@@ -11,7 +11,7 @@ XCTAssertTrue(text.exists)
 ```
 
 `elements(withLabelsMatching:comparisonOperator:)` is a similar method but
-can be used when looking for an element which label can match to one from many texts.
+can be used when looking for an element which label can match one of many texts.
 
 **Example:**
 
@@ -21,7 +21,7 @@ let elements = app.buttons.elements(withLabelsMatching: texts, comparisonOperato
 ```
 
 `element(withIdentifier:label:labelComparisonOperator:)` can be used to find element with given identifier and label.
-Useful to find a cell whose `UILabel`, with provided `identifier`, contains text provided by `label`.
+Useful to find a cell which `UILabel`, with provided `identifier`, contains text provided by `label`.
 
 **Example:**
 
@@ -41,7 +41,7 @@ let cell = tableView.cells.element(containingLabels: ["name": "John*", "email": 
 XCTAssertTrue(cell.exists)
 ```
 
-In addition as shorted variants are available, which default `labelsComparisonOperator`:
+In addition shorted variants are available:
 
 - `element(withLabelPrefixed:)`
 - `element(withLabelContaining:)`

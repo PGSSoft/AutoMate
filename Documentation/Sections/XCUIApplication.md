@@ -1,5 +1,4 @@
-
-`XCUIApplication` extension contains additional properties and methods which detects currently running
+`XCUIApplication` extension contains additional properties and methods which detect currently running
 target like iOS device, iOS Simulator, iPad or iPhone.
 
 `deviceType` uses screen size to guess device that tests are running on.

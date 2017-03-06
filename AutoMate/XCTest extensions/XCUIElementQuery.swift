@@ -38,9 +38,9 @@ public enum StringComparisonOperator: RawRepresentable {
         }
     }
 
-    /// Initialize StringComparision operator with string.
+    /// Initialize comparision operator with string.
     ///
-    /// - Parameter rawValue: String to use. If it doesn't match any preexisting cases, it will be parsed as `other`.
+    /// - Parameter rawValue: String to use. If it doesn't match any preexisting cases, it will be parsed as `.other`.
     public init(rawValue: String) {
         switch rawValue {
         case "==": self = .equals
@@ -99,7 +99,7 @@ public extension XCUIElementQuery {
 
     /// Returns element with identifier and label matching provided values.
     ///
-    /// Can be used to find a cell whose `UILabel`, with provided `identifier`, contains text provided by `label`.
+    /// Can be used to find a cell which `UILabel`, with provided `identifier`, contains text provided by `label`.
     ///
     /// **Example:**
     ///
@@ -247,7 +247,7 @@ public extension XCUIElementQuery {
 
     /// Returns element with identifier and label matching provided values.
     ///
-    /// Can be used to find a cell whose `UILabel`, with provided `identifier`, contains text provided by `label`.
+    /// Can be used to find a cell which `UILabel`, with provided `identifier`, contains text provided by `label`.
     ///
     /// **Example:**
     ///
@@ -266,7 +266,7 @@ public extension XCUIElementQuery {
 
     /// Returns element with identifier and label matching provided values.
     ///
-    /// Can be used to find a cell whose `UILabel`, with provided `identifier`, contains text provided by `label`.
+    /// Can be used to find a cell which `UILabel`, with provided `identifier`, contains text provided by `label`.
     ///
     /// **Example:**
     ///

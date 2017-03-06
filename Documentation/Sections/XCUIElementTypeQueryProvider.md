@@ -1,5 +1,5 @@
 `XCUIElementTypeQueryProvider` extension contains additional `any` property
-which returns all descendants object of `XCUIElementType.any` type.
+which returns all descendant objects of `XCUIElementType.any` type.
 
 **Example:**
 

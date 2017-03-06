@@ -1,4 +1,4 @@
-`XCTestCase` extension adds additional wait methods. Which allows waiting for existing or visible elements.
+`XCTestCase` extension adds additional methods which allow waiting for existing or visible elements.
 Useful if some background activity is being performed in the background that would change appearance
 of the application when finished. If this doesn't happen then test will fail.
 

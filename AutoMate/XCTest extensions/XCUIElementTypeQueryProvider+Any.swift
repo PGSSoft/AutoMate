@@ -29,10 +29,10 @@ extension XCUIElementTypeQueryProvider where Self: DescendantsMatching {
     ///
     /// **Example:**
     ///
-    /// Check that the first cells has any subviews.
+    /// Check that the view has any subviews.
     ///
     /// ```swift
-    /// XCTAssertTrue(app.cells.elementBoundByIndex(0).any.count > 0)
+    /// XCTAssertTrue(view.any.count > 0)
     /// ```
     public var any: XCUIElementQuery {
         return descendants(matching: .any)

@@ -11,6 +11,20 @@ import XCTest
 
 // MARK: - IdentifiableByElement
 /// Protocol used to identify object, eg. PageObject, in the view hierarchy.
+///
+/// **Example:**
+///
+/// ```swift
+/// open class MainPage: BaseAppPage, IdentifiableByElement {
+///     open var tableView: XCUIElement {
+///         return view.tables["tableView"]
+///     }
+///
+///     public var identifingElement: XCUIElement {
+///         return tableView
+///     }
+/// }
+/// ```
 public protocol IdentifiableByElement {
 
     /// Identifing `XCUIElement`.
