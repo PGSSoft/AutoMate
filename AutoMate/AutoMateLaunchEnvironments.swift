@@ -9,37 +9,48 @@
 import Foundation
 
 // MARK: - AutoMateLaunchEnvironment
-/// Protocol adapted by all LaunchEnviroment options predefined in AutoMate.
-/// It also assures that default handling is provided by [AutoMate - AppBuddy](https://github.com/PGSSoft/AutoMate-AppBuddy)
+/// Protocol adapted by all launch enviroment options predefined in `AutoMate`.
+/// It also assures that default handling is provided by [AutoMate - AppBuddy](https://github.com/PGSSoft/AutoMate-AppBuddy).
 public protocol AutoMateLaunchEnvironment {
     // MARK: Properties
+    /// Readable unique key that is passed with launch enviroment.
     static var key: AutoMateKey { get }
 }
 
+/// Default implementations for `AutoMateLaunchEnvironment` that can handle multiple resource values.
 public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithMultipleValues, Self.Value == LaunchEnvironmentResourceValue {
 
     // MARK: Properties
+    /// Implementation overriding `uniqueIdentifier` property from `LaunchOption` protocol to use `rawValue` of `AutoMateKey`.
     public var uniqueIdentifier: String {
         return Self.key.rawValue
     }
 
     // MARK: Initialization
+    /// Intializes `AutoMateLaunchEnvironment` with `tuples` describing `LaunchEnvironmentResourceValue`.
+    ///
+    /// - Parameter resources: `(String, String?)` `tuples` describing `LaunchEnvironmentResourceValue`
     public init(resources: (fileName: String, bundleName: String?)...) {
         self.init(valuesCollection: resources.map(Value.init))
     }
 }
 
+/// Default implementations for `AutoMateLaunchEnvironment` that handle single value.
 public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithSingleValue {
 
     // MARK: Properties
+    /// Implementation of `key` property from `LaunchEnvironmentWithSingleValue` protocol to use `rawValue` of `AutoMateKey`.
     public var key: String {
         return Self.key.rawValue
     }
 }
 
 // MARK: - Event Launch Environment
-/// Launch environment supporting EventKit events. Expects bundle and file name for every file containing data of events to be added into calendar at test launch. Structure is defined in example project's file _events.json_.
-/// Usage example:
+/// Launch environment supporting `EventKit` events.
+/// Expects bundle and file name for every file containing data of events to be added into calendar at test launch. 
+/// Structure is defined in example project's file _events.json_.
+///
+/// **Example:**
 ///
 /// ```swift
 /// let recurringEvents: EventLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "monthly_events", bundleName: "Data") ]
@@ -48,14 +59,25 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithSing
 public struct EventLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
+    /// Defines associated type from `LaunchEnvironmentProtocol` to be `LaunchEnvironmentResourceValue`.
     public typealias Value = LaunchEnvironmentResourceValue
 
     // MARK: Properties
+    /// Defines `LaunchEnvironmentResourceValue` as `AutoMateKey.events`.
     public static let key: AutoMateKey = .events
+    /// Array to store all resource values from which launch enviroment value is composed.
     public let valuesCollection: [Value]
+    /// Flag that indicates if all `EKEvent`s should be removed before saving new ones.
     public let shouldCleanBefore: Bool
 
     // MARK: Initialization
+    /// Initializes `EventLaunchEnvironment` that can be passed to `TestLauncher`.
+    /// If handler is added to `LaunchEnvironmentManager` default handling is provided 
+    /// by [AutoMate - AppBuddy](https://github.com/PGSSoft/AutoMate-AppBuddy).
+    ///
+    /// - Parameters:
+    ///   - shouldCleanBefore: `Bool` flag indicating if `EKEvent`s should be removed before saving new ones.
+    ///   - valuesCollection: `Array` of all resource values to be passed.
     public init(shouldCleanBefore: Bool, valuesCollection: [Value]) {
         self.valuesCollection = valuesCollection
         self.shouldCleanBefore = shouldCleanBefore
@@ -63,8 +85,11 @@ public struct EventLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValu
 }
 
 // MARK: - Reminder Launch Environment
-/// Launch environment supporting EventKit reminders. Expects bundle and file name for every file containing data of reminders to be added into calendar at test launch. Structure is defined in example project's file _reminders.json_.
-/// Usage example:
+/// Launch environment supporting `EventKit` reminders.
+/// Expects bundle and file name for every file containing data of reminders to be added into calendar at test launch. 
+/// Structure is defined in example project's file _reminders.json_.
+///
+/// **Example:**
 ///
 /// ```swift
 /// let recurringReminders: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "johnys_birthday_reminder", bundleName: "Data") ]
@@ -73,14 +98,25 @@ public struct EventLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValu
 public struct ReminderLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
+    /// Defines associated type from `LaunchEnvironmentProtocol` to be `LaunchEnvironmentResourceValue`.
     public typealias Value = LaunchEnvironmentResourceValue
 
     // MARK: Properties
+    /// Defines `LaunchEnvironmentResourceValue` as `AutoMateKey.reminders`.
     public static let key: AutoMateKey = .reminders
-    public let valuesCollection: [LaunchEnvironmentResourceValue]
+    /// Array to store all resource values from which launch enviroment value is composed.
+    public let valuesCollection: [Value]
+    /// Flag that indicates if all `EKReminder`s should be removed before saving new ones.
     public let shouldCleanBefore: Bool
 
     // MARK: Initialization
+    /// Initializes `EventLaunchEnvironment` that can be passed to `TestLauncher`.
+    /// If handler is added to `LaunchEnvironmentManager` default handling is provided
+    /// by [AutoMate - AppBuddy](https://github.com/PGSSoft/AutoMate-AppBuddy).
+    ///
+    /// - Parameters:
+    ///   - shouldCleanBefore: `Bool` flag indicating if `EKReminder`s should be removed before saving new ones.
+    ///   - valuesCollection: `Array` of all resource values to be passed.
     public init(shouldCleanBefore: Bool, valuesCollection: [Value]) {
         self.valuesCollection = valuesCollection
         self.shouldCleanBefore = shouldCleanBefore
@@ -88,9 +124,11 @@ public struct ReminderLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleV
 }
 
 // MARK: - Contacts Launch Environment
-/// Launch environment supporting Contacts. Expects bundle and file name for every file containing data of contacts to be added into address book at test launch.
+/// Launch environment supporting `Contacts`.
+/// Expects bundle and file name for every file containing data of contacts to be added to address book at test launch.
 /// Structure is defined in example project's file _contacts.json_.
-/// Usage example:
+///
+/// **Example:**
 ///
 /// ```swift
 /// let johnContacts: ContactLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "john", bundleName: "Data") ]
@@ -99,14 +137,25 @@ public struct ReminderLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleV
 public struct ContactLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
+    /// Defines associated type from `LaunchEnvironmentProtocol` to be `LaunchEnvironmentResourceValue`.
     public typealias Value = LaunchEnvironmentResourceValue
 
     // MARK: Properties
+    /// Defines `LaunchEnvironmentResourceValue` as `AutoMateKey.contacts`.
     public static let key: AutoMateKey = .contacts
+    /// Array to store all resource values from which launch enviroment value is composed.
     public let valuesCollection: [LaunchEnvironmentResourceValue]
+    /// Flag that indicates if all `CNContact`s should be removed before saving new ones.
     public let shouldCleanBefore: Bool
 
     // MARK: Initialization
+    /// Initializes `EventLaunchEnvironment` that can be passed to `TestLauncher`.
+    /// If handler is added to `LaunchEnvironmentManager` default handling is provided
+    /// by [AutoMate - AppBuddy](https://github.com/PGSSoft/AutoMate-AppBuddy).
+    ///
+    /// - Parameters:
+    ///   - shouldCleanBefore: `Bool` flag indicating if `CNContact`s should be removed before saving new ones.
+    ///   - valuesCollection: `Array` of all resource values to be passed.
     public init(shouldCleanBefore: Bool, valuesCollection: [Value]) {
         self.valuesCollection = valuesCollection
         self.shouldCleanBefore = shouldCleanBefore
@@ -114,8 +163,9 @@ public struct ContactLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleVa
 }
 
 // MARK: - Turn off animation launch environment
-/// Launch environment disabling UIKit animation.
-/// Usage example:
+/// Launch environment disabling `UIKit` animation.
+///
+/// **Example:**
 ///
 /// ```swift
 /// let disableAnimation = AnimationLaunchEnvironment()
@@ -123,10 +173,13 @@ public struct ContactLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleVa
 public struct AnimationLaunchEnvironment: LaunchEnvironmentWithSingleValue, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
+    /// Defines associated type from `LaunchEnvironmentProtocol` to be `BooleanLaunchEnvironmentValue`.
     public typealias Value = BooleanLaunchEnvironmentValue
 
     // MARK: Properties
+    /// Defines `LaunchEnvironmentResourceValue` as `AutoMateKey.animation`.
     public static let key: AutoMateKey = .animation
+    /// Value from which is used as launch enviroment value.
     public var value: Value
 
     // MARK: Initialization
