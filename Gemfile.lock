@@ -69,7 +69,7 @@ GEM
       danger (> 2.0)
     danger-swiftlint (0.3.0)
       danger
-    danger-xcode_summary (0.1.1)
+    danger-xcode_summary (0.1.2)
       danger-plugin-api (~> 1.0)
     danger-xcodebuild (0.0.6)
       danger-plugin-api (~> 1.0)
@@ -88,7 +88,7 @@ GEM
     faraday_middleware (0.11.0.1)
       faraday (>= 0.7.4, < 1.0)
     fastimage (2.1.0)
-    fastlane (2.18.3)
+    fastlane (2.19.1)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -168,7 +168,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.5.1)
     minitest (5.10.1)
-    molinillo (0.5.6)
+    molinillo (0.5.7)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -244,4 +244,4 @@ DEPENDENCIES
   xcpretty-json-formatter
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
