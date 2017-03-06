@@ -24,9 +24,9 @@ public extension XCTestCase {
     ///   - timeout: Waiting time (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line:
-    public func wait(forExistOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
-        let existsPredicate = NSPredicate(format: "exists == true")
-        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+    public func wait(forExistanceOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+        let existancePredicate = NSPredicate(format: "exists == true")
+        expectation(for: existancePredicate, evaluatedWith: element, handler: nil)
 
         waitForExpectations(timeout: timeout) { (error) -> Void in
             guard error != nil else {
@@ -45,8 +45,8 @@ public extension XCTestCase {
     ///   - file: Current source file.
     ///   - line: Current source line.
     public func wait(forVisibilityOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
-        let existsPredicate = NSPredicate(format: "exists == true && hittable == true")
-        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+        let visabilityPredicate = NSPredicate(format: "exists == true && hittable == true")
+        expectation(for: visabilityPredicate, evaluatedWith: element, handler: nil)
 
         waitForExpectations(timeout: timeout) { (error) -> Void in
             guard error != nil else {

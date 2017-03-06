@@ -12,31 +12,31 @@ import AutoMate
 // swiftlint:disable type_body_length
 class PermissionsTests: AppUITestCase {
 
-    // MARK: Arrange View Objects
-    lazy var mainView: MainView = MainView(in: self.app)
-    lazy var permissionsView: PermissionsView = PermissionsView(in: self.app)
-    lazy var locationView: LocationView = LocationView(in: self.app)
-    lazy var contactsView: ContactsView = ContactsView(in: self.app)
-    lazy var homeKitView: HomeKitView = HomeKitView(in: self.app)
-    lazy var healthKitView: HealthKitView = HealthKitView(in: self.app)
-    lazy var healthPermissionView: HealthPermissionView = HealthPermissionView(in: self.app)
-    lazy var speechRecognitionView: SpeechRecognitionView = SpeechRecognitionView(in: self.app)
-    lazy var siriView: SiriView = SiriView(in: self.app)
-    lazy var remindersView: RemindersView = RemindersView(in: self.app)
-    lazy var photosView: PhotosView = PhotosView(in: self.app)
-    lazy var cameraView: CameraView = CameraView(in: self.app)
-    lazy var mediaLibraryView: MediaLibraryView = MediaLibraryView(in: self.app)
-    lazy var bluetoothView: BluetoothView = BluetoothView(in: self.app)
-    lazy var microphoneView: MicrophoneView = MicrophoneView(in: self.app)
-    lazy var callsView: CallsView = CallsView(in: self.app)
-    lazy var calendarView: CalendarView = CalendarView(in: self.app)
-    lazy var motionView: MotionView = MotionView(in: self.app)
+    // MARK: Arrange Page Objects
+    lazy var mainPage: MainPage = MainPage(in: self.app)
+    lazy var permissionsPage: PermissionsPage = PermissionsPage(in: self.app)
+    lazy var locationPage: LocationPage = LocationPage(in: self.app)
+    lazy var contactsPage: ContactsPage = ContactsPage(in: self.app)
+    lazy var homeKitPage: HomeKitPage = HomeKitPage(in: self.app)
+    lazy var healthKitPage: HealthKitPage = HealthKitPage(in: self.app)
+    lazy var healthPermissionPage: HealthPermissionPage = HealthPermissionPage(in: self.app)
+    lazy var speechRecognitionPage: SpeechRecognitionPage = SpeechRecognitionPage(in: self.app)
+    lazy var siriPage: SiriPage = SiriPage(in: self.app)
+    lazy var remindersPage: RemindersPage = RemindersPage(in: self.app)
+    lazy var photosPage: PhotosPage = PhotosPage(in: self.app)
+    lazy var cameraPage: CameraPage = CameraPage(in: self.app)
+    lazy var mediaLibraryPage: MediaLibraryPage = MediaLibraryPage(in: self.app)
+    lazy var bluetoothPage: BluetoothPage = BluetoothPage(in: self.app)
+    lazy var microphonePage: MicrophonePage = MicrophonePage(in: self.app)
+    lazy var callsPage: CallsPage = CallsPage(in: self.app)
+    lazy var calendarPage: CalendarPage = CalendarPage(in: self.app)
+    lazy var motionPage: MotionPage = MotionPage(in: self.app)
 
     // MARK: Set up
     override func setUp() {
         super.setUp()
         TestLauncher.configureWithDefaultOptions(app).launch()
-        wait(forVisibilityOf: mainView)
+        wait(forVisibilityOf: mainPage)
     }
 
     // MARK: Tests
@@ -56,12 +56,13 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToLocationWhenInUse()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToLocationWhenInUse()
         // Interruption won't happen without some kind of action.
         app.tap()
-        locationView.goBack()
-        permissionsView.goBack()
+        wait(forVisibilityOf: locationPage.requestLabel)
+        locationPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -82,12 +83,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToLocationAlways()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToLocationAlways()
         // Interruption won't happen without some kind of action.
         app.tap()
-        locationView.goBack()
-        permissionsView.goBack()
+        locationPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -113,12 +114,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToContacts()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToContacts()
         // Interruption won't happen without some kind of action.
         app.tap()
-        contactsView.goBack()
-        permissionsView.goBack()
+        contactsPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -139,12 +140,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToHomeKit()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToHomeKit()
         // Interruption won't happen without some kind of action.
         app.tap()
-        homeKitView.goBack()
-        permissionsView.goBack()
+        homeKitPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -164,23 +165,23 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToHealthKit()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToHealthKit()
 
-        wait(forVisibilityOf: healthPermissionView)
-        XCTAssertTrue(healthPermissionView.allowElement.exists)
-        XCTAssertTrue(healthPermissionView.denyElement.exists)
-        XCTAssertTrue(healthPermissionView.turnOnAllElement.exists)
+        wait(forVisibilityOf: healthPermissionPage)
+        XCTAssertTrue(healthPermissionPage.allowElement.exists)
+        XCTAssertTrue(healthPermissionPage.denyElement.exists)
+        XCTAssertTrue(healthPermissionPage.turnOnAllElement.exists)
 
-        healthPermissionView.turnOnAllElement.tap()
+        healthPermissionPage.turnOnAllElement.tap()
 
-        XCTAssertTrue(healthPermissionView.turnOffAllElement.exists)
+        XCTAssertTrue(healthPermissionPage.turnOffAllElement.exists)
 
-        healthPermissionView.denyElement.tap()
+        healthPermissionPage.denyElement.tap()
         app.tap()
 
-        healthKitView.goBack()
-        permissionsView.goBack()
+        healthKitPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -201,12 +202,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToSpeechRecognition()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToSpeechRecognition()
         // Interruption won't happen without some kind of action.
         app.tap()
-        speechRecognitionView.goBack()
-        permissionsView.goBack()
+        speechRecognitionPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -228,12 +229,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToSiri()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToSiri()
         // Interruption won't happen without some kind of action.
         app.tap()
-        siriView.goBack()
-        permissionsView.goBack()
+        siriPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -254,12 +255,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToReminders()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToReminders()
         // Interruption won't happen without some kind of action.
         app.tap()
-        remindersView.goBack()
-        permissionsView.goBack()
+        remindersPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -280,12 +281,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToPhotos()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToPhotos()
         // Interruption won't happen without some kind of action.
         app.tap()
-        photosView.goBack()
-        permissionsView.goBack()
+        photosPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -306,12 +307,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToCamera()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToCamera()
         // Interruption won't happen without some kind of action.
         app.tap()
-        cameraView.goBack()
-        permissionsView.goBack()
+        cameraPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -332,12 +333,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToMediaLibrary()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToMediaLibrary()
         // Interruption won't happen without some kind of action.
         app.tap()
-        mediaLibraryView.goBack()
-        permissionsView.goBack()
+        mediaLibraryPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -359,12 +360,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToBluetooth()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToBluetooth()
         // Interruption won't happen without some kind of action.
         app.tap()
-        bluetoothView.goBack()
-        permissionsView.goBack()
+        bluetoothPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -386,12 +387,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToMicrophone()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToMicrophone()
         // Interruption won't happen without some kind of action.
         app.tap()
-        microphoneView.goBack()
-        permissionsView.goBack()
+        microphonePage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -413,12 +414,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToCalls()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToCalls()
         // Interruption won't happen without some kind of action.
         app.tap()
-        callsView.goBack()
-        permissionsView.goBack()
+        callsPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -439,12 +440,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToCalendar()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToCalendar()
         // Interruption won't happen without some kind of action.
         app.tap()
-        calendarView.goBack()
-        permissionsView.goBack()
+        calendarPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }
@@ -465,12 +466,12 @@ class PermissionsTests: AppUITestCase {
             return true
         }
 
-        mainView.goToPermissionsViewMenu()
-        permissionsView.goToMotion()
+        mainPage.goToPermissionsPageMenu()
+        permissionsPage.goToMotion()
         // Interruption won't happen without some kind of action.
         app.tap()
-        motionView.goBack()
-        permissionsView.goBack()
+        motionPage.goBack()
+        permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
         XCTAssertTrue(handled)
     }

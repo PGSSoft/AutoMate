@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  MainPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,8 +9,8 @@
 import XCTest
 import AutoMate
 
-// MARK: - MainView
-open class MainView: BaseAppView {
+// MARK: - MainPage
+open class MainPage: BaseAppPage {
 
     // MARK: Elements
     open var tableView: XCUIElement {
@@ -54,11 +54,11 @@ open class MainView: BaseAppView {
         appearingMenu.tap()
     }
 
-    open func goToScrollViewMenu() {
+    open func goToScrollPageMenu() {
         scrollViewMenu.tap()
     }
 
-    open func goToPermissionsViewMenu() {
+    open func goToPermissionsPageMenu() {
         permissionsViewMenu.tap()
     }
 
@@ -66,7 +66,7 @@ open class MainView: BaseAppView {
         middleButtonMenu.tap()
     }
 
-    open func goToTableViewMenu() {
+    open func goToTablePageMenu() {
         tableViewMenu.tap()
     }
 
@@ -81,7 +81,7 @@ open class MainView: BaseAppView {
 }
 
 // MARK: - IdentifiableByElement
-extension MainView: IdentifiableByElement {
+extension MainPage: IdentifiableByElement {
 
     public var identifingElement: XCUIElement {
         return tableView
@@ -89,7 +89,7 @@ extension MainView: IdentifiableByElement {
 }
 
 // MARK: - Locators
-private extension MainView {
+private extension MainPage {
 
     enum Locators: String, Locator {
         case tableView

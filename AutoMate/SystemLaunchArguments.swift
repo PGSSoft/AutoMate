@@ -9,6 +9,26 @@
 import Foundation
 
 /// Launch option to replace languages selected in the system.
+///
+/// Allows to replace order of preferred languages which will be used by the application do display localized content.
+///
+/// **Argument:**
+///
+/// `AppleLanguages`
+///
+/// **Example:**
+///
+/// ```swift
+/// SystemLanguages([.English, .Polish])
+/// // or
+/// [.English, .Polish] as SystemLanguages
+/// ```
+///
+/// **Generated strings:**
+///
+/// ```swift
+/// -AppleLanguages ("en", "pl")
+/// ```
 public struct SystemLanguages: LanguageLaunchArgument, LaunchArgumentWithMultipleValues {
 
     // MARK: LaunchArgumentWithMultipleValues
@@ -17,6 +37,7 @@ public struct SystemLanguages: LanguageLaunchArgument, LaunchArgumentWithMultipl
 
     /**
      Initalizes `self` with array of languages.
+
      - parameter values: Array to use for initialization.
      */
     public init(_ values: [SystemLanguage]) {
@@ -25,12 +46,33 @@ public struct SystemLanguages: LanguageLaunchArgument, LaunchArgumentWithMultipl
 }
 
 /// Launch option to replace locale selected in the system.
+///
+/// Allows to replace users locale.
+///
+/// **Argument:**
+///
+/// `AppleLocale`
+///
+/// **Example:**
+///
+/// ```swift
+/// SystemLocale(localeIdentifier: "pl")
+/// SystemLocale(language: .Polish, country: .Poland)
+/// ```
+///
+/// **Generated strings:**
+///
+/// ```swift
+/// -AppleLocale "pl"
+/// -AppleLocale "pl_PL"
+/// ```
 public struct SystemLocale: LocaleLaunchArgument, LaunchArgumentWithSingleValue {
 
     fileprivate let localeIdentifier: String
 
     /**
      Initalizes `self` with custom string representation of the locale.
+
      - parameter localeIdentifier: String representation of the locale.
      */
     public init(localeIdentifier: String) {
@@ -39,6 +81,7 @@ public struct SystemLocale: LocaleLaunchArgument, LaunchArgumentWithSingleValue 
 
     /**
      Initalizes `self` with predefined language and country.
+
      - parameter language: Predefined language value.
      - parameter country: Predefined country value.
      */
@@ -57,6 +100,22 @@ extension SystemLocale: LaunchArgumentValue {
 }
 
 /// Launch option to replace software keyboards selected in the system.
+///
+/// **Argument:**
+///
+/// `AppleKeyboards`
+///
+/// **Example:**
+///
+/// ```swift
+/// SoftwareKeyboards([.Bengali])
+/// ```
+///
+/// **Generated strings:**
+///
+/// ```swift
+/// -AppleKeyboards ("bn@sw=Bengali")
+/// ```
 public struct SoftwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMultipleValues {
 
     // MARK: LaunchArgumentWithMultipleValues
@@ -65,6 +124,7 @@ public struct SoftwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMulti
 
     /**
      Initalizes `self` with array of software keyboards.
+
      - parameter values: Array to use for initialization.
      */
     public init(_ values: [SoftwareKeyboard]) {
@@ -73,6 +133,22 @@ public struct SoftwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMulti
 }
 
 /// Launch option to replace hardware keyboards selected in the system.
+///
+/// **Argument:**
+///
+/// `AppleKeyboards`
+///
+/// **Example:**
+///
+/// ```swift
+/// HardwareKeyboards([.Bengali])
+/// ```
+///
+/// **Generated strings:**
+///
+/// ```swift
+/// -AppleKeyboards ("bn@hw=Bangla")
+/// ```
 public struct HardwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMultipleValues {
 
     // MARK: LaunchArgumentWithMultipleValues
@@ -81,6 +157,7 @@ public struct HardwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMulti
 
     /**
      Initalizes `self` with array of hardware keyboards.
+
      - parameter values: Array to use for initialization.
      */
     public init(_ values: [HardwareKeyboard]) {
@@ -89,6 +166,22 @@ public struct HardwareKeyboards: KeyboardLaunchArgument, LaunchArgumentWithMulti
 }
 
 /// Launch option to replace system keyboards selected in the system.
+///
+/// **Argument:**
+///
+/// `AppleKeyboards`
+///
+/// **Example:**
+///
+/// ```swift
+/// SystemKeyboards(software: [.Bengali], hardware: [.Bengali])
+/// ```
+///
+/// **Generated strings:**
+///
+/// ```swift
+/// -AppleKeyboards ("bn@sw=Bengali", "bn@hw=Bangla")
+/// ```
 public struct SystemKeyboards: KeyboardLaunchArgument {
 
     private let software: SoftwareKeyboards
@@ -100,7 +193,8 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
     }
 
     /**
-     Initalizes `self` with arrays of hardware and software keyboards..
+     Initalizes `self` with arrays of hardware and software keyboards.
+
      - parameter software: Array of software keyboards.
      - parameter hardware: Array of hardware keyboards.
      */
@@ -115,32 +209,78 @@ public struct SystemKeyboards: KeyboardLaunchArgument {
     }
 }
 
-// MARK: - CoreDataArgument
+// MARK: - CoreDataOption
 /// Launch option to enable debug options for CoreData.
+///
+/// - `sqlDebug`: Enables SQLDebug logging with given verbosity level.
+/// - `syntaxColoredLogging`: Turns on SQL syntax coloring.
+/// - `migrationDebug`: Logs exceptions during data migrations.
+/// - `concurrencyDebug`: Enables extra assertions related to concurrency.
+/// - `sqLiteDebugSynchronous`: Controls behaviour of SQLite disk syncing.
+/// - `sqLiteIntegrityCheck`: Enables extra integrity checking.
+/// - `threadingDebug`: Enables assertions for Core Data's multi-threading policy.
+///
+/// **Example:**
+///
+/// ```swift
+/// CoreDataOption.sqlDebug(verbosityLevel: .high)
+/// ```
 public enum CoreDataOption {
 
     /// Enables SQLDebug logging with given verbosity level.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.SQLDebug`
     case sqlDebug(verbosityLevel: VerbosityLevel)
 
     /// Turns on SQL syntax coloring.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.SyntaxColoredLogging`
     case syntaxColoredLogging
 
     /// Logs exceptions during data migrations.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.MigrationDebug`
     case migrationDebug
 
     /// Enables extra assertions related to concurrency.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.ConcurrencyDebug`
     case concurrencyDebug
 
     /// Controls behaviour of SQLite disk syncing.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.SQLiteDebugSynchronous`
     case sqLiteDebugSynchronous(syncing: DiskSyncing)
 
     /// Enables extra integrity checking.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.SQLiteIntegrityCheck`
     case sqLiteIntegrityCheck
 
     /// Enables assertions for Core Data's multi-threading policy.
+    ///
+    /// **Argument:**
+    ///
+    /// `com.apple.CoreData.ThreadingDebug`
     case threadingDebug(verbosityLevel: VerbosityLevel)
 
     /// Describes verbosity level of log output.
+    ///
+    /// - `low`: Low level of logging verbosity.
+    /// - `medium`: Medium level of logging verbosity.
+    /// - `high`: Maximum level of logging verbosity.
     public enum VerbosityLevel: Int {
 
         /// Low level of logging verbosity.
@@ -154,6 +294,10 @@ public enum CoreDataOption {
     }
 
     /// Describes how database updates should be performed.
+    ///
+    /// - `disabled`: Completely disables disk syncing. Fast, but increases chance of data corruption.
+    /// - `normal`: Disk syncing is performed without `fctl FULL_FSYNC` command.
+    /// - `full`: Enforces that data is physically written to disk during save operation.
     public enum DiskSyncing: Int {
 
         /// Completely disables disk syncing. Fast, but increases chance of data corruption.
@@ -207,16 +351,32 @@ extension CoreDataOption: LaunchArgumentWithSingleValue {
     }
 }
 
-// MARK: - LocalizedStringArgument
-
+// MARK: - LocalizedStrings
 /// Launch option to enable debug settings for string localization.
+///
+/// - `doubleLocalizedStrings`: Makes all localized strings twice as long.
+/// - `showNonLocalizedStrings`: Capitalizes all untranslated strings in the application.
+///
+/// **Example:**
+///
+/// ```swift
+/// LocalizedStrings.doubleLocalizedStrings
+/// ```
 public enum LocalizedStrings: String {
 
     /// Makes all localized strings twice as long.
-    case DoubleLocalizedStrings = "NSDoubleLocalizedStrings"
+    ///
+    /// **Argument:**
+    ///
+    /// `NSDoubleLocalizedStrings`
+    case doubleLocalizedStrings = "NSDoubleLocalizedStrings"
 
     /// Capitalizes all untranslated strings in the application.
-    case ShowNonLocalizedStrings = "NSShowNonLocalizedStrings"
+    ///
+    /// **Argument:**
+    ///
+    /// `NSShowNonLocalizedStrings`
+    case showNonLocalizedStrings = "NSShowNonLocalizedStrings"
 }
 
 extension LocalizedStrings: LaunchArgumentWithSingleValue {

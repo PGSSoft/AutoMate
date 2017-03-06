@@ -1,5 +1,5 @@
 //
-//  ModalView.swift
+//  ModalPage.swift
 //  AutoMate
 //
 //  Created by Bartosz Janda on 31.01.2017.
@@ -9,21 +9,21 @@
 import Foundation
 import XCTest
 
-// MARK: - ModalView protocol
-/// View object protocol describing behaviour of modally presented view.
+// MARK: - ModalPage protocol
+/// Page object protocol describing behaviour of modally presented view.
 /// Default implementation use "close" `accessibilityIdentifier`.
 ///
 /// Example usage:
 /// ```swift
-/// class AboutTheAppView: BaseAppView, ModalView {}
+/// class AboutTheAppView: BaseAppPage, ModalPage {}
 ///
 /// let aboutTheAppView = AboutTheAppView(view: containerView)
-/// aboutTheAppView.closeModalView()
+/// aboutTheAppView.closeModalPage()
 /// ```
 ///
 /// - requires:
 /// It is required to use "close" as `accessibilityIdentifier` in custom close button in the application to work with default implementation of this protocol.
-public protocol ModalView: BaseAppViewProtocol {
+public protocol ModalPage: BaseAppPageProtocol {
 
     // MARK: Elements
     /// Close button element.
@@ -31,12 +31,12 @@ public protocol ModalView: BaseAppViewProtocol {
 
     // MARK: Actions
     /// Close modal view action.
-    func closeModalView()
+    func closeModalPage()
 }
 
 // MARK: Default implementation
-/// Default implementation of the `ModalView` protocol.
-public extension ModalView {
+/// Default implementation of the `ModalPage` protocol.
+public extension ModalPage {
 
     // MARK: Elements
     public var closeButton: XCUIElement {
@@ -44,7 +44,7 @@ public extension ModalView {
     }
 
     // MARK: Actions
-    public func closeModalView() {
+    public func closeModalPage() {
         closeButton.tap()
     }
 }

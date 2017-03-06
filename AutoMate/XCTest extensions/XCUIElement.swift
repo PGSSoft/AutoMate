@@ -14,7 +14,9 @@ public extension XCUIElement {
     // MARK: Properties
     /// Indicates if the element is currently visible on the screen.
     public var isVisible: Bool {
-        // Workaround for some situations.
+        // When accessing properties of XCUIElement, XCTest works differently than in a case of actions on elements
+        // - there is no waiting for the app to idle and to finish all animations.
+        // This can lead to problems and test flakiness as the test will evaluate a query before e.g. view transition has been completed.
         XCUIDevice.shared().orientation = .unknown
         return exists && isHittable
     }
@@ -89,11 +91,24 @@ public extension XCUIElement {
 
     /// Remove text from textField or secureTextField.
     public func clearTextField() {
-        var previousValueLength = 0
-        while let value = self.value as? NSString, value.length != previousValueLength {
-            // keep removing characters until text is empty, or removing them is not allowed
-            previousValueLength = value.length
-            typeText("\u{8}")
+        // Since iOS 9.1 the keyboard identifiers are available.
+        // On iOS 9.0 the special character `\u{8}` (backspace) is used.
+        if #available(iOS 9.1, *) {
+            let app = XCUIApplication()
+            let deleteButton = app.keys[KeyboardLocator.delete]
+            var previousValueLength = 0
+            while self.text.characters.count != previousValueLength {
+                // Keep removing characters until text is empty, or removing them is not allowed.
+                previousValueLength = self.text.characters.count
+                deleteButton.tap()
+            }
+        } else {
+            var previousValueLength = 0
+            while self.text.characters.count != previousValueLength {
+                // Keep removing characters until text is empty, or removing them is not allowed.
+                previousValueLength = self.text.characters.count
+                typeText("\u{8}")
+            }
         }
     }
 

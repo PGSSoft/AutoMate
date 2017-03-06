@@ -1,5 +1,5 @@
 //
-//  HealthPermissionView.swift
+//  HealthPermissionPage.swift
 //  AutoMate
 //
 //  Created by Bartosz Janda on 15.02.2017.
@@ -9,8 +9,8 @@
 import Foundation
 import XCTest
 
-// MARK: - HealthPermissionView
-open class HealthPermissionView: BaseAppView, HealthAlertAllow, HealthAlertDeny, HealthAlertTurnOnAll, HealthAlertTurnOffAll {
+// MARK: - HealthPermissionPage
+open class HealthPermissionPage: BaseAppPage, HealthAlertAllow, HealthAlertDeny, HealthAlertTurnOnAll, HealthAlertTurnOffAll {
 
     // MARK: Elements
     open var healthAccessElement: XCUIElement {
@@ -19,7 +19,7 @@ open class HealthPermissionView: BaseAppView, HealthAlertAllow, HealthAlertDeny,
 }
 
 // MARK: - IdentifiableByElement
-extension HealthPermissionView: IdentifiableByElement {
+extension HealthPermissionPage: IdentifiableByElement {
 
     public var identifingElement: XCUIElement {
         return healthAccessElement
@@ -27,7 +27,7 @@ extension HealthPermissionView: IdentifiableByElement {
 }
 
 // MARK: - Locators
-public extension HealthPermissionView {
+public extension HealthPermissionPage {
 
     public enum Locators: String, Locator {
         case healthAccess = "Health Access"
@@ -68,7 +68,7 @@ public protocol HealthAlertTurnOffAll {
 }
 
 // MARK: - Default implementation
-extension HealthAlertAllow where Self: BaseAppView {
+extension HealthAlertAllow where Self: BaseAppPage {
     public var allowElement: XCUIElement {
         guard let button = view.buttons.elements(withLabelsMatching: type(of: self).allow).first else {
             preconditionFailure("Cannot find allow button.")
@@ -78,7 +78,7 @@ extension HealthAlertAllow where Self: BaseAppView {
     }
 }
 
-extension HealthAlertDeny where Self: BaseAppView {
+extension HealthAlertDeny where Self: BaseAppPage {
     public var denyElement: XCUIElement {
         guard let button = view.buttons.elements(withLabelsMatching: type(of: self).deny).first else {
             preconditionFailure("Cannot find deny button.")
@@ -88,7 +88,7 @@ extension HealthAlertDeny where Self: BaseAppView {
     }
 }
 
-extension HealthAlertTurnOnAll where Self: BaseAppView {
+extension HealthAlertTurnOnAll where Self: BaseAppPage {
     public var turnOnAllElement: XCUIElement {
         guard let button = view.staticTexts.elements(withLabelsMatching: type(of: self).turnOnAll).first else {
             preconditionFailure("Cannot find turn on all button.")
@@ -98,7 +98,7 @@ extension HealthAlertTurnOnAll where Self: BaseAppView {
     }
 }
 
-extension HealthAlertTurnOffAll where Self: BaseAppView {
+extension HealthAlertTurnOffAll where Self: BaseAppPage {
     public var turnOffAllElement: XCUIElement {
         guard let button = view.staticTexts.elements(withLabelsMatching: type(of: self).turnOffAll).first else {
             preconditionFailure("Cannot find turn off all button.")

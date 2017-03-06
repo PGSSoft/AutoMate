@@ -13,10 +13,22 @@ class LocationWhenInUseViewController: UIViewController {
 
     // MARK: Properties
     let manager = CLLocationManager()
+    @IBOutlet var requestLabel: UILabel!
 
     // MARK: View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        manager.delegate = self
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         manager.requestWhenInUseAuthorization()
+    }
+}
+
+extension LocationWhenInUseViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        requestLabel.text = "\(status.rawValue)"
     }
 }

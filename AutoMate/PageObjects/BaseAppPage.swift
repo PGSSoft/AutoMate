@@ -1,5 +1,5 @@
 //
-//  BaseAppView.swift
+//  BaseAppPage.swift
 //  AutoMate
 //
 //  Created by Bartosz Janda on 31.01.2017.
@@ -9,9 +9,9 @@
 import Foundation
 import XCTest
 
-// MARK: - BaseAppViewProtocol
-/// Base view object protocol. Defines basic properties and methods required by all view objects,
-public protocol BaseAppViewProtocol {
+// MARK: - BaseAppPageProtocol
+/// Base page object protocol. Defines basic properties and methods required by all page objects.
+public protocol BaseAppPageProtocol {
 
     // MARK: Properties
     /// The container view on which all elements will be placed.
@@ -21,9 +21,9 @@ public protocol BaseAppViewProtocol {
     var view: XCUIElement { get }
 }
 
-// MARK: - BaseAppView
-/// Base implementation of the `BaseAppViewProtocol`. All view objects can inherit from this class.
-open class BaseAppView: BaseAppViewProtocol {
+// MARK: - BaseAppPage
+/// Base implementation of the `BaseAppPageProtocol`. All page objects can inherit from this class.
+open class BaseAppPage: BaseAppPageProtocol {
 
     // MARK: Properties
     /// The container view on which all elements will be placed.
@@ -33,9 +33,9 @@ open class BaseAppView: BaseAppViewProtocol {
     open var view: XCUIElement
 
     // MARK: Initialization
-    /// Initialize View Object with container view
+    /// Initialize Page Object with container view
     ///
-    /// - Parameter view: Container view which contains all its view object elements.
+    /// - Parameter view: Container view which contains all its page object elements.
     ///
     /// - note:
     /// This view can be an instance of `XCUIApplication` class.

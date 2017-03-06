@@ -10,6 +10,34 @@ import Foundation
 
 // MARK: - LaunchArgumentValue protocol
 /// Represents single portion of data to be passed through launch argument.
+///
+/// Objects implementing `LaunchArgumentValue` are used
+/// by the `LaunchArgumentWithSingleValue` and
+/// `LaunchArgumentWithMultipleValues`.
+///
+/// `AutoMate` provides default implementation for `RawRepresentable` 
+/// objects and `Bool` values (check `BooleanLaunchArgumentValue`).
+///
+/// **Example:**
+///
+/// ```swift
+/// enum Server: String, LaunchArgumentWithSingleValue, LaunchArgumentValue {
+///     case testing, production
+/// 
+///     var key: String {
+///         return "Server"
+///     }
+/// }
+/// ```
+///
+/// ```swift
+/// struct Number: LaunchArgumentValue {
+///     var value: String {
+///         return "\(number)"
+///     }
+///     let number: Int
+/// }
+/// ```
 public protocol LaunchArgumentValue {
 
     /// String representation of the value.
@@ -24,8 +52,7 @@ public extension LaunchArgumentValue where Self: RawRepresentable {
 }
 
 // MARK: - Launch argument values
-
-///Represents launch argument value of type Bool.
+/// Represents launch argument value of type Bool.
 public enum BooleanLaunchArgumentValue: Int, ExpressibleByBooleanLiteral, LaunchArgumentValue {
     /// Value of true, or 1.
     case `true` = 1

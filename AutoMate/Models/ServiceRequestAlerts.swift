@@ -4,6 +4,8 @@
 import XCTest
 
 extension SystemAlertAllow {
+
+    /// Represents all possible "allow" buttons in system service messages.
     public static var allow: [String] {
         return [
             "OK",
@@ -23,6 +25,8 @@ extension SystemAlertAllow {
 }
 
 extension SystemAlertDeny {
+
+    /// Represents all possible "deny" buttons in system service messages.
     public static var deny: [String] {
         return [
             "Älä salli",
@@ -63,7 +67,10 @@ extension SystemAlertDeny {
     }
 }
 
+/// Represents AddressBookAlert service alert.
 public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in AddressBookAlert service alert.
     public static let messages = [
         "* haluaa käyttää yhteystietojasi",
         "* wil toegang tot je contacten",
@@ -101,8 +108,13 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用聯絡資訊",
         "「*」要取用通訊錄",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize AddressBookAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -112,7 +124,10 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents BluetoothPeripheralAlert service alert.
 public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in BluetoothPeripheralAlert service alert.
     public static let messages = [
         "* haluaa antaa dataa lähellä oleville Bluetooth-laitteille, vaikka et käyttäisikään appia.",
         "* quiere que los datos estén disponibles para los dispositivos Bluetooth cercanos aunque no estés utilizando la aplicación.",
@@ -151,8 +166,13 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
         "「*」想要在未使用 App 時也能讓鄰近的藍牙裝置取得資料。",
         "「*」要在你並非正在使用 App 時也能讓鄰近的藍牙裝置取得資料。",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize BluetoothPeripheralAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -162,7 +182,10 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
     }
 }
 
+/// Represents CalendarAlert service alert.
 public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in CalendarAlert service alert.
     public static let messages = [
         "* haluaa käyttää kalenteriasi",
         "* wil toegang tot je agenda",
@@ -200,8 +223,13 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的行事曆",
         "「*」要取用你的日曆",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize CalendarAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -211,7 +239,10 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents CallsAlert service alert.
 public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in CallsAlert service alert.
     public static let messages = [
         "* haluaa tarjota perinteisen puhelutoiminnon",
         "* vill använda den inbyggda uppringningsfunktionen",
@@ -249,8 +280,13 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要提供原生通話體驗",
         "「*」要提供整合式來電體驗",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize CallsAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -260,7 +296,10 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents CameraAlert service alert.
 public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in CameraAlert service alert.
     public static let messages = [
         "* haluaa käyttää kameraa",
         "* wil toegang tot de camera",
@@ -298,8 +337,13 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的相機",
         "「*」要取用相機",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize CameraAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -309,7 +353,10 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents MediaLibraryAlert service alert.
 public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in MediaLibraryAlert service alert.
     public static let messages = [
         "'*' wil toegang tot Apple Music en je mediabibliotheek",
         "* haluaa käyttää Apple Musicia ja mediakirjastoasi",
@@ -349,8 +396,13 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
         "「*」想取用 Apple Music 及你的媒體資料庫",
         "「*」想要取用 Apple Music 和您的媒體資料庫",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize MediaLibraryAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -360,7 +412,10 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
     }
 }
 
+/// Represents MicrophoneAlert service alert.
 public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in MicrophoneAlert service alert.
     public static let messages = [
         "* haluaa käyttää mikrofonia",
         "* wil toegang tot de microfoon",
@@ -398,8 +453,13 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的麥克風",
         "「*」要取用咪高風",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize MicrophoneAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -409,7 +469,10 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents MotionAlert service alert.
 public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in MotionAlert service alert.
     public static let messages = [
         "* haluaa käyttää liikunta- ja kuntoilutietojasi",
         "* wil toegang tot je bewegings- en fitnessactiviteit",
@@ -448,8 +511,13 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的運動與健身記錄",
         "「*」要取用你的「運動與健身」的「健身記錄」",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize MotionAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -459,7 +527,10 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents PhotosAlert service alert.
 public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in PhotosAlert service alert.
     public static let messages = [
         "* haluaa käyttää kuviasi",
         "* wil toegang tot je foto's",
@@ -497,8 +568,13 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的照片",
         "「*」要取用你的相片",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize PhotosAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -508,7 +584,10 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents RemindersAlert service alert.
 public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in RemindersAlert service alert.
     public static let messages = [
         "* haluaa käyttää muistutuksiasi",
         "* wil toegang tot je herinneringen",
@@ -546,8 +625,13 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的提醒事項",
         "「*」要取用你的提醒事項",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize RemindersAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -557,7 +641,10 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents SiriAlert service alert.
 public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in SiriAlert service alert.
     public static let messages = [
         "* 的部分資料將傳送給 Apple 以處理你的請求。",
         "*: θέλετε να χρησιμοποιείται με το Siri;",
@@ -631,8 +718,13 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "您要在「*」上使用 Siri 嗎？",
         "您要通过 Siri 来使用“*”吗？",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize SiriAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -642,7 +734,10 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents SpeechRecognitionAlert service alert.
 public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in SpeechRecognitionAlert service alert.
     public static let messages = [
         "* haluaa käyttää puheentunnistusta",
         "* wil toegang tot spraakherkenning",
@@ -716,8 +811,13 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
         "此 App 的語音資料會傳送給 Apple 來處理您的要求。這也可協助 Apple 改進其語音辨識技術。",
         "部分来自此应用的语音数据将发送给 Apple 以处理您的请求。这还将帮助 Apple 改进语音识别技术。",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize SpeechRecognitionAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -727,7 +827,10 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
     }
 }
 
+/// Represents WillowAlert service alert.
 public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in WillowAlert service alert.
     public static let messages = [
         "'*' wil toegang tot je woninggegevens",
         "* haluaa käyttää kotitietojasi",
@@ -766,8 +869,13 @@ public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         "「*」想要取用您的家庭資料",
         "「*」要取用你的住家數據",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize WillowAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil

@@ -9,13 +9,17 @@
 import Foundation
 
 // MARK: - LaunchArgument protocol
-/**
- Any type that implements this protocol can be used to configure application
- with TestLauncher. Specifically it represents launch argument option so it requires to provide argument key.
- Type conforming to this protocol should override default implementation of *launchArguments*.
- For more info about launch arguments variables check:
- [here](https://developer.apple.com/library/ios/recipes/xcode_help-scheme_editor/Articles/SchemeRun.html)
- */
+/// Any type that implements this protocol can be used to configure application
+/// with TestLauncher. Specifically it represents launch argument option so it requires to provide argument `key`.
+/// Type conforming to this protocol should override default implementation of `launchArguments`.
+///
+/// Custom launch arguments can implement one of two additional protocols:
+///
+/// - `LaunchArgumentWithSingleValue`
+/// - `LaunchArgumentWithMultipleValues`
+///
+/// For more info about launch arguments variables check:
+/// [Xcode Help](http://help.apple.com/xcode/mac/8.0/#/dev3ec8a1cb4).
 public protocol LaunchArgument: LaunchOption {
 
     /// String representation of the argument.
@@ -31,10 +35,35 @@ public extension LaunchArgument {
 }
 
 // MARK: - LaunchArgumentWithSingleValue protocol
-/**
- Protocol that should be implemented by types representing launch argument that accepts single
- argument value.
- */
+/// Protocol that should be implemented by types representing launch argument that accepts single
+/// argument value.
+///
+/// **Example:**
+///
+/// ```swift
+/// enum Server: String, LaunchArgumentWithSingleValue, LaunchArgumentValue {
+///     case testing, production
+/// 
+///     var key: String {
+///         return "Server"
+///     }
+/// }
+/// ```
+///
+/// **Usage:**
+///
+/// ```swift
+/// let app = XCUIApplication()
+/// TestLauncher(options: [
+///     Server.testing
+/// ]).configure(app).launch()
+/// ```
+///
+/// **Handling:**
+///
+/// ```swift
+/// let serverAddress = UserDefaults.standard.string(forKey: "Server")
+/// ```
 public protocol LaunchArgumentWithSingleValue: LaunchArgument {
     /// Value of the launch argument.
     var value: LaunchArgumentValue { get }
@@ -57,10 +86,42 @@ extension LaunchArgumentWithSingleValue where Self: LaunchArgumentValue {
 }
 
 // MARK: - LaunchArgumentWithMultipleValues protocol
-/**
- Protocol that should be implemented by types representing launch argument that accepts collection
- of values.
- */
+/// Protocol that should be implemented by types representing launch argument that accepts collection
+/// of values.
+///
+/// **Example:**
+///
+/// ```swift
+/// struct MagicNumbers: LaunchArgumentWithMultipleValues {
+///     struct Number: LaunchArgumentValue {
+///         var value: String {
+///             return "\(number)"
+///         }
+///         let number: Int
+///     }
+/// 
+///     let key = "MagicNumbers"
+///     let values: [Number]
+///     public init(_ values: [Number]) {
+///         self.values = values
+///     }
+/// }
+/// ```
+///
+/// **Usage:**
+///
+/// ```swift
+/// let app = XCUIApplication()
+/// TestLauncher(options: [
+///     MagicNumbers([.init(number: 5), .init(number: 7)])
+/// ]).configure(app).launch()
+/// ```
+///
+/// **Handling:**
+///
+/// ```swift
+/// let magicNumbers = UserDefaults.standard.stringArray(forKey: "MagicNumbers")
+/// ```
 public protocol LaunchArgumentWithMultipleValues: LaunchArgument, ExpressibleByArrayLiteral {
     associatedtype Value: LaunchArgumentValue
 
@@ -82,10 +143,9 @@ extension LaunchArgumentWithMultipleValues {
         return ["-\(key)", values.launchArgument]
     }
 
-    /**
-     Initializes launch argument with a list.
-     - parameter elements: list of values.
-     */
+    /// Initializes launch argument with a list.
+    ///
+    /// - parameter elements: list of values.
     public init(arrayLiteral elements: Value ...) {
         self.init(elements)
     }

@@ -9,8 +9,9 @@
 import Foundation
 
 // MARK: - Launch Environments
-/// Most basic and generic structure to pass (key: value) pairs through `TestLauncher`.
-/// Usage example:
+/// Most basic and generic structure to pass `(key: value)` pairs through `TestLauncher`.
+///
+/// **Example:**
 ///
 /// ```swift
 /// let launchEnvironmentDictionary: LaunchEnvironments = ["CORPORATION_KEY": "PGS", "PROJECT_KEY": "AutoMate"]
@@ -38,8 +39,9 @@ public struct LaunchEnvironments: LaunchEnvironmentProtocol, ExpressibleByDictio
 }
 
 // MARK: - Launch Environment
-/// Simple implementation of `LaunchEnvironment` that wraps single (key: value) pair for `TestLauncher`.
-/// Usage example:
+/// Simple implementation of `LaunchEnvironment` that wraps single `(key: value)` pair for `TestLauncher`.
+///
+/// **Example:**
 ///
 /// ```swift
 /// let launchEnvironmentOption = LaunchEnvironment(key: "MADE_WITH_LOVE_BY", value: "PGS")

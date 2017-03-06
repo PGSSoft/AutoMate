@@ -24,11 +24,11 @@ class EventKitSavedDataTests: XCTestCase {
         let reminders: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "reminders", bundleName: "test.AutoMateExampleUITests") ]
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events, reminders]).launch()
 
-        let mainView = MainView(in: app)
-        let autoMateLaunchEnvironmentsView = AutoMateLaunchEnvironmentsView(in: app)
+        let mainPage = MainPage(in: app)
+        let autoMateLaunchEnvironmentsPage = AutoMateLaunchEnvironmentsPage(in: app)
 
-        mainView.goToAutoMateLaunchEnvironments()
-        autoMateLaunchEnvironmentsView.goToEventKitView()
+        mainPage.goToAutoMateLaunchEnvironments()
+        autoMateLaunchEnvironmentsPage.goToEventKitView()
         XCTFail()
     }
 

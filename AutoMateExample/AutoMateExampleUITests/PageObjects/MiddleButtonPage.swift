@@ -1,5 +1,5 @@
 //
-//  MiddleButtonView.swift
+//  MiddleButtonPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,8 +9,8 @@
 import XCTest
 import AutoMate
 
-// MARK: - MiddleButtonView
-open class MiddleButtonView: BaseAppView, PushedView {
+// MARK: - MiddleButtonPage
+open class MiddleButtonPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
     open var label: XCUIElement {
@@ -28,7 +28,7 @@ open class MiddleButtonView: BaseAppView, PushedView {
 }
 
 // MARK: - Locators
-private extension MiddleButtonView {
+private extension MiddleButtonPage {
 
     enum Locators: String, Locator {
         case label

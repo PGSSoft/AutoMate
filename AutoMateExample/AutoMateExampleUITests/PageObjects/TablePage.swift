@@ -1,5 +1,5 @@
 //
-//  TableView.swift
+//  TablePage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,5 +9,5 @@
 import XCTest
 import AutoMate
 
-// MARK: - TableView
-open class TableView: BaseAppView, PushedView { }
+// MARK: - TablePage
+open class TablePage: BaseAppPage, PushedPage { }

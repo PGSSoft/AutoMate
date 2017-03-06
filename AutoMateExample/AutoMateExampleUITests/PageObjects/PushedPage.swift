@@ -1,5 +1,5 @@
 //
-//  PushedView.swift
+//  PushedPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 01.02.2017.
@@ -9,13 +9,13 @@
 import XCTest
 import AutoMate
 
-// MARK: - PushedView
-public protocol PushedView: AutoMate.PushedView {
+// MARK: - PushedPage
+public protocol PushedPage: AutoMate.PushedPage {
 }
 
 // MARK: Default implementation
-/// Default implementation of the `PushedView` protocol.
-public extension PushedView {
+/// Default implementation of the `PushedPage` protocol.
+public extension PushedPage {
 
     // MARK: Elements
     public var backButton: XCUIElement {

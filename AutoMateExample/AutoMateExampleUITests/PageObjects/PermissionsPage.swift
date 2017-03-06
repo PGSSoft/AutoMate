@@ -1,5 +1,5 @@
 //
-//  PermissionsView.swift
+//  PermissionsPage.swift
 //  AutoMateExample
 //
 //  Created by Bartosz Janda on 15.02.2017.
@@ -9,8 +9,8 @@
 import XCTest
 import AutoMate
 
-// MARK: - PermissionsView
-open class PermissionsView: BaseAppView, PushedView {
+// MARK: - PermissionsPage
+open class PermissionsPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
     open var tableView: XCUIElement {
@@ -147,11 +147,19 @@ open class PermissionsView: BaseAppView, PushedView {
     }
 }
 
+// MARK: - IdentifiableByElement
+extension PermissionsPage: IdentifiableByElement {
+
+    public var identifingElement: XCUIElement {
+        return tableView
+    }
+}
+
 // MARK: - Locators
-private extension PermissionsView {
+private extension PermissionsPage {
 
     enum Locators: String, Locator {
-        case tableView
+        case tableView = "permissionTableView"
         case menuItemName
 
         case locationAlways

@@ -4,6 +4,8 @@
 import XCTest
 
 extension LocationAlertAllow {
+
+    /// Represents all possible "allow" buttons in location service messages.
     public static var allow: [String] {
         return [
             "Allow",
@@ -43,6 +45,8 @@ extension LocationAlertAllow {
 }
 
 extension LocationAlertCancel {
+
+    /// Represents all possible "cancel" buttons in location service messages.
     public static var cancel: [String] {
         return [
             "Abbrechen",
@@ -80,6 +84,8 @@ extension LocationAlertCancel {
 }
 
 extension LocationAlertDeny {
+
+    /// Represents all possible "deny" buttons in location service messages.
     public static var deny: [String] {
         return [
             "Älä salli",
@@ -121,6 +127,8 @@ extension LocationAlertDeny {
 }
 
 extension LocationAlertOk {
+
+    /// Represents all possible "ok" buttons in location service messages.
     public static var ok: [String] {
         return [
             "OK",
@@ -138,7 +146,10 @@ extension LocationAlertOk {
     }
 }
 
+/// Represents LocationAlwaysAlert service alert.
 public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
+
+    /// Represents all possible messages in LocationAlwaysAlert service alert.
     public static let messages = [
         "Allow “*” to access your location even when you are not using the app?",
         "Autoriser « * » à accéder à vos données de localisation même lorsque vous n’utilisez pas l’app ?",
@@ -177,8 +188,13 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
         "要允許「*」在你並非使用 App 時也能取用你的位置嗎？",
         "要允許「*」在您未使用 App 時也可取用您的位置嗎？",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize LocationAlwaysAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -188,7 +204,10 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
     }
 }
 
+/// Represents LocationUpgradeWhenInUseAlwaysAlert service alert.
 public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
+
+    /// Represents all possible messages in LocationUpgradeWhenInUseAlwaysAlert service alert.
     public static let messages = [
         "Allow “*” to also access your location even when you are not using the app?",
         "Autoriser « * » à accéder aussi à vos données de localisation lorsque vous n’utilisez pas l’app ?",
@@ -227,8 +246,13 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
         "要允許「*」在你並非使用 App 時也能取用你的位置嗎？",
         "要允許「*」在您未使用 App 時也可取用您的位置嗎？",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize LocationUpgradeWhenInUseAlwaysAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
@@ -238,7 +262,10 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
     }
 }
 
+/// Represents LocationWhenInUseAlert service alert.
 public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
+
+    /// Represents all possible messages in LocationWhenInUseAlert service alert.
     public static let messages = [
         "A(z) „*” hozzáférhet a helyzetéhez az alkalmazás használatakor?",
         "Allow “*” to access your location while you use the app?",
@@ -277,8 +304,13 @@ public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationA
         "要允許「*」在你正在使用 App 時取用你的位置嗎？",
         "要允許「*」在您使用 App 時取用您的位置嗎？",
     ]
+
+    /// System service alert element.
     public var alert: XCUIElement
 
+    /// Initialize LocationWhenInUseAlert with alert element.
+    ///
+    /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
         guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
             return nil
