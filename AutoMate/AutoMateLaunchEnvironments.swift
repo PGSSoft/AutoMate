@@ -27,9 +27,9 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithMult
     }
 
     // MARK: Initialization
-    /// Intializes `AutoMateLaunchEnvironment` with `tuples` describing `LaunchEnvironmentResourceValue`.
+    /// Intializes `AutoMateLaunchEnvironment` with tuples describing `LaunchEnvironmentResourceValue`.
     ///
-    /// - Parameter resources: `(String, String?)` `tuples` describing `LaunchEnvironmentResourceValue`
+    /// - Parameter resources: `(String, String?)` tuples describing `LaunchEnvironmentResourceValue`
     public init(resources: (fileName: String, bundleName: String?)...) {
         self.init(valuesCollection: resources.map(Value.init))
     }
