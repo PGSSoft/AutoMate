@@ -11,6 +11,8 @@ import AutoMate
 
 class SystemLaunchEnvironmentsTests: XCTestCase {
 
+    let cleanFlag = "AM_CLEAN_DATA_FLAG"
+
     // MARK: Tests
     func testKeyValueLaunchEnvironment() {
 
@@ -34,7 +36,7 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]), ["AM_EVENTS_KEY": "nil:this_week"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.futureEventsLaunchEnvironment, LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]),
-                       ["AM_EVENTS_KEY": "Resources:next_week,nil:recurring_monthly"])
+                       ["AM_EVENTS_KEY": "\(cleanFlag),Resources:next_week,nil:recurring_monthly"])
     }
 
     func testAnimationLaunchEnvironment() {
@@ -48,13 +50,13 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
 
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Data:johnys_birthday_reminder"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.highPriorityReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Test data:automate_release_reminders,nil:wwdc_reminders"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.highPriorityReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "\(cleanFlag),Test data:automate_release_reminders,nil:wwdc_reminders"])
     }
 
     func testContactLaunchEnvironment() {
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "Data:john"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.severalContacts, LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "Test data:michael,nil:emma"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.severalContacts, LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "\(cleanFlag),Test data:michael,nil:emma"])
     }
 
     // swiftlint:disable function_body_length
@@ -86,17 +88,17 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
                            "FIX_BUGS": "for_those_who_cant_wait_for_fall",
                            "MADE_WITH_LOVE_BY": "PGS",
                            "AM_ANIMATION_KEY": "false"])
-        XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.futureEventsLaunchEnvironment,
                                  LaunchOptionsFactory.goalsLaunchEnvironments,
                                  LaunchOptionsFactory.pgsWithLoveLaunchEnvironment,
                                  LaunchOptionsFactory.turnOffAnimationLaunchEnvironment,
                                  LaunchOptionsFactory.highPriorityReminderLaunchEnvironment]),
-                       ["AM_EVENTS_KEY": "nil:this_week",
+                       ["AM_EVENTS_KEY": "\(cleanFlag),Resources:next_week,nil:recurring_monthly",
                            "SIMPLIFY": "testing_iOS_app_ui",
                            "FIX_BUGS": "for_those_who_cant_wait_for_fall",
                            "MADE_WITH_LOVE_BY": "PGS",
                            "AM_ANIMATION_KEY": "false",
-                           "AM_REMINDERS_KEY": "Test data:automate_release_reminders,nil:wwdc_reminders"])
+                           "AM_REMINDERS_KEY": "\(cleanFlag),Test data:automate_release_reminders,nil:wwdc_reminders"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment,
                                     LaunchOptionsFactory.goalsLaunchEnvironments,
                                     LaunchOptionsFactory.pgsWithLoveLaunchEnvironment,
@@ -108,8 +110,8 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
                         "FIX_BUGS": "for_those_who_cant_wait_for_fall",
                         "MADE_WITH_LOVE_BY": "PGS",
                         "AM_ANIMATION_KEY": "false",
-                        "AM_REMINDERS_KEY": "Test data:automate_release_reminders,nil:wwdc_reminders",
-                        "AM_CONTACTS_KEY": "Test data:michael,nil:emma"])
+                        "AM_REMINDERS_KEY": "\(cleanFlag),Test data:automate_release_reminders,nil:wwdc_reminders",
+                        "AM_CONTACTS_KEY": "\(cleanFlag),Test data:michael,nil:emma"])
     }
 
     // MARK: Helpers
