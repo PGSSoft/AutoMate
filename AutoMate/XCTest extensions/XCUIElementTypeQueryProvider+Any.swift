@@ -29,7 +29,7 @@ extension XCUIElementTypeQueryProvider where Self: DescendantsMatching {
     ///
     /// **Example:**
     ///
-    /// Check that the view has any subviews.
+    /// Check if a view has any subview.
     ///
     /// ```swift
     /// XCTAssertTrue(view.any.count > 0)
