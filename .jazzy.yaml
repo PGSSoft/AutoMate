@@ -27,7 +27,7 @@ custom_categories:
       - XCUIApplication
       - XCUIElement
   #     - XCUIElementQuery
-  #     - XCUIElementQuery extensions
+      - XCUIElementTypeQueryProvider
   - name: Locators
     children:
       - Locator

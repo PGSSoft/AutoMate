@@ -24,6 +24,7 @@ extension XCUIElementQuery: DescendantsMatching { }
 
 extension XCUIElementTypeQueryProvider where Self: DescendantsMatching {
 
+    // MARK: Properties
     /// Creates a query that matches all descendants of the element.
     ///
     /// **Example:**
