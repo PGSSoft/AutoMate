@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-/// Represents available string comparision operations to perform with NSPredicate API.
+/// Represents available string comparison operations to perform with `NSPredicate` API.
 ///
 /// - `equals`: `==` operator
 /// - `beginsWith`: `BEGINSWITH` operator
@@ -19,7 +19,7 @@ import XCTest
 /// - `matches`: `MATCHES` operator
 /// - `other`: Custom operator
 public enum StringComparisonOperator: RawRepresentable {
-    /// Enum value describing NSPredicate string comparision operator.
+    /// Enum value describing NSPredicate string comparison operator.
     case equals, beginsWith, contains, endsWith, like, matches
 
     /// Custom string operator.
@@ -38,7 +38,7 @@ public enum StringComparisonOperator: RawRepresentable {
         }
     }
 
-    /// Initialize comparision operator with string.
+    /// Initialize comparison operator with string.
     ///
     /// - Parameter rawValue: String to use. If it doesn't match any preexisting cases, it will be parsed as `.other`.
     public init(rawValue: String) {

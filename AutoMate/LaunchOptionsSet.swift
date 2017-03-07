@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Set for LaunchOption objects, using `uniqueIdentifier` property for hashing and comparision.
+/// Set for LaunchOption objects, using `uniqueIdentifier` property for hashing and comparison.
 public struct LaunchOptionsSet {
     fileprivate var options: [LaunchOption]
 
