@@ -23,6 +23,7 @@ custom_categories:
       - LaunchArgumentValue
   - name: XCTest
     children:
+      - AppUITestCase
       - XCTestCase
       - XCUIApplication
       - XCUIElement
