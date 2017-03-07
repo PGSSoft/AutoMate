@@ -10,5 +10,5 @@ import Foundation
 import XCTest
 
 // MARK: - Health protocols
-// Health alert OK element
+/// Protocol defining health alert OK element.
 public protocol HealthAlertOk: SystemAlertOk { }

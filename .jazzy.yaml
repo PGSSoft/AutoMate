@@ -40,3 +40,23 @@ custom_categories:
     children:
       - Locator
       - KeyboardLocator
+  - name: System alerts
+    children:
+      - SystemAlert
+      - HealthAuthorizationDontAllowAlert
+      - LocationAlwaysAlert
+      - LocationUpgradeWhenInUseAlwaysAlert
+      - LocationWhenInUseAlert
+      - AddressBookAlert
+      - BluetoothPeripheralAlert
+      - CalendarAlert
+      - CallsAlert
+      - CameraAlert
+      - MediaLibraryAlert
+      - MicrophoneAlert
+      - MotionAlert
+      - PhotosAlert
+      - RemindersAlert
+      - SiriAlert
+      - SpeechRecognitionAlert
+      - WillowAlert

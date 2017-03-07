@@ -67,10 +67,34 @@ extension SystemAlertDeny {
     }
 }
 
-/// Represents AddressBookAlert service alert.
+/// Represents `AddressBookAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = AddressBookAlert(element: alert) else {
+///         XCTFail("Cannot create AddressBookAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in AddressBookAlert service alert.
+    /// Represents all possible messages in `AddressBookAlert` service alert.
     public static let messages = [
         "* haluaa käyttää yhteystietojasi",
         "* wil toegang tot je contacten",
@@ -112,7 +136,7 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize AddressBookAlert with alert element.
+    /// Initialize `AddressBookAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -124,10 +148,34 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents BluetoothPeripheralAlert service alert.
+/// Represents `BluetoothPeripheralAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = BluetoothPeripheralAlert(element: alert) else {
+///         XCTFail("Cannot create BluetoothPeripheralAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in BluetoothPeripheralAlert service alert.
+    /// Represents all possible messages in `BluetoothPeripheralAlert` service alert.
     public static let messages = [
         "* haluaa antaa dataa lähellä oleville Bluetooth-laitteille, vaikka et käyttäisikään appia.",
         "* quiere que los datos estén disponibles para los dispositivos Bluetooth cercanos aunque no estés utilizando la aplicación.",
@@ -170,7 +218,7 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize BluetoothPeripheralAlert with alert element.
+    /// Initialize `BluetoothPeripheralAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -182,10 +230,34 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
     }
 }
 
-/// Represents CalendarAlert service alert.
+/// Represents `CalendarAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = CalendarAlert(element: alert) else {
+///         XCTFail("Cannot create CalendarAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in CalendarAlert service alert.
+    /// Represents all possible messages in `CalendarAlert` service alert.
     public static let messages = [
         "* haluaa käyttää kalenteriasi",
         "* wil toegang tot je agenda",
@@ -227,7 +299,7 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize CalendarAlert with alert element.
+    /// Initialize `CalendarAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -239,10 +311,34 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents CallsAlert service alert.
+/// Represents `CallsAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = CallsAlert(element: alert) else {
+///         XCTFail("Cannot create CallsAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in CallsAlert service alert.
+    /// Represents all possible messages in `CallsAlert` service alert.
     public static let messages = [
         "* haluaa tarjota perinteisen puhelutoiminnon",
         "* vill använda den inbyggda uppringningsfunktionen",
@@ -284,7 +380,7 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize CallsAlert with alert element.
+    /// Initialize `CallsAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -296,10 +392,34 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents CameraAlert service alert.
+/// Represents `CameraAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = CameraAlert(element: alert) else {
+///         XCTFail("Cannot create CameraAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in CameraAlert service alert.
+    /// Represents all possible messages in `CameraAlert` service alert.
     public static let messages = [
         "* haluaa käyttää kameraa",
         "* wil toegang tot de camera",
@@ -341,7 +461,7 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize CameraAlert with alert element.
+    /// Initialize `CameraAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -353,10 +473,34 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents MediaLibraryAlert service alert.
+/// Represents `MediaLibraryAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = MediaLibraryAlert(element: alert) else {
+///         XCTFail("Cannot create MediaLibraryAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in MediaLibraryAlert service alert.
+    /// Represents all possible messages in `MediaLibraryAlert` service alert.
     public static let messages = [
         "'*' wil toegang tot Apple Music en je mediabibliotheek",
         "* haluaa käyttää Apple Musicia ja mediakirjastoasi",
@@ -400,7 +544,7 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize MediaLibraryAlert with alert element.
+    /// Initialize `MediaLibraryAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -412,10 +556,34 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
     }
 }
 
-/// Represents MicrophoneAlert service alert.
+/// Represents `MicrophoneAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = MicrophoneAlert(element: alert) else {
+///         XCTFail("Cannot create MicrophoneAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in MicrophoneAlert service alert.
+    /// Represents all possible messages in `MicrophoneAlert` service alert.
     public static let messages = [
         "* haluaa käyttää mikrofonia",
         "* wil toegang tot de microfoon",
@@ -457,7 +625,7 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize MicrophoneAlert with alert element.
+    /// Initialize `MicrophoneAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -469,10 +637,34 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents MotionAlert service alert.
+/// Represents `MotionAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = MotionAlert(element: alert) else {
+///         XCTFail("Cannot create MotionAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in MotionAlert service alert.
+    /// Represents all possible messages in `MotionAlert` service alert.
     public static let messages = [
         "* haluaa käyttää liikunta- ja kuntoilutietojasi",
         "* wil toegang tot je bewegings- en fitnessactiviteit",
@@ -515,7 +707,7 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize MotionAlert with alert element.
+    /// Initialize `MotionAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -527,10 +719,34 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents PhotosAlert service alert.
+/// Represents `PhotosAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = PhotosAlert(element: alert) else {
+///         XCTFail("Cannot create PhotosAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in PhotosAlert service alert.
+    /// Represents all possible messages in `PhotosAlert` service alert.
     public static let messages = [
         "* haluaa käyttää kuviasi",
         "* wil toegang tot je foto's",
@@ -572,7 +788,7 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize PhotosAlert with alert element.
+    /// Initialize `PhotosAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -584,10 +800,34 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents RemindersAlert service alert.
+/// Represents `RemindersAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = RemindersAlert(element: alert) else {
+///         XCTFail("Cannot create RemindersAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in RemindersAlert service alert.
+    /// Represents all possible messages in `RemindersAlert` service alert.
     public static let messages = [
         "* haluaa käyttää muistutuksiasi",
         "* wil toegang tot je herinneringen",
@@ -629,7 +869,7 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize RemindersAlert with alert element.
+    /// Initialize `RemindersAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -641,10 +881,34 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents SiriAlert service alert.
+/// Represents `SiriAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = SiriAlert(element: alert) else {
+///         XCTFail("Cannot create SiriAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in SiriAlert service alert.
+    /// Represents all possible messages in `SiriAlert` service alert.
     public static let messages = [
         "* 的部分資料將傳送給 Apple 以處理你的請求。",
         "*: θέλετε να χρησιμοποιείται με το Siri;",
@@ -722,7 +986,7 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize SiriAlert with alert element.
+    /// Initialize `SiriAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -734,10 +998,34 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
-/// Represents SpeechRecognitionAlert service alert.
+/// Represents `SpeechRecognitionAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = SpeechRecognitionAlert(element: alert) else {
+///         XCTFail("Cannot create SpeechRecognitionAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in SpeechRecognitionAlert service alert.
+    /// Represents all possible messages in `SpeechRecognitionAlert` service alert.
     public static let messages = [
         "* haluaa käyttää puheentunnistusta",
         "* wil toegang tot spraakherkenning",
@@ -815,7 +1103,7 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize SpeechRecognitionAlert with alert element.
+    /// Initialize `SpeechRecognitionAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -827,10 +1115,34 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
     }
 }
 
-/// Represents WillowAlert service alert.
+/// Represents `WillowAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = WillowAlert(element: alert) else {
+///         XCTFail("Cannot create WillowAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
-    /// Represents all possible messages in WillowAlert service alert.
+    /// Represents all possible messages in `WillowAlert` service alert.
     public static let messages = [
         "'*' wil toegang tot je woninggegevens",
         "* haluaa käyttää kotitietojasi",
@@ -873,7 +1185,7 @@ public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize WillowAlert with alert element.
+    /// Initialize `WillowAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {

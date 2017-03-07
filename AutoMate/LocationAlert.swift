@@ -9,7 +9,14 @@
 import Foundation
 
 // MARK: - Location protocols
+/// Protocol defining location alert allow element.
 public protocol LocationAlertAllow: SystemAlertAllow { }
+
+/// Protocol defining location alert deny element.
 public protocol LocationAlertDeny: SystemAlertDeny { }
+
+/// Protocol defining location alert ok element.
 public protocol LocationAlertOk: SystemAlertOk { }
+
+/// Protocol defining location alert cancel element.
 public protocol LocationAlertCancel: SystemAlertCancel { }
