@@ -29,6 +29,10 @@ custom_categories:
       - XCUIElement
       - XCUIElementQuery
       - XCUIElementTypeQueryProvider
+  - name: Page objects
+    children:
+      - BaseAppPageProtocol
+      - BaseAppPage
   - name: Locators
     children:
       - Locator
