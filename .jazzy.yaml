@@ -35,6 +35,7 @@ custom_categories:
       - BaseAppPage
       - ModalPage
       - PushedPage
+      - HealthPermissionPage
   - name: Locators
     children:
       - Locator
