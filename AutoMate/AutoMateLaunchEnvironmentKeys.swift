@@ -10,12 +10,17 @@ import Foundation
 
 /// Set of LaunchEnvironment keys for predefined options implemented by AutoMate.
 ///
-/// - event: Key to pass with EventLaunchEnvironment.
-/// - reminder: Key to pass with ReminderLaunchEnvironment.
-/// - animation: Key to pass with AnimationLaunchEnvironment.
+/// - `animation`: Key to pass with `AnimationLaunchEnvironment`.
+/// - `contacts`: Key to pass with `ContactLaunchEnvironment`
+/// - `events`: Key to pass with `EventLaunchEnvironment`.
+/// - `reminders`: Key to pass with `ReminderLaunchEnvironment`.
 public enum AutoMateKey: String {
+    /// Key to pass with `AnimationLaunchEnvironment`.
     case animation = "AM_ANIMATION_KEY"
+    /// Key to pass with `ContactLaunchEnvironment`
     case contacts = "AM_CONTACTS_KEY"
+    /// Key to pass with `EventLaunchEnvironment`.
     case events = "AM_EVENTS_KEY"
+    /// Key to pass with `ReminderLaunchEnvironment`.
     case reminders = "AM_REMINDERS_KEY"
 }

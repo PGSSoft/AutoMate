@@ -21,6 +21,24 @@ custom_categories:
       - LaunchArgumentWithSingleValue
       - LaunchArgumentWithMultipleValues
       - LaunchArgumentValue
+  - name: Launch environments
+    children:
+      - EventLaunchEnvironment
+      - ReminderLaunchEnvironment
+      - ContactLaunchEnvironment
+      - AnimationLaunchEnvironment
+      - AutoMateLaunchEnvironment
+
+      - LaunchEnvironment
+      - LaunchEnvironments
+
+      - LaunchEnvironmentProtocol
+      - LaunchEnvironmentWithSingleValue
+      - LaunchEnvironmentWithMultipleValues
+      - CleanableLaunchEnvironment
+      - CleanableLaunchEnvironmentWithMultipleValues
+      - LaunchEnvironmentValue
+      - LaunchEnvironmentResourceValue
   - name: XCTest
     children:
       - AppUITestCase
