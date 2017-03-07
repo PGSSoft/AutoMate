@@ -11,14 +11,16 @@ import XCTest
 
 // MARK: - PushedPage protocol
 /// Page object protocol describing behaviour of pushed.
-/// Default implementation use "back" `accessibilityIdentifier`.
 ///
-/// Example usage:
+/// Default implementation use "back" as `accessibilityIdentifier`.
+///
+/// **Example:**
+///
 /// ```swift
-/// class AboutTheAppView: BaseAppPage, PushedPage {}
+/// class AboutTheAppPage: BaseAppPage, PushedPage {}
 ///
-/// let aboutTheAppView = AboutTheAppView(view: containerView)
-/// aboutTheAppView.goBack()
+/// let aboutTheAppPage = AboutTheAppPage(in: containerView)
+/// aboutTheAppPage.goBack()
 /// ```
 ///
 /// - requires:
@@ -30,7 +32,7 @@ public protocol PushedPage: BaseAppPageProtocol {
     var backButton: XCUIElement { get }
 
     // MARK: Actions
-    // Pop view action.
+    /// Pop view action.
     func goBack()
 }
 
@@ -39,11 +41,16 @@ public protocol PushedPage: BaseAppPageProtocol {
 public extension PushedPage {
 
     // MARK: Elements
+    /// Back button.
+    ///
+    /// - note:
+    /// The button with "back" as `accessibilityIdentifier` is used.
     public var backButton: XCUIElement {
         return view.buttons[Locators.backButton]
     }
 
     // MARK: Actions
+    /// Pop view by tapping on `backButton` button.
     public func goBack() {
         backButton.tap()
     }

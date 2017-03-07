@@ -33,6 +33,8 @@ custom_categories:
     children:
       - BaseAppPageProtocol
       - BaseAppPage
+      - ModalPage
+      - PushedPage
   - name: Locators
     children:
       - Locator

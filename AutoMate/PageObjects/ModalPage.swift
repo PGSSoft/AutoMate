@@ -11,14 +11,16 @@ import XCTest
 
 // MARK: - ModalPage protocol
 /// Page object protocol describing behaviour of modally presented view.
-/// Default implementation use "close" `accessibilityIdentifier`.
 ///
-/// Example usage:
+/// Default implementation use "close" as `accessibilityIdentifier`.
+///
+/// **Example:**
+///
 /// ```swift
-/// class AboutTheAppView: BaseAppPage, ModalPage {}
+/// class AboutTheAppPage: BaseAppPage, ModalPage {}
 ///
-/// let aboutTheAppView = AboutTheAppView(view: containerView)
-/// aboutTheAppView.closeModalPage()
+/// let aboutTheAppPage = AboutTheAppPage(in: containerView)
+/// aboutTheAppPage.closeModalPage()
 /// ```
 ///
 /// - requires:
@@ -39,11 +41,16 @@ public protocol ModalPage: BaseAppPageProtocol {
 public extension ModalPage {
 
     // MARK: Elements
+    /// Close button.
+    ///
+    /// - note:
+    /// The button with "close" as `accessibilityIdentifier` is used.
     public var closeButton: XCUIElement {
         return view.buttons[Locators.closeModalButton]
     }
 
     // MARK: Actions
+    /// Close modal view by tapping on `closeButton` button.
     public func closeModalPage() {
         closeButton.tap()
     }
