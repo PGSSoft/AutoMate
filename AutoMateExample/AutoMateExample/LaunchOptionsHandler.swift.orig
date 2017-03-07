@@ -7,7 +7,10 @@
 //
 
 import Foundation
+<<<<<<< Updated upstream
+=======
 import EventKit
+>>>>>>> Stashed changes
 import AutoMate_AppBuddy
 
 struct LaunchOptionsHandler {
@@ -16,9 +19,9 @@ struct LaunchOptionsHandler {
 
     init() {
         launchEnvironmentManager = LaunchEnvironmentManager()
-//        launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
+        launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
         launchEnvironmentManager.add(handler: defaultEventKitHander, for: .events)
-//        launchEnvironmentManager.add(handler: defaultContactsHander, for: .contacts)
+        launchEnvironmentManager.add(handler: defaultContactsHander, for: .contacts)
     }
 
     func setup() {
@@ -26,8 +29,8 @@ struct LaunchOptionsHandler {
     }
 
     static let mockEnvironment: [String: String] = {
-        return [ AutoMateLaunchOptionKey.events.rawValue: "com.pgs-soft.TestResourceBundle:events",
-            AutoMateLaunchOptionKey.reminders.rawValue: "com.pgs-soft.TestResourceBundle:reminders",
-            AutoMateLaunchOptionKey.contacts.rawValue: "com.pgs-soft.TestResourceBundle:contacts"]
+        return [ AutoMateLaunchOptionKey.events.rawValue: "nil:events",
+            AutoMateLaunchOptionKey.reminders.rawValue: "nil:reminders",
+            AutoMateLaunchOptionKey.contacts.rawValue: "nil:contacts"]
     }()
 }

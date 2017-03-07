@@ -139,7 +139,7 @@
       }
     ],
     "note": "Some Note",
-    "imageData": "com.pgs-soft.AutoMate-AppBuddyTests:AutoMate.png",
+    "imageData": "com.pgs-soft.TestResourceBundle:profile-placeholder.png",
     "contactRelations": [
       {
         "father": {

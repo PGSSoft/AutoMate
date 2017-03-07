@@ -18,7 +18,6 @@
 		1F98923D1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift */; };
 		1FFFC1D31D477CFD00EBB70D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FFFC1D51D477CFD00EBB70D /* Localizable.strings */; };
 		54BE7BF35279BF7198E8A1F0 /* Pods_AutoMateExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7ADF57D633054D52F73B21 /* Pods_AutoMateExampleUITests.framework */; };
-		961915291D9123AD009367C6 /* AutoMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9892281D4097C3007CD2B0 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		961CB2011E558CC000148CAE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961CB2001E558CC000148CAE /* HealthKit.framework */; };
 		961CB2041E558F7000148CAE /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CB2031E558F7000148CAE /* RemindersViewController.swift */; };
 		9621BBCB1E4206C6001A9C2C /* TablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCA1E4206C6001A9C2C /* TablePage.swift */; };
@@ -58,10 +57,17 @@
 		C8E84E541E5EC4C100DAA411 /* TableViewDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E84E531E5EC4C100DAA411 /* TableViewDataProtocols.swift */; };
 		C8E84E571E5EC55D00DAA411 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E84E561E5EC55D00DAA411 /* UIKit+Extensions.swift */; };
 		C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */; };
+		E450D62A1E6EA431001E2089 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = E450D6271E6EA431001E2089 /* contacts.json */; };
+		E450D62B1E6EA431001E2089 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = E450D6281E6EA431001E2089 /* events.json */; };
+		E450D62C1E6EA431001E2089 /* reminders.json in Resources */ = {isa = PBXBuildFile; fileRef = E450D6291E6EA431001E2089 /* reminders.json */; };
+		E450D62F1E6EA57B001E2089 /* TestResourceBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E45BBB181E6EA16C001BA04B /* TestResourceBundle.bundle */; };
+		E450D6311E6EB282001E2089 /* profile-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E450D6301E6EB282001E2089 /* profile-placeholder.png */; };
 		E457E9001E5C96A4006B08B5 /* LaunchEnvironmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457E8FF1E5C96A4006B08B5 /* LaunchEnvironmentsTableViewController.swift */; };
-		E460735A1E6034B600E29291 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = E46073571E6034B600E29291 /* contacts.json */; };
-		E460735B1E6034B600E29291 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = E46073581E6034B600E29291 /* events.json */; };
-		E460735C1E6034B600E29291 /* reminders.json in Resources */ = {isa = PBXBuildFile; fileRef = E46073591E6034B600E29291 /* reminders.json */; };
+		E45BBB0E1E6E9920001BA04B /* EventKitSavedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDE9451E606CE80070DDF5 /* EventKitSavedDataTests.swift */; };
+		E45BBB101E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BBB0F1E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift */; };
+		E45BBB131E6E997B001BA04B /* EventKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BBB121E6E997B001BA04B /* EventKitData.swift */; };
+		E4977AAF1E6EB7AA00ABFBE7 /* AutoMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; };
+		E4977AB21E6EBB4100ABFBE7 /* AutoMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4A905911E6030B5002081EA /* LaunchOptionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A905901E6030B5002081EA /* LaunchOptionsHandler.swift */; };
 		E4BA7C7A1E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */; };
 		E4BA7C7C1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */; };
@@ -69,7 +75,6 @@
 		E4BA7C811E5C578D00593B52 /* EventKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */; };
 		E4BA7C821E5C578D00593B52 /* EventKitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */; };
 		E4C7AF3F1E5DD63000B79BB0 /* ContactsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7AF3E1E5DD63000B79BB0 /* ContactsDataStore.swift */; };
-		E4CDE9441E604B730070DDF5 /* profile-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CDE9431E604B730070DDF5 /* profile-placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,23 +85,30 @@
 			remoteGlobalIDString = 1F98919D1D409547007CD2B0;
 			remoteInfo = AutoMateExample;
 		};
-		1F9892271D4097C3007CD2B0 /* PBXContainerItemProxy */ = {
+		E4458A871E6E97B300EC6743 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */;
+			containerPortal = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E425D55D1CED928100A7CA03;
 			remoteInfo = AutoMate;
 		};
-		1F9892291D4097C3007CD2B0 /* PBXContainerItemProxy */ = {
+		E4458A891E6E97B300EC6743 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */;
+			containerPortal = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E4EE41C11CFD7246004F0FFE;
 			remoteInfo = AutoMateTests;
 		};
-		1FB99E751D40FC9F00B8E75B /* PBXContainerItemProxy */ = {
+		E450D62D1E6EA570001E2089 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */;
+			containerPortal = 1F9891961D409547007CD2B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E45BBB171E6EA16C001BA04B;
+			remoteInfo = TestResourceBundle;
+		};
+		E4977AB01E6EB8F500ABFBE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E425D55C1CED928100A7CA03;
 			remoteInfo = AutoMate;
@@ -110,7 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				961915291D9123AD009367C6 /* AutoMate.framework in Embed Frameworks */,
+				E4977AB21E6EBB4100ABFBE7 /* AutoMate.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +141,6 @@
 		1F9891B21D409547007CD2B0 /* AutoMateExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoMateExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9891B61D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchArgumentsWithAutoMate.swift; sourceTree = "<group>"; };
 		1F9891B81D409547007CD2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AutoMate.xcodeproj; path = ../AutoMate.xcodeproj; sourceTree = "<group>"; };
 		1F9892381D409B16007CD2B0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F9892391D409B16007CD2B0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentsWithoutAutoMate.swift; sourceTree = "<group>"; };
@@ -179,10 +190,17 @@
 		C8E84E531E5EC4C100DAA411 /* TableViewDataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataProtocols.swift; sourceTree = "<group>"; };
 		C8E84E561E5EC55D00DAA411 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		C9583BFA1E4B52D70098BB27 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AutoMate.xcodeproj; path = ../AutoMate.xcodeproj; sourceTree = "<group>"; };
+		E450D6271E6EA431001E2089 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		E450D6281E6EA431001E2089 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		E450D6291E6EA431001E2089 /* reminders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reminders.json; sourceTree = "<group>"; };
+		E450D6301E6EB282001E2089 /* profile-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-placeholder.png"; sourceTree = "<group>"; };
 		E457E8FF1E5C96A4006B08B5 /* LaunchEnvironmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentsTableViewController.swift; sourceTree = "<group>"; };
-		E46073571E6034B600E29291 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
-		E46073581E6034B600E29291 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
-		E46073591E6034B600E29291 /* reminders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reminders.json; sourceTree = "<group>"; };
+		E45BBB0F1E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMateLaunchEnvironmentsPage.swift; sourceTree = "<group>"; };
+		E45BBB121E6E997B001BA04B /* EventKitData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitData.swift; sourceTree = "<group>"; };
+		E45BBB181E6EA16C001BA04B /* TestResourceBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestResourceBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45BBB1A1E6EA16C001BA04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4977AEB1E6ECBA400ABFBE7 /* AutoMateExample copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AutoMateExample copy-Info.plist"; path = "/Users/jbednarz/Documents/pgs-automate-ios/AutoMateExample/AutoMateExample copy-Info.plist"; sourceTree = "<absolute>"; };
 		E4A905901E6030B5002081EA /* LaunchOptionsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsHandler.swift; sourceTree = "<group>"; };
 		E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentsDataViewController.swift; sourceTree = "<group>"; };
 		E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentTableDataSource.swift; sourceTree = "<group>"; };
@@ -190,7 +208,6 @@
 		E4BA7C7F1E5C578D00593B52 /* EventKitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitTableViewCell.swift; sourceTree = "<group>"; };
 		E4BA7C801E5C578D00593B52 /* EventKitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventKitTableViewCell.xib; sourceTree = "<group>"; };
 		E4C7AF3E1E5DD63000B79BB0 /* ContactsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDataStore.swift; sourceTree = "<group>"; };
-		E4CDE9431E604B730070DDF5 /* profile-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile-placeholder.png"; path = "../AutoMateExample/profile-placeholder.png"; sourceTree = "<group>"; };
 		E4CDE9451E606CE80070DDF5 /* EventKitSavedDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitSavedDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,7 +225,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4977AAF1E6EB7AA00ABFBE7 /* AutoMate.framework in Frameworks */,
 				54BE7BF35279BF7198E8A1F0 /* Pods_AutoMateExampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45BBB151E6EA16C001BA04B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,12 +243,14 @@
 		1F9891951D409547007CD2B0 = {
 			isa = PBXGroup;
 			children = (
-				1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */,
+				E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */,
 				1F9891A01D409547007CD2B0 /* AutoMateExample */,
 				1F9891B51D409547007CD2B0 /* AutoMateExampleUITests */,
+				E45BBB191E6EA16C001BA04B /* TestResourceBundle */,
 				1F98919F1D409547007CD2B0 /* Products */,
 				966A7A151E548D7F0026AE29 /* Frameworks */,
 				992B61D6513DAF729D1DF33D /* Pods */,
+				E4977AEB1E6ECBA400ABFBE7 /* AutoMateExample copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +259,7 @@
 			children = (
 				1F98919E1D409547007CD2B0 /* AutoMateExample.app */,
 				1F9891B21D409547007CD2B0 /* AutoMateExampleUITests.xctest */,
+				E45BBB181E6EA16C001BA04B /* TestResourceBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,7 +267,6 @@
 		1F9891A01D409547007CD2B0 /* AutoMateExample */ = {
 			isa = PBXGroup;
 			children = (
-				E437D7F11E5B1B96001C6477 /* AutoMateLaunchEnviroments */,
 				966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */,
 				1F9891AD1D409547007CD2B0 /* Info.plist */,
 				1F9892391D409B16007CD2B0 /* LaunchScreen.storyboard */,
@@ -252,6 +279,7 @@
 				96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */,
 				962FAAC31D9144F6000592EF /* ScrollingViewController.swift */,
 				1F9891A81D409547007CD2B0 /* Assets.xcassets */,
+				E437D7F11E5B1B96001C6477 /* AutoMateLaunchEnviroments */,
 				1FFFC1D51D477CFD00EBB70D /* Localizable.strings */,
 				96470BD01E5585A400D40CB9 /* Permissions */,
 			);
@@ -261,32 +289,24 @@
 		1F9891B51D409547007CD2B0 /* AutoMateExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E46073551E60347F00E29291 /* Test data */,
 				1F9891B81D409547007CD2B0 /* Info.plist */,
+				E4CDE9451E606CE80070DDF5 /* EventKitSavedDataTests.swift */,
 				1F9891B61D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift */,
 				1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift */,
 				96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */,
 				96AB73F11E44C35300FA811A /* TestLauncher.swift */,
+				E45BBB111E6E997B001BA04B /* Data agents */,
 				E42132551D7FF56900481842 /* Extensions tests */,
-				E4CDE9451E606CE80070DDF5 /* EventKitSavedDataTests.swift */,
 				964118241E41EDF90011C776 /* PageObjects */,
 			);
 			path = AutoMateExampleUITests;
-			sourceTree = "<group>";
-		};
-		1F9892231D4097C3007CD2B0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1F9892281D4097C3007CD2B0 /* AutoMate.framework */,
-				1F98922A1D4097C3007CD2B0 /* AutoMateTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		964118241E41EDF90011C776 /* PageObjects */ = {
 			isa = PBXGroup;
 			children = (
 				969CC2881E421FE500995A49 /* AppearingPage.swift */,
+				E45BBB0F1E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift */,
 				9641182A1E41EF7A0011C776 /* MainPage.swift */,
 				969CC2841E421AE700995A49 /* MiddleButtonPage.swift */,
 				9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */,
@@ -388,15 +408,33 @@
 			name = AutoMateLaunchEnviroments;
 			sourceTree = "<group>";
 		};
-		E46073551E60347F00E29291 /* Test data */ = {
+		E4458A831E6E97B300EC6743 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4CDE9431E604B730070DDF5 /* profile-placeholder.png */,
-				E46073571E6034B600E29291 /* contacts.json */,
-				E46073581E6034B600E29291 /* events.json */,
-				E46073591E6034B600E29291 /* reminders.json */,
+				E4458A881E6E97B300EC6743 /* AutoMate.framework */,
+				E4458A8A1E6E97B300EC6743 /* AutoMateTests.xctest */,
 			);
-			name = "Test data";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E45BBB111E6E997B001BA04B /* Data agents */ = {
+			isa = PBXGroup;
+			children = (
+				E45BBB121E6E997B001BA04B /* EventKitData.swift */,
+			);
+			path = "Data agents";
+			sourceTree = "<group>";
+		};
+		E45BBB191E6EA16C001BA04B /* TestResourceBundle */ = {
+			isa = PBXGroup;
+			children = (
+				E450D6271E6EA431001E2089 /* contacts.json */,
+				E450D6281E6EA431001E2089 /* events.json */,
+				E450D6301E6EB282001E2089 /* profile-placeholder.png */,
+				E450D6291E6EA431001E2089 /* reminders.json */,
+				E45BBB1A1E6EA16C001BA04B /* Info.plist */,
+			);
+			path = TestResourceBundle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,7 +455,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1FB99E761D40FC9F00B8E75B /* PBXTargetDependency */,
+				E450D62E1E6EA570001E2089 /* PBXTargetDependency */,
 			);
 			name = AutoMateExample;
 			productName = AutoMateExample;
@@ -439,12 +477,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				E4977AB11E6EB8F500ABFBE7 /* PBXTargetDependency */,
 				1F9891B41D409547007CD2B0 /* PBXTargetDependency */,
 			);
 			name = AutoMateExampleUITests;
 			productName = AutoMateExampleUITests;
 			productReference = 1F9891B21D409547007CD2B0 /* AutoMateExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E45BBB171E6EA16C001BA04B /* TestResourceBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45BBB1B1E6EA16C001BA04B /* Build configuration list for PBXNativeTarget "TestResourceBundle" */;
+			buildPhases = (
+				E45BBB141E6EA16C001BA04B /* Sources */,
+				E45BBB151E6EA16C001BA04B /* Frameworks */,
+				E45BBB161E6EA16C001BA04B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestResourceBundle;
+			productName = TestResourceBundle;
+			productReference = E45BBB181E6EA16C001BA04B /* TestResourceBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -458,6 +514,7 @@
 				TargetAttributes = {
 					1F98919D1D409547007CD2B0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 36CHZQXF4C;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -468,9 +525,14 @@
 					};
 					1F9891B11D409547007CD2B0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 36CHZQXF4C;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1F98919D1D409547007CD2B0;
+					};
+					E45BBB171E6EA16C001BA04B = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -487,31 +549,32 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1F9892231D4097C3007CD2B0 /* Products */;
-					ProjectRef = 1F9892221D4097C3007CD2B0 /* AutoMate.xcodeproj */;
+					ProductGroup = E4458A831E6E97B300EC6743 /* Products */;
+					ProjectRef = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
 				1F98919D1D409547007CD2B0 /* AutoMateExample */,
 				1F9891B11D409547007CD2B0 /* AutoMateExampleUITests */,
+				E45BBB171E6EA16C001BA04B /* TestResourceBundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1F9892281D4097C3007CD2B0 /* AutoMate.framework */ = {
+		E4458A881E6E97B300EC6743 /* AutoMate.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = AutoMate.framework;
-			remoteRef = 1F9892271D4097C3007CD2B0 /* PBXContainerItemProxy */;
+			remoteRef = E4458A871E6E97B300EC6743 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1F98922A1D4097C3007CD2B0 /* AutoMateTests.xctest */ = {
+		E4458A8A1E6E97B300EC6743 /* AutoMateTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = AutoMateTests.xctest;
-			remoteRef = 1F9892291D4097C3007CD2B0 /* PBXContainerItemProxy */;
+			remoteRef = E4458A891E6E97B300EC6743 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -521,10 +584,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E450D62F1E6EA57B001E2089 /* TestResourceBundle.bundle in Resources */,
 				C850B01D1E5EDEDF00392526 /* ContactTableViewCell.xib in Resources */,
 				1FFFC1D31D477CFD00EBB70D /* Localizable.strings in Resources */,
 				E4BA7C821E5C578D00593B52 /* EventKitTableViewCell.xib in Resources */,
-				E4CDE9441E604B730070DDF5 /* profile-placeholder.png in Resources */,
 				1F98923A1D409B16007CD2B0 /* Main.storyboard in Resources */,
 				1F98923B1D409B16007CD2B0 /* LaunchScreen.storyboard in Resources */,
 				1F9891A91D409547007CD2B0 /* Assets.xcassets in Resources */,
@@ -535,9 +598,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E460735C1E6034B600E29291 /* reminders.json in Resources */,
-				E460735B1E6034B600E29291 /* events.json in Resources */,
-				E460735A1E6034B600E29291 /* contacts.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45BBB161E6EA16C001BA04B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E450D62C1E6EA431001E2089 /* reminders.json in Resources */,
+				E450D62B1E6EA431001E2089 /* events.json in Resources */,
+				E450D62A1E6EA431001E2089 /* contacts.json in Resources */,
+				E450D6311E6EB282001E2089 /* profile-placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,17 +771,27 @@
 				9621BBD21E420E25001A9C2C /* ScrollPage.swift in Sources */,
 				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,
 				969CC2821E4216AE00995A49 /* TextInputPage.swift in Sources */,
+				E45BBB101E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift in Sources */,
 				969CC2851E421AE700995A49 /* MiddleButtonPage.swift in Sources */,
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
+				E45BBB131E6E997B001BA04B /* EventKitData.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
 				96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */,
 				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,
 				9674482D1E55A61D000B42BB /* PermissionsSubPages.swift in Sources */,
 				9621BBCE1E42090C001A9C2C /* PushedPage.swift in Sources */,
 				9621BBD01E420D98001A9C2C /* XCUIElementExtensionTests.swift in Sources */,
+				E45BBB0E1E6E9920001BA04B /* EventKitSavedDataTests.swift in Sources */,
 				9621BBCB1E4206C6001A9C2C /* TablePage.swift in Sources */,
 				1F98923D1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMate.swift in Sources */,
 				1F9891B71D409547007CD2B0 /* LaunchArgumentsWithAutoMate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45BBB141E6EA16C001BA04B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,10 +803,15 @@
 			target = 1F98919D1D409547007CD2B0 /* AutoMateExample */;
 			targetProxy = 1F9891B31D409547007CD2B0 /* PBXContainerItemProxy */;
 		};
-		1FB99E761D40FC9F00B8E75B /* PBXTargetDependency */ = {
+		E450D62E1E6EA570001E2089 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E45BBB171E6EA16C001BA04B /* TestResourceBundle */;
+			targetProxy = E450D62D1E6EA570001E2089 /* PBXContainerItemProxy */;
+		};
+		E4977AB11E6EB8F500ABFBE7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AutoMate;
-			targetProxy = 1FB99E751D40FC9F00B8E75B /* PBXContainerItemProxy */;
+			targetProxy = E4977AB01E6EB8F500ABFBE7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -838,6 +924,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AutoMateExample/AutoMateExample.entitlements;
+				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateExample";
@@ -852,6 +939,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AutoMateExample/AutoMateExample.entitlements;
+				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateExample";
@@ -864,6 +952,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E860C26264170C418256B75 /* Pods-AutoMateExampleUITests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExampleUITests;
@@ -877,12 +966,43 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B6207D61FA794D9D0541FE2 /* Pods-AutoMateExampleUITests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AutoMateExample;
+			};
+			name = Release;
+		};
+		E45BBB1C1E6EA16C001BA04B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TestResourceBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.TestResourceBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		E45BBB1D1E6EA16C001BA04B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TestResourceBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.TestResourceBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -912,6 +1032,15 @@
 			buildConfigurations = (
 				1F9891BF1D409547007CD2B0 /* Debug */,
 				1F9891C01D409547007CD2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E45BBB1B1E6EA16C001BA04B /* Build configuration list for PBXNativeTarget "TestResourceBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45BBB1C1E6EA16C001BA04B /* Debug */,
+				E45BBB1D1E6EA16C001BA04B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
