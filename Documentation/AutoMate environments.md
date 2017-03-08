@@ -20,7 +20,7 @@ TestLauncher(options: [
 `EventLaunchEnvironment` and `ReminderLaunchEnvironment` can pass to the application list of JSON files
 with events and reminders which will be created on the application start.
 
-In the test file:
+In a test file:
 
 ```swift
 let events = EventLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "todays_events", bundleName: "Test data"))
@@ -50,17 +50,21 @@ let reminders = ReminderLaunchEnvironment(resources: (fileName: "automate_releas
 ]
 ```
 
-The `shouldCleanBefore` will remove all existing events or reminders on the phone or simulator before adding a new one.
+The `shouldCleanBefore` will remove all existing events or reminders on a phone or simulator before adding a new one.
 
 For handling in the application and for full list of possible values please refer
 to the [`AutoMate - AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) documentation.
+
+**Note:**
+
+A calendar has to exist on a simulator or on an iPhone for EventKit launch environments to work.
 
 ## Contacts
 
 `ContactLaunchEnvironment` can pass to the application list of JSON files
 with contacts which will be created on the application start.
 
-In the test file:
+In a test file:
 
 ```swift
 let contacts = ContactLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "michael", bundleName: "Test data"))
@@ -77,7 +81,7 @@ let contacts = ContactLaunchEnvironment(shouldCleanBefore: true, resources: (fil
 ]
 ```
 
-The `shouldCleanBefore` will remove all existing contacts on the phone or simulator before adding a new one.
+The `shouldCleanBefore` will remove all existing contacts on a phone or simulator before adding a new one.
 
 For handling in the application and for full list of possible values please refer
 to the [`AutoMate - AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) documentation.

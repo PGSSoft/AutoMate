@@ -51,7 +51,7 @@ public protocol LaunchEnvironmentProtocol: LaunchOption {
 ///     public var value: String
 /// }
 ///
-/// let simpe = SimpleLaunchEnvironment(value: "LaunchValue")
+/// let simple = SimpleLaunchEnvironment(value: "LaunchValue")
 /// ```
 public protocol LaunchEnvironmentWithSingleValue: LaunchEnvironmentProtocol {
 

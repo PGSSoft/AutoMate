@@ -25,13 +25,13 @@ For common cases, `AutoMate` provides helper protocols.
 
 - `LaunchEnvironmentProtocol` - provides minimal requirements (the `LaunchEnvironmentValue` type) which represents passes data
 - `LaunchEnvironmentWithSingleValue` - adds `key` variable
-- `LaunchEnvironmentWithMultipleValues` - give possibility to pass multiple data separated by comma
+- `LaunchEnvironmentWithMultipleValues` - gives possibility to pass multiple data separated by comma
 
 `XCUIApplication` requires launch environment as dictionary: `[String: String]`.
 The `LaunchEnvironmentValue` provides definition and default implementation for value types,
 for example `BooleanLaunchEnvironmentValue`.
 
-Above protocols support with the implementation of new launch environments by providing default implementation.
+Above protocols support a definition of new launch environments by providing default implementations.
 For example, launch environment with key and value could be implemented like this:
 
 ```swift
@@ -42,7 +42,7 @@ public struct SimpleLaunchEnvironment: LaunchEnvironmentWithSingleValue {
     public var value: String
 }
 
-let simpe = SimpleLaunchEnvironment(value: "LaunchValue")
+let simple = SimpleLaunchEnvironment(value: "LaunchValue")
 ```
 
 `LaunchEnvironmentWithMultipleValues` can be implemented like:
