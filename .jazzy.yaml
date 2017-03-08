@@ -7,6 +7,7 @@ custom_categories:
       - System arguments
       - Custom arguments
       - Launch environments
+      - AutoMate environments
   - name: Launch arguments
     children:
       - SystemLanguages
