@@ -16,7 +16,7 @@ class LaunchEnviromentsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -34,5 +34,5 @@ class LaunchEnviromentsTableViewController: UITableViewController {
 }
 
 enum LaunchEnvironment: Int {
-    case eventKit, contact
+    case event, reminder, contact
 }

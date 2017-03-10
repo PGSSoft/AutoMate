@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AutoMate-AppBuddy:
-    :commit: d0516bfb11a37018d68edfd2cdc11056559ea2aa
+    :commit: e386cd2124b6d49170a154dfbf1543f26251c94f
     :git: https://github.com/PGSSoft/AutoMate-AppBuddy
 
 SPEC CHECKSUMS:

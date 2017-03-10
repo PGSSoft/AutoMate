@@ -639,8 +639,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-fS-n8n">
-                                                    <rect key="frame" x="20" y="11" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-fS-n8n">
+                                                    <rect key="frame" x="20" y="11" width="52" height="21"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="autoMateLaunchEnvironment"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -660,8 +660,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75i-f8-zyD">
-                                                    <rect key="frame" x="20" y="11" width="70" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75i-f8-zyD">
+                                                    <rect key="frame" x="20" y="11" width="82" height="21"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="autoMateLaunchEnvironment"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -671,6 +671,27 @@
                                             <constraints>
                                                 <constraint firstItem="75i-f8-zyD" firstAttribute="centerY" secondItem="7U1-Sf-mqP" secondAttribute="centerY" id="TYX-XQ-5Jb"/>
                                                 <constraint firstItem="75i-f8-zyD" firstAttribute="leading" secondItem="7U1-Sf-mqP" secondAttribute="leading" constant="20" symbolic="YES" id="sfF-EL-Xx5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cTd-2K-JkJ">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cTd-2K-JkJ" id="gsr-OF-2OV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM8-Vv-KyB">
+                                                    <rect key="frame" x="20" y="11" width="70" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="autoMateLaunchEnvironment"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qM8-Vv-KyB" firstAttribute="centerY" secondItem="gsr-OF-2OV" secondAttribute="centerY" id="CUl-kp-1VD"/>
+                                                <constraint firstItem="qM8-Vv-KyB" firstAttribute="leading" secondItem="gsr-OF-2OV" secondAttribute="leading" constant="20" symbolic="YES" id="I3d-RK-pt8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

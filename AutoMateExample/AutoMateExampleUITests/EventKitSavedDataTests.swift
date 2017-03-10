@@ -12,8 +12,8 @@ import AutoMate
 class EventKitSavedDataTests: XCTestCase {
 
     let app = XCUIApplication()
-    lazy var events: EventLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "events", bundleName: "com.pgs-soft.TestResourceBundle"))
-    lazy var reminders: ReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "reminders", bundleName: "com.pgs-soft.TestResourceBundle"))
+    lazy var events: EventLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "events", bundleName: "TestResourceBundle"))
+    lazy var reminders: ReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "reminders", bundleName: "TestResourceBundle"))
 
     override func setUp() {
         super.setUp()
@@ -38,6 +38,7 @@ class EventKitSavedDataTests: XCTestCase {
 
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events, reminders]).launch()
         // Interruption won't happen without some kind of action.
+        app.tap()
         mainPage.goToAutoMateLaunchEnvironments()
         autoMateLaunchEnvironmentsPage.goToEventKitView()
         removeUIInterruptionMonitor(token)

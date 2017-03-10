@@ -22,19 +22,26 @@ class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentT
 
     func configure(for environment: LaunchEnvironment) {
         switch environment {
-        case .eventKit:
-            tableView.register(nibFor: EventKitTableViewCell.self)
-            let eventsDataSource = EventKitTableViewDataSource()
-            eventsDataSource.delegate = self
-            tableView.dataSource = eventsDataSource
-            dataSource = eventsDataSource
+        case .event:
+            tableView.register(nibFor: EventTableViewCell.self)
+            let dataSource = EventsTableViewDataSource()
+            dataSource.delegate = self
+            tableView.dataSource = dataSource
+            self.dataSource = dataSource
+
+        case .reminder:
+            tableView.register(nibFor: ReminderTableViewCell.self)
+            let dataSource = RemindersTableViewDataSource()
+            dataSource.delegate = self
+            tableView.dataSource = dataSource
+            self.dataSource = dataSource
 
         case .contact:
             tableView.register(nibFor: ContactTableViewCell.self)
-            let contactsDataSource = ContactsTableViewDataSource()
-            contactsDataSource.delegate = self
-            tableView.dataSource = contactsDataSource
-            dataSource = contactsDataSource
+            let dataSource = ContactsTableViewDataSource()
+            dataSource.delegate = self
+            tableView.dataSource = dataSource
+            self.dataSource = dataSource
         }
     }
 
@@ -43,10 +50,22 @@ class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentT
     }
 }
 
-class EventKitTableViewDataSource: LaunchEnvironmentTableDataSource<EventKitTableViewCell, EventKitDataStore> {
+class EventsTableViewDataSource: LaunchEnvironmentTableDataSource<EventTableViewCell, EventsDataStore> {
 
     init() {
-        super.init(store: EventKitDataStore())
+        super.init(store: EventsDataStore())
+        dataStore.reloadData { [weak self] in
+            DispatchQueue.main.async {
+                self?.delegate?.didFinishReloadData(store: self!)
+            }
+        }
+    }
+}
+
+class RemindersTableViewDataSource: LaunchEnvironmentTableDataSource<ReminderTableViewCell, RemindersDataStore> {
+
+    init() {
+        super.init(store: RemindersDataStore())
         dataStore.reloadData { [weak self] in
             DispatchQueue.main.async {
                 self?.delegate?.didFinishReloadData(store: self!)

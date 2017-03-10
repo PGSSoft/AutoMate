@@ -9,25 +9,18 @@
 import UIKit
 
 protocol DataStore {
+
+    // MARK: Associatedtype
     associatedtype T
-    var data: [[T]] { get }
+
+    // MARK: Properties
+    var sectionsCount: Int { get }
+
+    // MARK: Methods
+    func rowsCount(in section: Int) -> Int
+    func dataForRow(at indexPath: IndexPath) -> T
     func title(for section: Int) -> String?
     func reloadData(completion: @escaping () -> Void)
-}
-
-extension DataStore {
-
-    var sectionsCount: Int {
-        return data.count
-    }
-
-    func rowsCount(in section: Int) -> Int {
-        return data[section].count
-    }
-
-    func dataForRow(at indexPath: IndexPath) -> T {
-        return data[indexPath.section][indexPath.row]
-    }
 }
 
 protocol LaunchEnvironmentTableDataSourceDelegate: class {
@@ -35,10 +28,16 @@ protocol LaunchEnvironmentTableDataSourceDelegate: class {
 }
 
 protocol ConfigurableCell {
+
+    // MARK: Associatedtype
     associatedtype T
+
+    // MARK: Properties
     static var reusableIdentifier: String { get }
-    func configure(with data: T)
     static var nibName: String { get }
+
+    // MARK: Methods
+    func configure(with model: T)
 }
 
 extension ConfigurableCell where Self: UITableViewCell {
@@ -54,9 +53,11 @@ extension ConfigurableCell where Self: UITableViewCell {
 
 protocol LaunchEnvironmentTableDataSourceProtocol {
 
+    // MARK: Associatedtype
     associatedtype Store: DataStore
     associatedtype Cell: UITableViewCell, ConfigurableCell
 
+    // MARK: Properties
     var dataStore: Store { get }
     weak var delegate: LaunchEnvironmentTableDataSourceDelegate? { get }
 }

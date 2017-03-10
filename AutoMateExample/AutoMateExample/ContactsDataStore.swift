@@ -14,9 +14,12 @@ class ContactsDataStore: DataStore {
     typealias T = CNContact
 
     // MARK: DataStore - Properties
-    private(set) var data = [[T]()]
+    var sectionsCount: Int {
+        return 1
+    }
 
     // MARK: Private - Properties
+    private var data = [T]()
     private let store = CNContactStore()
     private let fetchRequest: CNContactFetchRequest = {
         return CNContactFetchRequest(keysToFetch: [
@@ -31,6 +34,14 @@ class ContactsDataStore: DataStore {
     }()
 
     // MARK: DataStore - Methods
+    func dataForRow(at indexPath: IndexPath) -> CNContact {
+        return data[indexPath.row]
+    }
+
+    func rowsCount(in section: Int) -> Int {
+        return data.count
+    }
+
     func title(for section: Int) -> String? {
         return nil
     }
@@ -41,7 +52,7 @@ class ContactsDataStore: DataStore {
                 completion()
                 return
             }
-            try? strongSelf.store.enumerateContacts(with: strongSelf.fetchRequest) { strongSelf.data[0].append($0.0) }
+            try? strongSelf.store.enumerateContacts(with: strongSelf.fetchRequest) { strongSelf.data.append($0.0) }
             completion()
         }
     }
