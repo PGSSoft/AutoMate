@@ -8,9 +8,18 @@
 
 import Foundation
 
-public struct CalendarItem {
+public struct Event {
     let title: String
     let calendar: String
     let location: String
+    let startDate: String
+    let endDate: String
+}
+
+public struct Reminder {
+    let title: String
+    let calendar: String
     let notes: String
+    let startDate: String
+    let completionDate: String
 }

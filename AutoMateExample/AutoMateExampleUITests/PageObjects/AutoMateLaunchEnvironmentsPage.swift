@@ -11,8 +11,12 @@ import AutoMate
 
 open class AutoMateLaunchEnvironmentsPage: BaseAppPage, PushedPage {
 
-    open var eventKitCell: XCUIElement {
-        return item(for: .eventKit)
+    open var eventsCell: XCUIElement {
+        return item(for: .events)
+    }
+
+    open var remindersCell: XCUIElement {
+        return item(for: .reminders)
     }
 
     open var contactsCell: XCUIElement {
@@ -23,16 +27,24 @@ open class AutoMateLaunchEnvironmentsPage: BaseAppPage, PushedPage {
         return view.cells.element(containingLabels: [Locators.autoMateLaunchEnvironment: locator.identifier])
     }
 
-    open func goToEventKitView() {
-        eventKitCell.tap()
+    open func goToEventsView() {
+        eventsCell.tap()
+    }
+
+    open func goToRemindersView() {
+        remindersCell.tap()
     }
 
     open func goToContactsView() {
         contactsCell.tap()
     }
 
-    open func cell(for item: CalendarItem) -> EventKitCell {
-        return EventKitCell(in: view.tables.element, for: item)
+    open func cell(for item: Event) -> EventCell {
+        return EventCell(in: view.tables.element, for: item)
+    }
+
+    open func cell(for item: Reminder) -> ReminderCell {
+        return ReminderCell(in: view.tables.element, for: item)
     }
 }
 
@@ -41,12 +53,13 @@ public extension AutoMateLaunchEnvironmentsPage {
     enum Locators: String, Locator {
         case autoMateLaunchEnvironment
 
-        case eventKit = "EventKit"
+        case events = "Events"
+        case reminders = "Reminders"
         case contacts = "Contacts"
     }
 }
 
-open class EventKitCell {
+open class EventCell {
 
     private let container: XCUIElement
     private let cell: XCUIElement
@@ -55,13 +68,14 @@ open class EventKitCell {
         return cell.isVisible
     }
 
-    public init(in view: XCUIElement, for item: CalendarItem) {
+    public init(in view: XCUIElement, for item: Event) {
         container = view
         cell = view.cells.element(containingLabels: [
             Locators.title: item.title,
             Locators.location: item.location,
             Locators.calendar: item.calendar,
-            Locators.notes: item.notes
+            Locators.startDate: item.startDate,
+            Locators.endDate: item.endDate
                            ])
     }
 
@@ -70,11 +84,48 @@ open class EventKitCell {
     }
 }
 
-private extension EventKitCell {
+private extension EventCell {
 
     enum Locators: String, Locator {
         case title
         case location
+        case calendar
+        case startDate
+        case endDate
+    }
+}
+
+open class ReminderCell {
+
+    private let container: XCUIElement
+    private let cell: XCUIElement
+
+    open var isVisible: Bool {
+        return cell.isVisible
+    }
+
+    public init(in view: XCUIElement, for item: Reminder) {
+        container = view
+        cell = view.cells.element(containingLabels: [
+            Locators.title: item.title,
+            Locators.calendar: item.calendar,
+            Locators.notes: item.notes,
+            Locators.startDate: item.startDate,
+            Locators.completionDate: item.completionDate
+            ])
+    }
+
+    open func tap() {
+        cell.tap()
+    }
+}
+
+private extension ReminderCell {
+
+    enum Locators: String, Locator {
+        case title
+        case startDate
+        case completionDate
         case calendar
         case notes
     }

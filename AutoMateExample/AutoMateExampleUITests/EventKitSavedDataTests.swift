@@ -40,7 +40,7 @@ class EventKitSavedDataTests: XCTestCase {
         // Interruption won't happen without some kind of action.
         app.tap()
         mainPage.goToAutoMateLaunchEnvironments()
-        autoMateLaunchEnvironmentsPage.goToEventKitView()
+        autoMateLaunchEnvironmentsPage.goToEventsView()
         removeUIInterruptionMonitor(token)
         XCTFail()
     }
