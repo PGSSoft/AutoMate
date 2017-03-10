@@ -32,9 +32,10 @@ extension DateFormatter {
         return formatter
     }()
 
-    static let dayMonthAndYear: DateFormatter = {
+    static let fullDate: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM y"
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
         return formatter
     }()
 }

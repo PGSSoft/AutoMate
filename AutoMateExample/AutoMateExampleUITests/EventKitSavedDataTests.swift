@@ -12,7 +12,7 @@ import AutoMate
 class EventKitSavedDataTests: XCTestCase {
 
     let app = XCUIApplication()
-    lazy var events: EventLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "events", bundleName: "TestResourceBundle"))
+    lazy var events: EventLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "events", bundleName: "TestResourceBundle"))
     lazy var reminders: ReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "reminders", bundleName: "TestResourceBundle"))
 
     override func setUp() {

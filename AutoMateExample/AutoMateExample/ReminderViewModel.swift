@@ -18,11 +18,11 @@ struct ReminderViewModel {
 
     var startDateString: String? {
         guard let date = startDate else { return nil }
-        return DateFormatter.dayMonthAndYear.string(from: date)
+        return DateFormatter.fullDate.string(from: date)
     }
     var completionDateString: String? {
         guard let date = completionDate else { return nil }
-        return DateFormatter.dayMonthAndYear.string(from: date)
+        return DateFormatter.fullDate.string(from: date)
     }
 
     init(reminder: EKReminder) {

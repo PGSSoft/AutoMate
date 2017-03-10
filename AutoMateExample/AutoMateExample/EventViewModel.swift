@@ -17,10 +17,10 @@ struct EventViewModel {
     let location: String?
 
     var startDateString: String? {
-        return DateFormatter.dayMonthAndYear.string(from: startDate)
+        return DateFormatter.fullDate.string(from: startDate)
     }
     var endDateString: String? {
-        return DateFormatter.dayMonthAndYear.string(from: endDate)
+        return DateFormatter.fullDate.string(from: endDate)
     }
 
     public init(event: EKEvent) {
