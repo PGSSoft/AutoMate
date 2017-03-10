@@ -56,6 +56,10 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithSing
 /// let recurringEvents: EventLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "monthly_events", bundleName: "Data") ]
 /// let nearEvents = EventLaunchEnvironment(resources: (fileName: "todays_events", bundleName: "Test data"), (fileName: "this_week_events", bundleName: nil))
 /// let nearEvents = EventLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "todays_events", bundleName: "Test data"), (fileName: "this_week_events", bundleName: nil))
+/// ```
+///
+/// - warning:
+///   Setting `shouldCleanBefore` to `true` will remove all events from a device.
 public struct EventLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
@@ -95,6 +99,10 @@ public struct EventLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValu
 /// let recurringReminders: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "johnys_birthday_reminder", bundleName: "Data") ]
 /// let highPriorityReminders = ReminderLaunchEnvironment(resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
 /// let highPriorityReminders = ReminderLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
+/// ```
+///
+/// - warning:
+///   Setting `shouldCleanBefore` to `true` will remove all reminders from a device.
 public struct ReminderLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
@@ -134,6 +142,10 @@ public struct ReminderLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleV
 /// let johnContacts: ContactLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "john", bundleName: "Data") ]
 /// let severalContacts = ContactLaunchEnvironment(resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
 /// let severalContacts = ContactLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
+/// ```
+///
+/// - warning:
+///   Setting `shouldCleanBefore` to `true` will remove all contacts from a device.
 public struct ContactLaunchEnvironment: CleanableLaunchEnvironmentWithMultipleValues, AutoMateLaunchEnvironment {
 
     // MARK: Typealiases
