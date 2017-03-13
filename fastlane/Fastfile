@@ -41,6 +41,13 @@ platform :ios do
     end
   end
 
+  desc "Install dependencies"
+  lane :prepare do |options|
+    cocoapods(
+      podfile: "AutoMateExample"
+    )
+  end
+
   desc "Runs all the tests"
   lane :test do |options|
     # Options

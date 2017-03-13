@@ -32,6 +32,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E4EE41C01CFD7246004F0FFE"
+               BuildableName = "AutoMateTests.xctest"
+               BlueprintName = "AutoMateTests"
+               ReferencedContainer = "container:../AutoMate.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1F9891B11D409547007CD2B0"
                BuildableName = "AutoMateExampleUITests.xctest"
                BlueprintName = "AutoMateExampleUITests"

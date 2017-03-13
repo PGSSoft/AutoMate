@@ -9,10 +9,16 @@ env:
     - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.2"
     - DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.2"
 
+before_install:
+  - brew update
+  - brew outdated swiftlint || brew upgrade swiftlint
+
 before_script:
+  - swiftlint version
   - bundle exec pod --version
   - bundle exec fastlane --version
   - bundle exec fastlane snapshot reset_simulators --force --ios ${DESTINATION_OS}
+  - bundle exec fastlane prepare
 
 script:
   - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
