@@ -27,11 +27,6 @@
         }
       }
     ],
-    "nonGregorianBirthday": {
-      "year": 2016,
-      "month": 5,
-      "day": 19
-    },
     "birthday": {
       "year": 2016,
       "month": 5,
@@ -139,7 +134,7 @@
       }
     ],
     "note": "Some Note",
-    "imageData": "com.pgs-soft.TestResourceBundle:profile-placeholder.png",
+    "imageData": "TestResourceBundle:profile-placeholder.png",
     "contactRelations": [
       {
         "father": {
