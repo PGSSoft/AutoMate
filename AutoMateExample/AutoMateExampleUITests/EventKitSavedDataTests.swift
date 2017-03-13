@@ -24,7 +24,7 @@ class EventKitSavedDataTests: XCTestCase {
 
         let mainPage = MainPage(in: app)
         let autoMateLaunchEnvironmentsPage = AutoMateLaunchEnvironmentsPage(in: app)
-        let token = addUIInterruptionMonitor(withDescription: "`calendar") { (alert) -> Bool in
+        let token = addUIInterruptionMonitor(withDescription: "calendar") { (alert) -> Bool in
             guard let alertView = CalendarAlert(element: alert) else {
                 XCTFail("Cannot create CalendarAlert object")
                 return false

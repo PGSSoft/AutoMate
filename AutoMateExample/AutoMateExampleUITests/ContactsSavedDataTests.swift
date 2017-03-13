@@ -26,7 +26,7 @@ class ContactsSavedDataTests: AppUITestCase {
     // MARK: Tests
     func testAddContacts() {
 
-        let token = addUIInterruptionMonitor(withDescription: "`calendar") { (alert) -> Bool in
+        let token = addUIInterruptionMonitor(withDescription: "calendar") { (alert) -> Bool in
             guard let alertView = AddressBookAlert(element: alert) else {
                 XCTFail("Cannot create AddressBookAlert object")
                 return false
