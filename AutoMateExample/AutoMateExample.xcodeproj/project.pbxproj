@@ -32,6 +32,8 @@
 		964F74CA1E54DE90004B9400 /* LocationAlwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F74C91E54DE90004B9400 /* LocationAlwaysViewController.swift */; };
 		965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D56AC1E35F4C20056EE05 /* MainViewController.swift */; };
 		966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A111E5488300026AE29 /* HealthKitViewController.swift */; };
+		9670CC1C1E77D8DD00A1134E /* ContactsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670CC1B1E77D8DD00A1134E /* ContactsListPage.swift */; };
+		9670CC1F1E77D90C00A1134E /* ContactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670CC1E1E77D90C00A1134E /* ContactsData.swift */; };
 		9674481C1E55917B000B42BB /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674481B1E55917B000B42BB /* PhotoViewController.swift */; };
 		9674481F1E5591F5000B42BB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674481E1E5591F5000B42BB /* CameraViewController.swift */; };
 		967448211E5592BA000B42BB /* MediaLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967448201E5592BA000B42BB /* MediaLibraryViewController.swift */; };
@@ -173,6 +175,8 @@
 		965D56AC1E35F4C20056EE05 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		966A7A111E5488300026AE29 /* HealthKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
 		966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoMateExample.entitlements; sourceTree = "<group>"; };
+		9670CC1B1E77D8DD00A1134E /* ContactsListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsListPage.swift; sourceTree = "<group>"; };
+		9670CC1E1E77D90C00A1134E /* ContactsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsData.swift; sourceTree = "<group>"; };
 		9674481B1E55917B000B42BB /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		9674481E1E5591F5000B42BB /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		967448201E5592BA000B42BB /* MediaLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryViewController.swift; sourceTree = "<group>"; };
@@ -324,16 +328,17 @@
 			children = (
 				969CC2881E421FE500995A49 /* AppearingPage.swift */,
 				E45BBB0F1E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift */,
+				9670CC1B1E77D8DD00A1134E /* ContactsListPage.swift */,
+				E40AEDE21E76D52D00991238 /* EventsListPage.swift */,
 				9641182A1E41EF7A0011C776 /* MainPage.swift */,
 				969CC2841E421AE700995A49 /* MiddleButtonPage.swift */,
-				9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */,
 				96B131DB1E54C161007E3A04 /* PermissionsPage.swift */,
+				9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */,
 				9621BBCD1E42090C001A9C2C /* PushedPage.swift */,
+				E43E3D921E76F2A40055E635 /* RemindersListPage.swift */,
 				9621BBD11E420E25001A9C2C /* ScrollPage.swift */,
 				9621BBCA1E4206C6001A9C2C /* TablePage.swift */,
 				969CC2811E4216AE00995A49 /* TextInputPage.swift */,
-				E40AEDE21E76D52D00991238 /* EventsListPage.swift */,
-				E43E3D921E76F2A40055E635 /* RemindersListPage.swift */,
 			);
 			path = PageObjects;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 		E45BBB111E6E997B001BA04B /* Data agents */ = {
 			isa = PBXGroup;
 			children = (
+				9670CC1E1E77D90C00A1134E /* ContactsData.swift */,
 				E45BBB121E6E997B001BA04B /* EventKitData.swift */,
 			);
 			path = "Data agents";
@@ -802,6 +808,7 @@
 				9621BBD21E420E25001A9C2C /* ScrollPage.swift in Sources */,
 				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,
 				969CC2821E4216AE00995A49 /* TextInputPage.swift in Sources */,
+				9670CC1C1E77D8DD00A1134E /* ContactsListPage.swift in Sources */,
 				E45BBB101E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift in Sources */,
 				E40AEDE31E76D52D00991238 /* EventsListPage.swift in Sources */,
 				96A22A2A1E72D50B0039E17E /* ContactsSavedDataTests.swift in Sources */,
@@ -810,6 +817,7 @@
 				E45BBB131E6E997B001BA04B /* EventKitData.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
 				96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */,
+				9670CC1F1E77D90C00A1134E /* ContactsData.swift in Sources */,
 				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,
 				9674482D1E55A61D000B42BB /* PermissionsSubPages.swift in Sources */,
 				E43E3D931E76F2A40055E635 /* RemindersListPage.swift in Sources */,

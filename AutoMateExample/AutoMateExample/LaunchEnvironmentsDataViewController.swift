@@ -21,6 +21,7 @@ class LaunchEnvironmentsDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(for: environment)
+        tableView.accessibilityIdentifier = "dataTableView"
         tableView.reloadData()
     }
 

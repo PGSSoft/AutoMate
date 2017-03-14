@@ -11,12 +11,14 @@ import AutoMate
 
 class ContactsSavedDataTests: AppUITestCase {
 
-    // MARK: Properties
-    lazy var contacts: ContactLaunchEnvironment = ContactLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "contacts", bundleName: "TestResourceBundle"))
-
     // MARK: Arrange Page Objects
     lazy var mainPage: MainPage = MainPage(in: self.app)
     lazy var autoMateLaunchEnvironmentsPage: AutoMateLaunchEnvironmentsPage = AutoMateLaunchEnvironmentsPage(in: self.app)
+    lazy var contactsListPage: ContactsListPage = ContactsListPage(in: self.app)
+
+    // MARK: Data
+    lazy var contacts: ContactLaunchEnvironment = ContactLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "contacts", bundleName: "TestResourceBundle"))
+    let contact = Contact(firstName: "Given Name", lastName: "Family Name")
 
     // MARK: Set up
     override func setUp() {
@@ -46,6 +48,11 @@ class ContactsSavedDataTests: AppUITestCase {
         autoMateLaunchEnvironmentsPage.goToContactsView()
 
         removeUIInterruptionMonitor(token)
-        XCTFail()
+
+        let contactCell = contactsListPage.cell(for: contact)
+        XCTAssertTrue(contactCell.exists)
+
+        contactsListPage.tableView.swipe(to: contactCell.cell)
+        XCTAssertTrue(contactCell.isVisible)
     }
 }
