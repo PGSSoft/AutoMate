@@ -703,6 +703,9 @@
                             <outlet property="delegate" destination="iOo-SI-4di" id="r9H-rh-RDM"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="AutoMate Launch Enviroments" id="MWX-Qa-LRk">
+                        <barButtonItem key="backBarButtonItem" title="Launch Enviroments" id="GTB-ow-GrU"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="XgJ-8Q-3cl" kind="show" identifier="LaunchEnviromentDataSegueIdentifier" id="mWZ-d2-yYy"/>
                     </connections>

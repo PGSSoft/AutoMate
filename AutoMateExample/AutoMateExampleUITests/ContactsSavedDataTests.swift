@@ -54,5 +54,9 @@ class ContactsSavedDataTests: AppUITestCase {
 
         contactsListPage.tableView.swipe(to: contactCell.cell)
         XCTAssertTrue(contactCell.isVisible)
+
+        contactCell.tap()
+        contactsListPage.goBack()
+        autoMateLaunchEnvironmentsPage.goBack()
     }
 }

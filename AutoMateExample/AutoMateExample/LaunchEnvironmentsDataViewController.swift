@@ -27,7 +27,7 @@ class LaunchEnvironmentsDataViewController: UIViewController {
 
     // MARK: Helpers
     private func configure(for environment: LaunchEnvironment) {
-        self.navigationItem.title = environment.title
+        title = environment.title
         switch environment {
         case .event:
             tableView.register(nibFor: EventTableViewCell.self)
@@ -58,6 +58,13 @@ extension LaunchEnvironmentsDataViewController: LaunchEnvironmentTableDataSource
 
     func didFinishReloadData<DataSource: LaunchEnvironmentTableDataSourceProtocol>(store: DataSource) {
         tableView.reloadData()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension LaunchEnvironmentsDataViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
