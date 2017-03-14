@@ -8,8 +8,10 @@
 
 import EventKit
 
+// MARK: - ReminderViewModel
 struct ReminderViewModel {
 
+    // MARK: Properties
     let title: String
     let startDate: Date?
     let completionDate: Date?
@@ -25,18 +27,24 @@ struct ReminderViewModel {
         return DateFormatter.fullDate.string(from: date)
     }
 
+    fileprivate let reminderIdentifier: String
+
+    // MARK: Initialization
     init(reminder: EKReminder) {
+        reminderIdentifier = reminder.calendarItemIdentifier
         title = reminder.title
         startDate = reminder.startDateComponents?.date
         completionDate = reminder.completionDate
         calendar = reminder.calendar.title
         notes = reminder.notes
     }
+}
 
-    func sortedAscending(with rightReminder: ReminderViewModel) -> Bool {
-        guard let leftStartDate = startDate, let rightStartDate = rightReminder.startDate else {
-            return title < rightReminder.title
-        }
-        return leftStartDate < rightStartDate
+func < (lhs: ReminderViewModel, rhs: ReminderViewModel) -> Bool {
+    guard let lhsStartDate = lhs.startDate, let rhsStartDate = rhs.startDate else {
+        return lhs.title < rhs.title
+            || lhs.reminderIdentifier < rhs.reminderIdentifier
     }
+    return lhsStartDate < rhsStartDate
+        || lhs.reminderIdentifier < rhs.reminderIdentifier
 }

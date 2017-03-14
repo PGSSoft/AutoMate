@@ -11,8 +11,7 @@ import Contacts
 
 class ContactTableViewCell: UITableViewCell, ConfigurableCell {
 
-    typealias T = CNContact
-
+    // MARK: Properties - Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var socialLabel: UILabel!
@@ -30,7 +29,15 @@ class ContactTableViewCell: UITableViewCell, ConfigurableCell {
     @IBOutlet weak var urlStackView: UIStackView!
     @IBOutlet weak var emailStackView: UIStackView!
 
-    func configure(with data: T) {
+    // MARK: UITableViewCell lifecycle
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        informationStackViews.forEach { $0.isHidden = false }
+        nicknameLabel.isHidden = false
+    }
+
+    // MARK: ConfigurableCell - Methods
+    func configure(with data: CNContact) {
         nameLabel.text = "\(data.givenName) \(data.familyName)"
 
         if !data.nickname.isEmpty {
@@ -68,11 +75,5 @@ class ContactTableViewCell: UITableViewCell, ConfigurableCell {
         }
 
         thumbnailImageView.image = data.thumbnailImageData.flatMap(UIImage.init(data:)) ?? #imageLiteral(resourceName: "automate_logo")
-    }
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        informationStackViews.forEach { $0.isHidden = false }
-        nicknameLabel.isHidden = false
     }
 }

@@ -8,19 +8,24 @@
 
 import UIKit
 
-class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentTableDataSourceDelegate {
+// MARK: - LaunchEnvironmentsDataViewController
+class LaunchEnvironmentsDataViewController: UIViewController {
+
+    // MARK: Properties
+    @IBOutlet weak var tableView: UITableView!
 
     var environment: LaunchEnvironment!
-    @IBOutlet weak var tableView: UITableView!
     var dataSource: UITableViewDataSource!
 
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(for: environment)
         tableView.reloadData()
     }
 
-    func configure(for environment: LaunchEnvironment) {
+    // MARK: Helpers
+    private func configure(for environment: LaunchEnvironment) {
         self.navigationItem.title = environment.title
         switch environment {
         case .event:
@@ -45,12 +50,17 @@ class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentT
             self.dataSource = dataSource
         }
     }
+}
+
+// MARK: - LaunchEnvironmentTableDataSourceDelegate
+extension LaunchEnvironmentsDataViewController: LaunchEnvironmentTableDataSourceDelegate {
 
     func didFinishReloadData<DataSource: LaunchEnvironmentTableDataSourceProtocol>(store: DataSource) {
         tableView.reloadData()
     }
 }
 
+// MARK: - EventsTableViewDataSource
 class EventsTableViewDataSource: LaunchEnvironmentTableDataSource<EventTableViewCell, EventsDataStore> {
 
     init() {
@@ -63,6 +73,7 @@ class EventsTableViewDataSource: LaunchEnvironmentTableDataSource<EventTableView
     }
 }
 
+// MARK: - RemindersTableViewDataSource
 class RemindersTableViewDataSource: LaunchEnvironmentTableDataSource<ReminderTableViewCell, RemindersDataStore> {
 
     init() {
@@ -75,6 +86,7 @@ class RemindersTableViewDataSource: LaunchEnvironmentTableDataSource<ReminderTab
     }
 }
 
+// MARK: - ContactsTableViewDataSource
 class ContactsTableViewDataSource: LaunchEnvironmentTableDataSource<ContactTableViewCell, ContactsDataStore> {
 
     init() {

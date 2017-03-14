@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - UITableView helpers for UITableViewCell conforming to ConfigurableCell
 extension UITableView {
 
     func dequeueReusableCell<Cell: UITableViewCell>(for indexPath: IndexPath) -> Cell where Cell: ConfigurableCell {

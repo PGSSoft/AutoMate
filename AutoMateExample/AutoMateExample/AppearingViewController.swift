@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Contacts
 
 class AppearingViewController: UIViewController {
     // MARK: IBOutlets

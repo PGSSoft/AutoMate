@@ -8,14 +8,17 @@
 
 import UIKit
 
+// MARK: - ReminderTableViewCell
 class ReminderTableViewCell: UITableViewCell, ConfigurableCell {
 
+    // MARK: Properties - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var calendarLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var completionDateLabel: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
 
+    // MARK: ConfigurableCell - Methods
     func configure(with model: ReminderViewModel) {
         titleLabel.text = model.title
         calendarLabel.text = model.calendar

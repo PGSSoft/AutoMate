@@ -8,17 +8,24 @@
 
 import UIKit
 
+// MARK: - LaunchEnvironmentTableDataSource
 class LaunchEnvironmentTableDataSource<C, S>: NSObject, LaunchEnvironmentTableDataSourceProtocol, UITableViewDataSource where C: UITableViewCell, C: ConfigurableCell, S: DataStore, C.T == S.T {
+
+    // MARK: - LaunchEnvironmentTableDataSourceProtocol
+    // MARK: Typealiases
     typealias Cell = C
     typealias Store = S
 
+    // MARK: Properties
     var dataStore: Store
     weak var delegate: LaunchEnvironmentTableDataSourceDelegate?
 
+    // MARK: - Initialization
     init(store: Store) {
         dataStore = store
     }
 
+    // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return dataStore.sectionsCount
     }

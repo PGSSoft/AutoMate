@@ -8,7 +8,9 @@
 
 import Foundation
 
+// MARK: Date helpers
 extension Date {
+
     static let yearAgo: Date = {
         guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: -1, to: Date()) else {
             preconditionFailure("Date could not be calculated with the given input.")
@@ -24,6 +26,7 @@ extension Date {
     }()
 }
 
+// MARK: Predefined DateFormatter
 extension DateFormatter {
 
     static let fullMonthAndYear: DateFormatter = {

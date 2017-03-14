@@ -8,6 +8,7 @@
 
 import EventKit
 
+// MARK: - EventsDataStore
 class EventsDataStore: DataStore {
 
     // MARK: DataStore - Typealias
@@ -62,6 +63,6 @@ class EventsDataStore: DataStore {
 
     private func loadData() {
         let events = store.events(matching: eventsPredicate)
-        data = events.map(EventViewModel.init).sorted { $0.0.sortedAscending(with: $0.1) }
+        data = events.map(EventViewModel.init).sorted(by: <)
     }
 }

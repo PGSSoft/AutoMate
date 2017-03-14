@@ -8,8 +8,10 @@
 
 import EventKit
 
+// MARK: - EventViewModel
 struct EventViewModel {
 
+    // MARK: Properties
     let title: String
     let startDate: Date
     let endDate: Date
@@ -23,15 +25,20 @@ struct EventViewModel {
         return DateFormatter.fullDate.string(from: endDate)
     }
 
+    fileprivate let eventIdentifier: String
+
+    // MARK: Initialization
     public init(event: EKEvent) {
+        eventIdentifier = event.eventIdentifier
         title = event.title
         startDate = event.startDate
         endDate = event.endDate
         calendar = event.calendar.title
         location = event.location
     }
+}
 
-    func sortedAscending(with rightEvent: EventViewModel) -> Bool {
-        return startDate < rightEvent.startDate
-    }
+func < (lhs: EventViewModel, rhs: EventViewModel) -> Bool {
+    return lhs.startDate < rhs.startDate
+        || lhs.eventIdentifier < rhs.eventIdentifier
 }

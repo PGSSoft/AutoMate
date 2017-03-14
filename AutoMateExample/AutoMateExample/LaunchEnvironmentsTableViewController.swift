@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - LaunchEnviromentsTableViewController
 class LaunchEnviromentsTableViewController: UITableViewController {
 
     // MARK: Table view data source
@@ -23,6 +24,7 @@ class LaunchEnviromentsTableViewController: UITableViewController {
         performSegue(withIdentifier: "LaunchEnviromentDataSegueIdentifier", sender: indexPath)
     }
 
+    // MARK: UIViewController - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = sender as? IndexPath,
             let enviroment = LaunchEnvironment(rawValue: indexPath.row),
@@ -33,6 +35,7 @@ class LaunchEnviromentsTableViewController: UITableViewController {
     }
 }
 
+// MARK: - LaunchEnvironment
 enum LaunchEnvironment: Int {
     case event, reminder, contact
 

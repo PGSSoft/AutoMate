@@ -7,13 +7,15 @@
 //
 
 import Foundation
-import EventKit
 import AutoMate_AppBuddy
 
+// MARK: - LaunchOptionsHandler
 struct LaunchOptionsHandler {
 
+    // MARK: Properties
     let launchEnvironmentManager: LaunchEnvironmentManager
 
+    // MARK: Initialization
     init() {
         launchEnvironmentManager = LaunchEnvironmentManager()
         launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
@@ -21,13 +23,15 @@ struct LaunchOptionsHandler {
         launchEnvironmentManager.add(handler: defaultContactsHander, for: .contacts)
     }
 
+    // MARK: Methods
     func setup() {
         launchEnvironmentManager.setup()
     }
 
-    static let mockEnvironment: [String: String] = {
-        return [ AutoMateLaunchOptionKey.events.rawValue: "com.pgs-soft.TestResourceBundle:events",
-            AutoMateLaunchOptionKey.reminders.rawValue: "com.pgs-soft.TestResourceBundle:reminders",
-            AutoMateLaunchOptionKey.contacts.rawValue: "com.pgs-soft.TestResourceBundle:contacts"]
+    // MARK: Fake launch enviroments
+    private static let mockEnvironment: [String: String] = {
+        return [ AutoMateLaunchOptionKey.events.rawValue: "TestResourceBundle:events",
+            AutoMateLaunchOptionKey.reminders.rawValue: "TestResourceBundle:reminders",
+            AutoMateLaunchOptionKey.contacts.rawValue: "TestResourceBundle:contacts"]
     }()
 }

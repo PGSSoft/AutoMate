@@ -11,15 +11,15 @@ import EventKit
 
 class EventTableViewCell: UITableViewCell, ConfigurableCell {
 
-    typealias T = EventViewModel
-
+    // MARK: Properties - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var calendarLabel: UILabel!
 
-    func configure(with model: T) {
+    // MARK: ConfigurableCell - Methods
+    func configure(with model: EventViewModel) {
         titleLabel.text = model.title
         locationLabel.text = model.location
         calendarLabel.text = model.calendar

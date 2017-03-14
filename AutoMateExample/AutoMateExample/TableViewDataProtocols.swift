@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - DataStore protocol
 protocol DataStore {
 
     // MARK: Associatedtype
@@ -23,10 +24,7 @@ protocol DataStore {
     func reloadData(completion: @escaping () -> Void)
 }
 
-protocol LaunchEnvironmentTableDataSourceDelegate: class {
-    func didFinishReloadData<DataSource: LaunchEnvironmentTableDataSourceProtocol>(store: DataSource)
-}
-
+// MARK: - ConfigurableCell protocol
 protocol ConfigurableCell {
 
     // MARK: Associatedtype
@@ -40,6 +38,7 @@ protocol ConfigurableCell {
     func configure(with model: T)
 }
 
+// MARK: Default implementation for UITableViewCell
 extension ConfigurableCell where Self: UITableViewCell {
 
     static var reusableIdentifier: String {
@@ -51,6 +50,7 @@ extension ConfigurableCell where Self: UITableViewCell {
     }
 }
 
+// MARK: - LaunchEnvironmentTableDataSourceProtocol
 protocol LaunchEnvironmentTableDataSourceProtocol {
 
     // MARK: Associatedtype
@@ -60,4 +60,11 @@ protocol LaunchEnvironmentTableDataSourceProtocol {
     // MARK: Properties
     var dataStore: Store { get }
     weak var delegate: LaunchEnvironmentTableDataSourceDelegate? { get }
+}
+
+// MARK: - LaunchEnvironmentTableDataSourceDelegate protocol
+protocol LaunchEnvironmentTableDataSourceDelegate: class {
+
+    // MARK: Methods
+    func didFinishReloadData<DataSource: LaunchEnvironmentTableDataSourceProtocol>(store: DataSource)
 }

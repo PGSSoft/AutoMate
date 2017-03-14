@@ -8,6 +8,7 @@
 
 import Contacts
 
+// MARK: - ContactsDataStore
 class ContactsDataStore: DataStore {
 
     // MARK: DataStore - Typealias

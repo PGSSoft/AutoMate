@@ -8,6 +8,7 @@
 
 import EventKit
 
+// MARK: - RemindersDataStore
 class RemindersDataStore: DataStore {
 
     // MARK: DataStore - Typealias
@@ -53,7 +54,7 @@ class RemindersDataStore: DataStore {
 
     // MARK: Private - Methods
     private func sortAndUpdate(with reminders: [EKReminder]?) {
-        data = reminders?.map(ReminderViewModel.init).sorted { $0.0.sortedAscending(with: $0.1) } ?? []
+        data = reminders?.map(ReminderViewModel.init).sorted(by: <) ?? []
     }
 
     private func reloadReminders(completion: @escaping () -> Void) {

@@ -387,12 +387,12 @@
 			children = (
 				E4BA7C7D1E5B2EF600593B52 /* EventsDataStore.swift */,
 				E4BA7C7F1E5C578D00593B52 /* EventTableViewCell.swift */,
+				E4BA7C801E5C578D00593B52 /* EventTableViewCell.xib */,
 				E488262D1E72BCA900AB1E98 /* EventViewModel.swift */,
 				E48826251E729F2100AB1E98 /* RemindersDataStore.swift */,
 				E48826291E72BC1200AB1E98 /* ReminderTableViewCell.swift */,
-				E48826271E72AB1800AB1E98 /* ReminderViewModel.swift */,
-				E4BA7C801E5C578D00593B52 /* EventTableViewCell.xib */,
 				E488262A1E72BC1200AB1E98 /* ReminderTableViewCell.xib */,
+				E48826271E72AB1800AB1E98 /* ReminderViewModel.swift */,
 			);
 			name = EventKit;
 			sourceTree = "<group>";
