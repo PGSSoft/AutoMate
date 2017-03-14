@@ -38,14 +38,6 @@ open class AutoMateLaunchEnvironmentsPage: BaseAppPage, PushedPage {
     open func goToContactsView() {
         contactsCell.tap()
     }
-
-    open func cell(for item: Event) -> EventCell {
-        return EventCell(in: view.tables.element, for: item)
-    }
-
-    open func cell(for item: Reminder) -> ReminderCell {
-        return ReminderCell(in: view.tables.element, for: item)
-    }
 }
 
 public extension AutoMateLaunchEnvironmentsPage {
@@ -56,77 +48,5 @@ public extension AutoMateLaunchEnvironmentsPage {
         case events = "Events"
         case reminders = "Reminders"
         case contacts = "Contacts"
-    }
-}
-
-open class EventCell {
-
-    private let container: XCUIElement
-    private let cell: XCUIElement
-
-    open var isVisible: Bool {
-        return cell.isVisible
-    }
-
-    public init(in view: XCUIElement, for item: Event) {
-        container = view
-        cell = view.cells.element(containingLabels: [
-            Locators.title: item.title,
-            Locators.location: item.location,
-            Locators.calendar: item.calendar,
-            Locators.startDate: item.startDate,
-            Locators.endDate: item.endDate
-                           ])
-    }
-
-    open func tap() {
-        cell.tap()
-    }
-}
-
-private extension EventCell {
-
-    enum Locators: String, Locator {
-        case title
-        case location
-        case calendar
-        case startDate
-        case endDate
-    }
-}
-
-open class ReminderCell {
-
-    private let container: XCUIElement
-    private let cell: XCUIElement
-
-    open var isVisible: Bool {
-        return cell.isVisible
-    }
-
-    public init(in view: XCUIElement, for item: Reminder) {
-        container = view
-        cell = view.cells.element(containingLabels: [
-            Locators.title: item.title,
-            Locators.calendar: item.calendar,
-            Locators.notes: item.notes,
-            Locators.startDate: item.startDate,
-            Locators.completionDate: item.completionDate
-            ])
-    }
-
-    open func tap() {
-        cell.tap()
-    }
-}
-
-private extension ReminderCell {
-
-    enum Locators: String, Locator {
-        case title
-        case startDate
-        case completionDate
-        case calendar
-        case notes
     }
 }

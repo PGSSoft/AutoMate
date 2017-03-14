@@ -35,4 +35,12 @@ class LaunchEnviromentsTableViewController: UITableViewController {
 
 enum LaunchEnvironment: Int {
     case event, reminder, contact
+
+    var title: String {
+        switch self {
+        case .event: return "Events"
+        case .reminder: return "Reminders"
+        case .contact: return "Contacts"
+        }
+    }
 }

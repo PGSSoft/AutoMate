@@ -11,22 +11,65 @@ import AutoMate
 
 class EventKitSavedDataTests: XCTestCase {
 
+    // MARK: Properties
     let app = XCUIApplication()
-    lazy var events: EventLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "events", bundleName: "TestResourceBundle"))
-    lazy var reminders: ReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "reminders", bundleName: "TestResourceBundle"))
+
+    // MARK: Page objects
+    lazy var mainPage: MainPage = MainPage(in: self.app)
+    lazy var autoMateLaunchEnvironmentsPage: AutoMateLaunchEnvironmentsPage = AutoMateLaunchEnvironmentsPage(in: self.app)
+    lazy var eventsListPage: EventsListPage = EventsListPage(in: self.app)
+    lazy var remindersListPage: RemindersListPage = RemindersListPage(in: self.app)
+
+    // MARK: Data
+    let events: EventLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "events", bundleName: "TestResourceBundle"))
+    let reminders: ReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: false, resources: (fileName: "reminders", bundleName: "TestResourceBundle"))
+    let event = Event(title: "Minimal Event Title", calendar: "Home", location: "", startDate: "2017-06-22 13:45:00", endDate: "2017-06-22 14:30:00")
+    let reminder = Reminder(title: "Random Reminder Title", calendar: "Reminders", notes: "Everybody are welcome", startDate: "", completionDate: "2016-12-22 14:30:00")
 
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
     }
 
-    func testIfRemindersAndEventsAreVisible() {
+    func testIfEventsAreVisible() {
+        let token = allowAccess { CalendarAlert(element: $0) }
+        TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events]).launch()
+        // Interruption won't happen without some kind of action.
+        app.tap()
+        mainPage.goToAutoMateLaunchEnvironments()
+        autoMateLaunchEnvironmentsPage.goToEventsView()
 
-        let mainPage = MainPage(in: app)
-        let autoMateLaunchEnvironmentsPage = AutoMateLaunchEnvironmentsPage(in: app)
-        let token = addUIInterruptionMonitor(withDescription: "`calendar") { (alert) -> Bool in
-            guard let alertView = CalendarAlert(element: alert) else {
-                XCTFail("Cannot create CalendarAlert object")
+        removeUIInterruptionMonitor(token)
+
+        let eventCell = eventsListPage.cell(for: event)
+        XCTAssertTrue(eventCell.exists)
+
+        eventsListPage.tableView.swipe(to: eventCell.cell)
+        XCTAssertTrue(eventCell.isVisible)
+    }
+
+    func testIfRemindersAreVisible() {
+        let token = allowAccess { RemindersAlert(element: $0) }
+        TestLauncher.configureWithDefaultOptions(app, additionalOptions: [reminders]).launch()
+        // Interruption won't happen without some kind of action.
+        app.tap()
+        mainPage.goToAutoMateLaunchEnvironments()
+        autoMateLaunchEnvironmentsPage.goToRemindersView()
+        removeUIInterruptionMonitor(token)
+
+        let reminderCell = remindersListPage.cell(for: reminder)
+        XCTAssertTrue(reminderCell.exists)
+
+        eventsListPage.tableView.swipe(to: reminderCell.cell)
+        XCTAssertTrue(reminderCell.isVisible)
+    }
+
+    // MARK: Helpers
+    func allowAccess(for alertClosure: @escaping (XCUIElement) -> SystemAlertAllow?) -> NSObjectProtocol {
+
+        return addUIInterruptionMonitor(withDescription: "Access request.") { (alert) -> Bool in
+            guard let alertView = alertClosure(alert) else {
+                XCTFail("Cannot create Allow System Alert object.")
                 return false
             }
 
@@ -35,14 +78,5 @@ class EventKitSavedDataTests: XCTestCase {
             alertView.allowElement.tap()
             return true
         }
-
-        TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events, reminders]).launch()
-        // Interruption won't happen without some kind of action.
-        app.tap()
-        mainPage.goToAutoMateLaunchEnvironments()
-        autoMateLaunchEnvironmentsPage.goToEventsView()
-        removeUIInterruptionMonitor(token)
-        XCTFail()
     }
-
 }

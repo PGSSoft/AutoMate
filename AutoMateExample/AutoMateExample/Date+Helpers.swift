@@ -34,8 +34,7 @@ extension DateFormatter {
 
     static let fullDate: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
+        formatter.dateFormat = "yyyy-MM-dd k:mm:ss"
         return formatter
     }()
 }

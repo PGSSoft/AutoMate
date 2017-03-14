@@ -21,6 +21,7 @@ class LaunchEnvironmentsDataViewController: UIViewController, LaunchEnvironmentT
     }
 
     func configure(for environment: LaunchEnvironment) {
+        self.navigationItem.title = environment.title
         switch environment {
         case .event:
             tableView.register(nibFor: EventTableViewCell.self)

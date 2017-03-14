@@ -19,11 +19,11 @@ class RemindersDataStore: DataStore {
     }
 
     // MARK: Private - Properties
+    private var data = [T]()
     private let store = EKEventStore()
     private lazy var remindersPredicate: NSPredicate = {
         self.store.predicateForReminders(in: nil)
     }()
-    private var data = [T]()
 
     // MARK: DataStore - Methods
     func dataForRow(at indexPath: IndexPath) -> ReminderViewModel {

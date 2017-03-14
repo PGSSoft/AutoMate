@@ -1,6 +1,6 @@
 [
   {
-    "title": "All Info Event Title",
+    "title": "All Info Reminder Title",
     "location": "Conference room",
     "notes": "Everybody are welcome",
     "priority": 1,
@@ -39,7 +39,7 @@
     ],
     "startDateComponents": {
       "timeZone": {
-        "identifier": "America/Los_Angeles",
+        "identifier": "America/Los_Angeles"
       },
       "year": 2017,
       "month": 10,
@@ -62,9 +62,9 @@
     "completionDate": "2017-01-22 14:30:00"
   },
   {
-    "title": "Random Event Title",
+    "title": "Random Reminder Title",
     "notes": "Everybody are welcome",
-    "priority": 11,
+    "priority": 9,
     "isCompleted": true,
     "recurrenceRules": [
       {
@@ -77,10 +77,21 @@
         ]
       }
     ],
+    "dueDateComponents": {
+      "timeZone": {
+        "secondsFromGMT": 3000
+      },
+      "year": 2017,
+      "month": 12,
+      "day": 30,
+      "hour": 9,
+      "minute": 0,
+      "second": 0
+    },
     "completionDate": "2016-12-22 14:30:00"
   },
   {
-    "title": "Minimal Event Title",
+    "title": "Minimal Reminder Title",
     "priority": 3
   }
 ]

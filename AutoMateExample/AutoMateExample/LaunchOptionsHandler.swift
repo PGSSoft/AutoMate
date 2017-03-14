@@ -16,7 +16,7 @@ struct LaunchOptionsHandler {
 
     init() {
         launchEnvironmentManager = LaunchEnvironmentManager()
-//        launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
+        launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
         launchEnvironmentManager.add(handler: defaultEventKitHander, for: .events)
 //        launchEnvironmentManager.add(handler: defaultContactsHander, for: .contacts)
     }
