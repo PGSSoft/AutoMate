@@ -545,7 +545,6 @@
 				TargetAttributes = {
 					1F98919D1D409547007CD2B0 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 36CHZQXF4C;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -556,7 +555,6 @@
 					};
 					1F9891B11D409547007CD2B0 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 36CHZQXF4C;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1F98919D1D409547007CD2B0;
@@ -966,7 +964,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AutoMateExample/AutoMateExample.entitlements;
-				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateExample";
@@ -981,7 +978,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AutoMateExample/AutoMateExample.entitlements;
-				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateExample";
@@ -994,7 +990,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E860C26264170C418256B75 /* Pods-AutoMateExampleUITests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExampleUITests;
@@ -1008,7 +1003,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B6207D61FA794D9D0541FE2 /* Pods-AutoMateExampleUITests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 36CHZQXF4C;
 				INFOPLIST_FILE = AutoMateExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoMateExampleUITests;
