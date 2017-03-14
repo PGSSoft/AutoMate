@@ -48,6 +48,7 @@
 		969CC2891E421FE500995A49 /* AppearingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingPage.swift */; };
 		969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */; };
 		96A22A2A1E72D50B0039E17E /* ContactsSavedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A22A291E72D50B0039E17E /* ContactsSavedDataTests.swift */; };
+		96AB1AFB1E78265D003A1CB8 /* ForMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB1AFA1E78265D003A1CB8 /* ForMovieTests.swift */; };
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
 		96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DB1E54C161007E3A04 /* PermissionsPage.swift */; };
 		96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */; };
@@ -191,6 +192,7 @@
 		969CC2881E421FE500995A49 /* AppearingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingPage.swift; sourceTree = "<group>"; };
 		969CC28A1E42204500995A49 /* AdditionalExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalExtensionsTests.swift; sourceTree = "<group>"; };
 		96A22A291E72D50B0039E17E /* ContactsSavedDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSavedDataTests.swift; sourceTree = "<group>"; };
+		96AB1AFA1E78265D003A1CB8 /* ForMovieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForMovieTests.swift; sourceTree = "<group>"; };
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
 		96B131DB1E54C161007E3A04 /* PermissionsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPage.swift; sourceTree = "<group>"; };
 		96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTests.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				1F9891B81D409547007CD2B0 /* Info.plist */,
 				96A22A291E72D50B0039E17E /* ContactsSavedDataTests.swift */,
 				E4CDE9451E606CE80070DDF5 /* EventKitSavedDataTests.swift */,
+				96AB1AFA1E78265D003A1CB8 /* ForMovieTests.swift */,
 				1F9891B61D409547007CD2B0 /* LaunchArgumentsWithAutoMateTests.swift */,
 				1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMateTests.swift */,
 				96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */,
@@ -802,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969CC2891E421FE500995A49 /* AppearingPage.swift in Sources */,
+				96AB1AFB1E78265D003A1CB8 /* ForMovieTests.swift in Sources */,
 				9641182B1E41EF7A0011C776 /* MainPage.swift in Sources */,
 				9621BBD21E420E25001A9C2C /* ScrollPage.swift in Sources */,
 				96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */,

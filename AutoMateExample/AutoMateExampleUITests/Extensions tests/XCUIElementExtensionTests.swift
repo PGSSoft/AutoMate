@@ -103,16 +103,4 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         XCTAssertTrue(middleButtonPage.isLabelDisplayed())
     }
-
-    // MARK: Test for movie
-    func testForMovie() {
-        testClearAndType()
-        textInputPage.goBack()
-
-        testTapWithOffset()
-        middleButtonPage.goBack()
-
-//        testSystemAlertButton()
-//        locationView.goBack()
-    }
 }

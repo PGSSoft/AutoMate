@@ -58,10 +58,4 @@ class AdditionalExtensionsTests: AppUITestCase {
     func testAny() {
         XCTAssertTrue(app.any.element(boundBy: 0).exists)
     }
-
-    // MARK: Test for movie
-    func testForMovie() {
-        testWaitForElementToExist()
-        appearingPage.goBack()
-    }
 }

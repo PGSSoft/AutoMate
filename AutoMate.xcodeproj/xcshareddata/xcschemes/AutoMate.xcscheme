@@ -50,9 +50,6 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "AdditionalExtensionsTests/testForMovie()">
-               </Test>
-               <Test
                   Identifier = "PermissionsTests/testBluetoothPeripheralAlert()">
                </Test>
                <Test
@@ -72,12 +69,6 @@
                </Test>
                <Test
                   Identifier = "PermissionsTests/testSiriAlert()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementExtensionTests/testForMovie()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementQueryTests/testForMovie()">
                </Test>
             </SkippedTests>
          </TestableReference>

@@ -71,11 +71,11 @@ class XCUIElementQueryTests: AppUITestCase {
     func testCellMatching() {
         mainPage.goToTablePageMenu()
 
-        let firstCellOfAKind = app.cells.element(containingLabels: [Locators.title: "Kind A", Locators.subtitle: "1st cell"])
-        let secondCellOfBKind = app.cells.element(containingLabels: [Locators.title: "*B", Locators.rightDetail: "2*"], labelsComparisonOperator: .like)
-        let creditCell = app.cells.element(containingLabels: [Locators.credit: "with love"], labelsComparisonOperator: .contains)
-        let wrongRightDetailCell = app.cells.element(containingLabels: [Locators.title: "Kind B", Locators.rightDetail: "3rd"])
-        let wrongIdentifierCell = app.cells.element(containingLabels: [Locators.title: "Kind A", Locators.rightDetail: "3rd cell"])
+        let firstCellOfAKind = tablePage.cells.element(containingLabels: [Locators.title: "Kind A", Locators.subtitle: "1st cell"])
+        let secondCellOfBKind = tablePage.cells.element(containingLabels: [Locators.title: "*B", Locators.rightDetail: "2*"], labelsComparisonOperator: .like)
+        let creditCell = tablePage.cells.element(containingLabels: [Locators.credit: "with love"], labelsComparisonOperator: .contains)
+        let wrongRightDetailCell = tablePage.cells.element(containingLabels: [Locators.title: "Kind B", Locators.rightDetail: "3rd"])
+        let wrongIdentifierCell = tablePage.cells.element(containingLabels: [Locators.title: "Kind A", Locators.rightDetail: "3rd cell"])
 
         XCTAssertTrue(firstCellOfAKind.isHittable)
         firstCellOfAKind.tap()
@@ -88,12 +88,6 @@ class XCUIElementQueryTests: AppUITestCase {
 
         XCTAssertFalse(wrongRightDetailCell.exists)
         XCTAssertFalse(wrongIdentifierCell.exists)
-    }
-
-    // MARK: Test for movie
-    func testForMovie() {
-        testCellMatching()
-        tablePage.goBack()
     }
 }
 

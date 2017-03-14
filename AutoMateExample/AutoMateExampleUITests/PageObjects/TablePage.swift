@@ -10,4 +10,10 @@ import XCTest
 import AutoMate
 
 // MARK: - TablePage
-open class TablePage: BaseAppPage, PushedPage { }
+open class TablePage: BaseAppPage, PushedPage {
+
+    // MARK: Elements
+    public var cells: XCUIElementQuery {
+        return view.cells
+    }
+}
