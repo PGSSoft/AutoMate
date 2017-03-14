@@ -239,31 +239,32 @@ class PermissionsTests: AppUITestCase {
         XCTAssertTrue(handled)
     }
 
-    func testRemindersAlert() {
-        var handled = false
-        let token = addUIInterruptionMonitor(withDescription: "Reminders") { (alert) -> Bool in
-            guard let alertView = RemindersAlert(element: alert) else {
-                XCTFail("Cannot create RemindersAlert object")
-                return false
-            }
-
-            XCTAssertTrue(alertView.denyElement.exists)
-            XCTAssertTrue(alertView.allowElement.exists)
-
-            alertView.denyElement.tap()
-            handled = true
-            return true
-        }
-
-        mainPage.goToPermissionsPageMenu()
-        permissionsPage.goToReminders()
-        // Interruption won't happen without some kind of action.
-        app.tap()
-        remindersPage.goBack()
-        permissionsPage.goBack()
-        removeUIInterruptionMonitor(token)
-        XCTAssertTrue(handled)
-    }
+// Tested through `testIfRemindersAreVisible`.
+//    func testRemindersAlert() {
+//        var handled = false
+//        let token = addUIInterruptionMonitor(withDescription: "Reminders") { (alert) -> Bool in
+//            guard let alertView = RemindersAlert(element: alert) else {
+//                XCTFail("Cannot create RemindersAlert object")
+//                return false
+//            }
+//
+//            XCTAssertTrue(alertView.denyElement.exists)
+//            XCTAssertTrue(alertView.allowElement.exists)
+//
+//            alertView.denyElement.tap()
+//            handled = true
+//            return true
+//        }
+//
+//        mainPage.goToPermissionsPageMenu()
+//        permissionsPage.goToReminders()
+//        // Interruption won't happen without some kind of action.
+//        app.tap()
+//        remindersPage.goBack()
+//        permissionsPage.goBack()
+//        removeUIInterruptionMonitor(token)
+//        XCTAssertTrue(handled)
+//    }
 
     func testPhotosAlert() {
         var handled = false
@@ -424,31 +425,32 @@ class PermissionsTests: AppUITestCase {
         XCTAssertTrue(handled)
     }
 
-    func testCalendarAlert() {
-        var handled = false
-        let token = addUIInterruptionMonitor(withDescription: "Calendar") { (alert) -> Bool in
-            guard let alertView = CalendarAlert(element: alert) else {
-                XCTFail("Cannot create CalendarAlert object")
-                return false
-            }
-
-            XCTAssertTrue(alertView.denyElement.exists)
-            XCTAssertTrue(alertView.allowElement.exists)
-
-            alertView.denyElement.tap()
-            handled = true
-            return true
-        }
-
-        mainPage.goToPermissionsPageMenu()
-        permissionsPage.goToCalendar()
-        // Interruption won't happen without some kind of action.
-        app.tap()
-        calendarPage.goBack()
-        permissionsPage.goBack()
-        removeUIInterruptionMonitor(token)
-        XCTAssertTrue(handled)
-    }
+// Tested through `testIfEventsAreVisible`.
+//    func testCalendarAlert() {
+//        var handled = false
+//        let token = addUIInterruptionMonitor(withDescription: "Calendar") { (alert) -> Bool in
+//            guard let alertView = CalendarAlert(element: alert) else {
+//                XCTFail("Cannot create CalendarAlert object")
+//                return false
+//            }
+//
+//            XCTAssertTrue(alertView.denyElement.exists)
+//            XCTAssertTrue(alertView.allowElement.exists)
+//
+//            alertView.denyElement.tap()
+//            handled = true
+//            return true
+//        }
+//
+//        mainPage.goToPermissionsPageMenu()
+//        permissionsPage.goToCalendar()
+//        // Interruption won't happen without some kind of action.
+//        app.tap()
+//        calendarPage.goBack()
+//        permissionsPage.goBack()
+//        removeUIInterruptionMonitor(token)
+//        XCTAssertTrue(handled)
+//    }
 
     func testMotionAlert() {
         var handled = false

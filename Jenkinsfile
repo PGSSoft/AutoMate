@@ -105,6 +105,9 @@ node("ios_ui") {
 
             # Reset simulators
             bundle exec fastlane snapshot reset_simulators --force --ios 10.2
+
+            # Install dependnecies
+            bundle exec fastlane prepare
           '''
         }
 
