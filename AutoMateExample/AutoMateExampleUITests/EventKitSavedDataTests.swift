@@ -9,10 +9,7 @@
 import XCTest
 import AutoMate
 
-class EventKitSavedDataTests: XCTestCase {
-
-    // MARK: Properties
-    let app = XCUIApplication()
+class EventKitSavedDataTests: AppUITestCase {
 
     // MARK: Page objects
     lazy var mainPage: MainPage = MainPage(in: self.app)
@@ -26,11 +23,12 @@ class EventKitSavedDataTests: XCTestCase {
     let event = Event(title: "Minimal Event Title", calendar: "Home", location: "", startDate: "2017-06-22 13:45:00", endDate: "2017-06-22 14:30:00")
     let reminder = Reminder(title: "Random Reminder Title", calendar: "Reminders", notes: "Everybody are welcome", startDate: "", completionDate: "2016-12-22 14:30:00")
 
+    // MARK: Set up
     override func setUp() {
         super.setUp()
-        continueAfterFailure = false
     }
 
+    // MARK: Tests
     func testIfEventsAreVisible() {
         let token = allowAccess { CalendarAlert(element: $0) }
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events]).launch()

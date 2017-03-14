@@ -10,7 +10,7 @@ import XCTest
 import AutoMate
 
 // MARK: - ContactsListPage
-open class ContactsListPage: BaseAppPage {
+open class ContactsListPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
     open var tableView: XCUIElement {

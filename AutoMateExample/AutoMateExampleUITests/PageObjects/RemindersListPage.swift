@@ -9,22 +9,43 @@
 import XCTest
 import AutoMate
 
+// MARK: - RemindersListPage
 open class RemindersListPage: BaseAppPage, PushedPage {
 
+    // MARK: Elements
     public var tableView: XCUIElement {
-        return view.tables.element
+        return view.tables[Locators.dataTableView]
     }
 
+    // MARK: Helpers
     open func cell(for item: Reminder) -> ReminderCell {
         return ReminderCell(in: tableView, for: item)
     }
 }
 
-open class ReminderCell {
+// MARK: - IdentifiableByElement
+extension RemindersListPage: IdentifiableByElement {
 
-    private let container: XCUIElement
+    public var identifingElement: XCUIElement {
+        return tableView
+    }
+}
+
+// MARK: - Locators
+private extension RemindersListPage {
+
+    enum Locators: String, Locator {
+        case dataTableView
+    }
+}
+
+// MARK: - ReminderCell
+open class ReminderCell: BaseAppPage {
+
+    // MARK: Elements
     let cell: XCUIElement
 
+    // MARK: Properties
     open var isVisible: Bool {
         return cell.isVisible
     }
@@ -33,19 +54,22 @@ open class ReminderCell {
         return cell.exists
     }
 
+    // MARK: Initialization
     public init(in view: XCUIElement, for item: Reminder) {
-        container = view
         cell = view.cells.element(containingLabels: [
             Locators.title: item.title,
             Locators.calendar: item.calendar
-            ])
+        ])
+        super.init(in: view)
     }
 
+    // MARK: Actions
     open func tap() {
         cell.tap()
     }
 }
 
+// MARK: - Locators
 private extension ReminderCell {
 
     enum Locators: String, Locator {

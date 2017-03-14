@@ -61,6 +61,9 @@
                   Identifier = "PermissionsTests/testCallsAlert()">
                </Test>
                <Test
+                  Identifier = "PermissionsTests/testContactsSystemAlert()">
+               </Test>
+               <Test
                   Identifier = "PermissionsTests/testMicrophoneAlert()">
                </Test>
                <Test

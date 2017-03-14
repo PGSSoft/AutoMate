@@ -9,8 +9,10 @@
 import XCTest
 import AutoMate
 
+// MARK: - AutoMateLaunchEnvironmentsPage
 open class AutoMateLaunchEnvironmentsPage: BaseAppPage, PushedPage {
 
+    // MARK: Elements
     open var eventsCell: XCUIElement {
         return item(for: .events)
     }
@@ -23,10 +25,12 @@ open class AutoMateLaunchEnvironmentsPage: BaseAppPage, PushedPage {
         return item(for: .contacts)
     }
 
+    // MARK: Helpers
     open func item(for locator: Locators) -> XCUIElement {
         return view.cells.element(containingLabels: [Locators.autoMateLaunchEnvironment: locator.identifier])
     }
 
+    // MARK: Actions
     open func goToEventsView() {
         eventsCell.tap()
     }
@@ -40,6 +44,7 @@ open class AutoMateLaunchEnvironmentsPage: BaseAppPage, PushedPage {
     }
 }
 
+// MARK: - Locators
 public extension AutoMateLaunchEnvironmentsPage {
 
     enum Locators: String, Locator {
