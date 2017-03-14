@@ -10,9 +10,28 @@ import Foundation
 import XCTest
 
 // MARK: - HealthPermissionPage
+/// Page object representing HealthKit permission view.
+///
+/// It can only allow to tap on buttons:
+///
+/// - Allow
+/// - Deny
+/// - Turn on all permissions
+/// - Turn off all permissions
+///
+/// **Example:**
+///
+/// ```swift
+/// let healthPermissionPage = HealthPermissionPage(in: self.app)
+/// healthPermissionPage.turnOnAllElement.tap()
+/// healthPermissionPage.allowElement.tap()
+/// ```
 open class HealthPermissionPage: BaseAppPage, HealthAlertAllow, HealthAlertDeny, HealthAlertTurnOnAll, HealthAlertTurnOffAll {
 
     // MARK: Elements
+    /// Navigation bar on HealthKit permission view.
+    ///
+    /// This bar can be used to identify if the permission view is visible.
     open var healthAccessElement: XCUIElement {
         return view.navigationBars[Locators.healthAccess]
     }
@@ -21,6 +40,9 @@ open class HealthPermissionPage: BaseAppPage, HealthAlertAllow, HealthAlertDeny,
 // MARK: - IdentifiableByElement
 extension HealthPermissionPage: IdentifiableByElement {
 
+    /// Identifing `XCUIElement`.
+    ///
+    /// The `healthAccessElement` is used.
     public var identifingElement: XCUIElement {
         return healthAccessElement
     }
@@ -29,46 +51,51 @@ extension HealthPermissionPage: IdentifiableByElement {
 // MARK: - Locators
 public extension HealthPermissionPage {
 
+    /// Locators used in the HealthKit permission view.
+    ///
+    /// - `healthAccess`: Navigation bar identifier.
     public enum Locators: String, Locator {
+        /// Navigation bar identifier.
         case healthAccess = "Health Access"
     }
 }
 
 // MARK: - Health protocols
-// Health alert Allow element
+/// Protocol defining health alert allow element and messages.
 public protocol HealthAlertAllow {
-    /// Allow messages
+    /// Allow messages.
     static var allow: [String] { get }
-    /// Allow element
+    /// Allow element.
     var allowElement: XCUIElement { get }
 }
 
-// Health alert Deny element
+/// Protocol defining health alert deny element and messages.
 public protocol HealthAlertDeny {
-    /// Deny messages
+    /// Deny messages.
     static var deny: [String] { get }
-    /// Deny element
+    /// Deny element.
     var denyElement: XCUIElement { get }
 }
 
-// Health alert Turn On All element
+/// Protocol defining health alert "turn on all" element and messages.
 public protocol HealthAlertTurnOnAll {
-    /// Turn On All messages
+    /// Turn On All messages.
     static var turnOnAll: [String] { get }
-    /// Turn On All element
+    /// Turn On All element.
     var turnOnAllElement: XCUIElement { get }
 }
 
-// Health alert Turn Off All element
+/// Protocol defining health alert "turn off all" element and messages.
 public protocol HealthAlertTurnOffAll {
-    /// Turn Off All messages
+    /// Turn Off All messages.
     static var turnOffAll: [String] { get }
-    /// Turn Off All element
+    /// Turn Off All element.
     var turnOffAllElement: XCUIElement { get }
 }
 
 // MARK: - Default implementation
 extension HealthAlertAllow where Self: BaseAppPage {
+    /// Allow element.
     public var allowElement: XCUIElement {
         guard let button = view.buttons.elements(withLabelsMatching: type(of: self).allow).first else {
             preconditionFailure("Cannot find allow button.")
@@ -79,6 +106,7 @@ extension HealthAlertAllow where Self: BaseAppPage {
 }
 
 extension HealthAlertDeny where Self: BaseAppPage {
+    /// Deny element.
     public var denyElement: XCUIElement {
         guard let button = view.buttons.elements(withLabelsMatching: type(of: self).deny).first else {
             preconditionFailure("Cannot find deny button.")
@@ -89,6 +117,7 @@ extension HealthAlertDeny where Self: BaseAppPage {
 }
 
 extension HealthAlertTurnOnAll where Self: BaseAppPage {
+    /// Turn On All element.
     public var turnOnAllElement: XCUIElement {
         guard let button = view.staticTexts.elements(withLabelsMatching: type(of: self).turnOnAll).first else {
             preconditionFailure("Cannot find turn on all button.")
@@ -99,6 +128,7 @@ extension HealthAlertTurnOnAll where Self: BaseAppPage {
 }
 
 extension HealthAlertTurnOffAll where Self: BaseAppPage {
+    /// Turn Off All element.
     public var turnOffAllElement: XCUIElement {
         guard let button = view.staticTexts.elements(withLabelsMatching: type(of: self).turnOffAll).first else {
             preconditionFailure("Cannot find turn off all button.")

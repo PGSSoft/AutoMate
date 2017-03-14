@@ -5,7 +5,7 @@ import XCTest
 
 extension HealthAlertAllow {
 
-    /// Represents all possible "allow" buttons in health service messages.
+    /// Represents all possible "allow" buttons in HealthKit permission view.
     public static var allow: [String] {
         return [
             "Allow",
@@ -46,7 +46,7 @@ extension HealthAlertAllow {
 
 extension HealthAlertDeny {
 
-    /// Represents all possible "deny" buttons in health service messages.
+    /// Represents all possible "deny" buttons in HealthKit permission view.
     public static var deny: [String] {
         return [
             "Älä salli",
@@ -89,7 +89,7 @@ extension HealthAlertDeny {
 
 extension HealthAlertOk {
 
-    /// Represents all possible "ok" buttons in health service messages.
+    /// Represents all possible "ok" buttons in HealthKit permission view.
     public static var ok: [String] {
         return [
             "OK",
@@ -109,7 +109,7 @@ extension HealthAlertOk {
 
 extension HealthAlertTurnOffAll {
 
-    /// Represents all possible "turnOffAll" buttons in health service messages.
+    /// Represents all possible "turnOffAll" buttons in HealthKit permission view.
     public static var turnOffAll: [String] {
         return [
             "Alle Kategorien deaktivieren",
@@ -152,7 +152,7 @@ extension HealthAlertTurnOffAll {
 
 extension HealthAlertTurnOnAll {
 
-    /// Represents all possible "turnOnAll" buttons in health service messages.
+    /// Represents all possible "turnOnAll" buttons in HealthKit permission view.
     public static var turnOnAll: [String] {
         return [
             "Activar todas las categorías",
@@ -195,7 +195,7 @@ extension HealthAlertTurnOnAll {
 
 public extension HealthPermissionPage {
 
-    /// Represents all possible messages in health service messages.
+    /// Represents all possible messages in HealthKit permission view.
     public static let messages = [
         "'*' wil toegang tot je gegevens en toestemming om deze te bewerken voor de onderstaande categorieën.",
         "* haluaa käyttää ja päivittää terveystietojasi alla olevissa kategorioissa.",
@@ -236,10 +236,34 @@ public extension HealthPermissionPage {
     ]
 }
 
-/// Represents HealthAuthorizationDontAllowAlert service alert.
+/// Represents `HealthAuthorizationDontAllowAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = HealthAuthorizationDontAllowAlert(element: alert) else {
+///         XCTFail("Cannot create HealthAuthorizationDontAllowAlert object")
+///         return false
+///     }
+///
+///     alert.allowElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
 
-    /// Represents all possible messages in HealthAuthorizationDontAllowAlert service alert.
+    /// Represents all possible messages in `HealthAuthorizationDontAllowAlert` service alert.
     public static let messages = [
         "Acces Sănătate",
         "Acceso a Salud",
@@ -282,7 +306,7 @@ public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize HealthAuthorizationDontAllowAlert with alert element.
+    /// Initialize `HealthAuthorizationDontAllowAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {

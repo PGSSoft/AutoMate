@@ -2,8 +2,6 @@
 ## Build from Global/OSX.gitignore, Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore from github.com
 ## https://github.com/github/gitignore
 
-docs
-
 ## OS X
 .DS_Store
 
@@ -84,6 +82,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+
+# Jazzy
+docs
 
 
 # Other temporary files

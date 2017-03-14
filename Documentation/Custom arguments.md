@@ -1,20 +1,26 @@
 # Custom launch arguments
 
-Custom launch argument can be created by implementing `LaunchOption` protocol, on new, or existing type.
+Custom launch argument can be created by implementing `LaunchOption` protocol, on new or existing type.
 
 ```swift
 struct CustomOption: LaunchOption {
     var launchArguments: [String]? {
         return ["-MyArgument", "MyValue"]
     }
-
-    var launchEnvironments: [String: String]? {
-        return ["CustomVariable": "1"]
-    }
 }
 ```
 
-For common cases, AutoMate provides helper protocols.
+They can be passed to the `TestLauncher` to configure the application before launch.
+Use `TestLauncher` in the `setUp()` method to configure application settings and launch the application:
+
+```swift
+let app = XCUIApplication()
+TestLauncher(options: [
+    CustomOption()
+]).configure(app).launch()
+```
+
+For common cases, `AutoMate` provides helper protocols.
 
 - `LaunchArgument` - provides `key` variable, like `SkipLogin`, which will produce: `-SkipLogin` argument
 - `LaunchArgumentWithSingleValue` - arguments with single value, like `-Argument 1`

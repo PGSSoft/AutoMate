@@ -11,6 +11,20 @@ import XCTest
 
 // MARK: - IdentifiableByElement
 /// Protocol used to identify object, eg. PageObject, in the view hierarchy.
+///
+/// **Example:**
+///
+/// ```swift
+/// open class MainPage: BaseAppPage, IdentifiableByElement {
+///     open var tableView: XCUIElement {
+///         return view.tables["tableView"]
+///     }
+///
+///     public var identifingElement: XCUIElement {
+///         return tableView
+///     }
+/// }
+/// ```
 public protocol IdentifiableByElement {
 
     /// Identifing `XCUIElement`.
@@ -23,6 +37,13 @@ public extension XCTestCase {
     // MARK: Methods
     /// Wait for an identifiable element to exist in a view hierarchy. After given interval, if element is not found, test fails.
     ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// lazy var mainPage: MainPage = MainPage(in: self.app)
+    /// wait(forExistanceOf: mainPage)
+    /// ```
+    ///
     /// - Parameters:
     ///   - element: XCUIElement to wait for.
     ///   - timeout: Waiting time (default: 10 seconds).
@@ -33,6 +54,13 @@ public extension XCTestCase {
     }
 
     /// Wait for an identifiable element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// lazy var mainPage: MainPage = MainPage(in: self.app)
+    /// wait(forVisibilityOf: mainPage)
+    /// ```
     ///
     /// - Parameters:
     ///   - element: XCUIElement to wait for.

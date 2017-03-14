@@ -50,6 +50,8 @@ public protocol LaunchEnvironmentProtocol: LaunchOption {
 ///     public let key = "LAUNCH_KEY"
 ///     public var value: String
 /// }
+///
+/// let simple = SimpleLaunchEnvironment(value: "LaunchValue")
 /// ```
 public protocol LaunchEnvironmentWithSingleValue: LaunchEnvironmentProtocol {
 
@@ -111,6 +113,9 @@ public extension LaunchEnvironmentWithSingleValue where Self: CleanableLaunchEnv
 ///         self.valuesCollection = valuesCollection
 ///     }
 /// }
+///
+/// let array = ArrayLaunchEnvironment(valuesCollection: ["Value1", "Value2"])
+/// let array = ["Value1", "Value2"] as ArrayLaunchEnvironment
 /// ```
 ///
 /// - note:

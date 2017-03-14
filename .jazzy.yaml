@@ -1,4 +1,5 @@
 documentation: Documentation/*.md
+abstract: Documentation/Sections/*.md
 custom_categories:
   - name: Guides
     children:
@@ -6,6 +7,7 @@ custom_categories:
       - System arguments
       - Custom arguments
       - Launch environments
+      - AutoMate environments
   - name: Launch arguments
     children:
       - SystemLanguages
@@ -20,17 +22,60 @@ custom_categories:
       - LaunchArgumentWithSingleValue
       - LaunchArgumentWithMultipleValues
       - LaunchArgumentValue
-  # - name: XCTest
-  #   children:
-  #     - XCTestCase
-  #     - XCUIApplication
-  #     - XCUIElement
-  #     - XCUIElementQuery
-  #     - XCTestCase extensions
-  #     - XCUIApplication extensions
-  #     - XCUIElement extensions
-  #     - XCUIElementQuery extensions
+  - name: Launch environments
+    children:
+      - EventLaunchEnvironment
+      - ReminderLaunchEnvironment
+      - ContactLaunchEnvironment
+      - AnimationLaunchEnvironment
+      - AutoMateLaunchEnvironment
+
+      - LaunchEnvironment
+      - LaunchEnvironments
+
+      - LaunchEnvironmentProtocol
+      - LaunchEnvironmentWithSingleValue
+      - LaunchEnvironmentWithMultipleValues
+      - CleanableLaunchEnvironment
+      - CleanableLaunchEnvironmentWithMultipleValues
+      - LaunchEnvironmentValue
+      - LaunchEnvironmentResourceValue
+  - name: XCTest
+    children:
+      - AppUITestCase
+      - XCTestCase
+      - XCUIApplication
+      - XCUIElement
+      - XCUIElementQuery
+      - XCUIElementTypeQueryProvider
+  - name: Page objects
+    children:
+      - BaseAppPageProtocol
+      - BaseAppPage
+      - ModalPage
+      - PushedPage
+      - HealthPermissionPage
   - name: Locators
     children:
       - Locator
       - KeyboardLocator
+  - name: System alerts
+    children:
+      - SystemAlert
+      - HealthAuthorizationDontAllowAlert
+      - LocationAlwaysAlert
+      - LocationUpgradeWhenInUseAlwaysAlert
+      - LocationWhenInUseAlert
+      - AddressBookAlert
+      - BluetoothPeripheralAlert
+      - CalendarAlert
+      - CallsAlert
+      - CameraAlert
+      - MediaLibraryAlert
+      - MicrophoneAlert
+      - MotionAlert
+      - PhotosAlert
+      - RemindersAlert
+      - SiriAlert
+      - SpeechRecognitionAlert
+      - WillowAlert

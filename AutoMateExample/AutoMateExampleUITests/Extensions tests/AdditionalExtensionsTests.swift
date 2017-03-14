@@ -45,13 +45,13 @@ class AdditionalExtensionsTests: AppUITestCase {
     // MARK: XCUIApplication extension tests
     func testDeviceType() {
         print(
-              app.deviceType,
-              app.actualDeviceType,
-              app.isRunningOnSimulator,
-              app.isRunningOn(.iPad),
-              app.isRunningOn(.iPhone40),
-              app.isRunningOnIpad,
-              app.isRunningOnIphone)
+            app.deviceType,
+            app.actualDeviceType,
+            app.isRunningOnSimulator,
+            app.isRunningOn(.iPad),
+            app.isRunningOn(.iPhone40),
+            app.isRunningOnIpad,
+            app.isRunningOnIphone)
     }
 
     // MARK: XCUIElementTypeQueryProvider tests

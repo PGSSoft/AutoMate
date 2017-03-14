@@ -11,12 +11,12 @@ import XCTest
 
 /// Protocol for types that implement `descendantsMatchingType` method.
 public protocol DescendantsMatching {
-    /**
-     Function provided by the XCTest framework for some types.
-     - parameter type: Type of descendands to find.
-     - returns: query searching elements of given type.
-     */
-    func descendantsMatchingType(_ type: XCUIElementType) -> XCUIElementQuery
+
+    /// Methods provided by the XCTest framework for some types.
+    ///
+    /// - Parameter type: Type of descendands to find.
+    /// - Returns: Query searching elements of given type.
+    func descendants(matching type: XCUIElementType) -> XCUIElementQuery
 }
 
 extension XCUIElement: DescendantsMatching { }
@@ -24,8 +24,17 @@ extension XCUIElementQuery: DescendantsMatching { }
 
 extension XCUIElementTypeQueryProvider where Self: DescendantsMatching {
 
-    /// Returns any element matching the query.
+    // MARK: Properties
+    /// Creates a query that matches all descendants of the element.
+    ///
+    /// **Example:**
+    ///
+    /// Check if a view has any subview.
+    ///
+    /// ```swift
+    /// XCTAssertTrue(view.any.count > 0)
+    /// ```
     public var any: XCUIElementQuery {
-        return descendantsMatchingType(.any)
+        return descendants(matching: .any)
     }
 }

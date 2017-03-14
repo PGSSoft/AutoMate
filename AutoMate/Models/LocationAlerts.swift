@@ -146,10 +146,34 @@ extension LocationAlertOk {
     }
 }
 
-/// Represents LocationAlwaysAlert service alert.
+/// Represents `LocationAlwaysAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = LocationAlwaysAlert(element: alert) else {
+///         XCTFail("Cannot create LocationAlwaysAlert object")
+///         return false
+///     }
+///
+///     alert.allowElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
 
-    /// Represents all possible messages in LocationAlwaysAlert service alert.
+    /// Represents all possible messages in `LocationAlwaysAlert` service alert.
     public static let messages = [
         "Allow “*” to access your location even when you are not using the app?",
         "Autoriser « * » à accéder à vos données de localisation même lorsque vous n’utilisez pas l’app ?",
@@ -192,7 +216,7 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize LocationAlwaysAlert with alert element.
+    /// Initialize `LocationAlwaysAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -204,10 +228,34 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
     }
 }
 
-/// Represents LocationUpgradeWhenInUseAlwaysAlert service alert.
+/// Represents `LocationUpgradeWhenInUseAlwaysAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = LocationUpgradeWhenInUseAlwaysAlert(element: alert) else {
+///         XCTFail("Cannot create LocationUpgradeWhenInUseAlwaysAlert object")
+///         return false
+///     }
+///
+///     alert.allowElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
 
-    /// Represents all possible messages in LocationUpgradeWhenInUseAlwaysAlert service alert.
+    /// Represents all possible messages in `LocationUpgradeWhenInUseAlwaysAlert` service alert.
     public static let messages = [
         "Allow “*” to also access your location even when you are not using the app?",
         "Autoriser « * » à accéder aussi à vos données de localisation lorsque vous n’utilisez pas l’app ?",
@@ -250,7 +298,7 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize LocationUpgradeWhenInUseAlwaysAlert with alert element.
+    /// Initialize `LocationUpgradeWhenInUseAlwaysAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
@@ -262,10 +310,34 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
     }
 }
 
-/// Represents LocationWhenInUseAlert service alert.
+/// Represents `LocationWhenInUseAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = LocationWhenInUseAlert(element: alert) else {
+///         XCTFail("Cannot create LocationWhenInUseAlert object")
+///         return false
+///     }
+///
+///     alert.allowElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
 public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
 
-    /// Represents all possible messages in LocationWhenInUseAlert service alert.
+    /// Represents all possible messages in `LocationWhenInUseAlert` service alert.
     public static let messages = [
         "A(z) „*” hozzáférhet a helyzetéhez az alkalmazás használatakor?",
         "Allow “*” to access your location while you use the app?",
@@ -308,7 +380,7 @@ public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationA
     /// System service alert element.
     public var alert: XCUIElement
 
-    /// Initialize LocationWhenInUseAlert with alert element.
+    /// Initialize `LocationWhenInUseAlert` with alert element.
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
