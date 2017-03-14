@@ -41,10 +41,11 @@ struct ReminderViewModel {
 }
 
 func < (lhs: ReminderViewModel, rhs: ReminderViewModel) -> Bool {
-    guard let lhsStartDate = lhs.startDate, let rhsStartDate = rhs.startDate else {
+
+    if let lhsStartDate = lhs.startDate, let rhsStartDate = rhs.startDate, lhsStartDate != rhsStartDate {
+        return lhsStartDate < rhsStartDate
+    } else if lhs.title != rhs.title {
         return lhs.title < rhs.title
-            || lhs.reminderIdentifier < rhs.reminderIdentifier
     }
-    return lhsStartDate < rhsStartDate
-        || lhs.reminderIdentifier < rhs.reminderIdentifier
+    return lhs.reminderIdentifier < rhs.reminderIdentifier
 }

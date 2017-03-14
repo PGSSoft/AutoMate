@@ -39,6 +39,8 @@ struct EventViewModel {
 }
 
 func < (lhs: EventViewModel, rhs: EventViewModel) -> Bool {
+    guard lhs.startDate != rhs.startDate else {
+        return lhs.eventIdentifier < rhs.eventIdentifier
+    }
     return lhs.startDate < rhs.startDate
-        || lhs.eventIdentifier < rhs.eventIdentifier
 }
