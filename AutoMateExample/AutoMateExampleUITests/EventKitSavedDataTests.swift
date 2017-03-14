@@ -44,10 +44,6 @@ class EventKitSavedDataTests: AppUITestCase {
 
         eventsListPage.tableView.swipe(to: eventCell.cell)
         XCTAssertTrue(eventCell.isVisible)
-
-        eventCell.tap()
-        eventsListPage.goBack()
-        autoMateLaunchEnvironmentsPage.goBack()
     }
 
     func testIfRemindersAreVisible() {
@@ -64,10 +60,6 @@ class EventKitSavedDataTests: AppUITestCase {
 
         eventsListPage.tableView.swipe(to: reminderCell.cell)
         XCTAssertTrue(reminderCell.isVisible)
-
-        reminderCell.tap()
-        eventsListPage.goBack()
-        autoMateLaunchEnvironmentsPage.goBack()
     }
 
     // MARK: Helpers
