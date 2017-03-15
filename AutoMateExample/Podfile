@@ -6,9 +6,8 @@ target 'AutoMateExample' do
 
   pod 'AutoMate-AppBuddy', git: 'https://github.com/PGSSoft/AutoMate-AppBuddy', :branch => 'develop'
 
-  target 'AutoMateExampleUITests' do
-    inherit! :search_paths
-
-  end
+  # target 'AutoMateExampleUITests' do
+  #   inherit! :search_paths
+  # end
 
 end

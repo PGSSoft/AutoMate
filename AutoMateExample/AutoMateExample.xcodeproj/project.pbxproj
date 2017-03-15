@@ -17,7 +17,6 @@
 		1F98923B1D409B16007CD2B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9892391D409B16007CD2B0 /* LaunchScreen.storyboard */; };
 		1F98923D1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMateTests.swift */; };
 		1FFFC1D31D477CFD00EBB70D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FFFC1D51D477CFD00EBB70D /* Localizable.strings */; };
-		54BE7BF35279BF7198E8A1F0 /* Pods_AutoMateExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7ADF57D633054D52F73B21 /* Pods_AutoMateExampleUITests.framework */; };
 		961CB2011E558CC000148CAE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961CB2001E558CC000148CAE /* HealthKit.framework */; };
 		961CB2041E558F7000148CAE /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CB2031E558F7000148CAE /* RemindersViewController.swift */; };
 		9621BBCB1E4206C6001A9C2C /* TablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621BBCA1E4206C6001A9C2C /* TablePage.swift */; };
@@ -78,8 +77,8 @@
 		E488262B1E72BC1200AB1E98 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48826291E72BC1200AB1E98 /* ReminderTableViewCell.swift */; };
 		E488262C1E72BC1200AB1E98 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E488262A1E72BC1200AB1E98 /* ReminderTableViewCell.xib */; };
 		E488262E1E72BCA900AB1E98 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488262D1E72BCA900AB1E98 /* EventViewModel.swift */; };
-		E4977AAF1E6EB7AA00ABFBE7 /* AutoMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; };
-		E4977AB21E6EBB4100ABFBE7 /* AutoMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4977AAF1E6EB7AA00ABFBE7 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; };
+		E4977AB21E6EBB4100ABFBE7 /* ReferenceProxy in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4A905911E6030B5002081EA /* LaunchOptionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A905901E6030B5002081EA /* LaunchOptionsHandler.swift */; };
 		E4BA7C7A1E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */; };
 		E4BA7C7C1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */; };
@@ -134,7 +133,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E4977AB21E6EBB4100ABFBE7 /* AutoMate.framework in Embed Frameworks */,
+				E4977AB21E6EBB4100ABFBE7 /* ReferenceProxy in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +141,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B6207D61FA794D9D0541FE2 /* Pods-AutoMateExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMateExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoMateExampleUITests/Pods-AutoMateExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1F287A4A1D65845C0062F45F /* LocationWhenInUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationWhenInUseViewController.swift; sourceTree = "<group>"; };
 		1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonViewController.swift; sourceTree = "<group>"; };
 		1F8646151D64905E0033749B /* AppearingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		1F98923C1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentsWithoutAutoMateTests.swift; sourceTree = "<group>"; };
 		1FFFC1D41D477CFD00EBB70D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1FFFC1D61D477CFF00EBB70D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4E860C26264170C418256B75 /* Pods-AutoMateExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMateExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoMateExampleUITests/Pods-AutoMateExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B7ADF57D633054D52F73B21 /* Pods_AutoMateExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoMateExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8319988BC37CCFFEFEE49667 /* Pods-AutoMateExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMateExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample.release.xcconfig"; sourceTree = "<group>"; };
 		961CB2001E558CC000148CAE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -248,8 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4977AAF1E6EB7AA00ABFBE7 /* AutoMate.framework in Frameworks */,
-				54BE7BF35279BF7198E8A1F0 /* Pods_AutoMateExampleUITests.framework in Frameworks */,
+				E4977AAF1E6EB7AA00ABFBE7 /* ReferenceProxy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +380,6 @@
 			children = (
 				9F5E8BAFBD0028B77938ED82 /* Pods-AutoMateExample.debug.xcconfig */,
 				8319988BC37CCFFEFEE49667 /* Pods-AutoMateExample.release.xcconfig */,
-				4E860C26264170C418256B75 /* Pods-AutoMateExampleUITests.debug.xcconfig */,
-				0B6207D61FA794D9D0541FE2 /* Pods-AutoMateExampleUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -500,13 +494,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F9891BE1D409547007CD2B0 /* Build configuration list for PBXNativeTarget "AutoMateExampleUITests" */;
 			buildPhases = (
-				32B0DDDA09E32A38EA06F85A /* [CP] Check Pods Manifest.lock */,
 				1F9891AE1D409547007CD2B0 /* Sources */,
 				1F9891AF1D409547007CD2B0 /* Frameworks */,
 				1F9891B01D409547007CD2B0 /* Resources */,
 				961915271D91235E009367C6 /* Embed Frameworks */,
-				18E1C668A1C91E687F5BF622 /* [CP] Embed Pods Frameworks */,
-				484FA76CE129F3B89BF4E13D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -648,21 +639,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18E1C668A1C91E687F5BF622 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoMateExampleUITests/Pods-AutoMateExampleUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1F0ED7E91D40B6DB00AA0DC3 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -677,21 +653,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		32B0DDDA09E32A38EA06F85A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		3A09F1B19F4A72EB95307CCF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,21 +666,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		484FA76CE129F3B89BF4E13D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoMateExampleUITests/Pods-AutoMateExampleUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4FEBCF8B8EB552CF831C9C9D /* [CP] Copy Pods Resources */ = {
@@ -992,7 +938,6 @@
 		};
 		1F9891BF1D409547007CD2B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E860C26264170C418256B75 /* Pods-AutoMateExampleUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AutoMateExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1005,7 +950,6 @@
 		};
 		1F9891C01D409547007CD2B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B6207D61FA794D9D0541FE2 /* Pods-AutoMateExampleUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AutoMateExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
