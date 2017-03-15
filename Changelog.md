@@ -4,7 +4,7 @@
 Released on 2017-03-15.
 
 #### Added
-- View Objects: `BaseAppViewProtocol`, `BaseAppView`, `ModalView`, `PushedView`, `HealthPermissionView`
+- Page Objects: `BaseAppPageProtocol`, `BaseAppPage`, `ModalPage`, `PushedPage`, `HealthPermissionView`
 - `IdentifiableByElement` protocol
 - `Locator` protocol
 - `AppUITestCase` as base `XCTestCase` template

@@ -88,7 +88,7 @@ Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/
 - [x] `XCTest` extensions
 - [x] Added CoreData launch arguments
 - [x] Disable UIView animations (with `AutoMate-AppBuddy`)
-- [x] Strong-typed helpers: locators, view object templates (with `AutoMate-Templates`)
+- [x] Strong-typed helpers: locators, page object templates (with `AutoMate-Templates`)
 - [x] Base XCTestCase template (with `AutoMate-Templates`)
 - [x] Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`) (with `AutoMate-ModelGenie`)
 - [x] Managing events, reminders and contacts (with `AutoMate-AppBuddy`)

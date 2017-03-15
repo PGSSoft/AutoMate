@@ -11,7 +11,8 @@ Pod::Spec.new do |s|
     "Bartosz Janda"    => "bjanda@pgs-soft.com",
     "Paweł Kania"      => "pkania@pgs-soft.com",
     "Michał Myśliwiec" => "mmysliwiec@pgs-soft.com",
-    "Ewelina Cyło"     => "ecylo@pgs-soft.com"
+    "Ewelina Cyło"     => "ecylo@pgs-soft.com",
+    "Mateusz Nicpoń"   => "mnicpon@pgs-soft.com"
   }
 
   s.ios.deployment_target = '9.2'
