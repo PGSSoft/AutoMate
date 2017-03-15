@@ -86,7 +86,7 @@ public extension XCUIElement {
     ///
     /// - Parameters:
     ///   - element: Element to scroll to.
-    ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar is passed.
+    ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid
     public func swipe(to element: XCUIElement, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
         let swipeLength: CGFloat = 0.9
