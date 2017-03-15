@@ -39,16 +39,16 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "AdditionalExtensionsTests/testAny()">
+                  Identifier = "AdditionalExtensionsTests">
                </Test>
                <Test
-                  Identifier = "AdditionalExtensionsTests/testDeviceType()">
+                  Identifier = "ContactsSavedDataTests">
                </Test>
                <Test
-                  Identifier = "AdditionalExtensionsTests/testWaitForElementToExist()">
+                  Identifier = "EventKitSavedDataTests">
                </Test>
                <Test
-                  Identifier = "AdditionalExtensionsTests/testWaitForVisibleElement()">
+                  Identifier = "LaunchArgumentsWithAutoMateTests">
                </Test>
                <Test
                   Identifier = "LaunchArgumentsWithAutomate/testSomething()">
@@ -57,55 +57,25 @@
                   Identifier = "LaunchArgumentsWithoutAutoMate/testSomething()">
                </Test>
                <Test
-                  Identifier = "PermissionsTests/testContactsSystemAlert()">
+                  Identifier = "LaunchArgumentsWithoutAutoMateTests">
                </Test>
                <Test
-                  Identifier = "PermissionsTests/testHealthKitAlert()">
-               </Test>
-               <Test
-                  Identifier = "PermissionsTests/testHomeKitAlert()">
-               </Test>
-               <Test
-                  Identifier = "PermissionsTests/testLocationSystemAlert()">
+                  Identifier = "PermissionsTests">
                </Test>
                <Test
                   Identifier = "PermissionsTests/testLocationWhenInUseSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testClearAndType()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementExtensionTests/testClearTextField()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementExtensionTests/testComplexSwipe()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboard()">
+                  Identifier = "XCUIElementExtensionTests">
                </Test>
                <Test
                   Identifier = "XCUIElementExtensionTests/testContactsSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testIsVisible()">
-               </Test>
-               <Test
                   Identifier = "XCUIElementExtensionTests/testLocationSystemAlertButton()">
                </Test>
                <Test
-                  Identifier = "XCUIElementExtensionTests/testSimpleSwipe()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementExtensionTests/testTapWithOffset()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementQueryTests/testCellMatching()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementQueryTests/testElementMatchingIdentifier()">
-               </Test>
-               <Test
-                  Identifier = "XCUIElementQueryTests/testElementMatchingLabel()">
+                  Identifier = "XCUIElementQueryTests">
                </Test>
             </SkippedTests>
          </TestableReference>

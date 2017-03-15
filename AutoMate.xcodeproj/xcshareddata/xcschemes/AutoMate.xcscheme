@@ -50,6 +50,9 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "ForMovieTests">
+               </Test>
+               <Test
                   Identifier = "PermissionsTests/testBluetoothPeripheralAlert()">
                </Test>
                <Test
