@@ -80,28 +80,23 @@ public extension XCUIElement {
     /// ```
     ///
     /// - note:
-    ///   `XCTest` automatically does the scrolling during `tap()`, but the method is still useful in some situations, for example to reveal element from behind keyboard.
+    ///   `XCTest` automatically does the scrolling during `tap()`, but the method is still useful in some situations, for example to reveal element from behind keyboard, navigation bar or userdefined element.
     /// - note:
     ///   This method assumes that element is scrollable and at least partially visible on the screen.
     ///
     /// - Parameters:
     ///   - element: Element to scroll to.
-    ///   - avoidKeyboard: Indicates if element should be swiped out of keyboard frame
+    ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar is passed.
     ///   - app: Application instance to use when searching for keyboard to avoid
-    public func swipe(to element: XCUIElement, avoidKeyboard: Bool = true, from app: XCUIApplication = XCUIApplication()) {
+    public func swipe(to element: XCUIElement, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
         let swipeLength: CGFloat = 0.9
         var scrollableArea = frame
 
-        if avoidKeyboard {
-            // adjust scrollable area by substracting keyboard overlap
-            let keyboard = app.keyboards.element
-            if keyboard.exists {
-                let keyboardTop = keyboard.frame.minY
-                let overlap = max(frame.maxY - keyboardTop, 0)
-                scrollableArea = frame.divided(atDistance: overlap, from: .maxYEdge).remainder
-                assert(frame.minY < keyboardTop, "Scrollable view is completely hidden behind keyboard.")
-            }
+        viewsToAviod.forEach {
+            scrollableArea = $0.overlapReminder(of: scrollableArea, in: app)
+            print(scrollableArea)
         }
+        assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
 
         func scroll(deltaY: CGFloat, condition: () -> (Bool)) {
             var oldElementFrame = element.frame
@@ -187,5 +182,67 @@ public extension XCUIElement {
     /// - Parameter offset: Tap offset. Default (0, 0).
     public func tap(withOffset offset: CGVector = CGVector.zero) {
         coordinate(withNormalizedOffset: offset).tap()
+    }
+}
+
+// MARK: - AvoidableElement
+/// Each case means element of user interface that can overlap scrollable area.
+///
+/// - navigationBar: equivalent of UINavigationBar
+/// - keyboard: equivalent of UIKeyboard
+/// - other(XCUIElement, CGRectEdge): equivalent of user defined `XCUIElement` with `CGRectEdge` on which it appears.
+/// If more than one navigation bar or any other predefined `AvoidableElement` is expected, use `.other` case.
+/// Predefined cases assume there is only one element of their type.
+public enum AvoidableElement {
+
+    case navigationBar
+    case keyboard
+    case other(element: XCUIElement, edge: CGRectEdge)
+
+    /// Edge on which `XCUIElement` appears.
+    var edge: CGRectEdge {
+        switch self {
+        case .navigationBar: return .minYEdge
+        case .keyboard: return .maxYEdge
+        case .other(_, let edge): return edge
+        }
+    }
+
+    /// Finds `XCUIElement` depending on case.
+    ///
+    /// - Parameter app: XCUIAppliaction to search through, `XCUIApplication()` by default.
+    /// - Returns: `XCUIElement` equivalent of enum case.
+    func element(in app: XCUIApplication = XCUIApplication()) -> XCUIElement {
+        switch self {
+        case .navigationBar: return app.navigationBars.element
+        case .keyboard: return app.keyboards.element
+        case .other(let element, _): return element
+        }
+    }
+
+    /// Calculates rect that reminds scrollable through substract overlaping part of `XCUIElement`.
+    ///
+    /// - Parameters:
+    ///   - rect: CGRect that is overlaped.
+    ///   - app: XCUIApplication in which overlapping element can be found.
+    /// - Returns: Part of rect not overlaped by element.
+    func overlapReminder(of rect: CGRect, in app: XCUIApplication = XCUIApplication()) -> CGRect {
+
+        let overlappingElement = element(in: app)
+        guard overlappingElement.exists else { return rect }
+
+        let overlap: CGFloat
+
+        switch edge {
+        case .maxYEdge:
+            overlap = rect.maxY - overlappingElement.frame.minY
+        case .minYEdge:
+            overlap = overlappingElement.frame.maxY - rect.minY
+        default:
+            return rect
+        }
+
+        return rect.divided(atDistance: max(overlap, 0),
+                            from: edge).remainder
     }
 }
