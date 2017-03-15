@@ -1,7 +1,7 @@
 # Changelog
 
 ## [1.1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.1.0)
-Released on ???.
+Released on 2017-03-15.
 
 #### Added
 - View Objects: `BaseAppViewProtocol`, `BaseAppView`, `ModalView`, `PushedView`, `HealthPermissionView`
