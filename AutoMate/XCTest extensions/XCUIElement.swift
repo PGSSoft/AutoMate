@@ -188,15 +188,17 @@ public extension XCUIElement {
 // MARK: - AvoidableElement
 /// Each case means element of user interface that can overlap scrollable area.
 ///
-/// - navigationBar: equivalent of UINavigationBar
-/// - keyboard: equivalent of UIKeyboard
-/// - other(XCUIElement, CGRectEdge): equivalent of user defined `XCUIElement` with `CGRectEdge` on which it appears.
+/// - `navigationBar`: equivalent of `UINavigationBar`.
+/// - `keyboard`: equivalent of `UIKeyboard`.
+/// - `other(XCUIElement, CGRectEdge)`: equivalent of user defined `XCUIElement` with `CGRectEdge` on which it appears.
 /// If more than one navigation bar or any other predefined `AvoidableElement` is expected, use `.other` case.
 /// Predefined cases assume there is only one element of their type.
 public enum AvoidableElement {
-
+    /// Equivalent of `UINavigationBar`.
     case navigationBar
+    /// Equivalent of `UIKeyboard`.
     case keyboard
+    /// Equivalent of user defined `XCUIElement` with `CGRectEdge` on which it appears.
     case other(element: XCUIElement, edge: CGRectEdge)
 
     /// Edge on which `XCUIElement` appears.
