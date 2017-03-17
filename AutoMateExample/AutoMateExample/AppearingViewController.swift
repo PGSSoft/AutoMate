@@ -36,7 +36,7 @@ class AppearingViewController: UIViewController {
     }
 
     @IBAction func loadingDoneButtonTouched(_ sender: UIButton) {
-        performAsync(after: 2) {
+        performAsync(after: 4) {
             self.stackView.addArrangedSubview(self.madeWithLoveView)
             self.stackView.layoutIfNeeded()
         }
