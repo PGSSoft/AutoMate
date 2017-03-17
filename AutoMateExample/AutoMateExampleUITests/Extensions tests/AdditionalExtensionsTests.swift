@@ -50,7 +50,7 @@ class AdditionalExtensionsTests: AppUITestCase {
 
         wait(forVisibilityOf: appearingPage.activityIndicator)
 
-        wait(forInvisibilityOf: appearingPage.activityIndicator, timeout: 1)
+        wait(forInvisibilityOf: appearingPage.activityIndicator)
     }
 
     // MARK: XCUIApplication extension tests
