@@ -16,6 +16,12 @@ class AppearingViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
 
     // MARK: View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        activityIndicator.isAccessibilityElement = true
+        activityIndicator.accessibilityIdentifier = "activityIndicator"
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         button.isHidden = true
