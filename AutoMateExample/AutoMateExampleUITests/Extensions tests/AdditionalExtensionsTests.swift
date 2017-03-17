@@ -42,6 +42,17 @@ class AdditionalExtensionsTests: AppUITestCase {
         appearingPage.tapOnButton()
     }
 
+    func testWaitForDisappearElement() {
+        mainPage.goToAppearingMenu()
+
+        wait(forVisibilityOf: appearingPage.button)
+        appearingPage.tapOnButton()
+
+        wait(forVisibilityOf: appearingPage.activityIndicator)
+
+        wait(forInvisibilityOf: appearingPage.activityIndicator, timeout: 1)
+    }
+
     // MARK: XCUIApplication extension tests
     func testDeviceType() {
         print(

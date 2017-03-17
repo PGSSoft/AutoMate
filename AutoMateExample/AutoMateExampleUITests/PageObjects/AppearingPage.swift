@@ -13,6 +13,10 @@ import AutoMate
 open class AppearingPage: BaseAppPage, PushedPage {
 
     // MARK: Elements
+    open var activityIndicator: XCUIElement {
+        return view.any[Locators.activityIndicator]
+    }
+
     open var button: XCUIElement {
         return view.buttons[Locators.appearingButton]
     }
@@ -40,6 +44,7 @@ open class AppearingPage: BaseAppPage, PushedPage {
 private extension AppearingPage {
 
     enum Locators: String, Locator {
+        case activityIndicator
         case appearingButton
         case madeWithLoveView
     }
