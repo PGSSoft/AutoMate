@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+#### Added
+- More generic version of `wait(...)` methods: `wait(forFulfillmentOf predicate:...)`.
+- `wait(forInvisibilityOf...)` method which is waiting for element to disappear.
+
 ## [1.1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.1.0)
 Released on 2017-03-15.
 
