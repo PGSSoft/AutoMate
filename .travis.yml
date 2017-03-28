@@ -1,13 +1,13 @@
 language: objective-c
-osx_image: xcode8.2
+osx_image: xcode8.3
 
 env:
   global:
     - NSUnbufferedIO=YES
   matrix:
-    - DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.2"
-    - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.2"
-    - DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.2"
+    - DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.3"
+    - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3"
+    - DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.3"
 
 before_install:
   - brew update

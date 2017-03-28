@@ -62,7 +62,7 @@ public extension HealthPermissionPage {
 
 // MARK: - Health protocols
 /// Protocol defining health alert allow element and messages.
-public protocol HealthAlertAllow {
+public protocol HealthAlertAllow: SystemMessages {
     /// Allow messages.
     static var allow: [String] { get }
     /// Allow element.
@@ -70,7 +70,7 @@ public protocol HealthAlertAllow {
 }
 
 /// Protocol defining health alert deny element and messages.
-public protocol HealthAlertDeny {
+public protocol HealthAlertDeny: SystemMessages {
     /// Deny messages.
     static var deny: [String] { get }
     /// Deny element.
@@ -78,7 +78,7 @@ public protocol HealthAlertDeny {
 }
 
 /// Protocol defining health alert "turn on all" element and messages.
-public protocol HealthAlertTurnOnAll {
+public protocol HealthAlertTurnOnAll: SystemMessages {
     /// Turn On All messages.
     static var turnOnAll: [String] { get }
     /// Turn On All element.
@@ -86,7 +86,7 @@ public protocol HealthAlertTurnOnAll {
 }
 
 /// Protocol defining health alert "turn off all" element and messages.
-public protocol HealthAlertTurnOffAll {
+public protocol HealthAlertTurnOffAll: SystemMessages {
     /// Turn Off All messages.
     static var turnOffAll: [String] { get }
     /// Turn Off All element.

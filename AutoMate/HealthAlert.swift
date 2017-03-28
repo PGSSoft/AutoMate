@@ -11,4 +11,4 @@ import XCTest
 
 // MARK: - Health protocols
 /// Protocol defining health alert OK element.
-public protocol HealthAlertOk: SystemAlertOk { }
+public protocol HealthAlertOk: SystemAlertOk, SystemMessages { }

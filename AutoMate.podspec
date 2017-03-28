@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/PGSSoft/AutoMate.git", :tag => "#{s.version}" }
 
   s.source_files  = "Classes", "AutoMate/**/*.{swift}"
+  s.resources     = ["AutoMate/Models/Messages/*.json"]
 
   s.framework = "XCTest"
 end

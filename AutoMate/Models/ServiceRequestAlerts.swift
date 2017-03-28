@@ -7,12 +7,7 @@ extension SystemAlertAllow {
 
     /// Represents all possible "allow" buttons in system service messages.
     public static var allow: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "SystemAlertAllow", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "SystemAlertAllow")
     }
 }
 
@@ -20,12 +15,7 @@ extension SystemAlertDeny {
 
     /// Represents all possible "deny" buttons in system service messages.
     public static var deny: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "SystemAlertDeny", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "SystemAlertDeny")
     }
 }
 
@@ -58,12 +48,7 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `AddressBookAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "AddressBookAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "AddressBookAlert")
     }
 
     /// System service alert element.
@@ -110,12 +95,7 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
 
     /// Represents all possible messages in `BluetoothPeripheralAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "BluetoothPeripheralAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "BluetoothPeripheralAlert")
     }
 
     /// System service alert element.
@@ -162,12 +142,7 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `CalendarAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "CalendarAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "CalendarAlert")
     }
 
     /// System service alert element.
@@ -214,12 +189,7 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `CallsAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "CallsAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "CallsAlert")
     }
 
     /// System service alert element.
@@ -266,12 +236,7 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `CameraAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "CameraAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "CameraAlert")
     }
 
     /// System service alert element.
@@ -318,12 +283,7 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
 
     /// Represents all possible messages in `MediaLibraryAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "MediaLibraryAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "MediaLibraryAlert")
     }
 
     /// System service alert element.
@@ -370,12 +330,7 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `MicrophoneAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "MicrophoneAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "MicrophoneAlert")
     }
 
     /// System service alert element.
@@ -422,12 +377,7 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `MotionAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "MotionAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "MotionAlert")
     }
 
     /// System service alert element.
@@ -474,12 +424,7 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `PhotosAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "PhotosAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "PhotosAlert")
     }
 
     /// System service alert element.
@@ -526,12 +471,7 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `RemindersAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "RemindersAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "RemindersAlert")
     }
 
     /// System service alert element.
@@ -578,12 +518,7 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `SiriAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "SiriAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "SiriAlert")
     }
 
     /// System service alert element.
@@ -630,12 +565,7 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
 
     /// Represents all possible messages in `SpeechRecognitionAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "SpeechRecognitionAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "SpeechRecognitionAlert")
     }
 
     /// System service alert element.
@@ -682,12 +612,7 @@ public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `WillowAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "WillowAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "WillowAlert")
     }
 
     /// System service alert element.

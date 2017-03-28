@@ -7,12 +7,7 @@ extension HealthAlertAllow {
 
     /// Represents all possible "allow" buttons in HealthKit permission view.
     public static var allow: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthAlertAllow", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthAlertAllow")
     }
 }
 
@@ -20,12 +15,7 @@ extension HealthAlertDeny {
 
     /// Represents all possible "deny" buttons in HealthKit permission view.
     public static var deny: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthAlertDeny", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthAlertDeny")
     }
 }
 
@@ -33,12 +23,7 @@ extension HealthAlertOk {
 
     /// Represents all possible "ok" buttons in HealthKit permission view.
     public static var ok: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthAlertOk", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthAlertOk")
     }
 }
 
@@ -46,12 +31,7 @@ extension HealthAlertTurnOffAll {
 
     /// Represents all possible "turnOffAll" buttons in HealthKit permission view.
     public static var turnOffAll: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthAlertTurnOffAll", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthAlertTurnOffAll")
     }
 }
 
@@ -59,12 +39,7 @@ extension HealthAlertTurnOnAll {
 
     /// Represents all possible "turnOnAll" buttons in HealthKit permission view.
     public static var turnOnAll: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthAlertTurnOnAll", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthAlertTurnOnAll")
     }
 }
 
@@ -72,12 +47,7 @@ public extension HealthPermissionPage {
 
     /// Represents all possible messages in HealthKit permission view.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthPermissionPage", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthPermissionPage")
     }
 }
 
@@ -110,12 +80,7 @@ public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
 
     /// Represents all possible messages in `HealthAuthorizationDontAllowAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "HealthAuthorizationDontAllowAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "HealthAuthorizationDontAllowAlert")
     }
 
     /// System service alert element.

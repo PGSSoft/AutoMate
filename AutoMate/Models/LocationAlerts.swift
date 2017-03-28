@@ -7,12 +7,7 @@ extension LocationAlertAllow {
 
     /// Represents all possible "allow" buttons in location service messages.
     public static var allow: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationAlertAllow", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationAlertAllow")
     }
 }
 
@@ -20,12 +15,7 @@ extension LocationAlertCancel {
 
     /// Represents all possible "cancel" buttons in location service messages.
     public static var cancel: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationAlertCancel", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationAlertCancel")
     }
 }
 
@@ -33,12 +23,7 @@ extension LocationAlertDeny {
 
     /// Represents all possible "deny" buttons in location service messages.
     public static var deny: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationAlertDeny", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationAlertDeny")
     }
 }
 
@@ -46,12 +31,7 @@ extension LocationAlertOk {
 
     /// Represents all possible "ok" buttons in location service messages.
     public static var ok: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationAlertOk", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationAlertOk")
     }
 }
 
@@ -84,12 +64,7 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
 
     /// Represents all possible messages in `LocationAlwaysAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationAlwaysAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationAlwaysAlert")
     }
 
     /// System service alert element.
@@ -136,12 +111,7 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
 
     /// Represents all possible messages in `LocationUpgradeWhenInUseAlwaysAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationUpgradeWhenInUseAlwaysAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationUpgradeWhenInUseAlwaysAlert")
     }
 
     /// System service alert element.
@@ -188,12 +158,7 @@ public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationA
 
     /// Represents all possible messages in `LocationWhenInUseAlert` service alert.
     public static var messages: [String] {
-        guard let url = Bundle.autoMate.url(forResource: "LocationWhenInUseAlert", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
-            return []
-        }
-        return json.flatMap { $0.value }
+        return messages(from: "LocationWhenInUseAlert")
     }
 
     /// System service alert element.

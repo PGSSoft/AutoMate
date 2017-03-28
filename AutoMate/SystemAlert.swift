@@ -9,9 +9,35 @@
 import Foundation
 import XCTest
 
+// MARK: - System Messages helper protocol
+
+/// Helper protocol used to reads localized messages from JSON files.
+public protocol SystemMessages {
+    /// Returns all localized texts from a JSON file.
+    ///
+    /// - Parameter json: JSON file name, without the `json` extension.
+    /// - Returns: All localized tests read from the JSON.
+    static func messages(from json: String) -> [String]
+}
+
+extension SystemMessages {
+    /// Returns all localized texts from a JSON file.
+    ///
+    /// - Parameter json: JSON file name, without the `json` extension.
+    /// - Returns: All localized tests read from the JSON.
+    public static func messages(from json: String) -> [String] {
+        guard let url = Bundle.autoMate.url(forResource: json, withExtension: "json"),
+            let data = try? Data(contentsOf: url),
+            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String]] else {
+                return []
+        }
+        return json.flatMap { $0.value }
+    }
+}
+
 // MARK: - System alert protocols
 /// Protocol defining system alert allow element.
-public protocol SystemAlertAllow {
+public protocol SystemAlertAllow: SystemMessages {
     /// Allow messages.
     static var allow: [String] { get }
     /// Allow element.
@@ -19,7 +45,7 @@ public protocol SystemAlertAllow {
 }
 
 /// Protocol defining system alert deny element.
-public protocol SystemAlertDeny {
+public protocol SystemAlertDeny: SystemMessages {
     /// Deny messages.
     static var deny: [String] { get }
     /// Deny element.
@@ -27,7 +53,7 @@ public protocol SystemAlertDeny {
 }
 
 /// Protocol defining system alert ok element.
-public protocol SystemAlertOk {
+public protocol SystemAlertOk: SystemMessages {
     // swiftlint:disable identifier_name
     /// OK messages.
     static var ok: [String] { get }
@@ -37,7 +63,7 @@ public protocol SystemAlertOk {
 }
 
 /// Protocol defining system alert cancel element.
-public protocol SystemAlertCancel {
+public protocol SystemAlertCancel: SystemMessages {
     /// Cancel messages.
     static var cancel: [String] { get }
     /// Cancel element.
@@ -76,7 +102,7 @@ public protocol SystemAlertCancel {
 ///
 /// - note:
 /// Handlers should return `true` if they handled the UI, `false` if they did not.
-public protocol SystemAlert {
+public protocol SystemAlert: SystemMessages {
     /// Collection of messages possible to receive due to system service request.
     static var messages: [String] { get }
     /// Alert element.
