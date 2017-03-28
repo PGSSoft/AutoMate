@@ -1,4 +1,4 @@
-// swiftlint:disable variable_name type_body_length trailing_comma file_length line_length
+// swiftlint:disable identifier_name type_body_length trailing_comma file_length line_length
 /// Represents possible location service messages and label values on buttons.
 
 import XCTest
@@ -220,7 +220,7 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -302,7 +302,7 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -384,7 +384,7 @@ public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationA
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 

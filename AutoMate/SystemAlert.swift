@@ -28,10 +28,10 @@ public protocol SystemAlertDeny {
 
 /// Protocol defining system alert ok element.
 public protocol SystemAlertOk {
-    // swiftlint:disable variable_name
+    // swiftlint:disable identifier_name
     /// OK messages.
     static var ok: [String] { get }
-    // swiftlint:enable variable_name
+    // swiftlint:enable identifier_name
     /// OK element.
     var okElement: XCUIElement { get }
 }

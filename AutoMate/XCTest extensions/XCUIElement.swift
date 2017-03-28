@@ -42,7 +42,7 @@ public extension XCUIElement {
     /// It will fail if `value` is not a `String` type.
     public var text: String {
         guard let text = value as? String else {
-            preconditionFailure("Value: \(value) is not a String")
+            preconditionFailure("Value: \(String(describing: value)) is not a String")
         }
         return text
     }

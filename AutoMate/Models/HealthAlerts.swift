@@ -1,4 +1,4 @@
-// swiftlint:disable variable_name type_body_length trailing_comma file_length line_length
+// swiftlint:disable identifier_name type_body_length trailing_comma file_length line_length
 /// Represents possible health service messages and label values on buttons.
 
 import XCTest
@@ -310,7 +310,7 @@ public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 

@@ -1,4 +1,4 @@
-// swiftlint:disable variable_name type_body_length trailing_comma file_length line_length
+// swiftlint:disable identifier_name type_body_length trailing_comma file_length line_length
 /// Represents possible system service messages and label values on buttons.
 
 import XCTest
@@ -140,7 +140,7 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -222,7 +222,7 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -303,7 +303,7 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -384,7 +384,7 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -465,7 +465,7 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -548,7 +548,7 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -629,7 +629,7 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -711,7 +711,7 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -792,7 +792,7 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -873,7 +873,7 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -990,7 +990,7 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -1107,7 +1107,7 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 
@@ -1189,7 +1189,7 @@ public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     ///
     /// - Parameter element: An alert element.
     public init?(element: XCUIElement) {
-        guard let _ = element.staticTexts.elements(withLabelsLike: type(of: self).messages).first else {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
             return nil
         }
 

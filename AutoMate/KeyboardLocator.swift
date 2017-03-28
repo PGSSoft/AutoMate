@@ -45,6 +45,7 @@ public enum KeyboardLocator: String, Locator {
     case `return` = "Return"
 
     /// Go key.
+    // swiftlint:disable:next identifier_name
     case go = "Go"
 
     /// Google key.
