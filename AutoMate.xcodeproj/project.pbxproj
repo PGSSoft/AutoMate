@@ -43,6 +43,7 @@
 		963370141E8A791400273BF6 /* SystemAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF71E8A791400273BF6 /* SystemAlertDeny.json */; };
 		963370151E8A791400273BF6 /* WillowAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF81E8A791400273BF6 /* WillowAlert.json */; };
 		9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */; };
+		9666D6E41E8A7E5C00511000 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666D6E31E8A7E5C00511000 /* Bundle.swift */; };
 		966A7A1B1E54AA920026AE29 /* LocationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1A1E54AA920026AE29 /* LocationAlert.swift */; };
 		966A7A1D1E54AAAE0026AE29 /* HealthAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */; };
 		966A7FA61E6967630009122E /* KeyboardLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7FA51E6967630009122E /* KeyboardLocator.swift */; };
@@ -131,6 +132,7 @@
 		96336FF71E8A791400273BF6 /* SystemAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SystemAlertDeny.json; sourceTree = "<group>"; };
 		96336FF81E8A791400273BF6 /* WillowAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WillowAlert.json; sourceTree = "<group>"; };
 		9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Identifiable.swift"; sourceTree = "<group>"; };
+		9666D6E31E8A7E5C00511000 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		966A7A1A1E54AA920026AE29 /* LocationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlert.swift; sourceTree = "<group>"; };
 		966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlert.swift; sourceTree = "<group>"; };
 		966A7FA51E6967630009122E /* KeyboardLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLocator.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				E4535A4A1CEDD281008965DD /* Array.swift */,
+				9666D6E31E8A7E5C00511000 /* Bundle.swift */,
 				E4535A481CEDD259008965DD /* Dictionary.swift */,
 				E4C20FE91E39E73100052F11 /* String.swift */,
 			);
@@ -541,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B131D61E54BDD8007E3A04 /* HealthAlerts.swift in Sources */,
+				9666D6E41E8A7E5C00511000 /* Bundle.swift in Sources */,
 				E4535A461CEDC4AB008965DD /* LaunchOptionProtocol.swift in Sources */,
 				966B923A1E40D9D4006E6A18 /* ModalPage.swift in Sources */,
 				E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */,
