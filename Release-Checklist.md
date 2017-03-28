@@ -4,6 +4,7 @@
 - [ ] Update readme with new features.
 - [ ] Update CocoaPods and Carthage sections in readme.
 - [ ] Update changelog.
+- [ ] Update documentation using Jazzy.
 - [ ] Update version in Xcode - build version and short version
 - [ ] Update pod spec (version)
 - [ ] Merge feature branch to master.

@@ -1,10 +1,12 @@
 # Changelog
 
-## Unreleased
+## [1.2.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.2.0)
+Released on ????-??-??.
 
 #### Added
 - More generic version of `wait(...)` methods: `wait(forFulfillmentOf predicate:...)`.
 - `wait(forInvisibilityOf...)` method which is waiting for element to disappear.
+- Compatibility with Xcode 8.3 and Swift 3.1.
 
 ## [1.1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.1.0)
 Released on 2017-03-15.
