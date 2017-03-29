@@ -11,9 +11,7 @@ import Foundation
 extension Bundle {
 
     /// AutoMate Bundle Identifier
-    public class var autoMateIdentifier: String {
-        return "com.pgs-soft.AutoMate"
-    }
+    public static let autoMateIdentifier = "com.pgs-soft.AutoMate"
 
     /// AutoMate framework bundle
     public class var autoMate: Bundle {

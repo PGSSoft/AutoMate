@@ -7,7 +7,7 @@ extension HealthAlertAllow {
 
     /// Represents all possible "allow" buttons in HealthKit permission view.
     public static var allow: [String] {
-        return messages(from: "HealthAlertAllow")
+        return readMessages(from: "HealthAlertAllow")
     }
 }
 
@@ -15,7 +15,7 @@ extension HealthAlertDeny {
 
     /// Represents all possible "deny" buttons in HealthKit permission view.
     public static var deny: [String] {
-        return messages(from: "HealthAlertDeny")
+        return readMessages(from: "HealthAlertDeny")
     }
 }
 
@@ -23,7 +23,7 @@ extension HealthAlertOk {
 
     /// Represents all possible "ok" buttons in HealthKit permission view.
     public static var ok: [String] {
-        return messages(from: "HealthAlertOk")
+        return readMessages(from: "HealthAlertOk")
     }
 }
 
@@ -31,7 +31,7 @@ extension HealthAlertTurnOffAll {
 
     /// Represents all possible "turnOffAll" buttons in HealthKit permission view.
     public static var turnOffAll: [String] {
-        return messages(from: "HealthAlertTurnOffAll")
+        return readMessages(from: "HealthAlertTurnOffAll")
     }
 }
 
@@ -39,15 +39,15 @@ extension HealthAlertTurnOnAll {
 
     /// Represents all possible "turnOnAll" buttons in HealthKit permission view.
     public static var turnOnAll: [String] {
-        return messages(from: "HealthAlertTurnOnAll")
+        return readMessages(from: "HealthAlertTurnOnAll")
     }
 }
 
-public extension HealthPermissionPage {
+extension HealthPermissionPage {
 
     /// Represents all possible messages in HealthKit permission view.
     public static var messages: [String] {
-        return messages(from: "HealthPermissionPage")
+        return readMessages(from: "HealthPermissionPage")
     }
 }
 
@@ -79,9 +79,7 @@ public extension HealthPermissionPage {
 public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
 
     /// Represents all possible messages in `HealthAuthorizationDontAllowAlert` service alert.
-    public static var messages: [String] {
-        return messages(from: "HealthAuthorizationDontAllowAlert")
-    }
+    public static let messages = readMessages(from: "HealthAuthorizationDontAllowAlert")
 
     /// System service alert element.
     public var alert: XCUIElement

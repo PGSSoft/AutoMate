@@ -7,7 +7,7 @@ extension LocationAlertAllow {
 
     /// Represents all possible "allow" buttons in location service messages.
     public static var allow: [String] {
-        return messages(from: "LocationAlertAllow")
+        return readMessages(from: "LocationAlertAllow")
     }
 }
 
@@ -15,7 +15,7 @@ extension LocationAlertCancel {
 
     /// Represents all possible "cancel" buttons in location service messages.
     public static var cancel: [String] {
-        return messages(from: "LocationAlertCancel")
+        return readMessages(from: "LocationAlertCancel")
     }
 }
 
@@ -23,7 +23,7 @@ extension LocationAlertDeny {
 
     /// Represents all possible "deny" buttons in location service messages.
     public static var deny: [String] {
-        return messages(from: "LocationAlertDeny")
+        return readMessages(from: "LocationAlertDeny")
     }
 }
 
@@ -31,7 +31,7 @@ extension LocationAlertOk {
 
     /// Represents all possible "ok" buttons in location service messages.
     public static var ok: [String] {
-        return messages(from: "LocationAlertOk")
+        return readMessages(from: "LocationAlertOk")
     }
 }
 
@@ -63,9 +63,7 @@ extension LocationAlertOk {
 public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
 
     /// Represents all possible messages in `LocationAlwaysAlert` service alert.
-    public static var messages: [String] {
-        return messages(from: "LocationAlwaysAlert")
-    }
+    public static let messages = readMessages(from: "LocationAlwaysAlert")
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -110,9 +108,7 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
 public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
 
     /// Represents all possible messages in `LocationUpgradeWhenInUseAlwaysAlert` service alert.
-    public static var messages: [String] {
-        return messages(from: "LocationUpgradeWhenInUseAlwaysAlert")
-    }
+    public static let messages = readMessages(from: "LocationUpgradeWhenInUseAlwaysAlert")
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -157,9 +153,7 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
 public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
 
     /// Represents all possible messages in `LocationWhenInUseAlert` service alert.
-    public static var messages: [String] {
-        return messages(from: "LocationWhenInUseAlert")
-    }
+    public static let messages = readMessages(from: "LocationWhenInUseAlert")
 
     /// System service alert element.
     public var alert: XCUIElement
