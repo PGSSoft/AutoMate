@@ -79,7 +79,7 @@ extension HealthPermissionPage {
 public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
 
     /// Represents all possible messages in `HealthAuthorizationDontAllowAlert` service alert.
-    public static let messages = readMessages(from: "HealthAuthorizationDontAllowAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement

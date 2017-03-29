@@ -25,7 +25,7 @@ extension SystemMessages {
     ///
     /// - Parameter json: JSON file name, without the `json` extension.
     /// - Returns: All localized tests read from the JSON.
-    public static func readMessages(from json: String) -> [String] {
+    public static func readMessages(from json: String = String(describing: Self.self)) -> [String] {
         guard let url = Bundle.autoMate.url(forResource: json, withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let json = try? JSONSerialization.jsonObject(with: data),

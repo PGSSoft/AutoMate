@@ -63,7 +63,7 @@ extension LocationAlertOk {
 public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
 
     /// Represents all possible messages in `LocationAlwaysAlert` service alert.
-    public static let messages = readMessages(from: "LocationAlwaysAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -108,7 +108,7 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
 public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
 
     /// Represents all possible messages in `LocationUpgradeWhenInUseAlwaysAlert` service alert.
-    public static let messages = readMessages(from: "LocationUpgradeWhenInUseAlwaysAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -153,7 +153,7 @@ public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAll
 public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
 
     /// Represents all possible messages in `LocationWhenInUseAlert` service alert.
-    public static let messages = readMessages(from: "LocationWhenInUseAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement

@@ -47,7 +47,7 @@ extension SystemAlertDeny {
 public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `AddressBookAlert` service alert.
-    public static let messages = readMessages(from: "AddressBookAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -92,7 +92,7 @@ public struct AddressBookAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `BluetoothPeripheralAlert` service alert.
-    public static let messages = readMessages(from: "BluetoothPeripheralAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -137,7 +137,7 @@ public struct BluetoothPeripheralAlert: SystemAlert, SystemAlertAllow, SystemAle
 public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `CalendarAlert` service alert.
-    public static let messages = readMessages(from: "CalendarAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -182,7 +182,7 @@ public struct CalendarAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `CallsAlert` service alert.
-    public static let messages = readMessages(from: "CallsAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -227,7 +227,7 @@ public struct CallsAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `CameraAlert` service alert.
-    public static let messages = readMessages(from: "CameraAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -272,7 +272,7 @@ public struct CameraAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `MediaLibraryAlert` service alert.
-    public static let messages = readMessages(from: "MediaLibraryAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -317,7 +317,7 @@ public struct MediaLibraryAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny 
 public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `MicrophoneAlert` service alert.
-    public static let messages = readMessages(from: "MicrophoneAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -362,7 +362,7 @@ public struct MicrophoneAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `MotionAlert` service alert.
-    public static let messages = readMessages(from: "MotionAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -407,7 +407,7 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `PhotosAlert` service alert.
-    public static let messages = readMessages(from: "PhotosAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -452,7 +452,7 @@ public struct PhotosAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `RemindersAlert` service alert.
-    public static let messages = readMessages(from: "RemindersAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -497,7 +497,7 @@ public struct RemindersAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `SiriAlert` service alert.
-    public static let messages = readMessages(from: "SiriAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -542,7 +542,7 @@ public struct SiriAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `SpeechRecognitionAlert` service alert.
-    public static let messages = readMessages(from: "SpeechRecognitionAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
@@ -587,7 +587,7 @@ public struct SpeechRecognitionAlert: SystemAlert, SystemAlertAllow, SystemAlert
 public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
 
     /// Represents all possible messages in `WillowAlert` service alert.
-    public static let messages = readMessages(from: "WillowAlert")
+    public static let messages = readMessages()
 
     /// System service alert element.
     public var alert: XCUIElement
