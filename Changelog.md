@@ -1,7 +1,7 @@
 # Changelog
 
 ## [1.2.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.2.0)
-Released on ????-??-??.
+Released on 2017-03-29.
 
 #### Added
 - More generic version of `wait(...)` methods: `wait(forFulfillmentOf predicate:...)`.
