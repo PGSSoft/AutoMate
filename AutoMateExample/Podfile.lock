@@ -1,5 +1,5 @@
 PODS:
-  - AutoMate-AppBuddy (1.0.0)
+  - AutoMate-AppBuddy (1.1.0)
 
 DEPENDENCIES:
   - AutoMate-AppBuddy (from `https://github.com/PGSSoft/AutoMate-AppBuddy`, branch `develop`)
@@ -11,11 +11,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AutoMate-AppBuddy:
-    :commit: f33821264f62095cf784a8a1e47775adad6679b3
+    :commit: b1facb159745d60cbcaf71ca6d022df559418056
     :git: https://github.com/PGSSoft/AutoMate-AppBuddy
 
 SPEC CHECKSUMS:
-  AutoMate-AppBuddy: 3396a08c2587602655b9b6806d4c1645c67512a7
+  AutoMate-AppBuddy: b9d371ce7956c70262e40865f2d919571261ba00
 
 PODFILE CHECKSUM: 7d17c1645b2b52bddba34d61977b0403c06fc363
 
