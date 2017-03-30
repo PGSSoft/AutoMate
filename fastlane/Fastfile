@@ -53,27 +53,21 @@ platform :ios do
     # Options
     device = options[:device]
     destination = options[:destination]
-    disable_keyboard = options[:disable_keyboard]
 
-    # Normalize parameters
-    if device.nil? && destination.nil?
-      device = "iPhone 7 (10.2)"  # Default value.
-    elsif not destination.nil?
-      device = nil                # Remove `device` if `destination` is set.
-    end
-
-    # Disable keyboard on Simulators
-    if disable_keyboard
-      SimCtl.list_devices.each do |d| 
-        d.settings.disable_keyboard_helpers
-      end
-    end
+    disable_keyboard_helpers
 
     # Scan
     scan(
       device: device,
       destination: destination
     )
+  end
+
+  desc "Disable keyboard helpers"
+  private_lane :disable_keyboard_helpers do |options|
+    SimCtl.list_devices.each do |d| 
+      d.settings.disable_keyboard_helpers
+    end
   end
 
   # You can define as many lanes as you want

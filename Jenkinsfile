@@ -24,7 +24,7 @@ node("ios_ui") {
           killall -9 -u $(id -un) "Simulator" || true
           killall -9 -u $(id -un) "launchd_sim" || true
           killall -9 -u $(id -un) "com.apple.CoreSimulator.CoreSimulatorService" || true
-          ps -u $(id -un) -o pid,comm | grep Xcode | awk '{print $1}' | xargs kill -9
+          ps -u $(id -un) -o pid,comm | grep Xcode | awk '{print $1}' | xargs kill -9 || true
         '''
       }
 
