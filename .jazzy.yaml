@@ -8,38 +8,6 @@ custom_categories:
       - Custom arguments
       - Launch environments
       - AutoMate environments
-  - name: Launch arguments
-    children:
-      - SystemLanguages
-      - SystemLocale
-      - SoftwareKeyboards
-      - HardwareKeyboards
-      - SystemKeyboards
-      - CoreDataOption
-      - LocalizedStrings
-
-      - LaunchArgument
-      - LaunchArgumentWithSingleValue
-      - LaunchArgumentWithMultipleValues
-      - LaunchArgumentValue
-  - name: Launch environments
-    children:
-      - EventLaunchEnvironment
-      - ReminderLaunchEnvironment
-      - ContactLaunchEnvironment
-      - AnimationLaunchEnvironment
-      - AutoMateLaunchEnvironment
-
-      - LaunchEnvironment
-      - LaunchEnvironments
-
-      - LaunchEnvironmentProtocol
-      - LaunchEnvironmentWithSingleValue
-      - LaunchEnvironmentWithMultipleValues
-      - CleanableLaunchEnvironment
-      - CleanableLaunchEnvironmentWithMultipleValues
-      - LaunchEnvironmentValue
-      - LaunchEnvironmentResourceValue
   - name: XCTest
     children:
       - AppUITestCase
@@ -79,3 +47,35 @@ custom_categories:
       - SiriAlert
       - SpeechRecognitionAlert
       - WillowAlert
+  - name: Launch arguments
+    children:
+      - SystemLanguages
+      - SystemLocale
+      - SoftwareKeyboards
+      - HardwareKeyboards
+      - SystemKeyboards
+      - CoreDataOption
+      - LocalizedStrings
+
+      - LaunchArgument
+      - LaunchArgumentWithSingleValue
+      - LaunchArgumentWithMultipleValues
+      - LaunchArgumentValue
+  - name: Launch environments
+    children:
+      - EventLaunchEnvironment
+      - ReminderLaunchEnvironment
+      - ContactLaunchEnvironment
+      - AnimationLaunchEnvironment
+      - AutoMateLaunchEnvironment
+
+      - LaunchEnvironment
+      - LaunchEnvironments
+
+      - LaunchEnvironmentProtocol
+      - LaunchEnvironmentWithSingleValue
+      - LaunchEnvironmentWithMultipleValues
+      - CleanableLaunchEnvironment
+      - CleanableLaunchEnvironmentWithMultipleValues
+      - LaunchEnvironmentValue
+      - LaunchEnvironmentResourceValue

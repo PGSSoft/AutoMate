@@ -55,10 +55,8 @@ public protocol SystemAlertDeny: SystemMessages {
 
 /// Protocol defining system alert ok element.
 public protocol SystemAlertOk: SystemMessages {
-    // swiftlint:disable identifier_name
     /// OK messages.
-    static var ok: [String] { get }
-    // swiftlint:enable identifier_name
+    static var ok: [String] { get } // swiftlint:disable:this identifier_name
     /// OK element.
     var okElement: XCUIElement { get }
 }

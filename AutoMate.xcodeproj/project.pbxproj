@@ -13,6 +13,7 @@
 		1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995571D51CBFA0037CD1F /* XCTestCase.swift */; };
 		1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
 		9602D0921E54F53B001EC313 /* HealthPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */; };
+		96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
 		96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDC1E8A791400273BF6 /* AddressBookAlert.json */; };
 		96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */; };
 		96336FFB1E8A791400273BF6 /* CalendarAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDE1E8A791400273BF6 /* CalendarAlert.json */; };
@@ -103,6 +104,7 @@
 		1FC995571D51CBFA0037CD1F /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQuery.swift; sourceTree = "<group>"; };
 		9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPermissionPage.swift; sourceTree = "<group>"; };
+		96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Locator.swift"; sourceTree = "<group>"; };
 		96336FDC1E8A791400273BF6 /* AddressBookAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddressBookAlert.json; sourceTree = "<group>"; };
 		96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BluetoothPeripheralAlert.json; sourceTree = "<group>"; };
 		96336FDE1E8A791400273BF6 /* CalendarAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CalendarAlert.json; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				1FA6372E1D50692800D22156 /* XCUIApplication.swift */,
 				1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */,
 				1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */,
+				96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */,
 				1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */,
 			);
 			path = "XCTest extensions";
@@ -583,6 +586,7 @@
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
 				96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */,
 				966A7A1B1E54AA920026AE29 /* LocationAlert.swift in Sources */,
+				96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */,
 				966B923E1E40DA24006E6A18 /* PushedPage.swift in Sources */,
 				E4C20FE81E39DBBE00052F11 /* AutoMateLaunchEnvironments.swift in Sources */,
 				E4B2C9711E31F5D600737688 /* LaunchEnvironments.swift in Sources */,
