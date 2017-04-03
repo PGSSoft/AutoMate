@@ -26,7 +26,9 @@ public extension XCUIElementQuery {
 
     /// Returns element with label matching provided string.
     ///
+    /// - note:
     /// String matching is customizable with operators available in `NSPredicate` specification.
+    /// Check the `StringComparisonOperator` for available options.
     ///
     /// **Example:**
     ///
@@ -47,6 +49,10 @@ public extension XCUIElementQuery {
     ///
     /// Can be used to find a cell which `UILabel`, with provided `identifier`, contains text provided by `label`.
     ///
+    /// - note:
+    /// String matching is customizable with operators available in `NSPredicate` specification.
+    /// Check the `StringComparisonOperator` for available options.
+    ///
     /// **Example:**
     ///
     /// ```swift
@@ -65,6 +71,10 @@ public extension XCUIElementQuery {
     /// Returns element with identifier and label matching provided values.
     ///
     /// Can be used to find a cell which `UILabel`, with provided `identifier`, contains text provided by `label`.
+    ///
+    /// - note:
+    /// String matching is customizable with operators available in `NSPredicate` specification.
+    /// Check the `StringComparisonOperator` for available options.
     ///
     /// **Example:**
     ///
@@ -86,6 +96,10 @@ public extension XCUIElementQuery {
     /// Can be used to find a `UILabel` with given identifier and localized labels.
     /// Localized texts are provided in the `labels` parameter.
     ///
+    /// - note:
+    /// String matching is customizable with operators available in `NSPredicate` specification.
+    /// Check the `StringComparisonOperator` for available options.
+    ///
     /// **Example:**
     ///
     /// ```swift
@@ -101,10 +115,16 @@ public extension XCUIElementQuery {
         return element(withIdentifier: locator.identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
     }
 
-    /// Returns element that contains children matching provided identifier-label dictionary.
+    /// Returns element that contains children matching provided locator-label dictionary.
     ///
-    /// Searches for element that has sub-elements matching provided "identifier:label" pairs.
+    /// Searches for element that has sub-elements matching provided "locator:label" pairs.
     /// Especially useful for table views and collection views where cells will have the same identifier.
+    ///
+    /// - note:
+    /// String matching is customizable with operators available in `NSPredicate` specification.
+    /// Check the `StringComparisonOperator` for available options.
+    ///
+    /// - note: This method is intended to be used with table and collection views, where cells have to be identified by their contents.
     ///
     /// **Example:**
     ///
@@ -114,13 +134,39 @@ public extension XCUIElementQuery {
     /// XCTAssertTrue(cell.exists)
     /// ```
     ///
-    /// - note: This method is intended to be used with table and collection views, where cells have to be identified by their contents.
-    ///
     /// - Parameters:
-    ///   - dictionary: Dictionary of identifiers and labels to search for.
+    ///   - dictionary: Dictionary of locators and labels to search for.
     ///   - labelsComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifiers and labels match to given locators and texts.
     public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
+        return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
+    }
+
+    /// Returns element that contains children matching provided locator-label dictionary.
+    ///
+    /// Searches for element that has sub-elements matching provided "locator:label" pairs.
+    /// Especially useful for table views and collection views where cells will have the same identifier.
+    ///
+    /// - note:
+    /// String matching is customizable with operators available in `NSPredicate` specification.
+    /// Check the `StringComparisonOperator` for available options.
+    ///
+    /// - note: This method is intended to be used with table and collection views, where cells have to be identified by their contents.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let tableView = app.tables.element
+    /// let cell = tableView.cells.element(containingLabels: [Locators.name: ["John*", "Jan*"], Locators.email: ["Free*", "Wolny*"]], labelsComparisonOperator: .like)
+    /// XCTAssertTrue(cell.exists)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - dictionary: Dictionary of locators and labels to search for.
+    ///   - labelsComparisonOperator: Operation to use when performing comparison.
+    /// - Returns: `XCUIElement` that identifiers and labels match to given locators and texts.
+    public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: [String]], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
         return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
     }

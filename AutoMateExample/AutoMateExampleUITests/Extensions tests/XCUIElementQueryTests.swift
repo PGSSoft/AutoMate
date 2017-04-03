@@ -76,6 +76,7 @@ class XCUIElementQueryTests: AppUITestCase {
         mainPage.goToTablePageMenu()
 
         let firstCellOfAKind = tablePage.cells.element(containingLabels: [Locators.title: "Kind A", Locators.subtitle: "1st cell"])
+        let firstCellOfAKinds = tablePage.cells.element(containingLabels: [Locators.title: ["Kind A", "Rodzaj A"], Locators.subtitle: ["1st cell", "Pierwszy wiersz"]])
         let secondCellOfBKind = tablePage.cells.element(containingLabels: [Locators.title: "*B", Locators.rightDetail: "2*"], labelsComparisonOperator: .like)
         let creditCell = tablePage.cells.element(containingLabels: [Locators.credit: "with love"], labelsComparisonOperator: .contains)
         let wrongRightDetailCell = tablePage.cells.element(containingLabels: [Locators.title: "Kind B", Locators.rightDetail: "3rd"])
@@ -83,6 +84,9 @@ class XCUIElementQueryTests: AppUITestCase {
 
         XCTAssertTrue(firstCellOfAKind.isHittable)
         firstCellOfAKind.tap()
+
+        XCTAssertTrue(firstCellOfAKinds.isHittable)
+        firstCellOfAKinds.tap()
 
         XCTAssertTrue(secondCellOfBKind.isHittable)
         secondCellOfBKind.tap()
