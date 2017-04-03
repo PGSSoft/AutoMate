@@ -89,16 +89,16 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.staticTexts.element(withIdentifier: Locators.title, labels: ["Z miłością przez", "Made with love by"])
+    /// let cell = app.staticTexts.element(withLocator: Locators.title, labels: ["Z miłością przez", "Made with love by"])
     /// ```
     ///
     /// - Parameters:
-    ///   - identifier: Identifier of element to search for.
+    ///   - locator: Identifier of element to search for.
     ///   - labels: Labels of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match given texts.
-    public func element(withIdentifier identifier: Locator, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        return element(withIdentifier: identifier.identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
+    public func element(withLocator locator: Locator, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withIdentifier: locator.identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
     }
 
     /// Returns element that contains children matching provided identifier-label dictionary.
