@@ -29,6 +29,15 @@ Useful to find a cell which `UILabel`, with provided `identifier`, contains text
 let cell = app.cells.element(withIdentifier: "title", label: "Made with love")
 ```
 
+`element(withIdentifier:labels:labelComparisonOperator:)` can be used to find localized element with given identifier.
+E.g. to find label with identifier `state` and label which can by localized with texts: "open", "otwarty", "öffnen":
+
+**Example:**
+
+```swift
+let label = app.staticTexts.element(withIdentifier: "state", labels: ["open", "otwarty", "öffnen"])
+```
+
 `element(containingLabels:labelsComparisonOperator:)` is an extension to previous method.
 Searches for element that has sub-elements matching provided "identifier:label" pairs.
 Especially useful for table views and collection views where cells will have the same identifier. 

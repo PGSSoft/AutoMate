@@ -89,7 +89,7 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.staticTexts.element(withIdentifier: "title", labels: ["Z miłością przez", "Made with love by"])
+    /// let cell = app.staticTexts.element(withIdentifier: Locators.title, labels: ["Z miłością przez", "Made with love by"])
     /// ```
     ///
     /// - Parameters:
