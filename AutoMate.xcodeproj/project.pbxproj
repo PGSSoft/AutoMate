@@ -55,6 +55,7 @@
 		966B923E1E40DA24006E6A18 /* PushedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedPage.swift */; };
 		96B131D61E54BDD8007E3A04 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */; };
 		96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
+		96EB345C1E927773000C0B2B /* XCUIElementQuery+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
 		C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
@@ -146,6 +147,7 @@
 		966B923D1E40DA24006E6A18 /* PushedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedPage.swift; sourceTree = "<group>"; };
 		96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlerts.swift; sourceTree = "<group>"; };
 		96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
+		96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Predicate.swift"; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestAlerts.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */,
 				1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */,
 				96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */,
+				96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */,
 				1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */,
 			);
 			path = "XCTest extensions";
@@ -561,6 +564,7 @@
 				E4DDEDA81E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift in Sources */,
 				E4DDEDAA1E3A351300C2F2A1 /* LaunchEnvironmentValue.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
+				96EB345C1E927773000C0B2B /* XCUIElementQuery+Predicate.swift in Sources */,
 				1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */,
 				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
 				E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */,

@@ -56,7 +56,7 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.cells.element(withLocator: Locators.title, label: Locators.madeWithLove)
+    /// let label = app.staticTexts.element(withLocator: Locators.title, label: Locators.madeWithLove)
     /// ```
     ///
     /// - Parameters:
@@ -79,7 +79,7 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.cells.element(withLocator: Locators.title, label: "Made with love")
+    /// let label = app.staticTexts.element(withLocator: Locators.title, label: "Made with love")
     /// ```
     ///
     /// - Parameters:
@@ -103,7 +103,7 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.staticTexts.element(withLocator: Locators.title, labels: ["Z miłością przez", "Made with love by"])
+    /// let label = app.staticTexts.element(withLocator: Locators.title, labels: ["Z miłością przez", "Made with love by"])
     /// ```
     ///
     /// - Parameters:

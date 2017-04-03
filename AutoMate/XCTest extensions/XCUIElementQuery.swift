@@ -114,7 +114,7 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.cells.element(withIdentifier: "title", label: "Made with love")
+    /// let label = app.staticTexts.element(withIdentifier: "title", label: "Made with love")
     /// ```
     ///
     /// - Parameters:
@@ -139,7 +139,7 @@ public extension XCUIElementQuery {
     /// **Example:**
     ///
     /// ```swift
-    /// let cell = app.staticTexts.element(withIdentifier: "title", labels: ["Z miłością przez", "Made with love by"])
+    /// let label = app.staticTexts.element(withIdentifier: "title", labels: ["Z miłością przez", "Made with love by"])
     /// ```
     ///
     /// - Parameters:
@@ -148,10 +148,7 @@ public extension XCUIElementQuery {
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match given texts.
     public func element(withIdentifier identifier: String, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        let identifierPredicate = NSPredicate(format: "identifier == %@", identifier)
-        let labelsPredicates = labels.map { NSPredicate(format: "label \(labelComparisonOperator.rawValue) %@", $0) }
-        let labelPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: labelsPredicates)
-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [identifierPredicate, labelPredicate])
+        let predicate = type(of: self).predicate(withIdentifier: identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
         return element(matching: predicate)
     }
 
@@ -213,14 +210,9 @@ public extension XCUIElementQuery {
     ///   - comparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifiers and labels match given texts.
     public func element(containingLabels dictionary: [String: [String]], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
-        let identifierString = "identifier == %@"
-        let labelString = "label \(comparisonOperator.rawValue) %@"
         var query = self
         for (identifier, labels) in dictionary {
-            let identifierPredicate = NSPredicate(format: identifierString, identifier)
-            let labelsPredicates = labels.map { NSPredicate(format: labelString, $0) }
-            let labelPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: labelsPredicates)
-            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [identifierPredicate, labelPredicate])
+            let predicate = type(of: self).predicate(withIdentifier: identifier, labels: labels, labelComparisonOperator: comparisonOperator)
             query = query.containing(predicate)
         }
 
