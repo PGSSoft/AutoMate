@@ -81,6 +81,26 @@ public extension XCUIElementQuery {
         return element(withIdentifier: locator.identifier, label: label, labelComparisonOperator: labelComparisonOperator)
     }
 
+    /// Returns element with identifier and label matching one of provided values.
+    ///
+    /// Can be used to find a `UILabel` with given identifier and localized labels.
+    /// Localized texts are provided in the `labels` parameter.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let cell = app.staticTexts.element(withIdentifier: "title", labels: ["Z miłością przez", "Made with love by"])
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - identifier: Identifier of element to search for.
+    ///   - labels: Labels of element to search for.
+    ///   - labelComparisonOperator: Operation to use when performing comparison.
+    /// - Returns: `XCUIElement` that identifier and label match given texts.
+    public func element(withIdentifier identifier: Locator, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        return element(withIdentifier: identifier.identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
+    }
+
     /// Returns element that contains children matching provided identifier-label dictionary.
     ///
     /// Searches for element that has sub-elements matching provided "identifier:label" pairs.

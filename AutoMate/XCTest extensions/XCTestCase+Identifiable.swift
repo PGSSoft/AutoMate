@@ -15,11 +15,13 @@ import XCTest
 /// **Example:**
 ///
 /// ```swift
-/// open class MainPage: BaseAppPage, IdentifiableByElement {
+/// open class MainPage: BaseAppPage {
 ///     open var tableView: XCUIElement {
 ///         return view.tables["tableView"]
 ///     }
+/// }
 ///
+/// extension MainPage: IdentifiableByElement {
 ///     public var identifingElement: XCUIElement {
 ///         return tableView
 ///     }

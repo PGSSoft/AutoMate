@@ -117,6 +117,30 @@ public extension XCUIElementQuery {
         return element(matching: predicate)
     }
 
+    /// Returns element with identifier and label matching one of provided values.
+    ///
+    /// Can be used to find a `UILabel` with given identifier and localized labels.
+    /// Localized texts are provided in the `labels` parameter.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let cell = app.staticTexts.element(withIdentifier: "title", labels: ["Z miłością przez", "Made with love by"])
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - identifier: Identifier of element to search for.
+    ///   - labels: Labels of element to search for.
+    ///   - labelComparisonOperator: Operation to use when performing comparison.
+    /// - Returns: `XCUIElement` that identifier and label match given texts.
+    public func element(withIdentifier identifier: String, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+        let identifierPredicate = NSPredicate(format: "identifier == %@", identifier)
+        let labelsPredicates = labels.map { NSPredicate(format: "label \(labelComparisonOperator.rawValue) %@", $0) }
+        let labelPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: labelsPredicates)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [identifierPredicate, labelPredicate])
+        return element(matching: predicate)
+    }
+
     /// Returns element that contains children matching provided identifier-label dictionary.
     ///
     /// Searches for element that has sub-elements matching provided "identifier:label" pairs.

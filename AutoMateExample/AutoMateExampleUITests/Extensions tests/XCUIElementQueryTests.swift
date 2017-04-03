@@ -33,6 +33,7 @@ class XCUIElementQueryTests: AppUITestCase {
         let creditCellLabelBeginsWith = app.any.element(withLabelMatching: "Made", comparisonOperator: .beginsWith)
         let creditCellLabelEndsWith = app.any.element(withLabelMatching: "love by", comparisonOperator: .endsWith)
         let creditCellLabelContains = app.any.element(withLabelMatching: "with love", comparisonOperator: .contains)
+        let creditCallLabel = app.any.element(withIdentifier: Locators.credit, labels: ["Z miłością przez", "Made with love by"])
 
         XCTAssertTrue(creditCellLabelDefault.isHittable)
         creditCellLabelDefault.tap()
@@ -54,6 +55,9 @@ class XCUIElementQueryTests: AppUITestCase {
 
         XCTAssertTrue(creditCellLabelContains.isHittable)
         creditCellLabelContains.tap()
+
+        XCTAssertTrue(creditCallLabel.isHittable)
+        creditCallLabel.tap()
     }
 
     func testElementMatchingIdentifier() {
