@@ -87,23 +87,26 @@ public extension XCUIElement {
     /// - Parameters:
     ///   - element: Element to scroll to.
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
-    ///   - app: Application instance to use when searching for keyboard to avoid
+    ///   - app: Application instance to use when searching for keyboard to avoid.
     public func swipe(to element: XCUIElement, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
         let swipeLength: CGFloat = 0.9
         var scrollableArea = frame
 
         viewsToAviod.forEach {
             scrollableArea = $0.overlapReminder(of: scrollableArea, in: app)
-            print(scrollableArea)
         }
         assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
 
         func scroll(deltaY: CGFloat, condition: () -> (Bool)) {
             var oldElementFrame = element.frame
             while condition() {
-                // calculate swipe points so that they fit into scrollabel area
-                let offset = scrollableArea.height / frame.height * (deltaY / 2)
-                let center = scrollableArea.height / 2 / frame.height
+                // Calculate swipe points so that they fit into scrollabel area
+                let verticalScale = scrollableArea.height / frame.height
+                // Offset from the center. "Almost" half of the element height.
+                let offset = verticalScale * (deltaY / 2)
+                // Center of the scrollable area in the element coordinate space.
+                // Value in range <0, 1>.
+                let center = scrollableArea.midY / frame.height
 
                 swipe(from: CGVector(dx: 0.5, dy: center + offset), to: CGVector(dx: 0.5, dy: center - offset))
                 guard oldElementFrame != element.frame else {
@@ -113,8 +116,8 @@ public extension XCUIElement {
             }
         }
 
-        scroll(deltaY: swipeLength) { element.frame.maxY > scrollableArea.maxY }
-        scroll(deltaY: -swipeLength) { element.frame.minY < scrollableArea.minY }
+        scroll(deltaY: swipeLength) { element.frame.maxY > scrollableArea.maxY }    // Swipe down.
+        scroll(deltaY: -swipeLength) { element.frame.minY < scrollableArea.minY }   // Swipe up.
 
         assert(scrollableArea.contains(element.frame), "Failed to reveal element.")
     }
