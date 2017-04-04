@@ -106,9 +106,10 @@ public extension XCUIElement {
                 let offset = verticalScale * (deltaY / 2)
                 // Center of the scrollable area in the element coordinate space.
                 // Value in range <0, 1>.
-                let center = scrollableArea.midY / frame.height
+                let center = (scrollableArea.midY - frame.minY) / frame.height
 
                 swipe(from: CGVector(dx: 0.5, dy: center + offset), to: CGVector(dx: 0.5, dy: center - offset))
+                // Stop scrolling if element position was not changed.
                 guard oldElementFrame != element.frame else {
                     break
                 }
