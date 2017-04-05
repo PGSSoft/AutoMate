@@ -66,6 +66,8 @@ public extension XCUIElement {
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
         let p1 = coordinate(withNormalizedOffset: startVector)
         let p2 = coordinate(withNormalizedOffset: stopVector)
+        print("start: \(startVector), end:\(stopVector)")
+        print("p1: \(p1.screenPoint), p2:\(p2.screenPoint)")
         p1.press(forDuration: 0.1, thenDragTo: p2)
     }
 
@@ -97,28 +99,75 @@ public extension XCUIElement {
         }
         assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
 
-        func scroll(deltaY: CGFloat, condition: () -> (Bool)) {
-            var oldElementFrame = element.frame
-            while condition() {
-                // Calculate swipe points so that they fit into scrollable area
-                let verticalScale = scrollableArea.height / frame.height
-                // Offset from the center. "Almost" half of the element height.
-                let offset = verticalScale * (deltaY / 2)
-                // Center of the scrollable area in the element coordinate space.
-                // Value in range <0, 1>.
-                let center = (scrollableArea.midY - frame.minY) / frame.height
+        // Distance from scrollable area center to element center.
+        func distanceVector() -> CGVector {
+            return scrollableArea.center.vector(to: element.frame.center)
+        }
 
-                swipe(from: CGVector(dx: 0.5, dy: center + offset), to: CGVector(dx: 0.5, dy: center - offset))
-                // Stop scrolling if element position was not changed.
-                guard oldElementFrame != element.frame else {
+        func scroll(deltaX: CGFloat,  deltaY: CGFloat, condition: () -> (Bool)) {
+            var oldVector = distanceVector()
+            while condition() {
+
+                // Available scrollable space (normalized).
+                let normalizedAvailableSpace = CGSize(
+                    width: scrollableArea.width / frame.width,
+                    height: scrollableArea.height / frame.height
+                )
+
+                // Max swipe offset in both directions (normalized).
+                let maxNormalizedOffset = CGSize(
+                    width: normalizedAvailableSpace.width * deltaX,
+                    height: normalizedAvailableSpace.height * deltaY
+                )
+
+                // Max swipe offset in both directions.
+                let maxOffset = CGSize(
+                    width: maxNormalizedOffset.width * frame.width,
+                    height: maxNormalizedOffset.height * frame.height
+                )
+
+                // Max vector. It cannot be bigger than maxOffset.
+                let vector = distanceVector()
+                let maxVector = CGVector(
+                    dx: max(min(vector.dx, maxOffset.width), -maxOffset.width),
+                    dy: max(min(vector.dy, maxOffset.height), -maxOffset.height)
+                )
+
+                // Max normalized vector.
+                let maxNormalizedVector = CGVector(
+                    dx: maxVector.dx / frame.width,
+                    dy: maxVector.dy / frame.height
+                )
+
+                // Normalized center point.
+                let normalizedCenter = CGPoint(
+                    x: (scrollableArea.midX - frame.minX) / frame.width,
+                    y: (scrollableArea.midY - frame.minY) / frame.height
+                )
+
+                // Start point.
+                let normalizedStartPoint = CGPoint(
+                    x: normalizedCenter.x + maxNormalizedVector.dx / 2,
+                    y: normalizedCenter.y + maxNormalizedVector.dy / 2
+                )
+
+                // Stop point.
+                let normalizedStopPoint = CGPoint(
+                    x: normalizedCenter.x - maxNormalizedVector.dx / 2,
+                    y: normalizedCenter.y - maxNormalizedVector.dy / 2
+                )
+
+                swipe(from: normalizedStartPoint.vector, to: normalizedStopPoint.vector)
+                // Stop scrolling if distance to element was not changed.
+                guard oldVector != distanceVector() else {
                     break
                 }
-                oldElementFrame = element.frame
+                oldVector = distanceVector()
             }
         }
 
-        scroll(deltaY: swipeLength) { element.frame.maxY > scrollableArea.maxY }    // Swipe down.
-        scroll(deltaY: -swipeLength) { element.frame.minY < scrollableArea.minY }   // Swipe up.
+        scroll(deltaX: swipeLength, deltaY: swipeLength) { element.frame.maxY > scrollableArea.maxY }   // Swipe down.
+        scroll(deltaX: swipeLength, deltaY: swipeLength) { element.frame.minY < scrollableArea.minY }   // Swipe up.
 
         assert(scrollableArea.contains(element.frame), "Failed to reveal element.")
     }
