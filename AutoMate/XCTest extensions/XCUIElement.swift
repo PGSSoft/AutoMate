@@ -66,8 +66,6 @@ public extension XCUIElement {
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
         let p1 = coordinate(withNormalizedOffset: startVector)
         let p2 = coordinate(withNormalizedOffset: stopVector)
-        print("start: \(startVector), end:\(stopVector)")
-        print("p1: \(p1.screenPoint), p2:\(p2.screenPoint)")
         p1.press(forDuration: 0.1, thenDragTo: p2)
     }
 
