@@ -17,11 +17,12 @@ extension CGRect {
 }
 
 extension CGPoint {
+
+    /// Returns vector between two points.
+    ///
+    /// - Parameter point: Destination point.
+    /// - Returns: Vectory between `self` and `point`.
     func vector(to point: CGPoint) -> CGVector {
         return CGVector(dx: point.x - x, dy: point.y - y)
-    }
-
-    var vector: CGVector {
-        return CGVector(dx: x, dy: y)
     }
 }

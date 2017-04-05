@@ -114,16 +114,10 @@ public extension XCUIElement {
                     height: scrollableArea.height / frame.height
                 )
 
-                // Max swipe offset in both directions (normalized).
-                let maxNormalizedOffset = CGSize(
-                    width: normalizedAvailableSpace.width * deltaX,
-                    height: normalizedAvailableSpace.height * deltaY
-                )
-
                 // Max swipe offset in both directions.
                 let maxOffset = CGSize(
-                    width: maxNormalizedOffset.width * frame.width,
-                    height: maxNormalizedOffset.height * frame.height
+                    width: frame.width * normalizedAvailableSpace.width * deltaX,
+                    height: frame.height * normalizedAvailableSpace.height * deltaY
                 )
 
                 // Max vector. It cannot be bigger than maxOffset.
@@ -140,24 +134,26 @@ public extension XCUIElement {
                 )
 
                 // Normalized center point.
-                let normalizedCenter = CGPoint(
-                    x: (scrollableArea.midX - frame.minX) / frame.width,
-                    y: (scrollableArea.midY - frame.minY) / frame.height
+                let normalizedCenter = CGVector(
+                    dx: (scrollableArea.midX - frame.minX) / frame.width,
+                    dy: (scrollableArea.midY - frame.minY) / frame.height
                 )
 
-                // Start point.
-                let normalizedStartPoint = CGPoint(
-                    x: normalizedCenter.x + maxNormalizedVector.dx / 2,
-                    y: normalizedCenter.y + maxNormalizedVector.dy / 2
+                // Start vector.
+                let normalizedStartVector = CGVector(
+                    dx: normalizedCenter.dx + maxNormalizedVector.dx / 2,
+                    dy: normalizedCenter.dy + maxNormalizedVector.dy / 2
                 )
 
-                // Stop point.
-                let normalizedStopPoint = CGPoint(
-                    x: normalizedCenter.x - maxNormalizedVector.dx / 2,
-                    y: normalizedCenter.y - maxNormalizedVector.dy / 2
+                // Stop vector.
+                let normalizedStopVector = CGVector(
+                    dx: normalizedCenter.dx - maxNormalizedVector.dx / 2,
+                    dy: normalizedCenter.dy - maxNormalizedVector.dy / 2
                 )
 
-                swipe(from: normalizedStartPoint.vector, to: normalizedStopPoint.vector)
+                // Swipe.
+                swipe(from: normalizedStartVector, to: normalizedStopVector)
+
                 // Stop scrolling if distance to element was not changed.
                 guard oldVector != distanceVector() else {
                     break
