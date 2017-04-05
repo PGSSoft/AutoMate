@@ -44,14 +44,17 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testComplexSwipe() {
         mainPage.goToScrollPageMenu()
 
-        XCTAssertTrue(scrollPage.isTopButtonDisplayed() && !scrollPage.isBottomButtonDisplayed())
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed())
+        XCTAssertFalse(scrollPage.isBottomButtonDisplayed())
 
         scrollPage.scrollView.swipe(to: scrollPage.bottomButton)
-        XCTAssertFalse(scrollPage.isTopButtonDisplayed() && scrollPage.isBottomButtonDisplayed())
+        XCTAssertFalse(scrollPage.isTopButtonDisplayed())
+        XCTAssertTrue(scrollPage.isBottomButtonDisplayed())
         scrollPage.bottomButton.tap()
 
         scrollPage.scrollView.swipe(to: scrollPage.topButton)
-        XCTAssertTrue(scrollPage.isTopButtonDisplayed() && !scrollPage.isBottomButtonDisplayed())
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed())
+        XCTAssertFalse(scrollPage.isBottomButtonDisplayed())
         scrollPage.topButton.tap()
     }
 
@@ -61,7 +64,10 @@ class XCUIElementExtensionTests: AppUITestCase {
         scrollPage.textField.tap()
         scrollPage.textField.typeText("AutoMate")
 
-        XCTAssertTrue(scrollPage.isTopButtonDisplayed() && !scrollPage.isMiddleButton1Displayed() && !scrollPage.isMiddleButton2Displayed())
+        XCTAssertTrue(scrollPage.isTopButtonDisplayed())
+        XCTAssertFalse(scrollPage.isMiddleButton1Displayed())
+        XCTAssertFalse(scrollPage.isMiddleButton2Displayed())
+        XCTAssertFalse(scrollPage.isBottomButtonDisplayed())
 
         scrollPage.scrollView.swipe(to: scrollPage.middleButton1)
         XCTAssertTrue(scrollPage.isMiddleButton1Displayed())

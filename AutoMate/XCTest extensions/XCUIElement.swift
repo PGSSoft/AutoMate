@@ -160,8 +160,6 @@ public extension XCUIElement {
             }
             oldDistance = newDistance
         }
-
-        assert(scrollableArea.contains(element.frame.center), "Failed to reveal element.")
     }
 
     /// Remove text from textField or secureTextField.
