@@ -104,9 +104,9 @@ public extension XCUIElement {
             return scrollableArea.center.vector(to: element.frame.center)
         }
 
-        func scroll(deltaX: CGFloat,  deltaY: CGFloat, condition: () -> (Bool)) {
+        func scroll(deltaX: CGFloat, deltaY: CGFloat) {
             var oldVector = distanceVector()
-            while condition() {
+            while !scrollableArea.contains(element.frame.center) {
 
                 // Available scrollable space (normalized).
                 let normalizedAvailableSpace = CGSize(
@@ -166,8 +166,7 @@ public extension XCUIElement {
             }
         }
 
-        scroll(deltaX: swipeLength, deltaY: swipeLength) { element.frame.maxY > scrollableArea.maxY }   // Swipe down.
-        scroll(deltaX: swipeLength, deltaY: swipeLength) { element.frame.minY < scrollableArea.minY }   // Swipe up.
+        scroll(deltaX: swipeLength, deltaY: swipeLength)
 
         assert(scrollableArea.contains(element.frame), "Failed to reveal element.")
     }
