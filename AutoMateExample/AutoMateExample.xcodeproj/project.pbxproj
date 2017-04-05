@@ -42,6 +42,8 @@
 		967448291E559A8B000B42BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967448281E559A8B000B42BB /* CalendarViewController.swift */; };
 		9674482B1E559CF9000B42BB /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482A1E559CF9000B42BB /* MotionViewController.swift */; };
 		9674482D1E55A61D000B42BB /* PermissionsSubPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */; };
+		969087C71E9505D7007974FB /* ScrollingHorizontallyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969087C61E9505D7007974FB /* ScrollingHorizontallyViewController.swift */; };
+		969087CA1E950A72007974FB /* ScrollVerticallyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969087C91E950A72007974FB /* ScrollVerticallyPage.swift */; };
 		969CC2821E4216AE00995A49 /* TextInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2811E4216AE00995A49 /* TextInputPage.swift */; };
 		969CC2851E421AE700995A49 /* MiddleButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2841E421AE700995A49 /* MiddleButtonPage.swift */; };
 		969CC2891E421FE500995A49 /* AppearingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CC2881E421FE500995A49 /* AppearingPage.swift */; };
@@ -77,8 +79,8 @@
 		E488262B1E72BC1200AB1E98 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48826291E72BC1200AB1E98 /* ReminderTableViewCell.swift */; };
 		E488262C1E72BC1200AB1E98 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E488262A1E72BC1200AB1E98 /* ReminderTableViewCell.xib */; };
 		E488262E1E72BCA900AB1E98 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488262D1E72BCA900AB1E98 /* EventViewModel.swift */; };
-		E4977AAF1E6EB7AA00ABFBE7 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; };
-		E4977AB21E6EBB4100ABFBE7 /* ReferenceProxy in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4977AAF1E6EB7AA00ABFBE7 /* AutoMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; };
+		E4977AB21E6EBB4100ABFBE7 /* AutoMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4458A881E6E97B300EC6743 /* AutoMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4A905911E6030B5002081EA /* LaunchOptionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A905901E6030B5002081EA /* LaunchOptionsHandler.swift */; };
 		E4BA7C7A1E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C791E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift */; };
 		E4BA7C7C1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA7C7B1E5B245900593B52 /* LaunchEnvironmentTableDataSource.swift */; };
@@ -133,7 +135,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E4977AB21E6EBB4100ABFBE7 /* ReferenceProxy in Embed Frameworks */,
+				E4977AB21E6EBB4100ABFBE7 /* AutoMate.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +186,8 @@
 		967448281E559A8B000B42BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9674482A1E559CF9000B42BB /* MotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionViewController.swift; sourceTree = "<group>"; };
 		9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsSubPages.swift; sourceTree = "<group>"; };
+		969087C61E9505D7007974FB /* ScrollingHorizontallyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingHorizontallyViewController.swift; sourceTree = "<group>"; };
+		969087C91E950A72007974FB /* ScrollVerticallyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVerticallyPage.swift; sourceTree = "<group>"; };
 		969CC2811E4216AE00995A49 /* TextInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputPage.swift; sourceTree = "<group>"; };
 		969CC2841E421AE700995A49 /* MiddleButtonPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleButtonPage.swift; sourceTree = "<group>"; };
 		969CC2881E421FE500995A49 /* AppearingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearingPage.swift; sourceTree = "<group>"; };
@@ -245,7 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4977AAF1E6EB7AA00ABFBE7 /* ReferenceProxy in Frameworks */,
+				E4977AAF1E6EB7AA00ABFBE7 /* AutoMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +299,7 @@
 				1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */,
 				96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */,
 				96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */,
+				969087C61E9505D7007974FB /* ScrollingHorizontallyViewController.swift */,
 				962FAAC31D9144F6000592EF /* ScrollingViewController.swift */,
 				1F9891A81D409547007CD2B0 /* Assets.xcassets */,
 				E437D7F11E5B1B96001C6477 /* AutoMateLaunchEnviroments */,
@@ -336,6 +341,7 @@
 				9621BBCD1E42090C001A9C2C /* PushedPage.swift */,
 				E43E3D921E76F2A40055E635 /* RemindersListPage.swift */,
 				9621BBD11E420E25001A9C2C /* ScrollPage.swift */,
+				969087C91E950A72007974FB /* ScrollVerticallyPage.swift */,
 				9621BBCA1E4206C6001A9C2C /* TablePage.swift */,
 				969CC2811E4216AE00995A49 /* TextInputPage.swift */,
 			);
@@ -719,6 +725,7 @@
 				E48826261E729F2100AB1E98 /* RemindersDataStore.swift in Sources */,
 				967448231E5593AE000B42BB /* BluetoothViewController.swift in Sources */,
 				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
+				969087C71E9505D7007974FB /* ScrollingHorizontallyViewController.swift in Sources */,
 				E457E9001E5C96A4006B08B5 /* LaunchEnvironmentsTableViewController.swift in Sources */,
 				962FAAC41D9144F6000592EF /* ScrollingViewController.swift in Sources */,
 				965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */,
@@ -764,6 +771,7 @@
 				969CC28B1E42204500995A49 /* AdditionalExtensionsTests.swift in Sources */,
 				E45BBB131E6E997B001BA04B /* EventKitData.swift in Sources */,
 				9641182D1E41F8E90011C776 /* XCUIElementQueryTests.swift in Sources */,
+				969087CA1E950A72007974FB /* ScrollVerticallyPage.swift in Sources */,
 				96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */,
 				9670CC1F1E77D90C00A1134E /* ContactsData.swift in Sources */,
 				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,

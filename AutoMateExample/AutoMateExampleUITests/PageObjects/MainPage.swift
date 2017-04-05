@@ -29,6 +29,10 @@ open class MainPage: BaseAppPage {
         return menu(withTitle: Locators.scrollViewMenu)
     }
 
+    open var scrollVerticallyViewMenu: XCUIElement {
+        return menu(withTitle: Locators.scrollVerticallyViewMenu)
+    }
+
     open var permissionsViewMenu: XCUIElement {
         return menu(withTitle: Locators.permissionsViewMenu)
     }
@@ -54,8 +58,12 @@ open class MainPage: BaseAppPage {
         appearingMenu.tap()
     }
 
-    open func goToScrollPageMenu() {
+    open func goToScrollMenu() {
         scrollViewMenu.tap()
+    }
+
+    open func goToScrollVerticallyMenu() {
+        scrollVerticallyViewMenu.tap()
     }
 
     open func goToPermissionsPageMenu() {
@@ -98,6 +106,7 @@ private extension MainPage {
         case textInputMenu = "Text input"
         case appearingViewMenu = "Appearing view"
         case scrollViewMenu = "Scroll view"
+        case scrollVerticallyViewMenu = "Scroll vertically view"
         case permissionsViewMenu = "Permissions"
         case middleButtonMenu = "Middle button"
         case tableViewMenu = "Table view"

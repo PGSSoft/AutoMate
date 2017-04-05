@@ -15,6 +15,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     lazy var mainPage: MainPage = MainPage(in: self.app)
     lazy var textInputPage: TextInputPage = TextInputPage(in: self.app)
     lazy var scrollPage: ScrollPage = ScrollPage(in: self.app)
+    lazy var scrollVerticallyPage: ScrollVerticallyPage = ScrollVerticallyPage(in: self.app)
     lazy var middleButtonPage: MiddleButtonPage = MiddleButtonPage(in: self.app)
 
     // MARK: Set up
@@ -26,7 +27,7 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     // MARK: Tests
     func testIsVisible() {
-        mainPage.goToScrollPageMenu()
+        mainPage.goToScrollMenu()
 
         XCTAssertFalse(scrollPage.bottomButton.isVisible)
         scrollPage.bottomButton.tap()
@@ -34,7 +35,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     }
 
     func testSimpleSwipe() {
-        mainPage.goToScrollPageMenu()
+        mainPage.goToScrollMenu()
 
         XCTAssertTrue(scrollPage.isTopButtonDisplayed())
         scrollPage.scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
@@ -42,7 +43,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     }
 
     func testComplexSwipe() {
-        mainPage.goToScrollPageMenu()
+        mainPage.goToScrollMenu()
 
         XCTAssertTrue(scrollPage.isTopButtonDisplayed())
         XCTAssertFalse(scrollPage.isBottomButtonDisplayed())
@@ -59,7 +60,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     }
 
     func testComplexSwipeWithKeyboard() {
-        mainPage.goToScrollPageMenu()
+        mainPage.goToScrollMenu()
 
         scrollPage.textField.tap()
         scrollPage.textField.typeText("AutoMate")
@@ -77,6 +78,59 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         scrollPage.scrollView.swipe(to: scrollPage.middleButton1)
         XCTAssertTrue(scrollPage.isMiddleButton1Displayed())
+    }
+
+    // swiftlint:disable:next function_body_length
+    func testVerticalSwipe() {
+        mainPage.goToScrollVerticallyMenu()
+
+        XCTAssertTrue(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
+
+        scrollVerticallyPage.scrollView.swipe(to: scrollVerticallyPage.middleButton)
+        XCTAssertFalse(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertTrue(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
+
+        scrollVerticallyPage.scrollView.swipe(to: scrollVerticallyPage.bottomLeftButton)
+        XCTAssertFalse(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertTrue(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
+
+        scrollVerticallyPage.scrollView.swipe(to: scrollVerticallyPage.bottomRightButton)
+        XCTAssertFalse(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertTrue(scrollVerticallyPage.isBottomRightButtonDisplayed())
+
+        scrollVerticallyPage.scrollView.swipe(to: scrollVerticallyPage.middleButton)
+        XCTAssertFalse(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertTrue(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
+
+        scrollVerticallyPage.scrollView.swipe(to: scrollVerticallyPage.topRightButton)
+        XCTAssertFalse(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertTrue(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
+
+        scrollVerticallyPage.scrollView.swipe(to: scrollVerticallyPage.topLeftButton)
+        XCTAssertTrue(scrollVerticallyPage.isTopLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
+        XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
     }
 
     func testClearTextField() {
