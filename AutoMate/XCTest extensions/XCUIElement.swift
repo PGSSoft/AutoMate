@@ -82,7 +82,7 @@ public extension XCUIElement {
     /// ```
     ///
     /// - note:
-    ///   `XCTest` automatically does the scrolling during `tap()`, but the method is still useful in some situations, for example to reveal element from behind keyboard, navigation bar or userdefined element.
+    ///   `XCTest` automatically does the scrolling during `tap()`, but the method is still useful in some situations, for example to reveal element from behind keyboard, navigation bar or user defined element.
     /// - note:
     ///   This method assumes that element is scrollable and at least partially visible on the screen.
     ///
@@ -91,7 +91,8 @@ public extension XCUIElement {
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
     public func swipe(to element: XCUIElement, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
-        let swipeLength: CGFloat = 0.9
+        let deltaX: CGFloat = 0.9
+        let deltaY: CGFloat = 0.9
         var scrollableArea = frame
 
         viewsToAviod.forEach {
@@ -104,67 +105,64 @@ public extension XCUIElement {
             return scrollableArea.center.vector(to: element.frame.center)
         }
 
-        func scroll(deltaX: CGFloat, deltaY: CGFloat) {
-            var oldVector = distanceVector()
-            while !scrollableArea.contains(element.frame.center) {
+        // Scroll until center of the element will be visible.
+        var oldVector = distanceVector()
+        while !scrollableArea.contains(element.frame.center) {
 
-                // Available scrollable space (normalized).
-                let normalizedAvailableSpace = CGSize(
-                    width: scrollableArea.width / frame.width,
-                    height: scrollableArea.height / frame.height
-                )
+            // Available scrollable space (normalized).
+            let normalizedAvailableSpace = CGSize(
+                width: scrollableArea.width / frame.width,
+                height: scrollableArea.height / frame.height
+            )
 
-                // Max swipe offset in both directions.
-                let maxOffset = CGSize(
-                    width: frame.width * normalizedAvailableSpace.width * deltaX,
-                    height: frame.height * normalizedAvailableSpace.height * deltaY
-                )
+            // Max swipe offset in both directions.
+            let maxOffset = CGSize(
+                width: frame.width * normalizedAvailableSpace.width * deltaX,
+                height: frame.height * normalizedAvailableSpace.height * deltaY
+            )
 
-                // Max vector. It cannot be bigger than maxOffset.
-                let vector = distanceVector()
-                let maxVector = CGVector(
-                    dx: max(min(vector.dx, maxOffset.width), -maxOffset.width),
-                    dy: max(min(vector.dy, maxOffset.height), -maxOffset.height)
-                )
+            // Max vector. It cannot be bigger than maxOffset.
+            let vector = distanceVector()
+            let maxVector = CGVector(
+                dx: max(min(vector.dx, maxOffset.width), -maxOffset.width),
+                dy: max(min(vector.dy, maxOffset.height), -maxOffset.height)
+            )
 
-                // Max normalized vector.
-                let maxNormalizedVector = CGVector(
-                    dx: maxVector.dx / frame.width,
-                    dy: maxVector.dy / frame.height
-                )
+            // Max normalized vector.
+            let maxNormalizedVector = CGVector(
+                dx: maxVector.dx / frame.width,
+                dy: maxVector.dy / frame.height
+            )
 
-                // Normalized center point.
-                let normalizedCenter = CGVector(
-                    dx: (scrollableArea.midX - frame.minX) / frame.width,
-                    dy: (scrollableArea.midY - frame.minY) / frame.height
-                )
+            // Normalized center point.
+            let normalizedCenter = CGVector(
+                dx: (scrollableArea.midX - frame.minX) / frame.width,
+                dy: (scrollableArea.midY - frame.minY) / frame.height
+            )
 
-                // Start vector.
-                let normalizedStartVector = CGVector(
-                    dx: normalizedCenter.dx + maxNormalizedVector.dx / 2,
-                    dy: normalizedCenter.dy + maxNormalizedVector.dy / 2
-                )
+            // Start vector.
+            let normalizedStartVector = CGVector(
+                dx: normalizedCenter.dx + maxNormalizedVector.dx / 2,
+                dy: normalizedCenter.dy + maxNormalizedVector.dy / 2
+            )
 
-                // Stop vector.
-                let normalizedStopVector = CGVector(
-                    dx: normalizedCenter.dx - maxNormalizedVector.dx / 2,
-                    dy: normalizedCenter.dy - maxNormalizedVector.dy / 2
-                )
+            // Stop vector.
+            let normalizedStopVector = CGVector(
+                dx: normalizedCenter.dx - maxNormalizedVector.dx / 2,
+                dy: normalizedCenter.dy - maxNormalizedVector.dy / 2
+            )
 
-                // Swipe.
-                swipe(from: normalizedStartVector, to: normalizedStopVector)
+            // Swipe.
+            swipe(from: normalizedStartVector, to: normalizedStopVector)
 
-                // Stop scrolling if distance to element was not changed.
-                guard oldVector != distanceVector() else {
-                    break
-                }
-                oldVector = distanceVector()
+            // Stop scrolling if distance to element was not changed.
+            guard oldVector != distanceVector() else {
+                break
             }
+            oldVector = distanceVector()
         }
 
-        scroll(deltaX: swipeLength, deltaY: swipeLength)
-
-        assert(scrollableArea.contains(element.frame), "Failed to reveal element.")
+        assert(scrollableArea.contains(element.frame.center), "Failed to reveal element.")
     }
 
     /// Remove text from textField or secureTextField.
