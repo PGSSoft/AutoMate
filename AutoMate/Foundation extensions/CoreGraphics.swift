@@ -26,3 +26,10 @@ extension CGPoint {
         return CGVector(dx: point.x - x, dy: point.y - y)
     }
 }
+
+extension CGVector {
+    /// Returns Manhattan distance.
+    var manhattanDistance: CGFloat {
+        return abs(dx) + abs(dy)
+    }
+}

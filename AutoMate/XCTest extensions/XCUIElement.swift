@@ -106,7 +106,7 @@ public extension XCUIElement {
         }
 
         // Scroll until center of the element will be visible.
-        var oldVector = distanceVector()
+        var oldDistance = distanceVector().manhattanDistance
         while !scrollableArea.contains(element.frame.center) {
 
             // Available scrollable space (normalized).
@@ -156,10 +156,11 @@ public extension XCUIElement {
             swipe(from: normalizedStartVector, to: normalizedStopVector)
 
             // Stop scrolling if distance to element was not changed.
-            guard oldVector != distanceVector() else {
+            let newDistance = distanceVector().manhattanDistance
+            guard oldDistance > newDistance else {
                 break
             }
-            oldVector = distanceVector()
+            oldDistance = newDistance
         }
 
         assert(scrollableArea.contains(element.frame.center), "Failed to reveal element.")
