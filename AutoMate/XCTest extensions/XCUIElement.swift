@@ -100,7 +100,7 @@ public extension XCUIElement {
         func scroll(deltaY: CGFloat, condition: () -> (Bool)) {
             var oldElementFrame = element.frame
             while condition() {
-                // Calculate swipe points so that they fit into scrollabel area
+                // Calculate swipe points so that they fit into scrollable area
                 let verticalScale = scrollableArea.height / frame.height
                 // Offset from the center. "Almost" half of the element height.
                 let offset = verticalScale * (deltaY / 2)
