@@ -138,14 +138,18 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToCollectionViewMenu()
 
         let element0 = collectionPage.cell(with: "0")
-        let element50 = collectionPage.cell(with: "50")
+        let element10 = collectionPage.cell(with: "10")
 
         XCTAssertTrue(element0.isVisible)
-        XCTAssertFalse(element50.exists)
+        XCTAssertFalse(element10.exists)
 
-        collectionPage.collectionView.swipe(to: .down, untilExist: element50)
+        collectionPage.collectionView.swipe(to: .down, untilExist: element10)
         XCTAssertFalse(element0.exists)
-        XCTAssertTrue(element50.exists)
+        XCTAssertTrue(element10.exists)
+
+        collectionPage.collectionView.swipe(to: element10)
+        XCTAssertFalse(element0.exists)
+        XCTAssertTrue(element10.isVisible)
     }
 
     func testClearTextField() {

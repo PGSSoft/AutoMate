@@ -15,7 +15,7 @@ let scroll = app.scrollViews.element
 scroll.swipe(from: CGVector(dx: 0, dy: 0), to: CGVector(dx: 1, dy: 1))
 ```
 
-`swipe(to:avoidKeyboard:from:)` variation scrolls the screen until given element becomes visible.
+`swipe(to:avoid:from:)` variation scrolls the screen until given element becomes visible.
 Note that `XCTest` automatically does the scrolling during `tap()`, but the method is still useful in some situations,
 for example to reveal element from behind keyboard.
 
@@ -25,6 +25,18 @@ for example to reveal element from behind keyboard.
 let scroll = app.scrollViews.element
 let button = scroll.buttons.element
 scroll.swipe(to: button)
+```
+
+`swipe(to:untilExist:times:,avoid:,from:)` swipes scroll view to given direction until element would exist. It is a useful method to scroll collection view to reveal an element.
+In collection view, only a few cells are available in the hierarchy. To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
+The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.
+
+**Example:**
+
+```swift
+let collectionView = app.collectionViews.element
+let element = collectionView.staticTexts["More"]
+collectionView.swipe(to: .down, untilExist: element)
 ```
 
 `clearTextField()` and `clear(andType:)` provides straightforward method to delete text from text field and then type the provided string.

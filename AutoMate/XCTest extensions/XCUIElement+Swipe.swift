@@ -114,12 +114,44 @@ extension XCUIElement {
         }
     }
 
+    /// Swipes scroll view to given direction until element would exist.
+    ///
+    /// A useful method to scroll collection view to reveal an element.
+    /// In collection view, only a few cells are available in the hierarchy.
+    /// To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
+    /// The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let collectionView = app.collectionViews.element
+    /// let element = collectionView.staticTexts["More"]
+    /// collectionView.swipe(to: .down, untilExist: element)
+    /// // Optional
+    /// collectionView.swipe(to: element)
+    /// ```
+    ///
+    /// - note:
+    ///   This method will not scroll untile the view will be visible. To do this call `swipe(to:avoid:from:)` after this method.
+    ///
+    /// - Parameters:
+    ///   - direction: Swipe direction.
+    ///   - element: Element to swipe to.
+    ///   - times: Maximum number of swipes.
+    ///   - viewsToAviod: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
+    ///   - app: Application instance to use when searching for keyboard to avoid.
     public func swipe(to direction: SwipeDirection, untilExist element: XCUIElement, times: Int = 10, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
 
         let scrollableArea = self.scrollableArea(avoid: viewsToAviod, from: app)
 
         // Swipe `times` times in the provided direction.
         for _ in 0..<times {
+
+            // Stop scrolling when element will exists.
+            guard !element.exists else {
+                break
+            }
+
             // Max swipe offset in both directions.
             let maxOffset = CGSize(
                 width: scrollableArea.width * swipeLengthX,
@@ -133,6 +165,33 @@ extension XCUIElement {
             case .left: vector = CGVector(dx: -maxOffset.width, dy: 0)
             case .right: vector = CGVector(dx: maxOffset.width, dy: 0)
             }
+
+            // Max possible distance to swipe (normalized).
+            let maxNormalizedVector = CGVector(
+                dx: vector.dx / frame.width,
+                dy: vector.dy / frame.height
+            )
+
+            // Center point.
+            let center = CGPoint(
+                x: (scrollableArea.midX - frame.minX) / frame.width,
+                y: (scrollableArea.midY - frame.minY) / frame.height
+            )
+
+            // Start vector.
+            let startVector = CGVector(
+                dx: center.x + maxNormalizedVector.dx / 2,
+                dy: center.y + maxNormalizedVector.dy / 2
+            )
+
+            // Stop vector.
+            let stopVector = CGVector(
+                dx: center.x - maxNormalizedVector.dx / 2,
+                dy: center.y - maxNormalizedVector.dy / 2
+            )
+
+            // Swipe.
+            swipe(from: startVector, to: stopVector)
         }
     }
 }
