@@ -286,3 +286,20 @@ public enum AvoidableElement {
                             from: edge).remainder
     }
 }
+
+/// Swipe direction.
+///
+/// - `up`: Swipe up.
+/// - `down`: Swipe down.
+/// - `left`: Swipe to the left.
+/// - `right`: Swipe to the right.
+public enum SwipeDirection {
+    /// Swipe up.
+    case up
+    /// Swipe down.
+    case down
+    /// Swipe to the left.
+    case left
+    /// Swipe to the right.
+    case right
+}

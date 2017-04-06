@@ -143,7 +143,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertTrue(element0.isVisible)
         XCTAssertFalse(element50.exists)
 
-        collectionPage.collectionView.swipe(in: 0, untilExist: element50)
+        collectionPage.collectionView.swipe(to: .down, untilExist: element50)
         XCTAssertFalse(element0.exists)
         XCTAssertTrue(element50.exists)
     }
