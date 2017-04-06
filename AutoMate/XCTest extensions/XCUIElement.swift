@@ -113,39 +113,40 @@ public extension XCUIElement {
                 height: scrollableArea.height * swipeLengthY
             )
 
-            // Max vector. It cannot be bigger than maxOffset.
+            // Max possible distance to swipe (in points).
+            // It cannot be bigger than `maxOffset`.
             let vector = distanceVector()
             let maxVector = CGVector(
                 dx: max(min(vector.dx, maxOffset.width), -maxOffset.width),
                 dy: max(min(vector.dy, maxOffset.height), -maxOffset.height)
             )
 
-            // Max normalized vector.
+            // Max possible distance to swipe (normalized).
             let maxNormalizedVector = CGVector(
                 dx: maxVector.dx / frame.width,
                 dy: maxVector.dy / frame.height
             )
 
-            // Normalized center point.
-            let normalizedCenter = CGVector(
-                dx: (scrollableArea.midX - frame.minX) / frame.width,
-                dy: (scrollableArea.midY - frame.minY) / frame.height
+            // Center point.
+            let center = CGPoint(
+                x: (scrollableArea.midX - frame.minX) / frame.width,
+                y: (scrollableArea.midY - frame.minY) / frame.height
             )
 
             // Start vector.
-            let normalizedStartVector = CGVector(
-                dx: normalizedCenter.dx + maxNormalizedVector.dx / 2,
-                dy: normalizedCenter.dy + maxNormalizedVector.dy / 2
+            let startVector = CGVector(
+                dx: center.x + maxNormalizedVector.dx / 2,
+                dy: center.y + maxNormalizedVector.dy / 2
             )
 
             // Stop vector.
-            let normalizedStopVector = CGVector(
-                dx: normalizedCenter.dx - maxNormalizedVector.dx / 2,
-                dy: normalizedCenter.dy - maxNormalizedVector.dy / 2
+            let stopVector = CGVector(
+                dx: center.x - maxNormalizedVector.dx / 2,
+                dy: center.y - maxNormalizedVector.dy / 2
             )
 
             // Swipe.
-            swipe(from: normalizedStartVector, to: normalizedStopVector)
+            swipe(from: startVector, to: stopVector)
 
             // Stop scrolling if distance to element was not changed.
             let newDistance = distanceVector().manhattanDistance
