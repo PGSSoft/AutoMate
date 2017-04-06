@@ -57,6 +57,7 @@
 		96B131D61E54BDD8007E3A04 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */; };
 		96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
 		96EB345C1E927773000C0B2B /* XCUIElementQuery+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */; };
+		96EF94EC1E96388300F1391C /* XCUIElement+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
 		C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
@@ -150,6 +151,7 @@
 		96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlerts.swift; sourceTree = "<group>"; };
 		96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
 		96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Predicate.swift"; sourceTree = "<group>"; };
+		96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Swipe.swift"; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestAlerts.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */,
 				1FA6372E1D50692800D22156 /* XCUIApplication.swift */,
 				1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */,
+				96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */,
 				1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */,
 				96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */,
 				96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */,
@@ -575,6 +578,7 @@
 				C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */,
 				966A7A1D1E54AAAE0026AE29 /* HealthAlert.swift in Sources */,
 				96412D521E8B887300508909 /* Sequence.swift in Sources */,
+				96EF94EC1E96388300F1391C /* XCUIElement+Swipe.swift in Sources */,
 				1F9AE7221D4B4A6C00027033 /* XCUIElement.swift in Sources */,
 				E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */,
 				1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */,
