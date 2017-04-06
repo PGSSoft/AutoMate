@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LaunchEnvironment Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/LaunchEnvironment" class="dashAnchor"></a>
+    <a title="LaunchEnvironment Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">AutoMate Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">AutoMate Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LaunchEnvironment Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/TestLauncher.html">TestLauncher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../system-arguments.html">System arguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../custom-arguments.html">Custom arguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../launch-environments.html">Launch environments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../automate-environments.html">AutoMate environments</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Launch arguments.html">Launch arguments</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/SystemLanguages.html">SystemLanguages</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SystemLocale.html">SystemLocale</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SoftwareKeyboards.html">SoftwareKeyboards</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HardwareKeyboards.html">HardwareKeyboards</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SystemKeyboards.html">SystemKeyboards</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CoreDataOption.html">CoreDataOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CoreDataOption/VerbosityLevel.html">– VerbosityLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CoreDataOption/DiskSyncing.html">– DiskSyncing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LocalizedStrings.html">LocalizedStrings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchArgument.html">LaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchArgumentWithSingleValue.html">LaunchArgumentWithSingleValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchArgumentWithMultipleValues.html">LaunchArgumentWithMultipleValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchArgumentValue.html">LaunchArgumentValue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Launch environments.html">Launch environments</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/EventLaunchEnvironment.html">EventLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReminderLaunchEnvironment.html">ReminderLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContactLaunchEnvironment.html">ContactLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnimationLaunchEnvironment.html">AnimationLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AutoMateLaunchEnvironment.html">AutoMateLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironment.html">LaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironments.html">LaunchEnvironments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchEnvironmentProtocol.html">LaunchEnvironmentProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchEnvironmentWithSingleValue.html">LaunchEnvironmentWithSingleValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchEnvironmentWithMultipleValues.html">LaunchEnvironmentWithMultipleValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CleanableLaunchEnvironment.html">CleanableLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CleanableLaunchEnvironmentWithMultipleValues.html">CleanableLaunchEnvironmentWithMultipleValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchEnvironmentValue.html">LaunchEnvironmentValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironmentResourceValue.html">LaunchEnvironmentResourceValue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../XCTest.html">XCTest</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppUITestCase.html">AppUITestCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/XCTestCase.html">XCTestCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/XCUIApplication.html">XCUIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/XCUIElement.html">XCUIElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/XCUIElementQuery.html">XCUIElementQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Page objects.html">Page objects</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BaseAppPageProtocol.html">BaseAppPageProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseAppPage.html">BaseAppPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ModalPage.html">ModalPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PushedPage.html">PushedPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HealthPermissionPage.html">HealthPermissionPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HealthPermissionPage/Locators.html">– Locators</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Locators.html">Locators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Locator.html">Locator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KeyboardLocator.html">KeyboardLocator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../System alerts.html">System alerts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemAlert.html">SystemAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HealthAuthorizationDontAllowAlert.html">HealthAuthorizationDontAllowAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LocationAlwaysAlert.html">LocationAlwaysAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LocationUpgradeWhenInUseAlwaysAlert.html">LocationUpgradeWhenInUseAlwaysAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LocationWhenInUseAlert.html">LocationWhenInUseAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AddressBookAlert.html">AddressBookAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BluetoothPeripheralAlert.html">BluetoothPeripheralAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CalendarAlert.html">CalendarAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CallsAlert.html">CallsAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CameraAlert.html">CameraAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MediaLibraryAlert.html">MediaLibraryAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MicrophoneAlert.html">MicrophoneAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MotionAlert.html">MotionAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PhotosAlert.html">PhotosAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RemindersAlert.html">RemindersAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SiriAlert.html">SiriAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechRecognitionAlert.html">SpeechRecognitionAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WillowAlert.html">WillowAlert</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AutoMateKey.html">AutoMateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AvoidableElement.html">AvoidableElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BooleanLaunchArgumentValue.html">BooleanLaunchArgumentValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BooleanLaunchEnvironmentValue.html">BooleanLaunchEnvironmentValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DeviceType.html">DeviceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HardwareKeyboard.html">HardwareKeyboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SoftwareKeyboard.html">SoftwareKeyboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SystemCountry.html">SystemCountry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SystemLanguage.html">SystemLanguage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Functions.html">Other Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Application.html">Application</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DescendantsMatching.html">DescendantsMatching</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HealthAlertAllow.html">HealthAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HealthAlertDeny.html">HealthAlertDeny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HealthAlertOk.html">HealthAlertOk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HealthAlertTurnOffAll.html">HealthAlertTurnOffAll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HealthAlertTurnOnAll.html">HealthAlertTurnOnAll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KeyboardLaunchArgument.html">KeyboardLaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LanguageLaunchArgument.html">LanguageLaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LaunchOption.html">LaunchOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LocaleLaunchArgument.html">LocaleLaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LocationAlertAllow.html">LocationAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LocationAlertCancel.html">LocationAlertCancel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LocationAlertDeny.html">LocationAlertDeny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LocationAlertOk.html">LocationAlertOk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemAlertCancel.html">SystemAlertCancel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemAlertDeny.html">SystemAlertDeny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemAlertOk.html">SystemAlertOk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemMessages.html">SystemMessages</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Subscripts.html">Other Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LaunchEnvironment</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LaunchEnvironment</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchEnvironmentProtocol.html">LaunchEnvironmentProtocol</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Simple implementation of <code>LaunchEnvironment</code> that wraps single <code>(key: value)</code> pair for <code><a href="../Structs/TestLauncher.html">TestLauncher</a></code>.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchEnvironmentOption</span> <span class="o">=</span> <span class="kt">LaunchEnvironment</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="s">"MADE_WITH_LOVE_BY"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"PGS"</span><span class="p">)</span>
+</code></pre>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV8AutoMate17LaunchEnvironment3keySS"></a>
+                    <a name="//apple_ref/swift/Property/key" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8AutoMate17LaunchEnvironment3keySS">key</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Launch environment key.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV8AutoMate17LaunchEnvironment5valueSS"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8AutoMate17LaunchEnvironment5valueSS">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Launch environment value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV8AutoMate17LaunchEnvironment18launchEnvironmentsGSqGVs10DictionarySSSS__"></a>
+                    <a name="//apple_ref/swift/Property/launchEnvironments" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8AutoMate17LaunchEnvironment18launchEnvironmentsGSqGVs10DictionarySSSS__">launchEnvironments</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Launch environment variables provided by this option.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">launchEnvironments</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV8AutoMate17LaunchEnvironment16uniqueIdentifierSS"></a>
+                    <a name="//apple_ref/swift/Property/uniqueIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8AutoMate17LaunchEnvironment16uniqueIdentifierSS">uniqueIdentifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unique value to use when comparing with other launch options.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">uniqueIdentifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV8AutoMate17LaunchEnvironmentcFT3keySS5valueSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV8AutoMate17LaunchEnvironmentcFT3keySS5valueSS_S0_">init(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize structure with <code><a href="../Structs/LaunchEnvironment.html#/s:vV8AutoMate17LaunchEnvironment3keySS">key</a></code> and <code><a href="../Structs/LaunchEnvironment.html#/s:vV8AutoMate17LaunchEnvironment5valueSS">value</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Launch environment key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Launch environment value.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
