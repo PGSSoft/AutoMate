@@ -89,8 +89,8 @@ public extension XCUIElement {
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
     public func swipe(to element: XCUIElement, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
-        let deltaX: CGFloat = 0.7   // To avoid swipe to back `deltaX` is lower.
-        let deltaY: CGFloat = 0.9
+        let swipeLengthX: CGFloat = 0.7   // To avoid swipe to back `swipeLengthX` is lower.
+        let swipeLengthY: CGFloat = 0.9
         var scrollableArea = frame
 
         viewsToAviod.forEach {
@@ -109,8 +109,8 @@ public extension XCUIElement {
 
             // Max swipe offset in both directions.
             let maxOffset = CGSize(
-                width: scrollableArea.width * deltaX,
-                height: scrollableArea.height * deltaY
+                width: scrollableArea.width * swipeLengthX,
+                height: scrollableArea.height * swipeLengthY
             )
 
             // Max vector. It cannot be bigger than maxOffset.
