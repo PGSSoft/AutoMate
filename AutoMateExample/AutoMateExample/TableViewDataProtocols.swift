@@ -50,6 +50,18 @@ extension ConfigurableCell where Self: UITableViewCell {
     }
 }
 
+// MARK: Default implementation for UICollectionViewCell
+extension ConfigurableCell where Self: UICollectionViewCell {
+
+    static var reusableIdentifier: String {
+        return String(describing: self)
+    }
+
+    static var nibName: String {
+        return String(describing: self)
+    }
+}
+
 // MARK: - LaunchEnvironmentTableDataSourceProtocol
 protocol LaunchEnvironmentTableDataSourceProtocol {
 

@@ -16,6 +16,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     lazy var textInputPage: TextInputPage = TextInputPage(in: self.app)
     lazy var scrollPage: ScrollPage = ScrollPage(in: self.app)
     lazy var scrollVerticallyPage: ScrollVerticallyPage = ScrollVerticallyPage(in: self.app)
+    lazy var collectionPage: CollectionPage = CollectionPage(in: self.app)
     lazy var middleButtonPage: MiddleButtonPage = MiddleButtonPage(in: self.app)
 
     // MARK: Set up
@@ -131,6 +132,20 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
         XCTAssertFalse(scrollVerticallyPage.isBottomLeftButtonDisplayed())
         XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
+    }
+
+    func testSwipeInDirection() {
+        mainPage.goToCollectionViewMenu()
+
+        let element0 = collectionPage.cell(with: "0")
+        let element50 = collectionPage.cell(with: "50")
+
+        XCTAssertTrue(element0.isVisible)
+        XCTAssertFalse(element50.exists)
+
+        collectionPage.collectionView.swipe(in: 0, untilExist: element50)
+        XCTAssertFalse(element0.exists)
+        XCTAssertTrue(element50.exists)
     }
 
     func testClearTextField() {

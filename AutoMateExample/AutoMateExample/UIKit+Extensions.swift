@@ -32,3 +32,18 @@ extension UITableView {
         register(UINib(nibName: cellClass.nibName, bundle: bundle), forCellReuseIdentifier: cellClass.reusableIdentifier)
     }
 }
+
+extension UICollectionView {
+    func dequeueReusableCell<Cell: UICollectionViewCell>(for indexPath: IndexPath) -> Cell where Cell: ConfigurableCell {
+        guard  let cell = dequeueReusableCell(withReuseIdentifier: Cell.reusableIdentifier, for: indexPath) as? Cell else {
+            preconditionFailure("Couldn't dequeue cell with identifier \(Cell.reusableIdentifier)")
+        }
+        return cell
+    }
+
+    func configuredCell<Cell: UICollectionViewCell>(for indexPath: IndexPath, with data: Cell.T) -> Cell where Cell: ConfigurableCell {
+        let cell: Cell = dequeueReusableCell(for: indexPath)
+        cell.configure(with: data)
+        return cell
+    }
+}

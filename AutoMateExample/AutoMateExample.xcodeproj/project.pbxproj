@@ -53,6 +53,9 @@
 		96AB73F21E44C35300FA811A /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F11E44C35300FA811A /* TestLauncher.swift */; };
 		96B131DC1E54C161007E3A04 /* PermissionsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DB1E54C161007E3A04 /* PermissionsPage.swift */; };
 		96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */; };
+		96B9B69E1E96147C00ADBC92 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9B69D1E96147C00ADBC92 /* CollectionViewController.swift */; };
+		96B9B6A11E961D9200ADBC92 /* LongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9B6A01E961D9200ADBC92 /* LongTableViewController.swift */; };
+		96B9B6A31E96234600ADBC92 /* CollectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9B6A21E96234600ADBC92 /* CollectionPage.swift */; };
 		96BB6F4C1E5448CE00A74DA1 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */; };
 		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
 		96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */; };
@@ -197,6 +200,9 @@
 		96AB73F11E44C35300FA811A /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
 		96B131DB1E54C161007E3A04 /* PermissionsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPage.swift; sourceTree = "<group>"; };
 		96B131DD1E54CA7F007E3A04 /* PermissionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTests.swift; sourceTree = "<group>"; };
+		96B9B69D1E96147C00ADBC92 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		96B9B6A01E961D9200ADBC92 /* LongTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongTableViewController.swift; sourceTree = "<group>"; };
+		96B9B6A21E96234600ADBC92 /* CollectionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPage.swift; sourceTree = "<group>"; };
 		96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTableViewCell.swift; sourceTree = "<group>"; };
 		96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +301,8 @@
 				1F9892381D409B16007CD2B0 /* Main.storyboard */,
 				1F9891A11D409547007CD2B0 /* AppDelegate.swift */,
 				1F8646151D64905E0033749B /* AppearingViewController.swift */,
+				96B9B69D1E96147C00ADBC92 /* CollectionViewController.swift */,
+				96B9B6A01E961D9200ADBC92 /* LongTableViewController.swift */,
 				965D56AC1E35F4C20056EE05 /* MainViewController.swift */,
 				1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */,
 				96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */,
@@ -332,6 +340,7 @@
 			children = (
 				969CC2881E421FE500995A49 /* AppearingPage.swift */,
 				E45BBB0F1E6E9951001BA04B /* AutoMateLaunchEnvironmentsPage.swift */,
+				96B9B6A21E96234600ADBC92 /* CollectionPage.swift */,
 				9670CC1B1E77D8DD00A1134E /* ContactsListPage.swift */,
 				E40AEDE21E76D52D00991238 /* EventsListPage.swift */,
 				9641182A1E41EF7A0011C776 /* MainPage.swift */,
@@ -715,6 +724,7 @@
 				C9583BFB1E4B52D70098BB27 /* ContactsViewController.swift in Sources */,
 				1F287A4B1D65845C0062F45F /* LocationWhenInUseViewController.swift in Sources */,
 				9674481F1E5591F5000B42BB /* CameraViewController.swift in Sources */,
+				96B9B69E1E96147C00ADBC92 /* CollectionViewController.swift in Sources */,
 				C850B01B1E5EDEA400392526 /* ContactTableViewCell.swift in Sources */,
 				96470BD31E5585E200D40CB9 /* SpeechRecognitionViewController.swift in Sources */,
 				966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */,
@@ -723,6 +733,7 @@
 				E488262B1E72BC1200AB1E98 /* ReminderTableViewCell.swift in Sources */,
 				E48826231E729E4200AB1E98 /* Date+Helpers.swift in Sources */,
 				E48826261E729F2100AB1E98 /* RemindersDataStore.swift in Sources */,
+				96B9B6A11E961D9200ADBC92 /* LongTableViewController.swift in Sources */,
 				967448231E5593AE000B42BB /* BluetoothViewController.swift in Sources */,
 				96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */,
 				969087C71E9505D7007974FB /* ScrollingHorizontallyViewController.swift in Sources */,
@@ -783,6 +794,7 @@
 				9621BBCB1E4206C6001A9C2C /* TablePage.swift in Sources */,
 				1F98923D1D40A80D007CD2B0 /* LaunchArgumentsWithoutAutoMateTests.swift in Sources */,
 				1F9891B71D409547007CD2B0 /* LaunchArgumentsWithAutoMateTests.swift in Sources */,
+				96B9B6A31E96234600ADBC92 /* CollectionPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

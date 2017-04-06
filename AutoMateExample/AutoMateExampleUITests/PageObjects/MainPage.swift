@@ -33,6 +33,14 @@ open class MainPage: BaseAppPage {
         return menu(withTitle: Locators.scrollVerticallyViewMenu)
     }
 
+    open var longTableViewMenu: XCUIElement {
+        return menu(withTitle: Locators.longTableViewMenu)
+    }
+
+    open var collectionViewMenu: XCUIElement {
+        return menu(withTitle: Locators.collectionViewMenu)
+    }
+
     open var permissionsViewMenu: XCUIElement {
         return menu(withTitle: Locators.permissionsViewMenu)
     }
@@ -64,6 +72,14 @@ open class MainPage: BaseAppPage {
 
     open func goToScrollVerticallyMenu() {
         scrollVerticallyViewMenu.tap()
+    }
+
+    open func goToLongTableViewMenu() {
+        longTableViewMenu.tap()
+    }
+
+    open func goToCollectionViewMenu() {
+        collectionViewMenu.tap()
     }
 
     open func goToPermissionsPageMenu() {
@@ -107,6 +123,8 @@ private extension MainPage {
         case appearingViewMenu = "Appearing view"
         case scrollViewMenu = "Scroll view"
         case scrollVerticallyViewMenu = "Scroll vertically view"
+        case longTableViewMenu = "Long table view"
+        case collectionViewMenu = "Collection view"
         case permissionsViewMenu = "Permissions"
         case middleButtonMenu = "Middle button"
         case tableViewMenu = "Table view"
