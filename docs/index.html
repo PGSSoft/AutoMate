@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AutoMate  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="AutoMate  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">AutoMate Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">AutoMate Reference</a>
+        <img id="carat" src="img/carat.png" />
+        AutoMate  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/TestLauncher.html">TestLauncher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="system-arguments.html">System arguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="custom-arguments.html">Custom arguments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="launch-environments.html">Launch environments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="automate-environments.html">AutoMate environments</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Launch arguments.html">Launch arguments</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/SystemLanguages.html">SystemLanguages</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SystemLocale.html">SystemLocale</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SoftwareKeyboards.html">SoftwareKeyboards</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HardwareKeyboards.html">HardwareKeyboards</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SystemKeyboards.html">SystemKeyboards</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataOption.html">CoreDataOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataOption/VerbosityLevel.html">– VerbosityLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataOption/DiskSyncing.html">– DiskSyncing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/LocalizedStrings.html">LocalizedStrings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchArgument.html">LaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchArgumentWithSingleValue.html">LaunchArgumentWithSingleValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchArgumentWithMultipleValues.html">LaunchArgumentWithMultipleValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchArgumentValue.html">LaunchArgumentValue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Launch environments.html">Launch environments</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/EventLaunchEnvironment.html">EventLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ReminderLaunchEnvironment.html">ReminderLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ContactLaunchEnvironment.html">ContactLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/AnimationLaunchEnvironment.html">AnimationLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AutoMateLaunchEnvironment.html">AutoMateLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LaunchEnvironment.html">LaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LaunchEnvironments.html">LaunchEnvironments</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchEnvironmentProtocol.html">LaunchEnvironmentProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchEnvironmentWithSingleValue.html">LaunchEnvironmentWithSingleValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchEnvironmentWithMultipleValues.html">LaunchEnvironmentWithMultipleValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/CleanableLaunchEnvironment.html">CleanableLaunchEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/CleanableLaunchEnvironmentWithMultipleValues.html">CleanableLaunchEnvironmentWithMultipleValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchEnvironmentValue.html">LaunchEnvironmentValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LaunchEnvironmentResourceValue.html">LaunchEnvironmentResourceValue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="XCTest.html">XCTest</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AppUITestCase.html">AppUITestCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/XCTestCase.html">XCTestCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/XCUIApplication.html">XCUIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/XCUIElement.html">XCUIElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/XCUIElementQuery.html">XCUIElementQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Page objects.html">Page objects</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/BaseAppPageProtocol.html">BaseAppPageProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BaseAppPage.html">BaseAppPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ModalPage.html">ModalPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/PushedPage.html">PushedPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/HealthPermissionPage.html">HealthPermissionPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/HealthPermissionPage/Locators.html">– Locators</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Locators.html">Locators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Locator.html">Locator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/KeyboardLocator.html">KeyboardLocator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="System alerts.html">System alerts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/SystemAlert.html">SystemAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HealthAuthorizationDontAllowAlert.html">HealthAuthorizationDontAllowAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LocationAlwaysAlert.html">LocationAlwaysAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LocationUpgradeWhenInUseAlwaysAlert.html">LocationUpgradeWhenInUseAlwaysAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LocationWhenInUseAlert.html">LocationWhenInUseAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/AddressBookAlert.html">AddressBookAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BluetoothPeripheralAlert.html">BluetoothPeripheralAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CalendarAlert.html">CalendarAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CallsAlert.html">CallsAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CameraAlert.html">CameraAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MediaLibraryAlert.html">MediaLibraryAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MicrophoneAlert.html">MicrophoneAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MotionAlert.html">MotionAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAlert.html">PhotosAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RemindersAlert.html">RemindersAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SiriAlert.html">SiriAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechRecognitionAlert.html">SpeechRecognitionAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/WillowAlert.html">WillowAlert</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/AutoMateKey.html">AutoMateKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/AvoidableElement.html">AvoidableElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/BooleanLaunchArgumentValue.html">BooleanLaunchArgumentValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/BooleanLaunchEnvironmentValue.html">BooleanLaunchEnvironmentValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/DeviceType.html">DeviceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/HardwareKeyboard.html">HardwareKeyboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SoftwareKeyboard.html">SoftwareKeyboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StringComparisonOperator.html">StringComparisonOperator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SystemCountry.html">SystemCountry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SystemLanguage.html">SystemLanguage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Functions.html">Other Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Application.html">Application</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/DescendantsMatching.html">DescendantsMatching</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HealthAlertAllow.html">HealthAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HealthAlertDeny.html">HealthAlertDeny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HealthAlertOk.html">HealthAlertOk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HealthAlertTurnOffAll.html">HealthAlertTurnOffAll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HealthAlertTurnOnAll.html">HealthAlertTurnOnAll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/IdentifiableByElement.html">IdentifiableByElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/KeyboardLaunchArgument.html">KeyboardLaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LanguageLaunchArgument.html">LanguageLaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LaunchOption.html">LaunchOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocaleLaunchArgument.html">LocaleLaunchArgument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlertAllow.html">LocationAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlertCancel.html">LocationAlertCancel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlertDeny.html">LocationAlertDeny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SystemAlertCancel.html">SystemAlertCancel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SystemAlertDeny.html">SystemAlertDeny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SystemAlertOk.html">SystemAlertOk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SystemMessages.html">SystemMessages</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Subscripts.html">Other Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <div align="center">
+    <img src="assets/logo.png" alt="AutoMate, made by PGS Software" />
+    <br />
+    <img src="assets/made-with-love-by-PGS.png" />
+    <p>
+      <b>AutoMate</b> &bull;
+      <a href="https://github.com/PGSSoft/AutoMate-AppBuddy">AppBuddy</a> &bull;
+      <a href="https://github.com/PGSSoft/AutoMate-Templates">Templates</a> &bull;
+      <a href="https://github.com/PGSSoft/AutoMate-ModelGenie">ModelGenie</a>
+    </p>
+</div>
+<a href='#automate' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='automate'>AutoMate</h1>
+
+<p><code>AutoMate</code> is a Swift framework containing a set of helpful <code>XCTest</code> extensions for writing UI automation tests. It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device. With the <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate-AppBuddy</code></a> it can also disable animations in the application and manage events, reminders and contacts.</p>
+
+<p><a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat" alt="Swift 3.1"></a>
+<a href="https://travis-ci.org/PGSSoft/AutoMate"><img src="https://img.shields.io/travis/PGSSoft/AutoMate.svg" alt="Travis"></a>
+<a href="https://cocoapods.org/pods/AutoMate"><img src="https://img.shields.io/cocoapods/v/AutoMate.svg" alt="CocoaPods Compatible"></a>
+<a href="http://cocoadocs.org/docsets/AutoMate"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/AutoMate.svg" alt="CocoaPods"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
+<a href="http://cocoadocs.org/docsets/AutoMate"><img src="https://img.shields.io/cocoapods/p/AutoMate.svg" alt="Platform"></a>
+<a href="https://github.com/PGSSoft/AutoMate/blob/master/LICENSE"><img src="https://img.shields.io/github/license/PGSSoft/AutoMate.svg" alt="License"></a></p>
+
+<p><img src="assets/AutoMate.gif" alt="AutoMate"></p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p>The most convenient way to install it is by using <a href="https://cocoapods.org">CocoaPods</a> with Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'AutoMate'</span>
+</code></pre>
+
+<p>or using <a href="https://github.com/Carthage/Carthage">Carthage</a> and add a line to <code>Cartfile.private</code>:</p>
+<pre class="highlight plaintext"><code>github "PGSSoft/AutoMate"
+</code></pre>
+
+<p><code>Cartfile.private</code> should be used because AutoMate framework will be used by UI Tests target only not by the tested application.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+
+<p>Full documentation is available at <a href="http://cocoadocs.org/docsets/AutoMate">CocoaDocs.org</a>.</p>
+
+<ol>
+<li>Create a new UI test case class.</li>
+<li><p>Import <code>AutoMate</code> framework to UI tests files:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">AutoMate</span>
+</code></pre></li>
+<li><p>Use <code>TestLauncher</code> in the <code>setup()</code> method to configure application settings and launch the application:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
+<span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">SystemLanguages</span><span class="p">([</span><span class="o">.</span><span class="kt">English</span><span class="p">,</span> <span class="o">.</span><span class="kt">German</span><span class="p">]),</span>
+    <span class="kt">SystemLocale</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="kt">English</span><span class="p">,</span> <span class="nv">country</span><span class="p">:</span> <span class="o">.</span><span class="kt">Canada</span><span class="p">),</span>
+    <span class="kt">SoftwareKeyboards</span><span class="p">([</span><span class="o">.</span><span class="kt">EnglishCanada</span><span class="p">,</span> <span class="o">.</span><span class="kt">GermanGermany</span><span class="p">])</span>
+<span class="p">])</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
+</code></pre></li>
+<li><p>Use AutoMate&rsquo;s extensions in your tests. For example:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">testSomething</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">element</span>
+
+    <span class="c1">// helper for waiting until element is visible</span>
+    <span class="nf">waitForVisibleElement</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">button</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
+
+    <span class="c1">// isVisible - helper to check that element both exists and is hittable</span>
+    <span class="kt">XCTAssertFalse</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">isVisible</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></li>
+</ol>
+<a href='#features-or-todo' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features-or-todo'>Features (or ToDo)</h2>
+
+<ul>
+<li>[x] Set keyboards</li>
+<li>[x] Set locale</li>
+<li>[x] Set languages</li>
+<li>[x] Custom arguments</li>
+<li>[x] Custom keyboards, locales and languages</li>
+<li>[x] <code>XCTest</code> extensions</li>
+<li>[x] Added CoreData launch arguments</li>
+<li>[x] Disable UIView animations (with <code>AutoMate-AppBuddy</code>)</li>
+<li>[x] Strong-typed helpers: locators, page object templates (with <code>AutoMate-Templates</code>)</li>
+<li>[x] Base XCTestCase template (with <code>AutoMate-Templates</code>)</li>
+<li>[x] Most permissions alerts (like: <code>LocationWhenInUseAlert</code>, <code>CalendarAlert</code>, <code>PhotosAlert</code>) (with <code>AutoMate-ModelGenie</code>)</li>
+<li>[x] Managing events, reminders and contacts (with <code>AutoMate-AppBuddy</code>)</li>
+<li>[x] Companion library for the application (<code>AutoMate-AppBuddy</code>)</li>
+<li>[ ] Improve launch options type safety</li>
+<li>[ ] Stubbing network requests</li>
+<li>[ ] Stubbing contacts, events and reminders</li>
+<li>[ ] Making screenshots</li>
+<li>[ ] Clearing application data</li>
+<li>[ ] Stubbing notifications</li>
+</ul>
+<a href='#example-application' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example-application'>Example application</h2>
+
+<p>Repository contains example application under <code>AutoMateExample</code> directory. Structure of the application is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.</p>
+<a href='#development' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='development'>Development</h2>
+
+<p>Full documentation is available at <a href="http://cocoadocs.org/docsets/AutoMate">CocoaDocs.org</a>.</p>
+
+<p>If you want to provide your custom launch argument or launch environment you have to implement <code>LaunchOption</code> protocol or one of its extensions, such as <code>LaunchArgumentWithSingleValue</code>:</p>
+<pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">CustomParameter</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">LaunchArgumentWithSingleValue</span><span class="p">,</span> <span class="kt">LaunchArgumentValue</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"AppParameter"</span>
+    <span class="p">}</span>
+    <span class="k">case</span> <span class="n">value1</span>
+    <span class="k">case</span> <span class="n">value2</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Then, you can pass it to the <code>TestBuilder</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launcher</span> <span class="o">=</span> <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">CustomParameter</span><span class="o">.</span><span class="n">value1</span>
+<span class="p">])</span>
+</code></pre>
+<a href='#contributing' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contributing'>Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/PGSSoft/AutoMate">https://github.com/PGSSoft/AutoMate</a>.</p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>The project is available as open source under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+<a href='#about' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='about'>About</h2>
+
+<p>The project maintained by software development agency <a href="https://www.pgs-soft.com">PGS Software</a>.
+See our other <a href="https://github.com/PGSSoft">open-source projects</a> or <a href="https://www.pgs-soft.com/contact-us">contact us</a> to develop your product.</p>
+<a href='#follow-us' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='follow-us'>Follow us</h2>
+
+<p><a href="https://twitter.com/intent/tweet?text=https://github.com/PGSSoft/AutoMate"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Twitter URL"></a><br>
+<a href="https://twitter.com/pgssoftware"><img src="https://img.shields.io/twitter/follow/pgssoftware.svg?style=social&label=Follow" alt="Twitter Follow"></a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
