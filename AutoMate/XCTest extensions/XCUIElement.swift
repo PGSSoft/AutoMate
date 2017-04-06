@@ -107,16 +107,10 @@ public extension XCUIElement {
         var oldDistance = distanceVector().manhattanDistance
         while !scrollableArea.contains(element.frame.center) {
 
-            // Available scrollable space (normalized).
-            let normalizedAvailableSpace = CGSize(
-                width: scrollableArea.width / frame.width,
-                height: scrollableArea.height / frame.height
-            )
-
             // Max swipe offset in both directions.
             let maxOffset = CGSize(
-                width: frame.width * normalizedAvailableSpace.width * deltaX,
-                height: frame.height * normalizedAvailableSpace.height * deltaY
+                width: scrollableArea.width * deltaX,
+                height: scrollableArea.height * deltaY
             )
 
             // Max vector. It cannot be bigger than maxOffset.
