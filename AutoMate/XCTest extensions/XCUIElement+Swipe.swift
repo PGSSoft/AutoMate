@@ -33,7 +33,7 @@ extension XCUIElement {
         p1.press(forDuration: 0.1, thenDragTo: p2)
     }
 
-    /// Swipe scroll view to reveal given element.
+    /// Swipes scroll view to reveal given element.
     ///
     /// **Example:**
     ///
@@ -65,10 +65,7 @@ extension XCUIElement {
         while !scrollableArea.contains(element.frame.center) {
 
             // Max swipe offset in both directions.
-            let maxOffset = CGSize(
-                width: scrollableArea.width * swipeLengthX,
-                height: scrollableArea.height * swipeLengthY
-            )
+            let maxOffset = maxSwipeOffset(in: scrollableArea)
 
             // Max possible distance to swipe (in points).
             // It cannot be bigger than `maxOffset`.
@@ -79,28 +76,13 @@ extension XCUIElement {
             )
 
             // Max possible distance to swipe (normalized).
-            let maxNormalizedVector = CGVector(
-                dx: maxVector.dx / frame.width,
-                dy: maxVector.dy / frame.height
-            )
+            let maxNormalizedVector = normalize(vector: maxVector)
 
             // Center point.
-            let center = CGPoint(
-                x: (scrollableArea.midX - frame.minX) / frame.width,
-                y: (scrollableArea.midY - frame.minY) / frame.height
-            )
+            let center = centerPoint(in: scrollableArea)
 
-            // Start vector.
-            let startVector = CGVector(
-                dx: center.x + maxNormalizedVector.dx / 2,
-                dy: center.y + maxNormalizedVector.dy / 2
-            )
-
-            // Stop vector.
-            let stopVector = CGVector(
-                dx: center.x - maxNormalizedVector.dx / 2,
-                dy: center.y - maxNormalizedVector.dy / 2
-            )
+            // Start and stop vectors.
+            let (startVector, stopVector) = swipeVectors(from: center, vector: maxNormalizedVector)
 
             // Swipe.
             swipe(from: startVector, to: stopVector)
@@ -153,10 +135,7 @@ extension XCUIElement {
             }
 
             // Max swipe offset in both directions.
-            let maxOffset = CGSize(
-                width: scrollableArea.width * swipeLengthX,
-                height: scrollableArea.height * swipeLengthY
-            )
+            let maxOffset = maxSwipeOffset(in: scrollableArea)
 
             let vector: CGVector
             switch direction {
@@ -167,28 +146,13 @@ extension XCUIElement {
             }
 
             // Max possible distance to swipe (normalized).
-            let maxNormalizedVector = CGVector(
-                dx: vector.dx / frame.width,
-                dy: vector.dy / frame.height
-            )
+            let maxNormalizedVector = normalize(vector: vector)
 
             // Center point.
-            let center = CGPoint(
-                x: (scrollableArea.midX - frame.minX) / frame.width,
-                y: (scrollableArea.midY - frame.minY) / frame.height
-            )
+            let center = centerPoint(in: scrollableArea)
 
-            // Start vector.
-            let startVector = CGVector(
-                dx: center.x + maxNormalizedVector.dx / 2,
-                dy: center.y + maxNormalizedVector.dy / 2
-            )
-
-            // Stop vector.
-            let stopVector = CGVector(
-                dx: center.x - maxNormalizedVector.dx / 2,
-                dy: center.y - maxNormalizedVector.dy / 2
-            )
+            // Start and stop vectors.
+            let (startVector, stopVector) = swipeVectors(from: center, vector: maxNormalizedVector)
 
             // Swipe.
             swipe(from: startVector, to: stopVector)
@@ -213,7 +177,7 @@ extension XCUIElement {
     }
 
     // MARK: Methods
-    /// Calculates scrollable are of the element by removing overlapping elements like keybard or navigation bar.
+    /// Calculates scrollable area of the element by removing overlapping elements like keybard or navigation bar.
     ///
     /// - Parameters:
     ///   - viewsToAviod: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
@@ -227,6 +191,65 @@ extension XCUIElement {
         }
         assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
         return scrollableArea
+    }
+
+    /// Maximum available swipe offsets (in points) in the scrollable area.
+    ///
+    /// It takes `swipeLengthX` and `swipeLengthY` to calculate values.
+    ///
+    /// - Parameter scrollableArea: Scrollable area of the element.
+    /// - Returns: Maximum available swipe offsets (in points).
+    func maxSwipeOffset(in scrollableArea: CGRect) -> CGSize {
+        return CGSize(
+            width: scrollableArea.width * swipeLengthX,
+            height: scrollableArea.height * swipeLengthY
+        )
+    }
+
+    /// Normalize vector. From points to narmalized values (<0;1>).
+    ///
+    /// - Parameter vector: Vector to normalize.
+    /// - Returns: Normalized vector.
+    func normalize(vector: CGVector) -> CGVector {
+        return CGVector(
+            dx: vector.dx / frame.width,
+            dy: vector.dy / frame.height
+        )
+    }
+
+    /// Returns center point of the scrollable area in the element in the normalized coordinate space.
+    ///
+    /// - Parameter scrollableArea: Scrollable area of the element.
+    /// - Returns: Center point of the scrollable area in the element in the normalized coordinate space.
+    func centerPoint(in scrollableArea: CGRect) -> CGPoint {
+        return CGPoint(
+            x: (scrollableArea.midX - frame.minX) / frame.width,
+            y: (scrollableArea.midY - frame.minY) / frame.height
+        )
+    }
+
+    /// Calculates swipe vectors from center point and swipe vector.
+    ///
+    /// Generated vectors can be used by `swipe(from:,to:)`.
+    ///
+    /// - Parameters:
+    ///   - center: Center point of the scrollable area. Use `centerPoint(with:)` to calculate this value.
+    ///   - vector: Swipe vector in the normalized coordinate space.
+    /// - Returns: Swipes vector to use by `swipe(from:,to:)`.
+    func swipeVectors(from center: CGPoint, vector: CGVector) -> (startVector: CGVector, stopVector: CGVector) {
+        // Start vector.
+        let startVector = CGVector(
+            dx: center.x + vector.dx / 2,
+            dy: center.y + vector.dy / 2
+        )
+
+        // Stop vector.
+        let stopVector = CGVector(
+            dx: center.x - vector.dx / 2,
+            dy: center.y - vector.dy / 2
+        )
+
+        return (startVector, stopVector)
     }
 }
 
