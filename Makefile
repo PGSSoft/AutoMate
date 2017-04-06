@@ -2,7 +2,7 @@
 
 # Create documentation
 docs:
-	jazzy
+	jazzy -c
 	rsync -ahvL --delete "assets" "docs"
 
 # Check CocoaPod
