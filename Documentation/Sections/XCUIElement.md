@@ -30,8 +30,9 @@ scroll.swipe(to: button)
 `swipe(to:times:avoid:from:until:)`, and two specialized method `swipe(to:untilExist:times:avoid:from:)` and `swipe(to:untilVisible:times:avoid:from:)`,
 swipes scroll view to given direction until condition will be satisfied or in case of specialised methods element would exist or will be visible.
 It is a useful method to scroll collection view to reveal an element. In collection view, only a few cells are available in the hierarchy.
-To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
-The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.
+To scroll to given element you have to provide swipe direction.
+It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+The method will stop when the maximum number of swipes is reached or when the condition will be satisfied.
 
 **Example:**
 

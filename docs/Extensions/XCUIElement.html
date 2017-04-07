@@ -444,8 +444,9 @@ for example to reveal element from behind keyboard.</p>
 <p><code>swipe(to:times:avoid:from:until:)</code>, and two specialized method <code>swipe(to:untilExist:times:avoid:from:)</code> and <code>swipe(to:untilVisible:times:avoid:from:)</code>,
 swipes scroll view to given direction until condition will be satisfied or in case of specialised methods element would exist or will be visible.
 It is a useful method to scroll collection view to reveal an element. In collection view, only a few cells are available in the hierarchy.
-To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
-The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.</p>
+To scroll to given element you have to provide swipe direction.
+It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+The method will stop when the maximum number of swipes is reached or when the condition will be satisfied.</p>
 
 <p><strong>Example:</strong></p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
