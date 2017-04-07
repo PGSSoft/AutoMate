@@ -37,6 +37,8 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
         XCTAssertEqual(build(with: [LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]), ["AM_EVENTS_KEY": "nil:this_week"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.futureEventsLaunchEnvironment, LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]),
                        ["AM_EVENTS_KEY": "\(cleanFlag),Resources:next_week,nil:recurring_monthly"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.deleteEventsLaunchEnvironment, LaunchOptionsFactory.thisWeekEventsLaunchEnvironment]),
+                       ["AM_EVENTS_KEY": "\(cleanFlag),"])
     }
 
     func testAnimationLaunchEnvironment() {
@@ -51,12 +53,14 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "Data:johnys_birthday_reminder"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.highPriorityReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "\(cleanFlag),Test data:automate_release_reminders,nil:wwdc_reminders"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.deleteReminderLaunchEnvironment, LaunchOptionsFactory.recurringReminderLaunchEnvironment]), ["AM_REMINDERS_KEY": "\(cleanFlag),"])
     }
 
     func testContactLaunchEnvironment() {
         XCTAssertEqual(build(with: []), [:])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "Data:john"])
         XCTAssertEqual(build(with: [LaunchOptionsFactory.severalContacts, LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "\(cleanFlag),Test data:michael,nil:emma"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.deleteContacts, LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "\(cleanFlag),"])
     }
 
     // swiftlint:disable function_body_length

@@ -23,13 +23,16 @@ enum LaunchOptionsFactory {
 
     static let thisWeekEventsLaunchEnvironment: EventLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "this_week", bundleName: nil)]
     static let futureEventsLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: true, resources: ("next_week", "Resources"), ("recurring_monthly", nil))
+    static let deleteEventsLaunchEnvironment = EventLaunchEnvironment(shouldCleanBefore: true)
 
     static let turnOffAnimationLaunchEnvironment = AnimationLaunchEnvironment()
     static let turnOnAnimationLaunchEnvironment = AnimationLaunchEnvironment(animation: true)
 
     static let recurringReminderLaunchEnvironment: ReminderLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "johnys_birthday_reminder", bundleName: "Data")]
     static let highPriorityReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "automate_release_reminders", bundleName: "Test data"), (fileName: "wwdc_reminders", bundleName: nil))
+    static let deleteReminderLaunchEnvironment = ReminderLaunchEnvironment(shouldCleanBefore: true)
 
     static let johnContacts: ContactLaunchEnvironment = [ LaunchEnvironmentResourceValue(fileName: "john", bundleName: "Data") ]
     static let severalContacts = ContactLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
+    static let deleteContacts = ContactLaunchEnvironment(shouldCleanBefore: true)
 }
