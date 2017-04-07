@@ -13,7 +13,7 @@ push_github:
 
 # Check CocoaPod
 check-podspec:
-	pod lib lint --verbose
+	pod lib lint
 
 # Check Carthage
 check-carthage:
