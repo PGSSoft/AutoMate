@@ -28,16 +28,6 @@ public protocol LaunchOption {
 
 public extension LaunchOption {
 
-    /// Launch arguments provided by this option.
-    public var launchArguments: [String]? {
-        return nil
-    }
-
-    /// Launch environment variables provided by this option.
-    public var launchEnvironments: [String: String]? {
-        return nil
-    }
-
     /// Unique value to use when comparing with other launch options.
     public var uniqueIdentifier: String {
         return "\(type(of: self))"

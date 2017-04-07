@@ -26,11 +26,19 @@ public protocol LaunchArgument: LaunchOption {
     var key: String { get }
 }
 
+// MARK: Default implementation
 public extension LaunchArgument {
 
     /// Unique value to use when comparing with other launch options.
     public var uniqueIdentifier: String {
         return key
+    }
+
+    /// Launch environment variables provided by this option.
+    ///
+    /// Launch argument does not have to provide launch environments.
+    public var launchEnvironments: [String: String]? {
+        return nil
     }
 }
 

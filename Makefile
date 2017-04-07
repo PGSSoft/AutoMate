@@ -4,6 +4,7 @@
 docs:
 	jazzy -c
 	rsync -ahvL --delete "assets" "docs"
+	rm -r build
 
 # Check CocoaPod
 check-podspec:
