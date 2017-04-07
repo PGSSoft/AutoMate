@@ -134,7 +134,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
     }
 
-    func testSwipeInDirection() {
+    func testSwipeInDirectionUntilExists() {
         mainPage.goToCollectionViewMenu()
 
         let element0 = collectionPage.cell(with: "0")
@@ -149,6 +149,20 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         collectionPage.collectionView.swipe(to: element10)
         XCTAssertFalse(element0.exists)
+        XCTAssertTrue(element10.isVisible)
+    }
+
+    func testSwipeInDirectionUntilVisible() {
+        mainPage.goToCollectionViewMenu()
+
+        let element0 = collectionPage.cell(with: "0")
+        let element10 = collectionPage.cell(with: "10")
+
+        XCTAssertTrue(element0.isVisible)
+        XCTAssertFalse(element10.isVisible)
+
+        collectionPage.collectionView.swipe(to: .down, untilVisible: element10)
+        XCTAssertFalse(element0.isVisible)
         XCTAssertTrue(element10.isVisible)
     }
 

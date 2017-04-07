@@ -282,6 +282,9 @@
                 <a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SwipeDirection.html">SwipeDirection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SystemCountry.html">SystemCountry</a>
               </li>
               <li class="nav-group-task">
@@ -428,7 +431,7 @@ It lets you specify coordinates on the screen (relative to the view on which the
 <span class="n">scroll</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
 </code></pre>
 
-<p><code>swipe(to:avoidKeyboard:from:)</code> variation scrolls the screen until given element becomes visible.
+<p><code>swipe(to:avoid:from:)</code> variation scrolls the screen until given element becomes visible.
 Note that <code>XCTest</code> automatically does the scrolling during <code>tap()</code>, but the method is still useful in some situations,
 for example to reveal element from behind keyboard.</p>
 
@@ -438,6 +441,18 @@ for example to reveal element from behind keyboard.</p>
 <span class="n">scroll</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">button</span><span class="p">)</span>
 </code></pre>
 
+<p><code>swipe(to:times:avoid:from:until:)</code>, and two specialized method <code>swipe(to:untilExist:times:avoid:from:)</code> and <code>swipe(to:untilVisible:times:avoid:from:)</code>,
+swipes scroll view to given direction until condition will be satisfied or in case of specialised methods element would exist or will be visible.
+It is a useful method to scroll collection view to reveal an element. In collection view, only a few cells are available in the hierarchy.
+To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
+The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
+<span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">untilVisible</span><span class="p">:</span> <span class="n">element</span><span class="p">)</span>
+</code></pre>
+
 <p><code>clearTextField()</code> and <code>clear(andType:)</code> provides straightforward method to delete text from text field and then type the provided string.</p>
 
 <p><code>tapWithOffset</code> performs <code>tap()</code> on given coordinates (relative to the receiving element).
@@ -445,90 +460,6 @@ Can be used to test view where position of the tap matters. It&rsquo;s also poss
 
           </section>
           <section class="section task-group-section">
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Properties"></a>
-                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vE8AutoMateCSo11XCUIElement9isVisibleSb"></a>
-                    <a name="//apple_ref/swift/Property/isVisible" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vE8AutoMateCSo11XCUIElement9isVisibleSb">isVisible</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Indicates if the element is currently visible on the screen.</p>
-
-<p><strong>Example:</strong></p>
-
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">element</span>
-<span class="n">button</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
-<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">isVisible</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isVisible</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vE8AutoMateCSo11XCUIElement4textSS"></a>
-                    <a name="//apple_ref/swift/Property/text" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vE8AutoMateCSo11XCUIElement4textSS">text</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns <code>value</code> as a String</p>
-
-<p><strong>Example:</strong></p>
-
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">textFields</span><span class="o">.</span><span class="n">element</span>
-<span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">textField</span><span class="o">.</span><span class="n">text</span>
-</code></pre>
-
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    It will fail if <code>value</code> is not a <code>String</code> type.
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Methods"></a>
@@ -620,7 +551,7 @@ It lets you specify coordinates on the screen (relative to the view on which the
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Swipe scroll view to reveal given element.</p>
+                        <p>Swipes scroll view to reveal given element.</p>
 
 <p><strong>Example:</strong></p>
 
@@ -646,7 +577,7 @@ It lets you specify coordinates on the screen (relative to the view on which the
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAviod</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
 
                         </div>
                       </div>
@@ -699,6 +630,449 @@ It lets you specify coordinates on the screen (relative to the view on which the
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication5untilKT_Sb_T_"></a>
+                    <a name="//apple_ref/swift/Method/swipe(to:times:avoid:from:until:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication5untilKT_Sb_T_">swipe(to:times:avoid:from:until:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Swipes scroll view to given direction until condition will be satisfied.</p>
+
+<p>A useful method to scroll collection view to reveal an element.
+In collection view, only a few cells are available in the hierarchy.
+To scroll to given element you have to provide swipe direction.
+It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+The method will stop when the maximum number of swipes is reached or when the condition will be satisfied.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
+<span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">until</span><span class="p">:</span> <span class="n">element</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n">defaultSwipesCount</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="n">until</span> <span class="nv">condition</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>direction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Swipe direction.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>times</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Maximum number of swipes (by default 10).</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewsToAvoid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>app</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Application instance to use when searching for keyboard to avoid.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The condition to satisfy.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection10untilExistS0_5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_"></a>
+                    <a name="//apple_ref/swift/Method/swipe(to:untilExist:times:avoid:from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection10untilExistS0_5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_">swipe(to:untilExist:times:avoid:from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Swipes scroll view to given direction until element would exist.</p>
+
+<p>A useful method to scroll collection view to reveal an element.
+In collection view, only a few cells are available in the hierarchy.
+To scroll to given element you have to provide swipe direction.
+It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
+<span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">untilExist</span><span class="p">:</span> <span class="n">element</span><span class="p">)</span>
+</code></pre>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method will not scroll until the view will be visible. To do this call <code>swipe(to:untilVisible:times:avoid:app:)</code> after this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span> <span class="n">untilExist</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n">defaultSwipesCount</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>direction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Swipe direction.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>element</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Element to swipe to.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>times</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Maximum number of swipes (by default 10).</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewsToAvoid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>app</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Application instance to use when searching for keyboard to avoid.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection12untilVisibleS0_5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_"></a>
+                    <a name="//apple_ref/swift/Method/swipe(to:untilVisible:times:avoid:from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection12untilVisibleS0_5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_">swipe(to:untilVisible:times:avoid:from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Swipes scroll view to given direction until element would be visible.</p>
+
+<p>A useful method to scroll collection view to reveal an element.
+In collection view, only a few cells are available in the hierarchy.
+To scroll to given element you have to provide swipe direction.
+It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+The method will stop when the maximum number of swipes is reached or when the given element will be visible.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
+<span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">untilVisible</span><span class="p">:</span> <span class="n">element</span><span class="p">)</span>
+</code></pre>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method will not scroll until the view will be visible. To do this call <code><a href="../Extensions/XCUIElement.html#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_">swipe(to:avoid:from:)</a></code> after this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span> <span class="n">untilVisible</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n">defaultSwipesCount</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>direction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Swipe direction.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>element</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Element to swipe to.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>times</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Maximum number of swipes (by default 10).</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewsToAvoid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>app</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Application instance to use when searching for keyboard to avoid.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE8AutoMateCSo11XCUIElement9isVisibleSb"></a>
+                    <a name="//apple_ref/swift/Property/isVisible" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE8AutoMateCSo11XCUIElement9isVisibleSb">isVisible</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates if the element is currently visible on the screen.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">element</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
+<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">isVisible</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isVisible</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vE8AutoMateCSo11XCUIElement4textSS"></a>
+                    <a name="//apple_ref/swift/Property/text" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vE8AutoMateCSo11XCUIElement4textSS">text</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>value</code> as a String</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">textFields</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">textField</span><span class="o">.</span><span class="n">text</span>
+</code></pre>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    It will fail if <code>value</code> is not a <code>String</code> type.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Methods2"></a>
+                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
+                <a href="#/Methods2">
+                  <h3 class="section-name">Methods</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -848,7 +1222,7 @@ So the correct values are from range: <0, 1>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-07)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

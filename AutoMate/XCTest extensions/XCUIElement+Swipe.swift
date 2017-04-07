@@ -52,8 +52,8 @@ extension XCUIElement {
     ///   - element: Element to scroll to.
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    public func swipe(to element: XCUIElement, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
-        let scrollableArea = self.scrollableArea(avoid: viewsToAviod, from: app)
+    public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
+        let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
 
         // Distance from scrollable area center to element center.
         func distanceVector() -> CGVector {
@@ -96,47 +96,43 @@ extension XCUIElement {
         }
     }
 
-    /// Swipes scroll view to given direction until element would exist.
+    /// Swipes scroll view to given direction until condition will be satisfied.
     ///
     /// A useful method to scroll collection view to reveal an element.
     /// In collection view, only a few cells are available in the hierarchy.
-    /// To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
-    /// The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.
+    /// To scroll to given element you have to provide swipe direction.
+    /// It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+    /// The method will stop when the maximum number of swipes is reached or when the condition will be satisfied.
     ///
     /// **Example:**
     ///
     /// ```swift
     /// let collectionView = app.collectionViews.element
     /// let element = collectionView.staticTexts["More"]
-    /// collectionView.swipe(to: .down, untilExist: element)
-    /// // Optional
-    /// collectionView.swipe(to: element)
+    /// collectionView.swipe(to: .down, until: element.exists)
     /// ```
-    ///
-    /// - note:
-    ///   This method will not scroll untile the view will be visible. To do this call `swipe(to:avoid:from:)` after this method.
     ///
     /// - Parameters:
     ///   - direction: Swipe direction.
-    ///   - element: Element to swipe to.
-    ///   - times: Maximum number of swipes.
-    ///   - viewsToAviod: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
+    ///   - times: Maximum number of swipes (by default 10).
+    ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    public func swipe(to direction: SwipeDirection, untilExist element: XCUIElement, times: Int = 10, avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
-
-        let scrollableArea = self.scrollableArea(avoid: viewsToAviod, from: app)
+    ///   - condition: The condition to satisfy.
+    public func swipe(to direction: SwipeDirection, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), until condition: @autoclosure () -> Bool) {
+        let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
 
         // Swipe `times` times in the provided direction.
         for _ in 0..<times {
 
-            // Stop scrolling when element will exists.
-            guard !element.exists else {
+            // Stop scrolling when condition will be satisfied.
+            guard !condition() else {
                 break
             }
 
             // Max swipe offset in both directions.
             let maxOffset = maxSwipeOffset(in: scrollableArea)
 
+            /// Calculates vector for given direction.
             let vector: CGVector
             switch direction {
             case .up: vector = CGVector(dx: 0, dy: -maxOffset.height)
@@ -158,6 +154,66 @@ extension XCUIElement {
             swipe(from: startVector, to: stopVector)
         }
     }
+
+    /// Swipes scroll view to given direction until element would exist.
+    ///
+    /// A useful method to scroll collection view to reveal an element.
+    /// In collection view, only a few cells are available in the hierarchy.
+    /// To scroll to given element you have to provide swipe direction.
+    /// It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+    /// The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let collectionView = app.collectionViews.element
+    /// let element = collectionView.staticTexts["More"]
+    /// collectionView.swipe(to: .down, untilExist: element)
+    /// ```
+    ///
+    /// - note:
+    ///   This method will not scroll until the view will be visible. To do this call `swipe(to:untilVisible:times:avoid:app:)` after this method.
+    ///
+    /// - Parameters:
+    ///   - direction: Swipe direction.
+    ///   - element: Element to swipe to.
+    ///   - times: Maximum number of swipes (by default 10).
+    ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
+    ///   - app: Application instance to use when searching for keyboard to avoid.
+    public func swipe(to direction: SwipeDirection, untilExist element: XCUIElement, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
+
+        swipe(to: direction, times: times, avoid: viewsToAvoid, from: app, until: element.exists)
+    }
+
+    /// Swipes scroll view to given direction until element would be visible.
+    ///
+    /// A useful method to scroll collection view to reveal an element.
+    /// In collection view, only a few cells are available in the hierarchy.
+    /// To scroll to given element you have to provide swipe direction.
+    /// It is not possible to detect when the end of the scroll was reached, that is why the maximum number of swipes is required (by default 10).
+    /// The method will stop when the maximum number of swipes is reached or when the given element will be visible.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let collectionView = app.collectionViews.element
+    /// let element = collectionView.staticTexts["More"]
+    /// collectionView.swipe(to: .down, untilVisible: element)
+    /// ```
+    ///
+    /// - note:
+    ///   This method will not scroll until the view will be visible. To do this call `swipe(to:avoid:from:)` after this method.
+    ///
+    /// - Parameters:
+    ///   - direction: Swipe direction.
+    ///   - element: Element to swipe to.
+    ///   - times: Maximum number of swipes (by default 10).
+    ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
+    ///   - app: Application instance to use when searching for keyboard to avoid.
+    public func swipe(to direction: SwipeDirection, untilVisible element: XCUIElement, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
+
+        swipe(to: direction, times: times, avoid: viewsToAvoid, from: app, until: element.isVisible)
+    }
 }
 
 // MARK: - Internal
@@ -176,18 +232,20 @@ extension XCUIElement {
         return 0.9
     }
 
+    /// Default number of swipes.
+    class var defaultSwipesCount: Int { return 10 }
+
     // MARK: Methods
     /// Calculates scrollable area of the element by removing overlapping elements like keybard or navigation bar.
     ///
     /// - Parameters:
-    ///   - viewsToAviod: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
+    ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    /// - Returns: Scrollable are of the element.
-    func scrollableArea(avoid viewsToAviod: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) -> CGRect {
-        var scrollableArea = frame
+    /// - Returns: Scrollable area of the element.
+    func scrollableArea(avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) -> CGRect {
 
-        viewsToAviod.forEach {
-            scrollableArea = $0.overlapReminder(of: scrollableArea, in: app)
+        let scrollableArea = viewsToAvoid.reduce(frame) {
+            $1.overlapReminder(of: $0, in: app)
         }
         assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
         return scrollableArea
@@ -206,7 +264,7 @@ extension XCUIElement {
         )
     }
 
-    /// Normalize vector. From points to narmalized values (<0;1>).
+    /// Normalize vector. From points to normalized values (<0;1>).
     ///
     /// - Parameter vector: Vector to normalize.
     /// - Returns: Normalized vector.
@@ -254,7 +312,7 @@ extension XCUIElement {
 }
 
 // MARK: - AvoidableElement
-/// Each case means element of user interface that can overlap scrollable area.
+/// Each case relates to element of user interface that can overlap scrollable area.
 ///
 /// - `navigationBar`: equivalent of `UINavigationBar`.
 /// - `keyboard`: equivalent of `UIKeyboard`.
@@ -293,9 +351,9 @@ public enum AvoidableElement {
     /// Calculates rect that reminds scrollable through substract overlaping part of `XCUIElement`.
     ///
     /// - Parameters:
-    ///   - rect: CGRect that is overlaped.
+    ///   - rect: CGRect that is overlapped.
     ///   - app: XCUIApplication in which overlapping element can be found.
-    /// - Returns: Part of rect not overlaped by element.
+    /// - Returns: Part of rect not overlapped by element.
     func overlapReminder(of rect: CGRect, in app: XCUIApplication = XCUIApplication()) -> CGRect {
 
         let overlappingElement = element(in: app)

@@ -35,7 +35,7 @@ extension UITableView {
 
 extension UICollectionView {
     func dequeueReusableCell<Cell: UICollectionViewCell>(for indexPath: IndexPath) -> Cell where Cell: ConfigurableCell {
-        guard  let cell = dequeueReusableCell(withReuseIdentifier: Cell.reusableIdentifier, for: indexPath) as? Cell else {
+        guard let cell = dequeueReusableCell(withReuseIdentifier: Cell.reusableIdentifier, for: indexPath) as? Cell else {
             preconditionFailure("Couldn't dequeue cell with identifier \(Cell.reusableIdentifier)")
         }
         return cell

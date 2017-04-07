@@ -27,8 +27,10 @@ let button = scroll.buttons.element
 scroll.swipe(to: button)
 ```
 
-`swipe(to:untilExist:times:,avoid:,from:)` swipes scroll view to given direction until element would exist. It is a useful method to scroll collection view to reveal an element.
-In collection view, only a few cells are available in the hierarchy. To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
+`swipe(to:times:avoid:from:until:)`, and two specialized method `swipe(to:untilExist:times:avoid:from:)` and `swipe(to:untilVisible:times:avoid:from:)`,
+swipes scroll view to given direction until condition will be satisfied or in case of specialised methods element would exist or will be visible.
+It is a useful method to scroll collection view to reveal an element. In collection view, only a few cells are available in the hierarchy.
+To scroll to given element you have to provide swipe direction and a maximum number of swipes in that direction (by default 10 swipes).
 The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.
 
 **Example:**
@@ -36,7 +38,7 @@ The method will stop when the maximum number of swipes is reached or when the gi
 ```swift
 let collectionView = app.collectionViews.element
 let element = collectionView.staticTexts["More"]
-collectionView.swipe(to: .down, untilExist: element)
+collectionView.swipe(to: .down, untilVisible: element)
 ```
 
 `clearTextField()` and `clear(andType:)` provides straightforward method to delete text from text field and then type the provided string.

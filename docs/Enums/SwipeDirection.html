@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AppUITestCase Class Reference</title>
+    <title>SwipeDirection Enum Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/AppUITestCase" class="dashAnchor"></a>
-    <a title="AppUITestCase Class Reference"></a>
+    <a name="//apple_ref/swift/Enum/SwipeDirection" class="dashAnchor"></a>
+    <a title="SwipeDirection Enum Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">AutoMate Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">AutoMate Reference</a>
         <img id="carat" src="../img/carat.png" />
-        AppUITestCase Class Reference
+        SwipeDirection Enum Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -409,49 +409,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>AppUITestCase</h1>
+            <h1>SwipeDirection</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AppUITestCase</span><span class="p">:</span> <span class="kt">XCTestCase</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SwipeDirection</span></code></pre>
 
                 </div>
               </div>
-            <p><code>XCTestCase</code> subclass which creates and store <code>XCUIApplication</code> object for duration of the test.</p>
+            <p>Swipe direction.</p>
 
-<p><strong>Example:</strong></p>
-
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AdditionalExtensionsTests</span><span class="p">:</span> <span class="kt">AppUITestCase</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="kd">func</span> <span class="nf">setUp</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">setUp</span><span class="p">()</span>
-        <span class="kt">TestLauncher</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-<div class="aside aside-remark">
-    <p class="aside-title">Remark</p>
-    Every call to <code>XCUIApplication</code> creates new instance of this object.
-This is why the <code>XCUIApplication</code> object is created at the beginning of the test and stored in the <code>app</code> variable.
-
-</div>
+<ul>
+<li><code>up</code>: Swipe up.</li>
+<li><code>down</code>: Swipe down.</li>
+<li><code>left</code>: Swipe to the left.</li>
+<li><code>right</code>: Swipe to the right.</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Properties"></a>
-                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8AutoMate13AppUITestCase3appGSQCSo15XCUIApplication_"></a>
-                    <a name="//apple_ref/swift/Property/app" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8AutoMate13AppUITestCase3appGSQCSo15XCUIApplication_">app</a>
+                    <a name="/s:FO8AutoMate14SwipeDirection2upFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/up" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO8AutoMate14SwipeDirection2upFMS0_S0_">up</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -459,14 +442,14 @@ This is why the <code>XCUIApplication</code> object is created at the beginning 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Stores <code>XCUIApplication</code> for the duration of the test.</p>
+                        <p>Swipe up.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">up</span></code></pre>
 
                         </div>
                       </div>
@@ -476,20 +459,13 @@ This is why the <code>XCUIApplication</code> object is created at the beginning 
               </ul>
             </div>
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Methods"></a>
-                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
-                <a href="#/Methods">
-                  <h3 class="section-name">Methods</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8AutoMate13AppUITestCase5setUpFT_T_"></a>
-                    <a name="//apple_ref/swift/Method/setUp()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8AutoMate13AppUITestCase5setUpFT_T_">setUp()</a>
+                    <a name="/s:FO8AutoMate14SwipeDirection4downFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/down" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO8AutoMate14SwipeDirection4downFMS0_S0_">down</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -497,26 +473,30 @@ This is why the <code>XCUIApplication</code> object is created at the beginning 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Setup method called before the invocation of each test method in the class.</p>
+                        <p>Swipe down.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">override</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">setUp</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">down</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8AutoMate13AppUITestCase8tearDownFT_T_"></a>
-                    <a name="//apple_ref/swift/Method/tearDown()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8AutoMate13AppUITestCase8tearDownFT_T_">tearDown()</a>
+                    <a name="/s:FO8AutoMate14SwipeDirection4leftFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/left" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO8AutoMate14SwipeDirection4leftFMS0_S0_">left</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -524,14 +504,45 @@ This is why the <code>XCUIApplication</code> object is created at the beginning 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Teardown method called after the invocation of each test method in the class.</p>
+                        <p>Swipe to the left.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">override</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">tearDown</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">left</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO8AutoMate14SwipeDirection5rightFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/right" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO8AutoMate14SwipeDirection5rightFMS0_S0_">right</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Swipe to the right.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">right</span></code></pre>
 
                         </div>
                       </div>
