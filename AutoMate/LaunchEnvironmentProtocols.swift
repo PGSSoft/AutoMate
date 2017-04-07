@@ -37,6 +37,17 @@ public protocol LaunchEnvironmentProtocol: LaunchOption {
     associatedtype Value: LaunchEnvironmentValue
 }
 
+// MARK: Default implementation
+public extension LaunchEnvironmentProtocol {
+
+    /// Launch arguments provided by this 
+    ///
+    /// Launch environment does not have to provide launch arguments.
+    public var launchArguments: [String]? {
+        return nil
+    }
+}
+
 // MARK: - LaunchEnvironmentWithSingleValue
 /// Protocol defining minimal requirements for launch environment option with single values.
 /// Provides default implementation for handling singe launch environment by providing `key` and `value`.

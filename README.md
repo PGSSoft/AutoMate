@@ -93,7 +93,7 @@ Full documentation is available at [https://pgssoft.github.io/AutoMate/](https:/
 - [x] Most permissions alerts (like: `LocationWhenInUseAlert`, `CalendarAlert`, `PhotosAlert`) (with `AutoMate-ModelGenie`)
 - [x] Managing events, reminders and contacts (with `AutoMate-AppBuddy`)
 - [x] Companion library for the application (`AutoMate-AppBuddy`)
-- [ ] Improve launch options type safety
+- [x] Improve launch options type safety
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders
 - [ ] Making screenshots

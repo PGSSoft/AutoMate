@@ -6,6 +6,7 @@ Released on ????-??-??.
 #### Added
 - Added `element(withIdentifier:labels:labelComparisonOperator:)`
 - Added `swipe(to:times:avoid:from:until:)`, `swipe(to:untilExist:times:avoid:from:)` and `swipe(to:untilVisible:times:avoid:from:)` to use with collection views.
+- Improve launch options type safety
 
 ## [1.2.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.2.0)
 Released on 2017-03-29.
