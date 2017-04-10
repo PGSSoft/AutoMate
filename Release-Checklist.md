@@ -5,8 +5,8 @@
 - [ ] Update CocoaPods and Carthage sections in readme
 - [ ] Update changelog
 - [ ] Update documentation using Jazzy
-- [ ] Update version in Xcode - build version and short version
+- [ ] Update version in Xcode - build version and short version (CURRENT_PROJECT_VERSION)
 - [ ] Update pod spec (version)
-- [ ] Merge feature branch to master
+- [ ] Merge develop branch to master
 - [ ] Make version tag
-- [ ] Push podspec to CocoaPods
+- [ ] Push podspec to CocoaPods (pod trunk push)

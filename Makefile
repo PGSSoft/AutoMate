@@ -6,6 +6,7 @@ docs:
 	rsync -ahvL --delete "assets" "docs"
 	rm -r build
 
+# Push master, develop and tags to GitHub
 push_github:
 	git push github develop
 	git push github master
