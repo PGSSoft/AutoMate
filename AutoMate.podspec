@@ -23,4 +23,5 @@ Pod::Spec.new do |s|
   s.resources     = ["AutoMate/Models/Messages/*.json"]
 
   s.framework = "XCTest"
+  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end

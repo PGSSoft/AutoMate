@@ -1,10 +1,14 @@
-.PHONY: docs push_github check check-podspec check-carthage
+.PHONY: docs pod_install push_github check-podspec check-carthage check
 
 # Create documentation
 docs:
 	jazzy -c
 	rsync -ahvL --delete "assets" "docs"
 	rm -r build
+
+# Install CocoaPods in the AutoMateExample directory
+pod_install:
+	pod install --project-directory=AutoMateExample
 
 # Push master, develop and tags to GitHub
 push_github:

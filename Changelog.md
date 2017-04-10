@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.3.1)
+Released on ????-??-??.
+
+#### Updated
+- Disabled Bitcode for Cocoapods.
+
 ## [1.3.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.3.0)
 Released on 2017-04-10.
 
