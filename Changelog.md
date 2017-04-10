@@ -1,7 +1,7 @@
 # Changelog
 
-## [1.3.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.2.0)
-Released on ????-??-??.
+## [1.3.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.3.0)
+Released on 2017-04-10.
 
 #### Added
 - Added `element(withIdentifier:labels:labelComparisonOperator:)`

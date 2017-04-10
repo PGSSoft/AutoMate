@@ -12,7 +12,9 @@
 
 # AutoMate
 
-`AutoMate` is a Swift framework containing a set of helpful `XCTest` extensions for writing UI automation tests. It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device. With the [`AutoMate-AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) it can also disable animations in the application and manage events, reminders and contacts.
+`AutoMate` is a Swift framework containing a set of helpful `XCTest` extensions for writing UI automation tests.
+It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device.
+With the [`AutoMate-AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) it can also disable animations in the application and manage events, reminders and contacts.
 
 [![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat)](https://swift.org)
 [![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate)
@@ -96,13 +98,14 @@ Full documentation is available at [https://pgssoft.github.io/AutoMate/](https:/
 - [x] Improve launch options type safety
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders
-- [ ] Making screenshots
+- [ ] Taking screenshots
 - [ ] Clearing application data
 - [ ] Stubbing notifications
 
 ## Example application
 
-Repository contains example application under `AutoMateExample` directory. Structure of the application is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
+Repository contains example application under `AutoMateExample` directory.
+Structure of the application is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
 
 ## Development
 
