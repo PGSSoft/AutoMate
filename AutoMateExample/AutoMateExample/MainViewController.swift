@@ -10,8 +10,16 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    // MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         tableView.accessibilityIdentifier = "tableView"
+    }
+}
+
+extension MainViewController: UINavigationControllerDelegate {
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        return .all
     }
 }

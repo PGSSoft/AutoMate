@@ -18,43 +18,47 @@ open class MainPage: BaseAppPage {
     }
 
     open var textInputMenu: XCUIElement {
-        return menu(withTitle: Locators.textInputMenu)
+        return menu(withTitle: .textInputMenu)
     }
 
     open var appearingMenu: XCUIElement {
-        return menu(withTitle: Locators.appearingViewMenu)
+        return menu(withTitle: .appearingViewMenu)
     }
 
     open var scrollViewMenu: XCUIElement {
-        return menu(withTitle: Locators.scrollViewMenu)
+        return menu(withTitle: .scrollViewMenu)
     }
 
     open var scrollVerticallyViewMenu: XCUIElement {
-        return menu(withTitle: Locators.scrollVerticallyViewMenu)
+        return menu(withTitle: .scrollVerticallyViewMenu)
     }
 
     open var longTableViewMenu: XCUIElement {
-        return menu(withTitle: Locators.longTableViewMenu)
+        return menu(withTitle: .longTableViewMenu)
     }
 
     open var collectionViewMenu: XCUIElement {
-        return menu(withTitle: Locators.collectionViewMenu)
+        return menu(withTitle: .collectionViewMenu)
     }
 
     open var permissionsViewMenu: XCUIElement {
-        return menu(withTitle: Locators.permissionsViewMenu)
+        return menu(withTitle: .permissionsViewMenu)
     }
 
     open var middleButtonMenu: XCUIElement {
-        return menu(withTitle: Locators.middleButtonMenu)
+        return menu(withTitle: .middleButtonMenu)
     }
 
     open var tableViewMenu: XCUIElement {
-        return menu(withTitle: Locators.tableViewMenu)
+        return menu(withTitle: .tableViewMenu)
+    }
+
+    open var rotateViewMenu: XCUIElement {
+        return menu(withTitle: .rotateViewMenu)
     }
 
     open var autoMateLaunchEnvironments: XCUIElement {
-        return menu(withTitle: Locators.autoMateLaunchEnvironments)
+        return menu(withTitle: .autoMateLaunchEnvironments)
     }
 
     // MARK: Actions
@@ -94,12 +98,16 @@ open class MainPage: BaseAppPage {
         tableViewMenu.tap()
     }
 
+    open func goToRotatePageMenu() {
+        return rotateViewMenu.tap()
+    }
+
     open func goToAutoMateLaunchEnvironments() {
         autoMateLaunchEnvironments.tap()
     }
 
     // MARK: Helpers
-    private func menu(withTitle locator: Locator) -> XCUIElement {
+    private func menu(withTitle locator: Locators) -> XCUIElement {
         return tableView.cells.element(containingLabels: [Locators.menuItemName: locator.identifier])
     }
 }
@@ -128,6 +136,7 @@ private extension MainPage {
         case permissionsViewMenu = "Permissions"
         case middleButtonMenu = "Middle button"
         case tableViewMenu = "Table view"
+        case rotateViewMenu = "Rotate view"
         case autoMateLaunchEnvironments = "AutoMate Launch Environments"
     }
 }

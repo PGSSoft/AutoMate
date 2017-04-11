@@ -30,6 +30,8 @@
 		96470BD51E55873F00D40CB9 /* SiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96470BD41E55873F00D40CB9 /* SiriViewController.swift */; };
 		964F74CA1E54DE90004B9400 /* LocationAlwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F74C91E54DE90004B9400 /* LocationAlwaysViewController.swift */; };
 		965D56AD1E35F4C20056EE05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D56AC1E35F4C20056EE05 /* MainViewController.swift */; };
+		9663E0C81E9BBA6300331C4A /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663E0C71E9BBA6300331C4A /* RotationViewController.swift */; };
+		9663E0CB1E9CAC7400331C4A /* RotatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663E0CA1E9CAC7400331C4A /* RotatePage.swift */; };
 		966A7A121E5488300026AE29 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A111E5488300026AE29 /* HealthKitViewController.swift */; };
 		9670CC1C1E77D8DD00A1134E /* ContactsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670CC1B1E77D8DD00A1134E /* ContactsListPage.swift */; };
 		9670CC1F1E77D90C00A1134E /* ContactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670CC1E1E77D90C00A1134E /* ContactsData.swift */; };
@@ -176,6 +178,8 @@
 		96470BD41E55873F00D40CB9 /* SiriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
 		964F74C91E54DE90004B9400 /* LocationAlwaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlwaysViewController.swift; sourceTree = "<group>"; };
 		965D56AC1E35F4C20056EE05 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9663E0C71E9BBA6300331C4A /* RotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
+		9663E0CA1E9CAC7400331C4A /* RotatePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatePage.swift; sourceTree = "<group>"; };
 		966A7A111E5488300026AE29 /* HealthKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
 		966A7A141E548D7F0026AE29 /* AutoMateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoMateExample.entitlements; sourceTree = "<group>"; };
 		9670CC1B1E77D8DD00A1134E /* ContactsListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsListPage.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				1F39828B1D65C2D900AC089C /* MiddleButtonViewController.swift */,
 				96BB6F4B1E5448CE00A74DA1 /* PermissionsViewController.swift */,
 				96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */,
+				9663E0C71E9BBA6300331C4A /* RotationViewController.swift */,
 				969087C61E9505D7007974FB /* ScrollingHorizontallyViewController.swift */,
 				962FAAC31D9144F6000592EF /* ScrollingViewController.swift */,
 				1F9891A81D409547007CD2B0 /* Assets.xcassets */,
@@ -349,6 +354,7 @@
 				9674482C1E55A61D000B42BB /* PermissionsSubPages.swift */,
 				9621BBCD1E42090C001A9C2C /* PushedPage.swift */,
 				E43E3D921E76F2A40055E635 /* RemindersListPage.swift */,
+				9663E0CA1E9CAC7400331C4A /* RotatePage.swift */,
 				9621BBD11E420E25001A9C2C /* ScrollPage.swift */,
 				969087C91E950A72007974FB /* ScrollVerticallyPage.swift */,
 				9621BBCA1E4206C6001A9C2C /* TablePage.swift */,
@@ -752,6 +758,7 @@
 				C8E84E541E5EC4C100DAA411 /* TableViewDataProtocols.swift in Sources */,
 				E488262E1E72BCA900AB1E98 /* EventViewModel.swift in Sources */,
 				964F74CA1E54DE90004B9400 /* LocationAlwaysViewController.swift in Sources */,
+				9663E0C81E9BBA6300331C4A /* RotationViewController.swift in Sources */,
 				967448271E55973D000B42BB /* CallsViewController.swift in Sources */,
 				E4BA7C7A1E5B1F0300593B52 /* LaunchEnvironmentsDataViewController.swift in Sources */,
 				9674481C1E55917B000B42BB /* PhotoViewController.swift in Sources */,
@@ -787,6 +794,7 @@
 				9670CC1F1E77D90C00A1134E /* ContactsData.swift in Sources */,
 				96B131DE1E54CA7F007E3A04 /* PermissionsTests.swift in Sources */,
 				9674482D1E55A61D000B42BB /* PermissionsSubPages.swift in Sources */,
+				9663E0CB1E9CAC7400331C4A /* RotatePage.swift in Sources */,
 				E43E3D931E76F2A40055E635 /* RemindersListPage.swift in Sources */,
 				9621BBCE1E42090C001A9C2C /* PushedPage.swift in Sources */,
 				9621BBD01E420D98001A9C2C /* XCUIElementExtensionTests.swift in Sources */,

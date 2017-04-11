@@ -18,12 +18,18 @@ class XCUIElementExtensionTests: AppUITestCase {
     lazy var scrollVerticallyPage: ScrollVerticallyPage = ScrollVerticallyPage(in: self.app)
     lazy var collectionPage: CollectionPage = CollectionPage(in: self.app)
     lazy var middleButtonPage: MiddleButtonPage = MiddleButtonPage(in: self.app)
+    lazy var rotatePage: RotatePage = RotatePage(in: self.app)
 
     // MARK: Set up
     override func setUp() {
         super.setUp()
         TestLauncher.configureWithDefaultOptions(app).launch()
         wait(forVisibilityOf: mainPage)
+    }
+
+    override func tearDown() {
+        XCUIDevice.shared().orientation = .portrait
+        super.tearDown()
     }
 
     // MARK: Tests
@@ -195,5 +201,49 @@ class XCUIElementExtensionTests: AppUITestCase {
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(middleButtonPage.isLabelDisplayed())
+    }
+
+    func testSmartCoordinates() {
+        mainPage.goToRotatePageMenu()
+
+        let vector = CGVector(dx: 0.5, dy: 0.5)
+
+        // Portrait
+        XCUIDevice.shared().orientation = .portrait
+        rotatePage.tapButtonA(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+        rotatePage.tapButtonB(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonC(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonD(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+
+        // Landspace left
+        XCUIDevice.shared().orientation = .landscapeLeft
+        rotatePage.tapButtonA(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonB(with: vector)
+        rotatePage.tapButtonC(with: vector)
+        rotatePage.tapButtonD(with: vector)
+
+        // Landspace right
+        XCUIDevice.shared().orientation = .landscapeRight
+        rotatePage.tapButtonA(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonB(with: vector)
+        rotatePage.tapButtonC(with: vector)
+        rotatePage.tapButtonD(with: vector)
+
+        // Upside down
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        rotatePage.tapButtonA(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+        rotatePage.tapButtonB(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonC(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonD(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
     }
 }

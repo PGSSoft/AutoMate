@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -248,8 +249,33 @@
                                             <segue destination="VvI-vD-Whm" kind="show" id="5bH-zg-Rlt"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Hqf-70-gWM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lyI-Kz-mdn">
                                         <rect key="frame" x="0.0" y="424" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lyI-Kz-mdn" id="ucZ-Aw-Z3f">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxc-62-fMv">
+                                                    <rect key="frame" x="20" y="11" width="89.5" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="menuItemName"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hxc-62-fMv" firstAttribute="centerY" secondItem="ucZ-Aw-Z3f" secondAttribute="centerY" id="7yf-6W-S6P"/>
+                                                <constraint firstItem="hxc-62-fMv" firstAttribute="leading" secondItem="ucZ-Aw-Z3f" secondAttribute="leading" constant="20" symbolic="YES" id="hXD-jY-aJG"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hxc-62-fMv" secondAttribute="trailing" constant="20" symbolic="YES" id="v6n-bw-rUE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="b24-3B-Jlf" kind="show" id="1tx-wn-cdc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Hqf-70-gWM">
+                                        <rect key="frame" x="0.0" y="468" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hqf-70-gWM" id="bdp-LA-82q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1047,6 +1073,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1d-Jc-4fJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2289" y="3459"/>
+        </scene>
+        <!--Rotate-->
+        <scene sceneID="lmA-WV-4Jc">
+            <objects>
+                <viewController title="Rotate" id="b24-3B-Jlf" customClass="RotationViewController" customModule="AutoMateExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZCc-bp-fMr"/>
+                        <viewControllerLayoutGuide type="bottom" id="EVc-80-aIa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cg9-Vo-5Ur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjD-tk-ccU">
+                                <rect key="frame" x="20" y="72" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="buttonA"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CjD-tk-ccU" secondAttribute="height" id="eIm-Fo-tOY"/>
+                                </constraints>
+                                <state key="normal" title="Button A"/>
+                                <connections>
+                                    <action selector="buttonTouched:" destination="b24-3B-Jlf" eventType="touchUpInside" id="5XC-lL-AZH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z74-es-WAP">
+                                <rect key="frame" x="295" y="72" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="buttonB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z74-es-WAP" secondAttribute="height" id="Raj-HM-6z0"/>
+                                </constraints>
+                                <state key="normal" title="Button B"/>
+                                <connections>
+                                    <action selector="buttonTouched:" destination="b24-3B-Jlf" eventType="touchUpInside" id="TMb-12-EXo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbv-nF-ioQ">
+                                <rect key="frame" x="20" y="598" width="61" height="61"/>
+                                <accessibility key="accessibilityConfiguration" identifier="buttonC"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dbv-nF-ioQ" secondAttribute="height" id="2v6-nq-Ntq"/>
+                                </constraints>
+                                <state key="normal" title="Button C"/>
+                                <connections>
+                                    <action selector="buttonTouched:" destination="b24-3B-Jlf" eventType="touchUpInside" id="DDt-Ai-Bq7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvC-sc-tAq">
+                                <rect key="frame" x="294" y="598" width="61" height="61"/>
+                                <accessibility key="accessibilityConfiguration" identifier="buttonD"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JvC-sc-tAq" secondAttribute="height" id="aiB-rw-22j"/>
+                                </constraints>
+                                <state key="normal" title="Button D"/>
+                                <connections>
+                                    <action selector="buttonTouched:" destination="b24-3B-Jlf" eventType="touchUpInside" id="pNF-vG-hBO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-zE-K1j">
+                                <rect key="frame" x="134" y="323" width="107" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="centerLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-W8-MUv">
+                                <rect key="frame" x="117.5" y="352" width="139" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="showNavigation"/>
+                                <state key="normal" title="Show navigation bar"/>
+                                <connections>
+                                    <action selector="showNavigationTouched:" destination="b24-3B-Jlf" eventType="touchUpInside" id="sj6-PC-XBs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nrU-zE-K1j" firstAttribute="centerX" secondItem="Cg9-Vo-5Ur" secondAttribute="centerX" id="08K-Nw-sv4"/>
+                            <constraint firstItem="EVc-80-aIa" firstAttribute="top" secondItem="Dbv-nF-ioQ" secondAttribute="bottom" constant="8" symbolic="YES" id="E3S-9t-eMO"/>
+                            <constraint firstItem="nrU-zE-K1j" firstAttribute="centerY" secondItem="Cg9-Vo-5Ur" secondAttribute="centerY" id="Kqr-vR-XFB"/>
+                            <constraint firstAttribute="trailing" secondItem="z74-es-WAP" secondAttribute="trailing" constant="20" symbolic="YES" id="R6V-6v-PCS"/>
+                            <constraint firstItem="EVc-80-aIa" firstAttribute="top" secondItem="JvC-sc-tAq" secondAttribute="bottom" constant="8" symbolic="YES" id="Wgd-cc-MgE"/>
+                            <constraint firstItem="Dbv-nF-ioQ" firstAttribute="leading" secondItem="Cg9-Vo-5Ur" secondAttribute="leading" constant="20" symbolic="YES" id="ZmL-61-WOs"/>
+                            <constraint firstItem="CjD-tk-ccU" firstAttribute="leading" secondItem="Cg9-Vo-5Ur" secondAttribute="leading" constant="20" symbolic="YES" id="bhw-9h-1dE"/>
+                            <constraint firstItem="4cF-W8-MUv" firstAttribute="top" secondItem="nrU-zE-K1j" secondAttribute="bottom" constant="8" symbolic="YES" id="dEL-il-c8b"/>
+                            <constraint firstItem="z74-es-WAP" firstAttribute="top" secondItem="ZCc-bp-fMr" secondAttribute="bottom" constant="8" symbolic="YES" id="kuw-Km-TnD"/>
+                            <constraint firstAttribute="trailing" secondItem="JvC-sc-tAq" secondAttribute="trailing" constant="20" symbolic="YES" id="tXz-Q9-Xn2"/>
+                            <constraint firstItem="CjD-tk-ccU" firstAttribute="top" secondItem="ZCc-bp-fMr" secondAttribute="bottom" constant="8" symbolic="YES" id="ufC-8V-uCc"/>
+                            <constraint firstItem="4cF-W8-MUv" firstAttribute="centerX" secondItem="nrU-zE-K1j" secondAttribute="centerX" id="zvW-PS-jDa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonA" destination="CjD-tk-ccU" id="sXd-bn-wrd"/>
+                        <outlet property="buttonB" destination="z74-es-WAP" id="m0D-5u-SsB"/>
+                        <outlet property="buttonC" destination="Dbv-nF-ioQ" id="DUC-QV-2vL"/>
+                        <outlet property="buttonD" destination="JvC-sc-tAq" id="tyQ-Th-MUq"/>
+                        <outlet property="label" destination="nrU-zE-K1j" id="b58-SY-EbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHY-7l-i6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289" y="4169"/>
         </scene>
         <!--Launch Environments Data View Controller-->
         <scene sceneID="lnw-F1-d5b">

@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Test for Media Library request</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Test for Bluetooth request</string>
 	<key>NSCalendarsUsageDescription</key>
@@ -40,8 +42,6 @@
 	<string>Test for Location always request</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Test for Location when in use request</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Test for Media Library request</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Test for Microphone request</string>
 	<key>NSMotionUsageDescription</key>
@@ -70,6 +70,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 </dict>
 </plist>
