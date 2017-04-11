@@ -110,7 +110,7 @@ public extension XCUIElement {
     ///
     /// - Parameter offset: Tap offset. Default (0, 0).
     public func tap(withOffset offset: CGVector = CGVector.zero) {
-        coordinate(withNormalizedOffset: offset).tap()
+        smartCoordinate(withNormalizedOffset: offset).tap()
     }
 
     /// Creates and returns a new smart coordinate with a normalized offset.

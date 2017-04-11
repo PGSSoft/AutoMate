@@ -96,6 +96,7 @@ Full documentation is available at [https://pgssoft.github.io/AutoMate/](https:/
 - [x] Managing events, reminders and contacts (with `AutoMate-AppBuddy`)
 - [x] Companion library for the application (`AutoMate-AppBuddy`)
 - [x] Improve launch options type safety
+- [x] Smart coordinates.
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders
 - [ ] Taking screenshots

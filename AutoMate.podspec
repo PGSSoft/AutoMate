@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AutoMate"
-  s.version      = "1.3.0"
+  s.version      = "1.3.1"
   s.summary      = "Swift framework containing set of helpful XCTest extensions for writing UI automation tests."
   s.homepage     = "https://github.com/PGSSoft/AutoMate"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }

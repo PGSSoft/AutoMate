@@ -1,13 +1,14 @@
 # Changelog
 
 ## [1.3.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.3.1)
-Released on ????-??-??.
+Released on 2017-04-11.
 
 #### Added
 - Smart coordinates `SmartXCUICoordinate`.
 
 #### Updated
 - Disabled Bitcode for Cocoapods.
+- Adjusted swipe and tap methods to use smart coordinates.
 
 ## [1.3.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.3.0)
 Released on 2017-04-10.
