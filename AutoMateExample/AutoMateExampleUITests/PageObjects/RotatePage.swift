@@ -42,32 +42,48 @@ open class RotatePage: BaseAppPage, PushedPage {
         buttonA.tap()
     }
 
-    open func tapButtonA(with vector: CGVector) {
-        buttonA.coordinate(withNormalizedOffset: vector).tap()
-    }
-
     open func tapButtonB() {
         buttonB.tap()
-    }
-
-    open func tapButtonB(with vector: CGVector) {
-        buttonB.coordinate(withNormalizedOffset: vector).tap()
     }
 
     open func tapButtonC() {
         buttonC.tap()
     }
 
-    open func tapButtonC(with vector: CGVector) {
-        buttonC.coordinate(withNormalizedOffset: vector).tap()
-    }
-
     open func tapButtonD() {
         buttonD.tap()
     }
 
+    open func tapButtonA(with vector: CGVector) {
+        buttonA.coordinate(withNormalizedOffset: vector).tap()
+    }
+
+    open func tapButtonB(with vector: CGVector) {
+        buttonB.coordinate(withNormalizedOffset: vector).tap()
+    }
+
+    open func tapButtonC(with vector: CGVector) {
+        buttonC.coordinate(withNormalizedOffset: vector).tap()
+    }
+
     open func tapButtonD(with vector: CGVector) {
         buttonD.coordinate(withNormalizedOffset: vector).tap()
+    }
+
+    open func tapButtonA(withSmart vector: CGVector) {
+        buttonA.smartCoordinate(withNormalizedOffset: vector).tap()
+    }
+
+    open func tapButtonB(withSmart vector: CGVector) {
+        buttonB.smartCoordinate(withNormalizedOffset: vector).tap()
+    }
+
+    open func tapButtonC(withSmart vector: CGVector) {
+        buttonC.smartCoordinate(withNormalizedOffset: vector).tap()
+    }
+
+    open func tapButtonD(withSmart vector: CGVector) {
+        buttonD.smartCoordinate(withNormalizedOffset: vector).tap()
     }
 
     open func tapShowNavigation() {

@@ -219,6 +219,15 @@ class XCUIElementExtensionTests: AppUITestCase {
         rotatePage.tapButtonD(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
 
+        rotatePage.tapButtonA(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+        rotatePage.tapButtonB(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonC(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonD(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+
         // Landspace left
         XCUIDevice.shared().orientation = .landscapeLeft
         rotatePage.tapButtonA(with: vector)

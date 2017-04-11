@@ -13,6 +13,7 @@
 		1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995571D51CBFA0037CD1F /* XCTestCase.swift */; };
 		1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
 		9602D0921E54F53B001EC313 /* HealthPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */; };
+		960D39B31E9CBF6300A4F116 /* SmartXCUICoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */; };
 		96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
 		96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDC1E8A791400273BF6 /* AddressBookAlert.json */; };
 		96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */; };
@@ -107,6 +108,7 @@
 		1FC995571D51CBFA0037CD1F /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQuery.swift; sourceTree = "<group>"; };
 		9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPermissionPage.swift; sourceTree = "<group>"; };
+		960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartXCUICoordinate.swift; sourceTree = "<group>"; };
 		96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Locator.swift"; sourceTree = "<group>"; };
 		96336FDC1E8A791400273BF6 /* AddressBookAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddressBookAlert.json; sourceTree = "<group>"; };
 		96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BluetoothPeripheralAlert.json; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				E4C20FE71E39DBBE00052F11 /* AutoMateLaunchEnvironments.swift */,
 				966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */,
 				966A7A1A1E54AA920026AE29 /* LocationAlert.swift */,
+				960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */,
 				C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */,
 				E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */,
 				E425D5681CED934000A7CA03 /* TestLauncher.swift */,
@@ -575,6 +578,7 @@
 				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
 				E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */,
 				E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */,
+				960D39B31E9CBF6300A4F116 /* SmartXCUICoordinate.swift in Sources */,
 				C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */,
 				966A7A1D1E54AAAE0026AE29 /* HealthAlert.swift in Sources */,
 				96412D521E8B887300508909 /* Sequence.swift in Sources */,

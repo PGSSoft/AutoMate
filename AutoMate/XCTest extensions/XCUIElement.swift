@@ -112,4 +112,8 @@ public extension XCUIElement {
     public func tap(withOffset offset: CGVector = CGVector.zero) {
         coordinate(withNormalizedOffset: offset).tap()
     }
+
+    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector) -> SmartXCUICoordinate {
+        return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset)
+    }
 }
