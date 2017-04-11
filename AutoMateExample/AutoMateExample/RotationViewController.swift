@@ -33,10 +33,6 @@ class RotationViewController: UIViewController {
         return true
     }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .all
-    }
-
     // MARK: Actions
     @IBAction func buttonTouched(_ sender: UIButton) {
         if let title = sender.title(for: .normal) {

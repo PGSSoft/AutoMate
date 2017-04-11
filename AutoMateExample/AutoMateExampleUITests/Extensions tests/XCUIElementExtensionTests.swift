@@ -203,12 +203,11 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertTrue(middleButtonPage.isLabelDisplayed())
     }
 
-    func testSmartCoordinates() {
+    func testSmartCoordinatesPortrait() {
         mainPage.goToRotatePageMenu()
-
         let vector = CGVector(dx: 0.5, dy: 0.5)
 
-        // Portrait
+        // XCTest coordinate
         XCUIDevice.shared().orientation = .portrait
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
@@ -219,6 +218,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         rotatePage.tapButtonD(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
 
+        // Smart coordinate
         rotatePage.tapButtonA(withSmart: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(withSmart: vector)
@@ -227,8 +227,13 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonD(withSmart: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+    }
 
-        // Landspace left
+    func testSmartCoordinatesLandspaceLeft() {
+        mainPage.goToRotatePageMenu()
+        let vector = CGVector(dx: 0.5, dy: 0.5)
+
+        // XCTest coordinate
         XCUIDevice.shared().orientation = .landscapeLeft
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
@@ -236,7 +241,22 @@ class XCUIElementExtensionTests: AppUITestCase {
         rotatePage.tapButtonC(with: vector)
         rotatePage.tapButtonD(with: vector)
 
-        // Landspace right
+        // Smart coordinate
+        rotatePage.tapButtonA(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+        rotatePage.tapButtonB(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonC(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonD(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+    }
+
+    func testSmartCoordinatesLandspaceRight() {
+        mainPage.goToRotatePageMenu()
+        let vector = CGVector(dx: 0.5, dy: 0.5)
+
+        // XCTest coordinate
         XCUIDevice.shared().orientation = .landscapeRight
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
@@ -244,15 +264,40 @@ class XCUIElementExtensionTests: AppUITestCase {
         rotatePage.tapButtonC(with: vector)
         rotatePage.tapButtonD(with: vector)
 
-        // Upside down
-        XCUIDevice.shared().orientation = .portraitUpsideDown
-        rotatePage.tapButtonA(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
-        rotatePage.tapButtonB(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-        rotatePage.tapButtonC(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonD(with: vector)
+        // Smart coordinate
+        rotatePage.tapButtonA(withSmart: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+        rotatePage.tapButtonB(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonC(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonD(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+    }
+
+    func testSmartCoordinatesUpsideDown() {
+        mainPage.goToRotatePageMenu()
+        let vector = CGVector(dx: 0.5, dy: 0.5)
+
+        // XCTest coordinate
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+//        rotatePage.tapButtonA(with: vector)
+//        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+//        rotatePage.tapButtonB(with: vector)
+//        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+//        rotatePage.tapButtonC(with: vector)
+//        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+//        rotatePage.tapButtonD(with: vector)
+//        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+
+        // Smart coordinate
+        rotatePage.tapButtonA(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+        rotatePage.tapButtonB(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonC(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonD(withSmart: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
     }
 }

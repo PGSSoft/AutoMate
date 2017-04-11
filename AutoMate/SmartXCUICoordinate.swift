@@ -15,19 +15,38 @@ open class SmartXCUICoordinate
     // MARK: Properties
     open let referencedElement: XCUIElement
     open let normalizedOffset: CGVector
+    let app: XCUIApplication
+    let device: XCUIDevice
 
     open var realCoordinate: XCUICoordinate {
-        guard XCUIDevice.shared().orientation.isLandscape else {
+        // Returns normalized coordinate for portrait orientation.
+        if device.orientation == .portrait {
             return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
         }
 
-        let app = XCUIApplication()
+        // Supports only landscape left, landscape right and upside down.
+        // For all other unsupported orientations the default one is returned.
+        guard device.orientation == .landscapeLeft
+            || device.orientation == .landscapeRight
+            || device.orientation == .portraitUpsideDown else {
+            return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
+        }
+
         _ = app.isHittable // force new UI hierarchy snapshot
         let screenPoint = referencedElement.coordinate(withNormalizedOffset: normalizedOffset).screenPoint
 
-        let portraitScreenPoint = XCUIDevice.shared().orientation == .landscapeLeft
-            ? CGVector(dx: app.frame.width - screenPoint.y, dy: screenPoint.x)
-            : CGVector(dx: screenPoint.y, dy: app.frame.height - screenPoint.x)
+        // Calculate smart coordinate depending on device orientation.
+        let portraitScreenPoint: CGVector
+        switch device.orientation {
+        case .landscapeLeft:
+            portraitScreenPoint = CGVector(dx: app.frame.width - screenPoint.y, dy: screenPoint.x)
+        case .landscapeRight:
+            portraitScreenPoint = CGVector(dx: screenPoint.y, dy: app.frame.height - screenPoint.x)
+        case .portraitUpsideDown:
+            portraitScreenPoint = CGVector(dx: app.frame.width - screenPoint.x, dy: app.frame.height - screenPoint.y)
+        default:
+            preconditionFailure("Not supported orientation")
+        }
 
         return app
             .coordinate(withNormalizedOffset: CGVector.zero)
@@ -35,9 +54,11 @@ open class SmartXCUICoordinate
     }
 
     // MARK: Initialization
-    init(referencedElement: XCUIElement, normalizedOffset offset: CGVector) {
+    init(referencedElement: XCUIElement, normalizedOffset offset: CGVector, app: XCUIApplication = XCUIApplication(), device: XCUIDevice = XCUIDevice.shared()) {
         self.referencedElement = referencedElement
         self.normalizedOffset = offset
+        self.app = app
+        self.device = device
     }
 
     // MARK: XCUICoordinate methods
