@@ -558,9 +558,9 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8AutoMate19SmartXCUICoordinatecFT17referencedElementCSo11XCUIElement16normalizedOffsetVSC8CGVector3appCSo15XCUIApplication6deviceCSo10XCUIDevice_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(referencedElement:normalizedOffset:app:device:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8AutoMate19SmartXCUICoordinatecFT17referencedElementCSo11XCUIElement16normalizedOffsetVSC8CGVector3appCSo15XCUIApplication6deviceCSo10XCUIDevice_S0_">init(referencedElement:normalizedOffset:app:device:)</a>
+                    <a name="/s:FC8AutoMate19SmartXCUICoordinatecFT17referencedElementCSo11XCUIElement16normalizedOffsetVSC8CGVector3appCSo15XCUIApplication11orientationOSC19UIDeviceOrientation_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(referencedElement:normalizedOffset:app:orientation:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8AutoMate19SmartXCUICoordinatecFT17referencedElementCSo11XCUIElement16normalizedOffsetVSC8CGVector3appCSo15XCUIApplication11orientationOSC19UIDeviceOrientation_S0_">init(referencedElement:normalizedOffset:app:orientation:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -580,7 +580,7 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">referencedElement</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n"><a href="../Classes/SmartXCUICoordinate.html#/s:vC8AutoMate19SmartXCUICoordinate16normalizedOffsetVSC8CGVector">normalizedOffset</a></span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">,</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="nv">device</span><span class="p">:</span> <span class="kt">XCUIDevice</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="nf">shared</span><span class="p">())</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">referencedElement</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n"><a href="../Classes/SmartXCUICoordinate.html#/s:vC8AutoMate19SmartXCUICoordinate16normalizedOffsetVSC8CGVector">normalizedOffset</a></span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">,</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -630,12 +630,12 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                             <tr>
                               <td>
                                 <code>
-                                <em>device</em>
+                                <em>orientation</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Device object used to get device orientation.</p>
+                                  <p>Device orientation.</p>
 
                                 </div>
                               </td>

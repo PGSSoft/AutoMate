@@ -25,7 +25,7 @@ public extension XCUIElement {
         // When accessing properties of XCUIElement, XCTest works differently than in a case of actions on elements
         // - there is no waiting for the app to idle and to finish all animations.
         // This can lead to problems and test flakiness as the test will evaluate a query before e.g. view transition has been completed.
-        XCUIDevice.shared().orientation = .unknown
+        XCUIDevice.shared().orientation = XCUIDevice.shared().orientation
         return exists && isHittable
     }
 
@@ -108,9 +108,12 @@ public extension XCUIElement {
     /// element.tap(withOffset: CGVector(dx: 0.5, dy: 0.5))
     /// ```
     ///
-    /// - Parameter offset: Tap offset. Default (0, 0).
-    public func tap(withOffset offset: CGVector = CGVector.zero) {
-        smartCoordinate(withNormalizedOffset: offset).tap()
+    /// - Parameters:
+    ///   - offset: Tap offset. Default (0, 0).
+    ///   - app: Application object used to calculate portrait screen position.
+    ///   - orientation: Device orientation.
+    public func tap(withOffset offset: CGVector = CGVector.zero, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
+        smartCoordinate(withNormalizedOffset: offset, app: app, orientation: orientation).tap()
     }
 
     /// Creates and returns a new smart coordinate with a normalized offset.
@@ -131,12 +134,12 @@ public extension XCUIElement {
     ///   This functionality was implemented based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
     /// - SeeAlso:
     ///   [Workaround for XCUICoordinate in landscape](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822)
-    /// - Parameter
+    /// - Parameters:
     ///   - normalizedOffset: Normalized offset from the elements origin position.
     ///   - app: Application object used to calculate portrait screen position.
-    ///   - device: Device object used to get device orientation.
+    ///   - orientation: Device orientation.
     /// - Returns: Smart coordinate for given normalized offset.
-    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector, app: XCUIApplication = XCUIApplication(), device: XCUIDevice = XCUIDevice.shared()) -> SmartXCUICoordinate {
-        return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset, app: app, device: device)
+    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) -> SmartXCUICoordinate {
+        return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset, app: app, orientation: orientation)
     }
 }

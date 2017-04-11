@@ -44,12 +44,12 @@ open class SmartXCUICoordinate {
     /// Application object used to calculate portrait screen position.
     let app: XCUIApplication
 
-    /// Device object used to get device orientation.
-    let device: XCUIDevice
+    /// Device orientation.
+    let orientation: UIDeviceOrientation
 
     /// Real coordinates in the portrait orientation.
     open var realCoordinate: XCUICoordinate {
-        return realCoordinate(for: device.orientation)
+        return realCoordinate(for: orientation)
     }
 
     // MARK: Initialization
@@ -65,12 +65,12 @@ open class SmartXCUICoordinate {
     ///   - referencedElement: The element that the coordinate is based on, either directly or via the coordinate from which it was derived.
     ///   - offset: Normalized offset from the elements origin position.
     ///   - app: Application object used to calculate portrait screen position.
-    ///   - device: Device object used to get device orientation.
-    public init(referencedElement: XCUIElement, normalizedOffset offset: CGVector, app: XCUIApplication = XCUIApplication(), device: XCUIDevice = XCUIDevice.shared()) {
+    ///   - orientation: Device orientation.
+    public init(referencedElement: XCUIElement, normalizedOffset offset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
         self.referencedElement = referencedElement
         self.normalizedOffset = offset
         self.app = app
-        self.device = device
+        self.orientation = orientation
     }
 
     // MARK: Methods

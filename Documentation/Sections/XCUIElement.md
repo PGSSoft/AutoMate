@@ -44,10 +44,10 @@ collectionView.swipe(to: .down, untilVisible: element)
 
 `clearTextField()` and `clear(andType:)` provides straightforward method to delete text from text field and then type the provided string.
 
-`tapWithOffset` performs `tap()` on given coordinates (relative to the receiving element).
+`tap(withOffset:app:orientation:)` performs `tap()` on given coordinates (relative to the receiving element).
 Can be used to test view where position of the tap matters. It's also possible to tap a subview (like table view cell), without actually queuing that subview.
 
-`smartCoordinate(withNormalizedOffset:app:device:)` is an replacement of the `coordinate(withNormalizedOffset:)` from `XCUIElement`.
+`smartCoordinate(withNormalizedOffset:app:orientation:)` is an replacement of the `coordinate(withNormalizedOffset:)` from `XCUIElement`.
 `XCUICoordinate` has an open [issue](https://openradar.appspot.com/31529903). Coordinates works correctly only in portrait orientation.
 This method and `SmartXCUICoordinate` was implemented as a workaround based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
 

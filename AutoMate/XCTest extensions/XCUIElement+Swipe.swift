@@ -384,7 +384,7 @@ public enum AvoidableElement {
 /// - `right`: Swipe to the right.
 public enum SwipeDirection {
     /// Swipe up.
-    case up
+    case up // swiftlint:disable:this identifier_name
     /// Swipe down.
     case down
     /// Swipe to the left.

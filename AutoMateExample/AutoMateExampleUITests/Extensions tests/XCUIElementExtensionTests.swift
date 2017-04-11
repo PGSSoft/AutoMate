@@ -9,6 +9,7 @@
 import XCTest
 import AutoMate
 
+// swiftlint:disable:next type_body_length
 class XCUIElementExtensionTests: AppUITestCase {
 
     // MARK: Arrange Page Objects
