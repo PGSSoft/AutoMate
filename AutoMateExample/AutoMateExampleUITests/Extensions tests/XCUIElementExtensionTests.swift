@@ -281,14 +281,14 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         // XCTest coordinate
         XCUIDevice.shared().orientation = .portraitUpsideDown
-//        rotatePage.tapButtonA(with: vector)
-//        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
-//        rotatePage.tapButtonB(with: vector)
-//        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-//        rotatePage.tapButtonC(with: vector)
-//        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-//        rotatePage.tapButtonD(with: vector)
-//        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
+        rotatePage.tapButtonA(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+        rotatePage.tapButtonB(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        rotatePage.tapButtonC(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        rotatePage.tapButtonD(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
 
         // Smart coordinate
         rotatePage.tapButtonA(withSmart: vector)

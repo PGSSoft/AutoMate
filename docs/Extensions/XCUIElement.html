@@ -68,6 +68,9 @@
               <li class="nav-group-task">
                 <a href="../Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -458,6 +461,13 @@ The method will stop when the maximum number of swipes is reached or when the co
 
 <p><code>tapWithOffset</code> performs <code>tap()</code> on given coordinates (relative to the receiving element).
 Can be used to test view where position of the tap matters. It&rsquo;s also possible to tap a subview (like table view cell), without actually queuing that subview.</p>
+
+<p><code>smartCoordinate(withNormalizedOffset:app:device:)</code> is an replacement of the <code>coordinate(withNormalizedOffset:)</code> from <code>XCUIElement</code>.
+<code>XCUICoordinate</code> has an open <a href="https://openradar.appspot.com/31529903">issue</a>. Coordinates works correctly only in portrait orientation.
+This method and <code>SmartXCUICoordinate</code> was implemented as workaround based on <a href="https://gist.github.com/glebon">glebon</a> <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">gist</a>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tableViews</span><span class="o">.</span><span class="n">element</span>
+<span class="n">element</span><span class="o">.</span><span class="nf">smartCoordinate</span><span class="p">(</span><span class="nv">withNormalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
+</code></pre>
 
           </section>
           <section class="section task-group-section">
@@ -1218,12 +1228,71 @@ So the correct values are from range: <0, 1>.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE8AutoMateCSo11XCUIElement15smartCoordinateFT20withNormalizedOffsetVSC8CGVector3appCSo15XCUIApplication6deviceCSo10XCUIDevice_CS_19SmartXCUICoordinate"></a>
+                    <a name="//apple_ref/swift/Method/smartCoordinate(withNormalizedOffset:app:device:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement15smartCoordinateFT20withNormalizedOffsetVSC8CGVector3appCSo15XCUIApplication6deviceCSo10XCUIDevice_CS_19SmartXCUICoordinate">smartCoordinate(withNormalizedOffset:app:device:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns a new smart coordinate with a normalized offset.</p>
+
+<p>In opposite to the <code>coordinate(withNormalizedOffset:)</code> method, the smart coordinate works in opposite and upside down orientations.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tableViews</span><span class="o">.</span><span class="n">element</span>
+<span class="n">element</span><span class="o">.</span><span class="nf">smartCoordinate</span><span class="p">(</span><span class="nv">withNormalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
+</code></pre>
+
+<div class="aside aside-bug">
+    <p class="aside-title">Bug</p>
+    <a href="https://openradar.appspot.com/31529903">rdar://31529903</a>
+XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
+
+</div>
+
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    This functionality was implemented based on <a href="https://gist.github.com/glebon">glebon</a> <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">gist</a>.
+
+</div>
+
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">Workaround for XCUICoordinate in landscape</a>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">smartCoordinate</span><span class="p">(</span><span class="n">withNormalizedOffset</span> <span class="nv">normalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">,</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="nv">device</span><span class="p">:</span> <span class="kt">XCUIDevice</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="nf">shared</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Smart coordinate for given normalized offset.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-07)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

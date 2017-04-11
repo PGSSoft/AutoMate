@@ -113,7 +113,30 @@ public extension XCUIElement {
         coordinate(withNormalizedOffset: offset).tap()
     }
 
-    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector) -> SmartXCUICoordinate {
-        return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset)
+    /// Creates and returns a new smart coordinate with a normalized offset.
+    ///
+    /// In opposite to the `coordinate(withNormalizedOffset:)` method, the smart coordinate works in opposite and upside down orientations.
+    ///
+    /// **Example:**
+    ///
+    /// ```swift
+    /// let element = app.tableViews.element
+    /// element.smartCoordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+    /// ```
+    ///
+    /// - Bug:
+    ///   [rdar://31529903](https://openradar.appspot.com/31529903)
+    ///   XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
+    /// - Remark:
+    ///   This functionality was implemented based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
+    /// - SeeAlso:
+    ///   [Workaround for XCUICoordinate in landscape](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822)
+    /// - Parameter
+    ///   - normalizedOffset: Normalized offset from the elements origin position.
+    ///   - app: Application object used to calculate portrait screen position.
+    ///   - device: Device object used to get device orientation.
+    /// - Returns: Smart coordinate for given normalized offset.
+    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector, app: XCUIApplication = XCUIApplication(), device: XCUIDevice = XCUIDevice.shared()) -> SmartXCUICoordinate {
+        return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset, app: app, device: device)
     }
 }

@@ -3,6 +3,9 @@
 ## [1.3.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.3.1)
 Released on ????-??-??.
 
+#### Added
+- Smart coordinates `SmartXCUICoordinate`.
+
 #### Updated
 - Disabled Bitcode for Cocoapods.
 
