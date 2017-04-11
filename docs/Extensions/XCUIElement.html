@@ -464,7 +464,7 @@ Can be used to test view where position of the tap matters. It&rsquo;s also poss
 
 <p><code>smartCoordinate(withNormalizedOffset:app:device:)</code> is an replacement of the <code>coordinate(withNormalizedOffset:)</code> from <code>XCUIElement</code>.
 <code>XCUICoordinate</code> has an open <a href="https://openradar.appspot.com/31529903">issue</a>. Coordinates works correctly only in portrait orientation.
-This method and <code>SmartXCUICoordinate</code> was implemented as workaround based on <a href="https://gist.github.com/glebon">glebon</a> <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">gist</a>.</p>
+This method and <code>SmartXCUICoordinate</code> was implemented as a workaround based on <a href="https://gist.github.com/glebon">glebon</a> <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">gist</a>.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tableViews</span><span class="o">.</span><span class="n">element</span>
 <span class="n">element</span><span class="o">.</span><span class="nf">smartCoordinate</span><span class="p">(</span><span class="nv">withNormalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 </code></pre>
@@ -1243,7 +1243,7 @@ So the correct values are from range: <0, 1>.</p>
                       <div class="abstract">
                         <p>Creates and returns a new smart coordinate with a normalized offset.</p>
 
-<p>In opposite to the <code>coordinate(withNormalizedOffset:)</code> method, the smart coordinate works in opposite and upside down orientations.</p>
+<p>In opposite to the <code>coordinate(withNormalizedOffset:)</code> method, the smart coordinate works in landscape and upside down orientations.</p>
 
 <p><strong>Example:</strong></p>
 
@@ -1251,8 +1251,8 @@ So the correct values are from range: <0, 1>.</p>
 <span class="n">element</span><span class="o">.</span><span class="nf">smartCoordinate</span><span class="p">(</span><span class="nv">withNormalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 </code></pre>
 
-<div class="aside aside-bug">
-    <p class="aside-title">Bug</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
     <a href="https://openradar.appspot.com/31529903">rdar://31529903</a>
 XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
 

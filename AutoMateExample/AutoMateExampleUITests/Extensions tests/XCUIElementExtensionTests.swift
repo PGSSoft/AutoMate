@@ -238,8 +238,11 @@ class XCUIElementExtensionTests: AppUITestCase {
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonB(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonC(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonD(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
 
         // Smart coordinate
         rotatePage.tapButtonA(withSmart: vector)
@@ -261,8 +264,11 @@ class XCUIElementExtensionTests: AppUITestCase {
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonB(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonC(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonD(with: vector)
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
 
         // Smart coordinate
         rotatePage.tapButtonA(withSmart: vector)

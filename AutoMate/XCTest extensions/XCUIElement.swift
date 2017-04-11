@@ -115,7 +115,7 @@ public extension XCUIElement {
 
     /// Creates and returns a new smart coordinate with a normalized offset.
     ///
-    /// In opposite to the `coordinate(withNormalizedOffset:)` method, the smart coordinate works in opposite and upside down orientations.
+    /// In opposite to the `coordinate(withNormalizedOffset:)` method, the smart coordinate works in landscape and upside down orientations.
     ///
     /// **Example:**
     ///
@@ -124,7 +124,7 @@ public extension XCUIElement {
     /// element.smartCoordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
     /// ```
     ///
-    /// - Bug:
+    /// - Note:
     ///   [rdar://31529903](https://openradar.appspot.com/31529903)
     ///   XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
     /// - Remark:

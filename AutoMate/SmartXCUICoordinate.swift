@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 
 // MARK: - SmartXCUICoordinate
-/// Replacement for `XCUICoordinate` which works in portrait and landscape orientations
+/// Replacement for `XCUICoordinate` which works in portrait and landscape orientations.
 ///
 /// `XCUICoordinate` has an open [issue](https://openradar.appspot.com/31529903). Coordinates works correctly only in portrait orientation.
 /// This workaround was implemented based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
@@ -26,15 +26,14 @@ import XCTest
 /// SmartXCUICoordinate(referencedElement: element, normalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
 /// ```
 ///
-/// - Bug:
+/// - Note:
 ///   [rdar://31529903](https://openradar.appspot.com/31529903)
 ///   XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
 /// - Remark:
 ///   This functionality was implemented based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
 /// - SeeAlso:
 ///   [Workaround for XCUICoordinate in landscape](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822)
-open class SmartXCUICoordinate
-{
+open class SmartXCUICoordinate {
     // MARK: Properties
     /// The element that the coordinate is based on, either directly or via the coordinate from which it was derived.
     open let referencedElement: XCUIElement
@@ -50,38 +49,7 @@ open class SmartXCUICoordinate
 
     /// Real coordinates in the portrait orientation.
     open var realCoordinate: XCUICoordinate {
-        // Returns normalized coordinate for portrait orientation.
-        if device.orientation == .portrait {
-            return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
-        }
-
-        // Supports only landscape left, landscape right and upside down.
-        // For all other unsupported orientations the default one is returned.
-        guard device.orientation == .landscapeLeft
-            || device.orientation == .landscapeRight
-            || device.orientation == .portraitUpsideDown else {
-            return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
-        }
-
-        _ = app.isHittable // force new UI hierarchy snapshot
-        let screenPoint = referencedElement.coordinate(withNormalizedOffset: normalizedOffset).screenPoint
-
-        // Calculate smart coordinate depending on device orientation.
-        let portraitScreenPoint: CGVector
-        switch device.orientation {
-        case .landscapeLeft:
-            portraitScreenPoint = CGVector(dx: app.frame.width - screenPoint.y, dy: screenPoint.x)
-        case .landscapeRight:
-            portraitScreenPoint = CGVector(dx: screenPoint.y, dy: app.frame.height - screenPoint.x)
-        case .portraitUpsideDown:
-            portraitScreenPoint = CGVector(dx: app.frame.width - screenPoint.x, dy: app.frame.height - screenPoint.y)
-        default:
-            preconditionFailure("Not supported orientation")
-        }
-
-        return app
-            .coordinate(withNormalizedOffset: CGVector.zero)
-            .withOffset(portraitScreenPoint)
+        return realCoordinate(for: device.orientation)
     }
 
     // MARK: Initialization
@@ -103,6 +71,46 @@ open class SmartXCUICoordinate
         self.normalizedOffset = offset
         self.app = app
         self.device = device
+    }
+
+    // MARK: Methods
+    /// Calculates real coordinates in the portrait orientation.
+    ///
+    /// - Parameter orientation: Device orientation.
+    /// - Returns: real coordinates in the portrait orientation.
+    func realCoordinate(for orientation: UIDeviceOrientation) -> XCUICoordinate {
+        // Returns normalized coordinate for portrait orientation.
+        if orientation == .portrait {
+            return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
+        }
+
+        // Supports only landscape left, landscape right and upside down.
+        // For all other unsupported orientations the default one is returned.
+        guard orientation == .landscapeLeft
+            || orientation == .landscapeRight
+            || orientation == .portraitUpsideDown else {
+                return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
+        }
+
+        _ = app.isHittable // force new UI hierarchy snapshot
+        let screenPoint = referencedElement.coordinate(withNormalizedOffset: normalizedOffset).screenPoint
+
+        // Calculate smart coordinate depending on device orientation.
+        let portraitScreenPoint: CGVector
+        switch orientation {
+        case .landscapeLeft:
+            portraitScreenPoint = CGVector(dx: app.frame.width - screenPoint.y, dy: screenPoint.x)
+        case .landscapeRight:
+            portraitScreenPoint = CGVector(dx: screenPoint.y, dy: app.frame.height - screenPoint.x)
+        case .portraitUpsideDown:
+            portraitScreenPoint = CGVector(dx: app.frame.width - screenPoint.x, dy: app.frame.height - screenPoint.y)
+        default:
+            preconditionFailure("Not supported orientation")
+        }
+
+        return app
+            .coordinate(withNormalizedOffset: CGVector.zero)
+            .withOffset(portraitScreenPoint)
     }
 
     // MARK: XCUICoordinate methods

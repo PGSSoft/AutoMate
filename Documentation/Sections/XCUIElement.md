@@ -49,7 +49,7 @@ Can be used to test view where position of the tap matters. It's also possible t
 
 `smartCoordinate(withNormalizedOffset:app:device:)` is an replacement of the `coordinate(withNormalizedOffset:)` from `XCUIElement`.
 `XCUICoordinate` has an open [issue](https://openradar.appspot.com/31529903). Coordinates works correctly only in portrait orientation.
-This method and `SmartXCUICoordinate` was implemented as workaround based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
+This method and `SmartXCUICoordinate` was implemented as a workaround based on [glebon](https://gist.github.com/glebon) [gist](https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822).
 
 ```swift
 let element = app.tableViews.element

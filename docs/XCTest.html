@@ -634,7 +634,7 @@ This is why the <code>XCUIApplication</code> object is created at the beginning 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Replacement for <code>XCUICoordinate</code> which works in portrait and landscape orientations</p>
+                        <p>Replacement for <code>XCUICoordinate</code> which works in portrait and landscape orientations.</p>
 
 <p><code>XCUICoordinate</code> has an open <a href="https://openradar.appspot.com/31529903">issue</a>. Coordinates works correctly only in portrait orientation.
 This workaround was implemented based on <a href="https://gist.github.com/glebon">glebon</a> <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">gist</a>.</p>
@@ -648,8 +648,8 @@ This workaround was implemented based on <a href="https://gist.github.com/glebon
 <pre class="highlight swift"><code><span class="kt">SmartXCUICoordinate</span><span class="p">(</span><span class="nv">referencedElement</span><span class="p">:</span> <span class="n">element</span><span class="p">,</span> <span class="nv">normalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 </code></pre>
 
-<div class="aside aside-bug">
-    <p class="aside-title">Bug</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
     <a href="https://openradar.appspot.com/31529903">rdar://31529903</a>
 XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
 
