@@ -1,7 +1,3 @@
 line_length:
   warning: 300
   error: 400
-
-excluded:
-  # Workaround for issue https://github.com/realm/SwiftLint/issues/1399
-  - AutoMate/Models/SystemCountry.swift
