@@ -6,7 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 extension CGRect {
 

@@ -16,6 +16,35 @@
 		960D39B31E9CBF6300A4F116 /* SmartXCUICoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */; };
 		960F32FB1EF93536004C7C4A /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
+		962F0A791EF9388100C14BA8 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		962F0A7B1EF939C200C14BA8 /* LaunchOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */; };
+		962F0A7C1EF939C300C14BA8 /* LaunchOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */; };
+		962F0A7D1EF939C600C14BA8 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
+		962F0A7E1EF939C600C14BA8 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
+		962F0A7F1EF939CA00C14BA8 /* LaunchEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C9701E31F5D600737688 /* LaunchEnvironments.swift */; };
+		962F0A801EF939CA00C14BA8 /* LaunchEnvironmentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA71E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift */; };
+		962F0A811EF939CA00C14BA8 /* LaunchEnvironmentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */; };
+		962F0A821EF939CA00C14BA8 /* LaunchEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C9701E31F5D600737688 /* LaunchEnvironments.swift */; };
+		962F0A831EF939CA00C14BA8 /* LaunchEnvironmentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA71E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift */; };
+		962F0A841EF939CA00C14BA8 /* LaunchEnvironmentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */; };
+		962F0A851EF939CD00C14BA8 /* LaunchArgumentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431922E1E2E199400B019C1 /* LaunchArgumentProtocols.swift */; };
+		962F0A861EF939CD00C14BA8 /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
+		962F0A871EF939CD00C14BA8 /* LaunchArgumentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192301E2E19C700B019C1 /* LaunchArgumentValue.swift */; };
+		962F0A881EF939CE00C14BA8 /* LaunchArgumentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431922E1E2E199400B019C1 /* LaunchArgumentProtocols.swift */; };
+		962F0A891EF939CE00C14BA8 /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
+		962F0A8A1EF939CE00C14BA8 /* LaunchArgumentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192301E2E19C700B019C1 /* LaunchArgumentValue.swift */; };
+		962F0A8B1EF939F000C14BA8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
+		962F0A8C1EF939F000C14BA8 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666D6E31E8A7E5C00511000 /* Bundle.swift */; };
+		962F0A8D1EF939F000C14BA8 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96911E261E94C55700D4045F /* CoreGraphics.swift */; };
+		962F0A8E1EF939F000C14BA8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
+		962F0A8F1EF939F000C14BA8 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96412D511E8B887300508909 /* Sequence.swift */; };
+		962F0A901EF939F000C14BA8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE91E39E73100052F11 /* String.swift */; };
+		962F0A911EF939F500C14BA8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
+		962F0A921EF939F500C14BA8 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666D6E31E8A7E5C00511000 /* Bundle.swift */; };
+		962F0A931EF939F500C14BA8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
+		962F0A941EF939F500C14BA8 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96412D511E8B887300508909 /* Sequence.swift */; };
+		962F0A951EF939F500C14BA8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE91E39E73100052F11 /* String.swift */; };
+		962F0A961EF93A0A00C14BA8 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96911E261E94C55700D4045F /* CoreGraphics.swift */; };
 		96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDC1E8A791400273BF6 /* AddressBookAlert.json */; };
 		96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */; };
 		96336FFB1E8A791400273BF6 /* CalendarAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDE1E8A791400273BF6 /* CalendarAlert.json */; };
@@ -110,6 +139,7 @@
 		1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQuery.swift; sourceTree = "<group>"; };
 		9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPermissionPage.swift; sourceTree = "<group>"; };
 		960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartXCUICoordinate.swift; sourceTree = "<group>"; };
+		960F33011EF936FC004C7C4A /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Locator.swift"; sourceTree = "<group>"; };
 		96336FDC1E8A791400273BF6 /* AddressBookAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddressBookAlert.json; sourceTree = "<group>"; };
 		96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BluetoothPeripheralAlert.json; sourceTree = "<group>"; };
@@ -192,6 +222,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		960F32FD1EF936FC004C7C4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969CF8CE1EF933BE006D9553 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +341,7 @@
 				E425D55D1CED928100A7CA03 /* AutoMate.framework */,
 				E4EE41C11CFD7246004F0FFE /* AutoMateTests.xctest */,
 				969CF8D21EF933BE006D9553 /* AutoMate.framework */,
+				960F33011EF936FC004C7C4A /* AutoMate.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -416,6 +454,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		960F32FE1EF936FC004C7C4A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962F0A791EF9388100C14BA8 /* AutoMate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969CF8CF1EF933BE006D9553 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,6 +481,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		960F33001EF936FC004C7C4A /* AutoMate tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 960F33061EF936FC004C7C4A /* Build configuration list for PBXNativeTarget "AutoMate tvOS" */;
+			buildPhases = (
+				960F32FC1EF936FC004C7C4A /* Sources */,
+				960F32FD1EF936FC004C7C4A /* Frameworks */,
+				960F32FE1EF936FC004C7C4A /* Headers */,
+				960F32FF1EF936FC004C7C4A /* Resources */,
+				962F0A7A1EF938EA00C14BA8 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AutoMate tvOS";
+			productName = "AutoMate tvOS";
+			productReference = 960F33011EF936FC004C7C4A /* AutoMate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		969CF8D11EF933BE006D9553 /* AutoMate macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 969CF8D91EF933BE006D9553 /* Build configuration list for PBXNativeTarget "AutoMate macOS" */;
@@ -501,6 +566,10 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "PGS Software";
 				TargetAttributes = {
+					960F33001EF936FC004C7C4A = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 					969CF8D11EF933BE006D9553 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
@@ -529,6 +598,7 @@
 			projectRoot = "";
 			targets = (
 				E425D55C1CED928100A7CA03 /* AutoMate iOS */,
+				960F33001EF936FC004C7C4A /* AutoMate tvOS */,
 				969CF8D11EF933BE006D9553 /* AutoMate macOS */,
 				E4EE41C01CFD7246004F0FFE /* AutoMateTests */,
 			);
@@ -536,6 +606,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		960F32FF1EF936FC004C7C4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969CF8D01EF933BE006D9553 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +680,20 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		962F0A7A1EF938EA00C14BA8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		E4535A441CEDC3BD008965DD /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,10 +711,45 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		960F32FC1EF936FC004C7C4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962F0A8B1EF939F000C14BA8 /* Array.swift in Sources */,
+				962F0A801EF939CA00C14BA8 /* LaunchEnvironmentProtocols.swift in Sources */,
+				962F0A851EF939CD00C14BA8 /* LaunchArgumentProtocols.swift in Sources */,
+				962F0A8C1EF939F000C14BA8 /* Bundle.swift in Sources */,
+				962F0A901EF939F000C14BA8 /* String.swift in Sources */,
+				962F0A7D1EF939C600C14BA8 /* LaunchOptionsSet.swift in Sources */,
+				962F0A8E1EF939F000C14BA8 /* Dictionary.swift in Sources */,
+				962F0A8F1EF939F000C14BA8 /* Sequence.swift in Sources */,
+				962F0A7F1EF939CA00C14BA8 /* LaunchEnvironments.swift in Sources */,
+				962F0A811EF939CA00C14BA8 /* LaunchEnvironmentValue.swift in Sources */,
+				962F0A7B1EF939C200C14BA8 /* LaunchOptionProtocol.swift in Sources */,
+				962F0A861EF939CD00C14BA8 /* LaunchArguments.swift in Sources */,
+				962F0A8D1EF939F000C14BA8 /* CoreGraphics.swift in Sources */,
+				962F0A871EF939CD00C14BA8 /* LaunchArgumentValue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969CF8CD1EF933BE006D9553 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962F0A911EF939F500C14BA8 /* Array.swift in Sources */,
+				962F0A951EF939F500C14BA8 /* String.swift in Sources */,
+				962F0A831EF939CA00C14BA8 /* LaunchEnvironmentProtocols.swift in Sources */,
+				962F0A941EF939F500C14BA8 /* Sequence.swift in Sources */,
+				962F0A881EF939CE00C14BA8 /* LaunchArgumentProtocols.swift in Sources */,
+				962F0A921EF939F500C14BA8 /* Bundle.swift in Sources */,
+				962F0A931EF939F500C14BA8 /* Dictionary.swift in Sources */,
+				962F0A7E1EF939C600C14BA8 /* LaunchOptionsSet.swift in Sources */,
+				962F0A821EF939CA00C14BA8 /* LaunchEnvironments.swift in Sources */,
+				962F0A841EF939CA00C14BA8 /* LaunchEnvironmentValue.swift in Sources */,
+				962F0A7C1EF939C300C14BA8 /* LaunchOptionProtocol.swift in Sources */,
+				962F0A891EF939CE00C14BA8 /* LaunchArguments.swift in Sources */,
+				962F0A8A1EF939CE00C14BA8 /* LaunchArgumentValue.swift in Sources */,
+				962F0A961EF93A0A00C14BA8 /* CoreGraphics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +829,55 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		960F33071EF936FC004C7C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoMate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
+				PRODUCT_NAME = AutoMate;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		960F33081EF936FC004C7C4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoMate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
+				PRODUCT_NAME = AutoMate;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		969CF8D71EF933BE006D9553 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -719,7 +894,6 @@
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
 				PRODUCT_NAME = AutoMate;
 				SDKROOT = macosx;
@@ -745,7 +919,6 @@
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
 				PRODUCT_NAME = AutoMate;
 				SDKROOT = macosx;
@@ -926,6 +1099,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		960F33061EF936FC004C7C4A /* Build configuration list for PBXNativeTarget "AutoMate tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				960F33071EF936FC004C7C4A /* Debug */,
+				960F33081EF936FC004C7C4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		969CF8D91EF933BE006D9553 /* Build configuration list for PBXNativeTarget "AutoMate macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
