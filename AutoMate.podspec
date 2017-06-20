@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   }
 
   s.ios.deployment_target = '9.2'
+  s.osx.deployment_target = '10.12'
 
   s.source        = { :git => "https://github.com/PGSSoft/AutoMate.git", :tag => "#{s.version}" }
 

@@ -14,6 +14,7 @@
 		1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
 		9602D0921E54F53B001EC313 /* HealthPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */; };
 		960D39B31E9CBF6300A4F116 /* SmartXCUICoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */; };
+		960F32FB1EF93536004C7C4A /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
 		96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDC1E8A791400273BF6 /* AddressBookAlert.json */; };
 		96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */; };
@@ -150,6 +151,7 @@
 		966B92391E40D9D4006E6A18 /* ModalPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPage.swift; sourceTree = "<group>"; };
 		966B923D1E40DA24006E6A18 /* PushedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedPage.swift; sourceTree = "<group>"; };
 		96911E261E94C55700D4045F /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
+		969CF8D21EF933BE006D9553 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlerts.swift; sourceTree = "<group>"; };
 		96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
 		96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Predicate.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		969CF8CE1EF933BE006D9553 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E425D5591CED928100A7CA03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +303,7 @@
 			children = (
 				E425D55D1CED928100A7CA03 /* AutoMate.framework */,
 				E4EE41C11CFD7246004F0FFE /* AutoMateTests.xctest */,
+				969CF8D21EF933BE006D9553 /* AutoMate.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -406,6 +416,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		969CF8CF1EF933BE006D9553 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960F32FB1EF93536004C7C4A /* AutoMate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E425D55A1CED928100A7CA03 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,6 +435,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		969CF8D11EF933BE006D9553 /* AutoMate macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969CF8D91EF933BE006D9553 /* Build configuration list for PBXNativeTarget "AutoMate macOS" */;
+			buildPhases = (
+				969CF8CD1EF933BE006D9553 /* Sources */,
+				969CF8CE1EF933BE006D9553 /* Frameworks */,
+				969CF8CF1EF933BE006D9553 /* Headers */,
+				969CF8D01EF933BE006D9553 /* Resources */,
+				960F32F91EF93502004C7C4A /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AutoMate macOS";
+			productName = "AutoMate macOS";
+			productReference = 969CF8D21EF933BE006D9553 /* AutoMate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E425D55C1CED928100A7CA03 /* AutoMate iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E425D5651CED928100A7CA03 /* Build configuration list for PBXNativeTarget "AutoMate iOS" */;
@@ -464,6 +501,10 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "PGS Software";
 				TargetAttributes = {
+					969CF8D11EF933BE006D9553 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 					E425D55C1CED928100A7CA03 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
@@ -488,12 +529,20 @@
 			projectRoot = "";
 			targets = (
 				E425D55C1CED928100A7CA03 /* AutoMate iOS */,
+				969CF8D11EF933BE006D9553 /* AutoMate macOS */,
 				E4EE41C01CFD7246004F0FFE /* AutoMateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		969CF8D01EF933BE006D9553 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E425D55B1CED928100A7CA03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,6 +589,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		960F32F91EF93502004C7C4A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		E4535A441CEDC3BD008965DD /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,11 +615,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n# swiftlint\n:\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		969CF8CD1EF933BE006D9553 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E425D5581CED928100A7CA03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,6 +703,57 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		969CF8D71EF933BE006D9553 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AutoMate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
+				PRODUCT_NAME = AutoMate;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		969CF8D81EF933BE006D9553 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AutoMate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate";
+				PRODUCT_NAME = AutoMate;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		E425D5631CED928100A7CA03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -674,6 +795,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -719,6 +841,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -803,6 +926,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		969CF8D91EF933BE006D9553 /* Build configuration list for PBXNativeTarget "AutoMate macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969CF8D71EF933BE006D9553 /* Debug */,
+				969CF8D81EF933BE006D9553 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E425D5571CED928100A7CA03 /* Build configuration list for PBXProject "AutoMate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
