@@ -53,11 +53,13 @@ platform :ios do
     # Options
     device = options[:device]
     destination = options[:destination]
+    scheme = options[:scheme]
 
     disable_keyboard_helpers
 
     # Scan
     scan(
+      scheme: scheme,
       device: device,
       destination: destination
     )

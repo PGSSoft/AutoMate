@@ -5,9 +5,9 @@ env:
   global:
     - NSUnbufferedIO=YES
   matrix:
-    - DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.3.1"
-    - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3.1"
-    - DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.3.1"
 
 before_install:
   - brew update
@@ -21,6 +21,6 @@ before_script:
   - bundle exec fastlane prepare
 
 script:
-  - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
+  - bundle exec fastlane test "scheme:${SCHEME}" "destination:platform=${PLATFORM},name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
   - bundle exec danger
   - bundle exec pod lib lint

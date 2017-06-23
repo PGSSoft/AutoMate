@@ -1,18 +1,18 @@
 ios.prepareEnv(xcode: "/Applications/Xcode_8.3.app")
 
 node("ios_ui") {
-  timeout(45) {
+  timeout(60) {
     ansiColor('xterm') {
 
       // Perform tests
-      def test = { deviceName, deviceOS ->
-        withEnv(["DESTINATION_NAME=${deviceName}", "DESTINATION_OS=${deviceOS}"]) {
+      def test = { scheme, platform, deviceName, deviceOS ->
+        withEnv(["SCHEME=${scheme}", "PLATFORM=${platform}", "DESTINATION_NAME=${deviceName}", "DESTINATION_OS=${deviceOS}"]) {
           ios.cleanBuild()
           ios.killSimulator()
 
           try {
             sh '''
-              bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
+              bundle exec fastlane test "scheme:${SCHEME}" "destination:platform=${PLATFORM},name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
             '''
           }
           finally {
@@ -77,15 +77,15 @@ node("ios_ui") {
         // Tests
         try {
           stage("iPhone SE, 10.3.1") {
-            test("iPhone SE", "10.3.1")
+            test("AutoMate iOS", "iOS Simulator", "iPhone SE", "10.3.1")
           }
 
           stage("iPhone 7, 10.3.1") {
-            test("iPhone 7", "10.3.1")
+            test("AutoMate iOS", "iOS Simulator", "iPhone 7", "10.3.1")
           }
 
           stage("iPhone 7 Plus, 10.3.1") {
-            test("iPhone 7 Plus", "10.3.1")
+            test("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
           }
 
           stage("CocoaPods lint") {
