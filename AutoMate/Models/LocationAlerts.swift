@@ -2,6 +2,7 @@
 /// Represents possible location service messages and label values on buttons.
 
 import XCTest
+#if os(iOS)
 
 extension LocationAlertAllow {
 
@@ -169,3 +170,4 @@ public struct LocationWhenInUseAlert: SystemAlert, LocationAlertAllow, LocationA
         self.alert = element
     }
 }
+#endif

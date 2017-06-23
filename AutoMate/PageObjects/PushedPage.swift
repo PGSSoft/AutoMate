@@ -51,9 +51,15 @@ public extension PushedPage {
 
     // MARK: Actions
     /// Pop view by tapping on `backButton` button.
+    #if !os(tvOS)
     public func goBack() {
+        #if os(iOS)
         backButton.tap()
+        #elseif os(macOS)
+        backButton.click()
+        #endif
     }
+    #endif
 }
 
 // MARK: - Locators

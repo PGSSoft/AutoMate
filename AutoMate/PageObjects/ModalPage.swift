@@ -51,9 +51,15 @@ public extension ModalPage {
 
     // MARK: Actions
     /// Close modal view by tapping on `closeButton` button.
+    #if !os(tvOS)
     public func closeModalPage() {
+        #if os(iOS)
         closeButton.tap()
+        #elseif os(macOS)
+        closeButton.click()
+        #endif
     }
+    #endif
 }
 
 // MARK: - Locators

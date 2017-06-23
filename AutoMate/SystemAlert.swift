@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+#if os(iOS)
 
 // MARK: - System Messages helper protocol
 
@@ -161,3 +162,4 @@ extension SystemAlertCancel where Self: SystemAlert {
         return button
     }
 }
+#endif

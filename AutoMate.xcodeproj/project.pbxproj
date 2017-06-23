@@ -45,6 +45,60 @@
 		962F0A941EF939F500C14BA8 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96412D511E8B887300508909 /* Sequence.swift */; };
 		962F0A951EF939F500C14BA8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE91E39E73100052F11 /* String.swift */; };
 		962F0A961EF93A0A00C14BA8 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96911E261E94C55700D4045F /* CoreGraphics.swift */; };
+		962F0A971EF93AAF00C14BA8 /* AppUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92371E40D69A006E6A18 /* AppUITestCase.swift */; };
+		962F0A981EF93AAF00C14BA8 /* AppUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92371E40D69A006E6A18 /* AppUITestCase.swift */; };
+		962F0A991EF93B0F00C14BA8 /* KeyboardLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7FA51E6967630009122E /* KeyboardLocator.swift */; };
+		962F0A9A1EF93B0F00C14BA8 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
+		962F0A9B1EF93B1000C14BA8 /* KeyboardLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7FA51E6967630009122E /* KeyboardLocator.swift */; };
+		962F0A9C1EF93B1000C14BA8 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
+		962F0A9D1EF93B1C00C14BA8 /* AutoMateLaunchEnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */; };
+		962F0A9E1EF93B1D00C14BA8 /* AutoMateLaunchEnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */; };
+		962F0A9F1EF93B4C00C14BA8 /* AutoMateLaunchEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE71E39DBBE00052F11 /* AutoMateLaunchEnvironments.swift */; };
+		962F0AA01EF93B4D00C14BA8 /* AutoMateLaunchEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20FE71E39DBBE00052F11 /* AutoMateLaunchEnvironments.swift */; };
+		962F0AA71EF93B8E00C14BA8 /* SystemLaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */; };
+		962F0AA81EF93B8E00C14BA8 /* SystemLaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D637CC1D015B5700405514 /* SystemLaunchArguments.swift */; };
+		962F0AA91EF93B9300C14BA8 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
+		962F0AAA1EF93B9300C14BA8 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
+		962F0AAB1EF93C1F00C14BA8 /* SystemLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */; };
+		962F0AAC1EF93C1F00C14BA8 /* SystemLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */; };
+		962F0AAD1EF93C2200C14BA8 /* SystemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D91CFF0885007531D2 /* SystemCountry.swift */; };
+		962F0AAE1EF93C2200C14BA8 /* SystemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D91CFF0885007531D2 /* SystemCountry.swift */; };
+		962F0AAF1EF93C2700C14BA8 /* SoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */; };
+		962F0AB01EF93C2700C14BA8 /* SoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */; };
+		962F0AB11EF93C2B00C14BA8 /* HardwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */; };
+		962F0AB21EF93C2B00C14BA8 /* HardwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */; };
+		962F0AB31EF93C4900C14BA8 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995571D51CBFA0037CD1F /* XCTestCase.swift */; };
+		962F0AB41EF93C4900C14BA8 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995571D51CBFA0037CD1F /* XCTestCase.swift */; };
+		962F0AB51EF93C5500C14BA8 /* XCTestCase+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */; };
+		962F0AB61EF93C5500C14BA8 /* XCTestCase+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */; };
+		962F0AB71EF93C5D00C14BA8 /* XCUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6372E1D50692800D22156 /* XCUIApplication.swift */; };
+		962F0AB81EF93C5D00C14BA8 /* XCUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6372E1D50692800D22156 /* XCUIApplication.swift */; };
+		962F0AB91EF93C6B00C14BA8 /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */; };
+		962F0ABA1EF93C6C00C14BA8 /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9AE7211D4B4A6C00027033 /* XCUIElement.swift */; };
+		962F0ABB1EF93DDA00C14BA8 /* XCUIElement+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */; };
+		962F0ABC1EF93DDA00C14BA8 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
+		962F0ABD1EF93DDA00C14BA8 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
+		962F0ABE1EF93DDA00C14BA8 /* XCUIElementQuery+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */; };
+		962F0ABF1EF93DDA00C14BA8 /* XCUIElementTypeQueryProvider+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */; };
+		962F0AC01EF93DDA00C14BA8 /* XCUIElement+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */; };
+		962F0AC11EF93DDA00C14BA8 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
+		962F0AC21EF93DDA00C14BA8 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
+		962F0AC31EF93DDA00C14BA8 /* XCUIElementQuery+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */; };
+		962F0AC41EF93DDA00C14BA8 /* XCUIElementTypeQueryProvider+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC995551D51C8240037CD1F /* XCUIElementTypeQueryProvider+Any.swift */; };
+		962F0AC71EF942B000C14BA8 /* BaseAppPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92351E40D470006E6A18 /* BaseAppPage.swift */; };
+		962F0ACB1EF942B000C14BA8 /* BaseAppPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92351E40D470006E6A18 /* BaseAppPage.swift */; };
+		962F0ACD1EF942B000C14BA8 /* ModalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalPage.swift */; };
+		962F0ACF1EF946E700C14BA8 /* ModalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalPage.swift */; };
+		962F0AD01EF9476100C14BA8 /* PushedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedPage.swift */; };
+		962F0AD11EF9476100C14BA8 /* PushedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedPage.swift */; };
+		962F0AD21EF9484100C14BA8 /* HealthPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */; };
+		962F0AD31EF9484100C14BA8 /* HealthPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */; };
+		962F0AD41EF9488000C14BA8 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */; };
+		962F0AD51EF9488000C14BA8 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */; };
+		962F0AD61EF9509400C14BA8 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
+		962F0AD71EF9509400C14BA8 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
+		962F0AD81EF9524400C14BA8 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
+		962F0AD91EF9524400C14BA8 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
 		96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDC1E8A791400273BF6 /* AddressBookAlert.json */; };
 		96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */; };
 		96336FFB1E8A791400273BF6 /* CalendarAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDE1E8A791400273BF6 /* CalendarAlert.json */; };
@@ -85,6 +139,14 @@
 		966B923A1E40D9D4006E6A18 /* ModalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalPage.swift */; };
 		966B923E1E40DA24006E6A18 /* PushedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedPage.swift */; };
 		96911E271E94C55700D4045F /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96911E261E94C55700D4045F /* CoreGraphics.swift */; };
+		9691F1071EFCF8AF00ACD856 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
+		9691F1081EFCF8AF00ACD856 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
+		9691F1091EFCF8C000ACD856 /* SmartXCUICoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */; };
+		9691F10A1EFCF8F100ACD856 /* SmartXCUICoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D39B21E9CBF6300A4F116 /* SmartXCUICoordinate.swift */; };
+		9691F10B1EFCF90800ACD856 /* LocationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1A1E54AA920026AE29 /* LocationAlert.swift */; };
+		9691F10C1EFCF90800ACD856 /* LocationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1A1E54AA920026AE29 /* LocationAlert.swift */; };
+		9691F10D1EFCF91700ACD856 /* HealthAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */; };
+		9691F10E1EFCF91700ACD856 /* HealthAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A7A1C1E54AAAE0026AE29 /* HealthAlert.swift */; };
 		96B131D61E54BDD8007E3A04 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */; };
 		96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
 		96EB345C1E927773000C0B2B /* XCUIElementQuery+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */; };
@@ -715,20 +777,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962F0AB51EF93C5500C14BA8 /* XCTestCase+Identifiable.swift in Sources */,
 				962F0A8B1EF939F000C14BA8 /* Array.swift in Sources */,
+				962F0AD01EF9476100C14BA8 /* PushedPage.swift in Sources */,
+				962F0A971EF93AAF00C14BA8 /* AppUITestCase.swift in Sources */,
 				962F0A801EF939CA00C14BA8 /* LaunchEnvironmentProtocols.swift in Sources */,
+				962F0ACF1EF946E700C14BA8 /* ModalPage.swift in Sources */,
+				962F0ABF1EF93DDA00C14BA8 /* XCUIElementTypeQueryProvider+Any.swift in Sources */,
+				9691F10B1EFCF90800ACD856 /* LocationAlert.swift in Sources */,
+				962F0A9F1EF93B4C00C14BA8 /* AutoMateLaunchEnvironments.swift in Sources */,
+				962F0AB31EF93C4900C14BA8 /* XCTestCase.swift in Sources */,
 				962F0A851EF939CD00C14BA8 /* LaunchArgumentProtocols.swift in Sources */,
+				9691F1091EFCF8C000ACD856 /* SmartXCUICoordinate.swift in Sources */,
+				962F0AD81EF9524400C14BA8 /* ServiceRequestAlerts.swift in Sources */,
+				962F0AAF1EF93C2700C14BA8 /* SoftwareKeyboard.swift in Sources */,
+				962F0AB91EF93C6B00C14BA8 /* XCUIElement.swift in Sources */,
 				962F0A8C1EF939F000C14BA8 /* Bundle.swift in Sources */,
+				962F0AAB1EF93C1F00C14BA8 /* SystemLanguage.swift in Sources */,
+				962F0AAD1EF93C2200C14BA8 /* SystemCountry.swift in Sources */,
+				962F0ABB1EF93DDA00C14BA8 /* XCUIElement+Swipe.swift in Sources */,
+				962F0AA91EF93B9300C14BA8 /* TestLauncher.swift in Sources */,
+				962F0A991EF93B0F00C14BA8 /* KeyboardLocator.swift in Sources */,
 				962F0A901EF939F000C14BA8 /* String.swift in Sources */,
 				962F0A7D1EF939C600C14BA8 /* LaunchOptionsSet.swift in Sources */,
+				962F0AC71EF942B000C14BA8 /* BaseAppPage.swift in Sources */,
+				962F0ABD1EF93DDA00C14BA8 /* XCUIElementQuery+Locator.swift in Sources */,
+				962F0ABE1EF93DDA00C14BA8 /* XCUIElementQuery+Predicate.swift in Sources */,
+				962F0AD41EF9488000C14BA8 /* HealthAlerts.swift in Sources */,
+				962F0AB11EF93C2B00C14BA8 /* HardwareKeyboard.swift in Sources */,
 				962F0A8E1EF939F000C14BA8 /* Dictionary.swift in Sources */,
+				962F0ABC1EF93DDA00C14BA8 /* XCUIElementQuery.swift in Sources */,
+				962F0AB71EF93C5D00C14BA8 /* XCUIApplication.swift in Sources */,
+				9691F10D1EFCF91700ACD856 /* HealthAlert.swift in Sources */,
+				962F0AD21EF9484100C14BA8 /* HealthPermissionPage.swift in Sources */,
+				962F0A9A1EF93B0F00C14BA8 /* Locator.swift in Sources */,
 				962F0A8F1EF939F000C14BA8 /* Sequence.swift in Sources */,
 				962F0A7F1EF939CA00C14BA8 /* LaunchEnvironments.swift in Sources */,
 				962F0A811EF939CA00C14BA8 /* LaunchEnvironmentValue.swift in Sources */,
 				962F0A7B1EF939C200C14BA8 /* LaunchOptionProtocol.swift in Sources */,
+				962F0A9D1EF93B1C00C14BA8 /* AutoMateLaunchEnvironmentKeys.swift in Sources */,
+				962F0AD61EF9509400C14BA8 /* LocationAlerts.swift in Sources */,
 				962F0A861EF939CD00C14BA8 /* LaunchArguments.swift in Sources */,
 				962F0A8D1EF939F000C14BA8 /* CoreGraphics.swift in Sources */,
+				9691F1071EFCF8AF00ACD856 /* SystemAlert.swift in Sources */,
 				962F0A871EF939CD00C14BA8 /* LaunchArgumentValue.swift in Sources */,
+				962F0AA71EF93B8E00C14BA8 /* SystemLaunchArguments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,20 +829,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962F0AB61EF93C5500C14BA8 /* XCTestCase+Identifiable.swift in Sources */,
 				962F0A911EF939F500C14BA8 /* Array.swift in Sources */,
+				962F0AD11EF9476100C14BA8 /* PushedPage.swift in Sources */,
+				962F0A981EF93AAF00C14BA8 /* AppUITestCase.swift in Sources */,
 				962F0A951EF939F500C14BA8 /* String.swift in Sources */,
+				962F0AC41EF93DDA00C14BA8 /* XCUIElementTypeQueryProvider+Any.swift in Sources */,
+				962F0AA01EF93B4D00C14BA8 /* AutoMateLaunchEnvironments.swift in Sources */,
+				9691F10C1EFCF90800ACD856 /* LocationAlert.swift in Sources */,
+				962F0AB41EF93C4900C14BA8 /* XCTestCase.swift in Sources */,
 				962F0A831EF939CA00C14BA8 /* LaunchEnvironmentProtocols.swift in Sources */,
+				962F0AB01EF93C2700C14BA8 /* SoftwareKeyboard.swift in Sources */,
+				9691F10A1EFCF8F100ACD856 /* SmartXCUICoordinate.swift in Sources */,
+				962F0AD91EF9524400C14BA8 /* ServiceRequestAlerts.swift in Sources */,
+				962F0ABA1EF93C6C00C14BA8 /* XCUIElement.swift in Sources */,
 				962F0A941EF939F500C14BA8 /* Sequence.swift in Sources */,
+				962F0AAC1EF93C1F00C14BA8 /* SystemLanguage.swift in Sources */,
+				962F0AAE1EF93C2200C14BA8 /* SystemCountry.swift in Sources */,
+				962F0AC01EF93DDA00C14BA8 /* XCUIElement+Swipe.swift in Sources */,
+				962F0AAA1EF93B9300C14BA8 /* TestLauncher.swift in Sources */,
+				962F0A9B1EF93B1000C14BA8 /* KeyboardLocator.swift in Sources */,
 				962F0A881EF939CE00C14BA8 /* LaunchArgumentProtocols.swift in Sources */,
 				962F0A921EF939F500C14BA8 /* Bundle.swift in Sources */,
+				962F0ACB1EF942B000C14BA8 /* BaseAppPage.swift in Sources */,
+				962F0AC21EF93DDA00C14BA8 /* XCUIElementQuery+Locator.swift in Sources */,
+				962F0AC31EF93DDA00C14BA8 /* XCUIElementQuery+Predicate.swift in Sources */,
+				962F0AB21EF93C2B00C14BA8 /* HardwareKeyboard.swift in Sources */,
+				962F0AD51EF9488000C14BA8 /* HealthAlerts.swift in Sources */,
 				962F0A931EF939F500C14BA8 /* Dictionary.swift in Sources */,
+				962F0AC11EF93DDA00C14BA8 /* XCUIElementQuery.swift in Sources */,
+				962F0AB81EF93C5D00C14BA8 /* XCUIApplication.swift in Sources */,
+				962F0A9C1EF93B1000C14BA8 /* Locator.swift in Sources */,
+				9691F10E1EFCF91700ACD856 /* HealthAlert.swift in Sources */,
+				962F0AD31EF9484100C14BA8 /* HealthPermissionPage.swift in Sources */,
 				962F0A7E1EF939C600C14BA8 /* LaunchOptionsSet.swift in Sources */,
+				962F0ACD1EF942B000C14BA8 /* ModalPage.swift in Sources */,
 				962F0A821EF939CA00C14BA8 /* LaunchEnvironments.swift in Sources */,
 				962F0A841EF939CA00C14BA8 /* LaunchEnvironmentValue.swift in Sources */,
 				962F0A7C1EF939C300C14BA8 /* LaunchOptionProtocol.swift in Sources */,
+				962F0A9E1EF93B1D00C14BA8 /* AutoMateLaunchEnvironmentKeys.swift in Sources */,
+				962F0AD71EF9509400C14BA8 /* LocationAlerts.swift in Sources */,
 				962F0A891EF939CE00C14BA8 /* LaunchArguments.swift in Sources */,
 				962F0A8A1EF939CE00C14BA8 /* LaunchArgumentValue.swift in Sources */,
+				9691F1081EFCF8AF00ACD856 /* SystemAlert.swift in Sources */,
 				962F0A961EF93A0A00C14BA8 /* CoreGraphics.swift in Sources */,
+				962F0AA81EF93B8E00C14BA8 /* SystemLaunchArguments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,6 +964,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -865,6 +994,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -890,6 +1024,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -915,6 +1053,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = AutoMate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

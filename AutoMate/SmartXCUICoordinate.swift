@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+#if os(iOS)
 
 // MARK: - SmartXCUICoordinate
 /// Replacement for `XCUICoordinate` which works in portrait and landscape orientations.
@@ -199,3 +200,4 @@ open class SmartXCUICoordinate {
         realCoordinate.press(forDuration: duration, thenDragTo: otherCoordinate.realCoordinate)
     }
 }
+#endif

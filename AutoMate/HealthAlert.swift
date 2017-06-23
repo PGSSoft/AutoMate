@@ -8,7 +8,10 @@
 
 import Foundation
 import XCTest
+#if os(iOS)
 
 // MARK: - Health protocols
 /// Protocol defining health alert OK element.
 public protocol HealthAlertOk: SystemAlertOk, SystemMessages { }
+
+#endif

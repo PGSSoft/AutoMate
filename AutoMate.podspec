@@ -17,11 +17,12 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.2'
   s.osx.deployment_target = '10.12'
+  s.tvos.deployment_target = '9.2'
 
   s.source        = { :git => "https://github.com/PGSSoft/AutoMate.git", :tag => "#{s.version}" }
 
-  s.source_files  = "Classes", "AutoMate/**/*.{swift}"
-  s.resources     = ["AutoMate/Models/Messages/*.json"]
+  s.source_files  = "AutoMate/**/*.{swift}"
+  s.ios.resources = ["AutoMate/Models/Messages/*.json"]
 
   s.framework = "XCTest"
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }

@@ -26,6 +26,7 @@ import XCTest
 /// healthPermissionPage.turnOnAllElement.tap()
 /// healthPermissionPage.allowElement.tap()
 /// ```
+#if os(iOS)
 open class HealthPermissionPage: BaseAppPage, HealthAlertAllow, HealthAlertDeny, HealthAlertTurnOnAll, HealthAlertTurnOffAll {
 
     // MARK: Elements
@@ -137,3 +138,4 @@ extension HealthAlertTurnOffAll where Self: BaseAppPage {
         return button
     }
 }
+#endif

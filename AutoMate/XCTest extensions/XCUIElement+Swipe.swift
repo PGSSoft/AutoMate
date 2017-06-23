@@ -6,6 +6,8 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+// swiftlint:disable file_length
+
 import Foundation
 import XCTest
 
@@ -27,11 +29,13 @@ extension XCUIElement {
     /// - Parameters:
     ///   - startVector: Relative point from which to start swipe.
     ///   - stopVector: Relative point to end swipe.
+    #if os(iOS)
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
         let p1 = smartCoordinate(withNormalizedOffset: startVector)
         let p2 = smartCoordinate(withNormalizedOffset: stopVector)
         p1.press(forDuration: 0.1, thenDragTo: p2)
     }
+    #endif
 
     /// Swipes scroll view to reveal given element.
     ///
@@ -52,6 +56,7 @@ extension XCUIElement {
     ///   - element: Element to scroll to.
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
+    #if os(iOS)
     public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
         let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
 
@@ -95,6 +100,7 @@ extension XCUIElement {
             oldDistance = newDistance
         }
     }
+    #endif
 
     /// Swipes scroll view to given direction until condition will be satisfied.
     ///
@@ -118,6 +124,7 @@ extension XCUIElement {
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
     ///   - condition: The condition to satisfy.
+    #if os(iOS)
     public func swipe(to direction: SwipeDirection, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), until condition: @autoclosure () -> Bool) {
         let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
 
@@ -154,6 +161,7 @@ extension XCUIElement {
             swipe(from: startVector, to: stopVector)
         }
     }
+    #endif
 
     /// Swipes scroll view to given direction until element would exist.
     ///
@@ -180,10 +188,12 @@ extension XCUIElement {
     ///   - times: Maximum number of swipes (by default 10).
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
+    #if os(iOS)
     public func swipe(to direction: SwipeDirection, untilExist element: XCUIElement, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
 
         swipe(to: direction, times: times, avoid: viewsToAvoid, from: app, until: element.exists)
     }
+    #endif
 
     /// Swipes scroll view to given direction until element would be visible.
     ///
@@ -210,10 +220,12 @@ extension XCUIElement {
     ///   - times: Maximum number of swipes (by default 10).
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
+    #if os(iOS)
     public func swipe(to direction: SwipeDirection, untilVisible element: XCUIElement, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
 
         swipe(to: direction, times: times, avoid: viewsToAvoid, from: app, until: element.isVisible)
     }
+    #endif
 }
 
 // MARK: - Internal

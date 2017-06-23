@@ -7,6 +7,7 @@
 //
 
 import Foundation
+#if os(iOS)
 
 // MARK: - Location protocols
 /// Protocol defining location alert allow element.
@@ -20,3 +21,5 @@ public protocol LocationAlertOk: SystemAlertOk { }
 
 /// Protocol defining location alert cancel element.
 public protocol LocationAlertCancel: SystemAlertCancel { }
+
+#endif

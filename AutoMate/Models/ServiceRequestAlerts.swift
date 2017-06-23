@@ -2,6 +2,7 @@
 /// Represents possible system service messages and label values on buttons.
 
 import XCTest
+#if os(iOS)
 
 extension SystemAlertAllow {
 
@@ -603,3 +604,4 @@ public struct WillowAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
         self.alert = element
     }
 }
+#endif

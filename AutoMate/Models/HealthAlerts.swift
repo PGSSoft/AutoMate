@@ -2,6 +2,7 @@
 /// Represents possible health service messages and label values on buttons.
 
 import XCTest
+#if os(iOS)
 
 extension HealthAlertAllow {
 
@@ -95,3 +96,4 @@ public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
         self.alert = element
     }
 }
+#endif
