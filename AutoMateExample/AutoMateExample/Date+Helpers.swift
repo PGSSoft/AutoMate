@@ -11,6 +11,13 @@ import Foundation
 // MARK: Date helpers
 extension Date {
 
+    static let year2017: Date = {
+        guard let date = Calendar(identifier: .gregorian).date(from: DateComponents(year: 2017)) else {
+            preconditionFailure("Date could not be calculated with the given input.")
+        }
+        return date
+    }()
+
     static let yearAgo: Date = {
         guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: -1, to: Date()) else {
             preconditionFailure("Date could not be calculated with the given input.")

@@ -23,7 +23,7 @@ class EventsDataStore: DataStore {
     private var data = [T]()
     private let store = EKEventStore()
     private lazy var eventsPredicate: NSPredicate = {
-        self.store.predicateForEvents(withStart: Date(), end: Date.nextYear, calendars: nil)
+        self.store.predicateForEvents(withStart: Date.year2017, end: Date.nextYear, calendars: nil)
     }()
 
     // MARK: DataStore - Methods
