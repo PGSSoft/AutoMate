@@ -6,6 +6,7 @@ source "https://rubygems.org"
 
 gem 'cocoapods'
 gem 'danger'
+gem 'danger-conflict_checker'
 gem 'danger-swiftlint'
 gem 'danger-xcode_summary'
 gem 'danger-xcodebuild'

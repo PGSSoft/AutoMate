@@ -1,11 +1,11 @@
-ios.prepareEnv(xcode: "/Applications/Xcode_8.3.app")
+ios.prepareEnv(xcode: "/Applications/Xcode_8.3.app", danger_bitbucket: null)
 
 node("ios_ui") {
   timeout(60) {
     ansiColor('xterm') {
 
       // Unlock Bitbucket Server credentials
-      withCredentials([usernamePassword(credentialsId: 'pgs-software-bitbucket-server-danger_user', passwordVariable: 'DANGER_BITBUCKETSERVER_PASSWORD', usernameVariable: 'DANGER_BITBUCKETSERVER_USERNAME')]) {
+      withCredentials([usernamePassword(credentialsId: 'pgs-github-PGSJenkins-token', passwordVariable: 'DANGER_GITHUB_API_TOKEN', usernameVariable: '')]) {
         //
         // Stages
         // Prepare node
