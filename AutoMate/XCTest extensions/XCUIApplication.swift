@@ -11,6 +11,8 @@ import XCTest
 
 /// Represents available types of devices.
 ///
+/// Enum value corresponding to device screen size.
+///
 /// - `iPhone35`: iPhone 3.5"
 /// - `iPhone40`: iPhone 4.0"
 /// - `iPhone47`: iPhone 4.7"
@@ -18,8 +20,23 @@ import XCTest
 /// - `iPad`: iPad
 /// - `iPadPro`: iPad Pro
 public enum DeviceType {
-    /// Enum value corresponding to device screen size.
-    case iPhone35, iPhone40, iPhone47, iPhone55, iPad, iPadPro
+    /// iPhone 3.5"
+    case iPhone35
+
+    /// iPhone 4.0"
+    case iPhone40
+
+    /// iPhone 4.7"
+    case iPhone47
+
+    /// iPhone 5.5"
+    case iPhone55
+
+    /// iPad
+    case iPad
+
+    /// iPad Pro
+    case iPadPro
 }
 
 public extension XCUIApplication {

@@ -49,6 +49,7 @@ public extension XCUIElement {
         return text
     }
 
+    #if os(iOS)
     // MARK: Methods
     /// Remove text from textField or secureTextField.
     ///
@@ -58,7 +59,6 @@ public extension XCUIElement {
     /// let textField = app.textFields.element
     /// textField.clearTextField()
     /// ```
-    #if os(iOS)
     public func clearTextField() {
         // Since iOS 9.1 the keyboard identifiers are available.
         // On iOS 9.0 the special character `\u{8}` (backspace) is used.
@@ -82,6 +82,7 @@ public extension XCUIElement {
     }
     #endif
 
+    #if os(iOS)
     /// Remove text from textField and enter new value.
     ///
     /// Useful if there is chance that the element contains text already.
@@ -95,7 +96,6 @@ public extension XCUIElement {
     /// ```
     ///
     /// - Parameter text: Text to type after clearing old value.
-    #if os(iOS)
     public func clear(andType text: String) {
         tap()
         clearTextField()
@@ -103,6 +103,7 @@ public extension XCUIElement {
     }
     #endif
 
+    #if os(iOS)
     /// Tap element with given offset. By default taps in the upper left corner (dx=0, dy=0).
     /// Tap point is calculated by adding the offset multiplied by the size of the element’s frame to the origin of the element’s frame.
     /// So the correct values are from range: <0, 1>.
@@ -118,12 +119,12 @@ public extension XCUIElement {
     ///   - offset: Tap offset. Default (0, 0).
     ///   - app: Application object used to calculate portrait screen position.
     ///   - orientation: Device orientation.
-    #if os(iOS)
     public func tap(withOffset offset: CGVector = CGVector.zero, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
         smartCoordinate(withNormalizedOffset: offset, app: app, orientation: orientation).tap()
     }
     #endif
 
+    #if os(iOS)
     /// Creates and returns a new smart coordinate with a normalized offset.
     ///
     /// In opposite to the `coordinate(withNormalizedOffset:)` method, the smart coordinate works in landscape and upside down orientations.
@@ -147,7 +148,6 @@ public extension XCUIElement {
     ///   - app: Application object used to calculate portrait screen position.
     ///   - orientation: Device orientation.
     /// - Returns: Smart coordinate for given normalized offset.
-    #if os(iOS)
     public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) -> SmartXCUICoordinate {
         return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset, app: app, orientation: orientation)
     }

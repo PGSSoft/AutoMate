@@ -11,6 +11,8 @@ import XCTest
 
 /// Represents available string comparison operations to perform with `NSPredicate` API.
 ///
+/// Enum value describing NSPredicate string comparison operator.
+///
 /// - `equals`: `==` operator
 /// - `beginsWith`: `BEGINSWITH` operator
 /// - `contains`: `CONTAINS` operator
@@ -19,8 +21,23 @@ import XCTest
 /// - `matches`: `MATCHES` operator
 /// - `other`: Custom operator
 public enum StringComparisonOperator: RawRepresentable {
-    /// Enum value describing NSPredicate string comparison operator.
-    case equals, beginsWith, contains, endsWith, like, matches
+    /// `==` operator
+    case equals
+
+    /// `BEGINSWITH` operator
+    case beginsWith
+
+    /// `CONTAINS` operator
+    case contains
+
+    /// `ENDSWITH` operator
+    case endsWith
+
+    /// `LIKE` operator
+    case like
+
+    /// `MATCHES` operator
+    case matches
 
     /// Custom string operator.
     case other(comparisonOperator: String)

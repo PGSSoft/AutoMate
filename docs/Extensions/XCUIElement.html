@@ -399,14 +399,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="../Other Subscripts.html">Other Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -499,7 +491,6 @@ This method and <code>SmartXCUICoordinate</code> was implemented as a workaround
 It lets you specify coordinates on the screen (relative to the view on which the method is called).</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">scroll</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">scrollViews</span><span class="o">.</span><span class="n">element</span>
 <span class="n">scroll</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
 </code></pre>
@@ -526,7 +517,6 @@ It lets you specify coordinates on the screen (relative to the view on which the
                               <td>
                                 <div>
                                   <p>Relative point from which to start swipe.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -539,7 +529,6 @@ It lets you specify coordinates on the screen (relative to the view on which the
                               <td>
                                 <div>
                                   <p>Relative point to end swipe.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -565,18 +554,15 @@ It lets you specify coordinates on the screen (relative to the view on which the
                         <p>Swipes scroll view to reveal given element.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">scroll</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">scrollViews</span><span class="o">.</span><span class="n">element</span>
 <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">scroll</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">element</span>
 <span class="n">scroll</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">button</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <code>XCTest</code> automatically does the scrolling during <code>tap()</code>, but the method is still useful in some situations, for example to reveal element from behind keyboard, navigation bar or user defined element.
 
 </div>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>This method assumes that element is scrollable and at least partially visible on the screen.</p>
@@ -605,7 +591,6 @@ It lets you specify coordinates on the screen (relative to the view on which the
                               <td>
                                 <div>
                                   <p>Element to scroll to.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -618,7 +603,6 @@ It lets you specify coordinates on the screen (relative to the view on which the
                               <td>
                                 <div>
                                   <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -631,7 +615,6 @@ It lets you specify coordinates on the screen (relative to the view on which the
                               <td>
                                 <div>
                                   <p>Application instance to use when searching for keyboard to avoid.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -663,7 +646,6 @@ It is not possible to detect when the end of the scroll was reached, that is why
 The method will stop when the maximum number of swipes is reached or when the condition will be satisfied.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
 <span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
 <span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">until</span><span class="p">:</span> <span class="n">element</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
@@ -691,7 +673,6 @@ The method will stop when the maximum number of swipes is reached or when the co
                               <td>
                                 <div>
                                   <p>Swipe direction.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -704,7 +685,6 @@ The method will stop when the maximum number of swipes is reached or when the co
                               <td>
                                 <div>
                                   <p>Maximum number of swipes (by default 10).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -717,7 +697,6 @@ The method will stop when the maximum number of swipes is reached or when the co
                               <td>
                                 <div>
                                   <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -730,7 +709,6 @@ The method will stop when the maximum number of swipes is reached or when the co
                               <td>
                                 <div>
                                   <p>Application instance to use when searching for keyboard to avoid.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -743,7 +721,6 @@ The method will stop when the maximum number of swipes is reached or when the co
                               <td>
                                 <div>
                                   <p>The condition to satisfy.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -775,12 +752,10 @@ It is not possible to detect when the end of the scroll was reached, that is why
 The method will stop when the maximum number of swipes is reached or when the given element will appear in the view hierarchy.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
 <span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
 <span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">untilExist</span><span class="p">:</span> <span class="n">element</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>This method will not scroll until the view will be visible. To do this call <code>swipe(to:untilVisible:times:avoid:app:)</code> after this method.</p>
@@ -809,7 +784,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Swipe direction.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -822,7 +796,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Element to swipe to.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -835,7 +808,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Maximum number of swipes (by default 10).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -848,7 +820,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -861,7 +832,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Application instance to use when searching for keyboard to avoid.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -893,12 +863,10 @@ It is not possible to detect when the end of the scroll was reached, that is why
 The method will stop when the maximum number of swipes is reached or when the given element will be visible.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">collectionViews</span><span class="o">.</span><span class="n">element</span>
 <span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">staticTexts</span><span class="p">[</span><span class="s">"More"</span><span class="p">]</span>
 <span class="n">collectionView</span><span class="o">.</span><span class="nf">swipe</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">down</span><span class="p">,</span> <span class="nv">untilVisible</span><span class="p">:</span> <span class="n">element</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>This method will not scroll until the view will be visible. To do this call <code><a href="../Extensions/XCUIElement.html#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_">swipe(to:avoid:from:)</a></code> after this method.</p>
@@ -927,7 +895,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Swipe direction.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -940,7 +907,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Element to swipe to.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -953,7 +919,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Maximum number of swipes (by default 10).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -966,7 +931,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Table of <code>AvoidableElement</code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -979,7 +943,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                               <td>
                                 <div>
                                   <p>Application instance to use when searching for keyboard to avoid.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1016,7 +979,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                         <p>Indicates if the element is currently visible on the screen.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">element</span>
 <span class="n">button</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">isVisible</span><span class="p">)</span>
@@ -1050,11 +1012,9 @@ The method will stop when the maximum number of swipes is reached or when the gi
                         <p>Returns <code>value</code> as a String</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">textFields</span><span class="o">.</span><span class="n">element</span>
 <span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">textField</span><span class="o">.</span><span class="n">text</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     It will fail if <code>value</code> is not a <code>String</code> type.
@@ -1100,7 +1060,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
                         <p>Remove text from textField or secureTextField.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">textFields</span><span class="o">.</span><span class="n">element</span>
 <span class="n">textField</span><span class="o">.</span><span class="nf">clearTextField</span><span class="p">()</span>
 </code></pre>
@@ -1136,7 +1095,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
 This helper method will execute <code>clearTextField</code> and then type the provided string.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">textFields</span><span class="o">.</span><span class="n">element</span>
 <span class="n">textField</span><span class="o">.</span><span class="nf">clear</span><span class="p">(</span><span class="nv">andType</span><span class="p">:</span> <span class="s">"text"</span><span class="p">)</span>
 </code></pre>
@@ -1163,7 +1121,6 @@ This helper method will execute <code>clearTextField</code> and then type the pr
                               <td>
                                 <div>
                                   <p>Text to type after clearing old value.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1191,7 +1148,6 @@ Tap point is calculated by adding the offset multiplied by the size of the eleme
 So the correct values are from range: <0, 1>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tableViews</span><span class="o">.</span><span class="n">element</span>
 <span class="n">element</span><span class="o">.</span><span class="nf">tap</span><span class="p">(</span><span class="nv">withOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span>
 </code></pre>
@@ -1218,7 +1174,6 @@ So the correct values are from range: <0, 1>.</p>
                               <td>
                                 <div>
                                   <p>Tap offset. Default (0, 0).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1231,7 +1186,6 @@ So the correct values are from range: <0, 1>.</p>
                               <td>
                                 <div>
                                   <p>Application object used to calculate portrait screen position.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1244,7 +1198,6 @@ So the correct values are from range: <0, 1>.</p>
                               <td>
                                 <div>
                                   <p>Device orientation.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1272,24 +1225,20 @@ So the correct values are from range: <0, 1>.</p>
 <p>In opposite to the <code>coordinate(withNormalizedOffset:)</code> method, the smart coordinate works in landscape and upside down orientations.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">element</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tableViews</span><span class="o">.</span><span class="n">element</span>
 <span class="n">element</span><span class="o">.</span><span class="nf">smartCoordinate</span><span class="p">(</span><span class="nv">withNormalizedOffset</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">(</span><span class="nv">dx</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">dy</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">))</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <a href="https://openradar.appspot.com/31529903">rdar://31529903</a>
 XCUICoordinate tap() or press(forDuration:) methods work only in portrait orientation.
 
 </div>
-
 <div class="aside aside-remark">
     <p class="aside-title">Remark</p>
     This functionality was implemented based on <a href="https://gist.github.com/glebon">glebon</a> <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">gist</a>.
 
 </div>
-
 <div class="aside aside-see-also">
     <p class="aside-title">See also</p>
     <a href="https://gist.github.com/glebon/9b2bc64bfce0dd4299c522df16866822">Workaround for XCUICoordinate in landscape</a>
@@ -1318,7 +1267,6 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                               <td>
                                 <div>
                                   <p>Normalized offset from the elements origin position.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1331,7 +1279,6 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                               <td>
                                 <div>
                                   <p>Application object used to calculate portrait screen position.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1344,7 +1291,6 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                               <td>
                                 <div>
                                   <p>Device orientation.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1354,7 +1300,6 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
                       <div>
                         <h4>Return Value</h4>
                         <p>Smart coordinate for given normalized offset.</p>
-
                       </div>
                     </section>
                   </div>
@@ -1364,8 +1309,8 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -398,14 +398,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="Other Subscripts.html">Other Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -442,12 +434,10 @@ Expects bundle and file name for every file containing data of events to be adde
 Structure is defined in example project&rsquo;s file <em>events.json</em>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">recurringEvents</span><span class="p">:</span> <span class="kt">EventLaunchEnvironment</span> <span class="o">=</span> <span class="p">[</span> <span class="kt">LaunchEnvironmentResourceValue</span><span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"monthly_events"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Data"</span><span class="p">)</span> <span class="p">]</span>
 <span class="k">let</span> <span class="nv">nearEvents</span> <span class="o">=</span> <span class="kt">EventLaunchEnvironment</span><span class="p">(</span><span class="nv">resources</span><span class="p">:</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"todays_events"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Test data"</span><span class="p">),</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"this_week_events"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
 <span class="k">let</span> <span class="nv">nearEvents</span> <span class="o">=</span> <span class="kt">EventLaunchEnvironment</span><span class="p">(</span><span class="nv">shouldCleanBefore</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">resources</span><span class="p">:</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"todays_events"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Test data"</span><span class="p">),</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"this_week_events"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
 </code></pre>
-
 <div class="aside aside-warning">
     <p class="aside-title">Warning</p>
     Setting <code>shouldCleanBefore</code> to <code>true</code> will remove all events from a device.
@@ -496,12 +486,10 @@ Expects bundle and file name for every file containing data of reminders to be a
 Structure is defined in example project&rsquo;s file <em>reminders.json</em>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">recurringReminders</span><span class="p">:</span> <span class="kt">ReminderLaunchEnvironment</span> <span class="o">=</span> <span class="p">[</span> <span class="kt">LaunchEnvironmentResourceValue</span><span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"johnys_birthday_reminder"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Data"</span><span class="p">)</span> <span class="p">]</span>
 <span class="k">let</span> <span class="nv">highPriorityReminders</span> <span class="o">=</span> <span class="kt">ReminderLaunchEnvironment</span><span class="p">(</span><span class="nv">resources</span><span class="p">:</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"automate_release_reminders"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Test data"</span><span class="p">),</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"wwdc_reminders"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
 <span class="k">let</span> <span class="nv">highPriorityReminders</span> <span class="o">=</span> <span class="kt">ReminderLaunchEnvironment</span><span class="p">(</span><span class="nv">shouldCleanBefore</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">resources</span><span class="p">:</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"automate_release_reminders"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Test data"</span><span class="p">),</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"wwdc_reminders"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
 </code></pre>
-
 <div class="aside aside-warning">
     <p class="aside-title">Warning</p>
     Setting <code>shouldCleanBefore</code> to <code>true</code> will remove all reminders from a device.
@@ -550,12 +538,10 @@ Expects bundle and file name for every file containing data of contacts to be ad
 Structure is defined in example project&rsquo;s file <em>contacts.json</em>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">johnContacts</span><span class="p">:</span> <span class="kt">ContactLaunchEnvironment</span> <span class="o">=</span> <span class="p">[</span> <span class="kt">LaunchEnvironmentResourceValue</span><span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"john"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Data"</span><span class="p">)</span> <span class="p">]</span>
 <span class="k">let</span> <span class="nv">severalContacts</span> <span class="o">=</span> <span class="kt">ContactLaunchEnvironment</span><span class="p">(</span><span class="nv">resources</span><span class="p">:</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"michael"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Test data"</span><span class="p">),</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"emma"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
 <span class="k">let</span> <span class="nv">severalContacts</span> <span class="o">=</span> <span class="kt">ContactLaunchEnvironment</span><span class="p">(</span><span class="nv">shouldCleanBefore</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">resources</span><span class="p">:</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"michael"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Test data"</span><span class="p">),</span> <span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"emma"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
 </code></pre>
-
 <div class="aside aside-warning">
     <p class="aside-title">Warning</p>
     Setting <code>shouldCleanBefore</code> to <code>true</code> will remove all contacts from a device.
@@ -602,7 +588,6 @@ Structure is defined in example project&rsquo;s file <em>contacts.json</em>.</p>
                         <p>Launch environment disabling <code>UIKit</code> animation.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">disableAnimation</span> <span class="o">=</span> <span class="kt">AnimationLaunchEnvironment</span><span class="p">()</span>
 </code></pre>
 
@@ -686,7 +671,6 @@ It also assures that default handling is provided by <a href="https://github.com
                         <p>Simple implementation of <code>LaunchEnvironment</code> that wraps single <code>(key: value)</code> pair for <code><a href="Structs/TestLauncher.html">TestLauncher</a></code>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchEnvironmentOption</span> <span class="o">=</span> <span class="kt">LaunchEnvironment</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="s">"MADE_WITH_LOVE_BY"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"PGS"</span><span class="p">)</span>
 </code></pre>
 
@@ -730,7 +714,6 @@ It also assures that default handling is provided by <a href="https://github.com
                         <p>Most basic and generic structure to pass <code>(key: value)</code> pairs through <code><a href="Structs/TestLauncher.html">TestLauncher</a></code>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchEnvironmentDictionary</span><span class="p">:</span> <span class="kt">LaunchEnvironments</span> <span class="o">=</span> <span class="p">[</span><span class="s">"CORPORATION_KEY"</span><span class="p">:</span> <span class="s">"PGS"</span><span class="p">,</span> <span class="s">"PROJECT_KEY"</span><span class="p">:</span> <span class="s">"AutoMate"</span><span class="p">]</span>
 </code></pre>
 
@@ -774,7 +757,6 @@ It also assures that default handling is provided by <a href="https://github.com
                         <p>Protocol defining minimal requirements of launch environment option to be handled by framework.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimpleLaunchEnvironment</span><span class="p">:</span> <span class="kt">LaunchEnvironmentProtocol</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">String</span>
@@ -787,7 +769,6 @@ It also assures that default handling is provided by <a href="https://github.com
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <code>internal</code> initializer would be generated automatically but it would not fulfill requirement of <code>public</code> protocol.
@@ -835,7 +816,6 @@ It also assures that default handling is provided by <a href="https://github.com
 Provides default implementation for handling singe launch environment by providing <code>key</code> and <code>value</code>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimpleLaunchEnvironment</span><span class="p">:</span> <span class="kt">LaunchEnvironmentWithSingleValue</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">String</span>
@@ -887,7 +867,6 @@ Provides default implementation for handling singe launch environment by providi
 Provides default implementation for <code>ExpressibleByArrayLiteral</code> protocol.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ArrayLaunchEnvironment</span><span class="p">:</span> <span class="kt">LaunchEnvironmentWithMultipleValues</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">String</span>
@@ -901,7 +880,6 @@ Provides default implementation for <code>ExpressibleByArrayLiteral</code> proto
 <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="kt">ArrayLaunchEnvironment</span><span class="p">(</span><span class="nv">valuesCollection</span><span class="p">:</span> <span class="p">[</span><span class="s">"Value1"</span><span class="p">,</span> <span class="s">"Value2"</span><span class="p">])</span>
 <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Value1"</span><span class="p">,</span> <span class="s">"Value2"</span><span class="p">]</span> <span class="k">as</span> <span class="kt">ArrayLaunchEnvironment</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <code>internal</code> initializer would be generated automatically but it would not fulfill requirement of <code>public</code> protocol.
@@ -951,7 +929,6 @@ It is implemented by predefined in <code>AutoMate</code> options
 and assures that default handling is provided by <a href="https://github.com/PGSSoft/AutoMate-AppBuddy">AutoMate - AppBuddy</a></p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CleanableSimpleLaunchEnvironment</span><span class="p">:</span> <span class="kt">CleanableLaunchEnvironment</span><span class="p">,</span> <span class="kt">LaunchEnvironmentWithSingleValue</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">String</span>
@@ -1004,7 +981,6 @@ and it&rsquo;s specific enables clean data before saving new one, it conforms to
 It provides few initializers extending <code><a href="Protocols/LaunchEnvironmentWithMultipleValues.html">LaunchEnvironmentWithMultipleValues</a></code> initializers.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CleanableArrayLaunchEnvironment</span><span class="p">:</span> <span class="kt">CleanableLaunchEnvironmentWithMultipleValues</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">String</span>
@@ -1017,7 +993,6 @@ It provides few initializers extending <code><a href="Protocols/LaunchEnvironmen
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <code>internal</code> initializer would be generated automatically but it would not fulfill requirement of <code>public</code> protocol.
@@ -1064,7 +1039,6 @@ It provides few initializers extending <code><a href="Protocols/LaunchEnvironmen
                         <p>Contains basic requirements for type that will be used as value for launch environment.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DataSource</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">LaunchEnvironmentValue</span> <span class="p">{</span>
     <span class="k">case</span> <span class="n">valid</span> <span class="o">=</span> <span class="s">"mock_valid"</span>
     <span class="k">case</span> <span class="n">error</span> <span class="o">=</span> <span class="s">"mock_error"</span>
@@ -1112,7 +1086,6 @@ It provides few initializers extending <code><a href="Protocols/LaunchEnvironmen
 Expects bundle and file name. If bundle name is <code>nil</code> main bundle will be searched.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">resource</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentResourceValue</span><span class="p">(</span><span class="nv">fileName</span><span class="p">:</span> <span class="s">"monthly_events"</span><span class="p">,</span> <span class="nv">bundleName</span><span class="p">:</span> <span class="s">"Data"</span><span class="p">)</span>
 </code></pre>
 
@@ -1134,8 +1107,8 @@ Expects bundle and file name. If bundle name is <code>nil</code> main bundle wil
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

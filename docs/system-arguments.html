@@ -398,21 +398,13 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="Other Subscripts.html">Other Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
         <section>
           <section class="section">
             
-            <a href='#system-launch-arguments' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='system-launch-arguments'>System launch arguments</h1>
+            <h1 id='system-launch-arguments' class='heading'>System launch arguments</h1>
 
 <ul>
 <li><a href="#usage">Usage</a></li>
@@ -426,7 +418,7 @@
 <li><a href="#localised-strings-options">Localised strings options</a></li>
 </ul></li>
 </ul>
-<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<h2 id='usage' class='heading'>Usage</h2>
 
 <p><code>AutoMate</code> contains set of predefined launch arguments. They can be passed to the <code>TestLauncher</code>
 to configure the application before launch.</p>
@@ -437,12 +429,12 @@ to configure the application before launch.</p>
     <span class="kt">SystemLanguages</span><span class="p">([</span><span class="o">.</span><span class="kt">English</span><span class="p">,</span> <span class="o">.</span><span class="kt">German</span><span class="p">])</span>
 <span class="p">])</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
 </code></pre>
-<a href='#predefined-arguments' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='predefined-arguments'>Predefined arguments</h2>
+<h2 id='predefined-arguments' class='heading'>Predefined arguments</h2>
 
 <p><code>AutoMate</code> has predefined launch argument types for most common system launch arguments.
 Below are shown examples of each of them, with corresponding generated strings that
 would be set on the <code>XCUIApplication</code> instance.</p>
-<a href='#system-languages' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='system-languages'>System languages</h3>
+<h3 id='system-languages' class='heading'>System languages</h3>
 
 <p><code>SystemLanguages</code> allows to replace order of preferred languages which will be used
 by the application do display localized content.</p>
@@ -456,7 +448,7 @@ by the application do display localized content.</p>
 <p><strong>Generated strings:</strong></p>
 <pre class="highlight swift"><code><span class="o">-</span><span class="kt">AppleLanguages</span> <span class="p">(</span><span class="s">"en"</span><span class="p">,</span> <span class="s">"pl"</span><span class="p">)</span>
 </code></pre>
-<a href='#system-locale' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='system-locale'>System locale</h3>
+<h3 id='system-locale' class='heading'>System locale</h3>
 
 <p><code>SystemLocale</code> allows to replace users locale.</p>
 
@@ -469,7 +461,7 @@ by the application do display localized content.</p>
 <pre class="highlight swift"><code><span class="o">-</span><span class="kt">AppleLocale</span> <span class="s">"pl"</span>
 <span class="o">-</span><span class="kt">AppleLocale</span> <span class="s">"pl_PL"</span>
 </code></pre>
-<a href='#system-keyboards' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='system-keyboards'>System keyboards</h3>
+<h3 id='system-keyboards' class='heading'>System keyboards</h3>
 
 <p><code>SoftwareKeyboards</code> and <code>HardwareKeyboards</code> allows to set keyboards used in the application.
 It is possible to provide only software keyboards, or only hardware keyboards.</p>
@@ -494,7 +486,7 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
 <p><strong>Generated strings:</strong></p>
 <pre class="highlight swift"><code><span class="o">-</span><span class="kt">AppleKeyboards</span> <span class="p">(</span><span class="s">"bn@sw=Bengali"</span><span class="p">,</span> <span class="s">"bn@hw=Bangla"</span><span class="p">)</span>
 </code></pre>
-<a href='#core-data-options' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='core-data-options'>Core Data options</h3>
+<h3 id='core-data-options' class='heading'>Core Data options</h3>
 
 <p><code>CoreDataOption</code> allows to enable debug options for CoreData.</p>
 <pre class="highlight swift"><code><span class="c1">// -com.apple.CoreData.SQLDebug "1"</span>
@@ -525,7 +517,7 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
     <span class="kt">CoreDataOption</span><span class="o">.</span><span class="nf">sqlDebug</span><span class="p">(</span><span class="nv">verbosityLevel</span><span class="p">:</span> <span class="o">.</span><span class="n">high</span><span class="p">)</span>
 <span class="p">])</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
 </code></pre>
-<a href='#localised-strings-options' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='localised-strings-options'>Localised strings options</h3>
+<h3 id='localised-strings-options' class='heading'>Localised strings options</h3>
 
 <p><code>LocalizedStrings</code> allows to set options to debug localized strings.</p>
 <pre class="highlight swift"><code><span class="c1">// -NSShowNonLocalizedStrings "1"</span>
@@ -538,8 +530,8 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

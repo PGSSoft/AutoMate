@@ -29,6 +29,7 @@ import Foundation
 extension String: LaunchEnvironmentValue {
 
     // MARK: Properties
+    /// `String` which is passed with launch enviroment.
     public var value: String {
         return self
     }

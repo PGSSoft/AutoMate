@@ -80,6 +80,12 @@ def stegeTests() {
         bundle exec pod lib lint
       '''
     }
+
+    stage("Carthage lint") {
+      sh '''
+        carthage build --no-skip-current
+      '''
+    }
   }
   finally {
     stage("Danger") {

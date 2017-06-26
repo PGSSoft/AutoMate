@@ -398,14 +398,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="Other Subscripts.html">Other Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -443,7 +435,6 @@ Provides essential definitions for system alerts giving the ability to handle th
 <p>System alerts supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.
 Additional protocols, <code><a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a></code>, <code><a href="Protocols/SystemAlertDeny.html">SystemAlertDeny</a></code>, <code><a href="Protocols/SystemAlertOk.html">SystemAlertOk</a></code> and <code><a href="Protocols/SystemAlertCancel.html">SystemAlertCancel</a></code> provides
 definition and default implementation for handling buttons on the alert view.</p>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <code>AutoMate</code> provides an implementation for several different system alerts.
@@ -452,7 +443,6 @@ Check the documentation for full list of supported system alerts.
 </div>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Contacts"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">AddressBookAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create AddressBookAlert object"</span><span class="p">)</span>
@@ -468,7 +458,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -510,7 +499,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">HealthAuthorizationDontAllowAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create HealthAuthorizationDontAllowAlert object"</span><span class="p">)</span>
@@ -526,7 +514,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -568,7 +555,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">LocationAlwaysAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create LocationAlwaysAlert object"</span><span class="p">)</span>
@@ -584,7 +570,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -622,7 +607,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">LocationUpgradeWhenInUseAlwaysAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create LocationUpgradeWhenInUseAlwaysAlert object"</span><span class="p">)</span>
@@ -638,7 +622,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -676,7 +659,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">LocationWhenInUseAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create LocationWhenInUseAlert object"</span><span class="p">)</span>
@@ -692,7 +674,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -734,7 +715,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">AddressBookAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create AddressBookAlert object"</span><span class="p">)</span>
@@ -750,7 +730,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -788,7 +767,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">BluetoothPeripheralAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create BluetoothPeripheralAlert object"</span><span class="p">)</span>
@@ -804,7 +782,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -842,7 +819,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">CalendarAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create CalendarAlert object"</span><span class="p">)</span>
@@ -858,7 +834,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -896,7 +871,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">CallsAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create CallsAlert object"</span><span class="p">)</span>
@@ -912,7 +886,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -950,7 +923,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">CameraAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create CameraAlert object"</span><span class="p">)</span>
@@ -966,7 +938,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1004,7 +975,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">MediaLibraryAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create MediaLibraryAlert object"</span><span class="p">)</span>
@@ -1020,7 +990,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1058,7 +1027,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">MicrophoneAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create MicrophoneAlert object"</span><span class="p">)</span>
@@ -1074,7 +1042,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1112,7 +1079,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">MotionAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create MotionAlert object"</span><span class="p">)</span>
@@ -1128,7 +1094,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1166,7 +1131,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">PhotosAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create PhotosAlert object"</span><span class="p">)</span>
@@ -1182,7 +1146,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1220,7 +1183,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">RemindersAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create RemindersAlert object"</span><span class="p">)</span>
@@ -1236,7 +1198,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1274,7 +1235,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">SiriAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create SiriAlert object"</span><span class="p">)</span>
@@ -1290,7 +1250,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1328,7 +1287,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">SpeechRecognitionAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create SpeechRecognitionAlert object"</span><span class="p">)</span>
@@ -1344,7 +1302,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1382,7 +1339,6 @@ Check the documentation for full list of supported system alerts.
 <p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">WillowAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create WillowAlert object"</span><span class="p">)</span>
@@ -1398,7 +1354,6 @@ Check the documentation for full list of supported system alerts.
 <span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
 <span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
@@ -1423,8 +1378,8 @@ Check the documentation for full list of supported system alerts.
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

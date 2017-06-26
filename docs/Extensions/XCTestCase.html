@@ -399,14 +399,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="../Other Subscripts.html">Other Subscripts</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Other Subscripts.html#/s:iE8AutoMateCSo16XCUIElementQuery9subscriptFPS_7Locator_CSo11XCUIElement">subscript(_:)</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -503,7 +495,6 @@ By default set to 10 seconds.</p>
                         <p>Wait for an UI element to fulfill the predicate. After given time, if the predicate is not fulfilled for a given element, test fails.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="s">"appearingButton"</span><span class="p">]</span>
 <span class="k">let</span> <span class="nv">existancePredicate</span> <span class="o">=</span> <span class="kt">NSPredicate</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"exists == true"</span><span class="p">)</span>
 <span class="nf">wait</span><span class="p">(</span><span class="nv">forFulfillmentOf</span><span class="p">:</span> <span class="n">existancePredicate</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">button</span><span class="p">)</span>
@@ -536,7 +527,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>NSPredicate to fulfill.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -549,7 +539,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>XCUIElement to wait for.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -562,7 +551,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>String as format for failing message. You must use %@ for predicate value, %@ for element value and %f for timeout value.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -575,7 +563,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Waiting time in seconds (default: 10 seconds).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -588,7 +575,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source file.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -601,7 +587,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source line.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -638,7 +623,6 @@ By default set to 10 seconds.</p>
                         <p>Wait for an UI element to exist in a view hierarchy. After given time, if element is not found, test fails.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="s">"appearingButton"</span><span class="p">]</span>
 <span class="nf">wait</span><span class="p">(</span><span class="nv">forExistanceOf</span><span class="p">:</span> <span class="n">button</span><span class="p">)</span>
 </code></pre>
@@ -665,7 +649,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>XCUIElement to wait for.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -678,7 +661,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Waiting time in seconds (default: 10 seconds).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -691,7 +673,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source file.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -704,7 +685,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source line.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -730,7 +710,6 @@ By default set to 10 seconds.</p>
                         <p>Wait for an UI element to be visible in a view hierarchy. After given time, if the element is still not visible, test fails.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="s">"appearingButton"</span><span class="p">]</span>
 <span class="nf">wait</span><span class="p">(</span><span class="nv">forVisibilityOf</span><span class="p">:</span> <span class="n">button</span><span class="p">)</span>
 </code></pre>
@@ -757,7 +736,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>XCUIElement to wait for.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -770,7 +748,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Waiting time in seconds (default: 10 seconds).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -783,7 +760,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source file.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -796,7 +772,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source line.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -822,7 +797,6 @@ By default set to 10 seconds.</p>
                         <p>Wait for an UI element to be not visible in a view hierarchy. After given time, if the element is still visible, test fails.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="s">"appearingButton"</span><span class="p">]</span>
 <span class="nf">wait</span><span class="p">(</span><span class="nv">forInvisibilityOf</span><span class="p">:</span> <span class="n">button</span><span class="p">)</span>
 </code></pre>
@@ -849,7 +823,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>XCUIElement to wait for.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -862,7 +835,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Waiting time in seconds (default: 10 seconds).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -875,7 +847,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source file.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -888,7 +859,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source line.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -925,7 +895,6 @@ By default set to 10 seconds.</p>
                         <p>Wait for an identifiable element to exist in a view hierarchy. After given interval, if element is not found, test fails.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mainPage</span><span class="p">:</span> <span class="kt">MainPage</span> <span class="o">=</span> <span class="kt">MainPage</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
 <span class="nf">wait</span><span class="p">(</span><span class="nv">forExistanceOf</span><span class="p">:</span> <span class="n">mainPage</span><span class="p">)</span>
 </code></pre>
@@ -952,7 +921,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>XCUIElement to wait for.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -965,7 +933,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Waiting time (default: 10 seconds).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -978,7 +945,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source file.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -991,7 +957,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source line.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1017,7 +982,6 @@ By default set to 10 seconds.</p>
                         <p>Wait for an identifiable element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mainPage</span><span class="p">:</span> <span class="kt">MainPage</span> <span class="o">=</span> <span class="kt">MainPage</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
 <span class="nf">wait</span><span class="p">(</span><span class="nv">forVisibilityOf</span><span class="p">:</span> <span class="n">mainPage</span><span class="p">)</span>
 </code></pre>
@@ -1044,7 +1008,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>XCUIElement to wait for.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1057,7 +1020,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Waiting time (default: 10 seconds).</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1070,7 +1032,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source file.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1083,7 +1044,6 @@ By default set to 10 seconds.</p>
                               <td>
                                 <div>
                                   <p>Current source line.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -1098,8 +1058,8 @@ By default set to 10 seconds.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-04-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

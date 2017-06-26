@@ -10,6 +10,7 @@ import Foundation
 import XCTest
 
 // MARK: - HealthPermissionPage
+#if os(iOS)
 /// Page object representing HealthKit permission view.
 ///
 /// It can only allow to tap on buttons:
@@ -26,7 +27,6 @@ import XCTest
 /// healthPermissionPage.turnOnAllElement.tap()
 /// healthPermissionPage.allowElement.tap()
 /// ```
-#if os(iOS)
 open class HealthPermissionPage: BaseAppPage, HealthAlertAllow, HealthAlertDeny, HealthAlertTurnOnAll, HealthAlertTurnOffAll {
 
     // MARK: Elements

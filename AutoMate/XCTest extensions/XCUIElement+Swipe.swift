@@ -14,6 +14,7 @@ import XCTest
 extension XCUIElement {
 
     // MARK: Methods
+    #if os(iOS)
     /// Perform swipe gesture on this view by swiping between provided points.
     ///
     /// It is an alternative to `swipeUp`, `swipeDown`, `swipeLeft` and `swipeBottom` methods provided by `XCTest`.
@@ -29,7 +30,6 @@ extension XCUIElement {
     /// - Parameters:
     ///   - startVector: Relative point from which to start swipe.
     ///   - stopVector: Relative point to end swipe.
-    #if os(iOS)
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
         let p1 = smartCoordinate(withNormalizedOffset: startVector)
         let p2 = smartCoordinate(withNormalizedOffset: stopVector)
@@ -37,6 +37,7 @@ extension XCUIElement {
     }
     #endif
 
+    #if os(iOS)
     /// Swipes scroll view to reveal given element.
     ///
     /// **Example:**
@@ -56,7 +57,6 @@ extension XCUIElement {
     ///   - element: Element to scroll to.
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    #if os(iOS)
     public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
         let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
 
@@ -102,6 +102,7 @@ extension XCUIElement {
     }
     #endif
 
+    #if os(iOS)
     /// Swipes scroll view to given direction until condition will be satisfied.
     ///
     /// A useful method to scroll collection view to reveal an element.
@@ -124,7 +125,6 @@ extension XCUIElement {
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
     ///   - condition: The condition to satisfy.
-    #if os(iOS)
     public func swipe(to direction: SwipeDirection, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), until condition: @autoclosure () -> Bool) {
         let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
 
@@ -163,6 +163,7 @@ extension XCUIElement {
     }
     #endif
 
+    #if os(iOS)
     /// Swipes scroll view to given direction until element would exist.
     ///
     /// A useful method to scroll collection view to reveal an element.
@@ -188,13 +189,13 @@ extension XCUIElement {
     ///   - times: Maximum number of swipes (by default 10).
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    #if os(iOS)
     public func swipe(to direction: SwipeDirection, untilExist element: XCUIElement, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
 
         swipe(to: direction, times: times, avoid: viewsToAvoid, from: app, until: element.exists)
     }
     #endif
 
+    #if os(iOS)
     /// Swipes scroll view to given direction until element would be visible.
     ///
     /// A useful method to scroll collection view to reveal an element.
@@ -220,7 +221,6 @@ extension XCUIElement {
     ///   - times: Maximum number of swipes (by default 10).
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    #if os(iOS)
     public func swipe(to direction: SwipeDirection, untilVisible element: XCUIElement, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
 
         swipe(to: direction, times: times, avoid: viewsToAvoid, from: app, until: element.isVisible)
