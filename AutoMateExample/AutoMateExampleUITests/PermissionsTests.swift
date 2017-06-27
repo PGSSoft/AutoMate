@@ -151,6 +151,12 @@ class PermissionsTests: AppUITestCase {
     }
 
     func testHealthKitAlert() {
+
+        // Skip test on iPad.
+        // HealthKit is not available on iPad.
+        if app.isRunningOnIpad {
+            return
+        }
         var handled = false
         let token = addUIInterruptionMonitor(withDescription: "HomeKit") { (alert) -> Bool in
             guard let homeKitAlert = HealthAuthorizationDontAllowAlert(element: alert) else {

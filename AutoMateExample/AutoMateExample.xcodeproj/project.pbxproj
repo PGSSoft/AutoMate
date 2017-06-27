@@ -103,6 +103,20 @@
 			remoteGlobalIDString = 1F98919D1D409547007CD2B0;
 			remoteInfo = AutoMateExample;
 		};
+		9625FA231F014E61008466DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 960F33011EF936FC004C7C4A;
+			remoteInfo = "AutoMate tvOS";
+		};
+		9625FA251F014E61008466DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 969CF8D21EF933BE006D9553;
+			remoteInfo = "AutoMate macOS";
+		};
 		E4458A871E6E97B300EC6743 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4458A821E6E97B300EC6743 /* AutoMate.xcodeproj */;
@@ -460,6 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				E4458A881E6E97B300EC6743 /* AutoMate.framework */,
+				9625FA241F014E61008466DF /* AutoMate.framework */,
+				9625FA261F014E61008466DF /* AutoMate.framework */,
 				E4458A8A1E6E97B300EC6743 /* AutoMateTests.xctest */,
 			);
 			name = Products;
@@ -607,6 +623,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9625FA241F014E61008466DF /* AutoMate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AutoMate.framework;
+			remoteRef = 9625FA231F014E61008466DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9625FA261F014E61008466DF /* AutoMate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AutoMate.framework;
+			remoteRef = 9625FA251F014E61008466DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E4458A881E6E97B300EC6743 /* AutoMate.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -947,6 +977,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -961,6 +992,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

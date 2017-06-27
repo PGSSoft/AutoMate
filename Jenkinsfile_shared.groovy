@@ -141,6 +141,15 @@ def branches(unlockDanger) {
     "iPhone 7 Plus, 10.3.1": {
       uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
     },
+    "iPad Air 2, 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Air 2", "10.3.1")
+    },
+    "iPad Pro (10.5-inch), 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "10.3.1")
+    },
+    "iPad Pro (12.9-inch) (2nd generation), 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "10.3.1")
+    },
     "CocoaPods lint": {
       podLintBranch()
     },

@@ -288,6 +288,8 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         // XCTest coordinate
         XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        _ = rotatePage.view.isVisible
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
         rotatePage.tapButtonB(with: vector)
