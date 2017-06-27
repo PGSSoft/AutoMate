@@ -8,6 +8,9 @@ env:
     - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.3.1"
     - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3.1"
     - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Air 2"                             DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (10.5-inch)"                   DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (12.9-inch) (2nd generation)"  DESTINATION_OS="10.3.1"
 
 before_install:
   - brew update

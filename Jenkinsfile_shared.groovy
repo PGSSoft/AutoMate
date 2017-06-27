@@ -133,7 +133,7 @@ def carthageLintBranch() {
 def branches(unlockDanger) {
   return [
     "iPhone SE, 10.3.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone SE", "10.3.1")
     },
     "iPhone 7, 10.3.1": {
       uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7", "10.3.1", unlockDanger)
