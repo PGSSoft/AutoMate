@@ -1,7 +1,7 @@
 // Prepare
 // - update bundle
 // - reset simulators
-def prepare() {
+def prepareStage() {
   stage("Prepare") {
     sh '''
       # Bundler
@@ -18,87 +18,136 @@ def prepare() {
 }
 
 // Perform tests
-def test(scheme, platform, deviceName, deviceOS) {
-  withEnv(["SCHEME=${scheme}", "PLATFORM=${platform}", "DESTINATION_NAME=${deviceName}", "DESTINATION_OS=${deviceOS}"]) {
-    ios.cleanBuild()
-    ios.killSimulator()
+def testStage(scheme, platform, deviceName, deviceOS) {
+  stage("${deviceName} ${deviceOS}") {
+    withEnv(["SCHEME=${scheme}", "PLATFORM=${platform}", "DESTINATION_NAME=${deviceName}", "DESTINATION_OS=${deviceOS}"]) {
+      ios.cleanBuild()
+      ios.killSimulator()
 
-    try {
-      sh '''
-        bundle exec fastlane test "scheme:${SCHEME}" "destination:platform=${PLATFORM},name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
-      '''
-    }
-    finally {
       try {
         sh '''
-          # bundle exec danger
-
-          bundle exec golden_rose generate "output/AutoMate.test_result"
-          mv "index.html" "output/index_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
-          mv "output/report.html" "output/report_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
+          bundle exec fastlane test "scheme:${SCHEME}" "destination:platform=${PLATFORM},name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
         '''
-      } finally {}
-      ios.archive()
-      publishHTML([
-        allowMissing: true,
-        alwaysLinkToLastBuild: true,
-        keepAll: true,
-        reportDir: 'output',
-        reportFiles: "report_${DESTINATION_NAME}_${DESTINATION_OS}.html",
-        reportName: "Report ${DESTINATION_NAME} ${DESTINATION_OS}"
-      ])
-      publishHTML([
-        allowMissing: true,
-        alwaysLinkToLastBuild: true,
-        keepAll: true,
-        reportDir: 'output',
-        reportFiles: "index_${DESTINATION_NAME}_${DESTINATION_OS}.html",
-        reportName: "Golden Rose ${DESTINATION_NAME} ${DESTINATION_OS}"
-      ])
+      }
+      finally {
+        try {
+          sh '''
+            # bundle exec danger
+
+            bundle exec golden_rose generate "output/AutoMate.test_result"
+            mv "index.html" "output/index_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
+            mv "output/report.html" "output/report_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
+          '''
+        } finally {}
+        ios.archive()
+        publishHTML([
+          allowMissing: true,
+          alwaysLinkToLastBuild: true,
+          keepAll: true,
+          reportDir: 'output',
+          reportFiles: "report_${DESTINATION_NAME}_${DESTINATION_OS}.html",
+          reportName: "Report ${DESTINATION_NAME} ${DESTINATION_OS}"
+        ])
+        publishHTML([
+          allowMissing: true,
+          alwaysLinkToLastBuild: true,
+          keepAll: true,
+          reportDir: 'output',
+          reportFiles: "index_${DESTINATION_NAME}_${DESTINATION_OS}.html",
+          reportName: "Golden Rose ${DESTINATION_NAME} ${DESTINATION_OS}"
+        ])
+      }
     }
   }
 }
 
-// Test stages
-def stegeTests() {
-  // Tests
-  try {
-    stage("iPhone SE, 10.3.1") {
-      test("AutoMate iOS", "iOS Simulator", "iPhone SE", "10.3.1")
-    }
+// Run on node
+def runNode(nodeName, block) {
+  node(nodeName) {
+    timeout(20) {
+      ansiColor('xterm') {
+        stage("Clone") {
+          deleteDir()
+          ios.killSimulator()
+          checkout scm
+        }
 
-    stage("iPhone 7, 10.3.1") {
-      test("AutoMate iOS", "iOS Simulator", "iPhone 7", "10.3.1")
-    }
+        prepareStage()
 
-    stage("iPhone 7 Plus, 10.3.1") {
-      test("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
+        // Run closure
+        try {
+          block()
+        } finally {
+          stage("Clean") {
+            deleteDir()
+          }
+        }
+      }
     }
+  }
+}
 
+// UI Test branch
+def uiTestBranch(scheme, platform, deviceName, deviceOS, unlockDanger=null) {
+  runNode("ios_ui") {
+    try {
+      testStage(scheme, platform, deviceName, deviceOS)
+    } finally {
+      if (unlockDanger) {
+        unlockDanger() {
+          stage("Danger") {
+            sh '''
+              # Danger
+              bundle exec danger
+            '''
+          }
+        }
+      }
+    }
+  }
+}
+
+// CocoaPods lint branch
+def podLintBranch() {
+  runNode("ios") {
     stage("CocoaPods lint") {
       sh '''
         bundle exec pod lib lint
       '''
     }
+  }
+}
 
+// Carthage lint branch
+def carthageLintBranch() {
+  runNode("ios") {
     stage("Carthage lint") {
       sh '''
         carthage build --no-skip-current
       '''
     }
   }
-  finally {
-    stage("Danger") {
-      sh '''
-        # Danger
-        bundle exec danger
-      '''
-    }
+}
 
-    stage("Clean") {
-      deleteDir()
+// Branches
+def branches(unlockDanger) {
+  return [
+    "iPhone SE, 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
+    },
+    "iPhone 7, 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7", "10.3.1", unlockDanger)
+    },
+    "iPhone 7 Plus, 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
+    },
+    "CocoaPods lint": {
+      podLintBranch()
+    },
+    "Carthage lint": {
+      carthageLintBranch()
     }
-  }
+  ]
 }
 
 return this
