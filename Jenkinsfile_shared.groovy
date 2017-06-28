@@ -144,6 +144,9 @@ def branches(unlockDanger) {
     "iPad Air 2, 10.3.1": {
       uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Air 2", "10.3.1")
     },
+    "iPad Pro (9.7-inch), 10.3.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "10.3.1")
+    },
     "iPad Pro (10.5-inch), 10.3.1": {
       uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "10.3.1")
     },

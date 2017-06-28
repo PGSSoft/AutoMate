@@ -144,33 +144,33 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilExists() {
         mainPage.goToCollectionViewMenu()
 
-        let element0 = collectionPage.cell(with: "0")
-        let element10 = collectionPage.cell(with: "10")
+        let elementStart = collectionPage.cell(with: "0")
+        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "10") : collectionPage.cell(with: "20")
 
-        XCTAssertTrue(element0.isVisible)
-        XCTAssertFalse(element10.exists)
+        XCTAssertTrue(elementStart.isVisible)
+        XCTAssertFalse(elementEnd.exists)
 
-        collectionPage.collectionView.swipe(to: .down, untilExist: element10)
-        XCTAssertFalse(element0.exists)
-        XCTAssertTrue(element10.exists)
+        collectionPage.collectionView.swipe(to: .down, untilExist: elementEnd)
+        XCTAssertFalse(elementStart.exists)
+        XCTAssertTrue(elementEnd.exists)
 
-        collectionPage.collectionView.swipe(to: element10)
-        XCTAssertFalse(element0.exists)
-        XCTAssertTrue(element10.isVisible)
+        collectionPage.collectionView.swipe(to: elementEnd)
+        XCTAssertFalse(elementStart.exists)
+        XCTAssertTrue(elementEnd.isVisible)
     }
 
     func testSwipeInDirectionUntilVisible() {
         mainPage.goToCollectionViewMenu()
 
-        let element0 = collectionPage.cell(with: "0")
-        let element10 = collectionPage.cell(with: "10")
+        let elementStart = collectionPage.cell(with: "0")
+        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "10") : collectionPage.cell(with: "20")
 
-        XCTAssertTrue(element0.isVisible)
-        XCTAssertFalse(element10.isVisible)
+        XCTAssertTrue(elementStart.isVisible)
+        XCTAssertFalse(elementEnd.isVisible)
 
-        collectionPage.collectionView.swipe(to: .down, untilVisible: element10)
-        XCTAssertFalse(element0.isVisible)
-        XCTAssertTrue(element10.isVisible)
+        collectionPage.collectionView.swipe(to: .down, untilVisible: elementEnd)
+        XCTAssertFalse(elementStart.isVisible)
+        XCTAssertTrue(elementEnd.isVisible)
     }
 
     func testClearTextField() {

@@ -18,7 +18,8 @@ import XCTest
 /// - `iPhone47`: iPhone 4.7"
 /// - `iPhone55`: iPhone 5.5"
 /// - `iPad`: iPad
-/// - `iPadPro`: iPad Pro
+/// - `iPadPro105`: iPad Pro 10.5"
+/// - `iPadPro12`: iPad Pro 12"
 public enum DeviceType {
     /// iPhone 3.5"
     case iPhone35
@@ -35,8 +36,11 @@ public enum DeviceType {
     /// iPad
     case iPad
 
-    /// iPad Pro
-    case iPadPro
+    /// iPad Pro 10.5"
+    case iPadPro105
+
+    /// iPad Pro 12"
+    case iPadPro12
 }
 
 public extension XCUIApplication {
@@ -76,8 +80,10 @@ public extension XCUIApplication {
             return .iPhone55
         case (768, 1024):
             return .iPad
+        case (834, 1112):
+            return .iPadPro105
         case (1024, 1365..<1367):
-            return .iPadPro
+            return .iPadPro12
         default:
             fatalError("Unrecognized device type")
         }
@@ -96,7 +102,7 @@ public extension XCUIApplication {
     /// ```
     public var isRunningOnIpad: Bool {
         switch deviceType {
-        case .iPad, .iPadPro:
+        case .iPad, .iPadPro105, .iPadPro12:
             return true
         case .iPhone35, .iPhone40, .iPhone47, .iPhone55:
             return false
@@ -116,7 +122,7 @@ public extension XCUIApplication {
     /// ```
     public var isRunningOnIphone: Bool {
         switch deviceType {
-        case .iPad, .iPadPro:
+        case .iPad, .iPadPro105, .iPadPro12:
             return false
         case .iPhone35, .iPhone40, .iPhone47, .iPhone55:
             return true
