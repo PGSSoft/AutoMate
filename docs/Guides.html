@@ -447,6 +447,29 @@ or advanced options like CoreData SQL debug verbosity level.</p>
     <span class="kt">SoftwareKeyboards</span><span class="p">([</span><span class="o">.</span><span class="kt">EnglishCanada</span><span class="p">,</span> <span class="o">.</span><span class="kt">GermanGermany</span><span class="p">])</span>
 <span class="p">])</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
 </code></pre>
+<h2 id='default-options' class='heading'>Default options:</h2>
+
+<p>It is not known which options should be added to <code>TestLauncher</code> by default. It depends on the application.
+That is why <code>TestLauncher</code> doesn&rsquo;t provide any default set of options.</p>
+
+<p>In your application you can create an extension to <code>TestLauncher</code> with default list of options.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TestLauncher</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultLaunchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">LaunchOption</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AnimationLaunchEnvironment</span><span class="p">()]</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">configureWithDefaultOptions</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Application</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">additionalOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">LaunchOption</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="n">defaultLaunchOptions</span> <span class="o">+</span> <span class="n">options</span><span class="p">)</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">application</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>With such extensions the XCUIApplication can be configured with default options of your choice.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
+<span class="kt">TestLauncher</span><span class="o">.</span><span class="nf">configureWithDefaultOptions</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
+</code></pre>
 
                         <a href="Structs/TestLauncher.html" class="slightly-smaller">See more</a>
                       </div>

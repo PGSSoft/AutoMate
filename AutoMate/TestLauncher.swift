@@ -40,6 +40,34 @@ extension XCUIApplication: Application { }
 ///     SoftwareKeyboards([.EnglishCanada, .GermanGermany])
 /// ]).configure(app).launch()
 /// ```
+///
+/// ## Default options:
+///
+/// It is not known which options should be added to `TestLauncher` by default. It depends on the application.
+/// That is why `TestLauncher` doesn't provide any default set of options.
+///
+/// In your application you can create an extension to `TestLauncher` with default list of options.
+///
+/// **Example:**
+///
+/// ```swift
+/// extension TestLauncher {
+///     static let defaultLaunchOptions: [LaunchOption] = [AnimationLaunchEnvironment()]
+///
+///     public static func configureWithDefaultOptions<T: Application>(_ application: T, additionalOptions options: [LaunchOption] = []) -> T {
+///         return TestLauncher(options: defaultLaunchOptions + options).configure(application)
+///     }
+/// }
+/// ```
+///
+/// With such extensions the XCUIApplication can be configured with default options of your choice.
+///
+/// **Example:**
+///
+/// ```swift
+/// let app = XCUIApplication()
+/// TestLauncher.configureWithDefaultOptions(app).launch()
+/// ```
 public struct TestLauncher {
 
     // MARK: Properties
