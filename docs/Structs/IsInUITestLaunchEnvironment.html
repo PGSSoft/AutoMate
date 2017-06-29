@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BluetoothPeripheralAlert Struct Reference</title>
+    <title>IsInUITestLaunchEnvironment Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/BluetoothPeripheralAlert" class="dashAnchor"></a>
-    <a title="BluetoothPeripheralAlert Struct Reference"></a>
+    <a name="//apple_ref/swift/Struct/IsInUITestLaunchEnvironment" class="dashAnchor"></a>
+    <a title="IsInUITestLaunchEnvironment Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">AutoMate Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">AutoMate Reference</a>
         <img id="carat" src="../img/carat.png" />
-        BluetoothPeripheralAlert Struct Reference
+        IsInUITestLaunchEnvironment Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -407,49 +407,36 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>BluetoothPeripheralAlert</h1>
+            <h1>IsInUITestLaunchEnvironment</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BluetoothPeripheralAlert</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SystemAlert.html">SystemAlert</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/SystemAlertAllow.html">SystemAlertAllow</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/SystemAlertDeny.html">SystemAlertDeny</a></span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">IsInUITestLaunchEnvironment</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchEnvironmentWithSingleValue.html">LaunchEnvironmentWithSingleValue</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/AutoMateLaunchEnvironment.html">AutoMateLaunchEnvironment</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Represents <code>BluetoothPeripheralAlert</code> service alert.</p>
-
-<p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
+            <p>Launch environment informing application that is running in UI test.</p>
 
 <p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">BluetoothPeripheralAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create BluetoothPeripheralAlert object"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">false</span>
-    <span class="p">}</span>
-
-    <span class="n">alert</span><span class="o">.</span><span class="n">denyElement</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
-    <span class="k">return</span> <span class="kc">true</span>
-<span class="p">}</span>
-
-<span class="n">mainPage</span><span class="o">.</span><span class="nf">goToPermissionsPageMenu</span><span class="p">()</span>
-<span class="c1">// Interruption won't happen without some kind of action.</span>
-<span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
-<span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">isInUITest</span> <span class="o">=</span> <span class="kt">IsInUITestLaunchEnvironment</span><span class="p">()</span>
 </code></pre>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
-
-</div>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Typealiases"></a>
+                <a name="//apple_ref/swift/Section/Typealiases" class="dashAnchor"></a>
+                <a href="#/Typealiases">
+                  <h3 class="section-name">Typealiases</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZvV8AutoMate24BluetoothPeripheralAlert8messagesGSaSS_"></a>
-                    <a name="//apple_ref/swift/Variable/messages" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZvV8AutoMate24BluetoothPeripheralAlert8messagesGSaSS_">messages</a>
+                    <a name="/s:V8AutoMate27IsInUITestLaunchEnvironment5Value"></a>
+                    <a name="//apple_ref/swift/Alias/Value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V8AutoMate27IsInUITestLaunchEnvironment5Value">Value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -457,14 +444,52 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represents all possible messages in <code>BluetoothPeripheralAlert</code> service alert.</p>
+                        <p>Defines associated type from <code><a href="../Protocols/LaunchEnvironmentProtocol.html">LaunchEnvironmentProtocol</a></code> to be <code><a href="../Enums/BooleanLaunchEnvironmentValue.html">BooleanLaunchEnvironmentValue</a></code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">messages</span> <span class="o">=</span> <span class="nf">readMessages</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt"><a href="../Enums/BooleanLaunchEnvironmentValue.html">BooleanLaunchEnvironmentValue</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV8AutoMate27IsInUITestLaunchEnvironment3keyOS_11AutoMateKey"></a>
+                    <a name="//apple_ref/swift/Variable/key" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV8AutoMate27IsInUITestLaunchEnvironment3keyOS_11AutoMateKey">key</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Defines <code><a href="../Structs/LaunchEnvironmentResourceValue.html">LaunchEnvironmentResourceValue</a></code> as <code><a href="../Enums/AutoMateKey.html#/s:FO8AutoMate11AutoMateKey9animationFMS0_S0_">AutoMateKey.animation</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">key</span><span class="p">:</span> <span class="kt"><a href="../Enums/AutoMateKey.html">AutoMateKey</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">isInUITest</span></code></pre>
 
                         </div>
                       </div>
@@ -474,9 +499,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV8AutoMate24BluetoothPeripheralAlert5alertCSo11XCUIElement"></a>
-                    <a name="//apple_ref/swift/Property/alert" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV8AutoMate24BluetoothPeripheralAlert5alertCSo11XCUIElement">alert</a>
+                    <a name="/s:vV8AutoMate27IsInUITestLaunchEnvironment5valueOS_29BooleanLaunchEnvironmentValue"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8AutoMate27IsInUITestLaunchEnvironment5valueOS_29BooleanLaunchEnvironmentValue">value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -484,26 +509,37 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>System service alert element.</p>
+                        <p>Value from which is used as launch enviroment value.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">alert</span><span class="p">:</span> <span class="kt">XCUIElement</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Structs/IsInUITestLaunchEnvironment.html#/s:V8AutoMate27IsInUITestLaunchEnvironment5Value">Value</a></span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV8AutoMate24BluetoothPeripheralAlertcFT7elementCSo11XCUIElement_GSqS0__"></a>
-                    <a name="//apple_ref/swift/Method/init(element:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV8AutoMate24BluetoothPeripheralAlertcFT7elementCSo11XCUIElement_GSqS0__">init(element:)</a>
+                    <a name="/s:FV8AutoMate27IsInUITestLaunchEnvironmentcFT8inUITestOS_29BooleanLaunchEnvironmentValue_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(inUITest:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV8AutoMate27IsInUITestLaunchEnvironmentcFT8inUITestOS_29BooleanLaunchEnvironmentValue_S0_">init(inUITest:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -511,14 +547,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialize <code>BluetoothPeripheralAlert</code> with alert element.</p>
+                        <p>Initialize launch option. By default inform application that it is running in UI test (<code>true</code>).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">inUITest</span><span class="p">:</span> <span class="kt"><a href="../Structs/IsInUITestLaunchEnvironment.html#/s:V8AutoMate27IsInUITestLaunchEnvironment5Value">Value</a></span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -529,12 +565,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>element</em>
+                                <em>running</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>An alert element.</p>
+                                  <p><code>true</code> (default) if the application should know if it is running in UI test.</p>
                                 </div>
                               </td>
                             </tr>

@@ -68,6 +68,7 @@ custom_categories:
       - ReminderLaunchEnvironment
       - ContactLaunchEnvironment
       - AnimationLaunchEnvironment
+      - IsInUITestLaunchEnvironment
       - AutoMateLaunchEnvironment
 
       - LaunchEnvironment

@@ -63,6 +63,12 @@ class SystemLaunchEnvironmentsTests: XCTestCase {
         XCTAssertEqual(build(with: [LaunchOptionsFactory.deleteContacts, LaunchOptionsFactory.johnContacts]), ["AM_CONTACTS_KEY": "\(cleanFlag),"])
     }
 
+    func testRunningInUITestEnvironment() {
+        XCTAssertEqual(build(with: []), [:])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.isInUiTestLaunchEnvironment]), ["AM_IS_IN_UI_TEST": "true"])
+        XCTAssertEqual(build(with: [LaunchOptionsFactory.notInUiTestLaunchEnvironment]), ["AM_IS_IN_UI_TEST": "false"])
+    }
+
     // swiftlint:disable function_body_length
     func testCombinedLaunchEnvironment() {
 

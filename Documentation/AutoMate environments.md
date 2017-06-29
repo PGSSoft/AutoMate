@@ -9,10 +9,31 @@ Use `TestLauncher` in the `setUp()` method to configure application settings and
 ```swift
 let app = XCUIApplication()
 TestLauncher(options: [
+    animation,
+    isInUITest,
     events,
     reminders,
     contacts
 ]).configure(app).launch()
+```
+
+## Animations
+
+`AnimationLaunchEnvironment` can provides information to the application to disable all UI animations.
+
+```swift
+let animation = AnimationLaunchEnvironment()
+```
+
+## Is in UI test
+
+`IsInUITestLaunchEnvironment` provides information to the application that it is running in UI test environment.
+In some scenarios such knowledge is useful. You can read
+[How to Detect Whether an Application Is Running Inside a UI Test Environment](http://macoscope.com/blog/how-to-detect-whether-an-application-is-running-inside-a-ui-test-environment/)
+to get some insights.
+
+```swift
+let isInUITest = IsInUITestLaunchEnvironment()
 ```
 
 ## Events and reminders

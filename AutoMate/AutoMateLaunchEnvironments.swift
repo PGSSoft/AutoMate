@@ -191,14 +191,45 @@ public struct AnimationLaunchEnvironment: LaunchEnvironmentWithSingleValue, Auto
     // MARK: Properties
     /// Defines `LaunchEnvironmentResourceValue` as `AutoMateKey.animation`.
     public static let key: AutoMateKey = .animation
+
     /// Value from which is used as launch enviroment value.
     public var value: Value
 
     // MARK: Initialization
     /// Initialize launch option. By default disable animation (`false`).
     ///
-    /// - Parameter animation: `false` (default) if animation should be disabled.
+    /// - Parameter animation: `false` (default) if the animation should be disabled.
     public init(animation: Value = false) {
         value = animation
+    }
+}
+
+// MARK: - In in UI test launch environment
+/// Launch environment informing application that is running in UI test.
+///
+/// **Example:**
+///
+/// ```swift
+/// let isInUITest = IsInUITestLaunchEnvironment()
+/// ```
+public struct IsInUITestLaunchEnvironment: LaunchEnvironmentWithSingleValue, AutoMateLaunchEnvironment {
+
+    // MARK: Typealiases
+    /// Defines associated type from `LaunchEnvironmentProtocol` to be `BooleanLaunchEnvironmentValue`.
+    public typealias Value = BooleanLaunchEnvironmentValue
+
+    // MARK: Properties
+    /// Defines `LaunchEnvironmentResourceValue` as `AutoMateKey.animation`.
+    public static let key: AutoMateKey = .isInUITest
+
+    /// Value from which is used as launch enviroment value.
+    public var value: Value
+
+    // MARK: Initialization
+    /// Initialize launch option. By default inform application that it is running in UI test (`true`).
+    ///
+    /// - Parameter running: `true` (default) if the application should know if it is running in UI test.
+    public init(inUITest: Value = true) {
+        value = inUITest
     }
 }
