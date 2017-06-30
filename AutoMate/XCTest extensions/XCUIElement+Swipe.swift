@@ -236,6 +236,7 @@ extension XCUIElement {
 }
 
 // MARK: - Internal
+#if os(iOS)
 extension XCUIElement {
     // MARK: Properties
     /// Proportional horizontal swipe length.
@@ -359,8 +360,10 @@ extension XCUIElement {
         }
     }
 }
+#endif
 
 // MARK: - AvoidableElement
+#if os(iOS)
 /// Each case relates to element of user interface that can overlap scrollable area.
 ///
 /// - `navigationBar`: equivalent of `UINavigationBar`.
@@ -429,6 +432,7 @@ public enum AvoidableElement {
                             from: edge).remainder
     }
 }
+#endif
 
 // MARK: - SwipeDirection
 /// Swipe direction.
