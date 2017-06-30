@@ -280,6 +280,8 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToCollectionViewMenu()
 
         XCUIDevice.shared().orientation = .landscapeLeft
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilExists()
     }
 
@@ -287,6 +289,8 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToCollectionViewMenu()
 
         XCUIDevice.shared().orientation = .landscapeRight
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilExists()
     }
 
@@ -322,6 +326,8 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToCollectionViewMenu()
 
         XCUIDevice.shared().orientation = .landscapeLeft
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilVisible()
     }
 
@@ -329,6 +335,8 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToCollectionViewMenu()
 
         XCUIDevice.shared().orientation = .landscapeRight
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilVisible()
     }
 
