@@ -544,9 +544,9 @@ It lets you specify coordinates on the screen (relative to the view on which the
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_"></a>
-                    <a name="//apple_ref/swift/Method/swipe(to:avoid:from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_">swipe(to:avoid:from:)</a>
+                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication11orientationOSC19UIDeviceOrientation_T_"></a>
+                    <a name="//apple_ref/swift/Method/swipe(to:avoid:from:orientation:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication11orientationOSC19UIDeviceOrientation_T_">swipe(to:avoid:from:orientation:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -577,7 +577,7 @@ It lets you specify coordinates on the screen (relative to the view on which the
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -621,6 +621,18 @@ It lets you specify coordinates on the screen (relative to the view on which the
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>orientation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Device orientation.</p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -630,9 +642,9 @@ It lets you specify coordinates on the screen (relative to the view on which the
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication5untilKT_Sb_T_"></a>
-                    <a name="//apple_ref/swift/Method/swipe(to:times:avoid:from:until:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication5untilKT_Sb_T_">swipe(to:times:avoid:from:until:)</a>
+                    <a name="/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication11orientationOSC19UIDeviceOrientation5untilKT_Sb_T_"></a>
+                    <a name="//apple_ref/swift/Method/swipe(to:times:avoid:from:orientation:until:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toOS_14SwipeDirection5timesSi5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication11orientationOSC19UIDeviceOrientation5untilKT_Sb_T_">swipe(to:times:avoid:from:orientation:until:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -659,7 +671,12 @@ The method will stop when the maximum number of swipes is reached or when the co
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n">defaultSwipesCount</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="n">until</span> <span class="nv">condition</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span>
+                      <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n">defaultSwipesCount</span><span class="p">,</span>
+                      <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span>
+                      <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span>
+                      <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span><span class="p">,</span>
+                      <span class="n">until</span> <span class="nv">condition</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -712,6 +729,18 @@ The method will stop when the maximum number of swipes is reached or when the co
                               <td>
                                 <div>
                                   <p>Application instance to use when searching for keyboard to avoid.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>orientation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Device orientation.</p>
                                 </div>
                               </td>
                             </tr>
@@ -872,7 +901,7 @@ The method will stop when the maximum number of swipes is reached or when the gi
 </code></pre>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    <p>This method will not scroll until the view will be visible. To do this call <code><a href="../Extensions/XCUIElement.html#/s:FE8AutoMateCSo11XCUIElement5swipeFT2toS0_5avoidGSaOS_16AvoidableElement_4fromCSo15XCUIApplication_T_">swipe(to:avoid:from:)</a></code> after this method.</p>
+    <p>This method will not scroll until the view will be visible. To do this call <code>swipe(to:avoid:from:)</code> after this method.</p>
 
 </div>
 
@@ -1312,7 +1341,7 @@ XCUICoordinate tap() or press(forDuration:) methods work only in portrait orient
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-29)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
