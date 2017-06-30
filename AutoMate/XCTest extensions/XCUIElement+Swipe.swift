@@ -33,7 +33,7 @@ extension XCUIElement {
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
         let p1 = smartCoordinate(withNormalizedOffset: startVector)
         let p2 = smartCoordinate(withNormalizedOffset: stopVector)
-        p1.press(forDuration: 0.1, thenDragTo: p2)
+        p1.press(forDuration: 0.05, thenDragTo: p2)
     }
     #endif
 
@@ -57,8 +57,9 @@ extension XCUIElement {
     ///   - element: Element to scroll to.
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
-    public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) {
-        let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
+    ///   - orientation: Device orientation.
+    public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
+        let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app, orientation: orientation)
 
         // Distance from scrollable area center to element center.
         func distanceVector() -> CGVector {
@@ -124,9 +125,15 @@ extension XCUIElement {
     ///   - times: Maximum number of swipes (by default 10).
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
+    ///   - orientation: Device orientation.
     ///   - condition: The condition to satisfy.
-    public func swipe(to direction: SwipeDirection, times: Int = XCUIElement.defaultSwipesCount, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), until condition: @autoclosure () -> Bool) {
-        let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app)
+    public func swipe(to direction: SwipeDirection,
+                      times: Int = XCUIElement.defaultSwipesCount,
+                      avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar],
+                      from app: XCUIApplication = XCUIApplication(),
+                      orientation: UIDeviceOrientation = XCUIDevice.shared().orientation,
+                      until condition: @autoclosure () -> Bool) {
+        let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app, orientation: orientation)
 
         // Swipe `times` times in the provided direction.
         for _ in 0..<times {
@@ -253,11 +260,12 @@ extension XCUIElement {
     /// - Parameters:
     ///   - viewsToAvoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
+    ///   - orientation: Device orientation.
     /// - Returns: Scrollable area of the element.
-    func scrollableArea(avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication()) -> CGRect {
+    func scrollableArea(avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation) -> CGRect {
 
         let scrollableArea = viewsToAvoid.reduce(frame) {
-            $1.overlapReminder(of: $0, in: app)
+            $1.overlapReminder(of: $0, in: app, orientation: orientation)
         }
         assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
         return scrollableArea
@@ -321,6 +329,35 @@ extension XCUIElement {
 
         return (startVector, stopVector)
     }
+
+    /// Calculates frame for given orientation.
+    /// Due an open [issue](https://openradar.appspot.com/31529903). Coordinates works correctly only in portrait orientation.
+    ///
+    /// - Parameters:
+    ///   - orientation: Device 
+    ///   - app: Application instance to use when searching for keyboard to avoid.
+    /// - Returns: Calculated frame for given orientation.
+    func frame(for orientation: UIDeviceOrientation, in app: XCUIApplication) -> CGRect {
+
+        // Supports only landscape left, landscape right and upside down.
+        // For all other unsupported orientations the default frame returned.
+        guard orientation == .landscapeLeft
+            || orientation == .landscapeRight
+            || orientation == .portraitUpsideDown else {
+                return frame
+        }
+
+        switch orientation {
+        case .landscapeLeft:
+            return CGRect(x: frame.minY, y: app.frame.width - frame.maxX, width: frame.height, height: frame.width)
+        case .landscapeRight:
+            return CGRect(x: app.frame.height - frame.maxY, y: frame.minX, width: frame.height, height: frame.width)
+        case .portraitUpsideDown:
+            return CGRect(x: app.frame.width - frame.maxX, y: app.frame.height - frame.maxY, width: frame.width, height: frame.height)
+        default:
+            preconditionFailure("Not supported orientation")
+        }
+    }
 }
 
 // MARK: - AvoidableElement
@@ -366,18 +403,24 @@ public enum AvoidableElement {
     ///   - rect: CGRect that is overlapped.
     ///   - app: XCUIApplication in which overlapping element can be found.
     /// - Returns: Part of rect not overlapped by element.
-    func overlapReminder(of rect: CGRect, in app: XCUIApplication = XCUIApplication()) -> CGRect {
+    func overlapReminder(of rect: CGRect, in app: XCUIApplication, orientation: UIDeviceOrientation) -> CGRect {
 
         let overlappingElement = element(in: app)
         guard overlappingElement.exists else { return rect }
 
+        let overlappingElementFrame: CGRect
+        if case .keyboard = self {
+            overlappingElementFrame = overlappingElement.frame(for: orientation, in: app)
+        } else {
+            overlappingElementFrame = overlappingElement.frame
+        }
         let overlap: CGFloat
 
         switch edge {
         case .maxYEdge:
-            overlap = rect.maxY - overlappingElement.frame.minY
+            overlap = rect.maxY - overlappingElementFrame.minY
         case .minYEdge:
-            overlap = overlappingElement.frame.maxY - rect.minY
+            overlap = overlappingElementFrame.maxY - rect.minY
         default:
             return rect
         }

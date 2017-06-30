@@ -85,6 +85,11 @@ open class SmartXCUICoordinate {
             return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
         }
 
+        // Returns portrait coordinates for an application element type.
+        if referencedElement.elementType == .application {
+            return referencedElement.coordinate(withNormalizedOffset: normalizedOffset)
+        }
+
         // Supports only landscape left, landscape right and upside down.
         // For all other unsupported orientations the default one is returned.
         guard orientation == .landscapeLeft

@@ -42,17 +42,43 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertTrue(scrollPage.bottomButton.isVisible)
     }
 
-    func testSimpleSwipe() {
-        mainPage.goToScrollMenu()
-
+    func simpleSwipe() {
         XCTAssertTrue(scrollPage.isTopButtonDisplayed())
         scrollPage.scrollView.swipe(from: CGVector(dx: 0.5, dy: 0.9), to: CGVector(dx: 0.5, dy: 0.1))
         XCTAssertFalse(scrollPage.isTopButtonDisplayed())
     }
 
-    func testComplexSwipe() {
+    func testSimpleSwipePortrait() {
         mainPage.goToScrollMenu()
 
+        XCUIDevice.shared().orientation = .portrait
+        simpleSwipe()
+    }
+
+    func testSimpleSwipeLandscapeLeft() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        simpleSwipe()
+    }
+
+    func testSimpleSwipeLandscapeRight() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        simpleSwipe()
+    }
+
+    func testSimpleSwipePortraitUpsideDown() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
+        simpleSwipe()
+    }
+
+    func complexSwipe() {
         XCTAssertTrue(scrollPage.isTopButtonDisplayed())
         XCTAssertFalse(scrollPage.isBottomButtonDisplayed())
 
@@ -67,9 +93,37 @@ class XCUIElementExtensionTests: AppUITestCase {
         scrollPage.topButton.tap()
     }
 
-    func testComplexSwipeWithKeyboard() {
+    func testComplexSwipePortrait() {
         mainPage.goToScrollMenu()
 
+        XCUIDevice.shared().orientation = .portrait
+        complexSwipe()
+    }
+
+    func testComplexSwipeLandscapeLeft() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        complexSwipe()
+    }
+
+    func testComplexSwipeLandscapeRight() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        complexSwipe()
+    }
+
+    func testComplexSwipeUpsideDown() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
+        complexSwipe()
+    }
+
+    func complexSwipeWithKeyboard() {
         scrollPage.textField.tap()
         scrollPage.textField.typeText("AutoMate")
 
@@ -86,6 +140,36 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         scrollPage.scrollView.swipe(to: scrollPage.middleButton1)
         XCTAssertTrue(scrollPage.isMiddleButton1Displayed())
+    }
+
+    func testComplexSwipeWithKeyboardPortrait() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .portrait
+        complexSwipeWithKeyboard()
+    }
+
+    func testComplexSwipeWithKeyboardLandscapeLeft() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        complexSwipeWithKeyboard()
+    }
+
+    func testComplexSwipeWithKeyboardLandscapeRight() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        complexSwipeWithKeyboard()
+    }
+
+    func testComplexSwipeWithKeyboardUpsideDown() {
+        mainPage.goToScrollMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
+        complexSwipeWithKeyboard()
     }
 
     // swiftlint:disable:next function_body_length
@@ -193,8 +277,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertEqual(textInputPage.textFieldValue(), "by PGS")
     }
 
-    func testTapWithOffset() {
-        mainPage.goToMiddleButtonMenu()
+    func tapWithOffset() {
         XCTAssertFalse(middleButtonPage.isLabelDisplayed())
 
         // tap cell by using offset only
@@ -202,6 +285,34 @@ class XCUIElementExtensionTests: AppUITestCase {
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(middleButtonPage.isLabelDisplayed())
+    }
+
+    func testTapWithOffsetPortrait() {
+        mainPage.goToMiddleButtonMenu()
+
+        XCUIDevice.shared().orientation = .portrait
+        tapWithOffset()
+    }
+
+    func testTapWithOffsetLandscapeLeft() {
+        mainPage.goToMiddleButtonMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        tapWithOffset()
+    }
+
+    func testTapWithOffsetLandscapeRight() {
+        mainPage.goToMiddleButtonMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        tapWithOffset()
+    }
+
+    func testTapWithOffsetUpsideDown() {
+        mainPage.goToMiddleButtonMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        tapWithOffset()
     }
 
     func testSmartCoordinatesPortrait() {
@@ -289,7 +400,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         // XCTest coordinate
         XCUIDevice.shared().orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
-        _ = rotatePage.view.isVisible
+        Thread.sleep(forTimeInterval: 1)
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
         rotatePage.tapButtonB(with: vector)
