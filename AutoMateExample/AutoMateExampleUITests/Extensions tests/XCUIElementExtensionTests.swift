@@ -173,9 +173,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     }
 
     // swiftlint:disable:next function_body_length
-    func testVerticalSwipe() {
-        mainPage.goToScrollVerticallyMenu()
-
+    func verticalSwipe() {
         XCTAssertTrue(scrollVerticallyPage.isTopLeftButtonDisplayed())
         XCTAssertFalse(scrollVerticallyPage.isTopRightButtonDisplayed())
         XCTAssertFalse(scrollVerticallyPage.isMiddleButtonDisplayed())
@@ -225,9 +223,37 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertFalse(scrollVerticallyPage.isBottomRightButtonDisplayed())
     }
 
-    func testSwipeInDirectionUntilExists() {
-        mainPage.goToCollectionViewMenu()
+    func testVerticalSwipePortrait() {
+        mainPage.goToScrollVerticallyMenu()
 
+        XCUIDevice.shared().orientation = .portrait
+        verticalSwipe()
+    }
+
+    func testVerticalSwipeLandscapeLeft() {
+        mainPage.goToScrollVerticallyMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        verticalSwipe()
+    }
+
+    func testVerticalSwipeLandscapeRight() {
+        mainPage.goToScrollVerticallyMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        verticalSwipe()
+    }
+
+    func testVerticalSwipePortraitUpsideDown() {
+        mainPage.goToScrollVerticallyMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
+        verticalSwipe()
+    }
+
+    func swipeInDirectionUntilExists() {
         let elementStart = collectionPage.cell(with: "0")
         let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "10") : collectionPage.cell(with: "20")
 
@@ -243,9 +269,37 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertTrue(elementEnd.isVisible)
     }
 
-    func testSwipeInDirectionUntilVisible() {
+    func testSwipeInDirectionUntilExistsPortrait() {
         mainPage.goToCollectionViewMenu()
 
+        XCUIDevice.shared().orientation = .portrait
+        swipeInDirectionUntilExists()
+    }
+
+    func testSwipeInDirectionUntilExistsLandscapeLeft() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        swipeInDirectionUntilExists()
+    }
+
+    func testSwipeInDirectionUntilExistsLandscapeRight() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        swipeInDirectionUntilExists()
+    }
+
+    func testSwipeInDirectionUntilExistsUpsideDown() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
+        swipeInDirectionUntilExists()
+    }
+
+    func swipeInDirectionUntilVisible() {
         let elementStart = collectionPage.cell(with: "0")
         let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "10") : collectionPage.cell(with: "20")
 
@@ -255,6 +309,36 @@ class XCUIElementExtensionTests: AppUITestCase {
         collectionPage.collectionView.swipe(to: .down, untilVisible: elementEnd)
         XCTAssertFalse(elementStart.isVisible)
         XCTAssertTrue(elementEnd.isVisible)
+    }
+
+    func testSwipeInDirectionUntilVisiblePortrait() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .portrait
+        swipeInDirectionUntilVisible()
+    }
+
+    func testSwipeInDirectionUntilVisibleLandscapeLeft() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .landscapeLeft
+        swipeInDirectionUntilVisible()
+    }
+
+    func testSwipeInDirectionUntilVisibleLandscapeRight() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .landscapeRight
+        swipeInDirectionUntilVisible()
+    }
+
+    func testSwipeInDirectionUntilVisibleUpsideDown() {
+        mainPage.goToCollectionViewMenu()
+
+        XCUIDevice.shared().orientation = .portraitUpsideDown
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
+        swipeInDirectionUntilVisible()
     }
 
     func testClearTextField() {
