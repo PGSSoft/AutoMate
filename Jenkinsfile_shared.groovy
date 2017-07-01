@@ -64,7 +64,7 @@ def testStage(scheme, platform, deviceName, deviceOS) {
 // Run on node
 def runNode(nodeName, block) {
   node(nodeName) {
-    timeout(30) {
+    timeout(40) {
       ansiColor('xterm') {
         stage("Clone") {
           deleteDir()

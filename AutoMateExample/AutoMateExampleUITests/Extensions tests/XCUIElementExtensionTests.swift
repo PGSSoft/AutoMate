@@ -69,7 +69,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         simpleSwipe()
     }
 
-    func testSimpleSwipePortraitUpsideDown() {
+    func testSimpleSwipeUpsideDown() {
         mainPage.goToScrollMenu()
 
         XCUIDevice.shared().orientation = .portraitUpsideDown
@@ -234,6 +234,8 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToScrollVerticallyMenu()
 
         XCUIDevice.shared().orientation = .landscapeLeft
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         verticalSwipe()
     }
 
@@ -241,10 +243,12 @@ class XCUIElementExtensionTests: AppUITestCase {
         mainPage.goToScrollVerticallyMenu()
 
         XCUIDevice.shared().orientation = .landscapeRight
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         verticalSwipe()
     }
 
-    func testVerticalSwipePortraitUpsideDown() {
+    func testVerticalSwipeUpsideDown() {
         mainPage.goToScrollVerticallyMenu()
 
         XCUIDevice.shared().orientation = .portraitUpsideDown
@@ -255,7 +259,7 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     func swipeInDirectionUntilExists() {
         let elementStart = collectionPage.cell(with: "0")
-        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "10") : collectionPage.cell(with: "20")
+        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "6") : collectionPage.cell(with: "20")
 
         XCTAssertTrue(elementStart.isVisible)
         XCTAssertFalse(elementEnd.exists)
@@ -305,7 +309,7 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     func swipeInDirectionUntilVisible() {
         let elementStart = collectionPage.cell(with: "0")
-        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "10") : collectionPage.cell(with: "20")
+        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "6") : collectionPage.cell(with: "20")
 
         XCTAssertTrue(elementStart.isVisible)
         XCTAssertFalse(elementEnd.isVisible)
