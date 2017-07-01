@@ -259,7 +259,7 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     func swipeInDirectionUntilExists() {
         let elementStart = collectionPage.cell(with: "0")
-        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "6") : collectionPage.cell(with: "20")
+        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "8") : collectionPage.cell(with: "20")
 
         XCTAssertTrue(elementStart.isVisible)
         XCTAssertFalse(elementEnd.exists)
@@ -309,7 +309,7 @@ class XCUIElementExtensionTests: AppUITestCase {
 
     func swipeInDirectionUntilVisible() {
         let elementStart = collectionPage.cell(with: "0")
-        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "6") : collectionPage.cell(with: "20")
+        let elementEnd = app.isRunningOnIphone ? collectionPage.cell(with: "8") : collectionPage.cell(with: "20")
 
         XCTAssertTrue(elementStart.isVisible)
         XCTAssertFalse(elementEnd.isVisible)
