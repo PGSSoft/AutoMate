@@ -1,7 +1,7 @@
 # Changelog
 
 ## [1.4.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.0)
-Released on XXXX-XX-XX.
+Released on 2017-07-03.
 
 #### Added
 - Check if application is running in UI test environment (with `AutoMate-AppBuddy`)
