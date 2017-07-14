@@ -13,6 +13,10 @@ import XCTest
 
 extension XCUIElement {
 
+    // MARK: Properties
+    /// Default number of swipes.
+    public class var defaultSwipesCount: Int { return 10 }
+
     // MARK: Methods
     #if os(iOS)
     /// Perform swipe gesture on this view by swiping between provided points.
@@ -58,7 +62,7 @@ extension XCUIElement {
     ///   - avoid: Table of `AvoidableElement` that should be avoid while swiping, by default keyboard and navigation bar are passed.
     ///   - app: Application instance to use when searching for keyboard to avoid.
     ///   - orientation: Device orientation.
-    public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
+    public func swipe(to element: XCUIElement, avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar], from app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared.orientation) {
         let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app, orientation: orientation)
 
         // Distance from scrollable area center to element center.
@@ -131,7 +135,7 @@ extension XCUIElement {
                       times: Int = XCUIElement.defaultSwipesCount,
                       avoid viewsToAvoid: [AvoidableElement] = [.keyboard, .navigationBar],
                       from app: XCUIApplication = XCUIApplication(),
-                      orientation: UIDeviceOrientation = XCUIDevice.shared().orientation,
+                      orientation: UIDeviceOrientation = XCUIDevice.shared.orientation,
                       until condition: @autoclosure () -> Bool) {
         let scrollableArea = self.scrollableArea(avoid: viewsToAvoid, from: app, orientation: orientation)
 
@@ -251,9 +255,6 @@ extension XCUIElement {
     var swipeLengthY: CGFloat {
         return 0.9
     }
-
-    /// Default number of swipes.
-    class var defaultSwipesCount: Int { return 10 }
 
     // MARK: Methods
     /// Calculates scrollable area of the element by removing overlapping elements like keybard or navigation bar.

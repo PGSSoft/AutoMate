@@ -29,11 +29,10 @@ extension SystemMessages {
     public static func readMessages(from json: String = String(describing: Self.self)) -> [String] {
         guard let url = Bundle.autoMate.url(forResource: json, withExtension: "json"),
             let data = try? Data(contentsOf: url),
-            let json = try? JSONSerialization.jsonObject(with: data),
-            let jsonMessages = json as? [String: [String]] else {
+            let json = try? JSONDecoder().decode(Dictionary<String, [String]>.self, from: data) else {
                 return []
         }
-        return jsonMessages.flatMap({ $0.value }).unique()
+        return json.flatMap({ $0.value }).unique()
     }
 }
 

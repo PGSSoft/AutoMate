@@ -14,6 +14,6 @@ class MicrophoneViewController: UIViewController {
     // MARK: View life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeAudio) { _ in }
+        AVCaptureDevice.requestAccess(for: AVMediaType.audio) { _ in }
     }
 }

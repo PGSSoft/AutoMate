@@ -67,7 +67,7 @@ open class SmartXCUICoordinate {
     ///   - offset: Normalized offset from the elements origin position.
     ///   - app: Application object used to calculate portrait screen position.
     ///   - orientation: Device orientation.
-    public init(referencedElement: XCUIElement, normalizedOffset offset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
+    public init(referencedElement: XCUIElement, normalizedOffset offset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared.orientation) {
         self.referencedElement = referencedElement
         self.normalizedOffset = offset
         self.app = app

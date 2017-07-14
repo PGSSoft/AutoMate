@@ -14,6 +14,6 @@ class CalendarViewController: UIViewController {
     // MARK: View life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        EKEventStore().requestAccess(to: .event) { _ in }
+        EKEventStore().requestAccess(to: .event) { _, _  in }
     }
 }

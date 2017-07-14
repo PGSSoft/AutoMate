@@ -53,7 +53,7 @@ class ContactsDataStore: DataStore {
                 completion()
                 return
             }
-            try? strongSelf.store.enumerateContacts(with: strongSelf.fetchRequest) { strongSelf.data.append($0.0) }
+            try? strongSelf.store.enumerateContacts(with: strongSelf.fetchRequest) { contact, _ in strongSelf.data.append(contact) }
             completion()
         }
     }

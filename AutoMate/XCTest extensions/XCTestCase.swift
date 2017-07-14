@@ -48,7 +48,7 @@ public extension XCTestCase {
                 return
             }
             let failingMessage = String(format: message, arguments: [predicate, element, timeout])
-            self.recordFailure(withDescription: failingMessage, inFile: String(describing: file), atLine: line, expected: true)
+            self.recordFailure(withDescription: failingMessage, inFile: String(describing: file), atLine: Int(line), expected: true)
         }
     }
 

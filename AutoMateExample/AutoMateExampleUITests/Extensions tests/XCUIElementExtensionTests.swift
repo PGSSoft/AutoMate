@@ -29,7 +29,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     }
 
     override func tearDown() {
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         super.tearDown()
     }
 
@@ -51,28 +51,28 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSimpleSwipePortrait() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         simpleSwipe()
     }
 
     func testSimpleSwipeLandscapeLeft() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         simpleSwipe()
     }
 
     func testSimpleSwipeLandscapeRight() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         simpleSwipe()
     }
 
     func testSimpleSwipeUpsideDown() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         simpleSwipe()
@@ -96,28 +96,28 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testComplexSwipePortrait() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         complexSwipe()
     }
 
     func testComplexSwipeLandscapeLeft() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         complexSwipe()
     }
 
     func testComplexSwipeLandscapeRight() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         complexSwipe()
     }
 
     func testComplexSwipeUpsideDown() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         complexSwipe()
@@ -145,28 +145,28 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testComplexSwipeWithKeyboardPortrait() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         complexSwipeWithKeyboard()
     }
 
     func testComplexSwipeWithKeyboardLandscapeLeft() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         complexSwipeWithKeyboard()
     }
 
     func testComplexSwipeWithKeyboardLandscapeRight() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         complexSwipeWithKeyboard()
     }
 
     func testComplexSwipeWithKeyboardUpsideDown() {
         mainPage.goToScrollMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         complexSwipeWithKeyboard()
@@ -226,14 +226,14 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testVerticalSwipePortrait() {
         mainPage.goToScrollVerticallyMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         verticalSwipe()
     }
 
     func testVerticalSwipeLandscapeLeft() {
         mainPage.goToScrollVerticallyMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         verticalSwipe()
@@ -242,7 +242,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testVerticalSwipeLandscapeRight() {
         mainPage.goToScrollVerticallyMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         verticalSwipe()
@@ -251,7 +251,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testVerticalSwipeUpsideDown() {
         mainPage.goToScrollVerticallyMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         verticalSwipe()
@@ -276,14 +276,14 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilExistsPortrait() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         swipeInDirectionUntilExists()
     }
 
     func testSwipeInDirectionUntilExistsLandscapeLeft() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilExists()
@@ -292,7 +292,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilExistsLandscapeRight() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilExists()
@@ -301,7 +301,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilExistsUpsideDown() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilExists()
@@ -322,14 +322,14 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilVisiblePortrait() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         swipeInDirectionUntilVisible()
     }
 
     func testSwipeInDirectionUntilVisibleLandscapeLeft() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilVisible()
@@ -338,7 +338,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilVisibleLandscapeRight() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilVisible()
@@ -347,7 +347,7 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testSwipeInDirectionUntilVisibleUpsideDown() {
         mainPage.goToCollectionViewMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         swipeInDirectionUntilVisible()
@@ -386,28 +386,28 @@ class XCUIElementExtensionTests: AppUITestCase {
     func testTapWithOffsetPortrait() {
         mainPage.goToMiddleButtonMenu()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         tapWithOffset()
     }
 
     func testTapWithOffsetLandscapeLeft() {
         mainPage.goToMiddleButtonMenu()
 
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         tapWithOffset()
     }
 
     func testTapWithOffsetLandscapeRight() {
         mainPage.goToMiddleButtonMenu()
 
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         tapWithOffset()
     }
 
     func testTapWithOffsetUpsideDown() {
         mainPage.goToMiddleButtonMenu()
 
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         tapWithOffset()
     }
 
@@ -416,7 +416,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         let vector = CGVector(dx: 0.5, dy: 0.5)
 
         // XCTest coordinate
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(with: vector)
@@ -442,7 +442,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         let vector = CGVector(dx: 0.5, dy: 0.5)
 
         // XCTest coordinate
-        XCUIDevice.shared().orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .landscapeLeft
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonB(with: vector)
@@ -468,7 +468,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         let vector = CGVector(dx: 0.5, dy: 0.5)
 
         // XCTest coordinate
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonB(with: vector)
@@ -494,7 +494,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         let vector = CGVector(dx: 0.5, dy: 0.5)
 
         // XCTest coordinate
-        XCUIDevice.shared().orientation = .portraitUpsideDown
+        XCUIDevice.shared.orientation = .portraitUpsideDown
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         rotatePage.tapButtonA(with: vector)

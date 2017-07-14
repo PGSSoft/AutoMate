@@ -1,3 +1,6 @@
 line_length:
   warning: 300
   error: 400
+variable_name:
+  excluded:
+    - ok

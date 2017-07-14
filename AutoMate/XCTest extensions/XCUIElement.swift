@@ -26,7 +26,7 @@ public extension XCUIElement {
         // - there is no waiting for the app to idle and to finish all animations.
         // This can lead to problems and test flakiness as the test will evaluate a query before e.g. view transition has been completed.
         #if os(iOS)
-        XCUIDevice.shared().orientation = XCUIDevice.shared().orientation
+        XCUIDevice.shared.orientation = XCUIDevice.shared.orientation
         #endif
         return exists && isHittable
     }
@@ -119,7 +119,7 @@ public extension XCUIElement {
     ///   - offset: Tap offset. Default (0, 0).
     ///   - app: Application object used to calculate portrait screen position.
     ///   - orientation: Device orientation.
-    public func tap(withOffset offset: CGVector = CGVector.zero, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) {
+    public func tap(withOffset offset: CGVector = CGVector.zero, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared.orientation) {
         smartCoordinate(withNormalizedOffset: offset, app: app, orientation: orientation).tap()
     }
     #endif
@@ -148,7 +148,7 @@ public extension XCUIElement {
     ///   - app: Application object used to calculate portrait screen position.
     ///   - orientation: Device orientation.
     /// - Returns: Smart coordinate for given normalized offset.
-    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared().orientation) -> SmartXCUICoordinate {
+    public func smartCoordinate(withNormalizedOffset normalizedOffset: CGVector, app: XCUIApplication = XCUIApplication(), orientation: UIDeviceOrientation = XCUIDevice.shared.orientation) -> SmartXCUICoordinate {
         return SmartXCUICoordinate(referencedElement: self, normalizedOffset: normalizedOffset, app: app, orientation: orientation)
     }
     #endif

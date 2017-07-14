@@ -14,6 +14,6 @@ class CameraViewController: UIViewController {
     // MARK: View life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { _ in }
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { _ in }
     }
 }

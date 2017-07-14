@@ -23,7 +23,7 @@ class ScrollingViewController: UIViewController {
     }
 
     // MARK: Notifications
-    func keyboardWillShow(notification: NSNotification) {
+    @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
             let keyboardEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
             let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else {
@@ -37,7 +37,7 @@ class ScrollingViewController: UIViewController {
         }
     }
 
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
             let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else {
                 return

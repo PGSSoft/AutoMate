@@ -17,6 +17,6 @@ class HealthKitViewController: UIViewController {
     // MARK: View life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        store.requestAuthorization(toShare: [HKObjectType.workoutType()], read: [HKObjectType.workoutType()]) { _ in }
+        store.requestAuthorization(toShare: [HKObjectType.workoutType()], read: [HKObjectType.workoutType()]) { _, _  in }
     }
 }

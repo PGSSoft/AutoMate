@@ -163,5 +163,5 @@ extension LaunchOptionsSet {
  - returns: Result of the operation.
  */
 public func == (lhs: LaunchOptionsSet, rhs: LaunchOptionsSet) -> Bool {
-    return lhs.elementsEqual(rhs, by: { $0.0.uniqueIdentifier == $0.1.uniqueIdentifier })
+    return lhs.elementsEqual(rhs, by: { $0.uniqueIdentifier == $1.uniqueIdentifier })
 }

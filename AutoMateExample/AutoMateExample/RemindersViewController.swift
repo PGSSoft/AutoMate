@@ -14,6 +14,6 @@ class RemindersViewController: UIViewController {
     // MARK: View life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        EKEventStore().requestAccess(to: .reminder) { _ in }
+        EKEventStore().requestAccess(to: .reminder) { _, _  in }
     }
 }
