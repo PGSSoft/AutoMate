@@ -41,8 +41,6 @@ class ContactsSavedDataTests: AppUITestCase {
         }
 
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [contacts]).launch()
-        // Interruption won't happen without some kind of action.
-        app.tap()
 
         mainPage.goToAutoMateLaunchEnvironments()
         autoMateLaunchEnvironmentsPage.goToContactsView()

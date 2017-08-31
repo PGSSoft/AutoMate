@@ -33,7 +33,7 @@ class EventKitSavedDataTests: AppUITestCase {
         let token = allowAccess { CalendarAlert(element: $0) }
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events]).launch()
         // Interruption won't happen without some kind of action.
-        app.tap()
+        
         mainPage.goToAutoMateLaunchEnvironments()
         autoMateLaunchEnvironmentsPage.goToEventsView()
 

@@ -380,6 +380,51 @@ public struct MotionAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
     }
 }
 
+/// Represents `PhotosAddAlert` service alert.
+///
+/// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
+///
+/// **Example:**
+///
+/// ```swift
+/// let token = addUIInterruptionMonitor(withDescription: "Alert") { (alert) -> Bool in
+///     guard let alert = PhotosAddAlert(element: alert) else {
+///         XCTFail("Cannot create PhotosAddAlert object")
+///         return false
+///     }
+///
+///     alert.denyElement.tap()
+///     return true
+/// }
+///
+/// mainPage.goToPermissionsPageMenu()
+/// // Interruption won't happen without some kind of action.
+/// app.tap()
+/// removeUIInterruptionMonitor(token)
+/// ```
+///
+/// - note:
+/// Handlers should return `true` if they handled the UI, `false` if they did not.
+public struct PhotosAddAlert: SystemAlert, SystemAlertAllow, SystemAlertDeny {
+
+    /// Represents all possible messages in `PhotosAddAlert` service alert.
+    public static let messages = readMessages()
+
+    /// System service alert element.
+    public var alert: XCUIElement
+
+    /// Initialize `PhotosAddAlert` with alert element.
+    ///
+    /// - Parameter element: An alert element.
+    public init?(element: XCUIElement) {
+        guard element.staticTexts.elements(withLabelsLike: type(of: self).messages).first != nil else {
+            return nil
+        }
+
+        self.alert = element
+    }
+}
+
 /// Represents `PhotosAlert` service alert.
 ///
 /// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
