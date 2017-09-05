@@ -58,9 +58,12 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToLocationWhenInUse()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         wait(forVisibilityOf: locationPage.requestLabel)
+
+
+//        Thread.sleep(forTimeInterval: 2)
+        app.tap()
+
         locationPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -85,8 +88,9 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToLocationAlways()
-        // Interruption won't happen without some kind of action.
+
         app.tap()
+
         locationPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -116,8 +120,9 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToContacts()
-        // Interruption won't happen without some kind of action.
-        app.tap()
+
+        Thread.sleep(forTimeInterval: 2)
+
         contactsPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -142,8 +147,10 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToHomeKit()
-        // Interruption won't happen without some kind of action.
+
+        Thread.sleep(forTimeInterval: 2)
         app.tap()
+
         homeKitPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -184,7 +191,7 @@ class PermissionsTests: AppUITestCase {
         XCTAssertTrue(healthPermissionPage.turnOffAllElement.exists)
 
         healthPermissionPage.denyElement.tap()
-        app.tap()
+        Thread.sleep(forTimeInterval: 2)
 
         healthKitPage.goBack()
         permissionsPage.goBack()
@@ -210,8 +217,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToSpeechRecognition()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         speechRecognitionPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -237,8 +242,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToSiri()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         siriPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -264,8 +267,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToReminders()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         remindersPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -290,8 +291,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToPhotos()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         photosPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -316,8 +315,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToCamera()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         cameraPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -342,8 +339,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToMediaLibrary()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         mediaLibraryPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -369,8 +364,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToBluetooth()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         bluetoothPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -396,8 +389,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToMicrophone()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         microphonePage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -423,8 +414,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToCalls()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         callsPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -450,8 +439,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToCalendar()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         calendarPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)
@@ -476,8 +463,6 @@ class PermissionsTests: AppUITestCase {
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToMotion()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         motionPage.goBack()
         permissionsPage.goBack()
         removeUIInterruptionMonitor(token)

@@ -18,7 +18,7 @@ public protocol SystemMessages {
     ///
     /// - Parameter json: JSON file name, without the `json` extension.
     /// - Returns: All localized tests read from the JSON.
-    static func readMessages(from json: String) -> [String]
+    static func readMessages(from jsonFile: String) -> [String]
 }
 
 extension SystemMessages {
@@ -26,8 +26,8 @@ extension SystemMessages {
     ///
     /// - Parameter json: JSON file name, without the `json` extension.
     /// - Returns: All localized tests read from the JSON.
-    public static func readMessages(from json: String = String(describing: Self.self)) -> [String] {
-        guard let url = Bundle.autoMate.url(forResource: json, withExtension: "json"),
+    public static func readMessages(from jsonFile: String = String(describing: Self.self)) -> [String] {
+        guard let url = Bundle.autoMate.url(forResource: jsonFile, withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let json = try? JSONDecoder().decode(Dictionary<String, [String]>.self, from: data) else {
                 return []

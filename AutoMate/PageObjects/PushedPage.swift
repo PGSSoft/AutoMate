@@ -46,7 +46,7 @@ public extension PushedPage {
     /// - note:
     /// The button with "back" as `accessibilityIdentifier` is used.
     public var backButton: XCUIElement {
-        return view.buttons[Locators.backButton]
+        return view.navigationBars.buttons.firstMatch
     }
 
     // MARK: Actions

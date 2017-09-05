@@ -70,22 +70,6 @@ open class RotatePage: BaseAppPage, PushedPage {
         buttonD.coordinate(withNormalizedOffset: vector).tap()
     }
 
-    open func tapButtonA(withSmart vector: CGVector) {
-        buttonA.smartCoordinate(withNormalizedOffset: vector).tap()
-    }
-
-    open func tapButtonB(withSmart vector: CGVector) {
-        buttonB.smartCoordinate(withNormalizedOffset: vector).tap()
-    }
-
-    open func tapButtonC(withSmart vector: CGVector) {
-        buttonC.smartCoordinate(withNormalizedOffset: vector).tap()
-    }
-
-    open func tapButtonD(withSmart vector: CGVector) {
-        buttonD.smartCoordinate(withNormalizedOffset: vector).tap()
-    }
-
     open func tapShowNavigation() {
         showNavigation.tap()
     }

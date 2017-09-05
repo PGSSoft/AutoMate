@@ -36,6 +36,22 @@ extension LocationAlertOk {
     }
 }
 
+extension LocationAlwaysAlertAllow {
+
+    /// Represents all possible "allow" buttons in location service messages.
+    public static var allow: [String] {
+        return readMessages(from: "LocationAlwaysAlertAllow")
+    }
+}
+
+extension LocationAlwaysAlertAllowWhenInUseOnly {
+
+    /// Represents all possible "cancel" buttons in location service messages.
+    public static var cancel: [String] {
+        return readMessages(from: "LocationAlwaysAlertAllowWhenInUseOnly")
+    }
+}
+
 /// Represents `LocationAlwaysAlert` service alert.
 ///
 /// System alert supposed to be used in the handler of the `XCTestCase.addUIInterruptionMonitor(withDescription:handler:)` method.
@@ -61,7 +77,7 @@ extension LocationAlertOk {
 ///
 /// - note:
 /// Handlers should return `true` if they handled the UI, `false` if they did not.
-public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertDeny {
+public struct LocationAlwaysAlert: SystemAlert, LocationAlwaysAlertAllow, LocationAlwaysAlertAllowWhenInUseOnly, LocationAlertDeny {
 
     /// Represents all possible messages in `LocationAlwaysAlert` service alert.
     public static let messages = readMessages()
@@ -106,7 +122,7 @@ public struct LocationAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAler
 ///
 /// - note:
 /// Handlers should return `true` if they handled the UI, `false` if they did not.
-public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlertAllow, LocationAlertCancel {
+public struct LocationUpgradeWhenInUseAlwaysAlert: SystemAlert, LocationAlwaysAlertAllow, LocationAlwaysAlertAllowWhenInUseOnly {
 
     /// Represents all possible messages in `LocationUpgradeWhenInUseAlwaysAlert` service alert.
     public static let messages = readMessages()

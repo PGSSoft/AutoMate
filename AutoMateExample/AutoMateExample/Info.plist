@@ -38,7 +38,7 @@
 	<string>Test for HealthKit update request</string>
 	<key>NSHomeKitUsageDescription</key>
 	<string>Test for HomeKit request</string>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Test for Location always request</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Test for Location when in use request</string>

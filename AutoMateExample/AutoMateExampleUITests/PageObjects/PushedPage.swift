@@ -19,7 +19,7 @@ public extension PushedPage {
 
     // MARK: Elements
     public var backButton: XCUIElement {
-        return view.buttons[Locators.backButton]
+        return view.navigationBars.buttons.firstMatch
     }
 }
 

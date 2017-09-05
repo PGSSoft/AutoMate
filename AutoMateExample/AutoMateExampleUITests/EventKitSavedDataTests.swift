@@ -32,8 +32,6 @@ class EventKitSavedDataTests: AppUITestCase {
     func testIfEventsAreVisible() {
         let token = allowAccess { CalendarAlert(element: $0) }
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [events]).launch()
-        // Interruption won't happen without some kind of action.
-        
         mainPage.goToAutoMateLaunchEnvironments()
         autoMateLaunchEnvironmentsPage.goToEventsView()
 
@@ -49,8 +47,6 @@ class EventKitSavedDataTests: AppUITestCase {
     func testIfRemindersAreVisible() {
         let token = allowAccess { RemindersAlert(element: $0) }
         TestLauncher.configureWithDefaultOptions(app, additionalOptions: [reminders]).launch()
-        // Interruption won't happen without some kind of action.
-        app.tap()
         mainPage.goToAutoMateLaunchEnvironments()
         autoMateLaunchEnvironmentsPage.goToRemindersView()
         removeUIInterruptionMonitor(token)

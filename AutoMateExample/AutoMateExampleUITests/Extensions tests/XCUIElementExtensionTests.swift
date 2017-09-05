@@ -377,7 +377,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertFalse(middleButtonPage.isLabelDisplayed())
 
         // tap cell by using offset only
-        app.tap(withOffset: CGVector(dx: 0.5, dy: 0.5))
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(middleButtonPage.isLabelDisplayed())
@@ -425,16 +425,6 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonD(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
-
-        // Smart coordinate
-        rotatePage.tapButtonA(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
-        rotatePage.tapButtonB(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonC(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-        rotatePage.tapButtonD(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
     }
 
     func testSmartCoordinatesLandspaceLeft() {
@@ -444,22 +434,12 @@ class XCUIElementExtensionTests: AppUITestCase {
         // XCTest coordinate
         XCUIDevice.shared.orientation = .landscapeLeft
         rotatePage.tapButtonA(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonC(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
         rotatePage.tapButtonD(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-
-        // Smart coordinate
-        rotatePage.tapButtonA(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
-        rotatePage.tapButtonB(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonC(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-        rotatePage.tapButtonD(withSmart: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
     }
 
@@ -470,22 +450,12 @@ class XCUIElementExtensionTests: AppUITestCase {
         // XCTest coordinate
         XCUIDevice.shared.orientation = .landscapeRight
         rotatePage.tapButtonA(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonC(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonD(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-
-        // Smart coordinate
-        rotatePage.tapButtonA(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
-        rotatePage.tapButtonB(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonC(withSmart: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-        rotatePage.tapButtonD(withSmart: vector)
+        rotatePage.tapButtonD(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
     }
 
@@ -498,22 +468,12 @@ class XCUIElementExtensionTests: AppUITestCase {
         // "Wait" for rotation to complete
         Thread.sleep(forTimeInterval: 1)
         rotatePage.tapButtonA(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
+        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
         rotatePage.tapButtonC(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonD(with: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
-
-        // Smart coordinate
-        rotatePage.tapButtonA(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
-        rotatePage.tapButtonB(withSmart: vector)
-        XCTAssertEqual(rotatePage.centerLabel.label, "Button B")
-        rotatePage.tapButtonC(withSmart: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button C")
-        rotatePage.tapButtonD(withSmart: vector)
+        rotatePage.tapButtonD(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button D")
     }
 }

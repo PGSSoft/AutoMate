@@ -22,4 +22,10 @@ public protocol LocationAlertOk: SystemAlertOk { }
 /// Protocol defining location alert cancel element.
 public protocol LocationAlertCancel: SystemAlertCancel { }
 
+/// Protocol defining location alert allow always element.
+public protocol LocationAlwaysAlertAllow: SystemAlertAllow { }
+
+/// Protocol defining location alert when in use only element.
+public protocol LocationAlwaysAlertAllowWhenInUseOnly: SystemAlertCancel { }
+
 #endif
