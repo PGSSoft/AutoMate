@@ -377,7 +377,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         XCTAssertFalse(middleButtonPage.isLabelDisplayed())
 
         // tap cell by using offset only
-        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         // cell pushed view controller, title no longer visible
 
         XCTAssertTrue(middleButtonPage.isLabelDisplayed())

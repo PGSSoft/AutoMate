@@ -17,6 +17,7 @@ import XCTest
 /// - `iPhone40`: iPhone 4.0"
 /// - `iPhone47`: iPhone 4.7"
 /// - `iPhone55`: iPhone 5.5"
+/// - `iPhone58`: iPhone 5.8"
 /// - `iPad`: iPad
 /// - `iPadPro105`: iPad Pro 10.5"
 /// - `iPadPro12`: iPad Pro 12"
@@ -32,6 +33,9 @@ public enum DeviceType {
 
     /// iPhone 5.5"
     case iPhone55
+
+    /// iPhone 5.8"
+    case iPhone58
 
     /// iPad
     case iPad
@@ -78,6 +82,8 @@ public extension XCUIApplication {
             return .iPhone47
         case (414, 736):
             return .iPhone55
+        case (375, 812):
+            return .iPhone58
         case (768, 1024):
             return .iPad
         case (834, 1112):
@@ -104,7 +110,7 @@ public extension XCUIApplication {
         switch deviceType {
         case .iPad, .iPadPro105, .iPadPro12:
             return true
-        case .iPhone35, .iPhone40, .iPhone47, .iPhone55:
+        case .iPhone35, .iPhone40, .iPhone47, .iPhone55, .iPhone58:
             return false
         }
     }
@@ -124,7 +130,7 @@ public extension XCUIApplication {
         switch deviceType {
         case .iPad, .iPadPro105, .iPadPro12:
             return false
-        case .iPhone35, .iPhone40, .iPhone47, .iPhone55:
+        case .iPhone35, .iPhone40, .iPhone47, .iPhone55, .iPhone58:
             return true
         }
     }
@@ -181,6 +187,8 @@ public extension XCUIApplication {
             return .iPhone55
         case "iPhone7,2", "iPhone8,1":
             return .iPhone47
+        case "iPhone10,3":
+            return .iPhone58
         default:
             return deviceType
         }

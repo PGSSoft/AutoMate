@@ -25,9 +25,6 @@ public extension XCUIElement {
         // When accessing properties of XCUIElement, XCTest works differently than in a case of actions on elements
         // - there is no waiting for the app to idle and to finish all animations.
         // This can lead to problems and test flakiness as the test will evaluate a query before e.g. view transition has been completed.
-        #if os(iOS)
-        XCUIDevice.shared.orientation = XCUIDevice.shared.orientation
-        #endif
         return exists && isHittable
     }
 

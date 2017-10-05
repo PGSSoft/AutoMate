@@ -15,7 +15,7 @@ extension XCUIElement {
 
     // MARK: Properties
     /// Default number of swipes.
-    public class var defaultSwipesCount: Int { return 10 }
+    public class var defaultSwipesCount: Int { return 15 }
 
     // MARK: Methods
     #if os(iOS)
@@ -253,7 +253,7 @@ extension XCUIElement {
 
     /// Proportional vertical swipe length.
     var swipeLengthY: CGFloat {
-        return 0.9
+        return 0.7
     }
 
     // MARK: Methods
@@ -269,7 +269,7 @@ extension XCUIElement {
         let scrollableArea = viewsToAvoid.reduce(frame) {
             $1.overlapReminder(of: $0, in: app, orientation: orientation)
         }
-        assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
+//        assert(scrollableArea.height > 0, "Scrollable view is completely hidden.")
         return scrollableArea
     }
 
