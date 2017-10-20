@@ -1,4 +1,4 @@
-// swiftlint:disable identifier_name type_body_length trailing_comma file_length line_length
+// swiftlint:disable identifier_name
 /// Represents possible location service messages and label values on buttons.
 
 import XCTest

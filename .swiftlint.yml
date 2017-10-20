@@ -1,3 +1,5 @@
 line_length:
   warning: 300
   error: 400
+included:
+  - "AutoMate"

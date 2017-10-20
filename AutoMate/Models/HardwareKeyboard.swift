@@ -1,4 +1,4 @@
-// swiftlint:disable identifier_name type_body_length trailing_comma file_length line_length
+// swiftlint:disable identifier_name
 
 /// Enumeration describing available hardware keyboards in the system.
 public enum HardwareKeyboard: String, LaunchArgumentValue {
