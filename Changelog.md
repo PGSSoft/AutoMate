@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.1)
+Released on 2017-10-20.
+
+#### Fixed
+- The current version of swiftlint is failing the build (#6) via Jorge Ramirez
+
 ## [1.4.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.0)
 Released on 2017-07-03.
 

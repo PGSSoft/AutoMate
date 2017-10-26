@@ -74,7 +74,7 @@ class LaunchOptionsSetTests: XCTestCase {
     func testDisjointSetsIntersectionToBeEmpty() {
         let set1: LaunchOptionsSet = [option]
         let set2: LaunchOptionsSet = [option1]
-        XCTAssertTrue(set1.intersection(set2).isEmpty)
+        XCTAssertTrue(set1.isDisjoint(with: set2))
     }
 
     func testIntersectionOfSetsWithCommonElement() {

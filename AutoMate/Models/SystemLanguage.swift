@@ -1,4 +1,4 @@
-// swiftlint:disable identifier_name type_body_length trailing_comma file_length line_length
+// swiftlint:disable identifier_name file_length type_body_length
 
 /// Enumeration describing available languages in the system.
 public enum SystemLanguage: String, LaunchArgumentValue {
