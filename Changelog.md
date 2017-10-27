@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.2](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.2)
+Released on 2017-10-27.
+
+#### Fixed
+- Build fails on Xcode 9.0.1 (#8) via Jorge Ramirez
+
 ## [1.4.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.1)
 Released on 2017-10-20.
 
