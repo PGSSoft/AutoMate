@@ -12,11 +12,11 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard AzerbaijaniLatin.
     case AzerbaijaniLatin = "az_Latn@sw=QWERTY-Azeri"
 
+    /// Automatically generated value for software keyboard Bangla.
+    case Bangla = "bn@sw=Bengali"
+
     /// Automatically generated value for software keyboard Belarusian.
     case Belarusian = "be@sw=Belarusian"
-
-    /// Automatically generated value for software keyboard Bengali.
-    case Bengali = "bn@sw=Bengali"
 
     /// Automatically generated value for software keyboard BulgarianBulgaria.
     case BulgarianBulgaria = "bg_BG@sw=Bulgarian"
@@ -69,8 +69,8 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard CroatianCroatia.
     case CroatianCroatia = "hr_HR@sw=QWERTZ"
 
-    /// Automatically generated value for software keyboard CzechCzechRepublic.
-    case CzechCzechRepublic = "cs_CZ@sw=Czech-Slovak"
+    /// Automatically generated value for software keyboard CzechCzechia.
+    case CzechCzechia = "cs_CZ@sw=Czech-Slovak"
 
     /// Automatically generated value for software keyboard DanishDenmark.
     case DanishDenmark = "da_DK@sw=QWERTY-Danish"
@@ -210,8 +210,8 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard NorwegianBokmålNorway.
     case NorwegianBokmålNorway = "nb_NO@sw=QWERTY-Norwegian"
 
-    /// Automatically generated value for software keyboard Oriya.
-    case Oriya = "or@sw=Oriya"
+    /// Automatically generated value for software keyboard Odia.
+    case Odia = "or@sw=Oriya"
 
     /// Automatically generated value for software keyboard Persian.
     case Persian = "fa@sw=Persian"

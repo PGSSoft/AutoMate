@@ -12,11 +12,11 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard AzerbaijaniLatin.
     case AzerbaijaniLatin = "az_Latn@hw=Azeri"
 
+    /// Automatically generated value for hardware keyboard Bangla.
+    case Bangla = "bn@hw=Bangla"
+
     /// Automatically generated value for hardware keyboard Belarusian.
     case Belarusian = "be@hw=Byelorussian"
-
-    /// Automatically generated value for hardware keyboard Bengali.
-    case Bengali = "bn@hw=Bangla"
 
     /// Automatically generated value for hardware keyboard BulgarianBulgaria.
     case BulgarianBulgaria = "bg_BG@hw=Bulgarian - Phonetic"
@@ -63,8 +63,8 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard CroatianCroatia.
     case CroatianCroatia = "hr_HR@hw=Croatian"
 
-    /// Automatically generated value for hardware keyboard CzechCzechRepublic.
-    case CzechCzechRepublic = "cs_CZ@hw=Czech"
+    /// Automatically generated value for hardware keyboard CzechCzechia.
+    case CzechCzechia = "cs_CZ@hw=Czech"
 
     /// Automatically generated value for hardware keyboard DanishDenmark.
     case DanishDenmark = "da_DK@hw=Danish"
@@ -201,8 +201,8 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for hardware keyboard NorwegianBokmålNorway.
     case NorwegianBokmålNorway = "nb_NO@hw=Norwegian"
 
-    /// Automatically generated value for hardware keyboard Oriya.
-    case Oriya = "or@hw=Oriya"
+    /// Automatically generated value for hardware keyboard Odia.
+    case Odia = "or@hw=Oriya"
 
     /// Automatically generated value for hardware keyboard Persian.
     case Persian = "fa@hw=Persian"

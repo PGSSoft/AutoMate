@@ -4,3 +4,5 @@ line_length:
 variable_name:
   excluded:
     - ok
+included:
+  - "AutoMate"
