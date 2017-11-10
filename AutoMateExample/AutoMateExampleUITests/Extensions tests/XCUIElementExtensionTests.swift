@@ -149,6 +149,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         complexSwipeWithKeyboard()
     }
 
+    // Fails under Xcode 9, no idea how to fix it. Keyboard's window frame is always in portrait.
     func testComplexSwipeWithKeyboardLandscapeLeft() {
         mainPage.goToScrollMenu()
 
@@ -156,6 +157,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         complexSwipeWithKeyboard()
     }
 
+    // Fails under Xcode 9, no idea how to fix it. Keyboard's window frame is always in portrait.
     func testComplexSwipeWithKeyboardLandscapeRight() {
         mainPage.goToScrollMenu()
 
@@ -163,6 +165,7 @@ class XCUIElementExtensionTests: AppUITestCase {
         complexSwipeWithKeyboard()
     }
 
+    // Fails under Xcode 9, no idea how to fix it. Keyboard's window frame is always in portrait.
     func testComplexSwipeWithKeyboardUpsideDown() {
         mainPage.goToScrollMenu()
 

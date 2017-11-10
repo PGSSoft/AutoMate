@@ -73,6 +73,15 @@
                <Test
                   Identifier = "PermissionsTests/testSiriAlert()">
                </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboardLandscapeLeft()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboardLandscapeRight()">
+               </Test>
+               <Test
+                  Identifier = "XCUIElementExtensionTests/testComplexSwipeWithKeyboardUpsideDown()">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
