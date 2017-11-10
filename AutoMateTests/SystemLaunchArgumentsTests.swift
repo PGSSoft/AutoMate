@@ -47,8 +47,8 @@ class SystemLaunchArgumentsTests: XCTestCase {
     }
 
     func testKeyboardLaunchArgument() {
-        let hardware = HardwareKeyboards([HardwareKeyboard.Bengali])
-        let software = SoftwareKeyboards(arrayLiteral: SoftwareKeyboard.Bengali)
+        let hardware = HardwareKeyboards([HardwareKeyboard.Bangla])
+        let software = SoftwareKeyboards(arrayLiteral: SoftwareKeyboard.Bangla)
         let keyboard = SystemKeyboards(software: software, hardware: hardware)
 
         XCTAssertEqual(build([hardware]), ["-AppleKeyboards", "(\"bn@hw=Bangla\")"])
@@ -58,7 +58,7 @@ class SystemLaunchArgumentsTests: XCTestCase {
 
     func testCombined() {
         let locale = SystemLocale(localeIdentifier: "pl")
-        let keyboard = HardwareKeyboards([HardwareKeyboard.Bengali])
+        let keyboard = HardwareKeyboards([HardwareKeyboard.Bangla])
         let language = SystemLanguages([.Polish])
 
         XCTAssertEqual(build([]), [])

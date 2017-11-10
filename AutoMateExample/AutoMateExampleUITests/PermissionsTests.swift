@@ -60,8 +60,6 @@ class PermissionsTests: AppUITestCase {
         permissionsPage.goToLocationWhenInUse()
         wait(forVisibilityOf: locationPage.requestLabel)
 
-
-//        Thread.sleep(forTimeInterval: 2)
         app.tap()
 
         locationPage.goBack()

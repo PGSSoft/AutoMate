@@ -6,3 +6,6 @@ variable_name:
     - ok
 included:
   - "AutoMate"
+
+excluded:
+  - AutoMate/Models
