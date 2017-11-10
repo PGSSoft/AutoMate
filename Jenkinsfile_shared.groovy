@@ -9,7 +9,7 @@ def prepareStage() {
       bundle exec fastlane install_plugins
 
       # Reset simulators
-      bundle exec fastlane snapshot reset_simulators --force --ios 10.2,11.0
+      bundle exec fastlane snapshot reset_simulators --force --ios 11.1
 
       # Install dependnecies
       bundle exec fastlane prepare
@@ -132,47 +132,29 @@ def carthageLintBranch() {
 // Branches
 def branches(unlockDanger) {
   return [
-    "iPhone SE, 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone SE", "10.2")
+    "iPhone SE, 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone SE", "11.1")
     },
-    "iPhone 7, 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7", "10.2", unlockDanger)
+    "iPhone 8, 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 8", "11.1", unlockDanger)
     },
-    "iPhone 7 Plus, 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "10.2")
+    "iPhone 8 Plus, 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 8 Plus", "11.1")
     },
-    "iPad Air 2, 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Air 2", "10.2")
+    "iPhone X, 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone X", "11.1")
     },
-    "iPad Pro (9.7-inch), 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "10.2")
+    "iPad Air 2, 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Air 2", "11.1")
     },
-    "iPad Pro (10.5-inch), 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "10.2")
+    "iPad Pro (9.7-inch), 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "11.1")
     },
-    "iPad Pro (12.9-inch) (2nd generation), 10.2": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "10.2")
+    "iPad Pro (10.5-inch), 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "11.1")
     },
-    "iPhone SE, 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone SE", "11.0")
-    },
-    "iPhone 7, 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7", "11.0", unlockDanger)
-    },
-    "iPhone 7 Plus, 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 7 Plus", "11.0")
-    },
-    "iPad Air 2, 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Air 2", "11.0")
-    },
-    "iPad Pro (9.7-inch), 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "11.0")
-    },
-    "iPad Pro (10.5-inch), 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "11.0")
-    },
-    "iPad Pro (12.9-inch) (2nd generation), 11.0": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.0")
+    "iPad Pro (12.9-inch) (2nd generation), 11.1": {
+      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.1")
     },
     "CocoaPods lint": {
       podLintBranch()

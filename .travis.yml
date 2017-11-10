@@ -1,17 +1,18 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9.1
 
 env:
   global:
     - NSUnbufferedIO=YES
   matrix:
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone SE"      DESTINATION_OS="10.3.1"
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3.1"
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7 Plus"  DESTINATION_OS="10.3.1"
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Air 2"                             DESTINATION_OS="10.3.1"
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (9.7-inch)"                    DESTINATION_OS="10.3.1"
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (10.5-inch)"                   DESTINATION_OS="10.3.1"
-    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (12.9-inch) (2nd generation)"  DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone SE"      DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 8"       DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 8 Plus"  DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone X"       DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Air 2"                             DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (9.7-inch)"                    DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (10.5-inch)"                   DESTINATION_OS="11.1"
+    - SCHEME="AutoMate iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPad Pro (12.9-inch) (2nd generation)"  DESTINATION_OS="11.1"
 
 before_install:
   - brew update
@@ -21,7 +22,7 @@ before_script:
   - swiftlint version
   - bundle exec pod --version
   - bundle exec fastlane --version
-  - bundle exec fastlane snapshot reset_simulators --force --ios 10.3
+  - bundle exec fastlane snapshot reset_simulators --force --ios 11.1
   - bundle exec fastlane prepare
 
 script:
