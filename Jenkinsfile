@@ -1,4 +1,4 @@
-ios.prepareEnv(xcode: "/Applications/Xcode_9.0.app")
+ios.prepareEnv(xcode: "/Applications/Xcode_9.1.app")
 
 def shared
 node("linux&&docker_container&&linux_core") {
