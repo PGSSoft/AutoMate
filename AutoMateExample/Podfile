@@ -1,10 +1,10 @@
-platform :ios, '9.2'
+platform :ios, '10.3'
 workspace '../AutoMate'
 
 target 'AutoMateExample' do
   use_frameworks!
 
-  pod 'AutoMate-AppBuddy', git: 'https://github.com/PGSSoft/AutoMate-AppBuddy', :branch => 'xcode-9-support'
+  pod 'AutoMate-AppBuddy', git: 'https://github.com/PGSSoft/AutoMate-AppBuddy'
   # pod 'AutoMate-AppBuddy', path: '../../pgs-automate-appbuddy-ios'
 
   # target 'AutoMateExampleUITests' do
