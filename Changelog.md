@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.3](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.3)
+Released on 2017-11-14.
+
+#### Added
+- Compatibility with Xcode 9.1, Swift 4 and iOS 11
+
+#### Updated
+- Deployment target of AutoMate and AutoMateExample is now 10.3
+
 ## [1.4.2](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.2)
 Released on 2017-10-27.
 

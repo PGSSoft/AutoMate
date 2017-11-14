@@ -1,4 +1,4 @@
-ios.prepareEnv(xcode: "/Applications/Xcode_8.3.app", danger_bitbucket: null)
+ios.prepareEnv(xcode: "/Applications/Xcode_9.1.app", danger_bitbucket: null)
 
 def shared
 node("linux&&docker_container&&linux_core") {
