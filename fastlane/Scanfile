@@ -9,6 +9,6 @@
 workspace "AutoMate.xcworkspace"
 scheme "AutoMate iOS"
 
-device "iPhone 8 (11.1)"
+device "iPhone X (11.1)"
 
 formatter "xcpretty-json-formatter"

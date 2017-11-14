@@ -1,4 +1,4 @@
-.PHONY: docs pod_install push_github check-podspec check-carthage check
+.PHONY: docs pod_install push_cocoapods push_github check-podspec check-carthage check
 
 # Create documentation
 docs:
@@ -9,6 +9,10 @@ docs:
 # Install CocoaPods in the AutoMateExample directory
 pod_install:
 	pod install --project-directory=AutoMateExample
+
+# Push spec to CocoaPods
+push_cocoapods:
+	pod trunk push AutoMate.podspec
 
 # Push master, develop and tags to GitHub
 push_github:

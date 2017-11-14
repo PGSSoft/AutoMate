@@ -1,22 +1,21 @@
 PODS:
-  - AutoMate-AppBuddy (1.2.0)
+  - AutoMate-AppBuddy (1.2.1)
 
 DEPENDENCIES:
-  - AutoMate-AppBuddy (from `https://github.com/PGSSoft/AutoMate-AppBuddy`, branch `xcode-9-support`)
+  - AutoMate-AppBuddy (from `https://github.com/PGSSoft/AutoMate-AppBuddy`)
 
 EXTERNAL SOURCES:
   AutoMate-AppBuddy:
-    :branch: xcode-9-support
     :git: https://github.com/PGSSoft/AutoMate-AppBuddy
 
 CHECKOUT OPTIONS:
   AutoMate-AppBuddy:
-    :commit: e249f6e70954cf441f387b0beee1931c70d311ef
+    :commit: 27d08a86213a69e33f7043d41a0f10ccb626a5b4
     :git: https://github.com/PGSSoft/AutoMate-AppBuddy
 
 SPEC CHECKSUMS:
-  AutoMate-AppBuddy: 196608fda8d73c96bd37998412d4cb37242b06ed
+  AutoMate-AppBuddy: 109b42fb1380213a8c84063488b3666cc8b83925
 
-PODFILE CHECKSUM: f632cbef87a03d6068eb113e09887a758f31b515
+PODFILE CHECKSUM: 81142c3df837c99edfb02206f0c1a4da8d02217d
 
 COCOAPODS: 1.3.1
