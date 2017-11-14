@@ -67,9 +67,6 @@
               <li class="nav-group-task">
                 <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -260,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
+            <a href="Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/AutoMateKey.html">AutoMateKey</a>
@@ -321,7 +318,7 @@
             <a href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+                <a href="Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -377,6 +374,12 @@
                 <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllow.html">LocationAlwaysAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllowWhenInUseOnly.html">LocationAlwaysAlertAllowWhenInUseOnly</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
               </li>
               <li class="nav-group-task">
@@ -394,10 +397,13 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Structs.html">Other Structs</a>
+            <a href="Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAddAlert.html">PhotosAddAlert</a>
               </li>
             </ul>
           </li>
@@ -409,7 +415,7 @@
             
             <h1 id='custom-launch-arguments' class='heading'>Custom launch arguments</h1>
 
-<p>Custom launch argument can be created by implementing <code>LaunchOption</code> protocol, on new or existing type.</p>
+<p>Custom launch argument can be created by implementing <code><a href="Protocols/LaunchOption.html">LaunchOption</a></code> protocol, on new or existing type.</p>
 <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">CustomOption</span><span class="p">:</span> <span class="kt">LaunchOption</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">launchArguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span><span class="s">"-MyArgument"</span><span class="p">,</span> <span class="s">"MyValue"</span><span class="p">]</span>
@@ -417,8 +423,8 @@
 <span class="p">}</span>
 </code></pre>
 
-<p>They can be passed to the <code>TestLauncher</code> to configure the application before launch.
-Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
+<p>They can be passed to the <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> to configure the application before launch.
+Use <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
 <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
     <span class="kt">CustomOption</span><span class="p">()</span>
@@ -428,14 +434,14 @@ Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure ap
 <p>For common cases, <code>AutoMate</code> provides helper protocols.</p>
 
 <ul>
-<li><code>LaunchArgument</code> - provides <code>key</code> variable, like <code>SkipLogin</code>, which will produce: <code>-SkipLogin</code> argument</li>
-<li><code>LaunchArgumentWithSingleValue</code> - arguments with single value, like <code>-Argument 1</code></li>
-<li><code>LaunchArgumentWithMultipleValues</code> - arguments with multiple values, like <code>-Argument (&quot;1&quot;, &quot;2&quot;)</code></li>
+<li><code><a href="Protocols/LaunchArgument.html">LaunchArgument</a></code> - provides <code>key</code> variable, like <code>SkipLogin</code>, which will produce: <code>-SkipLogin</code> argument</li>
+<li><code><a href="Protocols/LaunchArgumentWithSingleValue.html">LaunchArgumentWithSingleValue</a></code> - arguments with single value, like <code>-Argument 1</code></li>
+<li><code><a href="Protocols/LaunchArgumentWithMultipleValues.html">LaunchArgumentWithMultipleValues</a></code> - arguments with multiple values, like <code>-Argument (&quot;1&quot;, &quot;2&quot;)</code></li>
 </ul>
 
-<p><code>XCUIApplication</code> requires fitting launch argument data as strings. The <code>LaunchArgumentValue</code> protocol provides
+<p><code>XCUIApplication</code> requires fitting launch argument data as strings. The <code><a href="Protocols/LaunchArgumentValue.html">LaunchArgumentValue</a></code> protocol provides
 an abstraction around argument values. It provides default implementation for <code>RawRepresentable</code> objects
-and <code>Bool</code> values (check <code>BooleanLaunchArgumentValue</code>).</p>
+and <code>Bool</code> values (check <code><a href="Enums/BooleanLaunchArgumentValue.html">BooleanLaunchArgumentValue</a></code>).</p>
 
 <p>These protocols simplify implementation of new launch arguments by providing default implementations. For example, enumeration values with raw type would be handled automatically.</p>
 <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Server</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">LaunchArgumentWithSingleValue</span><span class="p">,</span> <span class="kt">LaunchArgumentValue</span> <span class="p">{</span>
@@ -490,8 +496,8 @@ can be used to get provided arguments data.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

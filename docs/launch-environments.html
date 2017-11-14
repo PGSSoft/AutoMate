@@ -67,9 +67,6 @@
               <li class="nav-group-task">
                 <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -260,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
+            <a href="Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/AutoMateKey.html">AutoMateKey</a>
@@ -321,7 +318,7 @@
             <a href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+                <a href="Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -377,6 +374,12 @@
                 <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllow.html">LocationAlwaysAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllowWhenInUseOnly.html">LocationAlwaysAlertAllowWhenInUseOnly</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
               </li>
               <li class="nav-group-task">
@@ -394,10 +397,13 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Structs.html">Other Structs</a>
+            <a href="Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAddAlert.html">PhotosAddAlert</a>
               </li>
             </ul>
           </li>
@@ -410,7 +416,7 @@
             <h1 id='launch-environments' class='heading'>Launch environments</h1>
 
 <p>Launch environment is next method of providing data to the application next to the launch arguments.
-Custom launch environment can be created by implementing <code>LaunchOption</code> protocol, on new or existing type.</p>
+Custom launch environment can be created by implementing <code><a href="Protocols/LaunchOption.html">LaunchOption</a></code> protocol, on new or existing type.</p>
 <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">CustomOption</span><span class="p">:</span> <span class="kt">LaunchOption</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">launchEnvironments</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]?</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span><span class="s">"CustomVariable"</span><span class="p">:</span> <span class="s">"1"</span><span class="p">]</span>
@@ -418,8 +424,8 @@ Custom launch environment can be created by implementing <code>LaunchOption</cod
 <span class="p">}</span>
 </code></pre>
 
-<p>They can be passed to the <code>TestLauncher</code> to configure the application before launch.
-Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
+<p>They can be passed to the <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> to configure the application before launch.
+Use <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
 <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
     <span class="kt">CustomOption</span><span class="p">()</span>
@@ -429,14 +435,14 @@ Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure ap
 <p>For common cases, <code>AutoMate</code> provides helper protocols.</p>
 
 <ul>
-<li><code>LaunchEnvironmentProtocol</code> - provides minimal requirements (the <code>LaunchEnvironmentValue</code> type) which represents passes data</li>
-<li><code>LaunchEnvironmentWithSingleValue</code> - adds <code>key</code> variable</li>
-<li><code>LaunchEnvironmentWithMultipleValues</code> - gives possibility to pass multiple data separated by comma</li>
+<li><code><a href="Protocols/LaunchEnvironmentProtocol.html">LaunchEnvironmentProtocol</a></code> - provides minimal requirements (the <code><a href="Protocols/LaunchEnvironmentValue.html">LaunchEnvironmentValue</a></code> type) which represents passes data</li>
+<li><code><a href="Protocols/LaunchEnvironmentWithSingleValue.html">LaunchEnvironmentWithSingleValue</a></code> - adds <code>key</code> variable</li>
+<li><code><a href="Protocols/LaunchEnvironmentWithMultipleValues.html">LaunchEnvironmentWithMultipleValues</a></code> - gives possibility to pass multiple data separated by comma</li>
 </ul>
 
 <p><code>XCUIApplication</code> requires launch environment as dictionary: <code>[String: String]</code>.
-The <code>LaunchEnvironmentValue</code> provides definition and default implementation for value types,
-for example <code>BooleanLaunchEnvironmentValue</code>.</p>
+The <code><a href="Protocols/LaunchEnvironmentValue.html">LaunchEnvironmentValue</a></code> provides definition and default implementation for value types,
+for example <code><a href="Enums/BooleanLaunchEnvironmentValue.html">BooleanLaunchEnvironmentValue</a></code>.</p>
 
 <p>Above protocols support a definition of new launch environments by providing default implementations.
 For example, launch environment with key and value could be implemented like this:</p>
@@ -450,7 +456,7 @@ For example, launch environment with key and value could be implemented like thi
 <span class="k">let</span> <span class="nv">simple</span> <span class="o">=</span> <span class="kt">SimpleLaunchEnvironment</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"LaunchValue"</span><span class="p">)</span>
 </code></pre>
 
-<p><code>LaunchEnvironmentWithMultipleValues</code> can be implemented like:</p>
+<p><code><a href="Protocols/LaunchEnvironmentWithMultipleValues.html">LaunchEnvironmentWithMultipleValues</a></code> can be implemented like:</p>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ArrayLaunchEnvironment</span><span class="p">:</span> <span class="kt">LaunchEnvironmentWithMultipleValues</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">String</span>
@@ -464,7 +470,7 @@ For example, launch environment with key and value could be implemented like thi
 <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Value1"</span><span class="p">,</span> <span class="s">"Value2"</span><span class="p">]</span> <span class="k">as</span> <span class="kt">ArrayLaunchEnvironment</span>
 </code></pre>
 
-<p>In addition, types <code>LaunchEnvironment</code> and <code>LaunchEnvironments</code> can be used directly instead of creating custom types:</p>
+<p>In addition, types <code><a href="Structs/LaunchEnvironment.html">LaunchEnvironment</a></code> and <code><a href="Structs/LaunchEnvironments.html">LaunchEnvironments</a></code> can be used directly instead of creating custom types:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchEnvironmentOption</span> <span class="o">=</span> <span class="kt">LaunchEnvironment</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="s">"MADE_WITH_LOVE_BY"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"PGS"</span><span class="p">)</span>
 <span class="k">let</span> <span class="nv">launchEnvironmentDictionary</span><span class="p">:</span> <span class="kt">LaunchEnvironments</span> <span class="o">=</span> <span class="p">[</span><span class="s">"CORPORATION_KEY"</span><span class="p">:</span> <span class="s">"PGS"</span><span class="p">,</span> <span class="s">"PROJECT_KEY"</span><span class="p">:</span> <span class="s">"AutoMate"</span><span class="p">]</span>
 </code></pre>
@@ -479,8 +485,8 @@ For example, launch environment with key and value could be implemented like thi
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

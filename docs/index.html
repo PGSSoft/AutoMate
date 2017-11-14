@@ -67,9 +67,6 @@
               <li class="nav-group-task">
                 <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -260,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
+            <a href="Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/AutoMateKey.html">AutoMateKey</a>
@@ -321,7 +318,7 @@
             <a href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+                <a href="Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -377,6 +374,12 @@
                 <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllow.html">LocationAlwaysAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllowWhenInUseOnly.html">LocationAlwaysAlertAllowWhenInUseOnly</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
               </li>
               <li class="nav-group-task">
@@ -394,10 +397,13 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Structs.html">Other Structs</a>
+            <a href="Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAddAlert.html">PhotosAddAlert</a>
               </li>
             </ul>
           </li>
@@ -424,7 +430,7 @@
 It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device.
 With the <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate-AppBuddy</code></a> it can also disable animations in the application and manage events, reminders and contacts.</p>
 
-<p><a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat" alt="Swift 3.1"></a>
+<p><a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0"></a>
 <a href="https://travis-ci.org/PGSSoft/AutoMate"><img src="https://img.shields.io/travis/PGSSoft/AutoMate.svg" alt="Travis"></a>
 <a href="https://cocoapods.org/pods/AutoMate"><img src="https://img.shields.io/cocoapods/v/AutoMate.svg" alt="CocoaPods Compatible"></a>
 <a href="https://pgssoft.github.io/AutoMate/"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/AutoMate.svg" alt="CocoaPods"></a>
@@ -453,7 +459,7 @@ With the <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate-A
 <li><p>Import <code>AutoMate</code> framework to UI tests files:</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">AutoMate</span>
 </code></pre></li>
-<li><p>Use <code>TestLauncher</code> in the <code>setup()</code> method to configure application settings and launch the application:</p>
+<li><p>Use <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> in the <code>setup()</code> method to configure application settings and launch the application:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
 <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
     <span class="kt">SystemLanguages</span><span class="p">([</span><span class="o">.</span><span class="kt">English</span><span class="p">,</span> <span class="o">.</span><span class="kt">German</span><span class="p">]),</span>
@@ -488,7 +494,7 @@ With the <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate-A
 <li>[x] Disable UIView animations (with <code>AutoMate-AppBuddy</code>)</li>
 <li>[x] Strong-typed helpers: locators, page object templates (with <code>AutoMate-Templates</code>)</li>
 <li>[x] Base XCTestCase template (with <code>AutoMate-Templates</code>)</li>
-<li>[x] Most permissions alerts (like: <code>LocationWhenInUseAlert</code>, <code>CalendarAlert</code>, <code>PhotosAlert</code>) (with <code>AutoMate-ModelGenie</code>)</li>
+<li>[x] Most permissions alerts (like: <code><a href="Structs/LocationWhenInUseAlert.html">LocationWhenInUseAlert</a></code>, <code><a href="Structs/CalendarAlert.html">CalendarAlert</a></code>, <code><a href="Structs/PhotosAlert.html">PhotosAlert</a></code>) (with <code>AutoMate-ModelGenie</code>)</li>
 <li>[x] Managing events, reminders and contacts (with <code>AutoMate-AppBuddy</code>)</li>
 <li>[x] Companion library for the application (<code>AutoMate-AppBuddy</code>)</li>
 <li>[x] Improve launch options type safety</li>
@@ -508,7 +514,7 @@ Structure of the application is simple, but the project contains extensive suite
 
 <p>Full documentation is available at <a href="https://pgssoft.github.io/AutoMate/">https://pgssoft.github.io/AutoMate/</a>.</p>
 
-<p>If you want to provide your custom launch argument or launch environment you have to implement <code>LaunchOption</code> protocol or one of its extensions, such as <code>LaunchArgumentWithSingleValue</code>:</p>
+<p>If you want to provide your custom launch argument or launch environment you have to implement <code><a href="Protocols/LaunchOption.html">LaunchOption</a></code> protocol or one of its extensions, such as <code><a href="Protocols/LaunchArgumentWithSingleValue.html">LaunchArgumentWithSingleValue</a></code>:</p>
 <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">CustomParameter</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">LaunchArgumentWithSingleValue</span><span class="p">,</span> <span class="kt">LaunchArgumentValue</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
         <span class="k">return</span> <span class="s">"AppParameter"</span>
@@ -541,8 +547,8 @@ See our other <a href="https://github.com/PGSSoft">open-source projects</a> or <
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -67,9 +67,6 @@
               <li class="nav-group-task">
                 <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -260,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
+            <a href="Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/AutoMateKey.html">AutoMateKey</a>
@@ -321,7 +318,7 @@
             <a href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+                <a href="Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -377,6 +374,12 @@
                 <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllow.html">LocationAlwaysAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllowWhenInUseOnly.html">LocationAlwaysAlertAllowWhenInUseOnly</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
               </li>
               <li class="nav-group-task">
@@ -394,10 +397,13 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Structs.html">Other Structs</a>
+            <a href="Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAddAlert.html">PhotosAddAlert</a>
               </li>
             </ul>
           </li>
@@ -412,8 +418,8 @@
 <p>In addition to system launch arguments <code>AutoMate</code> and <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate - AppBuddy</code></a>
 provides advanced launch environments which can manage events, reminders and contacts.</p>
 
-<p>They can be passed to the <code>TestLauncher</code> to configure the application before launch.
-Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
+<p>They can be passed to the <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> to configure the application before launch.
+Use <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
 <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
     <span class="n">animation</span><span class="p">,</span>
@@ -425,12 +431,12 @@ Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure ap
 </code></pre>
 <h2 id='animations' class='heading'>Animations</h2>
 
-<p><code>AnimationLaunchEnvironment</code> can provides information to the application to disable all UI animations.</p>
+<p><code><a href="Structs/AnimationLaunchEnvironment.html">AnimationLaunchEnvironment</a></code> can provides information to the application to disable all UI animations.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">animation</span> <span class="o">=</span> <span class="kt">AnimationLaunchEnvironment</span><span class="p">()</span>
 </code></pre>
 <h2 id='is-in-ui-test' class='heading'>Is in UI test</h2>
 
-<p><code>IsInUITestLaunchEnvironment</code> provides information to the application that it is running in UI test environment.
+<p><code><a href="Structs/IsInUITestLaunchEnvironment.html">IsInUITestLaunchEnvironment</a></code> provides information to the application that it is running in UI test environment.
 In some scenarios such knowledge is useful. You can read
 <a href="http://macoscope.com/blog/how-to-detect-whether-an-application-is-running-inside-a-ui-test-environment/">How to Detect Whether an Application Is Running Inside a UI Test Environment</a>
 to get some insights.</p>
@@ -438,7 +444,7 @@ to get some insights.</p>
 </code></pre>
 <h2 id='events-and-reminders' class='heading'>Events and reminders</h2>
 
-<p><code>EventLaunchEnvironment</code> and <code>ReminderLaunchEnvironment</code> can pass to the application list of JSON files
+<p><code><a href="Structs/EventLaunchEnvironment.html">EventLaunchEnvironment</a></code> and <code><a href="Structs/ReminderLaunchEnvironment.html">ReminderLaunchEnvironment</a></code> can pass to the application list of JSON files
 with events and reminders which will be created on the application start.</p>
 
 <p>In a test file:</p>
@@ -475,7 +481,7 @@ to the <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate - A
 <p>A calendar has to exist on a simulator or on an iPhone for EventKit launch environments to work.</p>
 <h2 id='contacts' class='heading'>Contacts</h2>
 
-<p><code>ContactLaunchEnvironment</code> can pass to the application list of JSON files
+<p><code><a href="Structs/ContactLaunchEnvironment.html">ContactLaunchEnvironment</a></code> can pass to the application list of JSON files
 with contacts which will be created on the application start.</p>
 
 <p>In a test file:</p>
@@ -499,8 +505,8 @@ to the <a href="https://github.com/PGSSoft/AutoMate-AppBuddy"><code>AutoMate - A
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

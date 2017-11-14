@@ -8,11 +8,11 @@ docs:
 
 # Install CocoaPods in the AutoMateExample directory
 pod_install:
-	pod install --project-directory=AutoMateExample
+	bundle exec pod install --project-directory=AutoMateExample
 
 # Push spec to CocoaPods
 push_cocoapods:
-	pod trunk push AutoMate.podspec
+	bundle exec pod trunk push AutoMate.podspec
 
 # Push master, develop and tags to GitHub
 push_github:
@@ -22,7 +22,7 @@ push_github:
 
 # Check CocoaPod
 check-podspec:
-	pod lib lint
+	bundle exec pod lib lint
 
 # Check Carthage
 check-carthage:

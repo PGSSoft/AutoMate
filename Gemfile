@@ -12,6 +12,7 @@ gem 'danger-xcode_summary'
 gem 'danger-xcodebuild'
 gem 'fastlane'
 gem 'golden_rose'
+gem 'jazzy'
 gem 'simctl'
 gem 'xcpretty-json-formatter'
 

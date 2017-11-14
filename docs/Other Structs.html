@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Other Structs  Reference</title>
+    <title>Other Structures  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Other Structs  Reference"></a>
+    <a title="Other Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">AutoMate Docs</a> (100% documented)</p>
@@ -20,7 +20,7 @@
       <p id="breadcrumbs">
         <a href="index.html">AutoMate Reference</a>
         <img id="carat" src="img/carat.png" />
-        Other Structs  Reference
+        Other Structures  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -66,9 +66,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
               </li>
             </ul>
           </li>
@@ -260,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
+            <a href="Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/AutoMateKey.html">AutoMateKey</a>
@@ -321,7 +318,7 @@
             <a href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+                <a href="Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -377,6 +374,12 @@
                 <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllow.html">LocationAlwaysAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllowWhenInUseOnly.html">LocationAlwaysAlertAllowWhenInUseOnly</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
               </li>
               <li class="nav-group-task">
@@ -394,10 +397,13 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Structs.html">Other Structs</a>
+            <a href="Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAddAlert.html">PhotosAddAlert</a>
               </li>
             </ul>
           </li>
@@ -406,8 +412,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Other Structs</h1>
-            <p>The following structs are available globally.</p>
+            <h1>Other Structures</h1>
+            <p>The following structures are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -416,9 +422,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:V8AutoMate16LaunchOptionsSet"></a>
+                    <a name="/s:8AutoMate16LaunchOptionsSetV"></a>
                     <a name="//apple_ref/swift/Struct/LaunchOptionsSet" class="dashAnchor"></a>
-                    <a class="token" href="#/s:V8AutoMate16LaunchOptionsSet">LaunchOptionsSet</a>
+                    <a class="token" href="#/s:8AutoMate16LaunchOptionsSetV">LaunchOptionsSet</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -443,11 +449,67 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8AutoMate14PhotosAddAlertV"></a>
+                    <a name="//apple_ref/swift/Struct/PhotosAddAlert" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8AutoMate14PhotosAddAlertV">PhotosAddAlert</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Represents <code>PhotosAddAlert</code> service alert.</p>
+
+<p>System alert supposed to be used in the handler of the <code>XCTestCase.addUIInterruptionMonitor(withDescription:handler:)</code> method.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="nf">addUIInterruptionMonitor</span><span class="p">(</span><span class="nv">withDescription</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">alert</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">PhotosAddAlert</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="n">alert</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Cannot create PhotosAddAlert object"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+
+    <span class="n">alert</span><span class="o">.</span><span class="n">denyElement</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="n">mainPage</span><span class="o">.</span><span class="nf">goToPermissionsPageMenu</span><span class="p">()</span>
+<span class="c1">// Interruption won't happen without some kind of action.</span>
+<span class="n">app</span><span class="o">.</span><span class="nf">tap</span><span class="p">()</span>
+<span class="nf">removeUIInterruptionMonitor</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</code></pre>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Handlers should return <code>true</code> if they handled the UI, <code>false</code> if they did not.
+
+</div>
+
+                        <a href="Structs/PhotosAddAlert.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PhotosAddAlert</span><span class="p">:</span> <span class="kt"><a href="Protocols/SystemAlert.html">SystemAlert</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/SystemAlertDeny.html">SystemAlertDeny</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -67,9 +67,6 @@
               <li class="nav-group-task">
                 <a href="Extensions/XCUIElementTypeQueryProvider.html">XCUIElementTypeQueryProvider</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SmartXCUICoordinate.html">SmartXCUICoordinate</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -260,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
+            <a href="Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/AutoMateKey.html">AutoMateKey</a>
@@ -321,7 +318,7 @@
             <a href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Functions.html#/s:F8AutoMateoi2eeFTVS_16LaunchOptionsSetS0__Sb">==(_:_:)</a>
+                <a href="Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -377,6 +374,12 @@
                 <a href="Protocols/LocationAlertOk.html">LocationAlertOk</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllow.html">LocationAlwaysAlertAllow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LocationAlwaysAlertAllowWhenInUseOnly.html">LocationAlwaysAlertAllowWhenInUseOnly</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/SystemAlertAllow.html">SystemAlertAllow</a>
               </li>
               <li class="nav-group-task">
@@ -394,10 +397,13 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Other Structs.html">Other Structs</a>
+            <a href="Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/LaunchOptionsSet.html">LaunchOptionsSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PhotosAddAlert.html">PhotosAddAlert</a>
               </li>
             </ul>
           </li>
@@ -423,10 +429,10 @@
 </ul>
 <h2 id='usage' class='heading'>Usage</h2>
 
-<p><code>AutoMate</code> contains set of predefined launch arguments. They can be passed to the <code>TestLauncher</code>
+<p><code>AutoMate</code> contains set of predefined launch arguments. They can be passed to the <code><a href="Structs/TestLauncher.html">TestLauncher</a></code>
 to configure the application before launch.</p>
 
-<p>Use <code>TestLauncher</code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
+<p>Use <code><a href="Structs/TestLauncher.html">TestLauncher</a></code> in the <code>setUp()</code> method to configure application settings and launch the application:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
 <span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
     <span class="kt">SystemLanguages</span><span class="p">([</span><span class="o">.</span><span class="kt">English</span><span class="p">,</span> <span class="o">.</span><span class="kt">German</span><span class="p">])</span>
@@ -439,7 +445,7 @@ Below are shown examples of each of them, with corresponding generated strings t
 would be set on the <code>XCUIApplication</code> instance.</p>
 <h3 id='system-languages' class='heading'>System languages</h3>
 
-<p><code>SystemLanguages</code> allows to replace order of preferred languages which will be used
+<p><code><a href="Structs/SystemLanguages.html">SystemLanguages</a></code> allows to replace order of preferred languages which will be used
 by the application do display localized content.</p>
 
 <p><strong>Swift expression:</strong></p>
@@ -453,7 +459,7 @@ by the application do display localized content.</p>
 </code></pre>
 <h3 id='system-locale' class='heading'>System locale</h3>
 
-<p><code>SystemLocale</code> allows to replace users locale.</p>
+<p><code><a href="Structs/SystemLocale.html">SystemLocale</a></code> allows to replace users locale.</p>
 
 <p><strong>Swift expression:</strong></p>
 <pre class="highlight swift"><code><span class="kt">SystemLocale</span><span class="p">(</span><span class="nv">localeIdentifier</span><span class="p">:</span> <span class="s">"pl"</span><span class="p">)</span>
@@ -466,7 +472,7 @@ by the application do display localized content.</p>
 </code></pre>
 <h3 id='system-keyboards' class='heading'>System keyboards</h3>
 
-<p><code>SoftwareKeyboards</code> and <code>HardwareKeyboards</code> allows to set keyboards used in the application.
+<p><code><a href="Structs/SoftwareKeyboards.html">SoftwareKeyboards</a></code> and <code><a href="Structs/HardwareKeyboards.html">HardwareKeyboards</a></code> allows to set keyboards used in the application.
 It is possible to provide only software keyboards, or only hardware keyboards.</p>
 
 <p><strong>Swift expression:</strong></p>
@@ -479,7 +485,7 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
 <span class="o">-</span><span class="kt">AppleKeyboards</span> <span class="p">(</span><span class="s">"bn@hw=Bangla"</span><span class="p">)</span>
 </code></pre>
 
-<p>Keyboards can be also joined together by using <code>SystemKeyboards</code>:</p>
+<p>Keyboards can be also joined together by using <code><a href="Structs/SystemKeyboards.html">SystemKeyboards</a></code>:</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">softwareKeyboards</span><span class="p">:</span> <span class="kt">SoftwareKeyboards</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kt">Bengali</span><span class="p">]</span>
 <span class="k">var</span> <span class="nv">hardwareKeyboards</span><span class="p">:</span> <span class="kt">HardwareKeyboards</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kt">Bengali</span><span class="p">]</span>
 
@@ -491,7 +497,7 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
 </code></pre>
 <h3 id='core-data-options' class='heading'>Core Data options</h3>
 
-<p><code>CoreDataOption</code> allows to enable debug options for CoreData.</p>
+<p><code><a href="Enums/CoreDataOption.html">CoreDataOption</a></code> allows to enable debug options for CoreData.</p>
 <pre class="highlight swift"><code><span class="c1">// -com.apple.CoreData.SQLDebug "1"</span>
 <span class="kt">CoreDataOption</span><span class="o">.</span><span class="nf">sqlDebug</span><span class="p">(</span><span class="nv">verbosityLevel</span><span class="p">:</span> <span class="o">.</span><span class="n">low</span><span class="p">)</span>
 
@@ -522,7 +528,7 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
 </code></pre>
 <h3 id='localised-strings-options' class='heading'>Localised strings options</h3>
 
-<p><code>LocalizedStrings</code> allows to set options to debug localized strings.</p>
+<p><code><a href="Enums/LocalizedStrings.html">LocalizedStrings</a></code> allows to set options to debug localized strings.</p>
 <pre class="highlight swift"><code><span class="c1">// -NSShowNonLocalizedStrings "1"</span>
 <span class="kt">LocalizedStrings</span><span class="o">.</span><span class="n">showNonLocalizedStrings</span>
 
@@ -533,8 +539,8 @@ It is possible to provide only software keyboards, or only hardware keyboards.</
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
