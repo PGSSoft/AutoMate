@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.4](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.4)
+Released on 2018-01-01.
+
+#### Updated
+- Fixed building for Xcode 9.2.
+
 ## [1.4.3](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.3)
 Released on 2017-11-14.
 

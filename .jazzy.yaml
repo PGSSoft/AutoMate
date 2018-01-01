@@ -16,7 +16,6 @@ custom_categories:
       - XCUIElement
       - XCUIElementQuery
       - XCUIElementTypeQueryProvider
-      - SmartXCUICoordinate
   - name: Page objects
     children:
       - BaseAppPageProtocol
