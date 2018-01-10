@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E425D55C1CED928100A7CA03"
                BuildableName = "AutoMate.framework"
-               BlueprintName = "AutoMate iOS"
+               BlueprintName = "AutoMate"
                ReferencedContainer = "container:AutoMate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -91,7 +91,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E425D55C1CED928100A7CA03"
             BuildableName = "AutoMate.framework"
-            BlueprintName = "AutoMate iOS"
+            BlueprintName = "AutoMate"
             ReferencedContainer = "container:AutoMate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -114,7 +114,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E425D55C1CED928100A7CA03"
             BuildableName = "AutoMate.framework"
-            BlueprintName = "AutoMate iOS"
+            BlueprintName = "AutoMate"
             ReferencedContainer = "container:AutoMate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -132,7 +132,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E425D55C1CED928100A7CA03"
             BuildableName = "AutoMate.framework"
-            BlueprintName = "AutoMate iOS"
+            BlueprintName = "AutoMate"
             ReferencedContainer = "container:AutoMate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

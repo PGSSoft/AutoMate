@@ -126,28 +126,28 @@ def carthageLintBranch() {
 def branches(unlockDanger) {
   return [
     "iPhone SE, 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone SE", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone SE", "11.1")
     },
     "iPhone 8, 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 8", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone 8", "11.1")
     },
     "iPhone 8 Plus, 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone 8 Plus", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone 8 Plus", "11.1")
     },
     "iPhone X, 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPhone X", "11.1", unlockDanger)
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone X", "11.1", unlockDanger)
     },
     "iPad Air 2, 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Air 2", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Air 2", "11.1")
     },
     "iPad Pro (9.7-inch), 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (9.7-inch)", "11.1")
     },
     "iPad Pro (10.5-inch), 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (10.5-inch)", "11.1")
     },
     "iPad Pro (12.9-inch) (2nd generation), 11.1": {
-      uiTestBranch("AutoMate iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.1")
     },
     "CocoaPods lint": {
       podLintBranch()
