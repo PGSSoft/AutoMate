@@ -436,6 +436,8 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         // XCTest coordinate
         XCUIDevice.shared.orientation = .landscapeLeft
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(with: vector)
@@ -452,6 +454,8 @@ class XCUIElementExtensionTests: AppUITestCase {
 
         // XCTest coordinate
         XCUIDevice.shared.orientation = .landscapeRight
+        // "Wait" for rotation to complete
+        Thread.sleep(forTimeInterval: 1)
         rotatePage.tapButtonA(with: vector)
         XCTAssertEqual(rotatePage.centerLabel.label, "Button A")
         rotatePage.tapButtonB(with: vector)
