@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.5.0)
+Released on 2018-01-11.
+
+#### Updated
+- iOS deployment target is now 9.3
+
 ## [1.4.4](https://github.com/PGSSoft/AutoMate/releases/tag/1.4.4)
 Released on 2018-01-01.
 

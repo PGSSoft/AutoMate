@@ -416,7 +416,7 @@
             <h1>XCUIElement</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">XCUIElement</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">XCUIElementAttributes</span><span class="p">,</span> <span class="kt">XCUIElementTypeQueryProvider</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">XCUIElement</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">XCUIElementAttributes</span><span class="p">,</span> <span class="kt">XCUIElementTypeQueryProvider</span></code></pre>
 
                 </div>
               </div>
@@ -501,7 +501,7 @@ This method and <code>SmartXCUICoordinate</code> was implemented as a workaround
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">defaultSwipesCount</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">defaultSwipesCount</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -522,9 +522,9 @@ This method and <code>SmartXCUICoordinate</code> was implemented as a workaround
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE5swipeySC8CGVectorV4from_AF2totF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/swipe(from:to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE5swipeySC8CGVectorV4from_AF2totF">swipe(from:to:)</a>
+                    <a class="token" href="#/">swipe(from:to:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -543,54 +543,15 @@ It lets you specify coordinates on the screen (relative to the view on which the
 </code></pre>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">from</span> <span class="nv">startVector</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">,</span> <span class="n">to</span> <span class="nv">stopVector</span><span class="p">:</span> <span class="kt">CGVector</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>startVector</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Relative point from which to start swipe.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>stopVector</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Relative point to end swipe.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE5swipeyAB2to_SayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromSC19UIDeviceOrientationO11orientationtF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/swipe(to:avoid:from:orientation:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE5swipeyAB2to_SayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromSC19UIDeviceOrientationO11orientationtF">swipe(to:avoid:from:orientation:)</a>
+                    <a class="token" href="#/">swipe(to:avoid:from:orientation:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -617,78 +578,15 @@ It lets you specify coordinates on the screen (relative to the view on which the
 </div>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>element</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Element to scroll to.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>avoid</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Table of <code><a href="../Enums/AvoidableElement.html">AvoidableElement</a></code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>app</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Application instance to use when searching for keyboard to avoid.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>orientation</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Device orientation.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE5swipeyAC14SwipeDirectionO2to_Si5timesSayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromSC19UIDeviceOrientationO11orientationSbyXK5untiltF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/swipe(to:times:avoid:from:orientation:until:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE5swipeyAC14SwipeDirectionO2to_Si5timesSayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromSC19UIDeviceOrientationO11orientationSbyXK5untiltF">swipe(to:times:avoid:from:orientation:until:)</a>
+                    <a class="token" href="#/">swipe(to:times:avoid:from:orientation:until:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -711,107 +609,15 @@ The method will stop when the maximum number of swipes is reached or when the co
 </code></pre>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span>
-                  <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n"><a href="../Extensions/XCUIElement.html#/s:So11XCUIElementC8AutoMateE18defaultSwipesCountSivZ">defaultSwipesCount</a></span><span class="p">,</span>
-                  <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span>
-                  <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">(),</span>
-                  <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span> <span class="o">=</span> <span class="kt">XCUIDevice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">orientation</span><span class="p">,</span>
-                  <span class="n">until</span> <span class="nv">condition</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>direction</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Swipe direction.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>times</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Maximum number of swipes (by default 10).</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>viewsToAvoid</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Table of <code><a href="../Enums/AvoidableElement.html">AvoidableElement</a></code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>app</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Application instance to use when searching for keyboard to avoid.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>orientation</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Device orientation.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>condition</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The condition to satisfy.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE5swipeyAC14SwipeDirectionO2to_AB10untilExistSi5timesSayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromtF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/swipe(to:untilExist:times:avoid:from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE5swipeyAC14SwipeDirectionO2to_AB10untilExistSi5timesSayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromtF">swipe(to:untilExist:times:avoid:from:)</a>
+                    <a class="token" href="#/">swipe(to:untilExist:times:avoid:from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -839,90 +645,15 @@ The method will stop when the maximum number of swipes is reached or when the gi
 </div>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span> <span class="n">untilExist</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n"><a href="../Extensions/XCUIElement.html#/s:So11XCUIElementC8AutoMateE18defaultSwipesCountSivZ">defaultSwipesCount</a></span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>direction</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Swipe direction.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>element</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Element to swipe to.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>times</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Maximum number of swipes (by default 10).</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>viewsToAvoid</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Table of <code><a href="../Enums/AvoidableElement.html">AvoidableElement</a></code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>app</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Application instance to use when searching for keyboard to avoid.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE5swipeyAC14SwipeDirectionO2to_AB12untilVisibleSi5timesSayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromtF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/swipe(to:untilVisible:times:avoid:from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE5swipeyAC14SwipeDirectionO2to_AB12untilVisibleSi5timesSayAC16AvoidableElementOG5avoidSo15XCUIApplicationC4fromtF">swipe(to:untilVisible:times:avoid:from:)</a>
+                    <a class="token" href="#/">swipe(to:untilVisible:times:avoid:from:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -949,81 +680,6 @@ The method will stop when the maximum number of swipes is reached or when the gi
 
 </div>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">to</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/SwipeDirection.html">SwipeDirection</a></span><span class="p">,</span> <span class="n">untilVisible</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">XCUIElement</span><span class="o">.</span><span class="n"><a href="../Extensions/XCUIElement.html#/s:So11XCUIElementC8AutoMateE18defaultSwipesCountSivZ">defaultSwipesCount</a></span><span class="p">,</span> <span class="n">avoid</span> <span class="nv">viewsToAvoid</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AvoidableElement.html">AvoidableElement</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">keyboard</span><span class="p">,</span> <span class="o">.</span><span class="n">navigationBar</span><span class="p">],</span> <span class="n">from</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">XCUIApplication</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">())</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>direction</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Swipe direction.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>element</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Element to swipe to.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>times</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Maximum number of swipes (by default 10).</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>viewsToAvoid</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Table of <code><a href="../Enums/AvoidableElement.html">AvoidableElement</a></code> that should be avoid while swiping, by default keyboard and navigation bar are passed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>app</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Application instance to use when searching for keyboard to avoid.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -1065,7 +721,7 @@ The method will stop when the maximum number of swipes is reached or when the gi
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isVisible</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isVisible</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -1102,7 +758,7 @@ The method will stop when the maximum number of swipes is reached or when the gi
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -1123,9 +779,9 @@ The method will stop when the maximum number of swipes is reached or when the gi
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE14clearTextFieldyyF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/clearTextField()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE14clearTextFieldyyF">clearTextField()</a>
+                    <a class="token" href="#/">clearTextField()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1141,23 +797,15 @@ The method will stop when the maximum number of swipes is reached or when the gi
 </code></pre>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearTextField</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11XCUIElementC8AutoMateE5clearySS7andType_tF"></a>
+                    <a name="/"></a>
                     <a name="//apple_ref/swift/Method/clear(andType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11XCUIElementC8AutoMateE5clearySS7andType_tF">clear(andType:)</a>
+                    <a class="token" href="#/">clear(andType:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1176,33 +824,6 @@ This helper method will execute <code>clearTextField</code> and then type the pr
 </code></pre>
 
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="n">andType</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>text</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Text to type after clearing old value.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
@@ -1211,8 +832,8 @@ This helper method will execute <code>clearTextField</code> and then type the pr
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-01-01)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-01-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
