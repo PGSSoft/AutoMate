@@ -31,7 +31,7 @@ class ContactsDataStore: DataStore {
                                          CNContactSocialProfilesKey,
                                          CNContactThumbnailImageDataKey,
                                          CNContactNicknameKey
-                                     ].flatMap { $0 as? CNKeyDescriptor })
+                                     ].compactMap { $0 as? CNKeyDescriptor })
     }()
 
     // MARK: DataStore - Methods

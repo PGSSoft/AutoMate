@@ -116,7 +116,7 @@ public extension XCUIElementQuery {
     /// - Returns: Array of `XCUIElement` elements.
     public func elements(withLabelsMatching texts: [String], comparisonOperator: StringComparisonOperator = .equals) -> [XCUIElement] {
         return texts
-            .flatMap({ element(withLabelMatching: $0, comparisonOperator: comparisonOperator) })
+            .compactMap({ element(withLabelMatching: $0, comparisonOperator: comparisonOperator) })
             .filter { $0.exists }
     }
 
