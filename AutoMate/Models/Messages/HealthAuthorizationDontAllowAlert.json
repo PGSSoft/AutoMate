@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "Acces Sănătate",
     "Acceso a Salud",
     "Accesso dati Salute",
@@ -37,7 +37,7 @@
     "健康資料取用",
     "访问健康数据"
   ],
-  "10.2" : [
+  "10.3" : [
     "Acces Sănătate",
     "Acceso a Salud",
     "Accesso dati Salute",
@@ -79,8 +79,8 @@
     "Acces Sănătate",
     "Acceso a Salud",
     "Accesso dati Salute",
-    "Accès à Santé",
     "Accès médical",
+    "Accès à Santé",
     "Accés a Salut",
     "Acesso a Saúde",
     "Acesso de Saúde",
@@ -90,9 +90,9 @@
     "Datenzugriff",
     "Dostęp do danych Zdrowia",
     "Egészségügyi hozzáférés",
-    "Hälsoåtkomst",
     "Health Access",
     "Helsetilgang",
+    "Hälsoåtkomst",
     "Pristup Zdravlju",
     "Prístup ku zdravotným dátam",
     "Přístup ke Zdraví",
@@ -105,12 +105,12 @@
     "Доступ до «Здоровʼя»",
     "גישה רפואית",
     "الوصول لصحتي",
-    "स्वास्थ्य पहुँच",
+    "सेहत ऐक्सेस",
     "การเข้าถึงสุขภาพ",
-    "건강 접근",
     "「健康」存取",
     "ヘルスケアデータのアクセス",
     "健康資料取用",
-    "访问健康数据"
+    "访问健康数据",
+    "건강 접근"
   ]
 }

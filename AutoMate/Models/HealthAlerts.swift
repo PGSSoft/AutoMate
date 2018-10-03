@@ -77,6 +77,9 @@ extension HealthPermissionPage {
 ///
 /// - note:
 /// Handlers should return `true` if they handled the UI, `false` if they did not.
+/// - warning:
+/// The alert seems to be visible in view hierarchy and work without an "interruption monitor dance".
+/// Check working example here: [AutoMateExample `PermissionsTests -testHealthKitAlert`](https://github.com/PGSSoft/AutoMate/blob/master/AutoMateExample/AutoMateExampleUITests/PermissionsTests.swift)
 public struct HealthAuthorizationDontAllowAlert: SystemAlert, HealthAlertOk {
 
     /// Represents all possible messages in `HealthAuthorizationDontAllowAlert` service alert.

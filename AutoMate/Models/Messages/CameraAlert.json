@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "* haluaa käyttää kameraa",
     "* wil toegang tot de camera",
     "A(z) „*” hozzá szeretne férni az Ön kamerájához.",
@@ -36,7 +36,7 @@
     "「*」想要取用您的相機",
     "「*」要取用相機"
   ],
-  "10.2" : [
+  "10.3" : [
     "* haluaa käyttää kameraa",
     "* wil toegang tot de camera",
     "A(z) „*” hozzá szeretne férni az Ön kamerájához.",
@@ -100,7 +100,7 @@
     "“*” vol accedir a la càmera",
     "“*” vorrebbe accedere alla fotocamera",
     "“*” želi pristupiti kameri",
-    "“*” कैमरा तक पहुँचना चाहता है",
+    "“*” कैमरा का ऐक्सेस चाहता है",
     "“*” ต้องการที่จะเข้าถึงกล้อง",
     "“*”がカメラへのアクセスを求めています",
     "“*”想访问您的相机",

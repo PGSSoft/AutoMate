@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "Alle Kategorien deaktivieren",
     "Desactivar todas las categorías",
     "Desactivar totes les categories",
@@ -35,7 +35,7 @@
     "关闭所有类别",
     "關閉所有類別"
   ],
-  "10.2" : [
+  "10.3" : [
     "Alle Kategorien deaktivieren",
     "Desactivar todas las categorías",
     "Desactivar totes les categories",
@@ -79,8 +79,8 @@
     "Desativar Todas as Categorias",
     "Desativar todas as categorias",
     "Dezactivați toate categoriile",
-    "Désactiver toutes les catégories",
     "Disattiva tutte le categorie",
+    "Désactiver toutes les catégories",
     "Isključi sve kategorije",
     "Laita kaikki kategoriat pois",
     "Matikan Semua Kategori",
@@ -90,9 +90,9 @@
     "Slå alle kategorier fra",
     "Slå av alle kategorier",
     "Stäng av alla kategorier",
-    "Tắt Tất cả Danh mục",
     "Turn All Categories Off",
     "Tüm Kategorileri Kapat",
+    "Tắt Tất cả Danh mục",
     "Vypnout všechny kategorie",
     "Vypnúť všetky kategórie",
     "Wyłącz wszystkie kategorie",
@@ -103,9 +103,9 @@
     "إيقاف كل الفئات",
     "सभी श्रेणियाँ बंद करें",
     "ปิดหมวดหมู่ทั้งหมด",
-    "모든 카테고리 끄기",
     "すべてのカテゴリをオフ",
     "关闭所有类别",
-    "關閉所有類別"
+    "關閉所有類別",
+    "모든 카테고리 끄기"
   ]
 }

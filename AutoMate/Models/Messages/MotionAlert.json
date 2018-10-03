@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "* haluaa käyttää liikunta- ja kuntoilutietojasi",
     "* wil toegang tot je bewegings- en fitnessactiviteit",
     "A(z) „*” hozzá szeretne férni az Ön mozgási és fitnesztevékenységéhez",
@@ -37,7 +37,7 @@
     "「*」想要取用您的運動與健身記錄",
     "「*」要取用你的「運動與健身」的「健身記錄」"
   ],
-  "10.2" : [
+  "10.3" : [
     "* haluaa käyttää liikunta- ja kuntoilutietojasi",
     "* wil toegang tot je bewegings- en fitnessactiviteit",
     "A(z) „*” hozzá szeretne férni az Ön mozgási és fitnesztevékenységéhez",
@@ -83,8 +83,8 @@
     "Aplikace „*“ žádá o přístup k vaší pohybové a kondiční aktivitě",
     "Aplikácia „*“ žiada o prístup k pohybovej a fitnes aktivite",
     "«*» хоче отримати доступ до вашої активності Руху і фітнесу",
-    "« * » souhaite accéder à vos mouvements et à votre activité physique.",
     "« * » souhaite accéder à vos mouvements et vos activités physiques.",
+    "« * » souhaite accéder à vos mouvements et à votre activité physique.",
     "Αίτημα από «*» για πρόσβαση στη Δραστηριότητα κίνησης και άσκησής σας",
     "Программа «*» запрашивает доступ к Вашим данным движения и фитнеса",
     "״*״ מעוניין לגשת אל פעילות התנועה והכושר שלך",
@@ -104,7 +104,7 @@
     "“*” vil bruge din fysiske aktivitet og din træningsaktivitet",
     "“*” vol accedir a la teva activitat física",
     "“*” želi pristupiti vašim aktivnostima kretanja i kondicije",
-    "“*” आपकी चाल और तंदुरुस्ती गतिविधि तक पहुँचना चाहता है",
+    "“*” आपकी चाल और तंदुरुस्ती ऐक्टिविटी का ऐक्सेस चाहता है",
     "“*” ต้องการที่จะเข้าถึงกิจกรรมการเคลื่อนไหวและฟิตเนสของคุณ",
     "“*”がモーションとフィットネスのアクティビティへのアクセスを求めています",
     "“*”想访问您的活动与体能训练记录",

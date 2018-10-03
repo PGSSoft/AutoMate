@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "Allow “*” to access your location even when you are not using the app?",
     "Autoriser « * » à accéder à vos données de localisation même lorsque vous n’utilisez pas l’app ?",
     "Autoriser « * » à accéder à vos données de localisation même si vous n’utilisez pas l’app?",
@@ -37,7 +37,7 @@
     "要允許「*」在你並非使用 App 時也能取用你的位置嗎？",
     "要允許「*」在您未使用 App 時也可取用您的位置嗎？"
   ],
-  "10.2" : [
+  "10.3" : [
     "Allow “*” to access your location even when you are not using the app?",
     "Autoriser « * » à accéder à vos données de localisation même lorsque vous n’utilisez pas l’app ?",
     "Autoriser « * » à accéder à vos données de localisation même si vous n’utilisez pas l’app?",
@@ -81,7 +81,7 @@
     "Autoriser « * » à accéder à vos données de localisation même si vous n’utilisez pas l’app?",
     "Benarkan “*” mengakses lokasi anda walaupun anda tidak menggunakan app?",
     "Chcete aplikaci * povolit přístup k polohovým údajům i v čase, kdy ji nepoužíváte?",
-    "Chcete povoliť aplikácii „*“ pristupovať k vašej polohe v čase, keď ju nepoužívate?",
+    "Chcete povoliť apke „*“ pristupovať k vašej polohe v čase, keď ju nepoužívate?",
     "Cho phép “*” truy cập vị trí của bạn ngay cả khi bạn không dùng ứng dụng?",
     "Consenti a “*” di accedere ai dati relativi alla tua posizione anche quando non stai usando l'app?",
     "Darf „*“ auf deinen Standort zugreifen, selbst wenn du die App nicht benutzt?",

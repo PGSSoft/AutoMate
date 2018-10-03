@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "Activar todas las categorías",
     "Activar totes les categories",
     "Activați toate categoriile",
@@ -35,7 +35,7 @@
     "打开所有类别",
     "開啟所有類別"
   ],
-  "10.2" : [
+  "10.3" : [
     "Activar todas las categorías",
     "Activar totes les categories",
     "Activați toate categoriile",
@@ -103,9 +103,9 @@
     "تشغيل كل الفئات",
     "सभी श्रेणियाँ चालू करें",
     "เปิดหมวดหมู่ทั้งหมด",
-    "모든 카테고리 켜기",
     "すべてのカテゴリをオン",
     "打开所有类别",
-    "開啟所有類別"
+    "開啟所有類別",
+    "모든 카테고리 켜기"
   ]
 }

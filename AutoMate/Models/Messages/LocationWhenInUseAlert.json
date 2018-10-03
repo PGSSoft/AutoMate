@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "A(z) „*” hozzáférhet a helyzetéhez az alkalmazás használatakor?",
     "Allow “*” to access your location while you use the app?",
     "Autoriser « * » à accéder à vos données de localisation lorsque vous utilisez cette app?",
@@ -37,7 +37,7 @@
     "要允許「*」在你正在使用 App 時取用你的位置嗎？",
     "要允許「*」在您使用 App 時取用您的位置嗎？"
   ],
-  "10.2" : [
+  "10.3" : [
     "A(z) „*” hozzáférhet a helyzetéhez az alkalmazás használatakor?",
     "Allow “*” to access your location while you use the app?",
     "Autoriser « * » à accéder à vos données de localisation lorsque vous utilisez cette app?",
@@ -81,7 +81,7 @@
     "Autoriser « * » à accéder à vos données de localisation lorsque vous utilisez l’app ?",
     "Benarkan “*” mengakses lokasi anda semasa anda menggunakan app?",
     "Chcete aplikaci * povolit přístup k polohovým údajům v čase, kdy ji používáte?",
-    "Chcete povoliť aplikácii „*“ pristupovať k vašej polohe v čase, keď ju používate?",
+    "Chcete povoliť apke „*“ pristupovať k vašej polohe v čase, keď ju používate?",
     "Cho phép “*” truy cập vị trí của bạn khi bạn đang dùng ứng dụng?",
     "Darf „*“ auf deinen Standort zugreifen, wenn du die App verwendest?",
     "Dozvoliti aplikaciji “*” pristup vašoj lokaciji dok koristite aplikaciju?",

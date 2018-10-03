@@ -205,7 +205,7 @@ public enum HardwareKeyboard: String, LaunchArgumentValue {
     case Odia = "or@hw=Oriya"
 
     /// Automatically generated value for hardware keyboard Persian.
-    case Persian = "fa@hw=Persian"
+    case Persian = "fa@hw=Persian-ISIRI 2901"
 
     /// Automatically generated value for hardware keyboard PolishPoland.
     case PolishPoland = "pl_PL@hw=Polish Pro"

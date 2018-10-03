@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "* haluaa käyttää kalenteriasi",
     "* wil toegang tot je agenda",
     "A(z) „*” hozzá szeretne férni az Ön naptárjához.",
@@ -36,7 +36,7 @@
     "「*」想要取用您的行事曆",
     "「*」要取用你的日曆"
   ],
-  "10.2" : [
+  "10.3" : [
     "* haluaa käyttää kalenteriasi",
     "* wil toegang tot je agenda",
     "A(z) „*” hozzá szeretne férni az Ön naptárjához.",
@@ -100,7 +100,7 @@
     "“*” vol accedir al teu calendari",
     "“*” vorrebbe accedere al tuo calendario",
     "“*” želi pristupiti vašem kalendaru",
-    "“*” आपके कैलेंडर तक पहुँचना चाहता है",
+    "“*” आपके कैलेंडर का ऐक्सेस चाहता है",
     "“*” ต้องการที่จะเข้าถึงปฏิทินของคุณ",
     "“*”がカレンダーへのアクセスを求めています",
     "“*”想访问您的日历",

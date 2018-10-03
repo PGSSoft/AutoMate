@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "'*' wil toegang tot je gegevens en toestemming om deze te bewerken voor de onderstaande categorieën.",
     "* haluaa käyttää ja päivittää terveystietojasi alla olevissa kategorioissa.",
     "* quiere acceder a tus datos de salud y actualizarlos en las siguientes categorías.",
@@ -37,7 +37,7 @@
     "「*」想要取用並更新您在下列類別中的「健康資料」。",
     "「*」要存取及更新你下列類別的「健康」資料。"
   ],
-  "10.2" : [
+  "10.3" : [
     "'*' wil toegang tot je gegevens en toestemming om deze te bewerken voor de onderstaande categorieën.",
     "* haluaa käyttää ja päivittää terveystietojasi alla olevissa kategorioissa.",
     "* quiere acceder a tus datos de salud y actualizarlos en las siguientes categorías.",
@@ -103,7 +103,7 @@
     "“*” vol accedir a les teves dades de salut de les categories de sota i actualitzar-les.",
     "“*” would like to access and update your Health data in the categories below.",
     "“*” želi pristupiti i ažurirati vaše zdravstvene podatke u niže navedenim kategorijama.",
-    "“*” आपका स्वास्थ्य डेटा नीचे दी गई श्रेणियों में उपयोग और अपडेट करना चाहता है।",
+    "“*” आपका सेहत डेटा नीचे दी गई श्रेणियों को ऐक्सेस और अपडेट करना चाहता है।",
     "“*” ต้องการที่จะเข้าถึงและอัพเดทข้อมูลสุขภาพของคุณในหมวดหมู่ทางด้านล่าง",
     "“*”, aşağıdaki kategorilerde bulunan Sağlık verilerinize erişmek ve bunları güncellemek istiyor.",
     "“*”が以下のカテゴリのヘルスケアデータのアクセスとアップデートを求めています。",

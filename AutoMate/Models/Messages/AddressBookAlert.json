@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "* haluaa käyttää yhteystietojasi",
     "* wil toegang tot je contacten",
     "A(z) „*” hozzá szeretne férni az Ön kontaktjaihoz.",
@@ -36,7 +36,7 @@
     "「*」想要取用聯絡資訊",
     "「*」要取用通訊錄"
   ],
-  "10.2" : [
+  "10.3" : [
     "* haluaa käyttää yhteystietojasi",
     "* wil toegang tot je contacten",
     "A(z) „*” hozzá szeretne férni az Ön kontaktjaihoz.",
@@ -100,7 +100,7 @@
     "“*” vol accedir als teus contactes",
     "“*” vorrebbe accedere ai tuoi contatti",
     "“*” želi pristupiti vašim kontaktima",
-    "“*” आपके संपर्कों तक पहुँचना चाहता है",
+    "“*” आपके संपर्कों का ऐक्सेस चाहता है",
     "“*” ต้องการที่จะเข้าถึงรายชื่อของคุณ",
     "“*”が連絡先へのアクセスを求めています",
     "“*”想访问您的通讯录",

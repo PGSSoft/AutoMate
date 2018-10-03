@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "* haluaa käyttää mikrofonia",
     "* wil toegang tot de microfoon",
     "A(z) „*” hozzá szeretne férni az Ön mikrofonjához.",
@@ -36,7 +36,7 @@
     "「*」想要取用您的麥克風",
     "「*」要取用咪高風"
   ],
-  "10.2" : [
+  "10.3" : [
     "* haluaa käyttää mikrofonia",
     "* wil toegang tot de microfoon",
     "A(z) „*” hozzá szeretne férni az Ön mikrofonjához.",
@@ -100,7 +100,7 @@
     "“*” vol accedir al micròfon",
     "“*” vorrebbe accedere al microfono",
     "“*” želi pristupiti mikrofonu",
-    "“*” माइक्रोफ़ोन तक पहुँचना चाहता है",
+    "“*” माइक्रोफ़ोन का ऐक्सेस चाहता है",
     "“*” ต้องการที่จะเข้าถึงไมโครโฟน",
     "“*”がマイクへのアクセスを求めています",
     "“*”想访问您的麦克风",
