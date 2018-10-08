@@ -31,6 +31,38 @@
     "キャンセル",
     "取消"
   ],
+  "12.0" : [
+    "Abbrechen",
+    "Annuleer",
+    "Annuler",
+    "Annulla",
+    "Annuller",
+    "Anulați",
+    "Anuluj",
+    "Avbryt",
+    "Batal",
+    "Batalkan",
+    "Cancel",
+    "Cancelar",
+    "Cancel·lar",
+    "Hủy",
+    "Kumoa",
+    "Mégsem",
+    "Poništi",
+    "Vazgeç",
+    "Zrušit",
+    "Zrušiť",
+    "Ακύρωση",
+    "Отменить",
+    "Скасувати",
+    "ביטול",
+    "إلغاء",
+    "रद्द करें",
+    "ยกเลิก",
+    "キャンセル",
+    "取消",
+    "취소"
+  ],
   "10.3" : [
     "Abbrechen",
     "Annuleer",
@@ -91,8 +123,8 @@
     "إلغاء",
     "रद्द करें",
     "ยกเลิก",
+    "취소",
     "キャンセル",
-    "取消",
-    "취소"
+    "取消"
   ]
 }
