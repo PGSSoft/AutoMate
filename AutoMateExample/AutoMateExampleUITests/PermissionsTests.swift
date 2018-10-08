@@ -97,7 +97,10 @@ class PermissionsTests: AppUITestCase {
 
     func testLocationSystemAlert() {
         locationWhenInUse()
-        locationUpgradeToAlways()
+
+        if #available(iOS 11, *) {
+            locationUpgradeToAlways()
+        }
     }
 
     func testContactsSystemAlert() {
