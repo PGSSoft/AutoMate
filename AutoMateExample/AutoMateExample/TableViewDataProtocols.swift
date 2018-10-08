@@ -71,7 +71,7 @@ protocol LaunchEnvironmentTableDataSourceProtocol {
 
     // MARK: Properties
     var dataStore: Store { get }
-    weak var delegate: LaunchEnvironmentTableDataSourceDelegate? { get }
+    var delegate: LaunchEnvironmentTableDataSourceDelegate? { get }
 }
 
 // MARK: - LaunchEnvironmentTableDataSourceDelegate protocol

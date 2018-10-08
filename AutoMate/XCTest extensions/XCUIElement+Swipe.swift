@@ -35,9 +35,9 @@ extension XCUIElement {
     ///   - startVector: Relative point from which to start swipe.
     ///   - stopVector: Relative point to end swipe.
     public func swipe(from startVector: CGVector, to stopVector: CGVector) {
-        let p1 = coordinate(withNormalizedOffset: startVector)
-        let p2 = coordinate(withNormalizedOffset: stopVector)
-        p1.press(forDuration: 0.05, thenDragTo: p2)
+        let pt1 = coordinate(withNormalizedOffset: startVector)
+        let pt2 = coordinate(withNormalizedOffset: stopVector)
+        pt1.press(forDuration: 0.05, thenDragTo: pt2)
     }
     #endif
 
