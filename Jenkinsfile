@@ -1,4 +1,4 @@
-ios.prepareEnv(xcode: "/Applications/Xcode_9.2.app")
+ios.prepareEnv(xcode: "/Applications/Xcode_10.0.app")
 
 // Unlock Bitbucket Server credentials for Danger
 def unlockBitbucketDangerCredentials(block) {
@@ -29,7 +29,7 @@ def prepareStage() {
   stage("Prepare") {
     sh '''
       # Reset simulators
-      bundle exec fastlane snapshot reset_simulators --force --ios 11.1
+      bundle exec fastlane snapshot reset_simulators --force --ios 12.0
 
       # Install dependnecies
       bundle exec fastlane prepare
@@ -126,28 +126,28 @@ def carthageLintBranch() {
 def branches(unlockDanger) {
   return [
     "iPhone SE, 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPhone SE", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone SE", "12.0")
     },
     "iPhone 8, 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPhone 8", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone 8", "12.0")
     },
     "iPhone 8 Plus, 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPhone 8 Plus", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone 8 Plus", "12.0")
     },
     "iPhone X, 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPhone X", "11.1", unlockDanger)
+      uiTestBranch("AutoMate", "iOS Simulator", "iPhone X", "12.0", unlockDanger)
     },
     "iPad Air 2, 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPad Air 2", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Air 2", "12.0")
     },
     "iPad Pro (9.7-inch), 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (9.7-inch)", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (9.7-inch)", "12.0")
     },
     "iPad Pro (10.5-inch), 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (10.5-inch)", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (10.5-inch)", "12.0")
     },
     "iPad Pro (12.9-inch) (2nd generation), 11.1": {
-      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.1")
+      uiTestBranch("AutoMate", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "12.0")
     },
     "CocoaPods lint": {
       podLintBranch()

@@ -1,5 +1,5 @@
 {
-  "10.3" : [
+  "10.2" : [
     "Älä salli",
     "Don’t Allow",
     "Ikke tillat",
@@ -35,7 +35,43 @@
     "不允许",
     "許可しない"
   ],
-  "10.2" : [
+  "12.0" : [
+    "Don’t Allow",
+    "Ikke tillat",
+    "Jangan Benarkan",
+    "Nemoj dozvoliti",
+    "Nepovoliť",
+    "Nicht erlauben",
+    "Nie pozwalaj",
+    "No permetre",
+    "No permitir",
+    "Non consentire",
+    "Nu permiteți",
+    "Não Permitir",
+    "Não permitir",
+    "Refuser",
+    "Sta niet toe",
+    "Tidak Boleh",
+    "Tillad ikke",
+    "Tillåt inte",
+    "Tiltás",
+    "Từ chối",
+    "Zakázat",
+    "Älä salli",
+    "İzin Verme",
+    "Άρνηση",
+    "Заборонити",
+    "Запретить",
+    "אל תאפשר",
+    "عدم السماح",
+    "अनुमति न दें",
+    "ไม่อนุญาต",
+    "不允許",
+    "不允许",
+    "許可しない",
+    "허용 안 함"
+  ],
+  "10.3" : [
     "Älä salli",
     "Don’t Allow",
     "Ikke tillat",

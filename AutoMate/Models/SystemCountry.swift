@@ -48,9 +48,6 @@ public enum SystemCountry: String {
     /// Automatically generated value for country Azerbaijan.
     case Azerbaijan = "AZ"
 
-    /// Automatically generated value for country ÅlandIslands.
-    case ÅlandIslands = "AX"
-
     /// Automatically generated value for country Bahamas.
     case Bahamas = "BS"
 
@@ -579,9 +576,6 @@ public enum SystemCountry: String {
     /// Automatically generated value for country SaudiArabia.
     case SaudiArabia = "SA"
 
-    /// Automatically generated value for country SãoToméandPríncipe.
-    case SãoToméandPríncipe = "ST"
-
     /// Automatically generated value for country Senegal.
     case Senegal = "SN"
 
@@ -647,6 +641,9 @@ public enum SystemCountry: String {
 
     /// Automatically generated value for country Syria.
     case Syria = "SY"
+
+    /// Automatically generated value for country SãoToméandPríncipe.
+    case SãoToméandPríncipe = "ST"
 
     /// Automatically generated value for country Taiwan.
     case Taiwan = "TW"
@@ -728,4 +725,7 @@ public enum SystemCountry: String {
 
     /// Automatically generated value for country Zimbabwe.
     case Zimbabwe = "ZW"
+
+    /// Automatically generated value for country ÅlandIslands.
+    case ÅlandIslands = "AX"
 }

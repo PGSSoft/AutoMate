@@ -14,35 +14,6 @@
 		1FF03B5E1D50C62A00DA65C4 /* XCUIElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */; };
 		9602D0921E54F53B001EC313 /* HealthPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */; };
 		96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */; };
-		96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDC1E8A791400273BF6 /* AddressBookAlert.json */; };
-		96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */; };
-		96336FFB1E8A791400273BF6 /* CalendarAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDE1E8A791400273BF6 /* CalendarAlert.json */; };
-		96336FFC1E8A791400273BF6 /* CallsAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FDF1E8A791400273BF6 /* CallsAlert.json */; };
-		96336FFD1E8A791400273BF6 /* CameraAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE01E8A791400273BF6 /* CameraAlert.json */; };
-		96336FFE1E8A791400273BF6 /* HealthAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE11E8A791400273BF6 /* HealthAlertAllow.json */; };
-		96336FFF1E8A791400273BF6 /* HealthAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE21E8A791400273BF6 /* HealthAlertDeny.json */; };
-		963370001E8A791400273BF6 /* HealthAlertOk.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE31E8A791400273BF6 /* HealthAlertOk.json */; };
-		963370011E8A791400273BF6 /* HealthAlertTurnOffAll.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE41E8A791400273BF6 /* HealthAlertTurnOffAll.json */; };
-		963370021E8A791400273BF6 /* HealthAlertTurnOnAll.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE51E8A791400273BF6 /* HealthAlertTurnOnAll.json */; };
-		963370031E8A791400273BF6 /* HealthAuthorizationDontAllowAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE61E8A791400273BF6 /* HealthAuthorizationDontAllowAlert.json */; };
-		963370041E8A791400273BF6 /* HealthPermissionPage.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE71E8A791400273BF6 /* HealthPermissionPage.json */; };
-		963370051E8A791400273BF6 /* LocationAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE81E8A791400273BF6 /* LocationAlertAllow.json */; };
-		963370061E8A791400273BF6 /* LocationAlertCancel.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FE91E8A791400273BF6 /* LocationAlertCancel.json */; };
-		963370071E8A791400273BF6 /* LocationAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FEA1E8A791400273BF6 /* LocationAlertDeny.json */; };
-		963370081E8A791400273BF6 /* LocationAlertOk.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FEB1E8A791400273BF6 /* LocationAlertOk.json */; };
-		963370091E8A791400273BF6 /* LocationAlwaysAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FEC1E8A791400273BF6 /* LocationAlwaysAlert.json */; };
-		9633700A1E8A791400273BF6 /* LocationUpgradeWhenInUseAlwaysAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FED1E8A791400273BF6 /* LocationUpgradeWhenInUseAlwaysAlert.json */; };
-		9633700B1E8A791400273BF6 /* LocationWhenInUseAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FEE1E8A791400273BF6 /* LocationWhenInUseAlert.json */; };
-		9633700C1E8A791400273BF6 /* MediaLibraryAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FEF1E8A791400273BF6 /* MediaLibraryAlert.json */; };
-		9633700D1E8A791400273BF6 /* MicrophoneAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF01E8A791400273BF6 /* MicrophoneAlert.json */; };
-		9633700E1E8A791400273BF6 /* MotionAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF11E8A791400273BF6 /* MotionAlert.json */; };
-		9633700F1E8A791400273BF6 /* PhotosAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF21E8A791400273BF6 /* PhotosAlert.json */; };
-		963370101E8A791400273BF6 /* RemindersAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF31E8A791400273BF6 /* RemindersAlert.json */; };
-		963370111E8A791400273BF6 /* SiriAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF41E8A791400273BF6 /* SiriAlert.json */; };
-		963370121E8A791400273BF6 /* SpeechRecognitionAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF51E8A791400273BF6 /* SpeechRecognitionAlert.json */; };
-		963370131E8A791400273BF6 /* SystemAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF61E8A791400273BF6 /* SystemAlertAllow.json */; };
-		963370141E8A791400273BF6 /* SystemAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF71E8A791400273BF6 /* SystemAlertDeny.json */; };
-		963370151E8A791400273BF6 /* WillowAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = 96336FF81E8A791400273BF6 /* WillowAlert.json */; };
 		9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */; };
 		96412D521E8B887300508909 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96412D511E8B887300508909 /* Sequence.swift */; };
 		9666D6E41E8A7E5C00511000 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666D6E31E8A7E5C00511000 /* Bundle.swift */; };
@@ -54,18 +25,53 @@
 		966B923A1E40D9D4006E6A18 /* ModalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B92391E40D9D4006E6A18 /* ModalPage.swift */; };
 		966B923E1E40DA24006E6A18 /* PushedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B923D1E40DA24006E6A18 /* PushedPage.swift */; };
 		96911E271E94C55700D4045F /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96911E261E94C55700D4045F /* CoreGraphics.swift */; };
-		96B131D61E54BDD8007E3A04 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */; };
-		96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */; };
 		96EB345C1E927773000C0B2B /* XCUIElementQuery+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */; };
 		96EF94EC1E96388300F1391C /* XCUIElement+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */; };
+		C83D1551216B12FA007B0A26 /* SoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D1529216B12F9007B0A26 /* SoftwareKeyboard.swift */; };
+		C83D1552216B12FA007B0A26 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D152A216B12FA007B0A26 /* ServiceRequestAlerts.swift */; };
+		C83D1553216B12FA007B0A26 /* HealthAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D152B216B12FA007B0A26 /* HealthAlerts.swift */; };
+		C83D1554216B12FA007B0A26 /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D152C216B12FA007B0A26 /* LocationAlerts.swift */; };
+		C83D1555216B12FA007B0A26 /* SystemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D152D216B12FA007B0A26 /* SystemCountry.swift */; };
+		C83D1556216B12FA007B0A26 /* HardwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D152E216B12FA007B0A26 /* HardwareKeyboard.swift */; };
+		C83D1557216B12FA007B0A26 /* MicrophoneAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1530216B12FA007B0A26 /* MicrophoneAlert.json */; };
+		C83D1558216B12FA007B0A26 /* LocationAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1531216B12FA007B0A26 /* LocationAlertDeny.json */; };
+		C83D1559216B12FA007B0A26 /* CallsAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1532216B12FA007B0A26 /* CallsAlert.json */; };
+		C83D155A216B12FA007B0A26 /* LocationAlwaysAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1533216B12FA007B0A26 /* LocationAlwaysAlertAllow.json */; };
+		C83D155B216B12FA007B0A26 /* HealthAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1534216B12FA007B0A26 /* HealthAlertAllow.json */; };
+		C83D155C216B12FA007B0A26 /* LocationAlertCancel.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1535216B12FA007B0A26 /* LocationAlertCancel.json */; };
+		C83D155D216B12FA007B0A26 /* LocationAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1536216B12FA007B0A26 /* LocationAlertAllow.json */; };
+		C83D155E216B12FA007B0A26 /* LocationAlwaysAlertAllowWhenInUseOnly.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1537216B12FA007B0A26 /* LocationAlwaysAlertAllowWhenInUseOnly.json */; };
+		C83D155F216B12FA007B0A26 /* HealthAlertTurnOffAll.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1538216B12FA007B0A26 /* HealthAlertTurnOffAll.json */; };
+		C83D1560216B12FA007B0A26 /* LocationWhenInUseAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1539216B12FA007B0A26 /* LocationWhenInUseAlert.json */; };
+		C83D1561216B12FA007B0A26 /* MediaLibraryAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D153A216B12FA007B0A26 /* MediaLibraryAlert.json */; };
+		C83D1562216B12FA007B0A26 /* SiriAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D153B216B12FA007B0A26 /* SiriAlert.json */; };
+		C83D1563216B12FA007B0A26 /* BluetoothPeripheralAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D153C216B12FA007B0A26 /* BluetoothPeripheralAlert.json */; };
+		C83D1564216B12FA007B0A26 /* PhotosAddAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D153D216B12FA007B0A26 /* PhotosAddAlert.json */; };
+		C83D1565216B12FA007B0A26 /* HealthAlertTurnOnAll.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D153E216B12FA007B0A26 /* HealthAlertTurnOnAll.json */; };
+		C83D1566216B12FA007B0A26 /* LocationAlwaysAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D153F216B12FA007B0A26 /* LocationAlwaysAlert.json */; };
+		C83D1567216B12FA007B0A26 /* SystemAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1540216B12FA007B0A26 /* SystemAlertDeny.json */; };
+		C83D1568216B12FA007B0A26 /* LocationUpgradeToAlwaysAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1541216B12FA007B0A26 /* LocationUpgradeToAlwaysAlertAllow.json */; };
+		C83D1569216B12FA007B0A26 /* CalendarAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1542216B12FA007B0A26 /* CalendarAlert.json */; };
+		C83D156A216B12FA007B0A26 /* HealthAuthorizationDontAllowAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1543216B12FA007B0A26 /* HealthAuthorizationDontAllowAlert.json */; };
+		C83D156B216B12FA007B0A26 /* WillowAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1544216B12FA007B0A26 /* WillowAlert.json */; };
+		C83D156C216B12FA007B0A26 /* MotionAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1545216B12FA007B0A26 /* MotionAlert.json */; };
+		C83D156D216B12FA007B0A26 /* HealthPermissionPage.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1546216B12FA007B0A26 /* HealthPermissionPage.json */; };
+		C83D156E216B12FA007B0A26 /* RemindersAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1547216B12FA007B0A26 /* RemindersAlert.json */; };
+		C83D156F216B12FA007B0A26 /* PhotosAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1548216B12FA007B0A26 /* PhotosAlert.json */; };
+		C83D1570216B12FA007B0A26 /* HealthAlertDeny.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1549216B12FA007B0A26 /* HealthAlertDeny.json */; };
+		C83D1571216B12FA007B0A26 /* HealthAlertOk.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154A216B12FA007B0A26 /* HealthAlertOk.json */; };
+		C83D1572216B12FA007B0A26 /* AddressBookAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154B216B12FA007B0A26 /* AddressBookAlert.json */; };
+		C83D1573216B12FA007B0A26 /* LocationUpgradeWhenInUseAlwaysAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154C216B12FA007B0A26 /* LocationUpgradeWhenInUseAlwaysAlert.json */; };
+		C83D1574216B12FA007B0A26 /* SystemAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154D216B12FA007B0A26 /* SystemAlertAllow.json */; };
+		C83D1575216B12FA007B0A26 /* CameraAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154E216B12FA007B0A26 /* CameraAlert.json */; };
+		C83D1576216B12FA007B0A26 /* SpeechRecognitionAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154F216B12FA007B0A26 /* SpeechRecognitionAlert.json */; };
+		C83D1577216B12FA007B0A26 /* LocationAlertOk.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1550216B12FA007B0A26 /* LocationAlertOk.json */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
-		C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
 		E40B0D851E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */; };
 		E425D5611CED928100A7CA03 /* AutoMate.h in Headers */ = {isa = PBXBuildFile; fileRef = E425D5601CED928100A7CA03 /* AutoMate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E425D5691CED934000A7CA03 /* TestLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425D5681CED934000A7CA03 /* TestLauncher.swift */; };
-		E4295E5A1F59574C00BA05A3 /* LocationAlwaysAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = E4295E591F59574C00BA05A3 /* LocationAlwaysAlertAllow.json */; };
 		E431922F1E2E199400B019C1 /* LaunchArgumentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431922E1E2E199400B019C1 /* LaunchArgumentProtocols.swift */; };
 		E43192311E2E19C700B019C1 /* LaunchArgumentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192301E2E19C700B019C1 /* LaunchArgumentValue.swift */; };
 		E43B229C1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */; };
@@ -73,9 +79,6 @@
 		E4535A491CEDD259008965DD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A481CEDD259008965DD /* Dictionary.swift */; };
 		E4535A4B1CEDD281008965DD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4535A4A1CEDD281008965DD /* Array.swift */; };
 		E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */; };
-		E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE5D91CFF0885007531D2 /* SystemCountry.swift */; };
-		E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */; };
-		E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */; };
 		E481AD451E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481AD441E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift */; };
 		E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */; };
 		E487A11E1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */; };
@@ -89,9 +92,6 @@
 		E4DDEDAA1E3A351300C2F2A1 /* LaunchEnvironmentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */; };
 		E4EE41C61CFD7246004F0FFE /* AutoMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E425D55D1CED928100A7CA03 /* AutoMate.framework */; };
 		E4EE41CD1CFD796A004F0FFE /* LaunchOptionsSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE41CC1CFD796A004F0FFE /* LaunchOptionsSetTests.swift */; };
-		E4F8B46F1F595626007E391F /* PhotosAddAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = E435886D1F5948B700EAA047 /* PhotosAddAlert.json */; };
-		E4F8B4701F595626007E391F /* LocationAlwaysAlertAllowWhenInUseOnly.json in Resources */ = {isa = PBXBuildFile; fileRef = E435886A1F5948B600EAA047 /* LocationAlwaysAlertAllowWhenInUseOnly.json */; };
-		E4F8B4711F595626007E391F /* LocationUpgradeToAlwaysAlertAllow.json in Resources */ = {isa = PBXBuildFile; fileRef = E435886B1F5948B600EAA047 /* LocationUpgradeToAlwaysAlertAllow.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,35 +112,6 @@
 		1FF03B5D1D50C62A00DA65C4 /* XCUIElementQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementQuery.swift; sourceTree = "<group>"; };
 		9602D0911E54F53B001EC313 /* HealthPermissionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPermissionPage.swift; sourceTree = "<group>"; };
 		96175D441E8E689200385065 /* XCUIElementQuery+Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Locator.swift"; sourceTree = "<group>"; };
-		96336FDC1E8A791400273BF6 /* AddressBookAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddressBookAlert.json; sourceTree = "<group>"; };
-		96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BluetoothPeripheralAlert.json; sourceTree = "<group>"; };
-		96336FDE1E8A791400273BF6 /* CalendarAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CalendarAlert.json; sourceTree = "<group>"; };
-		96336FDF1E8A791400273BF6 /* CallsAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CallsAlert.json; sourceTree = "<group>"; };
-		96336FE01E8A791400273BF6 /* CameraAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CameraAlert.json; sourceTree = "<group>"; };
-		96336FE11E8A791400273BF6 /* HealthAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertAllow.json; sourceTree = "<group>"; };
-		96336FE21E8A791400273BF6 /* HealthAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertDeny.json; sourceTree = "<group>"; };
-		96336FE31E8A791400273BF6 /* HealthAlertOk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertOk.json; sourceTree = "<group>"; };
-		96336FE41E8A791400273BF6 /* HealthAlertTurnOffAll.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertTurnOffAll.json; sourceTree = "<group>"; };
-		96336FE51E8A791400273BF6 /* HealthAlertTurnOnAll.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertTurnOnAll.json; sourceTree = "<group>"; };
-		96336FE61E8A791400273BF6 /* HealthAuthorizationDontAllowAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAuthorizationDontAllowAlert.json; sourceTree = "<group>"; };
-		96336FE71E8A791400273BF6 /* HealthPermissionPage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthPermissionPage.json; sourceTree = "<group>"; };
-		96336FE81E8A791400273BF6 /* LocationAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertAllow.json; sourceTree = "<group>"; };
-		96336FE91E8A791400273BF6 /* LocationAlertCancel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertCancel.json; sourceTree = "<group>"; };
-		96336FEA1E8A791400273BF6 /* LocationAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertDeny.json; sourceTree = "<group>"; };
-		96336FEB1E8A791400273BF6 /* LocationAlertOk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertOk.json; sourceTree = "<group>"; };
-		96336FEC1E8A791400273BF6 /* LocationAlwaysAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlwaysAlert.json; sourceTree = "<group>"; };
-		96336FED1E8A791400273BF6 /* LocationUpgradeWhenInUseAlwaysAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationUpgradeWhenInUseAlwaysAlert.json; sourceTree = "<group>"; };
-		96336FEE1E8A791400273BF6 /* LocationWhenInUseAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationWhenInUseAlert.json; sourceTree = "<group>"; };
-		96336FEF1E8A791400273BF6 /* MediaLibraryAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MediaLibraryAlert.json; sourceTree = "<group>"; };
-		96336FF01E8A791400273BF6 /* MicrophoneAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MicrophoneAlert.json; sourceTree = "<group>"; };
-		96336FF11E8A791400273BF6 /* MotionAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MotionAlert.json; sourceTree = "<group>"; };
-		96336FF21E8A791400273BF6 /* PhotosAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotosAlert.json; sourceTree = "<group>"; };
-		96336FF31E8A791400273BF6 /* RemindersAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RemindersAlert.json; sourceTree = "<group>"; };
-		96336FF41E8A791400273BF6 /* SiriAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SiriAlert.json; sourceTree = "<group>"; };
-		96336FF51E8A791400273BF6 /* SpeechRecognitionAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SpeechRecognitionAlert.json; sourceTree = "<group>"; };
-		96336FF61E8A791400273BF6 /* SystemAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SystemAlertAllow.json; sourceTree = "<group>"; };
-		96336FF71E8A791400273BF6 /* SystemAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SystemAlertDeny.json; sourceTree = "<group>"; };
-		96336FF81E8A791400273BF6 /* WillowAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WillowAlert.json; sourceTree = "<group>"; };
 		9641181E1E41BDC70011C776 /* XCTestCase+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Identifiable.swift"; sourceTree = "<group>"; };
 		96412D511E8B887300508909 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		9666D6E31E8A7E5C00511000 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -152,33 +123,62 @@
 		966B92391E40D9D4006E6A18 /* ModalPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPage.swift; sourceTree = "<group>"; };
 		966B923D1E40DA24006E6A18 /* PushedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedPage.swift; sourceTree = "<group>"; };
 		96911E261E94C55700D4045F /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
-		96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlerts.swift; sourceTree = "<group>"; };
-		96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
 		96EB345B1E927773000C0B2B /* XCUIElementQuery+Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Predicate.swift"; sourceTree = "<group>"; };
 		96EF94EB1E96388300F1391C /* XCUIElement+Swipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Swipe.swift"; sourceTree = "<group>"; };
+		C83D1529216B12F9007B0A26 /* SoftwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareKeyboard.swift; sourceTree = "<group>"; };
+		C83D152A216B12FA007B0A26 /* ServiceRequestAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestAlerts.swift; sourceTree = "<group>"; };
+		C83D152B216B12FA007B0A26 /* HealthAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAlerts.swift; sourceTree = "<group>"; };
+		C83D152C216B12FA007B0A26 /* LocationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
+		C83D152D216B12FA007B0A26 /* SystemCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCountry.swift; sourceTree = "<group>"; };
+		C83D152E216B12FA007B0A26 /* HardwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareKeyboard.swift; sourceTree = "<group>"; };
+		C83D1530216B12FA007B0A26 /* MicrophoneAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MicrophoneAlert.json; sourceTree = "<group>"; };
+		C83D1531216B12FA007B0A26 /* LocationAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertDeny.json; sourceTree = "<group>"; };
+		C83D1532216B12FA007B0A26 /* CallsAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CallsAlert.json; sourceTree = "<group>"; };
+		C83D1533216B12FA007B0A26 /* LocationAlwaysAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlwaysAlertAllow.json; sourceTree = "<group>"; };
+		C83D1534216B12FA007B0A26 /* HealthAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertAllow.json; sourceTree = "<group>"; };
+		C83D1535216B12FA007B0A26 /* LocationAlertCancel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertCancel.json; sourceTree = "<group>"; };
+		C83D1536216B12FA007B0A26 /* LocationAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertAllow.json; sourceTree = "<group>"; };
+		C83D1537216B12FA007B0A26 /* LocationAlwaysAlertAllowWhenInUseOnly.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlwaysAlertAllowWhenInUseOnly.json; sourceTree = "<group>"; };
+		C83D1538216B12FA007B0A26 /* HealthAlertTurnOffAll.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertTurnOffAll.json; sourceTree = "<group>"; };
+		C83D1539216B12FA007B0A26 /* LocationWhenInUseAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationWhenInUseAlert.json; sourceTree = "<group>"; };
+		C83D153A216B12FA007B0A26 /* MediaLibraryAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MediaLibraryAlert.json; sourceTree = "<group>"; };
+		C83D153B216B12FA007B0A26 /* SiriAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SiriAlert.json; sourceTree = "<group>"; };
+		C83D153C216B12FA007B0A26 /* BluetoothPeripheralAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BluetoothPeripheralAlert.json; sourceTree = "<group>"; };
+		C83D153D216B12FA007B0A26 /* PhotosAddAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotosAddAlert.json; sourceTree = "<group>"; };
+		C83D153E216B12FA007B0A26 /* HealthAlertTurnOnAll.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertTurnOnAll.json; sourceTree = "<group>"; };
+		C83D153F216B12FA007B0A26 /* LocationAlwaysAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlwaysAlert.json; sourceTree = "<group>"; };
+		C83D1540216B12FA007B0A26 /* SystemAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SystemAlertDeny.json; sourceTree = "<group>"; };
+		C83D1541216B12FA007B0A26 /* LocationUpgradeToAlwaysAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationUpgradeToAlwaysAlertAllow.json; sourceTree = "<group>"; };
+		C83D1542216B12FA007B0A26 /* CalendarAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CalendarAlert.json; sourceTree = "<group>"; };
+		C83D1543216B12FA007B0A26 /* HealthAuthorizationDontAllowAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAuthorizationDontAllowAlert.json; sourceTree = "<group>"; };
+		C83D1544216B12FA007B0A26 /* WillowAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WillowAlert.json; sourceTree = "<group>"; };
+		C83D1545216B12FA007B0A26 /* MotionAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MotionAlert.json; sourceTree = "<group>"; };
+		C83D1546216B12FA007B0A26 /* HealthPermissionPage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthPermissionPage.json; sourceTree = "<group>"; };
+		C83D1547216B12FA007B0A26 /* RemindersAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RemindersAlert.json; sourceTree = "<group>"; };
+		C83D1548216B12FA007B0A26 /* PhotosAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotosAlert.json; sourceTree = "<group>"; };
+		C83D1549216B12FA007B0A26 /* HealthAlertDeny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertDeny.json; sourceTree = "<group>"; };
+		C83D154A216B12FA007B0A26 /* HealthAlertOk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HealthAlertOk.json; sourceTree = "<group>"; };
+		C83D154B216B12FA007B0A26 /* AddressBookAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddressBookAlert.json; sourceTree = "<group>"; };
+		C83D154C216B12FA007B0A26 /* LocationUpgradeWhenInUseAlwaysAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationUpgradeWhenInUseAlwaysAlert.json; sourceTree = "<group>"; };
+		C83D154D216B12FA007B0A26 /* SystemAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SystemAlertAllow.json; sourceTree = "<group>"; };
+		C83D154E216B12FA007B0A26 /* CameraAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CameraAlert.json; sourceTree = "<group>"; };
+		C83D154F216B12FA007B0A26 /* SpeechRecognitionAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SpeechRecognitionAlert.json; sourceTree = "<group>"; };
+		C83D1550216B12FA007B0A26 /* LocationAlertOk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertOk.json; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
-		C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestAlerts.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
 		E40B0D841E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMateLaunchEnvironmentKeys.swift; sourceTree = "<group>"; };
 		E425D55D1CED928100A7CA03 /* AutoMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425D5601CED928100A7CA03 /* AutoMate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoMate.h; sourceTree = "<group>"; };
 		E425D5621CED928100A7CA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E425D5681CED934000A7CA03 /* TestLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLauncher.swift; sourceTree = "<group>"; };
-		E4295E591F59574C00BA05A3 /* LocationAlwaysAlertAllow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlwaysAlertAllow.json; sourceTree = "<group>"; };
 		E431922E1E2E199400B019C1 /* LaunchArgumentProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentProtocols.swift; sourceTree = "<group>"; };
 		E43192301E2E19C700B019C1 /* LaunchArgumentValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentValue.swift; sourceTree = "<group>"; };
-		E435886A1F5948B600EAA047 /* LocationAlwaysAlertAllowWhenInUseOnly.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocationAlwaysAlertAllowWhenInUseOnly.json; sourceTree = "<group>"; };
-		E435886B1F5948B600EAA047 /* LocationUpgradeToAlwaysAlertAllow.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocationUpgradeToAlwaysAlertAllow.json; sourceTree = "<group>"; };
-		E435886D1F5948B700EAA047 /* PhotosAddAlert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PhotosAddAlert.json; sourceTree = "<group>"; };
 		E43B229B1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsFactory.swift; sourceTree = "<group>"; };
 		E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionProtocol.swift; sourceTree = "<group>"; };
 		E4535A481CEDD259008965DD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		E4535A4A1CEDD281008965DD /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLanguage.swift; sourceTree = "<group>"; };
-		E46BE5D91CFF0885007531D2 /* SystemCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCountry.swift; sourceTree = "<group>"; };
-		E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareKeyboard.swift; sourceTree = "<group>"; };
-		E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareKeyboard.swift; sourceTree = "<group>"; };
 		E481AD441E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchEnvironmentsTests.swift; sourceTree = "<group>"; };
 		E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsSet.swift; sourceTree = "<group>"; };
 		E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLaunchArgumentsTests.swift; sourceTree = "<group>"; };
@@ -230,46 +230,6 @@
 			path = "XCTest extensions";
 			sourceTree = "<group>";
 		};
-		96336FDB1E8A791400273BF6 /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				96336FDC1E8A791400273BF6 /* AddressBookAlert.json */,
-				96336FDD1E8A791400273BF6 /* BluetoothPeripheralAlert.json */,
-				96336FDE1E8A791400273BF6 /* CalendarAlert.json */,
-				96336FDF1E8A791400273BF6 /* CallsAlert.json */,
-				96336FE01E8A791400273BF6 /* CameraAlert.json */,
-				96336FE11E8A791400273BF6 /* HealthAlertAllow.json */,
-				96336FE21E8A791400273BF6 /* HealthAlertDeny.json */,
-				96336FE31E8A791400273BF6 /* HealthAlertOk.json */,
-				96336FE41E8A791400273BF6 /* HealthAlertTurnOffAll.json */,
-				96336FE51E8A791400273BF6 /* HealthAlertTurnOnAll.json */,
-				96336FE61E8A791400273BF6 /* HealthAuthorizationDontAllowAlert.json */,
-				96336FE71E8A791400273BF6 /* HealthPermissionPage.json */,
-				96336FE81E8A791400273BF6 /* LocationAlertAllow.json */,
-				96336FE91E8A791400273BF6 /* LocationAlertCancel.json */,
-				96336FEA1E8A791400273BF6 /* LocationAlertDeny.json */,
-				96336FEB1E8A791400273BF6 /* LocationAlertOk.json */,
-				96336FEC1E8A791400273BF6 /* LocationAlwaysAlert.json */,
-				E4295E591F59574C00BA05A3 /* LocationAlwaysAlertAllow.json */,
-				E435886A1F5948B600EAA047 /* LocationAlwaysAlertAllowWhenInUseOnly.json */,
-				E435886B1F5948B600EAA047 /* LocationUpgradeToAlwaysAlertAllow.json */,
-				96336FED1E8A791400273BF6 /* LocationUpgradeWhenInUseAlwaysAlert.json */,
-				96336FEE1E8A791400273BF6 /* LocationWhenInUseAlert.json */,
-				96336FEF1E8A791400273BF6 /* MediaLibraryAlert.json */,
-				96336FF01E8A791400273BF6 /* MicrophoneAlert.json */,
-				96336FF11E8A791400273BF6 /* MotionAlert.json */,
-				E435886D1F5948B700EAA047 /* PhotosAddAlert.json */,
-				96336FF21E8A791400273BF6 /* PhotosAlert.json */,
-				96336FF31E8A791400273BF6 /* RemindersAlert.json */,
-				96336FF41E8A791400273BF6 /* SiriAlert.json */,
-				96336FF51E8A791400273BF6 /* SpeechRecognitionAlert.json */,
-				96336FF61E8A791400273BF6 /* SystemAlertAllow.json */,
-				96336FF71E8A791400273BF6 /* SystemAlertDeny.json */,
-				96336FF81E8A791400273BF6 /* WillowAlert.json */,
-			);
-			path = Messages;
-			sourceTree = "<group>";
-		};
 		966A7FA71E6967670009122E /* Locators */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +248,46 @@
 				966B923D1E40DA24006E6A18 /* PushedPage.swift */,
 			);
 			path = PageObjects;
+			sourceTree = "<group>";
+		};
+		C83D152F216B12FA007B0A26 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				C83D1530216B12FA007B0A26 /* MicrophoneAlert.json */,
+				C83D1531216B12FA007B0A26 /* LocationAlertDeny.json */,
+				C83D1532216B12FA007B0A26 /* CallsAlert.json */,
+				C83D1533216B12FA007B0A26 /* LocationAlwaysAlertAllow.json */,
+				C83D1534216B12FA007B0A26 /* HealthAlertAllow.json */,
+				C83D1535216B12FA007B0A26 /* LocationAlertCancel.json */,
+				C83D1536216B12FA007B0A26 /* LocationAlertAllow.json */,
+				C83D1537216B12FA007B0A26 /* LocationAlwaysAlertAllowWhenInUseOnly.json */,
+				C83D1538216B12FA007B0A26 /* HealthAlertTurnOffAll.json */,
+				C83D1539216B12FA007B0A26 /* LocationWhenInUseAlert.json */,
+				C83D153A216B12FA007B0A26 /* MediaLibraryAlert.json */,
+				C83D153B216B12FA007B0A26 /* SiriAlert.json */,
+				C83D153C216B12FA007B0A26 /* BluetoothPeripheralAlert.json */,
+				C83D153D216B12FA007B0A26 /* PhotosAddAlert.json */,
+				C83D153E216B12FA007B0A26 /* HealthAlertTurnOnAll.json */,
+				C83D153F216B12FA007B0A26 /* LocationAlwaysAlert.json */,
+				C83D1540216B12FA007B0A26 /* SystemAlertDeny.json */,
+				C83D1541216B12FA007B0A26 /* LocationUpgradeToAlwaysAlertAllow.json */,
+				C83D1542216B12FA007B0A26 /* CalendarAlert.json */,
+				C83D1543216B12FA007B0A26 /* HealthAuthorizationDontAllowAlert.json */,
+				C83D1544216B12FA007B0A26 /* WillowAlert.json */,
+				C83D1545216B12FA007B0A26 /* MotionAlert.json */,
+				C83D1546216B12FA007B0A26 /* HealthPermissionPage.json */,
+				C83D1547216B12FA007B0A26 /* RemindersAlert.json */,
+				C83D1548216B12FA007B0A26 /* PhotosAlert.json */,
+				C83D1549216B12FA007B0A26 /* HealthAlertDeny.json */,
+				C83D154A216B12FA007B0A26 /* HealthAlertOk.json */,
+				C83D154B216B12FA007B0A26 /* AddressBookAlert.json */,
+				C83D154C216B12FA007B0A26 /* LocationUpgradeWhenInUseAlwaysAlert.json */,
+				C83D154D216B12FA007B0A26 /* SystemAlertAllow.json */,
+				C83D154E216B12FA007B0A26 /* CameraAlert.json */,
+				C83D154F216B12FA007B0A26 /* SpeechRecognitionAlert.json */,
+				C83D1550216B12FA007B0A26 /* LocationAlertOk.json */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		E425D5531CED928100A7CA03 = {
@@ -367,14 +367,14 @@
 		E47BB6F41CF310F200229D63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E47BB6F51CF310F200229D63 /* HardwareKeyboard.swift */,
-				96B131D51E54BDD8007E3A04 /* HealthAlerts.swift */,
-				96BB6F471E532A9900A74DA1 /* LocationAlerts.swift */,
-				C9583BF81E4B50CF0098BB27 /* ServiceRequestAlerts.swift */,
-				E47BB6F61CF310F200229D63 /* SoftwareKeyboard.swift */,
-				E46BE5D91CFF0885007531D2 /* SystemCountry.swift */,
+				C83D152E216B12FA007B0A26 /* HardwareKeyboard.swift */,
+				C83D152B216B12FA007B0A26 /* HealthAlerts.swift */,
+				C83D152C216B12FA007B0A26 /* LocationAlerts.swift */,
+				C83D152F216B12FA007B0A26 /* Messages */,
+				C83D152A216B12FA007B0A26 /* ServiceRequestAlerts.swift */,
+				C83D1529216B12F9007B0A26 /* SoftwareKeyboard.swift */,
+				C83D152D216B12FA007B0A26 /* SystemCountry.swift */,
 				E46BE5D71CFEF665007531D2 /* SystemLanguage.swift */,
-				96336FDB1E8A791400273BF6 /* Messages */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,39 +507,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9633700E1E8A791400273BF6 /* MotionAlert.json in Resources */,
-				963370141E8A791400273BF6 /* SystemAlertDeny.json in Resources */,
-				963370051E8A791400273BF6 /* LocationAlertAllow.json in Resources */,
-				963370151E8A791400273BF6 /* WillowAlert.json in Resources */,
-				96336FFF1E8A791400273BF6 /* HealthAlertDeny.json in Resources */,
-				96336FF91E8A791400273BF6 /* AddressBookAlert.json in Resources */,
-				9633700B1E8A791400273BF6 /* LocationWhenInUseAlert.json in Resources */,
-				963370001E8A791400273BF6 /* HealthAlertOk.json in Resources */,
-				963370121E8A791400273BF6 /* SpeechRecognitionAlert.json in Resources */,
-				96336FFB1E8A791400273BF6 /* CalendarAlert.json in Resources */,
-				9633700F1E8A791400273BF6 /* PhotosAlert.json in Resources */,
-				963370061E8A791400273BF6 /* LocationAlertCancel.json in Resources */,
-				9633700C1E8A791400273BF6 /* MediaLibraryAlert.json in Resources */,
-				9633700D1E8A791400273BF6 /* MicrophoneAlert.json in Resources */,
-				963370071E8A791400273BF6 /* LocationAlertDeny.json in Resources */,
-				963370101E8A791400273BF6 /* RemindersAlert.json in Resources */,
-				963370081E8A791400273BF6 /* LocationAlertOk.json in Resources */,
-				963370021E8A791400273BF6 /* HealthAlertTurnOnAll.json in Resources */,
-				963370111E8A791400273BF6 /* SiriAlert.json in Resources */,
-				E4F8B46F1F595626007E391F /* PhotosAddAlert.json in Resources */,
-				963370011E8A791400273BF6 /* HealthAlertTurnOffAll.json in Resources */,
-				96336FFD1E8A791400273BF6 /* CameraAlert.json in Resources */,
-				96336FFC1E8A791400273BF6 /* CallsAlert.json in Resources */,
-				96336FFE1E8A791400273BF6 /* HealthAlertAllow.json in Resources */,
-				963370041E8A791400273BF6 /* HealthPermissionPage.json in Resources */,
-				963370131E8A791400273BF6 /* SystemAlertAllow.json in Resources */,
-				E4295E5A1F59574C00BA05A3 /* LocationAlwaysAlertAllow.json in Resources */,
-				E4F8B4711F595626007E391F /* LocationUpgradeToAlwaysAlertAllow.json in Resources */,
-				96336FFA1E8A791400273BF6 /* BluetoothPeripheralAlert.json in Resources */,
-				963370091E8A791400273BF6 /* LocationAlwaysAlert.json in Resources */,
-				9633700A1E8A791400273BF6 /* LocationUpgradeWhenInUseAlwaysAlert.json in Resources */,
-				E4F8B4701F595626007E391F /* LocationAlwaysAlertAllowWhenInUseOnly.json in Resources */,
-				963370031E8A791400273BF6 /* HealthAuthorizationDontAllowAlert.json in Resources */,
+				C83D156F216B12FA007B0A26 /* PhotosAlert.json in Resources */,
+				C83D1573216B12FA007B0A26 /* LocationUpgradeWhenInUseAlwaysAlert.json in Resources */,
+				C83D156C216B12FA007B0A26 /* MotionAlert.json in Resources */,
+				C83D1557216B12FA007B0A26 /* MicrophoneAlert.json in Resources */,
+				C83D1571216B12FA007B0A26 /* HealthAlertOk.json in Resources */,
+				C83D1558216B12FA007B0A26 /* LocationAlertDeny.json in Resources */,
+				C83D1566216B12FA007B0A26 /* LocationAlwaysAlert.json in Resources */,
+				C83D1575216B12FA007B0A26 /* CameraAlert.json in Resources */,
+				C83D1572216B12FA007B0A26 /* AddressBookAlert.json in Resources */,
+				C83D155A216B12FA007B0A26 /* LocationAlwaysAlertAllow.json in Resources */,
+				C83D1564216B12FA007B0A26 /* PhotosAddAlert.json in Resources */,
+				C83D1561216B12FA007B0A26 /* MediaLibraryAlert.json in Resources */,
+				C83D155E216B12FA007B0A26 /* LocationAlwaysAlertAllowWhenInUseOnly.json in Resources */,
+				C83D1567216B12FA007B0A26 /* SystemAlertDeny.json in Resources */,
+				C83D1574216B12FA007B0A26 /* SystemAlertAllow.json in Resources */,
+				C83D1568216B12FA007B0A26 /* LocationUpgradeToAlwaysAlertAllow.json in Resources */,
+				C83D1562216B12FA007B0A26 /* SiriAlert.json in Resources */,
+				C83D1570216B12FA007B0A26 /* HealthAlertDeny.json in Resources */,
+				C83D1563216B12FA007B0A26 /* BluetoothPeripheralAlert.json in Resources */,
+				C83D156E216B12FA007B0A26 /* RemindersAlert.json in Resources */,
+				C83D1577216B12FA007B0A26 /* LocationAlertOk.json in Resources */,
+				C83D1576216B12FA007B0A26 /* SpeechRecognitionAlert.json in Resources */,
+				C83D155F216B12FA007B0A26 /* HealthAlertTurnOffAll.json in Resources */,
+				C83D1565216B12FA007B0A26 /* HealthAlertTurnOnAll.json in Resources */,
+				C83D156A216B12FA007B0A26 /* HealthAuthorizationDontAllowAlert.json in Resources */,
+				C83D156B216B12FA007B0A26 /* WillowAlert.json in Resources */,
+				C83D155C216B12FA007B0A26 /* LocationAlertCancel.json in Resources */,
+				C83D155B216B12FA007B0A26 /* HealthAlertAllow.json in Resources */,
+				C83D1559216B12FA007B0A26 /* CallsAlert.json in Resources */,
+				C83D1560216B12FA007B0A26 /* LocationWhenInUseAlert.json in Resources */,
+				C83D156D216B12FA007B0A26 /* HealthPermissionPage.json in Resources */,
+				C83D155D216B12FA007B0A26 /* LocationAlertAllow.json in Resources */,
+				C83D1569216B12FA007B0A26 /* CalendarAlert.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,23 +574,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B131D61E54BDD8007E3A04 /* HealthAlerts.swift in Sources */,
 				9666D6E41E8A7E5C00511000 /* Bundle.swift in Sources */,
 				E4535A461CEDC4AB008965DD /* LaunchOptionProtocol.swift in Sources */,
+				C83D1552216B12FA007B0A26 /* ServiceRequestAlerts.swift in Sources */,
 				966B923A1E40D9D4006E6A18 /* ModalPage.swift in Sources */,
-				E47BB6F81CF310F200229D63 /* HardwareKeyboard.swift in Sources */,
 				E43192311E2E19C700B019C1 /* LaunchArgumentValue.swift in Sources */,
-				E47BB6F91CF310F200229D63 /* SoftwareKeyboard.swift in Sources */,
 				966B92361E40D470006E6A18 /* BaseAppPage.swift in Sources */,
 				E40B0D851E4DABDD00929631 /* AutoMateLaunchEnvironmentKeys.swift in Sources */,
+				C83D1554216B12FA007B0A26 /* LocationAlerts.swift in Sources */,
 				E4DDEDA81E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift in Sources */,
 				E4DDEDAA1E3A351300C2F2A1 /* LaunchEnvironmentValue.swift in Sources */,
 				E4535A4B1CEDD281008965DD /* Array.swift in Sources */,
 				96EB345C1E927773000C0B2B /* XCUIElementQuery+Predicate.swift in Sources */,
 				1FC995581D51CBFA0037CD1F /* XCTestCase.swift in Sources */,
+				C83D1551216B12FA007B0A26 /* SoftwareKeyboard.swift in Sources */,
 				E46BE5D81CFEF665007531D2 /* SystemLanguage.swift in Sources */,
+				C83D1555216B12FA007B0A26 /* SystemCountry.swift in Sources */,
 				E483C84F1CFC01A400B58BE3 /* LaunchOptionsSet.swift in Sources */,
-				E46BE5DA1CFF0885007531D2 /* SystemCountry.swift in Sources */,
 				C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */,
 				966A7A1D1E54AAAE0026AE29 /* HealthAlert.swift in Sources */,
 				96412D521E8B887300508909 /* Sequence.swift in Sources */,
@@ -603,16 +603,16 @@
 				E4D637CD1D015B5700405514 /* SystemLaunchArguments.swift in Sources */,
 				966A7FA61E6967630009122E /* KeyboardLocator.swift in Sources */,
 				1FA6372F1D50692800D22156 /* XCUIApplication.swift in Sources */,
+				C83D1553216B12FA007B0A26 /* HealthAlerts.swift in Sources */,
 				9602D0921E54F53B001EC313 /* HealthPermissionPage.swift in Sources */,
 				9641181F1E41BDC70011C776 /* XCTestCase+Identifiable.swift in Sources */,
+				C83D1556216B12FA007B0A26 /* HardwareKeyboard.swift in Sources */,
 				C9371A481E2F542100808AFC /* Locator.swift in Sources */,
 				966B92381E40D69A006E6A18 /* AppUITestCase.swift in Sources */,
 				96911E271E94C55700D4045F /* CoreGraphics.swift in Sources */,
 				E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */,
 				E431922F1E2E199400B019C1 /* LaunchArgumentProtocols.swift in Sources */,
-				C9583BF91E4B50CF0098BB27 /* ServiceRequestAlerts.swift in Sources */,
 				E4535A491CEDD259008965DD /* Dictionary.swift in Sources */,
-				96BB6F481E532A9900A74DA1 /* LocationAlerts.swift in Sources */,
 				966A7A1B1E54AA920026AE29 /* LocationAlert.swift in Sources */,
 				96175D451E8E689200385065 /* XCUIElementQuery+Locator.swift in Sources */,
 				966B923E1E40DA24006E6A18 /* PushedPage.swift in Sources */,

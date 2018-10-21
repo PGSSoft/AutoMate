@@ -97,7 +97,10 @@ class PermissionsTests: AppUITestCase {
 
     func testLocationSystemAlert() {
         locationWhenInUse()
-        locationUpgradeToAlways()
+
+        if #available(iOS 11, *) {
+            locationUpgradeToAlways()
+        }
     }
 
     func testContactsSystemAlert() {
@@ -162,19 +165,6 @@ class PermissionsTests: AppUITestCase {
         if app.isRunningOnIpad {
             return
         }
-        var handled = false
-        let token = addUIInterruptionMonitor(withDescription: "HomeKit") { (alert) -> Bool in
-            guard let homeKitAlert = HealthAuthorizationDontAllowAlert(element: alert) else {
-                XCTFail("Cannot create HealthAuthorizationDontAllowAlert object")
-                return false
-            }
-
-            XCTAssertTrue(homeKitAlert.okElement.exists)
-
-            homeKitAlert.okElement.tap()
-            handled = true
-            return true
-        }
 
         mainPage.goToPermissionsPageMenu()
         permissionsPage.goToHealthKit()
@@ -191,10 +181,16 @@ class PermissionsTests: AppUITestCase {
         healthPermissionPage.denyElement.tap()
         Thread.sleep(forTimeInterval: 2)
 
+        guard let healthAlert = HealthAuthorizationDontAllowAlert(element: app.alerts.firstMatch) else {
+            XCTFail("Cannot create HealthAuthorizationDontAllowAlert object")
+            return
+        }
+
+        XCTAssertTrue(healthAlert.okElement.exists)
+
+        healthAlert.okElement.tap()
         healthKitPage.goBack()
         permissionsPage.goBack()
-        removeUIInterruptionMonitor(token)
-        XCTAssertTrue(handled)
     }
 
     func testSpeechRecognitionAlert() {

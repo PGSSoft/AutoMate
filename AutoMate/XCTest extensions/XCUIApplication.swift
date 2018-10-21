@@ -37,6 +37,12 @@ public enum DeviceType {
     /// iPhone 5.8"
     case iPhone58
 
+    /// iPhone 6.1"
+    case iPhone61
+
+    /// iPhone 6.5"
+    case iPhone65
+
     /// iPad
     case iPad
 
@@ -68,6 +74,8 @@ public extension XCUIApplication {
     /// - note:
     ///   iPhone6 and iPhone6+ have "Zoom" feature, which will make the resultion smaller. In this case iPhone6 would appear as iPhone 5,
     /// and iPhone6+ as iPhone 6.
+    /// - note:
+    /// iPhone XS Max and XR have the same size in points, outside of UI tests you could differenciate them by scale (3x for XS Max and 2x for XR). For this reason property returns `iPhone61` for both.
     public var deviceType: DeviceType {
         let window = windows.element(boundBy: 0)
         let size = window.frame.size
@@ -84,6 +92,8 @@ public extension XCUIApplication {
             return .iPhone55
         case (375, 812):
             return .iPhone58
+        case (414, 896):
+            return .iPhone61
         case (768, 1024):
             return .iPad
         case (834, 1112):
@@ -110,7 +120,8 @@ public extension XCUIApplication {
         switch deviceType {
         case .iPad, .iPadPro105, .iPadPro12:
             return true
-        case .iPhone35, .iPhone40, .iPhone47, .iPhone55, .iPhone58:
+        case .iPhone35, .iPhone40, .iPhone47, .iPhone55, .iPhone58,
+             .iPhone61, .iPhone65:
             return false
         }
     }
@@ -130,7 +141,8 @@ public extension XCUIApplication {
         switch deviceType {
         case .iPad, .iPadPro105, .iPadPro12:
             return false
-        case .iPhone35, .iPhone40, .iPhone47, .iPhone55, .iPhone58:
+        case .iPhone35, .iPhone40, .iPhone47, .iPhone55, .iPhone58,
+             .iPhone61, .iPhone65:
             return true
         }
     }
