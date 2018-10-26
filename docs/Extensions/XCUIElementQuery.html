@@ -319,7 +319,7 @@
             <a href="../Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
+                <a href="../Other Functions.html#/s:8AutoMate2eeoiySbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -483,6 +483,684 @@ Especially useful for table views and collection views where cells will have the
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/Locator%20methods"></a>
+                <a name="//apple_ref/swift/Section/Locator methods" class="dashAnchor"></a>
+                <a href="#/Locator%20methods">
+                  <h3 class="section-name">Locator methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateEySo0A0CAC7Locator_pcip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateEySo0A0CAC7Locator_pcip">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>XCUIElement</code> that matches the type and locator.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="kt">Locators</span><span class="o">.</span><span class="n">ok</span><span class="p">]</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Protocols/Locator.html">Locator</a></code> used to find element</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element24withLabelMatchingLocator18comparisonOperatorSo0A0CAC0I0_p_AC016StringComparisonK0OtF"></a>
+                    <a name="//apple_ref/swift/Method/element(withLabelMatchingLocator:comparisonOperator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element24withLabelMatchingLocator18comparisonOperatorSo0A0CAC0I0_p_AC016StringComparisonK0OtF">element(withLabelMatchingLocator:comparisonOperator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element with label matching provided string.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    String matching is customizable with operators available in <code>NSPredicate</code> specification.
+Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
+
+</div>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLabelMatchingLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">john</span><span class="p">,</span> <span class="nv">comparisonOperator</span><span class="p">:</span> <span class="o">.</span><span class="n">like</span><span class="p">)</span>
+<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLabelMatchingLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">comparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Locator to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>comparisonOperator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Operation to use when performing comparison.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that label matches given locator.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element11withLocator5label0H18ComparisonOperatorSo0A0CAC0G0_p_AcJ_pAC06StringiJ0OtF"></a>
+                    <a name="//apple_ref/swift/Method/element(withLocator:label:labelComparisonOperator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element11withLocator5label0H18ComparisonOperatorSo0A0CAC0G0_p_AcJ_pAC06StringiJ0OtF">element(withLocator:label:labelComparisonOperator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element with identifier and label matching provided values.</p>
+
+<p>Can be used to find a cell which <code>UILabel</code>, with provided <code>identifier</code>, contains text provided by <code>label</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    String matching is customizable with operators available in <code>NSPredicate</code> specification.
+Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
+
+</div>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">madeWithLove</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">labelComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Identifier of element to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>label</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Label of element to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>labelComparisonOperator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Operation to use when performing comparison.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that identifier and label match to given locators.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element11withLocator5label0H18ComparisonOperatorSo0A0CAC0G0_p_SSAC06StringiJ0OtF"></a>
+                    <a name="//apple_ref/swift/Method/element(withLocator:label:labelComparisonOperator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element11withLocator5label0H18ComparisonOperatorSo0A0CAC0G0_p_SSAC06StringiJ0OtF">element(withLocator:label:labelComparisonOperator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element with identifier and label matching provided values.</p>
+
+<p>Can be used to find a cell which <code>UILabel</code>, with provided <code>identifier</code>, contains text provided by <code>label</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    String matching is customizable with operators available in <code>NSPredicate</code> specification.
+Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
+
+</div>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="s">"Made with love"</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">labelComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Identifier of element to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>label</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Label of element to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>labelComparisonOperator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Operation to use when performing comparison.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that identifier and label match to given locator and text.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element11withLocator6labels23labelComparisonOperatorSo0A0CAC0G0_p_SaySSGAC06StringjK0OtF"></a>
+                    <a name="//apple_ref/swift/Method/element(withLocator:labels:labelComparisonOperator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element11withLocator6labels23labelComparisonOperatorSo0A0CAC0G0_p_SaySSGAC06StringjK0OtF">element(withLocator:labels:labelComparisonOperator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element with identifier and label matching one of provided values.</p>
+
+<p>Can be used to find a <code>UILabel</code> with given identifier and localized labels.
+Localized texts are provided in the <code>labels</code> parameter.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    String matching is customizable with operators available in <code>NSPredicate</code> specification.
+Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
+
+</div>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">labels</span><span class="p">:</span> <span class="p">[</span><span class="s">"Z miłością przez"</span><span class="p">,</span> <span class="s">"Made with love by"</span><span class="p">])</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">labels</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">labelComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Identifier of element to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>labels</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Labels of element to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>labelComparisonOperator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Operation to use when performing comparison.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that identifier and label match given texts.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDyxSSG_AC06StringiJ0OtAC7LocatorRzSHRzlF"></a>
+                    <a name="//apple_ref/swift/Method/element(containingLabels:labelsComparisonOperator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDyxSSG_AC06StringiJ0OtAC7LocatorRzSHRzlF">element(containingLabels:labelsComparisonOperator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element that contains children matching provided locator-label dictionary.</p>
+
+<p>Searches for element that has sub-elements matching provided <q>locator:label</q> pairs.
+Especially useful for table views and collection views where cells will have the same identifier.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>String matching is customizable with operators available in <code>NSPredicate</code> specification.
+Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method is intended to be used with table and collection views, where cells have to be identified by their contents.</p>
+
+</div>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">containingLabels</span><span class="p">:</span> <span class="p">[</span><span class="kt">Locators</span><span class="o">.</span><span class="nv">name</span><span class="p">:</span> <span class="s">"John*"</span><span class="p">,</span> <span class="kt">Locators</span><span class="o">.</span><span class="nv">email</span><span class="p">:</span> <span class="s">"*.com"</span><span class="p">],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="o">.</span><span class="n">like</span><span class="p">)</span>
+<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">element</span> <span class="o">&lt;</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="o">&gt;</span> <span class="p">(</span><span class="n">containingLabels</span> <span class="nv">dictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="kt">String</span><span class="p">],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dictionary</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Dictionary of locators and labels to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>labelsComparisonOperator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Operation to use when performing comparison.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that identifiers and labels match to given locators and texts.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDyxSaySSGG_AC06StringiJ0OtAC7LocatorRzSHRzlF"></a>
+                    <a name="//apple_ref/swift/Method/element(containingLabels:labelsComparisonOperator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDyxSaySSGG_AC06StringiJ0OtAC7LocatorRzSHRzlF">element(containingLabels:labelsComparisonOperator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element that contains children matching provided locator-label dictionary.</p>
+
+<p>Searches for element that has sub-elements matching provided <q>locator:label</q> pairs.
+Especially useful for table views and collection views where cells will have the same identifier.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>String matching is customizable with operators available in <code>NSPredicate</code> specification.
+Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method is intended to be used with table and collection views, where cells have to be identified by their contents.</p>
+
+</div>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">element</span>
+<span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">containingLabels</span><span class="p">:</span> <span class="p">[</span><span class="kt">Locators</span><span class="o">.</span><span class="nv">name</span><span class="p">:</span> <span class="p">[</span><span class="s">"John*"</span><span class="p">,</span> <span class="s">"Jan*"</span><span class="p">],</span> <span class="kt">Locators</span><span class="o">.</span><span class="nv">email</span><span class="p">:</span> <span class="p">[</span><span class="s">"Free*"</span><span class="p">,</span> <span class="s">"Wolny*"</span><span class="p">]],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="o">.</span><span class="n">like</span><span class="p">)</span>
+<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">element</span> <span class="o">&lt;</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="o">&gt;</span> <span class="p">(</span><span class="n">containingLabels</span> <span class="nv">dictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dictionary</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Dictionary of locators and labels to search for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>labelsComparisonOperator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Operation to use when performing comparison.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that identifiers and labels match to given locators and texts.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Locator%20shorted%20methods"></a>
+                <a name="//apple_ref/swift/Section/Locator shorted methods" class="dashAnchor"></a>
+                <a href="#/Locator%20shorted%20methods">
+                  <h3 class="section-name">Locator shorted methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element17withLabelPrefixedSo0A0CAC7Locator_p_tF"></a>
+                    <a name="//apple_ref/swift/Method/element(withLabelPrefixed:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element17withLabelPrefixedSo0A0CAC7Locator_p_tF">element(withLabelPrefixed:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element with label which begins with provided Locator.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLabelPrefixed</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">john</span><span class="p">)</span>
+<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLabelPrefixed</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Object conforming to Locator.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that label begins with given locator.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element19withLabelContainingSo0A0CAC7Locator_p_tF"></a>
+                    <a name="//apple_ref/swift/Method/element(withLabelContaining:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element19withLabelContainingSo0A0CAC7Locator_p_tF">element(withLabelContaining:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns element with label which contains provided Locator.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLabelContaining</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">john</span><span class="p">)</span>
+<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLabelContaining</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Object conforming to Locator.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>XCUIElement</code> that label contains given locator.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/Predicates"></a>
                 <a name="//apple_ref/swift/Section/Predicates" class="dashAnchor"></a>
                 <a href="#/Predicates">
@@ -493,9 +1171,9 @@ Especially useful for table views and collection views where cells will have the
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE9predicateSo11NSPredicateCSS14withIdentifier_SaySSG6labelsAC24StringComparisonOperatorO05labelkL0tFZ"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE9predicate14withIdentifier6labels23labelComparisonOperatorSo11NSPredicateCSS_SaySSGAC06StringjK0OtFZ"></a>
                     <a name="//apple_ref/swift/Method/predicate(withIdentifier:labels:labelComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE9predicateSo11NSPredicateCSS14withIdentifier_SaySSG6labelsAC24StringComparisonOperatorO05labelkL0tFZ">predicate(withIdentifier:labels:labelComparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE9predicate14withIdentifier6labels23labelComparisonOperatorSo11NSPredicateCSS_SaySSGAC06StringjK0OtFZ">predicate(withIdentifier:labels:labelComparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -592,9 +1270,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS17withLabelMatching_AC24StringComparisonOperatorO010comparisonK0tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element17withLabelMatching18comparisonOperatorSo0A0CSS_AC016StringComparisonJ0OtF"></a>
                     <a name="//apple_ref/swift/Method/element(withLabelMatching:comparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS17withLabelMatching_AC24StringComparisonOperatorO010comparisonK0tF">element(withLabelMatching:comparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element17withLabelMatching18comparisonOperatorSo0A0CSS_AC016StringComparisonJ0OtF">element(withLabelMatching:comparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -665,9 +1343,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE8elementsSaySo0A0CGSaySSG18withLabelsMatching_AC24StringComparisonOperatorO010comparisonK0tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE8elements18withLabelsMatching18comparisonOperatorSaySo0A0CGSaySSG_AC016StringComparisonJ0OtF"></a>
                     <a name="//apple_ref/swift/Method/elements(withLabelsMatching:comparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE8elementsSaySo0A0CGSaySSG18withLabelsMatching_AC24StringComparisonOperatorO010comparisonK0tF">elements(withLabelsMatching:comparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE8elements18withLabelsMatching18comparisonOperatorSaySo0A0CGSaySSG_AC016StringComparisonJ0OtF">elements(withLabelsMatching:comparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -740,9 +1418,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS14withIdentifier_SS5labelAC24StringComparisonOperatorO0hjK0tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element14withIdentifier5label0H18ComparisonOperatorSo0A0CSS_SSAC06StringiJ0OtF"></a>
                     <a name="//apple_ref/swift/Method/element(withIdentifier:label:labelComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS14withIdentifier_SS5labelAC24StringComparisonOperatorO0hjK0tF">element(withIdentifier:label:labelComparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element14withIdentifier5label0H18ComparisonOperatorSo0A0CSS_SSAC06StringiJ0OtF">element(withIdentifier:label:labelComparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -826,9 +1504,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS14withIdentifier_SaySSG6labelsAC24StringComparisonOperatorO05labeljK0tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element14withIdentifier6labels23labelComparisonOperatorSo0A0CSS_SaySSGAC06StringjK0OtF"></a>
                     <a name="//apple_ref/swift/Method/element(withIdentifier:labels:labelComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS14withIdentifier_SaySSG6labelsAC24StringComparisonOperatorO05labeljK0tF">element(withIdentifier:labels:labelComparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element14withIdentifier6labels23labelComparisonOperatorSo0A0CSS_SaySSGAC06StringjK0OtF">element(withIdentifier:labels:labelComparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -913,9 +1591,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVyS2SG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDyS2SG_AC06StringiJ0OtF"></a>
                     <a name="//apple_ref/swift/Method/element(containingLabels:labelsComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVyS2SG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tF">element(containingLabels:labelsComparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDyS2SG_AC06StringiJ0OtF">element(containingLabels:labelsComparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -995,9 +1673,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVySSSaySSGG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDySSSaySSGG_AC06StringiJ0OtF"></a>
                     <a name="//apple_ref/swift/Method/element(containingLabels:labelsComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVySSSaySSGG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tF">element(containingLabels:labelsComparisonOperator:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element16containingLabels24labelsComparisonOperatorSo0A0CSDySSSaySSGG_AC06StringiJ0OtF">element(containingLabels:labelsComparisonOperator:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1088,9 +1766,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS17withLabelPrefixed_tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element17withLabelPrefixedSo0A0CSS_tF"></a>
                     <a name="//apple_ref/swift/Method/element(withLabelPrefixed:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS17withLabelPrefixed_tF">element(withLabelPrefixed:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element17withLabelPrefixedSo0A0CSS_tF">element(withLabelPrefixed:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1143,9 +1821,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS19withLabelContaining_tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE7element19withLabelContainingSo0A0CSS_tF"></a>
                     <a name="//apple_ref/swift/Method/element(withLabelContaining:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CSS19withLabelContaining_tF">element(withLabelContaining:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7element19withLabelContainingSo0A0CSS_tF">element(withLabelContaining:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1198,9 +1876,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE8elementsSaySo0A0CGSaySSG20withLabelsContaining_tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE8elements20withLabelsContainingSaySo0A0CGSaySSG_tF"></a>
                     <a name="//apple_ref/swift/Method/elements(withLabelsContaining:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE8elementsSaySo0A0CGSaySSG20withLabelsContaining_tF">elements(withLabelsContaining:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE8elements20withLabelsContainingSaySo0A0CGSaySSG_tF">elements(withLabelsContaining:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1253,9 +1931,9 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE8elementsSaySo0A0CGSaySSG14withLabelsLike_tF"></a>
+                    <a name="/s:So16XCUIElementQueryC8AutoMateE8elements14withLabelsLikeSaySo0A0CGSaySSG_tF"></a>
                     <a name="//apple_ref/swift/Method/elements(withLabelsLike:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE8elementsSaySo0A0CGSaySSG14withLabelsLike_tF">elements(withLabelsLike:)</a>
+                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE8elements14withLabelsLikeSaySo0A0CGSaySSG_tF">elements(withLabelsLike:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1307,689 +1985,11 @@ Check the <code><a href="../Enums/StringComparisonOperator.html">StringCompariso
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Locator%20methods"></a>
-                <a name="//apple_ref/swift/Section/Locator methods" class="dashAnchor"></a>
-                <a href="#/Locator%20methods">
-                  <h3 class="section-name">Locator methods</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE9subscriptSo0A0CAC7Locator_pci"></a>
-                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE9subscriptSo0A0CAC7Locator_pci">subscript(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns <code>XCUIElement</code> that matches the type and locator.</p>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="kt">Locators</span><span class="o">.</span><span class="n">ok</span><span class="p">]</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><code><a href="../Protocols/Locator.html">Locator</a></code> used to find element</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p017withLabelMatchingF0_AC24StringComparisonOperatorO010comparisonL0tF"></a>
-                    <a name="//apple_ref/swift/Method/element(withLabelMatchingLocator:comparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p017withLabelMatchingF0_AC24StringComparisonOperatorO010comparisonL0tF">element(withLabelMatchingLocator:comparisonOperator:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element with label matching provided string.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    String matching is customizable with operators available in <code>NSPredicate</code> specification.
-Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
-
-</div>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLabelMatchingLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">john</span><span class="p">,</span> <span class="nv">comparisonOperator</span><span class="p">:</span> <span class="o">.</span><span class="n">like</span><span class="p">)</span>
-<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLabelMatchingLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">comparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Locator to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>comparisonOperator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Operation to use when performing comparison.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that label matches given locator.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p04withF0_AcG_p5labelAC24StringComparisonOperatorO0hjK0tF"></a>
-                    <a name="//apple_ref/swift/Method/element(withLocator:label:labelComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p04withF0_AcG_p5labelAC24StringComparisonOperatorO0hjK0tF">element(withLocator:label:labelComparisonOperator:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element with identifier and label matching provided values.</p>
-
-<p>Can be used to find a cell which <code>UILabel</code>, with provided <code>identifier</code>, contains text provided by <code>label</code>.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    String matching is customizable with operators available in <code>NSPredicate</code> specification.
-Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
-
-</div>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">madeWithLove</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">labelComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Identifier of element to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>label</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Label of element to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>labelComparisonOperator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Operation to use when performing comparison.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that identifier and label match to given locators.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p04withF0_SS5labelAC24StringComparisonOperatorO0hjK0tF"></a>
-                    <a name="//apple_ref/swift/Method/element(withLocator:label:labelComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p04withF0_SS5labelAC24StringComparisonOperatorO0hjK0tF">element(withLocator:label:labelComparisonOperator:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element with identifier and label matching provided values.</p>
-
-<p>Can be used to find a cell which <code>UILabel</code>, with provided <code>identifier</code>, contains text provided by <code>label</code>.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    String matching is customizable with operators available in <code>NSPredicate</code> specification.
-Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
-
-</div>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="s">"Made with love"</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">labelComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Identifier of element to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>label</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Label of element to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>labelComparisonOperator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Operation to use when performing comparison.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that identifier and label match to given locator and text.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p04withF0_SaySSG6labelsAC24StringComparisonOperatorO05labeljK0tF"></a>
-                    <a name="//apple_ref/swift/Method/element(withLocator:labels:labelComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p04withF0_SaySSG6labelsAC24StringComparisonOperatorO05labeljK0tF">element(withLocator:labels:labelComparisonOperator:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element with identifier and label matching one of provided values.</p>
-
-<p>Can be used to find a <code>UILabel</code> with given identifier and localized labels.
-Localized texts are provided in the <code>labels</code> parameter.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    String matching is customizable with operators available in <code>NSPredicate</code> specification.
-Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.
-
-</div>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLocator</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">labels</span><span class="p">:</span> <span class="p">[</span><span class="s">"Z miłością przez"</span><span class="p">,</span> <span class="s">"Made with love by"</span><span class="p">])</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLocator</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">,</span> <span class="nv">labels</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">labelComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Identifier of element to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>labels</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Labels of element to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>labelComparisonOperator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Operation to use when performing comparison.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that identifier and label match given texts.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVyxSSG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tAC7LocatorRzs8HashableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/element(containingLabels:labelsComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVyxSSG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tAC7LocatorRzs8HashableRzlF">element(containingLabels:labelsComparisonOperator:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element that contains children matching provided locator-label dictionary.</p>
-
-<p>Searches for element that has sub-elements matching provided <q>locator:label</q> pairs.
-Especially useful for table views and collection views where cells will have the same identifier.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>String matching is customizable with operators available in <code>NSPredicate</code> specification.
-Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.</p>
-
-</div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>This method is intended to be used with table and collection views, where cells have to be identified by their contents.</p>
-
-</div>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">element</span>
-<span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">containingLabels</span><span class="p">:</span> <span class="p">[</span><span class="kt">Locators</span><span class="o">.</span><span class="nv">name</span><span class="p">:</span> <span class="s">"John*"</span><span class="p">,</span> <span class="kt">Locators</span><span class="o">.</span><span class="nv">email</span><span class="p">:</span> <span class="s">"*.com"</span><span class="p">],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="o">.</span><span class="n">like</span><span class="p">)</span>
-<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">element</span> <span class="o">&lt;</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="o">&gt;</span> <span class="p">(</span><span class="n">containingLabels</span> <span class="nv">dictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="kt">String</span><span class="p">],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>dictionary</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Dictionary of locators and labels to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>labelsComparisonOperator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Operation to use when performing comparison.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that identifiers and labels match to given locators and texts.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVyxSaySSGG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tAC7LocatorRzs8HashableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/element(containingLabels:labelsComparisonOperator:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0Cs10DictionaryVyxSaySSGG16containingLabels_AC24StringComparisonOperatorO06labelsjK0tAC7LocatorRzs8HashableRzlF">element(containingLabels:labelsComparisonOperator:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element that contains children matching provided locator-label dictionary.</p>
-
-<p>Searches for element that has sub-elements matching provided <q>locator:label</q> pairs.
-Especially useful for table views and collection views where cells will have the same identifier.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>String matching is customizable with operators available in <code>NSPredicate</code> specification.
-Check the <code><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></code> for available options.</p>
-
-</div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>This method is intended to be used with table and collection views, where cells have to be identified by their contents.</p>
-
-</div>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">element</span>
-<span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">containingLabels</span><span class="p">:</span> <span class="p">[</span><span class="kt">Locators</span><span class="o">.</span><span class="nv">name</span><span class="p">:</span> <span class="p">[</span><span class="s">"John*"</span><span class="p">,</span> <span class="s">"Jan*"</span><span class="p">],</span> <span class="kt">Locators</span><span class="o">.</span><span class="nv">email</span><span class="p">:</span> <span class="p">[</span><span class="s">"Free*"</span><span class="p">,</span> <span class="s">"Wolny*"</span><span class="p">]],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="o">.</span><span class="n">like</span><span class="p">)</span>
-<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">element</span> <span class="o">&lt;</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="o">&gt;</span> <span class="p">(</span><span class="n">containingLabels</span> <span class="nv">dictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">LocatorItem</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]],</span> <span class="nv">labelsComparisonOperator</span><span class="p">:</span> <span class="kt"><a href="../Enums/StringComparisonOperator.html">StringComparisonOperator</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">equals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>dictionary</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Dictionary of locators and labels to search for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>labelsComparisonOperator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Operation to use when performing comparison.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that identifiers and labels match to given locators and texts.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Locator%20shorted%20methods"></a>
-                <a name="//apple_ref/swift/Section/Locator shorted methods" class="dashAnchor"></a>
-                <a href="#/Locator%20shorted%20methods">
-                  <h3 class="section-name">Locator shorted methods</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p17withLabelPrefixed_tF"></a>
-                    <a name="//apple_ref/swift/Method/element(withLabelPrefixed:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p17withLabelPrefixed_tF">element(withLabelPrefixed:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element with label which begins with provided Locator.</p>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLabelPrefixed</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">john</span><span class="p">)</span>
-<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLabelPrefixed</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Object conforming to Locator.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that label begins with given locator.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p19withLabelContaining_tF"></a>
-                    <a name="//apple_ref/swift/Method/element(withLabelContaining:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16XCUIElementQueryC8AutoMateE7elementSo0A0CAC7Locator_p19withLabelContaining_tF">element(withLabelContaining:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns element with label which contains provided Locator.</p>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">staticTexts</span><span class="o">.</span><span class="nf">element</span><span class="p">(</span><span class="nv">withLabelContaining</span><span class="p">:</span> <span class="kt">Locators</span><span class="o">.</span><span class="n">john</span><span class="p">)</span>
-<span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="n">withLabelContaining</span> <span class="nv">locator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Locator.html">Locator</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locator</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Object conforming to Locator.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>XCUIElement</code> that label contains given locator.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-10-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

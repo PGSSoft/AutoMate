@@ -319,7 +319,7 @@
             <a href="../Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
+                <a href="../Other Functions.html#/s:8AutoMate2eeoiySbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -416,7 +416,7 @@
             <h1>LaunchArgumentWithMultipleValues</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LaunchArgumentWithMultipleValues</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchArgument.html">LaunchArgument</a></span><span class="p">,</span> <span class="kt">ExpressibleByArrayLiteral</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LaunchArgumentWithMultipleValues</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchArgument.html">LaunchArgument</a></span><span class="p">,</span> <span class="kt">ExpressibleByArrayLiteral</span></code></pre>
 
                 </div>
               </div>
@@ -458,9 +458,36 @@ of values.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesP6valuesSay5ValueQzGv"></a>
+                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa"></a>
+                    <a name="//apple_ref/swift/Alias/Value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa">Value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../Protocols/LaunchArgumentValue.html">LaunchArgumentValue</a></code> holds a set of requirements for the values a launch arguments can hold.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchArgumentValue.html">LaunchArgumentValue</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesP6valuesSay5ValueQzGvp"></a>
                     <a name="//apple_ref/swift/Property/values" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesP6valuesSay5ValueQzGv">values</a>
+                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesP6valuesSay5ValueQzGvp">values</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -475,7 +502,7 @@ of values.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">values</span><span class="p">:</span> <span class="p">[</span><span class="kt">Value</span><span class="p">]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">values</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/LaunchArgumentWithMultipleValues.html#/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa">Value</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -485,9 +512,9 @@ of values.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesPxSay5ValueQzGcfc"></a>
+                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesPyxSay5ValueQzGcfc"></a>
                     <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesPxSay5ValueQzGcfc">init(_:)</a>
+                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesPyxSay5ValueQzGcfc">init(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -502,7 +529,47 @@ of values.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">values</span><span class="p">:</span> <span class="p">[</span><span class="kt">Value</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">values</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/LaunchArgumentWithMultipleValues.html#/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa">Value</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ArrayLiteralConvertible"></a>
+                <a name="//apple_ref/swift/Section/ArrayLiteralConvertible" class="dashAnchor"></a>
+                <a href="#/ArrayLiteralConvertible">
+                  <h3 class="section-name">ArrayLiteralConvertible</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesP7ElementQa"></a>
+                    <a name="//apple_ref/swift/Alias/Element" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesP7ElementQa">Element</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An argument that can hold multiple values uses an array as a storage.
+For convienence client can initialize it with and array literal
+containing element&rsquo;s of type <code><a href="../Protocols/LaunchArgumentWithMultipleValues.html#/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa">Value</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Element</span> <span class="o">=</span> <span class="k">Self</span><span class="o">.</span><span class="kt"><a href="../Protocols/LaunchArgumentWithMultipleValues.html#/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa">Value</a></span></code></pre>
 
                         </div>
                       </div>
@@ -523,9 +590,9 @@ of values.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAE15launchArgumentsSaySSGSgv"></a>
+                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAE15launchArgumentsSaySSGSgvp"></a>
                     <a name="//apple_ref/swift/Property/launchArguments" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAE15launchArgumentsSaySSGSgv">launchArguments</a>
+                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAE15launchArgumentsSaySSGSgvp">launchArguments</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -543,7 +610,7 @@ of values.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">launchArguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">launchArguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -553,9 +620,9 @@ of values.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAExSay5ValueQzG12arrayLiterald_tcfc"></a>
+                    <a name="/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAE12arrayLiteralx5ValueQzd_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(arrayLiteral:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAExSay5ValueQzG12arrayLiterald_tcfc">init(arrayLiteral:)</a>
+                    <a class="token" href="#/s:8AutoMate32LaunchArgumentWithMultipleValuesPAAE12arrayLiteralx5ValueQzd_tcfc">init(arrayLiteral:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -573,7 +640,7 @@ of values.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">arrayLiteral</span> <span class="nv">elements</span><span class="p">:</span> <span class="kt">Value</span> <span class="o">...</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">arrayLiteral</span> <span class="nv">elements</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchArgumentWithMultipleValues.html#/s:8AutoMate32LaunchArgumentWithMultipleValuesP5ValueQa">Value</a></span><span class="o">...</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -604,8 +671,8 @@ of values.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-10-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

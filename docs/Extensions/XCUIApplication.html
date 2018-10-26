@@ -319,7 +319,7 @@
             <a href="../Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
+                <a href="../Other Functions.html#/s:8AutoMate2eeoiySbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -467,9 +467,9 @@ Bigger phones may have zoom mode enabled. In that case reported screen size will
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ov"></a>
+                    <a name="/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ovp"></a>
                     <a name="//apple_ref/swift/Property/deviceType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ov">deviceType</a>
+                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ovp">deviceType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -498,13 +498,18 @@ Bigger phones may have zoom mode enabled. In that case reported screen size will
 and iPhone6+ as iPhone 6.
 
 </div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    iPhone XS Max and XR have the same size in points, outside of UI tests you could differenciate them by scale (3x for XS Max and 2x for XR). For this reason property returns <code>iPhone61</code> for both.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">deviceType</span><span class="p">:</span> <span class="kt"><a href="../Enums/DeviceType.html">DeviceType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">deviceType</span><span class="p">:</span> <span class="kt"><a href="../Enums/DeviceType.html">DeviceType</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -514,9 +519,9 @@ and iPhone6+ as iPhone 6.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15XCUIApplicationC8AutoMateE15isRunningOnIpadSbv"></a>
+                    <a name="/s:So15XCUIApplicationC8AutoMateE15isRunningOnIpadSbvp"></a>
                     <a name="//apple_ref/swift/Property/isRunningOnIpad" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE15isRunningOnIpadSbv">isRunningOnIpad</a>
+                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE15isRunningOnIpadSbvp">isRunningOnIpad</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -526,7 +531,7 @@ and iPhone6+ as iPhone 6.
                       <div class="abstract">
                         <p>A Boolean value indicating whether app is currently running on iPad.</p>
 
-<p>Indicates if the current device is an iPad, by checking the <code><a href="../Extensions/XCUIApplication.html#/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ov">deviceType</a></code> property.</p>
+<p>Indicates if the current device is an iPad, by checking the <code><a href="../Extensions/XCUIApplication.html#/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ovp">deviceType</a></code> property.</p>
 
 <p><strong>Example:</strong></p>
 <pre class="highlight swift"><code><span class="k">if</span> <span class="n">app</span><span class="o">.</span><span class="n">isRunningOnIpad</span> <span class="p">{</span>
@@ -539,7 +544,7 @@ and iPhone6+ as iPhone 6.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRunningOnIpad</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRunningOnIpad</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -549,9 +554,9 @@ and iPhone6+ as iPhone 6.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15XCUIApplicationC8AutoMateE17isRunningOnIphoneSbv"></a>
+                    <a name="/s:So15XCUIApplicationC8AutoMateE17isRunningOnIphoneSbvp"></a>
                     <a name="//apple_ref/swift/Property/isRunningOnIphone" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE17isRunningOnIphoneSbv">isRunningOnIphone</a>
+                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE17isRunningOnIphoneSbvp">isRunningOnIphone</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -561,7 +566,7 @@ and iPhone6+ as iPhone 6.
                       <div class="abstract">
                         <p>A Boolean value indicating whether app is currently running on iPhone.</p>
 
-<p>Indicates if the current device is an iPhone, by checking the <code><a href="../Extensions/XCUIApplication.html#/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ov">deviceType</a></code> property.</p>
+<p>Indicates if the current device is an iPhone, by checking the <code><a href="../Extensions/XCUIApplication.html#/s:So15XCUIApplicationC8AutoMateE10deviceTypeAC06DeviceE0Ovp">deviceType</a></code> property.</p>
 
 <p><strong>Example:</strong></p>
 <pre class="highlight swift"><code><span class="k">if</span> <span class="n">app</span><span class="o">.</span><span class="n">isRunningOnIphone</span> <span class="p">{</span>
@@ -574,7 +579,7 @@ and iPhone6+ as iPhone 6.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRunningOnIphone</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRunningOnIphone</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -584,9 +589,9 @@ and iPhone6+ as iPhone 6.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15XCUIApplicationC8AutoMateE20isRunningOnSimulatorSbv"></a>
+                    <a name="/s:So15XCUIApplicationC8AutoMateE20isRunningOnSimulatorSbvp"></a>
                     <a name="//apple_ref/swift/Property/isRunningOnSimulator" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE20isRunningOnSimulatorSbv">isRunningOnSimulator</a>
+                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE20isRunningOnSimulatorSbvp">isRunningOnSimulator</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -609,7 +614,7 @@ and iPhone6+ as iPhone 6.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRunningOnSimulator</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRunningOnSimulator</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -619,9 +624,9 @@ and iPhone6+ as iPhone 6.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15XCUIApplicationC8AutoMateE16actualDeviceTypeAC0eF0Ov"></a>
+                    <a name="/s:So15XCUIApplicationC8AutoMateE16actualDeviceTypeAC0eF0Ovp"></a>
                     <a name="//apple_ref/swift/Property/actualDeviceType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE16actualDeviceTypeAC0eF0Ov">actualDeviceType</a>
+                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE16actualDeviceTypeAC0eF0Ovp">actualDeviceType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -642,7 +647,7 @@ and iPhone6+ as iPhone 6.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">actualDeviceType</span><span class="p">:</span> <span class="kt"><a href="../Enums/DeviceType.html">DeviceType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">actualDeviceType</span><span class="p">:</span> <span class="kt"><a href="../Enums/DeviceType.html">DeviceType</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -663,9 +668,9 @@ and iPhone6+ as iPhone 6.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15XCUIApplicationC8AutoMateE11isRunningOnSbAC10DeviceTypeOF"></a>
+                    <a name="/s:So15XCUIApplicationC8AutoMateE11isRunningOnySbAC10DeviceTypeOF"></a>
                     <a name="//apple_ref/swift/Method/isRunningOn(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE11isRunningOnSbAC10DeviceTypeOF">isRunningOn(_:)</a>
+                    <a class="token" href="#/s:So15XCUIApplicationC8AutoMateE11isRunningOnySbAC10DeviceTypeOF">isRunningOn(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -721,8 +726,8 @@ and iPhone6+ as iPhone 6.
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-10-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

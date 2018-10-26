@@ -319,7 +319,7 @@
             <a href="../Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Functions.html#/s:8AutoMate2eeoiSbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
+                <a href="../Other Functions.html#/s:8AutoMate2eeoiySbAA16LaunchOptionsSetV_ADtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -442,6 +442,191 @@ of the application when finished. If this doesn&rsquo;t happen then test will fa
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/Methods"></a>
+                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
+                <a href="#/Methods">
+                  <h3 class="section-name">Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10XCTestCaseC8AutoMateE4wait14forExistanceOf7timeout4file4lineyx_Sds12StaticStringVSutAC21IdentifiableByElementRzlF"></a>
+                    <a name="//apple_ref/swift/Method/wait(forExistanceOf:timeout:file:line:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4wait14forExistanceOf7timeout4file4lineyx_Sds12StaticStringVSutAC21IdentifiableByElementRzlF">wait(forExistanceOf:timeout:file:line:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wait for an identifiable element to exist in a view hierarchy. After given interval, if element is not found, test fails.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mainPage</span><span class="p">:</span> <span class="kt">MainPage</span> <span class="o">=</span> <span class="kt">MainPage</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
+<span class="nf">wait</span><span class="p">(</span><span class="nv">forExistanceOf</span><span class="p">:</span> <span class="n">mainPage</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">forExistanceOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>element</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XCUIElement to wait for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Waiting time (default: 10 seconds).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current source file.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>line</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current source line.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10XCTestCaseC8AutoMateE4wait15forVisibilityOf7timeout4file4lineyx_Sds12StaticStringVSutAC21IdentifiableByElementRzlF"></a>
+                    <a name="//apple_ref/swift/Method/wait(forVisibilityOf:timeout:file:line:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4wait15forVisibilityOf7timeout4file4lineyx_Sds12StaticStringVSutAC21IdentifiableByElementRzlF">wait(forVisibilityOf:timeout:file:line:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wait for an identifiable element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mainPage</span><span class="p">:</span> <span class="kt">MainPage</span> <span class="o">=</span> <span class="kt">MainPage</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
+<span class="nf">wait</span><span class="p">(</span><span class="nv">forVisibilityOf</span><span class="p">:</span> <span class="n">mainPage</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">forVisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>element</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XCUIElement to wait for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Waiting time (default: 10 seconds).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current source file.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>line</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current source line.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/Properties"></a>
                 <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
                 <a href="#/Properties">
@@ -470,7 +655,7 @@ By default set to 10 seconds.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">defaultTimeOut</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">defaultTimeOut</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -481,9 +666,9 @@ By default set to 10 seconds.</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Methods"></a>
+                <a name="/Methods2"></a>
                 <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
-                <a href="#/Methods">
+                <a href="#/Methods2">
                   <h3 class="section-name">Methods</h3>
                 </a>
               </div>
@@ -491,9 +676,9 @@ By default set to 10 seconds.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So10XCTestCaseC8AutoMateE4waitySo11NSPredicateC16forFulfillmentOf_So11XCUIElementC0G0SS18withFailingMessageSd7timeouts12StaticStringV4fileSu4linetF"></a>
+                    <a name="/s:So10XCTestCaseC8AutoMateE4wait16forFulfillmentOf0F018withFailingMessage7timeout4file4lineySo11NSPredicateC_So11XCUIElementCSSSds12StaticStringVSutF"></a>
                     <a name="//apple_ref/swift/Method/wait(forFulfillmentOf:for:withFailingMessage:timeout:file:line:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4waitySo11NSPredicateC16forFulfillmentOf_So11XCUIElementC0G0SS18withFailingMessageSd7timeouts12StaticStringV4fileSu4linetF">wait(forFulfillmentOf:for:withFailingMessage:timeout:file:line:)</a>
+                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4wait16forFulfillmentOf0F018withFailingMessage7timeout4file4lineySo11NSPredicateC_So11XCUIElementCSSSds12StaticStringVSutF">wait(forFulfillmentOf:for:withFailingMessage:timeout:file:line:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -609,9 +794,9 @@ By default set to 10 seconds.</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Methods2"></a>
+                <a name="/Methods3"></a>
                 <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
-                <a href="#/Methods2">
+                <a href="#/Methods3">
                   <h3 class="section-name">Methods</h3>
                 </a>
               </div>
@@ -619,9 +804,9 @@ By default set to 10 seconds.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So10XCTestCaseC8AutoMateE4waitySo11XCUIElementC14forExistanceOf_Sd7timeouts12StaticStringV4fileSu4linetF"></a>
+                    <a name="/s:So10XCTestCaseC8AutoMateE4wait14forExistanceOf7timeout4file4lineySo11XCUIElementC_Sds12StaticStringVSutF"></a>
                     <a name="//apple_ref/swift/Method/wait(forExistanceOf:timeout:file:line:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4waitySo11XCUIElementC14forExistanceOf_Sd7timeouts12StaticStringV4fileSu4linetF">wait(forExistanceOf:timeout:file:line:)</a>
+                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4wait14forExistanceOf7timeout4file4lineySo11XCUIElementC_Sds12StaticStringVSutF">wait(forExistanceOf:timeout:file:line:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -706,9 +891,9 @@ By default set to 10 seconds.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So10XCTestCaseC8AutoMateE4waitySo11XCUIElementC15forVisibilityOf_Sd7timeouts12StaticStringV4fileSu4linetF"></a>
+                    <a name="/s:So10XCTestCaseC8AutoMateE4wait15forVisibilityOf7timeout4file4lineySo11XCUIElementC_Sds12StaticStringVSutF"></a>
                     <a name="//apple_ref/swift/Method/wait(forVisibilityOf:timeout:file:line:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4waitySo11XCUIElementC15forVisibilityOf_Sd7timeouts12StaticStringV4fileSu4linetF">wait(forVisibilityOf:timeout:file:line:)</a>
+                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4wait15forVisibilityOf7timeout4file4lineySo11XCUIElementC_Sds12StaticStringVSutF">wait(forVisibilityOf:timeout:file:line:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -793,9 +978,9 @@ By default set to 10 seconds.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So10XCTestCaseC8AutoMateE4waitySo11XCUIElementC17forInvisibilityOf_Sd7timeouts12StaticStringV4fileSu4linetF"></a>
+                    <a name="/s:So10XCTestCaseC8AutoMateE4wait17forInvisibilityOf7timeout4file4lineySo11XCUIElementC_Sds12StaticStringVSutF"></a>
                     <a name="//apple_ref/swift/Method/wait(forInvisibilityOf:timeout:file:line:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4waitySo11XCUIElementC17forInvisibilityOf_Sd7timeouts12StaticStringV4fileSu4linetF">wait(forInvisibilityOf:timeout:file:line:)</a>
+                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4wait17forInvisibilityOf7timeout4file4lineySo11XCUIElementC_Sds12StaticStringVSutF">wait(forInvisibilityOf:timeout:file:line:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -879,196 +1064,11 @@ By default set to 10 seconds.</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Methods3"></a>
-                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
-                <a href="#/Methods3">
-                  <h3 class="section-name">Methods</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So10XCTestCaseC8AutoMateE4waityx14forExistanceOf_Sd7timeouts12StaticStringV4fileSu4linetAC21IdentifiableByElementRzlF"></a>
-                    <a name="//apple_ref/swift/Method/wait(forExistanceOf:timeout:file:line:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4waityx14forExistanceOf_Sd7timeouts12StaticStringV4fileSu4linetAC21IdentifiableByElementRzlF">wait(forExistanceOf:timeout:file:line:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Wait for an identifiable element to exist in a view hierarchy. After given interval, if element is not found, test fails.</p>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mainPage</span><span class="p">:</span> <span class="kt">MainPage</span> <span class="o">=</span> <span class="kt">MainPage</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
-<span class="nf">wait</span><span class="p">(</span><span class="nv">forExistanceOf</span><span class="p">:</span> <span class="n">mainPage</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">forExistanceOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>element</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>XCUIElement to wait for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>timeout</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Waiting time (default: 10 seconds).</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>file</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Current source file.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>line</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Current source line.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So10XCTestCaseC8AutoMateE4waityx15forVisibilityOf_Sd7timeouts12StaticStringV4fileSu4linetAC21IdentifiableByElementRzlF"></a>
-                    <a name="//apple_ref/swift/Method/wait(forVisibilityOf:timeout:file:line:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So10XCTestCaseC8AutoMateE4waityx15forVisibilityOf_Sd7timeouts12StaticStringV4fileSu4linetAC21IdentifiableByElementRzlF">wait(forVisibilityOf:timeout:file:line:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Wait for an identifiable element to appear in a view hierarchy. After given interval seconds, if element is not found, test fails.</p>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mainPage</span><span class="p">:</span> <span class="kt">MainPage</span> <span class="o">=</span> <span class="kt">MainPage</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
-<span class="nf">wait</span><span class="p">(</span><span class="nv">forVisibilityOf</span><span class="p">:</span> <span class="n">mainPage</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">forVisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>element</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>XCUIElement to wait for.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>timeout</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Waiting time (default: 10 seconds).</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>file</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Current source file.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>line</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Current source line.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-10-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
