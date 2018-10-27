@@ -1,7 +1,7 @@
 # Changelog
 
 ## [1.6.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.5.0)
-Released on 2018-10-26.
+Released on 2018-10-27.
 
 #### Added
 - Support for Xcode 10, iOS 12 and new devices
