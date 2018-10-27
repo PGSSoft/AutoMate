@@ -131,6 +131,7 @@ extension LaunchArgumentWithSingleValue where Self: LaunchArgumentValue {
 /// let magicNumbers = UserDefaults.standard.stringArray(forKey: "MagicNumbers")
 /// ```
 public protocol LaunchArgumentWithMultipleValues: LaunchArgument, ExpressibleByArrayLiteral {
+    /// `LaunchArgumentValue` holds a set of requirements for the values a launch arguments can hold.
     associatedtype Value: LaunchArgumentValue
 
     /// Array of values associated to the launch argument.
@@ -140,6 +141,9 @@ public protocol LaunchArgumentWithMultipleValues: LaunchArgument, ExpressibleByA
     init(_ values: [Value])
 
     // MARK: ArrayLiteralConvertible
+    /// An argument that can hold multiple values uses an array as a storage.
+    /// For convienence client can initialize it with and array literal
+    /// containing element's of type `Value`.
     associatedtype Element = Value
 }
 
