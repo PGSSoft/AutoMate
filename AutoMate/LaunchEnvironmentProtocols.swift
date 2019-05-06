@@ -43,7 +43,7 @@ public extension LaunchEnvironmentProtocol {
     /// Launch arguments provided by this 
     ///
     /// Launch environment does not have to provide launch arguments.
-    public var launchArguments: [String]? {
+    var launchArguments: [String]? {
         return nil
     }
 }
@@ -77,12 +77,12 @@ public protocol LaunchEnvironmentWithSingleValue: LaunchEnvironmentProtocol {
 public extension LaunchEnvironmentWithSingleValue {
 
     /// Unique value to use when comparing with other launch options.
-    public var uniqueIdentifier: String {
+    var uniqueIdentifier: String {
         return key
     }
 
     /// Dictionary added to `XCUIApplication` `launchEnviroment`.
-    public var launchEnvironments: [String: String]? {
+    var launchEnvironments: [String: String]? {
         return [key: value.value]
     }
 }
@@ -103,7 +103,7 @@ public extension LaunchEnvironmentWithSingleValue where Self: CleanableLaunchEnv
     ///
     /// ```swift
     /// ["LAUNCH_KEY": "AM_CLEAN_DATA_FLAG,PGS_WITH_LOVE"]
-    public var launchEnvironments: [String: String]? {
+    var launchEnvironments: [String: String]? {
         return shouldCleanBefore ? [key: "\(type(of: self).CleanFlag),\(value.value)"] : [key: value.value]
     }
 }
@@ -178,7 +178,7 @@ public extension LaunchEnvironmentWithMultipleValues where Self: CleanableLaunch
     ///
     /// ```swift
     /// ["CleanableArrayLaunchEnvironment": "AM_CLEAN_DATA_FLAG,PGS_WITH_LOVE,PGS_WITH_LOVE"]
-    public var launchEnvironments: [String: String]? {
+    var launchEnvironments: [String: String]? {
         return shouldCleanBefore ? [uniqueIdentifier: "\(type(of: self).CleanFlag),\(valuesCollection.launchEnvironment)"] : [uniqueIdentifier: valuesCollection.launchEnvironment]
     }
 }
@@ -210,7 +210,7 @@ public protocol CleanableLaunchEnvironment: LaunchEnvironmentProtocol {
 public extension CleanableLaunchEnvironment {
 
     /// Flag which is inserted at the beginning of launch enviroment value if `shouldCleanBefore` is set to true.
-    public static var CleanFlag: String {
+    static var CleanFlag: String {
         return "AM_CLEAN_DATA_FLAG"
     }
 }
@@ -255,12 +255,12 @@ public extension CleanableLaunchEnvironmentWithMultipleValues {
 
     // MARK: Initialization
     /// Calls `init(shouldCleanBefore: Bool, valuesCollection: [Value])` with before clean turned off.
-    public init(valuesCollection: [Value]) {
+    init(valuesCollection: [Value]) {
         self.init(shouldCleanBefore: false, valuesCollection: valuesCollection)
     }
 
     /// Calls `init(shouldCleanBefore: Bool, valuesCollection: [Value])` with before clean turned off.
-    public init(arrayLiteral elements: Value...) {
+    init(arrayLiteral elements: Value...) {
         self.init(shouldCleanBefore: false, valuesCollection: elements)
     }
 }
@@ -271,7 +271,7 @@ public extension CleanableLaunchEnvironmentWithMultipleValues where Self.Value =
 
     // MARK: Initialization
     /// Calls `init(shouldCleanBefore: Bool, valuesCollection: [Value])` with before clean turned off.
-    public init(shouldCleanBefore: Bool, resources: (fileName: String, bundleName: String?)...) {
+    init(shouldCleanBefore: Bool, resources: (fileName: String, bundleName: String?)...) {
         self.init(shouldCleanBefore: shouldCleanBefore, valuesCollection: resources.map(Value.init))
     }
 }

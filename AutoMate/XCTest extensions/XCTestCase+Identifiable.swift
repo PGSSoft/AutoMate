@@ -51,7 +51,7 @@ public extension XCTestCase {
     ///   - timeout: Waiting time (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait<T: IdentifiableByElement>(forExistanceOf element: T, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+    func wait<T: IdentifiableByElement>(forExistanceOf element: T, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         wait(forExistanceOf: element.identifingElement, timeout: timeout, file: file, line: line)
     }
 
@@ -69,7 +69,7 @@ public extension XCTestCase {
     ///   - timeout: Waiting time (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait<T: IdentifiableByElement>(forVisibilityOf element: T, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+    func wait<T: IdentifiableByElement>(forVisibilityOf element: T, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         wait(forVisibilityOf: element.identifingElement, timeout: timeout, file: file, line: line)
     }
 }

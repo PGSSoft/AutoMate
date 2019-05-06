@@ -82,7 +82,7 @@ extension LaunchOptionsSet: SetAlgebra {
      - returns: Removed element (or nil if it didn't exist).
      */
     public mutating func remove(_ member: LaunchOption) -> LaunchOption? {
-        guard let index = options.index(where: { member.uniqueIdentifier == $0.uniqueIdentifier }) else { return nil }
+        guard let index = options.firstIndex(where: { member.uniqueIdentifier == $0.uniqueIdentifier }) else { return nil }
         return options.remove(at: index)
     }
 
@@ -148,7 +148,7 @@ extension LaunchOptionsSet {
      - returns: Matching elements or nil if it doesn't exists in set.
      */
     fileprivate func contains(andReturns member: LaunchOption) -> LaunchOption? {
-        guard let index = options.index(where: { $0.uniqueIdentifier == member.uniqueIdentifier }) else {
+        guard let index = options.firstIndex(where: { $0.uniqueIdentifier == member.uniqueIdentifier }) else {
             return nil
         }
         return options[index]

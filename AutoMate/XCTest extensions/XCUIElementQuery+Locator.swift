@@ -20,7 +20,7 @@ public extension XCUIElementQuery {
     /// ```
     ///
     /// - Parameter locator: `Locator` used to find element
-    public subscript(locator: Locator) -> XCUIElement {
+    subscript(locator: Locator) -> XCUIElement {
         return self[locator.identifier]
     }
 
@@ -41,7 +41,7 @@ public extension XCUIElementQuery {
     ///   - locator: Locator to search for.
     ///   - comparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that label matches given locator.
-    public func element(withLabelMatchingLocator locator: Locator, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withLabelMatchingLocator locator: Locator, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         return element(withLabelMatching: locator.identifier, comparisonOperator: comparisonOperator)
     }
 
@@ -64,7 +64,7 @@ public extension XCUIElementQuery {
     ///   - label: Label of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match to given locators.
-    public func element(withLocator locator: Locator, label: Locator, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withLocator locator: Locator, label: Locator, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         return element(withLocator: locator, label: label.identifier, labelComparisonOperator: labelComparisonOperator)
     }
 
@@ -87,7 +87,7 @@ public extension XCUIElementQuery {
     ///   - label: Label of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match to given locator and text.
-    public func element(withLocator locator: Locator, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withLocator locator: Locator, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         return element(withIdentifier: locator.identifier, label: label, labelComparisonOperator: labelComparisonOperator)
     }
 
@@ -111,7 +111,7 @@ public extension XCUIElementQuery {
     ///   - labels: Labels of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match given texts.
-    public func element(withLocator locator: Locator, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withLocator locator: Locator, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         return element(withIdentifier: locator.identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
     }
 
@@ -138,7 +138,7 @@ public extension XCUIElementQuery {
     ///   - dictionary: Dictionary of locators and labels to search for.
     ///   - labelsComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifiers and labels match to given locators and texts.
-    public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: String], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
         return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
     }
@@ -166,7 +166,7 @@ public extension XCUIElementQuery {
     ///   - dictionary: Dictionary of locators and labels to search for.
     ///   - labelsComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifiers and labels match to given locators and texts.
-    public func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: [String]], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element <LocatorItem: Locator> (containingLabels dictionary: [LocatorItem: [String]], labelsComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let dict = dictionary.reduce([:]) { $0.union([$1.key.identifier: $1.value]) }
         return element(containingLabels: dict, labelsComparisonOperator: labelsComparisonOperator)
     }
@@ -183,7 +183,7 @@ public extension XCUIElementQuery {
     ///
     /// - Parameter locator: Object conforming to Locator.
     /// - Returns: `XCUIElement` that label begins with given locator.
-    public func element(withLabelPrefixed locator: Locator) -> XCUIElement {
+    func element(withLabelPrefixed locator: Locator) -> XCUIElement {
         return element(withLabelPrefixed: locator.identifier)
     }
 
@@ -198,7 +198,7 @@ public extension XCUIElementQuery {
     ///
     /// - Parameter locator: Object conforming to Locator.
     /// - Returns: `XCUIElement` that label contains given locator.
-    public func element(withLabelContaining locator: Locator) -> XCUIElement {
+    func element(withLabelContaining locator: Locator) -> XCUIElement {
         return element(withLabelContaining: locator.identifier)
     }
 }

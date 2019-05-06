@@ -45,14 +45,14 @@ public extension PushedPage {
     ///
     /// - note:
     /// The button with "back" as `accessibilityIdentifier` is used.
-    public var backButton: XCUIElement {
+    var backButton: XCUIElement {
         return view.navigationBars.buttons.firstMatch
     }
 
     // MARK: Actions
     /// Pop view by tapping on `backButton` button.
     #if !os(tvOS)
-    public func goBack() {
+    func goBack() {
         #if os(iOS)
         backButton.tap()
         #elseif os(macOS)

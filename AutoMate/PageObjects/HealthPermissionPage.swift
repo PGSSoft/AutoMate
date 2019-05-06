@@ -55,7 +55,7 @@ public extension HealthPermissionPage {
     /// Locators used in the HealthKit permission view.
     ///
     /// - `healthAccess`: Navigation bar identifier.
-    public enum Locators: String, Locator {
+    enum Locators: String, Locator {
         /// Navigation bar identifier.
         case healthAccess = "Health Access"
     }
