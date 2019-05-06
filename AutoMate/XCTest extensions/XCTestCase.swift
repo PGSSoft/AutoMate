@@ -34,7 +34,7 @@ public extension XCTestCase {
     ///   - timeout: Waiting time in seconds (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait(forFulfillmentOf predicate: NSPredicate,
+    func wait(forFulfillmentOf predicate: NSPredicate,
                      for element: XCUIElement,
                      withFailingMessage message: String = "Failed to fulfill predicate %@ for %@ within %.2f seconds.",
                      timeout: TimeInterval = XCTestCase.defaultTimeOut,
@@ -67,7 +67,7 @@ public extension XCTestCase {
     ///   - timeout: Waiting time in seconds (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait(forExistanceOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+    func wait(forExistanceOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         let existancePredicate = NSPredicate(format: "exists == true")
         wait(forFulfillmentOf: existancePredicate, for: element, withFailingMessage: "Failed to find %2$@ within %3$.2f seconds. Predicate was: %1$@.", timeout: timeout, file: file, line: line)
     }
@@ -86,7 +86,7 @@ public extension XCTestCase {
     ///   - timeout: Waiting time in seconds (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait(forVisibilityOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+    func wait(forVisibilityOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         let visibilityPredicate = NSPredicate(format: "exists == true && hittable == true")
         wait(forFulfillmentOf: visibilityPredicate, for: element, withFailingMessage: "Failed to find %2$@ as visible within %3$.2f seconds. Predicate was: %1$@.", timeout: timeout, file: file, line: line)
     }
@@ -105,7 +105,7 @@ public extension XCTestCase {
     ///   - timeout: Waiting time in seconds (default: 10 seconds).
     ///   - file: Current source file.
     ///   - line: Current source line.
-    public func wait(forInvisibilityOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
+    func wait(forInvisibilityOf element: XCUIElement, timeout: TimeInterval = XCTestCase.defaultTimeOut, file: StaticString = #file, line: UInt = #line) {
         let invisibilityPredicate = NSPredicate(format: "hittable == false")
         wait(forFulfillmentOf: invisibilityPredicate, for: element, withFailingMessage: "Failed to find %2$@ as invisible within %3$.2f seconds. Predicate was: %1$@.", timeout: timeout, file: file, line: line)
     }

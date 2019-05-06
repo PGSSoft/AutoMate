@@ -22,7 +22,7 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithMult
 
     // MARK: Properties
     /// Implementation overriding `uniqueIdentifier` property from `LaunchOption` protocol to use `rawValue` of `AutoMateKey`.
-    public var uniqueIdentifier: String {
+    var uniqueIdentifier: String {
         return Self.key.rawValue
     }
 
@@ -30,7 +30,7 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithMult
     /// Intializes `AutoMateLaunchEnvironment` with tuples describing `LaunchEnvironmentResourceValue`.
     ///
     /// - Parameter resources: `(String, String?)` tuples describing `LaunchEnvironmentResourceValue`
-    public init(resources: (fileName: String, bundleName: String?)...) {
+    init(resources: (fileName: String, bundleName: String?)...) {
         self.init(valuesCollection: resources.map(Value.init))
     }
 }
@@ -40,7 +40,7 @@ public extension AutoMateLaunchEnvironment where Self: LaunchEnvironmentWithSing
 
     // MARK: Properties
     /// Implementation of `key` property from `LaunchEnvironmentWithSingleValue` protocol to use `rawValue` of `AutoMateKey`.
-    public var key: String {
+    var key: String {
         return Self.key.rawValue
     }
 }

@@ -13,7 +13,7 @@ public extension Sequence where Iterator.Element: Hashable {
     /// Returns an array with unique elements preserving an order of elements.
     ///
     /// - Returns: Unique elements.
-    public func unique() -> [Iterator.Element] {
+    func unique() -> [Iterator.Element] {
         var buffer: [Iterator.Element] = []
         var added = Set<Iterator.Element>()
         for element in self {

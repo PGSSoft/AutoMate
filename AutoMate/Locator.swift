@@ -32,7 +32,7 @@ public protocol Locator {
 public extension Locator where Self: RawRepresentable, Self.RawValue == String {
 
     /// Element identifier.
-    public var identifier: String {
+    var identifier: String {
         return rawValue
     }
 }

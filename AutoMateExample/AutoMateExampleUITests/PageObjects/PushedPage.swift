@@ -18,7 +18,7 @@ public protocol PushedPage: AutoMate.PushedPage {
 public extension PushedPage {
 
     // MARK: Elements
-    public var backButton: XCUIElement {
+    var backButton: XCUIElement {
         return view.navigationBars.buttons.firstMatch
     }
 }

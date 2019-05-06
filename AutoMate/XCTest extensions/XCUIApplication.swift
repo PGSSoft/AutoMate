@@ -76,7 +76,7 @@ public extension XCUIApplication {
     /// and iPhone6+ as iPhone 6.
     /// - note:
     /// iPhone XS Max and XR have the same size in points, outside of UI tests you could differenciate them by scale (3x for XS Max and 2x for XR). For this reason property returns `iPhone61` for both.
-    public var deviceType: DeviceType {
+    var deviceType: DeviceType {
         let window = windows.element(boundBy: 0)
         let size = window.frame.size
         let portraitSize = size.height > size.width ? size : CGSize(width: size.height, height: size.width)
@@ -116,7 +116,7 @@ public extension XCUIApplication {
     ///     button.tap()
     /// }
     /// ```
-    public var isRunningOnIpad: Bool {
+    var isRunningOnIpad: Bool {
         switch deviceType {
         case .iPad, .iPadPro105, .iPadPro12:
             return true
@@ -137,7 +137,7 @@ public extension XCUIApplication {
     ///     button.tap()
     /// }
     /// ```
-    public var isRunningOnIphone: Bool {
+    var isRunningOnIphone: Bool {
         switch deviceType {
         case .iPad, .iPadPro105, .iPadPro12:
             return false
@@ -158,7 +158,7 @@ public extension XCUIApplication {
     ///     print("Running on simulator")
     /// }
     /// ```
-    public var isRunningOnSimulator: Bool {
+    var isRunningOnSimulator: Bool {
         #if targetEnvironment(simulator)
             return true
         #else
@@ -192,7 +192,7 @@ public extension XCUIApplication {
     ///     print("Detected iPhone 6 in zoom mode")
     /// }
     /// ```
-    public var actualDeviceType: DeviceType {
+    var actualDeviceType: DeviceType {
         // Determine device type by checking machineIdentifier directly.
         switch machineIdentifier {
         case "iPhone7,1", "iPhone8,2":
@@ -219,7 +219,7 @@ public extension XCUIApplication {
     ///
     /// - Parameter deviceType: Type of device to check for.
     /// - Returns: Boolean value indicating whether current device is of the expected type.
-    public func isRunningOn(_ deviceType: DeviceType) -> Bool {
+    func isRunningOn(_ deviceType: DeviceType) -> Bool {
         return self.deviceType == deviceType
     }
 }

@@ -91,7 +91,7 @@ public extension XCUIElementQuery {
     ///   - text: String to search for.
     ///   - comparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that label matches to given text.
-    public func element(withLabelMatching text: String, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withLabelMatching text: String, comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         return element(matching: NSPredicate(format: "label \(comparisonOperator.rawValue) %@", text))
     }
 
@@ -114,7 +114,7 @@ public extension XCUIElementQuery {
     ///   - texts: List of labels.
     ///   - comparisonOperator: Operation to use when performing comparison.
     /// - Returns: Array of `XCUIElement` elements.
-    public func elements(withLabelsMatching texts: [String], comparisonOperator: StringComparisonOperator = .equals) -> [XCUIElement] {
+    func elements(withLabelsMatching texts: [String], comparisonOperator: StringComparisonOperator = .equals) -> [XCUIElement] {
         return texts
             .compactMap({ element(withLabelMatching: $0, comparisonOperator: comparisonOperator) })
             .filter { $0.exists }
@@ -139,7 +139,7 @@ public extension XCUIElementQuery {
     ///   - label: Label of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match given texts.
-    public func element(withIdentifier identifier: String, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withIdentifier identifier: String, label: String, labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let predicate = NSPredicate(format: "identifier == %@ AND label \(labelComparisonOperator.rawValue) %@", identifier, label)
         return element(matching: predicate)
     }
@@ -164,7 +164,7 @@ public extension XCUIElementQuery {
     ///   - labels: Labels of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifier and label match given texts.
-    public func element(withIdentifier identifier: String, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(withIdentifier identifier: String, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let predicate = type(of: self).predicate(withIdentifier: identifier, labels: labels, labelComparisonOperator: labelComparisonOperator)
         return element(matching: predicate)
     }
@@ -192,7 +192,7 @@ public extension XCUIElementQuery {
     ///   - dictionary: Dictionary of identifiers and labels to search for.
     ///   - comparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifiers and labels match given texts.
-    public func element(containingLabels dictionary: [String: String], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(containingLabels dictionary: [String: String], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         let predicateString = "identifier == %@ AND label \(comparisonOperator.rawValue) %@"
         var query = self
         for (identifier, label) in dictionary {
@@ -226,7 +226,7 @@ public extension XCUIElementQuery {
     ///   - dictionary: Dictionary of identifiers and labels to search for.
     ///   - comparisonOperator: Operation to use when performing comparison.
     /// - Returns: `XCUIElement` that identifiers and labels match given texts.
-    public func element(containingLabels dictionary: [String: [String]], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
+    func element(containingLabels dictionary: [String: [String]], labelsComparisonOperator comparisonOperator: StringComparisonOperator = .equals) -> XCUIElement {
         var query = self
         for (identifier, labels) in dictionary {
             let predicate = type(of: self).predicate(withIdentifier: identifier, labels: labels, labelComparisonOperator: comparisonOperator)
@@ -250,7 +250,7 @@ public extension XCUIElementQuery {
     ///
     /// - Parameter text: String to search for.
     /// - Returns: `XCUIElement` that label begins with given text.
-    public func element(withLabelPrefixed text: String) -> XCUIElement {
+    func element(withLabelPrefixed text: String) -> XCUIElement {
         return element(withLabelMatching: text, comparisonOperator: .beginsWith)
     }
 
@@ -265,7 +265,7 @@ public extension XCUIElementQuery {
     ///
     /// - Parameter text: String to search for.
     /// - Returns: `XCUIElement` that label contains given text.
-    public func element(withLabelContaining text: String) -> XCUIElement {
+    func element(withLabelContaining text: String) -> XCUIElement {
         return element(withLabelMatching: text, comparisonOperator: .contains)
     }
 
@@ -280,7 +280,7 @@ public extension XCUIElementQuery {
     ///
     /// - Parameter texts: List of labels.
     /// - Returns: Array of `XCUIElement` elements.
-    public func elements(withLabelsContaining texts: [String]) -> [XCUIElement] {
+    func elements(withLabelsContaining texts: [String]) -> [XCUIElement] {
         return elements(withLabelsMatching: texts, comparisonOperator: .contains)
     }
 
@@ -295,7 +295,7 @@ public extension XCUIElementQuery {
     ///
     /// - Parameter texts: List of labels.
     /// - Returns: Array of `XCUIElement` elements.
-    public func elements(withLabelsLike texts: [String]) -> [XCUIElement] {
+    func elements(withLabelsLike texts: [String]) -> [XCUIElement] {
         return elements(withLabelsMatching: texts, comparisonOperator: .like)
     }
 }

@@ -33,7 +33,7 @@ public extension XCUIElementQuery {
     ///   - labels: Labels of element to search for.
     ///   - labelComparisonOperator: Operation to use when performing comparison.
     /// - Returns: An predicate which matches element which identifier and label match given texts.
-    public class func predicate(withIdentifier identifier: String, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> NSPredicate {
+    class func predicate(withIdentifier identifier: String, labels: [String], labelComparisonOperator: StringComparisonOperator = .equals) -> NSPredicate {
         let identifierPredicate = NSPredicate(format: "identifier == %@", identifier)
         let labelsPredicates = labels.map { NSPredicate(format: "label \(labelComparisonOperator.rawValue) %@", $0) }
         let labelPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: labelsPredicates)

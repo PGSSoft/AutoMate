@@ -45,14 +45,14 @@ public extension ModalPage {
     ///
     /// - note:
     /// The button with "close" as `accessibilityIdentifier` is used.
-    public var closeButton: XCUIElement {
+    var closeButton: XCUIElement {
         return view.buttons[Locators.closeModalButton]
     }
 
     // MARK: Actions
     /// Close modal view by tapping on `closeButton` button.
     #if !os(tvOS)
-    public func closeModalPage() {
+    func closeModalPage() {
         #if os(iOS)
         closeButton.tap()
         #elseif os(macOS)

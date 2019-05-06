@@ -29,7 +29,7 @@ public protocol LaunchOption {
 public extension LaunchOption {
 
     /// Unique value to use when comparing with other launch options.
-    public var uniqueIdentifier: String {
+    var uniqueIdentifier: String {
         return "\(type(of: self))"
     }
 }
