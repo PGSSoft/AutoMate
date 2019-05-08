@@ -15,6 +15,10 @@ class MediaLibraryViewController: UIViewController {
     // MARK: - View life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        MPMediaLibrary.requestAuthorization { _ in }
+//        MPMediaLibrary.requestAuthorization { _ in }
+        MPMediaLibrary.requestAuthorization {
+            print($0)
+            print($0)
+        }
     }
 }
