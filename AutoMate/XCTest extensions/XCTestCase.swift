@@ -35,11 +35,11 @@ public extension XCTestCase {
     ///   - file: Current source file.
     ///   - line: Current source line.
     func wait(forFulfillmentOf predicate: NSPredicate,
-                     for element: XCUIElement,
-                     withFailingMessage message: String = "Failed to fulfill predicate %@ for %@ within %.2f seconds.",
-                     timeout: TimeInterval = XCTestCase.defaultTimeOut,
-                     file: StaticString = #file,
-                     line: UInt = #line) {
+              for element: XCUIElement,
+              withFailingMessage message: String = "Failed to fulfill predicate %@ for %@ within %.2f seconds.",
+              timeout: TimeInterval = XCTestCase.defaultTimeOut,
+              file: StaticString = #file,
+              line: UInt = #line) {
 
         expectation(for: predicate, evaluatedWith: element, handler: nil)
 

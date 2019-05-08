@@ -680,7 +680,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoMate-AppBuddy/AutoMate_AppBuddy.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -689,7 +689,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7AB9CBCC5E0491B305E5841 /* [CP] Check Pods Manifest.lock */ = {
