@@ -1,6 +1,13 @@
 # Changelog
 
-## [1.6.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.5.0)
+## [1.7.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.7.0)
+Released on XXXX-YY-ZZ.
+
+#### Added
+- Support for Xcode 10.
+- Compatibility with Swift 5 (#15) via Stefan Renne
+
+## [1.6.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.6.0)
 Released on 2018-10-27.
 
 #### Added
