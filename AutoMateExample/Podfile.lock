@@ -1,5 +1,5 @@
 PODS:
-  - AutoMate-AppBuddy (1.4.0)
+  - AutoMate-AppBuddy (1.5.0)
 
 DEPENDENCIES:
   - AutoMate-AppBuddy (from `https://github.com/PGSSoft/AutoMate-AppBuddy`)
@@ -10,12 +10,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AutoMate-AppBuddy:
-    :commit: a6601a707454e7aa5df977d76c4b6b43c5461ee4
+    :commit: 57e7c0136d41f951bb3c7e88d7f8466525abf0c2
     :git: https://github.com/PGSSoft/AutoMate-AppBuddy
 
 SPEC CHECKSUMS:
-  AutoMate-AppBuddy: 8b5401eb02fef53dc6721ff81fb8d6b726f85dc7
+  AutoMate-AppBuddy: 5de5cdc57cc2126cf58daf3d120064fd24c9b36f
 
-PODFILE CHECKSUM: 5dbd87bb043c48c4b92a48aec735ac21ab8272b1
+PODFILE CHECKSUM: 52ea3e5ee9bc3c51b1f287d0127f513847b4370b
 
 COCOAPODS: 1.6.1
