@@ -286,7 +286,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods (~> 1.6.0.beta.2)
+  cocoapods
   danger
   danger-conflict_checker
   danger-swiftlint

@@ -16,7 +16,7 @@
 It provides strongly typed, extensible wrapper around launch arguments and environment variables, which can be used for language, locale and keyboard type configuration on the device.
 With the [`AutoMate-AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) it can also disable animations in the application and manage events, reminders and contacts.
 
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
+[![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
 [![Travis](https://img.shields.io/travis/PGSSoft/AutoMate.svg)](https://travis-ci.org/PGSSoft/AutoMate)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
 [![Documentation](https://img.shields.io/badge/docs-100%25-D15B45.svg?style=flat)](https://pgssoft.github.io/AutoMate/)
