@@ -11,7 +11,7 @@ import AutoMate
 enum LaunchOptionsFactory {
 
     static let singleSoftwareKeyboardLaunchArgument = SoftwareKeyboards([.EnglishUnitedStates])
-    static let multiSoftwareKeyboardLaunchArgument = SoftwareKeyboards([.EnglishUnitedStates, .ChineseChina])
+    static let multiSoftwareKeyboardLaunchArgument = SoftwareKeyboards([.EnglishUnitedStates, .ChineseChinamainland])
     static let singleLanguageLaunchArgument = SystemLanguages([.EnglishUnitedStates])
     static let multiLanguageLaunchArgument = SystemLanguages([.EnglishUnitedStates, .Hungarian])
 

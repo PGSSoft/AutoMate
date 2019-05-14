@@ -141,8 +141,8 @@ public enum SystemCountry: String {
     /// Automatically generated value for country Chile.
     case Chile = "CL"
 
-    /// Automatically generated value for country China.
-    case China = "CN"
+    /// Automatically generated value for country Chinamainland.
+    case Chinamainland = "CN"
 
     /// Automatically generated value for country ChristmasIsland.
     case ChristmasIsland = "CX"

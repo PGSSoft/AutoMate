@@ -14,7 +14,7 @@ def unlockGitHubDangerCredentials(block) {
 }
 
 // Repository detection
-def job = env.JOB_NAME.tokenize("/")[0]
+def job = env.JOB_NAME.tokenize("/")[-2]
 def unlockDangerCredentials = this.&unlockBitbucketDangerCredentials
 if (job =~ /.*github.*/) {
   echo "Repo: GitHub"
