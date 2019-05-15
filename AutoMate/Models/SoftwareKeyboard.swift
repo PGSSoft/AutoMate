@@ -27,8 +27,8 @@ public enum SoftwareKeyboard: String, LaunchArgumentValue {
     /// Automatically generated value for software keyboard Cherokee.
     case Cherokee = "chr@sw=Cherokee"
 
-    /// Automatically generated value for software keyboard ChineseChina.
-    case ChineseChina = "zh_CN@sw=Pinyin-Simplified"
+    /// Automatically generated value for software keyboard ChineseChinamainland.
+    case ChineseChinamainland = "zh_CN@sw=Pinyin-Simplified"
 
     /// Automatically generated value for software keyboard ChineseSimplifiedHWR.
     case ChineseSimplifiedHWR = "zh_Hans-HWR@sw=HWR-Simplified"
