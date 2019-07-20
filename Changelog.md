@@ -1,7 +1,13 @@
 # Changelog
 
+## [1.7.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.7.1)
+Released on 2019-07-20.
+
+#### Updated
+- Updated Ruby dependencies.
+
 ## [1.7.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.7.0)
-Released on 2019.05-12.
+Released on 2019-05-12.
 
 #### Added
 - Support for Xcode 10.
