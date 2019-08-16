@@ -236,7 +236,7 @@
 				966A7FA51E6967630009122E /* KeyboardLocator.swift */,
 				C9371A471E2F542100808AFC /* Locator.swift */,
 			);
-			name = Locators;
+			path = Locators;
 			sourceTree = "<group>";
 		};
 		966B92321E40D15B006E6A18 /* PageObjects */ = {
@@ -339,7 +339,7 @@
 				E4535A451CEDC4AB008965DD /* LaunchOptionProtocol.swift */,
 				E483C84E1CFC01A400B58BE3 /* LaunchOptionsSet.swift */,
 			);
-			name = "Launch Option";
+			path = "Launch Option";
 			sourceTree = "<group>";
 		};
 		E43B229A1CFEC17A00AE6B40 /* Factories */ = {
@@ -386,7 +386,7 @@
 				E4DDEDA71E3A34B800C2F2A1 /* LaunchEnvironmentProtocols.swift */,
 				E4DDEDA91E3A351300C2F2A1 /* LaunchEnvironmentValue.swift */,
 			);
-			name = "Launch Environment";
+			path = "Launch Environment";
 			sourceTree = "<group>";
 		};
 		E4DDEDAC1E3A354600C2F2A1 /* Launch Argument */ = {
@@ -396,7 +396,7 @@
 				E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */,
 				E43192301E2E19C700B019C1 /* LaunchArgumentValue.swift */,
 			);
-			name = "Launch Argument";
+			path = "Launch Argument";
 			sourceTree = "<group>";
 		};
 		E4EE41C21CFD7246004F0FFE /* AutoMateTests */ = {
