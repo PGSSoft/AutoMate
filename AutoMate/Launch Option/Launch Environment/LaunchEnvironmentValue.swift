@@ -40,7 +40,7 @@ extension LaunchEnvironmentValue where Self: RawRepresentable, Self.RawValue == 
 ///
 /// - `true`: `true` value
 /// - `false`: `false` value
-public enum BooleanLaunchEnvironmentValue: String, ExpressibleByBooleanLiteral, LaunchEnvironmentValue {
+public enum BooleanLaunchEnvironmentValue: String, ExpressibleByBooleanLiteral, LaunchEnvironmentValue, Equatable {
 
     /// Value of true, or 1.
     case `true`

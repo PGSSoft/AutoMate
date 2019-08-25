@@ -52,3 +52,14 @@ extension SingleValueCleanableEnvironment: RawRepresentable {
         self.shouldCleanBefore = true
     }
 }
+
+struct MultipleValuesCleanableEnvironment: CleanableLaunchEnvironmentWithMultipleValues {
+    typealias Value = String
+    let shouldCleanBefore: Bool
+    let valuesCollection: [String]
+}
+
+struct MultipleValuesEnvironment: LaunchEnvironmentWithMultipleValues {
+    typealias Value = String
+    let valuesCollection: [String]
+}
