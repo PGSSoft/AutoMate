@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>HealthAlertOk Protocol Reference</title>
+    <title>RawRepresentable Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/HealthAlertOk" class="dashAnchor"></a>
-    <a title="HealthAlertOk Protocol Reference"></a>
+    <a name="//apple_ref/swift/Extension/RawRepresentable" class="dashAnchor"></a>
+    <a title="RawRepresentable Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">AutoMate Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">AutoMate Reference</a>
         <img id="carat" src="../img/carat.png" />
-        HealthAlertOk Protocol Reference
+        RawRepresentable Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -416,31 +416,106 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>HealthAlertOk</h1>
-            <p>Protocol defining health alert OK element.</p>
+            <h1>RawRepresentable</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RawRepresentable</span> <span class="k">where</span> <span class="k">Self</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LaunchEnvironmentWithSingleValue.html">LaunchEnvironmentWithSingleValue</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Provides default implementation for any <code>RawRepresentable</code>
+type to represent a launch environment in a few simple steps.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">LimitedOptionsEnvironment</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">LaunchEnvironmentWithSingleValue</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">one</span>
+    <span class="k">case</span> <span class="n">two</span>
+
+    <span class="k">var</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"LimitedOptionsEnvironment"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><strong>Usage:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">app</span> <span class="o">=</span> <span class="kt">XCUIApplication</span><span class="p">()</span>
+<span class="kt">TestLauncher</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">LimitedOptionsEnvironment</span><span class="o">.</span><span class="n">one</span>
+<span class="p">])</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="nf">launch</span><span class="p">()</span>
+</code></pre>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Typealias"></a>
+                <a name="//apple_ref/swift/Section/Typealias" class="dashAnchor"></a>
+                <a href="#/Typealias">
+                  <h3 class="section-name">Typealias</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
-                    <a name="//apple_ref/swift/Variable/ok" class="dashAnchor"></a>
-                    <a class="token" href="#/">ok</a>
+                    <a name="/s:SY8AutoMateAA32LaunchEnvironmentWithSingleValueRzrlE0G0a"></a>
+                    <a name="//apple_ref/swift/Alias/Value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SY8AutoMateAA32LaunchEnvironmentWithSingleValueRzrlE0G0a">Value</a>
                     </code>
-                      <span class="declaration-note">
-                        Extension method
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represents all possible <q>ok</q> buttons in HealthKit permission view.</p>
+                        <p>Value is the same type as the raw value.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">RawValue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:SY8AutoMateAA32LaunchEnvironmentWithSingleValueRzrlE5value03RawG0SYQzvp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SY8AutoMateAA32LaunchEnvironmentWithSingleValueRzrlE5value03RawG0SYQzvp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>rawValue</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">RawValue</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
