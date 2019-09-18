@@ -299,3 +299,7 @@ public extension XCUIElementQuery {
         return elements(withLabelsMatching: texts, comparisonOperator: .like)
     }
 }
+
+//extension XCUIElementQuery {
+//    func reduce(
+//}

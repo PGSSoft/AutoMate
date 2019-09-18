@@ -97,6 +97,25 @@ class XCUIElementQueryTests: AppUITestCase {
         XCTAssertFalse(wrongRightDetailCell.exists)
         XCTAssertFalse(wrongIdentifierCell.exists)
     }
+
+    func testSliderCell() {
+        mainPage.goToTablePageMenu()
+
+        let sliderCell = tablePage.cells
+            .containing([
+                .identifier(Locators.slider),
+                .identifier(Locators.valueLabel) & .label(that: .beginsWith, ".2f")])
+            .element
+
+        XCTAssertTrue(sliderCell.isHittable)
+        sliderCell.tap()
+
+        let slider = sliderCell.sliders[Locators.slider]
+        slider.adjust(to: 0.78)
+
+        let label = sliderCell.staticTexts[Locators.valueLabel]
+        XCTAssertEqual(label.label, ".2f: 0.78")
+    }
 }
 
 // MARK: - Locators
@@ -106,5 +125,7 @@ private extension XCUIElementQueryTests {
         case subtitle
         case rightDetail
         case credit
+        case slider
+        case valueLabel
     }
 }

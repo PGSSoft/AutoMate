@@ -66,6 +66,8 @@
 		C83D1575216B12FA007B0A26 /* CameraAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154E216B12FA007B0A26 /* CameraAlert.json */; };
 		C83D1576216B12FA007B0A26 /* SpeechRecognitionAlert.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D154F216B12FA007B0A26 /* SpeechRecognitionAlert.json */; };
 		C83D1577216B12FA007B0A26 /* LocationAlertOk.json in Resources */ = {isa = PBXBuildFile; fileRef = C83D1550216B12FA007B0A26 /* LocationAlertOk.json */; };
+		C8B17474230895E50008E679 /* NSPredicate+ElementQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B17473230895E50008E679 /* NSPredicate+ElementQuery.swift */; };
+		C8B174762308961D0008E679 /* NSPredicateElementQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B174752308961D0008E679 /* NSPredicateElementQueryTests.swift */; };
 		C9371A481E2F542100808AFC /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9371A471E2F542100808AFC /* Locator.swift */; };
 		C9583BDB1E4B1FEC0098BB27 /* SystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */; };
 		E40337771CEF1DCB007FAEFF /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */; };
@@ -164,6 +166,8 @@
 		C83D154E216B12FA007B0A26 /* CameraAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CameraAlert.json; sourceTree = "<group>"; };
 		C83D154F216B12FA007B0A26 /* SpeechRecognitionAlert.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SpeechRecognitionAlert.json; sourceTree = "<group>"; };
 		C83D1550216B12FA007B0A26 /* LocationAlertOk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationAlertOk.json; sourceTree = "<group>"; };
+		C8B17473230895E50008E679 /* NSPredicate+ElementQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+ElementQuery.swift"; sourceTree = "<group>"; };
+		C8B174752308961D0008E679 /* NSPredicateElementQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPredicateElementQueryTests.swift; sourceTree = "<group>"; };
 		C9371A471E2F542100808AFC /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		C9583BDA1E4B1FEC0098BB27 /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		E40337761CEF1DCB007FAEFF /* LaunchArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
@@ -290,6 +294,14 @@
 			path = Messages;
 			sourceTree = "<group>";
 		};
+		C8B1747223088EEE0008E679 /* Matching */ = {
+			isa = PBXGroup;
+			children = (
+				C8B17473230895E50008E679 /* NSPredicate+ElementQuery.swift */,
+			);
+			path = Matching;
+			sourceTree = "<group>";
+		};
 		E425D5531CED928100A7CA03 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +336,7 @@
 				E4535A471CEDD24B008965DD /* Foundation extensions */,
 				E431922C1E2E194800B019C1 /* Launch Option */,
 				966A7FA71E6967670009122E /* Locators */,
+				C8B1747223088EEE0008E679 /* Matching */,
 				E47BB6F41CF310F200229D63 /* Models */,
 				966B92321E40D15B006E6A18 /* PageObjects */,
 				1F9AE7201D4B4A4000027033 /* XCTest extensions */,
@@ -408,6 +421,7 @@
 				E487A11D1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift */,
 				E481AD441E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift */,
 				E4D637D01D01B80200405514 /* TestLauncherTests.swift */,
+				C8B174752308961D0008E679 /* NSPredicateElementQueryTests.swift */,
 			);
 			path = AutoMateTests;
 			sourceTree = "<group>";
@@ -575,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B17474230895E50008E679 /* NSPredicate+ElementQuery.swift in Sources */,
 				9666D6E41E8A7E5C00511000 /* Bundle.swift in Sources */,
 				E4535A461CEDC4AB008965DD /* LaunchOptionProtocol.swift in Sources */,
 				C83D1552216B12FA007B0A26 /* ServiceRequestAlerts.swift in Sources */,
@@ -629,6 +644,7 @@
 				E4EE41CD1CFD796A004F0FFE /* LaunchOptionsSetTests.swift in Sources */,
 				E487A11E1D23B34B0056EBF3 /* SystemLaunchArgumentsTests.swift in Sources */,
 				E4D637CF1D01B42F00405514 /* ApplicationsFactory.swift in Sources */,
+				C8B174762308961D0008E679 /* NSPredicateElementQueryTests.swift in Sources */,
 				E43B229C1CFEC17A00AE6B40 /* LaunchOptionsFactory.swift in Sources */,
 				E481AD451E40CF5700049427 /* SystemLaunchEnvironmentsTests.swift in Sources */,
 				E4D637D11D01B80200405514 /* TestLauncherTests.swift in Sources */,

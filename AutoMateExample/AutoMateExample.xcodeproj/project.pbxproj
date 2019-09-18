@@ -62,6 +62,7 @@
 		96BB6F4E1E544BE900A74DA1 /* PermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4D1E544BE900A74DA1 /* PermissionTableViewCell.swift */; };
 		96BB6F501E54658C00A74DA1 /* HomeKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */; };
 		9F61116E0FCC28A35542B3C9 /* Pods_AutoMateExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FD41733358EFFB7E760FB8 /* Pods_AutoMateExample.framework */; };
+		C836246A231C2A28001C1746 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8362469231C2A28001C1746 /* SliderTableViewCell.swift */; };
 		C850B01B1E5EDEA400392526 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850B01A1E5EDEA400392526 /* ContactTableViewCell.swift */; };
 		C850B01D1E5EDEDF00392526 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C850B01C1E5EDEDF00392526 /* ContactTableViewCell.xib */; };
 		C8E84E541E5EC4C100DAA411 /* TableViewDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E84E531E5EC4C100DAA411 /* TableViewDataProtocols.swift */; };
@@ -212,6 +213,7 @@
 		96BB6F4F1E54658C00A74DA1 /* HomeKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitViewController.swift; sourceTree = "<group>"; };
 		9F5E8BAFBD0028B77938ED82 /* Pods-AutoMateExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMateExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoMateExample/Pods-AutoMateExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FD41733358EFFB7E760FB8 /* Pods_AutoMateExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoMateExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8362469231C2A28001C1746 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		C850B01A1E5EDEA400392526 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		C850B01C1E5EDEDF00392526 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		C8E84E531E5EC4C100DAA411 /* TableViewDataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataProtocols.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				E437D7F11E5B1B96001C6477 /* AutoMateLaunchEnviroments */,
 				1FFFC1D51D477CFD00EBB70D /* Localizable.strings */,
 				96470BD01E5585A400D40CB9 /* Permissions */,
+				C8362469231C2A28001C1746 /* SliderTableViewCell.swift */,
 			);
 			path = AutoMateExample;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				967448211E5592BA000B42BB /* MediaLibraryViewController.swift in Sources */,
 				9674482B1E559CF9000B42BB /* MotionViewController.swift in Sources */,
 				961CB2041E558F7000148CAE /* RemindersViewController.swift in Sources */,
+				C836246A231C2A28001C1746 /* SliderTableViewCell.swift in Sources */,
 				E4BA7C811E5C578D00593B52 /* EventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

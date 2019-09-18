@@ -39,4 +39,14 @@ public extension XCUIElementQuery {
         let labelPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: labelsPredicates)
         return NSCompoundPredicate(andPredicateWithSubpredicates: [identifierPredicate, labelPredicate])
     }
+
+    func containing(_ predicates: [NSPredicate]) -> XCUIElementQuery {
+        return predicates.reduce(self) { (query, predicate) -> XCUIElementQuery in
+            return query.containing(predicate)
+        }
+    }
+
+    func element(containing predicates: [NSPredicate]) -> XCUIElement {
+        return containing(predicates).element
+    }
 }

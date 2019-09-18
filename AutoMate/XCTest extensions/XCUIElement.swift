@@ -99,4 +99,32 @@ public extension XCUIElement {
         typeText(text)
     }
     #endif
+
+    private static let percentFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        return formatter
+    }()
+
+    var sliderValue: Float {
+        guard let stringValue = value as? String,
+            let floatValue = XCUIElement.percentFormatter.number(from: stringValue)?.floatValue else {
+                preconditionFailure("Expected the value \(String(describing: value)) to be in a percent format.")
+        }
+        return floatValue
+    }
+
+    func adjust(to targetSliderValue: Float) {
+        func sliderCoordinate(at value: Float) -> XCUICoordinate {
+            return coordinate(withNormalizedOffset: CGVector(dx: Double(value), dy: 0.5))
+        }
+
+
+//        while targetSliderValue != sliderValue {
+            let handlePosition = sliderCoordinate(at: sliderValue)
+            let targetPosition = sliderCoordinate(at: targetSliderValue)
+            handlePosition.press(forDuration: 0.05, thenDragTo: targetPosition)
+//        }
+        handlePosition
+    }
 }
