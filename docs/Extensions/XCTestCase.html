@@ -308,6 +308,9 @@
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RawRepresentable.html">RawRepresentable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
@@ -416,7 +419,7 @@
             <h1>XCTestCase</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">XCTestCase</span> <span class="p">:</span> <span class="kt">XCTest</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">XCTestCase</span></code></pre>
 
                 </div>
               </div>
@@ -474,7 +477,7 @@ of the application when finished. If this doesn&rsquo;t happen then test will fa
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">forExistanceOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">forExistanceOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span></code></pre>
 
                         </div>
                       </div>
@@ -561,7 +564,7 @@ of the application when finished. If this doesn&rsquo;t happen then test will fa
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">forVisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">wait</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">forVisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/IdentifiableByElement.html">IdentifiableByElement</a></span></code></pre>
 
                         </div>
                       </div>
@@ -699,12 +702,12 @@ By default set to 10 seconds.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forFulfillmentOf</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">,</span>
-                 <span class="k">for</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span>
-                 <span class="n">withFailingMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Failed to fulfill predicate %@ for %@ within %.2f seconds."</span><span class="p">,</span>
-                 <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span>
-                 <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span>
-                 <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forFulfillmentOf</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">,</span>
+          <span class="k">for</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span>
+          <span class="n">withFailingMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Failed to fulfill predicate %@ for %@ within %.2f seconds."</span><span class="p">,</span>
+          <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span>
+          <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span>
+          <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -826,7 +829,7 @@ By default set to 10 seconds.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forExistanceOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forExistanceOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -913,7 +916,7 @@ By default set to 10 seconds.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forVisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forVisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1000,7 +1003,7 @@ By default set to 10 seconds.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forInvisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">wait</span><span class="p">(</span><span class="n">forInvisibilityOf</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">XCUIElement</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="kt">XCTestCase</span><span class="o">.</span><span class="n"><a href="../Extensions/XCTestCase.html#/c:@CM@AutoMate@@objc(cs)XCTestCase(cpy)defaultTimeOut">defaultTimeOut</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1067,8 +1070,8 @@ By default set to 10 seconds.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2018-10-26)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/PGSSoft/AutoMate" target="_blank" rel="external">Joanna Bednarz, Paweł Szot, Bartosz Janda, Paweł Kania, Michał Myśliwiec, Ewelina Cyło, and Mateusz Nicpoń</a>. All rights reserved. (Last updated: 2019-08-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

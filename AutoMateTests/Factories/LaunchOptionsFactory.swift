@@ -39,3 +39,27 @@ enum LaunchOptionsFactory {
     static let severalContacts = ContactLaunchEnvironment(shouldCleanBefore: true, resources: (fileName: "michael", bundleName: "Test data"), (fileName: "emma", bundleName: nil))
     static let deleteContacts = ContactLaunchEnvironment(shouldCleanBefore: true)
 }
+
+struct SingleValueCleanableEnvironment: LaunchEnvironmentWithSingleValue, CleanableLaunchEnvironment {
+    let key = "SINGLE_CLEANABLE_ENV"
+    let rawValue: String
+    let shouldCleanBefore: Bool
+}
+
+extension SingleValueCleanableEnvironment: RawRepresentable {
+    init?(rawValue: String) {
+        self.rawValue = rawValue
+        self.shouldCleanBefore = true
+    }
+}
+
+struct MultipleValuesCleanableEnvironment: CleanableLaunchEnvironmentWithMultipleValues {
+    typealias Value = String
+    let shouldCleanBefore: Bool
+    let valuesCollection: [String]
+}
+
+struct MultipleValuesEnvironment: LaunchEnvironmentWithMultipleValues {
+    typealias Value = String
+    let valuesCollection: [String]
+}

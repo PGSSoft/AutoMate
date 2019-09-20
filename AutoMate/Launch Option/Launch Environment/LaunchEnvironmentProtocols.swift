@@ -275,3 +275,39 @@ public extension CleanableLaunchEnvironmentWithMultipleValues where Self.Value =
         self.init(shouldCleanBefore: shouldCleanBefore, valuesCollection: resources.map(Value.init))
     }
 }
+
+// MARK: - RawRepresentable
+/// Provides default implementation for any `RawRepresentable`
+/// type to represent a launch environment in a few simple steps.
+///
+/// **Example:**
+///
+/// ```swift
+/// enum LimitedOptionsEnvironment: String, LaunchEnvironmentWithSingleValue {
+///     case one
+///     case two
+///
+///     var key: String {
+///         return "LimitedOptionsEnvironment"
+///     }
+/// }
+/// ```
+///
+/// **Usage:**
+///
+/// ```swift
+/// let app = XCUIApplication()
+/// TestLauncher(options: [
+///     LimitedOptionsEnvironment.one
+/// ]).configure(app).launch()
+public extension RawRepresentable where Self: LaunchEnvironmentWithSingleValue {
+    // MARK: Typealias
+    /// Value is the same type as the raw value.
+    typealias Value = RawValue
+
+    // MARK: Properties
+    /// Returns `rawValue`.
+    var value: RawValue {
+        return rawValue
+    }
+}

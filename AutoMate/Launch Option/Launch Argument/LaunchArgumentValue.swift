@@ -53,7 +53,7 @@ public extension LaunchArgumentValue where Self: RawRepresentable {
 
 // MARK: - Launch argument values
 /// Represents launch argument value of type Bool.
-public enum BooleanLaunchArgumentValue: Int, ExpressibleByBooleanLiteral, LaunchArgumentValue {
+public enum BooleanLaunchArgumentValue: Int, ExpressibleByBooleanLiteral, LaunchArgumentValue, Equatable {
     /// Value of true, or 1.
     case `true` = 1
     /// Value of false, or 0.
