@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.8.0)
+Released on 2020-06-21.
+
+#### Added
+- Swift Package Manager support.
+
 ## [1.7.1](https://github.com/PGSSoft/AutoMate/releases/tag/1.7.1)
 Released on 2019-07-20.
 

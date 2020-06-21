@@ -21,6 +21,7 @@ With the [`AutoMate-AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) it 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
 [![Documentation](https://img.shields.io/badge/docs-100%25-D15B45.svg?style=flat)](https://pgssoft.github.io/AutoMate/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![Platform](https://img.shields.io/cocoapods/p/AutoMate.svg)](https://cocoapods.org/pods/AutoMate)
 [![License](https://img.shields.io/github/license/PGSSoft/AutoMate.svg)](https://github.com/PGSSoft/AutoMate/blob/master/LICENSE)
 
@@ -28,19 +29,27 @@ With the [`AutoMate-AppBuddy`](https://github.com/PGSSoft/AutoMate-AppBuddy) it 
 
 ## Installation
 
-The most convenient way to install it is by using [CocoaPods](https://cocoapods.org) with Podfile:
+There are three convinient ways to install AutoMate:
 
-```ruby
-pod 'AutoMate'
-```
+* using [CocoaPods](https://cocoapods.org) with Podfile:
 
-or using [Carthage](https://github.com/Carthage/Carthage) and add a line to `Cartfile.private`:
+	```ruby
+	pod 'AutoMate'
+	```
 
-```
-github "PGSSoft/AutoMate"
-```
+* using [Carthage](https://github.com/Carthage/Carthage) and add a line to `Cartfile.private`:
+	
+	```
+	github "PGSSoft/AutoMate"
+	```
 
-`Cartfile.private` should be used because AutoMate framework will be used by UI Tests target only not by the tested application.
+	`Cartfile.private` should be used because AutoMate framework will be used by UI Tests target only not by the tested application.
+
+* using Swift Package Manager, either via [Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) or in `Package.swift`: 
+	
+	```swift
+	.package(url: "https://github.com/PGSSoft/AutoMate", from: "1.8.0"),
+	```
 
 ## Usage
 
